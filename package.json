@@ -1,0 +1,23 @@
+{
+  "name": "sinch-readmeio",
+  "version": "1.0.0",
+  "description": "Source docs for Readme.io with automated sync tool",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "commander": "^2.20.0",
+    "js-yaml": "^3.13.1",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.7",
+    "rdme": "^3.2.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sinch",
+  "license": "ISC"
+}
