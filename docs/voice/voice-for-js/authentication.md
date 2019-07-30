@@ -1,0 +1,83 @@
+---
+title: "Authentication"
+excerpt: ""
+---
+## Authentication by your backend
+
+It is possible to integrate Sinch with your existing user management solution. With this method, you get full control of your user database and can authenticate users in whichever way you see best fit; it may even be a third party solution.
+
+This solution requires you to generate an authentication ticket using your application key and application secret on your Application Server. See the [Reference Documentation](http://www.sinch.com/docs/javascript/reference/) for more information about generating this ticket.
+
+The authentication ticket is then sent to Sinch, using the `.start()` method in the `SinchClient` instance. The ticket is exchanged into a Sinch session, and the rest of the process is identical to when Sinch manages your users.
+[block:callout]
+{
+  "type": "info",
+  "body": "Included with the Sinch JS SDK are samples for getting you started with the integration of your authentication scheme with Sinch.",
+  "title": "Note"
+}
+[/block]
+
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/d4a29ad-authentication_papi_partner.png",
+        "authentication_papi_partner.png",
+        640,
+        685,
+        "#f7f7f7"
+      ],
+      "caption": "Authentication Supported by Partner\nBackend"
+    }
+  ]
+}
+[/block]
+This method, where you authenticate users with your backend, may look like this:
+[block:code]
+{
+  "codes": [
+    {
+      "code": "var sinchClient = new SinchClient({\n        applicationKey: 'MY_APPLICATION_KEY',\n        capabilities: {messaging: true},\n    });\n\n// This jQuery call is just an example how you might authenticate users and pass the ticket to Sinch.\n$.post('https://example.com/auth',\n    {username: 'alice', password: 'somethingSecure'},\n    function(authTicket) {\n        sinchClient.start(authTicket)\n            .then(function() {\n                // Handle successful start, like showing the UI\n            })\n            .fail(function(error) {\n                // Handle Sinch error\n            });\n    }, \n    function(error) {\n        // Handle application server error\n    });",
+      "language": "javascript"
+    }
+  ]
+}
+[/block]
+This code will first instantiate the sinchClient with your application key. In this example, jQuery is used to perform an ajax request to your application server for authenticating the user *Alice*. jQuery will parse the json object and pass it to `sinchClient.start()`.
+
+When `sinchClient.start()` has successfully started the client, the success callback is executed, which may display the UI, or enable some buttons, or other actions you now want to take.
+
+## Authentication by Sinch
+
+The Sinch JavaScript SDK allows for an easy authentication process requiring no backend, in order to get started quickly. Note however that we do not recommend to use this authentication model when launching your app live since you have no control over user creation. When going live, Sinch JS authentication can be disabled in the “App setting” section within the Dashboard.
+
+Sinch JS authentication involves authenticating end-users by passing a user identity and password to `sinchClient.start()` when starting Sinch. In this scenario only the application key is needed; the application secret is not used and the authentication of individual users will be managed by us based on supplied user identity and password.
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/d8619f6-authentication_papi_sinch.png",
+        "authentication_papi_sinch.png",
+        570,
+        629,
+        "#f6f6f6"
+      ],
+      "caption": "Authentication Supported by\nSinch"
+    }
+  ]
+}
+[/block]
+Authentication using this method is very straight forward, as you only have to make one method call. The Sinch SDK will take care of the rest under the hood. Implementing Sinch user authentication in your app may look something like this:
+[block:code]
+{
+  "codes": [
+    {
+      "code": "var sinchClient = new SinchClient({\n        applicationKey: 'MY_APPLICATION_KEY',\n        capabilities: {messaging: true},\n    });\n\nsinchClient.start({username: 'alice', password: 'somethingSecure'})\n    .then(function() {\n        // Perform actions to do when authenticated, such as displaying user interface\n    });",
+      "language": "javascript"
+    }
+  ]
+}
+[/block]
+This code will instantiate SinchClient, and will start the client using the username *‘Alice’*.
