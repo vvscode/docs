@@ -1,8 +1,9 @@
 {
   "name": "sinch-readmeio",
-  "version": "1.0.0",
+  "version": "1.0",
   "description": "Source docs for Readme.io with automated sync tool",
-  "main": "index.js",
+  "repository": "https://github.com/sinch/docs-readmeio",
+  "main": "sync.js",
   "directories": {
     "doc": "docs"
   },
@@ -16,8 +17,7 @@
     "rdme": "^3.2.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Sinch",
-  "license": "ISC"
+  "license": "MIT"
 }
