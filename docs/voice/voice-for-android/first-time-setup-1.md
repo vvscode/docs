@@ -16,18 +16,16 @@ The Sinch SDK can be downloaded [here](././page/downloads). It contains: the lib
 The Sinch SDK library is distributed in [AAR](http://tools.android.com/tech-docs/new-build-system/aar-format) format. To use it in your project either:
 
 >  - Copy the **.aar** file to the `libs` folder and edit the build.gradle file to include
-    ```text
-        repositories {
-            flatDir {
-                dirs 'libs'
-            }
-        }
-        
-        dependencies {
-            compile(name:'sinch-android-rtc', version:'+', ext:'aar')
-        }
-    ```
-
+[block:code]
+{
+  "codes": [
+    {
+      "code": "repositories {\n    flatDir {\n        dirs 'libs'\n    }\n}\n\ndependencies {\n    compile(name:'sinch-android-rtc', version:'+', ext:'aar')\n}",
+      "language": "text"
+    }
+  ]
+}
+[/block]
 >  - Or using Android Studio choose `File -> New -> New Module -> Import .JAR/.AAR Package` option
 
 ## Running ProGuard
