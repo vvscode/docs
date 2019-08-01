@@ -29,11 +29,24 @@ user interface.
 
 ### Configuration
 
-The file `config.yml` contains configuration for the CLI. The following fields are available:
+Global configurations can be provided either via `--` options on the command line, or via environment variables. 
+If both are provided (not recommended), the `--` option will have precedence over the environment variable.
 
-| Field        | Description |
-| ------------ | ----------- |
-|`categories`  | List of category slugs that exist on Readme documentation site. These slugs have been implied from the label of each category. This list is used by the CLI to list all categories when no specific slug is specified. |
+The following global configurations are available:
+
+| Option            | Environment Variable |
+| ---               | ---                  |
+| `--apikey`        | `APIKEY`             |
+| `--docsversion`   | `DOCSVERSION`        |
+
+See help (`-h`) for details of each configuration option.
+
+In addition to the global configuration, the file `config.yml` contains general configuration for the CLI. 
+The following fields are available:
+
+| Field         | Description |
+| ---           | ---         |
+|`categories`   | List of category slugs that exist on Readme documentation site. These slugs have been implied from the label of each category. This list is used by the CLI to list all categories when no specific slug is specified. |
 
 ### Get help
 
