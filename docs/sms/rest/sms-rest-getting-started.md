@@ -9,21 +9,16 @@ To use the REST API you first need to create an HTTP REST Service using the [web
 
 ### Authentication
 
-Request with token
-[block:code]
-{
-  "codes": [
-    {
-      "code": "$ curl -H \"Authorization: Bearer {token}\" \\\n\"https://api.clxcommunications.com/xms/v1/{service_plan_id}/batches",
-      "language": "shell",
-      "name": null
-    }
-  ]
-}
-[/block]
 You will be provided with an authentication token for each service plan. 
 
 The token is sent in the `Authorization` header preceded by `Bearer`. It is required for all requests made to the REST API.
+
+**Example request with token**
+
+``` shell
+$ curl -H "Authorization: Bearer {token}" \
+"https://api.clxcommunications.com/xms/v1/{service_plan_id}/batches
+```
 
 ### Rate Limits
 

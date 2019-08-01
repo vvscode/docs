@@ -13,15 +13,13 @@ So let's start building.
 ##How to add Anonymous Calling
 In this tutorial, we're building a super simple API using C# to redirect phone calls to a given number using our SVAML. We'll use the caller ID of the calling party to determine where to connect the call. The flow of the calls in this kind of solution looks like this:
 
-<img src="https://github.com/sinch/net-redirect-call/blob/master/images/napkin-diagram.png"/>
-<br>
+![Call flow](https://raw.githubusercontent.com/sinch/net-redirect-call/master/images/napkin-diagram.png)
 
 In this tutorial, we are going to implement the backend part.
 
 As usual, you can find the full source code on [GitHub](https://github.com/sinch/net-redirect-call) or deploy directly to your Azure account if you want to try it out.
 
-[![net promoter score](https://github.com/sinch/net-redirect-call/blob/master/images/deploybutton.png)] (https://azuredeploy.net/?repository=https://github.com/sinch/csharp-nps-sms-delighted)
-
+[![net promoter score](https://raw.githubusercontent.com/sinch/net-redirect-call/master/images/deploybutton.png)](https://azuredeploy.net/?repository=https://github.com/sinch/csharp-nps-sms-delighted)
 
 ## Prerequisites 
 1. A [Sinch account](https://www.sinch.com/signup) and an app with keys 
@@ -30,7 +28,7 @@ As usual, you can find the full source code on [GitHub](https://github.com/sinch
 ## Configure your app 
 Once you have a phone number - in my case +1 213-454-0537 - assign it to your app by clicking on the pen and then Voice:
 
-![configure your app](https://github.com/sinch/net-redirect-call/blob/master/images/dashboard.jpg)
+![configure your app](https://raw.githubusercontent.com/sinch/net-redirect-call/master/images/dashboard.jpg)
 
 Enter a callback URL. This is the URL the Sinch service will hit when there is a call happening associated with your app. 
  
@@ -58,10 +56,10 @@ namespace Models {
     }
 }
 ```
+
 The above code just adds a static list with configs, where “from” is the calling phone and “to” is the phone to which we want it to be connected. I abstracted this for your benefit, so you can have an internal service like this that is entirely decoupled from your user database. 
 
 Next, let’s add an endpoint in our WebAPI to configure where we want to connect.
-<br>
 
 **ConfigureController.cs**
 
