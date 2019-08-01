@@ -7,17 +7,15 @@
   "directories": {
     "doc": "docs"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "commander": "^2.20.0",
     "js-yaml": "^3.13.1",
+    "rdme": "^3.2.0",
     "request": "^2.88.0",
-    "request-promise-native": "^1.0.7",
-    "rdme": "^3.2.0"
+    "request-promise-native": "^1.0.7"
   },
-  "scripts": {
-  },
+  "scripts": {},
   "author": "Sinch",
   "license": "MIT"
 }
