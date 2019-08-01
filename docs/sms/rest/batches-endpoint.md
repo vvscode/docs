@@ -177,31 +177,12 @@ The request body is a JSON object described in send\_batch\_msg request.
 
 Query parameters:
 
-[block:parameters]
-{
-  "data": {
-    "h-0": "Name",
-    "h-1": "Description",
-    "h-2": "Type",
-    "h-3": "Default",
-    "h-4": "Constraints",
-    "h-5": "Required",
-    "0-0": "per\\_recipient",
-    "1-0": "number\\_of\\_recipients",
-    "0-1": "Whether to include per recipient details in the response",
-    "1-1": "Max number of recipients to include per recipient details for in the response",
-    "0-2": "Boolean",
-    "1-2": "Integer",
-    "0-3": "false",
-    "1-3": "100",
-    "1-4": "Max 1000",
-    "0-5": "No",
-    "1-5": "No"
-  },
-  "cols": 6,
-  "rows": 2
-}
-[/block]
+| Name                   | Description                                                                   | Type    | Default | Constraints | Required |
+|-- -                    | ---                                                                           | ---     | ---     | ---         | ---    --|
+| per\_recipient         | Whether to include per recipient details in the response                      | Boolean | false   |             | No       |
+| number\_of\_recipients | Max number of recipients to include per recipient details for in the response | Integer | 100     | Max 1000    | No       |
+
+
 #### Response
 
 `200 OK`
@@ -363,38 +344,13 @@ Delivery reports can be retrieved even if no callback was requested. The differe
 `GET /xms/v1/{service_plan_id}/batches/{batch_id}/delivery_report`
 
 Query parameters:
-[block:parameters]
-{
-  "data": {
-    "h-0": "Name",
-    "h-1": "Description",
-    "h-2": "Type",
-    "h-3": "Default",
-    "h-4": "Constraints",
-    "h-5": "Required",
-    "0-0": "type",
-    "1-0": "status",
-    "2-0": "code",
-    "0-1": "The type of delivery report",
-    "1-1": "Comma separated list of delivery\\_report\\_statuses to include",
-    "2-1": "Comma separated list of delivery\\_receipt\\_error\\_codes to include",
-    "0-2": "String",
-    "1-2": "String",
-    "2-2": "String",
-    "0-3": "summary",
-    "1-3": "N/A",
-    "2-3": "N/A",
-    "0-4": "Must be summary or full",
-    "1-4": "N/A",
-    "2-4": "N/A",
-    "0-5": "Yes",
-    "1-5": "No",
-    "2-5": "No"
-  },
-  "cols": 6,
-  "rows": 3
-}
-[/block]
+
+| Name   | Description                                                        | Type   | Default | Constraints             | Required |
+|-- -    | ---                                                                | ---    | ---     | ---                     | ---    --|
+| type   | The type of delivery report                                        | String | summary | Must be summary or full | Yes      |
+| status | Comma separated list of delivery\_report\_statuses to include      | String | N/A     | N/A                     | No       |
+| code   | Comma separated list of delivery\_receipt\_error\_codes to include | String | N/A     | N/A                     | No       |
+
 #### Response
 
 `200 OK`

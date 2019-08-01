@@ -21,15 +21,8 @@ Authorization: Bearer AbCdEf123456.
 Where the string "AbCdEf123456" is the bearer authorization token.
 
 ## BearerAuth
-[block:parameters]
-{
-  "data": {
-    "0-0": "Security scheme type:",
-    "1-0": "HTTP Authorization Scheme",
-    "0-1": "HTTP",
-    "1-1": "bearer"
-  },
-  "cols": 2,
-  "rows": 2
-}
-[/block]
+
+|                           |        |
+|-- -                       | ---  --|
+| Security scheme type:     | HTTP   |
+| HTTP Authorization Scheme | bearer |

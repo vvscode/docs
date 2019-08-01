@@ -35,34 +35,19 @@ The REST API returns an HTTP status and code each time a request is made.
 ### HTTP Statuses
 
 The following HTTP status codes are used by the API. Additional codes might be added in the future. If you encounter a code not in this list please consult the [HTTP specification](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10/) for a definition.
-[block:parameters]
-{
-  "data": {
-    "h-0": "Status",
-    "h-1": "Description",
-    "0-0": "200&nbsp;OK",
-    "0-1": "The request was successful.",
-    "1-1": "The request does not conform to the API. The request body should provide more information.",
-    "1-0": "400&nbsp;Bad&nbsp;Request",
-    "2-0": "401&nbsp;Unauthorized",
-    "2-1": "The authentication token is invalid for this service plan.",
-    "3-0": "404&nbsp;Not&nbsp;Found",
-    "3-1": "The path is invalid, or no resource exists with the given ID.",
-    "4-0": "405&nbsp;Method&nbsp;Not&nbsp;Allowed",
-    "4-1": "The path is valid but not for this method.",
-    "5-0": "409&nbsp;Conflict",
-    "5-1": "Duplicate message-id provided or trying to revoke an irrevocable message",
-    "6-0": "415&nbsp;Unsupported&nbsp;Media&nbsp;Type",
-    "7-0": "500&nbsp;Internal&nbsp;Server&nbsp;Error",
-    "8-0": "503&nbsp;Service&nbsp;Unavailable",
-    "6-1": "The request `Content-Type` is missing or unsupported. Most operations expect `application/json`.",
-    "7-1": "An unexpected internal error occurred, and the request was not processed.",
-    "8-1": "The service is unable to perform the request at this point. Most likely due to a required subsystem being unavailable."
-  },
-  "cols": 2,
-  "rows": 9
-}
-[/block]
+
+| Status                                    | Description                                                                                                            |
+|-- -                                       | ---                                                                                                                  --|
+| 200&nbsp;OK                               | The request was successful.                                                                                            |
+| 400&nbsp;Bad&nbsp;Request                 | The request does not conform to the API. The request body should provide more information.                             |
+| 401&nbsp;Unauthorized                     | The authentication token is invalid for this service plan.                                                             |
+| 404&nbsp;Not&nbsp;Found                   | The path is invalid, or no resource exists with the given ID.                                                          |
+| 405&nbsp;Method&nbsp;Not&nbsp;Allowed     | The path is valid but not for this method.                                                                             |
+| 409&nbsp;Conflict                         | Duplicate message-id provided or trying to revoke an irrevocable message                                               |
+| 415&nbsp;Unsupported&nbsp;Media&nbsp;Type | The request `Content-Type` is missing or unsupported. Most operations expect `application/json`.                       |
+| 500&nbsp;Internal&nbsp;Server&nbsp;Error  | An unexpected internal error occurred, and the request was not processed.                                              |
+| 503&nbsp;Service&nbsp;Unavailable         | The service is unable to perform the request at this point. Most likely due to a required subsystem being unavailable. |
+
 ### HTTP Errors
 
 Responses with status `400 Bad Request` and `409 Forbidden` will contain a JSON object explaining the error in the body. This object has the following structure:
