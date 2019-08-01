@@ -1,9 +1,6 @@
 ---
 title: "HTTP Basic"
-excerpt: "Our basic HTTP API offers a simple way to send and receive single SMS
-messages. For more features such as bulk send, group send, scheduling,
-parameterization and higher security you may want to consider our
-`http_rest_sms_api` api."
+excerpt: "Our basic HTTP API offers a simple way to send and receive single SMS messages. For more features such as bulk send, group send, scheduling, parameterization and higher security you may want to consider our `http_rest_sms_api` api."
 ---
 [block:callout]
 {
@@ -87,33 +84,56 @@ Sinch SMSC uses UTC (Coordinated Universal Time)
 All requests that are correct will be accepted and the SMS server responds with status HTTP/1.1 202 and a message ID as content.
 
 Test case with correct settings:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "$ curl -v “http://sms1.clxnetworks.net:3800/sendsms?username=user&password=pass&from=CLX&to=46700 123456&text=Test”\n* About to connect() to sms1.clxnetworks.net port 3800 (#0)\n*           Trying 93.158.78.4â€¦ connected\n* Connected to sms1.clxnetworks.net (93.158.78.4) port 3800 (#0)\n> GET /sendsms?username=user&password=pass&from=CLX&to=46700123456&text=Test HTTP/1.1\n> User-Agent: curl/7.19.7 (universal-apple-darwin10.0) libcurl/7.19.7 OpenSSL/0.9.8l zlib/1.2.3\n> Host: sms1.clxnetworks.net:3800\n> Accept: */*\n>\n< HTTP/1.1 202 Accepted\n< Date: Tue, 9 Nov 2010 12:38:58 +0100\n< Content-Length: 32\n< Content-Type: text/plain; charset=ISO-8859-1\n* Connection #0 to host sms1.clxnetworks.net left intact\n* Closing connection #0\n12c306e85bc5d9e4e52211c741e21277",
-      "language": "shell",
-      "name": "Correct Settings"
-    }
-  ]
-}
-[/block]
+
+**Correct Settings**
+```shell
+$ curl -v “http://sms1.clxnetworks.net:3800/sendsms?username=user&password=pass&from=CLX&to=46700 123456&text=Test”
+* About to connect() to sms1.clxnetworks.net port 3800 (#0)
+*           Trying 93.158.78.4â€¦ connected
+* Connected to sms1.clxnetworks.net (93.158.78.4) port 3800 (#0)
+> GET /sendsms?username=user&password=pass&from=CLX&to=46700123456&text=Test HTTP/1.1
+> User-Agent: curl/7.19.7 (universal-apple-darwin10.0) libcurl/7.19.7 OpenSSL/0.9.8l zlib/1.2.3
+> Host: sms1.clxnetworks.net:3800
+> Accept: */*
+>
+< HTTP/1.1 202 Accepted
+< Date: Tue, 9 Nov 2010 12:38:58 +0100
+< Content-Length: 32
+< Content-Type: text/plain; charset=ISO-8859-1
+* Connection #0 to host sms1.clxnetworks.net left intact
+* Closing connection #0
+12c306e85bc5d9e4e52211c741e21277
+```
+
+
 #### Message rejected
 
 All requests that are failing get a corresponding HTTP status code and also a fail message as content.
 
 Test case with wrong settings - “mclass=123”
-[block:code]
-{
-  "codes": [
-    {
-      "code": "$ curl -v “http://sms1.clxnetworks.net:3800/sendsms?username=user&password=pass&from=CLX&to=46700 123456&mclass=123&text=Test”\n* About to connect() to sms1.clxnetworks.net port 3800 (#0)\n*           Trying 93.158.78.4â€¦ connected\n* Connected to sms1.clxnetworks.net (93.158.78.4) port 3800 (#0)\n> GET /sendsms?username=user&password=pass&from=CLX&to=46700123456&mclass=123&text=Test HTTP/1.1\n> User-Agent: curl/7.19.7 (universal-apple-darwin10.0) libcurl/7.19.7 OpenSSL/0.9.8l zlib/1.2.3\n> Host: sms1.clxnetworks.net:3800\n> Accept: */*\n>\n< HTTP/1.1 400 Bad Request - server could not understand request\n< Date: Tue, 9 Nov 2010 12:42:41 +0100\n< Content-Length: 20\n< Content-Type: text/plain; charset=ISO-8859-1\n<\n* Connection #0 to host sms1.clxnetworks.net left intact\n* Closing connection #0\nInvalid mclass value",
-      "language": "shell",
-      "name": "Wrong Settings"
-    }
-  ]
-}
-[/block]
+
+**Wrong Settings**
+```shell
+$ curl -v “http://sms1.clxnetworks.net:3800/sendsms?username=user&password=pass&from=CLX&to=46700 123456&mclass=123&text=Test”
+* About to connect() to sms1.clxnetworks.net port 3800 (#0)
+*           Trying 93.158.78.4â€¦ connected
+* Connected to sms1.clxnetworks.net (93.158.78.4) port 3800 (#0)
+> GET /sendsms?username=user&password=pass&from=CLX&to=46700123456&mclass=123&text=Test HTTP/1.1
+> User-Agent: curl/7.19.7 (universal-apple-darwin10.0) libcurl/7.19.7 OpenSSL/0.9.8l zlib/1.2.3
+> Host: sms1.clxnetworks.net:3800
+> Accept: */*
+>
+< HTTP/1.1 400 Bad Request - server could not understand request
+< Date: Tue, 9 Nov 2010 12:42:41 +0100
+< Content-Length: 20
+< Content-Type: text/plain; charset=ISO-8859-1
+<
+* Connection #0 to host sms1.clxnetworks.net left intact
+* Closing connection #0
+Invalid mclass value
+```
+
+
 |Error Message (as content)|HTTP Status 1|Code|
 |--------------------------|-------------|----|
 |Not acceptable 3          |NOT_ACCEPTABLE|406 |
@@ -184,17 +204,13 @@ Basic Configuration
 | dlr-url      | <http://your.host.com/dlr.php?type=%d&dr-msg=%A> |
 
 #### Example 1 - Submit text message
-[block:code]
-{
-  "codes": [
-    {
-      "code": "http://sms1.clxnetworks.net:3800/sendsms?username=userX&password=passX&from=test&to=123456&text=Hello+world",
-      "language": "shell",
-      "name": "Submit Text Message"
-    }
-  ]
-}
-[/block]
+
+**Submit Text Message**
+```shell
+http://sms1.clxnetworks.net:3800/sendsms?username=userX&password=passX&from=test&to=123456&text=Hello+world
+```
+
+
 **(Content of the message must be URL encoded)**
 
 |                                                                                  |                                                                                                                                        |
@@ -210,17 +226,14 @@ Basic Configuration
 | dlr-url=http%3a%2f%2fyour.host.com%2fdlr.php%3ftype%3d%25d%26dr-%c2%admsg%3d%25A | Set the url where delivery reports will be sent and which values, must be URL encoded (see How dlr-url works for further explanations) |
 
 #### Example 2 - Submit text message with delivery report
-[block:code]
-{
-  "codes": [
-    {
-      "code": "http://sms1.clxnetworks.net:3800/sendsms?username=userX&password=passX&from=test&to=123456&text=Hello+world&dlr-mask=7&dlr-url=http%3a%2f%2fyour.host.com%2fdlr.php%3ftype%3d%25d%26dr-%c2%admsg%3d%25A\n",
-      "language": "shell",
-      "name": "Submit text message with delivery report"
-    }
-  ]
-}
-[/block]
+
+**Submit text message with delivery report**
+```shell
+http://sms1.clxnetworks.net:3800/sendsms?username=userX&password=passX&from=test&to=123456&text=Hello+world&dlr-mask=7&dlr-url=http%3a%2f%2fyour.host.com%2fdlr.php%3ftype%3d%25d%26dr-%c2%admsg%3d%25A
+
+```
+
+
 | Value (decimal) | Description            |
 | --------------- | ---------------------- |
 | 1               | Delivered to phone     |
@@ -232,17 +245,14 @@ Basic Configuration
 If you want multiple report types, you simply add the values together. For example, if you want to get delivery success and/or failure you set the dlr-mask value to 7 (1+2+4).
 
 Enter the url where you want the dlr request to be sent example:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "http://your.host.com/dlr.php\n",
-      "language": "shell",
-      "name": "Example"
-    }
-  ]
-}
-[/block]
+
+**Example**
+```shell
+http://your.host.com/dlr.php
+
+```
+
+
 Then add what type of dlr-url escape codes you which to receive.
 
 |Escape codes|                                                                    |
@@ -255,54 +265,44 @@ Then add what type of dlr-url escape codes you which to receive.
 |%Q          |Like %P, but a leading ‘00’ is replaced with ‘+’.                   |
 |%d          |The delivery report type value (check dlr-mask for more information)|
 |%A          |The delivery report SMSC reply, if any.                             |
-[block:code]
-{
-  "codes": [
-    {
-      "code": "type=%d&dr-msg=%A",
-      "language": "shell",
-      "name": "Example"
-    }
-  ]
-}
-[/block]
+
+**Example**
+```shell
+type=%d&dr-msg=%A
+```
+
+
 One example of a delivery report received: (Note that the delivery report is url-encoded)
-[block:code]
-{
-  "codes": [
-    {
-      "code": "/dlr.php?type=1&dr-msg=id%3A128fc8d26225d9e4e52097f4249028b7%2Bsub%3A001%2Bdlvrd%3A001\n%2Bsubmit%2Bdate%3A1006030843%2Bdone%2Bdate%3A1006030843%2Bstat%3ADELIVRD\n%2Berr%3A000%2Btext%3A%2B%2B%2B%2B%2B%2B%2B%2B%2B%2B%2B%2B\n%2B%2B%2B%2B%2B%2B%2B%2B",
-      "language": "shell",
-      "name": "Delivrey Report Received"
-    }
-  ]
-}
-[/block]
+
+**Delivrey Report Received**
+```shell
+/dlr.php?type=1&dr-msg=id%3A128fc8d26225d9e4e52097f4249028b7%2Bsub%3A001%2Bdlvrd%3A001
+%2Bsubmit%2Bdate%3A1006030843%2Bdone%2Bdate%3A1006030843%2Bstat%3ADELIVRD
+%2Berr%3A000%2Btext%3A%2B%2B%2B%2B%2B%2B%2B%2B%2B%2B%2B%2B
+%2B%2B%2B%2B%2B%2B%2B%2B
+```
+
+
 The delivery report decoded:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "/dlr.php?type=1&dr-msg=id:128fc8d26225d9e4e52097f4249028b7+sub:001+dlvrd:001+submit\n+date:1006030843+done+date:1006030843+stat:DELIVRD+err:000\n+text:++++++++++++++++++++",
-      "language": "shell",
-      "name": "Delivery Report Decoded"
-    }
-  ]
-}
-[/block]
+
+**Delivery Report Decoded**
+```shell
+/dlr.php?type=1&dr-msg=id:128fc8d26225d9e4e52097f4249028b7+sub:001+dlvrd:001+submit
++date:1006030843+done+date:1006030843+stat:DELIVRD+err:000
++text:++++++++++++++++++++
+```
+
+
 #### Example 3 - Submit flash message
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "http://sms1.clxnetworks.net:3800/sendsms?username=userX&password=passX&from=test&to=123456&text=Hello+world&alt-dcs=1&mclass=0\n",
-      "language": "shell",
-      "name": "Example"
-    }
-  ]
-}
-[/block]
+
+**Example**
+```shell
+http://sms1.clxnetworks.net:3800/sendsms?username=userX&password=passX&from=test&to=123456&text=Hello+world&alt-dcs=1&mclass=0
+
+```
+
+
 | Variable / Values                          | Comment                               |
 | ------------------------------------------ | ------------------------------------- |
 | <http://sms1.clxnetworks.net:3800/sendsms> | http-API URL                          |
@@ -333,29 +333,23 @@ Parameter “alt-dcs”:
 
 Content not URL-Encoded:
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "http://sms1.clxnetworks.net:3800/sendsms?username=userX&password=passX&from=test&to=123456&text=??????+???&coding=2\n",
-      "language": "shell",
-      "name": "Not URL-Encoded"
-    }
-  ]
-}
-[/block]
+
+**Not URL-Encoded**
+```shell
+http://sms1.clxnetworks.net:3800/sendsms?username=userX&password=passX&from=test&to=123456&text=??????+???&coding=2
+
+```
+
+
 Content URL-Encoded:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "http://sms1.clxnetworks.net:3800/sendsms?username=userX&password=passX&from=test&to=123456&text=%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82%20%D0%BC%D0%B8%D1%80&coding=2\n",
-      "language": "shell",
-      "name": "URL-Encoded"
-    }
-  ]
-}
-[/block]
+
+**URL-Encoded**
+```shell
+http://sms1.clxnetworks.net:3800/sendsms?username=userX&password=passX&from=test&to=123456&text=%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82%20%D0%BC%D0%B8%D1%80&coding=2
+
+```
+
+
 |Variable / Values|Comment                                                             |
 |-----------------|--------------------------------------------------------------------|
 |http://sms1.clxnetworks.net:3800/sendsms|http-API URL                                                        |
@@ -407,17 +401,13 @@ To receive the MO message Sinch needs a URL that specify where the messages shou
 This URL will pass the MO message to http server "mo.yourdomain.net" on tcp port 5000. The example script to receive and pars the request is "yourGetMo.php". Sinch will escape the destination MSISDN to variable "msisdn", originator address to variable "originator" and the message to variable "msg".
 
 The URL to use:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "http://mo.yourdomain.net:5000/yourGetMo.php?originator=%q&msisdn=%P&msg=%A",
-      "language": "shell",
-      "name": "URL to use"
-    }
-  ]
-}
-[/block]
+
+**URL to use**
+```shell
+http://mo.yourdomain.net:5000/yourGetMo.php?originator=%q&msisdn=%P&msg=%A
+```
+
+
 ## Error Specification
 
 ### Overview

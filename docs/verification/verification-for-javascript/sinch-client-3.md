@@ -7,16 +7,13 @@ The `SinchClient` class is the SDK entry point. It is used to configure the user
 ## Instantiating the SinchClient
 
 To use Sinch you first need to create a "sinchClient" object using the application key and you can specify some other options.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "var sinchClient = new SinchClient({\n    applicationKey: '<application_key>'\n});",
-      "language": "javascript"
-    }
-  ]
-}
-[/block]
+```javascript
+var sinchClient = new SinchClient({
+    applicationKey: '<application_key>'
+});
+```
+
+
 The \*\* is obtained from the Sinch Developer Dashboard. In this example, the SinchClient is set up for Verification.
 
 ## Asynchronous Sinch Calls
@@ -28,27 +25,25 @@ When using asynchronous methods in Sinch, there are two ways of acting on the re
 Additionally, all asynchronous methods in Sinch also return a promise, which will either be resolved or rejected. If it's resolved the next method in the chain, which is specified using `.then()`, is called. If there is a failure, the method specified in `.fail()` is called.
 
 ### Sinch with callbacks
-[block:code]
-{
-  "codes": [
-    {
-      "code": "var handleSuccess = function() {...};\nvar handleFail = function() {...};\n\nsinchClient.start(loginObj, handleSuccess, handleFail);",
-      "language": "javascript"
-    }
-  ]
-}
-[/block]
+```javascript
+var handleSuccess = function() {...};
+var handleFail = function() {...};
+
+sinchClient.start(loginObj, handleSuccess, handleFail);
+```
+
+
 ### Sinch with promises
-[block:code]
-{
-  "codes": [
-    {
-      "code": "var handleSuccess = function() {...};\nvar handleFail = function() {...};\n\nSinchClient.start(loginObj)\n    .then(handleSuccess)\n    .fail(handleFail);",
-      "language": "javascript"
-    }
-  ]
-}
-[/block]
+```javascript
+var handleSuccess = function() {...};
+var handleFail = function() {...};
+
+SinchClient.start(loginObj)
+    .then(handleSuccess)
+    .fail(handleFail);
+```
+
+
 The benefit of using promises is that it's easy to make a *chain of method calls* and the code is clearer, but either method works.
 [block:callout]
 {

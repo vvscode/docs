@@ -25,31 +25,57 @@ MMS "Link Expiration Date’ is used to expire the MMS Link (In the case when MM
 >    All saveMMS Error Codes plus E110, E111, E201, E628
 
 ### Request Example
-[block:code]
-{
-  "codes": [
-    {
-      "code": "<request>\n    <action>sendMMS</action>\n    <api-key>qTFkykO9JTfahCOqJ0V2Wf5Cg1t8iWlZ</api-key>\n    <to>12399471613</to>\n    <from>28444</from>\n    <operator-id>31062</operator-id>\n    <message-subject>The subject</message-subject>\n    <service-id>32113</service-id>\n    <name>FuelTheFire</name>\n    <slide>\n        <duration>5</duration>\n        <image>\n            <url>http://www.yoursite.com/images/1.jpg</url>\n        </image>\n        <audio>\n            <url>http://www.yoursite.com/audio/1.mp3</url>\n        </audio>\n        <message-text>Here is some text blah blah ...</message-text>\n    </slide>\n    <slide>\n        <message-text>Invitation</message-text>\n        <ical><url>http://www.yoursite.com/cal/2.ics</url></ical>\n        <duration>10</duration>\n    </slide>\n</request>",
-      "language": "xml",
-      "name": "sendMMS Request"
-    }
-  ]
-}
-[/block]
+
+**sendMMS Request**
+```xml
+<request>
+    <action>sendMMS</action>
+    <api-key>qTFkykO9JTfahCOqJ0V2Wf5Cg1t8iWlZ</api-key>
+    <to>12399471613</to>
+    <from>28444</from>
+    <operator-id>31062</operator-id>
+    <message-subject>The subject</message-subject>
+    <service-id>32113</service-id>
+    <name>FuelTheFire</name>
+    <slide>
+        <duration>5</duration>
+        <image>
+            <url>http://www.yoursite.com/images/1.jpg</url>
+        </image>
+        <audio>
+            <url>http://www.yoursite.com/audio/1.mp3</url>
+        </audio>
+        <message-text>Here is some text blah blah ...</message-text>
+    </slide>
+    <slide>
+        <message-text>Invitation</message-text>
+        <ical><url>http://www.yoursite.com/cal/2.ics</url></ical>
+        <duration>10</duration>
+    </slide>
+</request>
+```
+
+
 ### Response examples
-[block:code]
-{
-  "codes": [
-    {
-      "code": "<response>\n    <status>Success</status>\n    <to>12399471613</to>\n    <mms-id>35674</mms-id>\n    <tracking-id>MMS_12345</tracking-id>\n    <status-details>MMS request accepted and queued for delivery</status-details>\n</response>",
-      "language": "xml",
-      "name": "sendMMS Success Response"
-    },
-    {
-      "code": "<response>\n    <status>Failure</status>\n    <error-code>E111</error-code>\n    <to>12399471613</to>\n    <error-info>Invalid shortcode</error-info>\n</response>",
-      "language": "xml",
-      "name": "sendMMS Failure Response"
-    }
-  ]
-}
-[/block]
+
+**sendMMS Success Response**
+```xml
+<response>
+    <status>Success</status>
+    <to>12399471613</to>
+    <mms-id>35674</mms-id>
+    <tracking-id>MMS_12345</tracking-id>
+    <status-details>MMS request accepted and queued for delivery</status-details>
+</response>
+```
+
+
+**sendMMS Failure Response**
+```xml
+<response>
+    <status>Failure</status>
+    <error-code>E111</error-code>
+    <to>12399471613</to>
+    <error-info>Invalid shortcode</error-info>
+</response>
+```

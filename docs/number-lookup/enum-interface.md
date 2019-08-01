@@ -24,33 +24,27 @@ Please find the IP address and port number for our ENUM Lookup Server in the tab
 The question has the format \<IP-address\> \<MSISDN-in-ENUM-Format\> e164.arpa IN NAPTR
 
 As an example the request for MSISDN +13392986156 would look like this:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "93.158.78.4 6.5.1.6.8.9.2.9.3.3.1.e164.arpa IN NAPTR\n",
-      "language": "sql",
-      "name": "Request"
-    }
-  ]
-}
-[/block]
+
+**Request**
+```sql
+93.158.78.4 6.5.1.6.8.9.2.9.3.3.1.e164.arpa IN NAPTR
+
+```
+
+
 ### Answer
 
 The answer section will contain a NAPTR record with the MSISDN queried in ENUM format together with the MCC and MNC for the MSISDN queried.
 
 As an example the answer section to the question above looks like this:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "6.5.1.6.8.9.2.9.3.3.1.e164.arpa. 3 IN NAPTR 10 50 “u” “E2U+pstn:tel” “!^(.*)$!tel:\\\\\\\\1\\\\\\;mcc=310\\\\\\;mnc=012!”\n",
-      "language": "sql",
-      "name": "Response"
-    }
-  ]
-}
-[/block]
+
+**Response**
+```sql
+6.5.1.6.8.9.2.9.3.3.1.e164.arpa. 3 IN NAPTR 10 50 “u” “E2U+pstn:tel” “!^(.*)$!tel:\\\\1\\\;mcc=310\\\;mnc=012!”
+
+```
+
+
 ## Examples
 
 Below you will find full examples of queries using the “dig” command.
@@ -58,30 +52,34 @@ Below you will find full examples of queries using the “dig” command.
 ### Successful Query
 
 A successful query returns a NAPTR record containing the queried MSISDN in ENUM format as well as MCC and MNC for the MSISDN in the answer section.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "dig @93.158.78.4 6.5.1.6.8.9.2.9.3.3.1.e164.arpa IN NAPTR\n\n; < <>> DiG 9.8.3-P1 < <>> @93.158.78.4 6.5.1.6.8.9.2.9.3.3.1.e164.arpa IN NAPTR\n;; ->>HEADER< <- opcode: QUERY, status: NOERROR, id: 9512\n;; flags: qr; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0\n;; QUESTION SECTION:\n;6.5.1.6.8.9.2.9.3.3.1.e164.arpa. IN NAPTR\n;; ANSWER SECTION:\n6.5.1.6.8.9.2.9.3.3.1.e164.arpa. 3 IN NAPTR 10 50 “u” “E2U+pstn:tel”\n“!^(.*)$!tel:\\\\\\\\1\\\\\\;mcc=310\\\\\\;mnc=012!” .\n;; Query time: 206 msec",
-      "language": "sql",
-      "name": "Successful Query"
-    }
-  ]
-}
-[/block]
+
+**Successful Query**
+```sql
+dig @93.158.78.4 6.5.1.6.8.9.2.9.3.3.1.e164.arpa IN NAPTR
+
+; < <>> DiG 9.8.3-P1 < <>> @93.158.78.4 6.5.1.6.8.9.2.9.3.3.1.e164.arpa IN NAPTR
+;; ->>HEADER< <- opcode: QUERY, status: NOERROR, id: 9512
+;; flags: qr; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+;; QUESTION SECTION:
+;6.5.1.6.8.9.2.9.3.3.1.e164.arpa. IN NAPTR
+;; ANSWER SECTION:
+6.5.1.6.8.9.2.9.3.3.1.e164.arpa. 3 IN NAPTR 10 50 “u” “E2U+pstn:tel”
+“!^(.*)$!tel:\\\\1\\\;mcc=310\\\;mnc=012!” .
+;; Query time: 206 msec
+```
+
+
 ### Unsuccessful Query
 
 The answer to an unsuccessful query will not contain any answer section. No NAPTR record is return and the response code will be received in the status field.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "dig @93.158.78.4 6.5.1.6.8.9.2.9.3.3.1.e164.arpa IN NAPTR\n\n; < <>> DiG 9.8.3-P1 < <>> @93.158.78.4 6.5.1.6.8.9.2.9.3.3.1.e164.arpa IN NAPTR\n;; ->>HEADER< <- opcode: QUERY, status: SERVFAIL, id: 9512 ;; flags: qr; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 0 ;; QUESTION SECTION: ;6.5.1.6.8.9.2.9.3.3.1.e164.arpa. IN NAPTR ;; Query time: 202 msec",
-      "language": "sql"
-    }
-  ]
-}
-[/block]
+```sql
+dig @93.158.78.4 6.5.1.6.8.9.2.9.3.3.1.e164.arpa IN NAPTR
+
+; < <>> DiG 9.8.3-P1 < <>> @93.158.78.4 6.5.1.6.8.9.2.9.3.3.1.e164.arpa IN NAPTR
+;; ->>HEADER< <- opcode: QUERY, status: SERVFAIL, id: 9512 ;; flags: qr; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 0 ;; QUESTION SECTION: ;6.5.1.6.8.9.2.9.3.3.1.e164.arpa. IN NAPTR ;; Query time: 202 msec
+```
+
+
 ## Response Codes
 
 The list below specifies the Response Codes that can be returned.

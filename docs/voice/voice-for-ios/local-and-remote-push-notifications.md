@@ -21,16 +21,23 @@ For these scenarios, push notifications can be used to receive incoming calls an
 *SINManagedPush* is a component used to simplify acquiring a push device token and registering it with a Sinch client. It also simplifies in terms of abstracting away some of the iOS SDK API differences between iOS verions and APIs, as well as differences for regular remote push notifications and VoIP push notifications.
 
 *SINManagedPush* should be created as early as possible in the application’s life-cycle (and it’s lifecycle can be independent of a *SINClient’s* life-cycle.)
-[block:code]
-{
-  "codes": [
-    {
-      "code": "@interface AppDelegate () <SINManagedPushDelegate>\n@property (nonatomic, readwrite, strong) id<SINManagedPush> push;\n@end\n\n- (BOOL)application:(UIApplication *)application\n    didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {\n\n    self.push = [Sinch managedPushWithAPSEnvironment:SINAPSEnvironmentAutomatic];\n    self.push.delegate = self;\n\n    [self.push setDesiredPushTypeAutomatically];\n    [self.push registerUserNotificationSettings]; // This can be delayed to later in the app's life-cycle, e.g. once a user logs in.\n}",
-      "language": "objectivec"
-    }
-  ]
+```objectivec
+@interface AppDelegate () <SINManagedPushDelegate>
+@property (nonatomic, readwrite, strong) id<SINManagedPush> push;
+@end
+
+- (BOOL)application:(UIApplication *)application
+    didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
+    self.push = [Sinch managedPushWithAPSEnvironment:SINAPSEnvironmentAutomatic];
+    self.push.delegate = self;
+
+    [self.push setDesiredPushTypeAutomatically];
+    [self.push registerUserNotificationSettings]; // This can be delayed to later in the app's life-cycle, e.g. once a user logs in.
 }
-[/block]
+```
+
+
 
 [block:callout]
 {
@@ -41,29 +48,30 @@ For these scenarios, push notifications can be used to receive incoming calls an
 ### Enable push notifications on a Sinch client
 
 When creating a Sinch client, managed push notifications must be enabled:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "id<SINClient> client = [Sinch clientWithApplicationKey:@\"<application key>\" \n                                     applicationSecret:@\"<application secret>\"\n                                       environmentHost:@\"sandbox.sinch.com\" \n                                                userId:@\"<user id>\"];\n\n[client enableManagedPushNotifications];",
-      "language": "objectivec"
-    }
-  ]
-}
-[/block]
+```objectivec
+id<SINClient> client = [Sinch clientWithApplicationKey:@"<application key>" 
+                                     applicationSecret:@"<application secret>"
+                                       environmentHost:@"sandbox.sinch.com" 
+                                                userId:@"<user id>"];
+
+[client enableManagedPushNotifications];
+```
+
+
 ### Forward incoming push notifications to a Sinch client
 
 Implement the protocol `SINManagedPushDelegate` and forward any incoming push notifications to a Sinch client:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "// SINManagedPushDelegate\n- (void)managedPush:(id<SINManagedPush>)unused\n    didReceiveIncomingPushWithPayload:(NSDictionary *)payload\n                              forType:(NSString *)pushType {\n    id<SINClient> client; // get previously created client\n    [client relayRemotePushNotification:userInfo];\n}",
-      "language": "objectivec"
-    }
-  ]
+```objectivec
+// SINManagedPushDelegate
+- (void)managedPush:(id<SINManagedPush>)unused
+    didReceiveIncomingPushWithPayload:(NSDictionary *)payload
+                              forType:(NSString *)pushType {
+    id<SINClient> client; // get previously created client
+    [client relayRemotePushNotification:userInfo];
 }
-[/block]
+```
+
+
 The purpose of `SINManagedPushDelegate` and the delegate method `managedPush:didReceiveIncomingPushWithPayload:type:` is that it provides a single unified code path for handling incoming push notifications, no matter whether it is a regular remote push notification or a VoIP push notification (which is received via *PushKit* and *PKPushRegistry*). In the case of a regular remote push; independently of whether it is arriving via `-[UIApplicationDelegate didReceiveRemoteNotification:` or as a launch option via `-[UIApplication applicationDidFinishLaunching:didFinishLaunchingWithOptions:`.
 
 ### Unregister a push device token
@@ -73,29 +81,32 @@ If the user of the application logs out or performs a similar action, the push n
 ### Supporting regular remote push notifications (i.e. non-VoIP type push notifications)
 
 Because of differences in the iOS SDK API with respect to regular and VoIP push notifications, incoming push notifications have different code paths through an application. *SINManagedPush* unifies this to the extent possible, but for regular remote notifications which are traditionally received via methods on *UIApplicationDelegate*, the following methods should be forwarded from the application delegate:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "- (void)application:(UIApplication *)application\n    didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {\n        [self.push application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];\n}\n\n- (void)application:(UIApplication *)application \n    didReceiveRemoteNotification:(NSDictionary *)userInfo {\n        [self.push application:application didReceiveRemoteNotification:userInfo];\n}",
-      "language": "objectivec"
-    }
-  ]
+```objectivec
+- (void)application:(UIApplication *)application
+    didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+        [self.push application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
 }
-[/block]
+
+- (void)application:(UIApplication *)application 
+    didReceiveRemoteNotification:(NSDictionary *)userInfo {
+        [self.push application:application didReceiveRemoteNotification:userInfo];
+}
+```
+
+
 ### Sinch localization strings for push notification alerts
 
 When the Sinch dashboard sends a remote push notification for an incoming call or message it will by default use one of the localization strings shown below. You will need to add these to your `Localizable.strings` file.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "SIN_INCOMING_CALL = \"Incoming call\";\nSIN_INCOMING_CALL_DISPLAY_NAME = \"Incoming call from %@\";\nSIN_INCOMING_IM = \"Incoming message\";\nSIN_INCOMING_IM_DISPLAY_NAME = \"Incoming message from %@\";\nSIN_INCOMING_VIDEO_CALL = \"Incoming video call\";\nSIN_INCOMING_VIDEO_CALL_DISPLAY_NAME = \"Incoming video call from %@\";",
-      "language": "objectivec"
-    }
-  ]
-}
-[/block]
+```objectivec
+SIN_INCOMING_CALL = "Incoming call";
+SIN_INCOMING_CALL_DISPLAY_NAME = "Incoming call from %@";
+SIN_INCOMING_IM = "Incoming message";
+SIN_INCOMING_IM_DISPLAY_NAME = "Incoming message from %@";
+SIN_INCOMING_VIDEO_CALL = "Incoming video call";
+SIN_INCOMING_VIDEO_CALL_DISPLAY_NAME = "Incoming video call from %@";
+```
+
+
 `SIN_INCOMING_CALL_DISPLAY_NAME` (or `SIN_INCOMING_IM_DISPLAY_NAME`) will be used if display name have been set by the caller via `-[SINManagedPush setDisplayName:` or `-[SINClient setPushNotificationDisplayName:]`. Display name is included in a push notification on a best-effort basis. For example, if the target device has very limited push payload size constraints (e.g. iOS 7 can only handle 255 byte push notification payload), then the display name may not be included.
 [block:callout]
 {
@@ -112,27 +123,32 @@ If the application is not in foreground when receiving an incoming call, the `SI
 presented. 
 
 Example: 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "// implementation of SINCallClientDelegate\n- (SINLocalNotification *)client:(id<SINClient>)client \n  localNotificationForIncomingCall:(id<SINCall>)call {\n    SINLocalNotification *notification = [[SINLocalNotification alloc] init];\n    notification.alertAction = @\"Answer\";\n    notification.alertBody = @\"Incoming call\";\n    return notification;\n}",
-      "language": "objectivec"
-    }
-  ]
+```objectivec
+// implementation of SINCallClientDelegate
+- (SINLocalNotification *)client:(id<SINClient>)client 
+  localNotificationForIncomingCall:(id<SINCall>)call {
+    SINLocalNotification *notification = [[SINLocalNotification alloc] init];
+    notification.alertAction = @"Answer";
+    notification.alertBody = @"Incoming call";
+    return notification;
 }
-[/block]
+```
+
+
 If the user taps the notification, iOS brings the app back into the foreground. The notification object contains information that is needed by the Sinch SDK to continue initiating the incoming call. To hand over the notification object to the Sinch client, use the method `relayLocalNotification:`:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {\n\n    if ([notification sin_isSinchNotification]){\n\n      // This will trigger -[SINClientDelegate didReceiveIncomingCall:] if the notification\n      // represents a call (i.e. contrast to that it may represent an instant-message)\n      id<SINNotificationResult> result = [client relayLocalNotification:notification];\n    }\n}",
-      "language": "objectivec"
+```objectivec
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
+
+    if ([notification sin_isSinchNotification]){
+
+      // This will trigger -[SINClientDelegate didReceiveIncomingCall:] if the notification
+      // represents a call (i.e. contrast to that it may represent an instant-message)
+      id<SINNotificationResult> result = [client relayLocalNotification:notification];
     }
-  ]
 }
-[/block]
+```
+
+
 The `SINCallNotificationResult` object provides details about the caller, whether the call timed out and whether the call offers video.
 
 ### Answering a call received while in background
@@ -140,31 +156,42 @@ The `SINCallNotificationResult` object provides details about the caller, whethe
 Once the Sinch SDK has processed the call information extracted from the notification, it calls the delegate method `client:didReceiveIncomingCall:`. Depending on the desired behavior for the app, the incoming call may either be treated as any other incoming call and let the user tap an additional button to answer it, or the call may be answered automatically when the user has acted on the local notification.
 
 In the latter case, the app can determine whether the call originated from background mode or not by examining the `applicationStateWhenReceived` property of the call details object. If the application was active when it received the call, it means the app was in the foreground. This approach is also applicable to offline calls with Apple Push Notifications.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "- (void)client:(id<SINClient>)client didReceiveIncomingCall:(id<SINCall>)call {\n    call.delegate = self;\n\n    if (call.details.applicationStateWhenReceived == UIApplicationStateActive) {\n        // Show an answer button or similar in the UI\n    } else {\n        // Application was in not in the foreground when the call was initially received,\n        // and the user has opened the application (e.g. via a Local Notification),\n        // which we then interpret as that the user want to answer the call.\n        [call answer];\n    }\n}",
-      "language": "objectivec"
+```objectivec
+- (void)client:(id<SINClient>)client didReceiveIncomingCall:(id<SINCall>)call {
+    call.delegate = self;
+
+    if (call.details.applicationStateWhenReceived == UIApplicationStateActive) {
+        // Show an answer button or similar in the UI
+    } else {
+        // Application was in not in the foreground when the call was initially received,
+        // and the user has opened the application (e.g. via a Local Notification),
+        // which we then interpret as that the user want to answer the call.
+        [call answer];
     }
-  ]
 }
-[/block]
+```
+
+
 ## Presenting local notifications for missed calls
 
 When the push notification is enabled on a Sinch client, besides the incoming call notification, the Sinch SDK will also send a push notification for a canceled call when the caller cancels the call before it is answered. This gives developers a good opportunity to present local notifications for missed calls in their apps.
 
 A `SINNotificationResult` will be returned when an incoming push notification is forwarded to a Sinch client. It could then be inspected to determine if the push notification is a canceled call, it also provides detailed information such as `remoteUserId` to construct a more informative local notification for a missed call.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "// SINManagedPushDelegate\n- (void)managedPush:(id<SINManagedPush>)unused\n    didReceiveIncomingPushWithPayload:(NSDictionary *)payload\n                              forType:(NSString *)pushType {\n    id<SINClient> client; // get previously created client\n\n    id<SINNotificationResult> result = [client relayRemotePushNotification:userInfo];\n    if ([result isCall] && [[result callResult] isCallCanceled]) {\n        // present a local notification for the missed call.\n    }\n}",
-      "language": "objectivec"
+```objectivec
+// SINManagedPushDelegate
+- (void)managedPush:(id<SINManagedPush>)unused
+    didReceiveIncomingPushWithPayload:(NSDictionary *)payload
+                              forType:(NSString *)pushType {
+    id<SINClient> client; // get previously created client
+
+    id<SINNotificationResult> result = [client relayRemotePushNotification:userInfo];
+    if ([result isCall] && [[result callResult] isCallCanceled]) {
+        // present a local notification for the missed call.
     }
-  ]
 }
-[/block]
+```
+
+
 ## Enabling VoIP push notifications
 
 In iOS 8 Apple introduced remote VoIP push notifications and a new framework *PushKit.framework*. VoIP push is more battery efficient than using an active VoIP socket, and still provides the possibility of background execution which allows for faster call setup time. The Sinch SDK supports both VoIP and regular remote push notifications.
@@ -205,27 +232,37 @@ The following details explain how the Sinch SDK handles local notifications and 
 The Sinch SDK supports adding custom headers in push notification messages when initiating a call, so developers do not need to implement their own push mechanism if they only need to deliver small pieces of information along the Sinch managed push between their app instances. The Sinch SDK allows up to *1024* bytes of custom headers.
 
 Setting headers on the sender side when initiating a call:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "// Enable push notification on Sinch client before making the call\n...\n// Set headers\nNSDictionary *headers = @{\n                          @\"id\" : @\"0429\",\n                          @\"message\" : @\"Greetings from Alice.\"\n                          };\nid<SINCall> call = [self.callClient callUserWithId:@\"Bob\"\n                                           headers:headers];",
-      "language": "objectivec"
-    }
-  ]
-}
-[/block]
+```objectivec
+// Enable push notification on Sinch client before making the call
+...
+// Set headers
+NSDictionary *headers = @{
+                          @"id" : @"0429",
+                          @"message" : @"Greetings from Alice."
+                          };
+id<SINCall> call = [self.callClient callUserWithId:@"Bob"
+                                           headers:headers];
+```
+
+
 On the receiver side, the headers are received and encoded in the push payload, and can be queried by `[SINPushHelper queryPushNotificationPayload:payload]`. The helper will return a `SINNotificationResult` which contains `headers` inside `callResult`.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "+ (void)managedPush:(id<SINManagedPush>)unused\ndidReceiveIncomingPushWithPayload:(NSDictionary *)payload\n            forType:(NSString *)pushType {\n\n  id<SINNotificationResult> result = [SINPushHelper queryPushNotificationPayload:payload];\n  if ([result isCall]) {\n    NSLog(@\"%@\", result.callResult.headers);\n\n    // You can then invoke relayRemotePushNotification:userInfo\n    // on a SINClient instance to further process the incoming call.\n    ...\n  }\n}",
-      "language": "objectivec"
-    }
-  ]
+```objectivec
++ (void)managedPush:(id<SINManagedPush>)unused
+didReceiveIncomingPushWithPayload:(NSDictionary *)payload
+            forType:(NSString *)pushType {
+
+  id<SINNotificationResult> result = [SINPushHelper queryPushNotificationPayload:payload];
+  if ([result isCall]) {
+    NSLog(@"%@", result.callResult.headers);
+
+    // You can then invoke relayRemotePushNotification:userInfo
+    // on a SINClient instance to further process the incoming call.
+    ...
+  }
 }
-[/block]
+```
+
+
 ## Apple Push Notification Certificates
 
 Sending and receiving push notifications via Sinch requires you to create Apple Push Certificates and upload them to the Sinch Dashboard. For each application, Sinch allows you to upload up to three certificates corresponding, one for each type: *Development*, *Production* and *VoIP Services*.

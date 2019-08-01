@@ -3,29 +3,30 @@ title: "Postback Notifications"
 excerpt: ""
 ---
 When an MMS is saved, the system will generate a Postback notification and unlock MMS for further use. If an MMS contain audio/video, Postback will be sent when the encoding of the MMS audio/video is finished, otherwise Postback notification will be sent instantly. Below is an example of Postback notification when an MMS is saved successfully:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "<POSTBACK>\n    <ORIGIN>MMS_MT</ORIGIN>\n    <CODE>N003</CODE>\n    <MMSID>35674</MMSID>\n</POSTBACK>",
-      "language": "xml",
-      "name": "saveMMS Postback notification"
-    }
-  ]
-}
-[/block]
+
+**saveMMS Postback notification**
+```xml
+<POSTBACK>
+    <ORIGIN>MMS_MT</ORIGIN>
+    <CODE>N003</CODE>
+    <MMSID>35674</MMSID>
+</POSTBACK>
+```
+
+
 If there was an error encoding the MMS audio/video, the system will generate a notification:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "<POSTBACK>\n    <ORIGIN>MMS_MT</ORIGIN>\n    <CODE>E002</CODE>\n    <MMSID>35674</MMSID>\n    <AUDIONAME>http://www.yoursite.com/audio/1.mp3</AUDIONAME>\n</POSTBACK>",
-      "language": "xml",
-      "name": "saveMMS error Postback Notification"
-    }
-  ]
-}
-[/block]
+
+**saveMMS error Postback Notification**
+```xml
+<POSTBACK>
+    <ORIGIN>MMS_MT</ORIGIN>
+    <CODE>E002</CODE>
+    <MMSID>35674</MMSID>
+    <AUDIONAME>http://www.yoursite.com/audio/1.mp3</AUDIONAME>
+</POSTBACK>
+```
+
+
 ## Special Considerations for saveMMS
 
   - The API SHALL reformat the content when necessary so that it can be delivered to the end users handset in the best possible way.

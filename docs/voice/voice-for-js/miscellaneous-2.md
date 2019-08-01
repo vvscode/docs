@@ -5,16 +5,11 @@ excerpt: ""
 ## Restrictions on User IDs
 
 User IDs can only contain characters in the *printable ASCII character set*. That is:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~",
-      "language": "text"
-    }
-  ]
-}
-[/block]
+```text
+!"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
+```
+
+
 User IDs **must not** be longer than **40** characters.
 
 ## Encryption export regulations

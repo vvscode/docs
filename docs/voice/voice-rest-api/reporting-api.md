@@ -2,27 +2,23 @@
 title: "Reporting API"
 excerpt: ""
 ---
-[block:code]
-{
-  "codes": [
-    {
-      "code": "[URL] https://reportingapi.sinch.com/[version]\n\nCurrent version is \"v1\"",
-      "language": "text"
-    }
-  ]
-}
-[/block]
+```text
+[URL] https://reportingapi.sinch.com/[version]
+
+Current version is "v1"
+```
+
+
 ## Call Report Definition
-[block:code]
-{
-  "codes": [
-    {
-      "code": "[CallReportItem]\n  string - start\n  int - duration\n  int - success\n  int - failed",
-      "language": "json"
-    }
-  ]
-}
-[/block]
+```json
+[CallReportItem]
+  string - start
+  int - duration
+  int - success
+  int - failed
+```
+
+
 ## User Call Report
 
 Gets the aggregated call data for a specific user for a duration of up to 30 days.
@@ -32,64 +28,53 @@ Gets the aggregated call data for a specific user for a duration of up to 30 day
 This is a protected resource and requires an `application signed request <applicationsignedrequest>`.
 
 ### Request
-[block:code]
-{
-  "codes": [
-    {
-      "code": "https://reportingapi.sinch.com/v1/users/{type}/{endpoint}/calls/{domain}",
-      "language": "text"
-    }
-  ]
-}
-[/block]
+```text
+https://reportingapi.sinch.com/v1/users/{type}/{endpoint}/calls/{domain}
+```
+
+
 **type**, **endpoint**, **user identity** (see `Calling API documentation <calling-api>`).
 
 **domain** Optional parameter that specifies the terminating domain. Can be data or pstn. Default: **data**
-[block:code]
-{
-  "codes": [
-    {
-      "code": "* data - Calls that were terminated over data\n* pstn - Calls that were terminated over the phone network\n\nFilters:\n    time - _start\n    time - _stop",
-      "language": "text"
-    }
-  ]
-}
-[/block]
+```text
+* data - Calls that were terminated over data
+* pstn - Calls that were terminated over the phone network
+
+Filters:
+    time - _start
+    time - _stop
+```
+
+
 *Example*
-[block:code]
-{
-  "codes": [
-    {
-      "code": "[GET] https://reportingapi.sinch.com/v1/users/username/abc123def/calls/pstn?_start=2014-04-28&_stop=2014-04-29",
-      "language": "text"
-    }
-  ]
-}
-[/block]
+```text
+[GET] https://reportingapi.sinch.com/v1/users/username/abc123def/calls/pstn?_start=2014-04-28&_stop=2014-04-29
+```
+
+
 ### Response
-[block:code]
-{
-  "codes": [
-    {
-      "code": "CallReportItem\n  string - start\n  int - duration\n  int - success\n  int - failed",
-      "language": "json"
-    }
-  ]
-}
-[/block]
+```json
+CallReportItem
+  string - start
+  int - duration
+  int - success
+  int - failed
+```
+
+
 **duration** is the sum of the duration of all calls in seconds. **success shows the number of successful calls.** failed shows the number of failed calls.
 
 *Example*
-[block:code]
+```json
 {
-  "codes": [
-    {
-      "code": "{\n  \"success\": 2,\n    \"duration\": 623,\n      \"failed\": 0,\n        \"start\": \"2014-04-28T12:00:00Z\"\n}",
-      "language": "json"
-    }
-  ]
+  "success": 2,
+    "duration": 623,
+      "failed": 0,
+        "start": "2014-04-28T12:00:00Z"
 }
-[/block]
+```
+
+
 ## Counters
 
 Gets current value of a predefined instrumentation counter
@@ -99,53 +84,38 @@ Gets current value of a predefined instrumentation counter
 This is a protected resource and requires an `application signed request <applicationsignedrequest>`.
 
 ### Request
-[block:code]
-{
-  "codes": [
-    {
-      "code": "https://reportingapi.sinch.com/v1/counters/{id}",
-      "language": "text"
-    }
-  ]
-}
-[/block]
+```text
+https://reportingapi.sinch.com/v1/counters/{id}
+```
+
+
 **id** is a predefined counter id string - this needs to be set up in cooperation with Sinch support team
 
 *Example*
-[block:code]
-{
-  "codes": [
-    {
-      "code": "[GET] https://reportingapi.sinch.com/v1/counters/currentcalls",
-      "language": "text"
-    }
-  ]
-}
-[/block]
+```text
+[GET] https://reportingapi.sinch.com/v1/counters/currentcalls
+```
+
+
 ### Response
-[block:code]
-{
-  "codes": [
-    {
-      "code": "Counter\n    long - value\n    time - modified",
-      "language": "text"
-    }
-  ]
-}
-[/block]
+```text
+Counter
+    long - value
+    time - modified
+```
+
+
 **value** is the current value of the counter **modified** shows the date and time value of the last update to the counter
 
 *Example*
-[block:code]
+```json
 {
-  "codes": [
-    {
-      "code": "{\n  \"value\": 12384955,\n    \"modified\": \"2014-04-28T12:00:00Z\"\n}",
-      "language": "json"
-    }
-  ]
+  "value": 12384955,
+    "modified": "2014-04-28T12:00:00Z"
 }
-[/block]
+```
+
+
 ### Supported counters
 
 #### Current Calls
@@ -159,68 +129,44 @@ Number of ongoing calls
 }
 [/block]
 *Example*
-[block:code]
-{
-  "codes": [
-    {
-      "code": "[GET] https://reportingapi.sinch.com/v1/counters/currentcalls",
-      "language": "text"
-    }
-  ]
-}
-[/block]
+```text
+[GET] https://reportingapi.sinch.com/v1/counters/currentcalls
+```
+
+
 ## Get Service Status
 
 Gets the current status of a predefined service
 
 ### Request
-[block:code]
-{
-  "codes": [
-    {
-      "code": "https://reportingapi.sinch.com/v1/services/{id}",
-      "language": "text"
-    }
-  ]
-}
-[/block]
+```text
+https://reportingapi.sinch.com/v1/services/{id}
+```
+
+
 **id** is a predefined service id - this needs to be set up in cooperation with Sinch Noc - please contact Sinch to be able to get the status of a particular service in the platform
 
 *Example*
-[block:code]
-{
-  "codes": [
-    {
-      "code": "[GET] https://reportingapi.sinch.com/v1/services/rtpproxy",
-      "language": "text"
-    }
-  ]
-}
-[/block]
+```text
+[GET] https://reportingapi.sinch.com/v1/services/rtpproxy
+```
+
+
 ### Response
-[block:code]
-{
-  "codes": [
-    {
-      "code": "ServiceStatus\n    string - status",
-      "language": "text"
-    }
-  ]
-}
-[/block]
+```text
+ServiceStatus
+    string - status
+```
+
+
 \*\*status\* shows current status of service. It can take these values:
 
   - “up” = service is available
   - “down” = service is unavailable
 
 *Example*
-[block:code]
+```json
 {
-  "codes": [
-    {
-      "code": "{\n  \"status\": \"up\"\n}",
-      "language": "json"
-    }
-  ]
+  "status": "up"
 }
-[/block]
+```

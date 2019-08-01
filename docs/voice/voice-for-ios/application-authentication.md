@@ -52,35 +52,70 @@ This scheme has the benefit of the application secret never being directly acces
 ### Generating the signature
 
 The *Application Server* is responsible for generating a valid signature for each registration request that it accepts as a valid user registration. The *sequence* is a [cryptographic nonce](http://en.wikipedia.org/wiki/Cryptographic_nonce), and must be a monotonically increasing value. The signature is then generated as as follows (pseudogrammar):
-[block:code]
-{
-  "codes": [
-    {
-      "code": "string userId;\nstring applicationKey; // E.g. \"196087a1-e815-4bc4-8984-60d8d8a43f1d\"\nstring applicationSecret; // E.g. \"oYdgGRXoxEuJhGDY2KQ/HQ==\"\nuint64 sequence = previous_sequence + 1; // E.g. previous_sequence = 0\n\nstring stringToSign = userId + applicationKey + sequence + applicationSecret;\n\n// Use a Base64-encoder that don't introduce line-breaks, \n// or trim the output signature afterwards.\nstring signature = Base64.encode(SHA1.digest(stringToSign));",
-      "language": "objectivec"
-    }
-  ]
-}
-[/block]
+```objectivec
+string userId;
+string applicationKey; // E.g. "196087a1-e815-4bc4-8984-60d8d8a43f1d"
+string applicationSecret; // E.g. "oYdgGRXoxEuJhGDY2KQ/HQ=="
+uint64 sequence = previous_sequence + 1; // E.g. previous_sequence = 0
+
+string stringToSign = userId + applicationKey + sequence + applicationSecret;
+
+// Use a Base64-encoder that don't introduce line-breaks, 
+// or trim the output signature afterwards.
+string signature = Base64.encode(SHA1.digest(stringToSign));
+```
+
+
 For example, in Java:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "// Generating the Signature - Java\n// import java.security.MessageDigest;\n// import org.apache.commons.codec.binary.Base64;\n\nString userId; \nString applicationKey; // E.g. \"196087a1-e815-4bc4-8984-60d8d8a43f1d\";\nString applicationSecret; // E.g. \"oYdgGRXoxEuJhGDY2KQ/HQ==\";\nlong sequence; // fetch and increment last used sequence\n\nString toSign = userId + applicationKey + sequence + applicationSecret;\n\nMessageDigest messageDigest = MessageDigest.getInstance(\"SHA-1\");\nbyte[] hash = messageDigest.digest(toSign.getBytes(\"UTF-8\"));\n\nString signature = Base64.encodeBase64String(hash).trim();",
-      "language": "java"
-    }
-  ]
-}
-[/block]
+```java
+// Generating the Signature - Java
+// import java.security.MessageDigest;
+// import org.apache.commons.codec.binary.Base64;
+
+String userId; 
+String applicationKey; // E.g. "196087a1-e815-4bc4-8984-60d8d8a43f1d";
+String applicationSecret; // E.g. "oYdgGRXoxEuJhGDY2KQ/HQ==";
+long sequence; // fetch and increment last used sequence
+
+String toSign = userId + applicationKey + sequence + applicationSecret;
+
+MessageDigest messageDigest = MessageDigest.getInstance("SHA-1");
+byte[] hash = messageDigest.digest(toSign.getBytes("UTF-8"));
+
+String signature = Base64.encodeBase64String(hash).trim();
+```
+
+
 ## Starting the Client and Providing Authorization Credentials for User Registration
-[block:code]
-{
-  "codes": [
-    {
-      "code": "// Instantiate a client object using the client factory method.\nid<SINClient> client = [Sinch clientWithApplicationKey:@\"<application key>\" \n                                           environmentHost:@\"sandbox.sinch.com\" \n                                                    userId:@\"<user id>\"];\n\nclient.delegate = ...;\n\n[client start];\n\n// This will on the first run for this user, call \n// -[SINClientDelegate client:requiresRegistrationCredentials:], \n// which implementations could look something like this:\n\n- (void)client:(id<SINClient>)client \nrequiresRegistrationCredentials:(id<SINClientRegistration>) registrationCallback {\n\n  // Perform API request to server which keeps the Application Secret\n  [myAPIService getAuthorizedSignatureForUser:[client userId]\n  onSuccess:^(NSString* signature, long long sequence){\n\n    // Forward the signature and sequence back into Sinch SDK\n    [registrationCallback registerWithSignature:signature sequence:sequence];\n  }\n  onFailure:^(NSError* error) {\n\n    // Forward potential network request error to Sinch SDK, \n    // e.g. failure due to no internet connection.\n    [registrationCallback registerDidFail:error];\n  }];\n}",
-      "language": "objectivec"
-    }
-  ]
+```objectivec
+// Instantiate a client object using the client factory method.
+id<SINClient> client = [Sinch clientWithApplicationKey:@"<application key>" 
+                                           environmentHost:@"sandbox.sinch.com" 
+                                                    userId:@"<user id>"];
+
+client.delegate = ...;
+
+[client start];
+
+// This will on the first run for this user, call 
+// -[SINClientDelegate client:requiresRegistrationCredentials:], 
+// which implementations could look something like this:
+
+- (void)client:(id<SINClient>)client 
+requiresRegistrationCredentials:(id<SINClientRegistration>) registrationCallback {
+
+  // Perform API request to server which keeps the Application Secret
+  [myAPIService getAuthorizedSignatureForUser:[client userId]
+  onSuccess:^(NSString* signature, long long sequence){
+
+    // Forward the signature and sequence back into Sinch SDK
+    [registrationCallback registerWithSignature:signature sequence:sequence];
+  }
+  onFailure:^(NSError* error) {
+
+    // Forward potential network request error to Sinch SDK, 
+    // e.g. failure due to no internet connection.
+    [registrationCallback registerDidFail:error];
+  }];
 }
-[/block]
+```

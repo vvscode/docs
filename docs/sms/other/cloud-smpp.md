@@ -195,17 +195,13 @@ NB: `data_sm`, `query_sm`, `cancel_sm`, `replace_sm` and `submit_sm_multi` are n
 ## Delivery Receipts
 
 SMPP delivery receipts take the following format:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "id:IIIIIIIIII sub:SSS dlvrd:DDD submit date:YYMMDDhhmm done date:YYMMDDhhmm stat:DDDDDDD err:E Text .........",
-      "language": "text",
-      "name": "Format"
-    }
-  ]
-}
-[/block]
+
+**Format**
+```text
+id:IIIIIIIIII sub:SSS dlvrd:DDD submit date:YYMMDDhhmm done date:YYMMDDhhmm stat:DDDDDDD err:E Text .........
+```
+
+
 Where:
 
 >   - **id** - the message ID allocated to the message by the server

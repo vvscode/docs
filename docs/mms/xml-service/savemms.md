@@ -7,17 +7,29 @@ excerpt: ""
 This API stores an MMS from XML. The MMS may contain slides embedded with text, and video, audio, images, PDF, iCal, vCard, Passbook files. Once the MMS is saved, it can be utilized by other functions through the mms-id returned. Note, while elements may be given in any order, the slides are created in the order given in the API call.
 
 ### Request Example
-[block:code]
-{
-  "codes": [
-    {
-      "code": "<request>\n    <action>saveMMS</action>\n    <api-key>qTFkykO9JTfahCOqJ0V2Wf5Cg1t8iWlZ</api-key>\n    <message-subject>The subject</message-subject>\n    <name>FuelTheFire</name>\n    <slide>\n        <image><url>http://www.yoursite.com/images/1.jpg</url></image>\n        <audio><url>http://www.yoursite.com/audio/1.mp3</url></audio>\n        <message-text>Here is some text</message-text>\n        <duration>5</duration>\n    </slide>\n    <slide>\n        <message-text>My Contact</message-text>\n        <vcard><url>http://www.yoursite.com/2.vcf</url></vcard>\n        <duration>10</duration>\n    </slide>\n</request>",
-      "language": "xml",
-      "name": "saveMMS Request"
-    }
-  ]
-}
-[/block]
+
+**saveMMS Request**
+```xml
+<request>
+    <action>saveMMS</action>
+    <api-key>qTFkykO9JTfahCOqJ0V2Wf5Cg1t8iWlZ</api-key>
+    <message-subject>The subject</message-subject>
+    <name>FuelTheFire</name>
+    <slide>
+        <image><url>http://www.yoursite.com/images/1.jpg</url></image>
+        <audio><url>http://www.yoursite.com/audio/1.mp3</url></audio>
+        <message-text>Here is some text</message-text>
+        <duration>5</duration>
+    </slide>
+    <slide>
+        <message-text>My Contact</message-text>
+        <vcard><url>http://www.yoursite.com/2.vcf</url></vcard>
+        <duration>10</duration>
+    </slide>
+</request>
+```
+
+
   - **Request Parameters:**  
     Mandatory: action, api\_key, subject, name, slide
     
@@ -33,40 +45,50 @@ This API stores an MMS from XML. The MMS may contain slides embedded with text, 
     E352, E353, E355, E356, E357, E358
 
 ### Response Examples
-[block:code]
-{
-  "codes": [
-    {
-      "code": "<response>\n    <status>Success</status>\n    <mms-id>35674</mms-id>\n</response>",
-      "language": "xml",
-      "name": "saveMMS Success Response"
-    },
-    {
-      "code": "<response>\n    <status>Failure</status>\n    <error-code>E111</error-code>\n    <error-info>Invalid shortcode</error-info>\n</response>",
-      "language": "xml",
-      "name": "saveMMS Failure Response"
-    }
-  ]
-}
-[/block]
+
+**saveMMS Success Response**
+```xml
+<response>
+    <status>Success</status>
+    <mms-id>35674</mms-id>
+</response>
+```
+
+
+**saveMMS Failure Response**
+```xml
+<response>
+    <status>Failure</status>
+    <error-code>E111</error-code>
+    <error-info>Invalid shortcode</error-info>
+</response>
+```
+
+
 ## Postback Notifications 
 When an MMS is saved, the system will generate a Postback notification and unlock MMS for further use. If an MMS contain audio/video, Postback will be sent when the encoding of the MMS audio/video is finished, otherwise Postback notification will be sent instantly. Below is an example of Postback notification when an MMS is saved successfully:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "<POSTBACK>\n    <ORIGIN>MMS_MT</ORIGIN>\n    <CODE>N003</CODE>\n    <MMSID>35674</MMSID>\n</POSTBACK>",
-      "language": "xml",
-      "name": "saveMMS Postback notification"
-    },
-    {
-      "code": "<POSTBACK>\n    <ORIGIN>MMS_MT</ORIGIN>\n    <CODE>E002</CODE>\n    <MMSID>35674</MMSID>\n    <AUDIONAME>http://www.yoursite.com/audio/1.mp3</AUDIONAME>\n</POSTBACK>",
-      "language": "xml",
-      "name": "saveMMS error Postback Notification"
-    }
-  ]
-}
-[/block]
+
+**saveMMS Postback notification**
+```xml
+<POSTBACK>
+    <ORIGIN>MMS_MT</ORIGIN>
+    <CODE>N003</CODE>
+    <MMSID>35674</MMSID>
+</POSTBACK>
+```
+
+
+**saveMMS error Postback Notification**
+```xml
+<POSTBACK>
+    <ORIGIN>MMS_MT</ORIGIN>
+    <CODE>E002</CODE>
+    <MMSID>35674</MMSID>
+    <AUDIONAME>http://www.yoursite.com/audio/1.mp3</AUDIONAME>
+</POSTBACK>
+```
+
+
 ## Special Considerations for saveMMS
 
   - The API SHALL reformat the content when necessary so that it can be delivered to the end users handset in the best possible way.

@@ -40,16 +40,35 @@ See unsupported elements for MM7\_Submit:
 `unsupported_MM7_SOAP_Elements_Submit`.
 
 **Example**
-[block:code]
-{
-  "codes": [
-    {
-      "code": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<soap-env:Envelope xmlns:soap-env=\"http://schemas.xmlsoap.org/soap/envelope/\">\n    <soap-env:Header>\n        <TransactionID xmlns=\"http://www.3gpp.org/ftp/Specs/archive/23_series/23.140/schema/REL-6-MM7-1-4\" soap-env:mustUnderstand=\"1\">1000001</TransactionID>\n    </soap-env:Header>\n    <soap-env:Body>\n        <SubmitReq xmlns=\"http://www.3gpp.org/ftp/Specs/archive/23_series/23.140/schema/REL-6-MM7-1-4\">\n            <MM7Version>6.8.0</MM7Version>\n            <SenderIdentification>\n                <VASPID>skfdjslkjfdslkfj434das</VASPID>\n                <VASID>126273</VASID>\n                <SenderAddress>\n                    <ShortCode>111122</ShortCode>\n                </SenderAddress>\n            </SenderIdentification>\n            <Recipients>\n                <To>\n                    <Number>16172383232</Number>\n                </To>\n            </Recipients>\n            <Subject>My first MM7 Message</Subject>\n            <Content allowAdaptations=\"false\" href=\"cid:generic\" />\n        </SubmitReq>\n    </soap-env:Body>\n</soap-env:Envelope>",
-      "language": "xml"
-    }
-  ]
-}
-[/block]
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap-env:Header>
+        <TransactionID xmlns="http://www.3gpp.org/ftp/Specs/archive/23_series/23.140/schema/REL-6-MM7-1-4" soap-env:mustUnderstand="1">1000001</TransactionID>
+    </soap-env:Header>
+    <soap-env:Body>
+        <SubmitReq xmlns="http://www.3gpp.org/ftp/Specs/archive/23_series/23.140/schema/REL-6-MM7-1-4">
+            <MM7Version>6.8.0</MM7Version>
+            <SenderIdentification>
+                <VASPID>skfdjslkjfdslkfj434das</VASPID>
+                <VASID>126273</VASID>
+                <SenderAddress>
+                    <ShortCode>111122</ShortCode>
+                </SenderAddress>
+            </SenderIdentification>
+            <Recipients>
+                <To>
+                    <Number>16172383232</Number>
+                </To>
+            </Recipients>
+            <Subject>My first MM7 Message</Subject>
+            <Content allowAdaptations="false" href="cid:generic" />
+        </SubmitReq>
+    </soap-env:Body>
+</soap-env:Envelope>
+```
+
+
 ## MM7\_Submit.RES
 
 **Supported MM7 SOAP envelope response elements**
@@ -65,48 +84,148 @@ See unsupported elements for MM7\_Submit:
 | MessageId     | If the MT message submit is successful then this contains the Sinch,generated ID of the submitted message. This ID is expected in the,delivery reports relating to this message.                  |
 
 **Example: Success**
-[block:code]
-{
-  "codes": [
-    {
-      "code": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<soap-env:Envelope xmlns:soap-env=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns=\n\"http://www.3gpp.org/ftp/Specs/archive/23_series/23.140/schema/REL-6-MM7-1-4\">\n   <soap-env:Header>\n      <TransactionID soap-env:mustUnderstand=\"1\">1000001</TransactionID>\n   </soap-env:Header>\n   <soap-env:Body>\n      <SubmitRsp>\n         <MM7Version>6.8.0</MM7Version>\n         <Status>\n            <StatusCode>1000</StatusCode>\n            <StatusText>Successfully parsed and validated request</StatusText>\n         </Status>\n         <MessageID>369500617770864640</MessageID>\n      </SubmitRsp>\n   </soap-env:Body>\n</soap-env:Envelope>",
-      "language": "xml"
-    }
-  ]
-}
-[/block]
+```xml
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/" xmlns=
+"http://www.3gpp.org/ftp/Specs/archive/23_series/23.140/schema/REL-6-MM7-1-4">
+   <soap-env:Header>
+      <TransactionID soap-env:mustUnderstand="1">1000001</TransactionID>
+   </soap-env:Header>
+   <soap-env:Body>
+      <SubmitRsp>
+         <MM7Version>6.8.0</MM7Version>
+         <Status>
+            <StatusCode>1000</StatusCode>
+            <StatusText>Successfully parsed and validated request</StatusText>
+         </Status>
+         <MessageID>369500617770864640</MessageID>
+      </SubmitRsp>
+   </soap-env:Body>
+</soap-env:Envelope>
+```
+
+
 **Example: Failure**
-[block:code]
-{
-  "codes": [
-    {
-      "code": "Failure\n<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<soap-env:Envelope xmlns:soap-env=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns=\n\"http://www.3gpp.org/ftp/Specs/archive/23_series/23.140/schema/REL-6-MM7-1-4\">\n   <soap-env:Header>\n      <TransactionID soap-env:mustUnderstand=\"1\">1000001</TransactionID>\n   </soap-env:Header>\n   <soap-env:Body>\n       <soap-env:Fault>\n            <faultcode>soap-env:Client</faultcode>\n            <faultstring>Client error</faultstring>\n            <detail>\n                  <RSErrorRsp>\n                    <MM7Version>6.8.0</MM7Version>\n                    <Status>\n                        <StatusCode>2007</StatusCode>\n                        <StatusText>Unable to parse request</StatusText>\n                        <Details>Message format corrupt</Details>\n                    </Status>\n                  </RSErrorRsp>\n            </detail>\n        <soap-env:Fault>\n   </soap-env:Body>\n</soap-env:Envelope>",
-      "language": "xml"
-    }
-  ]
-}
-[/block]
+```xml
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/" xmlns=
+"http://www.3gpp.org/ftp/Specs/archive/23_series/23.140/schema/REL-6-MM7-1-4">
+   <soap-env:Header>
+      <TransactionID soap-env:mustUnderstand="1">1000001</TransactionID>
+   </soap-env:Header>
+   <soap-env:Body>
+       <soap-env:Fault>
+            <faultcode>soap-env:Client</faultcode>
+            <faultstring>Client error</faultstring>
+            <detail>
+                  <RSErrorRsp>
+                    <MM7Version>6.8.0</MM7Version>
+                    <Status>
+                        <StatusCode>2007</StatusCode>
+                        <StatusText>Unable to parse request</StatusText>
+                        <Details>Message format corrupt</Details>
+                    </Status>
+                  </RSErrorRsp>
+            </detail>
+        </soap-env:Fault>
+   </soap-env:Body>
+</soap-env:Envelope>
+```
+
+
 ## MT Submit Full Example
 
 **Request:**
-[block:code]
-{
-  "codes": [
-    {
-      "code": "Request\nPOST /mm7/v1 HTTP/1.1\nAuthorization: Basic dW5pdmyc2FsLXZhcj2YWwtdmFzcC1wd2Q=\nHost: api.Mblox.com\nAccept: */*\nContent-Type: multipart/related; boundary=\"mainBoundary\"; type=\"text/xml\"; start=\"<mm7-start>\"\nSOAPAction: \"http://www.3gpp.org/ftp/Specs/archive/23_series/23.140/schema/REL-6-MM7-1-4\"\nContent-Length: 45454\nX-Mblox-Carrier-Id: 0001890\nExpect: 100-continue\n\n--mainBoundary\nContent-Type: text/xml; charset=utf-8\nContent-ID: <mm7-start>\n\n<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\">\n    <SOAP-ENV:Header>\n        <TransactionID xmlns=\"http://www.3gpp.org/ftp/Specs/archive/23_series/23.140/schema/REL-6-MM7-1-4\" SOAP-ENV:mustUnderstand=\"1\">555e29f8879be</TransactionID>\n    </SOAP-ENV:Header>\n    <SOAP-ENV:Body>\n        <SubmitReq>\n            <MM7Version>6.8.0</MM7Version>\n            <DeliveryReport>true</DeliveryReport>\n            <SenderIdentification>\n                <VASPID>spUsdstW2u6GbvnMOsdseXrBa7NNLwTdKL</VASPID>\n                <VASID>61295</VASID>\n                <SenderAddress>\n                    <ShortCode>111122</ShortCode>\n                </SenderAddress>\n            </SenderIdentification>\n            <Recipients>\n                <To>\n                    <Number>16179593069</Number>\n                </To>\n            </Recipients>\n            <Subject>My first MM7 Message</Subject>\n            <ExpiryDate>2015-05-24T18:54:48+00:00</ExpiryDate>\n            <TimeStamp>2015-05-21T18:54:48+00:00</TimeStamp>\n            <Content allowAdaptations=\"false\" href=\"cid:generic_content_id\"/>\n        </SubmitReq>\n    </SOAP-ENV:Body>\n</SOAP-ENV:Envelope>\n\n--mainBoundary\nContent-Type: multipart/related; start=\"<mms.smil>\";\n         boundary=\"subBoundary\"; type=\"text/xml\"\nContent-ID: <generic_content_id>\n\n--subBoundary\nContent-Type: text/plain; charset=utf-8\nContent-ID: <132c4ca56a209475>\n\nMM7 Test Text\n--subBoundary\nContent-Type: application/smil; charset=utf-8\nContent-ID: <mms.smil>\n\n<?xml version=\"1.0\" encoding=\"UTF-8\"?><smil><head><layout><root-layout width=\"100%\" height=\"100%\"/><region id=\"Text\" top=\"50%\" left=\"0\" height=\"50%\" width=\"100%\" fit=\"hidden\"/></layout></head><body><par><text src=\"cid:132c4ca56a209475\" region=\"Text\"/></par></body></smil>\n--subBoundary--\n\n--mainBoundary--",
-      "language": "xml"
-    }
-  ]
-}
-[/block]
+```text
+POST /mm7/v1 HTTP/1.1
+Authorization: Basic dW5pdmyc2FsLXZhcj2YWwtdmFzcC1wd2Q=
+Host: api.Mblox.com
+Accept: */*
+Content-Type: multipart/related; boundary="mainBoundary"; type="text/xml"; start="<mm7-start>"
+SOAPAction: "http://www.3gpp.org/ftp/Specs/archive/23_series/23.140/schema/REL-6-MM7-1-4"
+Content-Length: 45454
+X-Mblox-Carrier-Id: 0001890
+Expect: 100-continue
+
+--mainBoundary
+Content-Type: text/xml; charset=utf-8
+Content-ID: <mm7-start>
+
+<?xml version="1.0" encoding="utf-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+    <SOAP-ENV:Header>
+        <TransactionID xmlns="http://www.3gpp.org/ftp/Specs/archive/23_series/23.140/schema/REL-6-MM7-1-4" SOAP-ENV:mustUnderstand="1">555e29f8879be</TransactionID>
+    </SOAP-ENV:Header>
+    <SOAP-ENV:Body>
+        <SubmitReq>
+            <MM7Version>6.8.0</MM7Version>
+            <DeliveryReport>true</DeliveryReport>
+            <SenderIdentification>
+                <VASPID>spUsdstW2u6GbvnMOsdseXrBa7NNLwTdKL</VASPID>
+                <VASID>61295</VASID>
+                <SenderAddress>
+                    <ShortCode>111122</ShortCode>
+                </SenderAddress>
+            </SenderIdentification>
+            <Recipients>
+                <To>
+                    <Number>16179593069</Number>
+                </To>
+            </Recipients>
+            <Subject>My first MM7 Message</Subject>
+            <ExpiryDate>2015-05-24T18:54:48+00:00</ExpiryDate>
+            <TimeStamp>2015-05-21T18:54:48+00:00</TimeStamp>
+            <Content allowAdaptations="false" href="cid:generic_content_id"/>
+        </SubmitReq>
+    </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+--mainBoundary
+Content-Type: multipart/related; start="<mms.smil>";
+         boundary="subBoundary"; type="text/xml"
+Content-ID: <generic_content_id>
+
+--subBoundary
+Content-Type: text/plain; charset=utf-8
+Content-ID: <132c4ca56a209475>
+
+MM7 Test Text
+--subBoundary
+Content-Type: application/smil; charset=utf-8
+Content-ID: <mms.smil>
+
+<?xml version="1.0" encoding="UTF-8"?><smil><head><layout><root-layout width="100%" height="100%"/><region id="Text" top="50%" left="0" height="50%" width="100%" fit="hidden"/></layout></head><body><par><text src="cid:132c4ca56a209475" region="Text"/></par></body></smil>
+--subBoundary--
+
+--mainBoundary--
+```
+
+
 **Response:**
-[block:code]
-{
-  "codes": [
-    {
-      "code": "Response\nHTTP/1.1 200 OK\nContent-Type: application/xml; charset=utf-8\nDate: Mon, 16 Mar 2015 17:46:59 GMT\nServer: Apache\nVary: Accept-Encoding,User-Agent\nContent-Length: 715\nConnection: keep-alive\n\n<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<soap-env:Envelope xmlns:soap-env=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns=\n\"http://www.3gpp.org/ftp/Specs/archive/23_series/23.140/schema/REL-6-MM7-1-4\">\n   <soap-env:Header>\n      <TransactionID soap-env:mustUnderstand=\"1\">1000001</TransactionID>\n   </soap-env:Header>\n   <soap-env:Body>\n      <SubmitRsp>\n         <MM7Version>6.8.0</MM7Version>\n         <Status>\n            <StatusCode>1000</StatusCode>\n            <StatusText>Successfully parsed and validated request</StatusText>\n         </Status>\n         <MessageID>369500617770864640</MessageID>\n      </SubmitRsp>\n   </soap-env:Body>\n</soap-env:Envelope>",
-      "language": "xml"
-    }
-  ]
-}
-[/block]
+```text
+HTTP/1.1 200 OK
+Content-Type: application/xml; charset=utf-8
+Date: Mon, 16 Mar 2015 17:46:59 GMT
+Server: Apache
+Vary: Accept-Encoding,User-Agent
+Content-Length: 715
+Connection: keep-alive
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/" xmlns=
+"http://www.3gpp.org/ftp/Specs/archive/23_series/23.140/schema/REL-6-MM7-1-4">
+   <soap-env:Header>
+      <TransactionID soap-env:mustUnderstand="1">1000001</TransactionID>
+   </soap-env:Header>
+   <soap-env:Body>
+      <SubmitRsp>
+         <MM7Version>6.8.0</MM7Version>
+         <Status>
+            <StatusCode>1000</StatusCode>
+            <StatusText>Successfully parsed and validated request</StatusText>
+         </Status>
+         <MessageID>369500617770864640</MessageID>
+      </SubmitRsp>
+   </soap-env:Body>
+</soap-env:Envelope>
+```

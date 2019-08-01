@@ -21,17 +21,14 @@ The following types and concept are available:
 ### Authentication
 
 Request with token
-[block:code]
-{
-  "codes": [
-    {
-      "code": "$ curl -H \"Authorization: Bearer {token}\" \\\n\"https://api.clxcommunications.com/rcs/v1/{endpoint}\"",
-      "language": "shell",
-      "name": "Request with token"
-    }
-  ]
-}
-[/block]
+
+**Request with token**
+```shell
+$ curl -H "Authorization: Bearer {token}" \
+"https://api.clxcommunications.com/rcs/v1/{endpoint}"
+```
+
+
 The token is required for all requests made to the REST API.
 
 The token is sent in the `Authorization` header, preceded by `Bearer`.
@@ -41,15 +38,21 @@ Please contact your Technical Account Manager to obtain your API token.
 ### Sending the first message
 
 Example of sending a simple text message.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "curl https://api.clxcommunications.com/rcs/v1/my-agent-id/messages \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer zIMEJGfwD4oJ4qObPPjwZxwiP5cKARXRJpt9Kf6GSv7uOesvRV\" \\\n  -d '{\n    \"message_id\": \"59a75b73-0669-4075-aeff-2a13f9967ebb\",\n    \"to\": \"46555123456\",\n    \"message\": {\n      \"type\": \"text\",\n      \"text\": \"Madam Im Adam\"\n    }\n  }'",
-      "language": "shell",
-      "name": "Sending a simple text message"
+
+**Sending a simple text message**
+```shell
+curl https://api.clxcommunications.com/rcs/v1/my-agent-id/messages \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer zIMEJGfwD4oJ4qObPPjwZxwiP5cKARXRJpt9Kf6GSv7uOesvRV" \
+  -d '{
+    "message_id": "59a75b73-0669-4075-aeff-2a13f9967ebb",
+    "to": "46555123456",
+    "message": {
+      "type": "text",
+      "text": "Madam Im Adam"
     }
-  ]
-}
-[/block]
+  }'
+```
+
+
 Sending messages is described in detail in [Messages Endpoint](doc:messages-endpoint#section-send-a-message).

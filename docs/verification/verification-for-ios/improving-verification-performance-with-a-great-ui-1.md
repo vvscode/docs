@@ -7,16 +7,21 @@ For better verification performance, it should be straightforward and easy for u
 ## As-You-Type-Formatting
 
 The class `SINUITextFieldPhoneNumberFormatter` provides *"As-You-Type-Formatting"* on a UITextField. Example usage:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "UITextField* textField = ... // your text field\nNSString* defaultRegion = [SINDeviceregion currentCountryCode];\n\nSINUITextFieldPhoneNumberFormatter* formatter;\nformatter = [[SINUITextFieldPhoneNumberFormatter alloc] initWithCountryCode:defaultRegion];\nformatter.textField = textField;\ntextField.placeholder = [formatter exampleNumberWithFormat:SINPhoneNumberFormatNational];\nformatter.onTextFieldTextDidChange = ^(UITextField *textField) {\n  BOOL isViablePhoneNumber = [SINPhoneNumberUtil() isPossibleNumber:textField.text fromRegion:defaultRegion error:nil]\n    // Update UI based, e.g. color text field based on result\n};",
-      "language": "objectivec"
-    }
-  ]
-}
-[/block]
+```objectivec
+UITextField* textField = ... // your text field
+NSString* defaultRegion = [SINDeviceregion currentCountryCode];
+
+SINUITextFieldPhoneNumberFormatter* formatter;
+formatter = [[SINUITextFieldPhoneNumberFormatter alloc] initWithCountryCode:defaultRegion];
+formatter.textField = textField;
+textField.placeholder = [formatter exampleNumberWithFormat:SINPhoneNumberFormatNational];
+formatter.onTextFieldTextDidChange = ^(UITextField *textField) {
+  BOOL isViablePhoneNumber = [SINPhoneNumberUtil() isPossibleNumber:textField.text fromRegion:defaultRegion error:nil]
+    // Update UI based, e.g. color text field based on result
+};
+```
+
+
 Example how *As-You-Type-Formatting* can look for the user:
 [block:image]
 {
@@ -36,24 +41,27 @@ Example how *As-You-Type-Formatting* can look for the user:
 ## Listing regions and country dialing codes
 
 Example of populating a *UITableView* with a list of countries and their country calling code (in *Swift*):
-[block:code]
-{
-  "codes": [
-    {
-      "code": "var regions: Array<SINRegionInfo> = [];\n\nlet regionList = PhoneNumberUtil().regionList(forLocale: NSLocale.currentLocale());\n\nregions = regionList.entries.sort({ (a: SINRegionInfo, b: SINRegionInfo) -> Bool in\n            return a.countryDisplayName < b.countryDisplayName;\n          })",
-      "language": "swift"
-    }
-  ]
-}
-[/block]
+```swift
+var regions: Array<SINRegionInfo> = [];
+
+let regionList = PhoneNumberUtil().regionList(forLocale: NSLocale.currentLocale());
+
+regions = regionList.entries.sort({ (a: SINRegionInfo, b: SINRegionInfo) -> Bool in
+            return a.countryDisplayName < b.countryDisplayName;
+          })
+```
+
+
 Then as for the *UITableViewDataSource*:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {\n        let cell = tableView.dequeueReusableCellWithIdentifier(...)\n\n        let region = regions[indexPath.row];\n\n        cell.textLabel?.text  = entry.countryDisplayName;\n        cell.detailTextLabel?.text = String(format:\"(+%@)\", entry.countryCallingCode);\n\n        return cell;\n}",
-      "language": "swift"
-    }
-  ]
+```swift
+override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(...)
+
+        let region = regions[indexPath.row];
+
+        cell.textLabel?.text  = entry.countryDisplayName;
+        cell.detailTextLabel?.text = String(format:"(+%@)", entry.countryCallingCode);
+
+        return cell;
 }
-[/block]
+```

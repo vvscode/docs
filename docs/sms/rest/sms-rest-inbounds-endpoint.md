@@ -18,53 +18,41 @@ Inbounds, or Mobile Originated messages, are incoming messages. Inbound messages
 NB: The operator is only available for MOs sent to short codes.
 
 ### List inbound messages
-[block:code]
-{
-  "codes": [
-    {
-      "code": "curl -H \"Authorization: Bearer {token}\" \\\n  \"https://api.clxcommunications.com/xms/v1/{service_plan_id}/inbounds\"",
-      "language": "shell",
-      "name": "Retrieve the first 30 inbound messages from the last 24 hours."
-    }
-  ]
-}
-[/block]
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "curl -H \"Authorization: Bearer {token}\" \\\n  \"https://api.clxcommunications.com/xms/v1/{service_plan_id}/inbounds?page=2&page_size=50\"",
-      "language": "shell",
-      "name": "Retrieve the third page of inbound messages with a page size of 50 from the last 24 hours"
-    }
-  ]
-}
-[/block]
+**Retrieve the first 30 inbound messages from the last 24 hours.**
+```shell
+curl -H "Authorization: Bearer {token}" \
+  "https://api.clxcommunications.com/xms/v1/{service_plan_id}/inbounds"
+```
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "curl -H \"Authorization: Bearer {token}\" \\\n  \"https://api.clxcommunications.com/xms/v1/{service_plan_id}/inbounds?start_date=20140623TZ&end_date=20140624TZ\"",
-      "language": "shell",
-      "name": "Retrieve inbound messages received on June 23rd, 2014 UTC"
-    }
-  ]
-}
-[/block]
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "curl -H \"Authorization: Bearer {token}\" \\\n  \"https://api.clxcommunications.com/xms/v1/{service_plan_id}/inbounds?to=12345,54321\"",
-      "language": "shell",
-      "name": "Retrieve the batches sent to 12345 or 54321"
-    }
-  ]
-}
-[/block]
+
+
+**Retrieve the third page of inbound messages with a page size of 50 from the last 24 hours**
+```shell
+curl -H "Authorization: Bearer {token}" \
+  "https://api.clxcommunications.com/xms/v1/{service_plan_id}/inbounds?page=2&page_size=50"
+```
+
+
+
+
+**Retrieve inbound messages received on June 23rd, 2014 UTC**
+```shell
+curl -H "Authorization: Bearer {token}" \
+  "https://api.clxcommunications.com/xms/v1/{service_plan_id}/inbounds?start_date=20140623TZ&end_date=20140624TZ"
+```
+
+
+
+
+**Retrieve the batches sent to 12345 or 54321**
+```shell
+curl -H "Authorization: Bearer {token}" \
+  "https://api.clxcommunications.com/xms/v1/{service_plan_id}/inbounds?to=12345,54321"
+```
+
+
 With the list operation you can list all inbound messages that you have received. This operation supports pagination.
 
 Inbounds are returned in reverse chronological order.
@@ -111,14 +99,9 @@ This operation retrieves a specific inbound message with the provided inbound ID
 The response is a JSON object described in `inbounds_endpoint` response.
 
 **404 Not Found**
-[block:code]
-{
-  "codes": [
-    {
-      "code": "curl -H \"Authorization: Bearer {token}\" \\\n  \"https://api.clxcommunications.com/xms/v1/{service_plan_id}/inbounds/{inbound_id}\"",
-      "language": "shell",
-      "name": "If the inbound ID is unknown to the system"
-    }
-  ]
-}
-[/block]
+
+**If the inbound ID is unknown to the system**
+```shell
+curl -H "Authorization: Bearer {token}" \
+  "https://api.clxcommunications.com/xms/v1/{service_plan_id}/inbounds/{inbound_id}"
+```

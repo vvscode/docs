@@ -17,16 +17,14 @@ If the permissions needed for automatic verification are not provided, the `veri
 The `android.permission.INTERNET` permission is required for the Verification SDK to work. To handle flash call verification automatically, use `READ_PHONE_STATE`, and `CALL_PHONE`. `CALL_PHONE` is used to automatically hang up the call.
 
 The full list of permissions:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "<uses-permission android:name=\"android.permission.INTERNET\" />\n<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />\n<uses-permission android:name=\"android.permission.READ_PHONE_STATE\" />\n<uses-permission android:name=\"android.permission.CALL_PHONE\" />",
-      "language": "xml"
-    }
-  ]
-}
-[/block]
+```xml
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+<uses-permission android:name="android.permission.CALL_PHONE" />
+```
+
+
 ### Permissions handling on API levels 23 or later.
 
 If your application targets API 23 or later the permissions have to be requested at runtime, see [Runtime Permissions](https://developer.android.com/training/permissions/requesting.html).   It is recommended to ask the user for corresponding permissions just before initiating verification. See the sample application for an example.   If the verification SDK fails to intercept the code automatically due to missing permissions, the `onVerificationFailed` callback will be executed with an instance of `CodeInterceptionException`. In this case it is still possible to proceed with verification by asking the user to enter the code manually.
@@ -34,16 +32,16 @@ If your application targets API 23 or later the permissions have to be requested
 ## Flash Call Verification
 
 To initiate a flash call verification, start by creating a `Verification` object through `SinchVerification.createFlashCallVerification`, then start the verification process by invoking `initiate()` on the `Verification` object. This method can be called multiple times, for example if another call should be placed.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "Config config = SinchVerification.config().applicationKey(APPLICATION_KEY).context(getApplicationContext()).build();\nVerificationListener listener = new MyVerificationListener();\nString defaultRegion = PhoneNumberUtils.getDefaultCountryIso();\nString phoneNumberInE164 = PhoneNumberUtils.formatNumberToE164(phoneNumberString, defaultRegion);\nVerification verification = SinchVerification.createFlashCallVerification(config, phoneNumberInE164, listener);\nverification.initiate();",
-      "language": "java"
-    }
-  ]
-}
-[/block]
+```java
+Config config = SinchVerification.config().applicationKey(APPLICATION_KEY).context(getApplicationContext()).build();
+VerificationListener listener = new MyVerificationListener();
+String defaultRegion = PhoneNumberUtils.getDefaultCountryIso();
+String phoneNumberInE164 = PhoneNumberUtils.formatNumberToE164(phoneNumberString, defaultRegion);
+Verification verification = SinchVerification.createFlashCallVerification(config, phoneNumberInE164, listener);
+verification.initiate();
+```
+
+
 
 [block:callout]
 {
@@ -55,16 +53,16 @@ To initiate a flash call verification, start by creating a `Verification` object
 ## SMS Verification
 
 To initiate an SMS verification, start by creating a `Verification` object through `SinchVerification.createSmsVerification`, then start the verification process by invoking `initiate()` on the `Verification` object. This method can be called multiple times, for example, if another SMS should be sent.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "Config config = SinchVerification.config().applicationKey(APPLICATION_KEY).context(getApplicationContext()).build();\nVerificationListener listener = new MyVerificationListener();\nString defaultRegion = PhoneNumberUtils.getDefaultCountryIso();\nString phoneNumberInE164 = PhoneNumberUtils.formatNumberToE164(phoneNumberString, defaultRegion);\nVerification verification = SinchVerification.createSmsVerification(config, phoneNumberInE164, listener);\nverification.initiate();",
-      "language": "java"
-    }
-  ]
-}
-[/block]
+```java
+Config config = SinchVerification.config().applicationKey(APPLICATION_KEY).context(getApplicationContext()).build();
+VerificationListener listener = new MyVerificationListener();
+String defaultRegion = PhoneNumberUtils.getDefaultCountryIso();
+String phoneNumberInE164 = PhoneNumberUtils.formatNumberToE164(phoneNumberString, defaultRegion);
+Verification verification = SinchVerification.createSmsVerification(config, phoneNumberInE164, listener);
+verification.initiate();
+```
+
+
 A `VerificationListener` object must be provided.
 
 ### Automatic code extraction from SMS
@@ -84,16 +82,20 @@ That’s it\! When this configuration is applied, SDK will be able to automatica
 ### Set the language of an SMS verification
 
 It is possible to specify the content language for SMS verification. This is specified via a list of [IETF](https://tools.ietf.org/html/rfc3282) language tags in order of priority. If the first language is not available, the next one will be selected and so forth. The default is ‘en-US’. The actual language selected can be retrieved by calling `selectedLanguage()` method of the `InitiationResult` object passed to `onInitiated()` callback. For example:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "List<String> languages = new ArrayList();\nlanguages.add(\"es-ES\");\nVerification verification = SinchVerification.createSmsVerification(config, phoneNumberInE164, null, languages, new VerificationListener() {\n    @Override\n    public void onInitiated(InitiationResult result) {\n        // Verification initiated\n        Log.i(\"Selected sms language: \" + result.selectedLanguage());\n    }\n    ...\n});",
-      "language": "java"
+```java
+List<String> languages = new ArrayList();
+languages.add("es-ES");
+Verification verification = SinchVerification.createSmsVerification(config, phoneNumberInE164, null, languages, new VerificationListener() {
+    @Override
+    public void onInitiated(InitiationResult result) {
+        // Verification initiated
+        Log.i("Selected sms language: " + result.selectedLanguage());
     }
-  ]
-}
-[/block]
+    ...
+});
+```
+
+
 
 [block:callout]
 {
@@ -105,16 +107,46 @@ It is possible to specify the content language for SMS verification. This is spe
 ## Verification listener
 
 The `VerificationListener` provides callbacks during the verification process. If initiation is successful, the `onInitiated()` callback runs and the verification code interceptor is started automatically. If initiation fails, the `onInitiationError()` callback runs and the exception describing the error is passed. If code verification is successful, the `onVerified()` callback is called. If verification fails, `onVerificationError()` callback runs and the exception describing the error is passed.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "VerificationListener listener = new VerificationListener() {\n    @Override\n    public void onInitiated(InitiationResult result) {\n        // Verification initiated\n    }\n    @Override\n    public void onInitiationFailed(Exception e) {\n        if (e instanceof InvalidInputException) {\n            // Incorrect number provided\n        } else if (e instanceof ServiceErrorException) {\n            // Verification initiation aborted due to early reject feature,\n            // client callback denial, or some other Sinch service error.\n            // Fallback to other verification method here.\n        } else {\n            // Other system error, such as UnknownHostException in case of network error\n        }\n    }\n    @Override\n    public void onVerified() {\n        // Verification successful\n    }\n    @Override\n    public void onVerificationFailed(Exception e) {\n        if (e instanceof InvalidInputException) {\n            // Incorrect number or code provided\n        } else if (e instanceof CodeInterceptionException) {\n            // Intercepting the verification code automatically failed, input the code manually with verify()\n        } else if (e instanceof IncorrectCodeException) {\n            // The verification code provided was incorrect\n        } else if (e instanceof ServiceErrorException) {\n            // Sinch service error\n        } else {\n            // Other system error, such as UnknownHostException in case of network error\n        }\n    }\n}",
-      "language": "java"
+```java
+VerificationListener listener = new VerificationListener() {
+    @Override
+    public void onInitiated(InitiationResult result) {
+        // Verification initiated
     }
-  ]
+    @Override
+    public void onInitiationFailed(Exception e) {
+        if (e instanceof InvalidInputException) {
+            // Incorrect number provided
+        } else if (e instanceof ServiceErrorException) {
+            // Verification initiation aborted due to early reject feature,
+            // client callback denial, or some other Sinch service error.
+            // Fallback to other verification method here.
+        } else {
+            // Other system error, such as UnknownHostException in case of network error
+        }
+    }
+    @Override
+    public void onVerified() {
+        // Verification successful
+    }
+    @Override
+    public void onVerificationFailed(Exception e) {
+        if (e instanceof InvalidInputException) {
+            // Incorrect number or code provided
+        } else if (e instanceof CodeInterceptionException) {
+            // Intercepting the verification code automatically failed, input the code manually with verify()
+        } else if (e instanceof IncorrectCodeException) {
+            // The verification code provided was incorrect
+        } else if (e instanceof ServiceErrorException) {
+            // Sinch service error
+        } else {
+            // Other system error, such as UnknownHostException in case of network error
+        }
+    }
 }
-[/block]
+```
+
+
 ### Phone numbers
 [block:callout]
 {
@@ -126,16 +158,11 @@ The `VerificationListener` provides callbacks during the verification process. I
 ## Validate code manually
 
 To complete the verification of the phone number, the code should be passed to `verify`. For SMS verification, the code is in the message body. For flash calls, the caller id is the code. Example:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "verification.verify(code); ",
-      "language": "java"
-    }
-  ]
-}
-[/block]
+```java
+verification.verify(code); 
+```
+
+
 The method `verify` may be invoked multiple times. For example, if the verification listener is invoked with an `IncorrectCodeException`, the application may hint to the user that the code was incorrect, let the user adjust it, and call `verify` again on the same verification instance.
 
 ## Early reject.

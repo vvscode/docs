@@ -33,16 +33,11 @@ The environment is passed as the parameter *environmentHost* when instantiating 
 ## Restrictions on User IDs
 
 User IDs can only contain characters in the *printable ASCII character set*. That is:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~",
-      "language": "text"
-    }
-  ]
-}
-[/block]
+```text
+!"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
+```
+
+
 
 User IDs **must not** be longer than **40** characters.
 
@@ -134,38 +129,42 @@ The push notification data can be unregistered by calling the `unregisterPushNot
 ### Enable push notifications
 
 Start by enabling support for push notifications when initiating the *SINClient*:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "#import <Sinch/Sinch.h>\n\nid<SINClient> client = [Sinch clientWithApplicationKey:@\"<application key>\" \n                                         applicationSecret:@\"<application secret>\"\n                                           environmentHost:@\"sandbox.sinch.com\" \n                                                    userId:@\"<user id>\"];\n\n[client setSupportPushNotifications:YES];\n\nclient.delegate = ...; \n\n[client start];",
-      "language": "objectivec"
-    }
-  ]
-}
-[/block]
+```objectivec
+#import <Sinch/Sinch.h>
+
+id<SINClient> client = [Sinch clientWithApplicationKey:@"<application key>" 
+                                         applicationSecret:@"<application secret>"
+                                           environmentHost:@"sandbox.sinch.com" 
+                                                    userId:@"<user id>"];
+
+[client setSupportPushNotifications:YES];
+
+client.delegate = ...; 
+
+[client start];
+```
+
+
 Supporting offline calls and/or messages requires that the application registers for remote push notifications, which in the example that follows is done in the method *-\[UIApplicationDelegate application:didFinishLaunchingWithOptions:\]*.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "- (BOOL)application:(UIApplication *)app didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {\n    UIRemoteNotificationType types = UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound;\n    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:types];\n}",
-      "language": "objectivec"
-    }
-  ]
+```objectivec
+- (BOOL)application:(UIApplication *)app didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    UIRemoteNotificationType types = UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound;
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:types];
 }
-[/block]
+```
+
+
 The next step is to register the *push notification data* with the *SINClient*, which in the example below is done by using the *APNS* device token as *push notification data*. Upon receiving the the device token from Apple Push Notification Service using the *UIApplicationDelegate*-method, it is registered with the *SINClient*.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {\n    // get previously initiated Sinch client\n    id<SINClient> client = [self sinchClient];\n\n    [client registerPushNotificationData:deviceToken];\n}",
-      "language": "objectivec"
-    }
-  ]
+```objectivec
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    // get previously initiated Sinch client
+    id<SINClient> client = [self sinchClient];
+
+    [client registerPushNotificationData:deviceToken];
 }
-[/block]
+```
+
+
 Please refer to Apple’s [Local and Push Notification Programming Guide](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Introduction.html) for more information on how to obtain the Apple Push Notification Device Token.
 
 ### Sending and receiving Apple push notifications
@@ -179,16 +178,15 @@ Please also refer to Apple’s [Local and Push Notification Programming Guide](h
 When the recipient’s application is offline and the app needs to notify the user using a push notification, the caller’s or sender’s application is notified using the delegate method `call:shouldSendPushNotifications:`.
 
 Because there might be multiple registered devices for the recipient user (for example, the same user is using the application on both an iPhone and an iPad) the callback is passed an array of `SINPushPair`s. The pairs contain a payload that is Sinch- and call-specific. Moreover, the pairs contain a push data byte array. The Sinch-specific payload should be embedded in the push notification sent to the recipient’s device(s). The push data is the same push data that the recipient’s application registered earlier.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "- (void)call:(id<SINCall>)call shouldSendPushNotifications:(NSArray *) pushPairs {\n    // Send payload and push data to application server\n    // which should communicate with Apple Push Notification Service\n    // to send push notifications.\n}",
-      "language": "objectivec"
-    }
-  ]
+```objectivec
+- (void)call:(id<SINCall>)call shouldSendPushNotifications:(NSArray *) pushPairs {
+    // Send payload and push data to application server
+    // which should communicate with Apple Push Notification Service
+    // to send push notifications.
 }
-[/block]
+```
+
+
 
 [block:callout]
 {
@@ -200,16 +198,17 @@ Because there might be multiple registered devices for the recipient user (for e
 A push notification should be sent to each device, where each `pushPair.pushData` entry in the array corresponds to one device. The push notification should include the Sinch-specific payload so it can be forwarded to the Sinch client running on the destination device.
 
 The Sinch-specific payload should be embedded as custom payload data in the Apple Push Notification Payload, see JSON example below.
-[block:code]
+```objectivec
 {
-  "codes": [
-    {
-      "code": "{\n    \"aps\" : {\n        \"alert\" : \"Incoming call from <user>\",\n        \"sound\" : \"bingbong.aiff\"\n    },\n    \"SIN\" : <payload>,\n}",
-      "language": "objectivec"
-    }
-  ]
+    "aps" : {
+        "alert" : "Incoming call from <user>",
+        "sound" : "bingbong.aiff"
+    },
+    "SIN" : <payload>,
 }
-[/block]
+```
+
+
 The Sinch-specific payload will not exceed 100 bytes, meaning that there should be 156 bytes available in the push notification payload for application-specific purposes.
 
 Please refer to Apple’s [Local and Push Notification Programming Guide](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Introduction.html) for further details.
@@ -219,16 +218,31 @@ Please refer to Apple’s [Local and Push Notification Programming Guide](https:
 As a prerequisite, offline calling and messaging must have been enabled on the receiver’s side (see \[Push Notifications\]\[\]).
 
 When the application receives a push notification from the Apple Push Notification Service, the application launches and extracts the Sinch-specific payload from the push notification. Once extracted the payload is forwarded to the Sinch client using the method `relayRemotePushNotificationPayload:`.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "- (BOOL)application:(UIApplication *)app didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {\n\n    NSDictionary* remotePush = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];\n\n    if (remotePush) {\n\n        // Extract the Sinch-specific payload from the Apple Remote Push Notification\n        NSString* payload = [remotePush objectForKey:@\"SIN\"]; \n\n        // Get previously initiated Sinch client\n        id<SINClient> client = [self sinchClient];\n\n        id<SINNotificationResult> result = [client relayRemotePushNotificationPayload:payload];\n\n        if (result.isCall && result.callResult.isTimedOut) {\n            // Present alert notifying about missed call\n        } else if (!result.isValid) {\n            // Handle error                \n        }\n    }\n}",
-      "language": "objectivec"
+```objectivec
+- (BOOL)application:(UIApplication *)app didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
+    NSDictionary* remotePush = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+
+    if (remotePush) {
+
+        // Extract the Sinch-specific payload from the Apple Remote Push Notification
+        NSString* payload = [remotePush objectForKey:@"SIN"]; 
+
+        // Get previously initiated Sinch client
+        id<SINClient> client = [self sinchClient];
+
+        id<SINNotificationResult> result = [client relayRemotePushNotificationPayload:payload];
+
+        if (result.isCall && result.callResult.isTimedOut) {
+            // Present alert notifying about missed call
+        } else if (!result.isValid) {
+            // Handle error                
+        }
     }
-  ]
 }
-[/block]
+```
+
+
 
 [block:callout]
 {

@@ -24,17 +24,34 @@ Sinch sends delivery reports using the MM7 Delivery Report message type i.e., "D
 
 See `unsupported_mm7_soap_elements_DeliveryReport`.
 
-**Example**
-[block:code]
-{
-  "codes": [
-    {
-      "code": "Request\n<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<soap-env:Envelope xmlns:soap-env=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns=\n\"http://www.3gpp.org/ftp/Specs/archive/23_series/23.140/schema/REL-6-MM7-1-4\">\n<soap-env:Header>\n   <TransactionID soap-env:mustUnderstand=\"1\">10000001</TransactionID>\n</soap-env:Header>\n<soap-env:Body>\n   <DeliveryReportReq>\n      <MM7Version>6.8.0</MM7Version>\n      <MessageID>369500617770864640</MessageID>\n      <Recipient>\n         <Number>16175550123</Number>\n      </Recipient>\n      <Sender>\n         <Number>111122</Number>\n      </Sender>\n      <Date>2015-03-16T14:03:51.749Z</Date>\n      <MMStatus>Retrieved</MMStatus>\n      <StatusText>Success</StatusText>\n      <UACapabilities UAProf=\"Samsung Galaxy\" />\n   </DeliveryReportReq>\n</soap-env:Body>\n</soap-env:Envelope>",
-      "language": "xml"
-    }
-  ]
-}
-[/block]
+**Example Request**
+```xml
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/" xmlns=
+"http://www.3gpp.org/ftp/Specs/archive/23_series/23.140/schema/REL-6-MM7-1-4">
+<soap-env:Header>
+   <TransactionID soap-env:mustUnderstand="1">10000001</TransactionID>
+</soap-env:Header>
+<soap-env:Body>
+   <DeliveryReportReq>
+      <MM7Version>6.8.0</MM7Version>
+      <MessageID>369500617770864640</MessageID>
+      <Recipient>
+         <Number>16175550123</Number>
+      </Recipient>
+      <Sender>
+         <Number>111122</Number>
+      </Sender>
+      <Date>2015-03-16T14:03:51.749Z</Date>
+      <MMStatus>Retrieved</MMStatus>
+      <StatusText>Success</StatusText>
+      <UACapabilities UAProf="Samsung Galaxy" />
+   </DeliveryReportReq>
+</soap-env:Body>
+</soap-env:Envelope>
+```
+
+
 ## MM7\_DeliveryReport.RES
 
 **MM7 delivery report response elements**
@@ -49,39 +66,89 @@ Your system should respond to the delivery report request with a delivery report
 | StatusCode        | A code that indicates whether you recieved the MO message request successfully. The status code for successful deliver is 1000. See all Status Codes: `mms_status_codes` |
 | StatusText        | Description of the status code.                                                                                                                                          |
 
-**Example**
-[block:code]
-{
-  "codes": [
-    {
-      "code": "Response\n<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n<soap-env:Envelope xmlns:soap-env=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\n\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\n<soap-env:Header>\n   <TransactionID xmlns=\"http://www.3gpp.org/ftp/Specs/archive/23_series/23.140/schema/REL-6-MM7-1-4\" soap-env:mustUnderstand=\"1\">1000001</TransactionID>\n</soap-env:Header>\n<soap-env:Body>\n   <DeliveryReportRsp xmlns=\"http://www.3gpp.org/ftp/Specs/archive/23_series/23.140/schema/REL-6-MM7-1-4\">\n      <MM7Version>6.8.0</MM7Version>\n      <Status>\n         <StatusCode>1000</StatusCode>\n         <StatusText>Successfully Received MMS.</StatusText>\n      </Status>\n   </DeliveryReportRsp>\n</soap-env:Body>\n</soap-env:Envelope>",
-      "language": "xml"
-    }
-  ]
-}
-[/block]
+**Example Response**
+```xml
+<?xml version="1.0" encoding="UTF-8" ?>
+<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi=
+"http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<soap-env:Header>
+   <TransactionID xmlns="http://www.3gpp.org/ftp/Specs/archive/23_series/23.140/schema/REL-6-MM7-1-4" soap-env:mustUnderstand="1">1000001</TransactionID>
+</soap-env:Header>
+<soap-env:Body>
+   <DeliveryReportRsp xmlns="http://www.3gpp.org/ftp/Specs/archive/23_series/23.140/schema/REL-6-MM7-1-4">
+      <MM7Version>6.8.0</MM7Version>
+      <Status>
+         <StatusCode>1000</StatusCode>
+         <StatusText>Successfully Received MMS.</StatusText>
+      </Status>
+   </DeliveryReportRsp>
+</soap-env:Body>
+</soap-env:Envelope>
+```
+
+
 ## Delivery Report Full Example
 
 **Request**
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "Request\nPOST / HTTP/1.1\nSOAPAction: \"http://www.3gpp.org/ftp/Specs/archive/23_series/23.140/schema/REL-6-MM7-1-4\"\nContent-Type: multipart/related; type=\"text/xml\";\nHost: api.Mblox.com\nContent-Length: 2546\nX-Mblox-Carrier-Id: 0001890\nConnection: Keep-Alive\n\n\n<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<soap-env:Envelope xmlns:soap-env=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns=\n\"http://www.3gpp.org/ftp/Specs/archive/23_series/23.140/schema/REL-6-MM7-1-4\">\n<soap-env:Header>\n   <TransactionID soap-env:mustUnderstand=\"1\">10000001</TransactionID>\n</soap-env:Header>\n<soap-env:Body>\n   <DeliveryReportReq>\n      <MM7Version>6.8.0</MM7Version>\n      <MessageID>369500617770864640</MessageID>\n      <Recipient>\n         <Number>16175550123</Number>\n      </Recipient>\n      <Sender>\n         <Number>111122</Number>\n      </Sender>\n      <Date>2015-03-16T14:03:51.749Z</Date>\n      <MMStatus>Retrieved</MMStatus>\n      <StatusText>Success</StatusText>\n      <UACapabilities UAProf=\"Samsung Galaxy\" />\n   </DeliveryReportReq>\n</soap-env:Body>\n</soap-env:Envelope>",
-      "language": "xml"
-    }
-  ]
-}
-[/block]
+```text
+POST / HTTP/1.1
+SOAPAction: "http://www.3gpp.org/ftp/Specs/archive/23_series/23.140/schema/REL-6-MM7-1-4"
+Content-Type: multipart/related; type="text/xml";
+Host: api.Mblox.com
+Content-Length: 2546
+X-Mblox-Carrier-Id: 0001890
+Connection: Keep-Alive
+
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/" xmlns=
+"http://www.3gpp.org/ftp/Specs/archive/23_series/23.140/schema/REL-6-MM7-1-4">
+<soap-env:Header>
+   <TransactionID soap-env:mustUnderstand="1">10000001</TransactionID>
+</soap-env:Header>
+<soap-env:Body>
+   <DeliveryReportReq>
+      <MM7Version>6.8.0</MM7Version>
+      <MessageID>369500617770864640</MessageID>
+      <Recipient>
+         <Number>16175550123</Number>
+      </Recipient>
+      <Sender>
+         <Number>111122</Number>
+      </Sender>
+      <Date>2015-03-16T14:03:51.749Z</Date>
+      <MMStatus>Retrieved</MMStatus>
+      <StatusText>Success</StatusText>
+      <UACapabilities UAProf="Samsung Galaxy" />
+   </DeliveryReportReq>
+</soap-env:Body>
+</soap-env:Envelope>
+```
+
+
 **Response**
-[block:code]
-{
-  "codes": [
-    {
-      "code": "Response\nHTTP/1.1 200 OK\nServer: Apache\nContent-Type: text/xml; charset=utf-8\nContent-Length: 539\nDate: Mon, 16 Mar 2015 14:03:32 GMT\n\n<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n<soap-env:Envelope xmlns:soap-env=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\n\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\n<soap-env:Header>\n   <TransactionID xmlns=\"http://www.3gpp.org/ftp/Specs/archive/23_series/23.140/schema/REL-6-MM7-1-4\" soap-env:mustUnderstand=\"1\">1000001</TransactionID>\n</soap-env:Header>\n<soap-env:Body>\n   <DeliveryReportRsp xmlns=\"http://www.3gpp.org/ftp/Specs/archive/23_series/23.140/schema/REL-6-MM7-1-4\">\n      <MM7Version>6.8.0</MM7Version>\n      <Status>\n         <StatusCode>1000</StatusCode>\n         <StatusText>Successfully Received MMS.</StatusText>\n      </Status>\n   </DeliveryReportRsp>\n</soap-env:Body>\n</soap-env:Envelope>",
-      "language": "xml"
-    }
-  ]
-}
-[/block]
+```text
+HTTP/1.1 200 OK
+Server: Apache
+Content-Type: text/xml; charset=utf-8
+Content-Length: 539
+Date: Mon, 16 Mar 2015 14:03:32 GMT
+
+<?xml version="1.0" encoding="UTF-8" ?>
+<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi=
+"http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<soap-env:Header>
+   <TransactionID xmlns="http://www.3gpp.org/ftp/Specs/archive/23_series/23.140/schema/REL-6-MM7-1-4" soap-env:mustUnderstand="1">1000001</TransactionID>
+</soap-env:Header>
+<soap-env:Body>
+   <DeliveryReportRsp xmlns="http://www.3gpp.org/ftp/Specs/archive/23_series/23.140/schema/REL-6-MM7-1-4">
+      <MM7Version>6.8.0</MM7Version>
+      <Status>
+         <StatusCode>1000</StatusCode>
+         <StatusText>Successfully Received MMS.</StatusText>
+      </Status>
+   </DeliveryReportRsp>
+</soap-env:Body>
+</soap-env:Envelope>
+```

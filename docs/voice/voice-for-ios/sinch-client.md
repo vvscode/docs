@@ -7,44 +7,47 @@ The *SINClient* is the Sinch SDK entry point. It is used to configure the userâ€
 ## Creating the *SINClient*
 
 Set up the client and its delegate (*SINClientDelegate*, see [Reference](../reference/html/Protocols/SINClientDelegate.html) documentation).
-[block:code]
-{
-  "codes": [
-    {
-      "code": "#import <Sinch/Sinch.h>\n\n// Instantiate a Sinch client object\nid<SINClient> sinchClient = [Sinch clientWithApplicationKey:@\"<application key>\" \n                                          applicationSecret:@\"<application secret>\"\n                                            environmentHost:@\"sandbox.sinch.com\" \n                                                     userId:@\"<user id>\"];",
-      "language": "objectivec"
-    }
-  ]
-}
-[/block]
+```objectivec
+#import <Sinch/Sinch.h>
+
+// Instantiate a Sinch client object
+id<SINClient> sinchClient = [Sinch clientWithApplicationKey:@"<application key>" 
+                                          applicationSecret:@"<application secret>"
+                                            environmentHost:@"sandbox.sinch.com" 
+                                                     userId:@"<user id>"];
+```
+
+
 The *Application Key* and *Application Secret* are obtained from the Sinch Developer Dashboard. See \[Production and Sandbox Environments\]\[\] for valid values for *environmentHost*. The User ID should uniquely identify the user on the particular device.
 
 ## Specifying capabilities
 
 The SINClient can be configured to enable / disable certain functionality. Please see the [Reference](../reference/html/Protocols/SINClient.html) for details.
  The following example shows how to setup the client with both voice calling and instant messaging enabled, and using `push notifications <localandremotepushnotifications>`.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "// Specify the client capabilities. \n// (At least one of the messaging or calling capabilities should be enabled.)\n[sinchClient setSupportCalling:YES];\n[sinchClient setSupportMessaging:YES];\n\n[sinchClient enableManagedPushNotifications];",
-      "language": "objectivec"
-    }
-  ]
-}
-[/block]
+```objectivec
+// Specify the client capabilities. 
+// (At least one of the messaging or calling capabilities should be enabled.)
+[sinchClient setSupportCalling:YES];
+[sinchClient setSupportMessaging:YES];
+
+[sinchClient enableManagedPushNotifications];
+```
+
+
 ## Starting the Sinch client
 Before starting the client, make sure you assign a *SINClientDelegate*.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "// Assign as SINClientDelegate                             \nsinchClient.delegate = ... ;\n\n// Start the Sinch Client\n[sinchClient start];\n\n// Start listening for incoming calls and messages\n[sinchClient startListeningOnActiveConnection];",
-      "language": "objectivec"
-    }
-  ]
-}
-[/block]
+```objectivec
+// Assign as SINClientDelegate                             
+sinchClient.delegate = ... ;
+
+// Start the Sinch Client
+[sinchClient start];
+
+// Start listening for incoming calls and messages
+[sinchClient startListeningOnActiveConnection];
+```
+
+
 
 [block:callout]
 {
@@ -65,13 +68,8 @@ It is best to keep the client instance alive and started unless there are reason
 The Sinch client can of course be completely stopped and also disposed. To do so, call one of the terminate methods on the client before the application code releases its last reference to the client object.
 
 The following example shows how to dispose the Sinch client:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "[sinchClient stopListeningOnActiveConnection];\n[sinchClient terminateGracefully]; // or invoke -[SINClient terminate]\nsinchClient = nil;",
-      "language": "objectivec"
-    }
-  ]
-}
-[/block]
+```objectivec
+[sinchClient stopListeningOnActiveConnection];
+[sinchClient terminateGracefully]; // or invoke -[SINClient terminate]
+sinchClient = nil;
+```

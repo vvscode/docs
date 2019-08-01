@@ -35,45 +35,62 @@ Unable to send event due to issue with service provider / operator, please retry
 ##### Examples
 
 ###### Sending a composing event
-[block:code]
-{
-  "codes": [
-    {
-      "code": "curl https://api.clxcommunications.com/rcs/v1/my-agent-id/events \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer zIMEJGfwD4oJ4qObPPjwZxwiP5cKARXRJpt9Kf6GSv7uOesvRV\" \\\n  -d '{\n    \"to\": \"46555123456\",\n    \"event_id\": \"ce5f9373-8a77-45fa-a78b-84a931005dc9\",\n    \"event\": {\n      \"type\": \"agent_composing\"\n    }\n  }'",
-      "language": "curl",
-      "name": "Sending a composing event"
+
+**Sending a composing event**
+```curl
+curl https://api.clxcommunications.com/rcs/v1/my-agent-id/events \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer zIMEJGfwD4oJ4qObPPjwZxwiP5cKARXRJpt9Kf6GSv7uOesvRV" \
+  -d '{
+    "to": "46555123456",
+    "event_id": "ce5f9373-8a77-45fa-a78b-84a931005dc9",
+    "event": {
+      "type": "agent_composing"
     }
-  ]
-}
-[/block]
+  }'
+```
+
+
 ###### Sending a read event
-[block:code]
-{
-  "codes": [
-    {
-      "code": "curl https://api.clxcommunications.com/rcs/v1/my-agent-id/events \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer zIMEJGfwD4oJ4qObPPjwZxwiP5cKARXRJpt9Kf6GSv7uOesvRV\" \\\n  -d '{\n    \"to\": \"46555123456\",\n    \"event_id\": \"ce5f9373-8a77-45fa-a78b-84a931005dc9\",\n    \"event\": {\n      \"type\": \"agent_read\",\n      \"message_id\": \"Jsiuh76sJKAhdsiufg86823\"\n    }\n  }'",
-      "language": "curl",
-      "name": "Sending a read event"
+
+**Sending a read event**
+```curl
+curl https://api.clxcommunications.com/rcs/v1/my-agent-id/events \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer zIMEJGfwD4oJ4qObPPjwZxwiP5cKARXRJpt9Kf6GSv7uOesvRV" \
+  -d '{
+    "to": "46555123456",
+    "event_id": "ce5f9373-8a77-45fa-a78b-84a931005dc9",
+    "event": {
+      "type": "agent_read",
+      "message_id": "Jsiuh76sJKAhdsiufg86823"
     }
-  ]
-}
-[/block]
+  }'
+```
+
+
 #### JSON Model
 
 ##### AgentEvent
 
 JSON Representation
-[block:code]
+
+**AgentEvent**
+```json
 {
-  "codes": [
-    {
-      "code": "{\n  \"to\": string,\n  \"event_id\": string,\n  \"event\": {\n    \"type\": enum(\n      \"agent_composing\"\n      \"agent_read\"\n    )\n    ... // type specific fields\n  }\n}",
-      "language": "json",
-      "name": "AgentEvent"
-    }
-  ]
+  "to": string,
+  "event_id": string,
+  "event": {
+    "type": enum(
+      "agent_composing"
+      "agent_read"
+    )
+    ... // type specific fields
+  }
 }
-[/block]
+```
+
+
 ###### Fields
 [block:html]
 {
@@ -83,17 +100,15 @@ JSON Representation
 ##### AgentComposingEvent
 
 JSON Representation
-[block:code]
+
+**AgentComposingEvent**
+```json
 {
-  "codes": [
-    {
-      "code": "{\n  \"type\": \"agent_composing\"\n}",
-      "language": "json",
-      "name": "AgentComposingEvent"
-    }
-  ]
+  "type": "agent_composing"
 }
-[/block]
+```
+
+
 ###### Fields
 
 | Field | Type   | Description                                                                                 | Default | Constraints | Required |
@@ -103,17 +118,16 @@ JSON Representation
 ##### AgentReadEvent
 
 JSON Representation
-[block:code]
+
+**AgentReadEvent**
+```json
 {
-  "codes": [
-    {
-      "code": "{\n  \"type\": \"agent_read\",\n  \"message_id\": string\n}",
-      "language": "json",
-      "name": "AgentReadEvent"
-    }
-  ]
+  "type": "agent_read",
+  "message_id": string
 }
-[/block]
+```
+
+
 ###### Fields
 
 | Field       | Type   | Description                                                                                                                | Default | Constraints | Required |

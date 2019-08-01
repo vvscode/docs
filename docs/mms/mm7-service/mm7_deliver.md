@@ -2,7 +2,7 @@
 title: "MM7_Deliver"
 excerpt: ""
 ---
-*Receive MMS MO submitted by end users to your platform**
+**Receive MMS MO submitted by end users to your platform**
 
 Sinch delivers messages from end users to your platform by supplying the MMS as the payload of the request message. The deliver request is made using MM7 SOAP "DeliverReq". Message include identification of the request that is used by your platform to correlate a response to the message. Your platform must reply with a SOAP response "DeliverRsp", indicating that the message was successfully received and will be processed. If you cannot identify the requested content or if the delivered content does not fulfill the conditions you'd expect, then your platform should indicate a failure in the "DeliverRsp" status field.
 
@@ -34,17 +34,35 @@ Sinch delivers messages from end users to your platform by supplying the MMS as 
 
 See unsupported elements: `unsupported_MM7_SOAP_Elements_Deliver`
 
-**Example**
-[block:code]
-{
-  "codes": [
-    {
-      "code": "Request\n<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<soap-env:Envelope xmlns:ns1=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns=\n\"http://www.3gpp.org/ftp/Specs/archive/23_series/23.140/schema/REL-6-MM7-1-4\">\n<soap-env::Header>\n   <TransactionID soap-env:mustUnderstand=\"1\">1000001</TransactionID>\n</soap-env::Header>\n<soap-env::Body>\n   <DeliverReq>\n      <MM7Version>6.8.0</MM7Version>\n      <LinkedID>1000001</LinkedID>\n      <Sender>\n         <Number>1617423433</Number>\n      </Sender>\n      <Recipients>\n         <To>\n         <Number displayOnly=\"false\">111122</Number>\n         </To>\n      </Recipients>\n      <TimeStamp>2014-04-14T16:15:23.414Z</TimeStamp>\n      <Priority>Normal</Priority>\n      <Content href=\"cid:default.cid\" allowAdaptations=\"true\"/>\n   </DeliverReq>\n</soap-env:Body>\n</soap-env:Envelope>",
-      "language": "xml"
-    }
-  ]
-}
-[/block]
+**Example Request**
+```xml
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<soap-env:Envelope xmlns:ns1="http://schemas.xmlsoap.org/soap/envelope/" xmlns=
+"http://www.3gpp.org/ftp/Specs/archive/23_series/23.140/schema/REL-6-MM7-1-4">
+<soap-env::Header>
+   <TransactionID soap-env:mustUnderstand="1">1000001</TransactionID>
+</soap-env::Header>
+<soap-env::Body>
+   <DeliverReq>
+      <MM7Version>6.8.0</MM7Version>
+      <LinkedID>1000001</LinkedID>
+      <Sender>
+         <Number>1617423433</Number>
+      </Sender>
+      <Recipients>
+         <To>
+         <Number displayOnly="false">111122</Number>
+         </To>
+      </Recipients>
+      <TimeStamp>2014-04-14T16:15:23.414Z</TimeStamp>
+      <Priority>Normal</Priority>
+      <Content href="cid:default.cid" allowAdaptations="true"/>
+   </DeliverReq>
+</soap-env:Body>
+</soap-env:Envelope>
+```
+
+
 ## MM7\_Deliver.RES
 
 **MM7 MO deliver response elements**
@@ -59,38 +77,115 @@ Your system should respond to the deliver request with a deliver response contai
 | StatusCode    | A code that indicates whether you recieved the MO message request successfully. The status code for successful deliver is 1000.See all Status Codes: `mms_status_codes` |
 | StatusText    | Description of the status code.                                                                                                                                         |
 
-**Example**
-[block:code]
-{
-  "codes": [
-    {
-      "code": "Response\n<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n<soap-env:Envelope xmlns:soap-env=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\n\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\n<soap-env:Header>\n   <TransactionID xmlns=\"http://www.3gpp.org/ftp/Specs/archive/23_series/23.140/schema/REL-6-MM7-1-4\" soap-env:mustUnderstand=\"1\">1000001</TransactionID>\n</soap-env:Header>\n<soap-env:Body>\n   <DeliverRsp xmlns=\"http://www.3gpp.org/ftp/Specs/archive/23_series/23.140/schema/REL-6-MM7-1-4\">\n      <MM7Version>6.8.0</MM7Version>\n      <Status>\n         <StatusCode>1000</StatusCode>\n         <StatusText>Successfully received MMS</StatusText>\n      </Status>\n   </DeliverRsp>\n</soap-env:Body>\n</soap-env:Envelope>",
-      "language": "xml"
-    }
-  ]
-}
-[/block]
+**Example Response**
+```xml
+<?xml version="1.0" encoding="UTF-8" ?>
+<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi=
+"http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<soap-env:Header>
+   <TransactionID xmlns="http://www.3gpp.org/ftp/Specs/archive/23_series/23.140/schema/REL-6-MM7-1-4" soap-env:mustUnderstand="1">1000001</TransactionID>
+</soap-env:Header>
+<soap-env:Body>
+   <DeliverRsp xmlns="http://www.3gpp.org/ftp/Specs/archive/23_series/23.140/schema/REL-6-MM7-1-4">
+      <MM7Version>6.8.0</MM7Version>
+      <Status>
+         <StatusCode>1000</StatusCode>
+         <StatusText>Successfully received MMS</StatusText>
+      </Status>
+   </DeliverRsp>
+</soap-env:Body>
+</soap-env:Envelope>
+```
+
+
 ## Receive MMS MO Full Example
 
 **Request**
-[block:code]
-{
-  "codes": [
-    {
-      "code": "Request\nPOST / HTTP/1.1\nSOAPAction: \"http://www.3gpp.org/ftp/Specs/archive/23_series/23.140/schema/REL-6-MM7-1-4\"\nContent-Type: multipart/related; start=\"soap-start\"; type=\"text/xml\";\n        boundary=\"----=_Part_139078_1411587550.1397492135426\"\nHost: api.Mblox.com\nContent-Length: 2546\nX-Mblox-Carrier-Id: 0001890\nConnection: Keep-Alive\n\n------=_Part_139078_1411587550.1397492135426\nContent-Type: text/xml\nContent-ID: <soap-start>\n\n\n<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<soap-env:Envelope xmlns:ns1=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns=\n\"http://www.3gpp.org/ftp/Specs/archive/23_series/23.140/schema/REL-6-MM7-1-4\">\n<soap-env::Header>\n   <TransactionID soap-env:mustUnderstand=\"1\">1000001</TransactionID>\n</soap-env::Header>\n<soap-env::Body>\n   <DeliverReq>\n      <MM7Version>6.8.0</MM7Version>\n      <LinkedID>1000001</LinkedID>\n      <Sender>\n         <Number>1617423433</Number>\n      </Sender>\n      <Recipients>\n         <To>\n         <Number displayOnly=\"false\">111122</Number>\n         </To>\n      </Recipients>\n      <TimeStamp>2014-04-14T16:15:23.414Z</TimeStamp>\n      <Priority>Normal</Priority>\n      <Content href=\"cid:default.cid\" allowAdaptations=\"true\"/>\n   </DeliverReq>\n</soap-env:Body>\n</soap-env:Envelope>\n\n------=_Part_139078_1411587550.1397492135426\nContent-Type: multipart/mixed;\n        boundary=\"----=_Part_139079_1300104441.1397492135426\"\nContent-ID: <default.cid>\n\n------=_Part_139079_1300104441.1397492135426\nContent-Type: image/jpeg\nContent-Transfer-Encoding: binary\nContent-ID: image_0.jpg\n<Binary contents>\n\n------=_Part_139079_1300104441.1397492135426\nContent-Type: text/plain\nContent-Transfer-Encoding: binary\nContent-ID: text_0.txt\nTest MO message!\n\n------=_Part_139079_1300104441.1397492135426--\n\n------=_Part_139078_1411587550.1397492135426--",
-      "language": "xml"
-    }
-  ]
-}
-[/block]
+```text
+POST / HTTP/1.1
+SOAPAction: "http://www.3gpp.org/ftp/Specs/archive/23_series/23.140/schema/REL-6-MM7-1-4"
+Content-Type: multipart/related; start="soap-start"; type="text/xml";
+        boundary="----=_Part_139078_1411587550.1397492135426"
+Host: api.Mblox.com
+Content-Length: 2546
+X-Mblox-Carrier-Id: 0001890
+Connection: Keep-Alive
+
+------=_Part_139078_1411587550.1397492135426
+Content-Type: text/xml
+Content-ID: <soap-start>
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<soap-env:Envelope xmlns:ns1="http://schemas.xmlsoap.org/soap/envelope/" xmlns=
+"http://www.3gpp.org/ftp/Specs/archive/23_series/23.140/schema/REL-6-MM7-1-4">
+<soap-env::Header>
+   <TransactionID soap-env:mustUnderstand="1">1000001</TransactionID>
+</soap-env::Header>
+<soap-env::Body>
+   <DeliverReq>
+      <MM7Version>6.8.0</MM7Version>
+      <LinkedID>1000001</LinkedID>
+      <Sender>
+         <Number>1617423433</Number>
+      </Sender>
+      <Recipients>
+         <To>
+         <Number displayOnly="false">111122</Number>
+         </To>
+      </Recipients>
+      <TimeStamp>2014-04-14T16:15:23.414Z</TimeStamp>
+      <Priority>Normal</Priority>
+      <Content href="cid:default.cid" allowAdaptations="true"/>
+   </DeliverReq>
+</soap-env:Body>
+</soap-env:Envelope>
+
+------=_Part_139078_1411587550.1397492135426
+Content-Type: multipart/mixed;
+        boundary="----=_Part_139079_1300104441.1397492135426"
+Content-ID: <default.cid>
+
+------=_Part_139079_1300104441.1397492135426
+Content-Type: image/jpeg
+Content-Transfer-Encoding: binary
+Content-ID: image_0.jpg
+<Binary contents>
+
+------=_Part_139079_1300104441.1397492135426
+Content-Type: text/plain
+Content-Transfer-Encoding: binary
+Content-ID: text_0.txt
+Test MO message!
+
+------=_Part_139079_1300104441.1397492135426--
+
+------=_Part_139078_1411587550.1397492135426--
+```
+
+
 **Response**
-[block:code]
-{
-  "codes": [
-    {
-      "code": "Response\nHTTP/1.1 200 OK\nServer: Apache\nContent-Type: application/xml; charset=utf-8\nContent-Length: 715\nDate: Mon, 16 Mar 2015 17:46:59 GMT\n\n\n<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n<soap-env:Envelope xmlns:soap-env=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\n\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\n<soap-env:Header>\n   <TransactionID xmlns=\"http://www.3gpp.org/ftp/Specs/archive/23_series/23.140/schema/REL-6-MM7-1-4\" soap-env:mustUnderstand=\"1\">1000001</TransactionID>\n</soap-env:Header>\n<soap-env:Body>\n   <DeliverRsp xmlns=\"http://www.3gpp.org/ftp/Specs/archive/23_series/23.140/schema/REL-6-MM7-1-4\">\n      <MM7Version>6.8.0</MM7Version>\n      <Status>\n         <StatusCode>1000</StatusCode>\n         <StatusText>Successfully received MMS</StatusText>\n      </Status>\n   </DeliverRsp>\n</soap-env:Body>\n</soap-env:Envelope>",
-      "language": "xml"
-    }
-  ]
-}
-[/block]
+```text
+HTTP/1.1 200 OK
+Server: Apache
+Content-Type: application/xml; charset=utf-8
+Content-Length: 715
+Date: Mon, 16 Mar 2015 17:46:59 GMT
+
+
+<?xml version="1.0" encoding="UTF-8" ?>
+<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi=
+"http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<soap-env:Header>
+   <TransactionID xmlns="http://www.3gpp.org/ftp/Specs/archive/23_series/23.140/schema/REL-6-MM7-1-4" soap-env:mustUnderstand="1">1000001</TransactionID>
+</soap-env:Header>
+<soap-env:Body>
+   <DeliverRsp xmlns="http://www.3gpp.org/ftp/Specs/archive/23_series/23.140/schema/REL-6-MM7-1-4">
+      <MM7Version>6.8.0</MM7Version>
+      <Status>
+         <StatusCode>1000</StatusCode>
+         <StatusText>Successfully received MMS</StatusText>
+      </Status>
+   </DeliverRsp>
+</soap-env:Body>
+</soap-env:Envelope>
+```

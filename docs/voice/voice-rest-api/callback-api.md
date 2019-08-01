@@ -23,16 +23,25 @@ The **Incoming Call Event (ICE)**, is triggered when the Sinch dashboard receive
 ## Sinch Voice Application Markup Language (SVAML)
 
 SVAML is a call control markup language developed by Sinch. When your backend receives callback event from the Sinch dashboard, it can respond with a *SVAML object* to control the voice call. The SVAML object type is defined like this:
-[block:code]
-{
-  "codes": [
+```text
+    [SVAML]
+        Instruction[] - instructions
+        Action - action
+    
+    [Instruction]
     {
-      "code": "    [SVAML]\n        Instruction[] - instructions\n        Action - action\n    \n    [Instruction]\n    {\n        string - name\n        ... // instruction-specific properties\n    }\n    \n    [Action]\n    {\n        string - name\n        ... // action-specific properties\n    }",
-      "language": "text"
+        string - name
+        ... // instruction-specific properties
     }
-  ]
-}
-[/block]
+    
+    [Action]
+    {
+        string - name
+        ... // action-specific properties
+    }
+```
+
+
 ### SVAML Quick Reference
 
 #### Instructions
@@ -59,16 +68,15 @@ SVAML is a call control markup language developed by Sinch. When your backend re
 Instructions allow your application to play a message to participants given a particular locale. For example, if the locale is set to en-US, messages recorded in English are used. Not all callbacks support playing back messages; see the documentation for each callback for more details. The following instructions are currently supported:
 
 #### PlayFiles
-[block:code]
+```json
 {
-  "codes": [
-    {
-      "code": "{\n    \"name\" : \"playFiles\",\n    \"ids\" : [ \"welcome\" ],\n    \"locale\" : \"en-US\"\n}",
-      "language": "json"
-    }
-  ]
+    "name" : "playFiles",
+    "ids" : [ "welcome" ],
+    "locale" : "en-US"
 }
-[/block]
+```
+
+
 **playFiles** plays Interactive Voice Response (IVR) files for the supported locale at the Sinch backend. An IVR message is played only on the caller’s side.
 
 **ids** are the ids of the files that will be played out. Files for that locale must be provided to Sinch before they can be used.
@@ -76,16 +84,15 @@ Instructions allow your application to play a message to participants given a pa
 **locale** is specified with a language code according to ISO 639, a dash and a country code according to ISO 3166-1 alpha-2.
 
 #### Say
-[block:code]
+```text
 {
-  "codes": [
-    {
-      "code": "{\n    \"name\" : \"say\",\n    \"text\" : \"Hello, this is a text to speech message\",\n    \"locale\" : \"en-US\"\n}",
-      "language": "text"
-    }
-  ]
+    "name" : "say",
+    "text" : "Hello, this is a text to speech message",
+    "locale" : "en-US"
 }
-[/block]
+```
+
+
 **say** instruction is used to play a text-to-speech message to the end user. The message is provided in the *text* field.
 
 **text** is a string that contains the message to be played. Note that the text cannot be longer than 200 characters and that currently only English “en-US” is supported.
@@ -97,29 +104,24 @@ Instructions allow your application to play a message to participants given a pa
 Actions allow your Sinch application to control individual calls. The following actions are currently available:
 
 #### Hangup
-[block:code]
+```json
 {
-  "codes": [
-    {
-      "code": "{\n    \"name\" : \"hangup\"\n}",
-      "language": "json"
-    }
-  ]
+    "name" : "hangup"
 }
-[/block]
+```
+
+
 **hangup** is the action of either an incoming call event callback or an answered call event callback to hangup the call.
 
 #### Continue
-[block:code]
+```json
 {
-  "codes": [
-    {
-      "code": "{\n    \"name\" : \"continue\",\n    \"record\" : true\n}",
-      "language": "json"
-    }
-  ]
+    "name" : "continue",
+    "record" : true
 }
-[/block]
+```
+
+
 **continue** is the action of an answered call event callback to continue setting up the call.
 
 **record** is an optional parameter that allows call recording. Recording files are stored in your own Amazon S3 bucket. The file name generated has this format:
@@ -127,27 +129,25 @@ Actions allow your Sinch application to control individual calls. The following 
 [\[callid\]]()\[applicationkey\].wav
 
 Example:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "9ab69740-c024-4e35-8428-712009467480_ff67123-c024-4e35-8428-712009467480.wav",
-      "language": "text"
-    }
-  ]
-}
-[/block]
+```text
+9ab69740-c024-4e35-8428-712009467480_ff67123-c024-4e35-8428-712009467480.wav
+```
+
+
 #### ConnectPSTN
-[block:code]
+```json
 {
-  "codes": [
-    {
-      "code": "{\n    \"name\" : \"connectPSTN\",\n    \"number\" : \"+461234567890\",\n    \"locale\" : \"en-US\",\n    \"maxDuration\" : 3000,\n    \"cli\" : \"private\",\n    \"record\": true,\n    \"suppressCallbacks\" : false\n}",
-      "language": "json"
-    }
-  ]
+    "name" : "connectPSTN",
+    "number" : "+461234567890",
+    "locale" : "en-US",
+    "maxDuration" : 3000,
+    "cli" : "private",
+    "record": true,
+    "suppressCallbacks" : false
 }
-[/block]
+```
+
+
 **connectPSTN** is the action of an incoming call event. It instructs how the PSTN call will be connected.
 
 **maxDuration** is the max duration for the call in seconds (max 14400 seconds). If the call is still connected at that time, it will be automatically disconnected
@@ -163,16 +163,11 @@ Example:
 [\[callid\]]()\[applicationkey\].wav
 
 Example:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "9ab69740-c024-4e35-8428-712009467480_ff67123-c024-4e35-8428-712009467480.wav",
-      "language": "text"
-    }
-  ]
-}
-[/block]
+```text
+9ab69740-c024-4e35-8428-712009467480_ff67123-c024-4e35-8428-712009467480.wav
+```
+
+
 **suppressCallbacks** if set to true, you are opting out of the callbacks for ACE and DiCE for this call.
 [block:callout]
 {
@@ -182,16 +177,19 @@ Example:
 }
 [/block]
 #### ConnectMXP
-[block:code]
+```json
 {
-  "codes": [
-    {
-      "code": "{\n    \"name\" : \"connectMXP\",\n    \"record\" : true,\n    \"destination\":\n        {\n            \"type\":\"username\",\n            \"endpoint\":\"hello\"\n        }\n}",
-      "language": "json"
-    }
-  ]
+    "name" : "connectMXP",
+    "record" : true,
+    "destination":
+        {
+            "type":"username",
+            "endpoint":"hello"
+        }
 }
-[/block]
+```
+
+
 **connectMXP** is the action of an incoming call event. It allows an app-to-app call to connect.
 
 **record** is an optional parameter that allows call recording. Recording files are stored in your own Amazon S3 bucket. The file name generated has this format:
@@ -199,16 +197,11 @@ Example:
 [\[callid\]]()\[applicationkey\].wav
 
 Example:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "9ab69740-c024-4e35-8428-712009467480_ff67123-c024-4e35-8428-712009467480.wav",
-      "language": "text"
-    }
-  ]
-}
-[/block]
+```text
+9ab69740-c024-4e35-8428-712009467480_ff67123-c024-4e35-8428-712009467480.wav
+```
+
+
 **destination** is an optional parameter that allows you to specify or override the final call destination.
 [block:callout]
 {
@@ -218,16 +211,16 @@ Example:
 }
 [/block]
 #### ConnectConf
-[block:code]
+```json
 {
-  "codes": [
-    {
-      "code": "{\n    \"name\" : \"connectConf\",\n    \"conferenceId\" : \"myConference\",\n    \"moh\" : \"ring\",\n    \"record\" : true\n}",
-      "language": "json"
-    }
-  ]
+    "name" : "connectConf",
+    "conferenceId" : "myConference",
+    "moh" : "ring",
+    "record" : true
 }
-[/block]
+```
+
+
 **connectConf** is the action of an incoming call event. It allows the incoming call to be connected to a conference.
 
 **conferenceId** is the unique identifier of the conference. It should not exceed 64 characters.
@@ -246,29 +239,26 @@ If no “music-on-hold” is specified, the user will only hear silence.
 \[ConferenceId\].\[UserspaceId\].\[TimeStarted-YMDHMS\].wav
 
 Example:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "myConference.1234.20151027120655.wav",
-      "language": "text"
-    }
-  ]
-}
-[/block]
+```text
+myConference.1234.20151027120655.wav
+```
+
+
 By default, conference recording is disabled. To enable it, please contact Sinch support.
 
 #### ConnectSIP (beta)
-[block:code]
+```json
 {
-  "codes": [
-    {
-      "code": "{\n    \"name\" : \"connectSIP\",\n    \"destination\" : { \"endpoint\":\"46708000000@sip.foo.com\" },\n    \"maxDuration\" : 3000,\n    \"cli\" : \"private\",\n    \"record\": true,\n    \"suppressCallbacks\" : false\n}",
-      "language": "json"
-    }
-  ]
+    "name" : "connectSIP",
+    "destination" : { "endpoint":"46708000000@sip.foo.com" },
+    "maxDuration" : 3000,
+    "cli" : "private",
+    "record": true,
+    "suppressCallbacks" : false
 }
-[/block]
+```
+
+
 **connectSIP** is the action of an incoming call event. It instructs to route a call to your SIP server.
 
 **destination** specifies where to route the SIP call to.
@@ -282,16 +272,11 @@ By default, conference recording is disabled. To enable it, please contact Sinch
 [\[callid\]]()\[applicationkey\].wav
 
 Example:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "9ab69740-c024-4e35-8428-712009467480_ff67123-c024-4e35-8428-712009467480.wav",
-      "language": "text"
-    }
-  ]
-}
-[/block]
+```text
+9ab69740-c024-4e35-8428-712009467480_ff67123-c024-4e35-8428-712009467480.wav
+```
+
+
 **suppressCallbacks** if set to true, you are opting out of the callbacks for ACE and DiCE for this call
 
 The SIP traffic will be routed to your SIP server from the IP address, so make sure it is registered in your SIP server:
@@ -303,16 +288,38 @@ The SIP traffic will be routed to your SIP server from the IP address, so make s
 With the *runMenu* action, the user will start listening to an IVR menu. This menu can play pre-recorded or text-to-speech messages, collect DTMF tones and trigger the `PIE Callback Event <PIE>` towards your backend, notifying of the actions that the user took.
 
 *Example of runMenu action*
-[block:code]
+```json
 {
-  "codes": [
-    {
-      "code": "{\n    \"name\"   :\"runMenu\",\n    \"menus\"  :\n    [\n        {\n            \"id\"         : \"main\",\n            \"mainPrompt\" : \"#tts[Welcome to the main menu. Press 1 for support or 2 to continue.]\",\n            \"options\"    :\n            [\n                {\n                    \"dtmf\"   : \"1\",\n                    \"action\" : \"return(support)\"\n                },\n                {\n                    \"dtmf\"   : \"2\",\n                    \"action\" : \"menu(sub)\"\n                }\n            ]\n        },\n        {\n            \"id\"         : \"sub\",\n            \"mainPrompt\" : \"#tts[Welcome to the sub menu. Enter your 4-digit PIN.]\",\n            \"repeatPrompt\" : \"#tts[Enter your 4-digit PIN.]\",\n            \"repeats\"   : 3,\n            \"maxDigits\" : 4\n        }\n    ]\n}",
-      "language": "json"
-    }
-  ]
+    "name"   :"runMenu",
+    "menus"  :
+    [
+        {
+            "id"         : "main",
+            "mainPrompt" : "#tts[Welcome to the main menu. Press 1 for support or 2 to continue.]",
+            "options"    :
+            [
+                {
+                    "dtmf"   : "1",
+                    "action" : "return(support)"
+                },
+                {
+                    "dtmf"   : "2",
+                    "action" : "menu(sub)"
+                }
+            ]
+        },
+        {
+            "id"         : "sub",
+            "mainPrompt" : "#tts[Welcome to the sub menu. Enter your 4-digit PIN.]",
+            "repeatPrompt" : "#tts[Enter your 4-digit PIN.]",
+            "repeats"   : 3,
+            "maxDigits" : 4
+        }
+    ]
 }
-[/block]
+```
+
+
 **runMenu** is a valid response action to an `incoming call event (ICE) <incomingcalleventcallback>` or `answered call event (ACE) <answeredcalleventcallback>`. It instructs what menu to play to the user and what actions to take based on the user’s input. It can also be used in combination with the `manageCall API <managecall>`, for conference calls.
 
 **menus** is a list of menus that are available. The menu with “id” : “main” will always play first, otherwise an error will be returned.
@@ -352,16 +359,26 @@ If there is no response to the callback within the timeout period, an error mess
 You can find more information on callback request signing `here <callbackrequestsigning>`.
 
 ### Request
-[block:code]
+```json
+[RequestBody]
 {
-  "codes": [
-    {
-      "code": "[RequestBody]\n{\n    string - event\n    string - callid\n    time - timestamp\n    int - version\n    string - custom\n    string - user\n    money - userRate\n    string - cli\n    identity - to\n    string - domain\n    string - applicationKey\n    string - originationType\n    int - duration\n}",
-      "language": "json"
-    }
-  ]
+    string - event
+    string - callid
+    time - timestamp
+    int - version
+    string - custom
+    string - user
+    money - userRate
+    string - cli
+    identity - to
+    string - domain
+    string - applicationKey
+    string - originationType
+    int - duration
 }
-[/block]
+```
+
+
 **event** has the value “ice”
 
 **callId** shows the unique Id assigned to this call
@@ -404,49 +421,60 @@ You can find more information on callback request signing `here <callbackrequest
 }
 [/block]
 ### Response
-[block:code]
-{
-  "codes": [
-    {
-      "code": "[Svaml]",
-      "language": "text"
-    }
-  ]
-}
-[/block]
+```text
+[Svaml]
+```
+
+
 *Example app-phone call response*
-[block:code]
+```json
 {
-  "codes": [
+    "instructions": 
+    [{
+        "name" : "playFiles",
+        "ids" : [ "welcome" ], 
+        "locale" : "en-US"
+    }],
+    "action": 
     {
-      "code": "{\n    \"instructions\": \n    [{\n        \"name\" : \"playFiles\",\n        \"ids\" : [ \"welcome\" ], \n        \"locale\" : \"en-US\"\n    }],\n    \"action\": \n    {\n        \"name\" : \"connectPSTN\",\n        \"maxDuration\" : 600,\n        \"number\" : \"+46555000111\",\n        \"cli\" : \"+46555000222\",\n        \"suppressCallbacks\" : false\n    }\n}",
-      "language": "json"
+        "name" : "connectPSTN",
+        "maxDuration" : 600,
+        "number" : "+46555000111",
+        "cli" : "+46555000222",
+        "suppressCallbacks" : false
     }
-  ]
 }
-[/block]
+```
+
+
 *Example app-app call response*
-[block:code]
+```json
 {
-  "codes": [
+    "action": 
     {
-      "code": "{\n    \"action\": \n    {\n        \"name\" : \"connectMXP\",\n        \"destination\":\n            {\n                \"type\":\"username\",\n                \"endpoint\":\"hello\"\n            }\n    }\n}",
-      "language": "json"
+        "name" : "connectMXP",
+        "destination":
+            {
+                "type":"username",
+                "endpoint":"hello"
+            }
     }
-  ]
 }
-[/block]
+```
+
+
 *Example conference call response*
-[block:code]
+```text
 {
-  "codes": [
+    "action": 
     {
-      "code": "{\n    \"action\": \n    {\n        \"name\" : \"connectConf\",\n        \"conferenceId\" : \"myConference123\"\n    }\n}",
-      "language": "text"
+        "name" : "connectConf",
+        "conferenceId" : "myConference123"
     }
-  ]
 }
-[/block]
+```
+
+
 ## Answered Call Event Callback (ACE)
 
 This callback is made when the call is picked up by the callee (person receiving the call). It is a POST request to the specified calling callback URL. This event does not support instructions and ignores any instructions passed. It only supports the actions `Continue <continueaction>` and `Hangup <hangupaction>`.
@@ -460,16 +488,19 @@ Please note that the Answered Call Event is only triggered for app-phone calls, 
 You can find more information on callback request signing `here <callbackrequestsigning>`.
 
 ### Request
-[block:code]
+```json
+[RequestBody]
 {
-  "codes": [
-    {
-      "code": "[RequestBody]\n{\n    string - event\n    string - callid\n    time - timestamp\n    int - version\n    string - custom\n    string - user\n}",
-      "language": "json"
-    }
-  ]
+    string - event
+    string - callid
+    time - timestamp
+    int - version
+    string - custom
+    string - user
 }
-[/block]
+```
+
+
 **event** has the value “ace”
 
 **callId** shows the unique Id assigned to this call
@@ -483,27 +514,22 @@ You can find more information on callback request signing `here <callbackrequest
 **user** shows the user Id that initiated the call
 
 ### Response
-[block:code]
-{
-  "codes": [
-    {
-      "code": "[Svaml]",
-      "language": "text"
-    }
-  ]
-}
-[/block]
+```text
+[Svaml]
+```
+
+
 *Example*
-[block:code]
+```json
 {
-  "codes": [
+    "action": 
     {
-      "code": "{\n    \"action\": \n    {\n        \"name\" : \"continue\"\n    }\n}",
-      "language": "json"
+        "name" : "continue"
     }
-  ]
 }
-[/block]
+```
+
+
 ## Disconnect Call Event Callback (DiCE)
 
 This callback is made when the call is disconnected. It is a POST request to the specified calling callback URL. This event does not support instructions and only supports the `hangup <hangupaction>` action.
@@ -517,16 +543,26 @@ Please note that the Disconnect Call Event is only triggered for app-phone calls
 You can find more information on callback request signing `here <callbackrequestsigning>`.
 
 ### Request
-[block:code]
+```json
+[RequestBody]
 {
-  "codes": [
-    {
-      "code": "[RequestBody]\n{\n    string - event\n    string - callid \n    time - timestamp\n    string - reason\n    string - result\n    int - version\n    string - custom\n    string - user\n    money - debit\n    money - userRate\n    identity - to\n    int - duration \n    string - from\n}",
-      "language": "json"
-    }
-  ]
+    string - event
+    string - callid 
+    time - timestamp
+    string - reason
+    string - result
+    int - version
+    string - custom
+    string - user
+    money - debit
+    money - userRate
+    identity - to
+    int - duration 
+    string - from
 }
-[/block]
+```
+
+
 **event** has the value “dice”
 
 **callId** shows the unique Id assigned to this call
@@ -569,16 +605,11 @@ You can find more information on callback request signing `here <callbackrequest
 **from** shows information of the initiator of the call.
 
 ### Response
-[block:code]
-{
-  "codes": [
-    {
-      "code": "200 OK",
-      "language": "text"
-    }
-  ]
-}
-[/block]
+```text
+200 OK
+```
+
+
 This callback is triggered as a result of a `runMenu <runmenuaction>` action. It can be triggered from either a user pressing a number of DTMF digits, or by the “return” command.
 
 It is a POST request to the specified calling callback URL. Your application can respond with SVAML logic.
@@ -588,16 +619,25 @@ It is a POST request to the specified calling callback URL. Your application can
 You can find more information on callback request signing `here <callbackrequestsigning>`.
 
 ### Request
-[block:code]
+```json
+[RequestBody]
 {
-  "codes": [
-    {
-      "code": "[RequestBody]\n{\n    string - event\n    string - callid\n    time - timestamp\n    int - version\n    MenuResult - menuResult\n}\n\n[MenuResult]\n{\n    string - menuId\n    string - type\n    string - value\n}",
-      "language": "json"
-    }
-  ]
+    string - event
+    string - callid
+    time - timestamp
+    int - version
+    MenuResult - menuResult
 }
-[/block]
+
+[MenuResult]
+{
+    string - menuId
+    string - type
+    string - value
+}
+```
+
+
 **event** has the value “pie”.
 
 **callId** shows the unique Id assigned to this call.
@@ -625,16 +665,11 @@ When the PIE event has been triggered from collecting DTMF digits, then the type
 **value** contains the value of the information.
 
 ### Response
-[block:code]
-{
-  "codes": [
-    {
-      "code": "[Svaml]",
-      "language": "text"
-    }
-  ]
-}
-[/block]
+```text
+[Svaml]
+```
+
+
 ## Notify Event Callback (Notify)
 
 This is the general callback used to send notifications. It is a POST request to the specified calling callback URL.
@@ -646,16 +681,18 @@ If there is no response to the callback within the timeout period, the notificat
 You can find more information on callback request signing `here <callbackrequestsigning>`.
 
 ### Request
-[block:code]
+```json
+[RequestBody]
 {
-  "codes": [
-    {
-      "code": "[RequestBody]\n{\n    string - event\n    int - version\n    string - type\n    string - custom (if applicable)\n    // ... notification-specific properties\n}",
-      "language": "json"
-    }
-  ]
+    string - event
+    int - version
+    string - type
+    string - custom (if applicable)
+    // ... notification-specific properties
 }
-[/block]
+```
+
+
 **event** has the value “notify”.
 
 **version** is the API version.
@@ -665,27 +702,27 @@ You can find more information on callback request signing `here <callbackrequest
 **custom** is an optional parameter that contains notification specific information.
 
 ### Response
-[block:code]
-{
-  "codes": [
-    {
-      "code": "200 OK",
-      "language": "text"
-    }
-  ]
-}
-[/block]
+```text
+200 OK
+```
+
+
 ### Call-related error notification
-[block:code]
+```json
+[RequestBody]
 {
-  "codes": [
-    {
-      "code": "[RequestBody]\n{\n    string - event\n    int - version\n    string - type\n    string - callid\n    int - errorCode\n    string - errorMsg\n    string - user\n    string - custom\n}",
-      "language": "json"
-    }
-  ]
+    string - event
+    int - version
+    string - type
+    string - callid
+    int - errorCode
+    string - errorMsg
+    string - user
+    string - custom
 }
-[/block]
+```
+
+
 **errCode** may have one of the following values:
 
 >    ``40001`` - Illegal SVAML
@@ -694,16 +731,29 @@ You can find more information on callback request signing `here <callbackrequest
 ### Tagging calls
 
 In ICE and ACE callback responses, the Action model supports adding tags for the call. These tags will be included in the CDR that is produced.
-[block:code]
+```json
+Response with tags
 {
-  "codes": [
-    {
-      "code": "Response with tags\n{\n\"Action\": {\n\"name\": \"ConnectPstn\",\n\"number\": \"+46700000000\",\n\"tags\": [\n          { \"key\": \"tag1\", \"value\": \"value1\" },\n          { \"key\": \"tag2\", \"value\": \"value2\" }\n    ]\n    }\n}\n\nCDR\n{\n... \n    \"Result\": \"ANSWERED\", \n    \"CallTags\": { \"tag1\": \"value1\", \"tag2\": \"value2\" }\n...\n}",
-      "language": "json"
+"Action": {
+"name": "ConnectPstn",
+"number": "+46700000000",
+"tags": [
+          { "key": "tag1", "value": "value1" },
+          { "key": "tag2", "value": "value2" }
+    ]
     }
-  ]
 }
-[/block]
+
+CDR
+{
+... 
+    "Result": "ANSWERED", 
+    "CallTags": { "tag1": "value1", "tag2": "value2" }
+...
+}
+```
+
+
 Since tags are accepted on both ICE and ACE callback responses, the values defined in the ACE response are concatenated to the tags list defined in the ICE response. Clashing key values are overridden by the latest value specified for the key. Tag keys are case-sensitive.
 
 Size limits for keys and values are 32 characters.

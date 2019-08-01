@@ -5,68 +5,63 @@ excerpt: ""
 The `SINMessageClient` is the entry point to Instant Messaging functionality in the Sinch SDK.
 
 Messages are sent through the `SINMessageClient` and events are received by the `SINMessageClientDelegate`. The message client is owned by the `SINClient` and accessed via `-[SINClient messageClient]`. Instant messaging is not enabled by default. In order to enabled instant messaging, `- [SINClient setSupportMessaging: YES]` must be set.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "SINClient sinchClient;\n[sinchClient setSupportMessaging: YES];\nSINMessageClient messageClient = [sinchClient messageClient];\n\n// Assign a delegate for instant messages events\nmessageClient.delegate = ...",
-      "language": "objectivec"
-    }
-  ]
-}
-[/block]
+```objectivec
+SINClient sinchClient;
+[sinchClient setSupportMessaging: YES];
+SINMessageClient messageClient = [sinchClient messageClient];
+
+// Assign a delegate for instant messages events
+messageClient.delegate = ...
+```
+
+
 ## Sending a message
 
 Messages are created using the static method `+[SINOutgoingMessage messageWithRecipient:text:]`. Once created, sending the message is as simple as calling `-[SINMessageClient sendMessage:]`:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "SINOutgoingMessage *message = [SINOutgoingMessage messageWithRecipient:@\"<recipient user id> text:@\"Hi there!\"];\n\n[messageClient sendMessage:message];",
-      "language": "objectivec"
-    }
-  ]
-}
-[/block]
+```objectivec
+SINOutgoingMessage *message = [SINOutgoingMessage messageWithRecipient:@"<recipient user id> text:@"Hi there!"];
+
+[messageClient sendMessage:message];
+```
+
+
 ### Message delivery success
 
 When a message to a recipient is successfully sent, the delegate is notified:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "// SINMessageClientDelegate\n\n- (void) messageSent:(id<SINMessage>)message recipientId:(NSString *)recipientId{\n  // Persist outgoing message\n  // Update UI",
-      "language": "objectivec"
-    }
-  ]
-}
-[/block]
+```objectivec
+// SINMessageClientDelegate
+
+- (void) messageSent:(id<SINMessage>)message recipientId:(NSString *)recipientId{
+  // Persist outgoing message
+  // Update UI
+```
+
+
 Updating the UI from the `messageSent:` callback is especially convenient when a user is simultaneously logged into more than one device. The `messageSent:` callback is fired on each device. This aids in keeping the UI consistent across devices.
 
 As soon as the system has confirmed the messages were delivered, the delegate is notified using the `messageDelivered:`method. Inspecting the `info`parameter passed to the callback reveals more details about the event.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "- (void) messageDelivered:(id<SINMessageDeliveryInfo>)info {\n   NSLog(@\"Message with id %@ was delivered to recipient with id  %@\",\n                                               info.messageId,\n                                               info.recipientId);\n}",
-      "language": "objectivec"
-    }
-  ]
+```objectivec
+- (void) messageDelivered:(id<SINMessageDeliveryInfo>)info {
+   NSLog(@"Message with id %@ was delivered to recipient with id  %@",
+                                               info.messageId,
+                                               info.recipientId);
 }
-[/block]
+```
+
+
 ### Message delivery failures
 
 Delivering a message can fail for various reasons: there might not be a network available, the recipient does not have instant messaging support, and so on. When a message failed to reach its destination the delegate is notified using the `messageDeliveryFailed:` callback. The reason for failing to deliver a message is propagated back as an array of `SINMessageFailureInfo` instances.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "- (void) messageDeliveryFailed:(id<SINMessage>) message info:(NSArray *)messageFailureInfo {\n    for (id<SINMessageFailureInfo> reason in messageFailureInfo) {\n        NSLog(@\"Delivering message with id %@ failed to user %@. Reason %@\", \n        reason.messageId, reason.recipientId, [reason.error localizedDescription]);\n    }\n}",
-      "language": "objectivec"
+```objectivec
+- (void) messageDeliveryFailed:(id<SINMessage>) message info:(NSArray *)messageFailureInfo {
+    for (id<SINMessageFailureInfo> reason in messageFailureInfo) {
+        NSLog(@"Delivering message with id %@ failed to user %@. Reason %@", 
+        reason.messageId, reason.recipientId, [reason.error localizedDescription]);
     }
-  ]
 }
-[/block]
+```
+
+
 
 [block:callout]
 {
@@ -94,16 +89,28 @@ Delivering a message can fail for various reasons: there might not be a network 
 ## Receiving a message
 
 Incoming messages are delivered to the delegate:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "- (void) messageClient:(id<SINMessageClient>) messageClient \n          didReceiveIncomingMessage:(id<SINMessage>)message {             \n\n  // Present a Local Notification if app is in background\n  if([UIApplication sharedApplication].applicationState == UIApplicationStateBackground){\n\n    UILocalNotification* notification = [[UILocalNotification alloc] init];\n    notification.alertBody = [NSString stringWithFormat:@\"Message from %@\",\n                                                        [message recipientIds][0]];\n\n    [[UIApplication sharedApplication] presentLocalNotificationNow:notification];\n  } else {\n    // Update UI in-app\n  }\n\n  // Persist incoming message\n\n}",
-      "language": "objectivec"
-    }
-  ]
+```objectivec
+- (void) messageClient:(id<SINMessageClient>) messageClient 
+          didReceiveIncomingMessage:(id<SINMessage>)message {             
+
+  // Present a Local Notification if app is in background
+  if([UIApplication sharedApplication].applicationState == UIApplicationStateBackground){
+
+    UILocalNotification* notification = [[UILocalNotification alloc] init];
+    notification.alertBody = [NSString stringWithFormat:@"Message from %@",
+                                                        [message recipientIds][0]];
+
+    [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
+  } else {
+    // Update UI in-app
+  }
+
+  // Persist incoming message
+
 }
-[/block]
+```
+
+
 
 [block:callout]
 {
@@ -115,16 +122,14 @@ Incoming messages are delivered to the delegate:
 ## Sending a message to multiple recipients
 
 To send a message to multiple recipients, create the outgoing message with the `+[SINOutgoingMessage messageWithRecipients:text:]`.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "NSArray *recipients = @[@\"recipient user id 1\", @\"recipient user id 2\"];\nSINOutgoingMessage *message = [SINOutgoingMessage messageWithRecipients:recipients text:@\"Hi there!\"];\n\n[messageClient sendMessage:message];",
-      "language": "objectivec"
-    }
-  ]
-}
-[/block]
+```objectivec
+NSArray *recipients = @[@"recipient user id 1", @"recipient user id 2"];
+SINOutgoingMessage *message = [SINOutgoingMessage messageWithRecipients:recipients text:@"Hi there!"];
+
+[messageClient sendMessage:message];
+```
+
+
 ### Receiving status updates for multi-recipient Messages
 
 When a message transitions to a new state it is communicated back using `SINMessageClientDelegate` as the single recipient case. The delegate’s callbacks are triggered once for every recipient.

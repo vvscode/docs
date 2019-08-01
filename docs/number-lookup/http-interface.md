@@ -29,17 +29,14 @@ Please find the hosts and port numbers for our Number Lookup HTTP/HTTPS server i
 ### Request
 
 The request has the format:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "http://<username>:<password>@<server>:<port>/lookup?msisdn=[&nocache]\n",
-      "language": "html",
-      "name": "Format"
-    }
-  ]
-}
-[/block]
+
+**Format**
+```html
+http://<username>:<password>@<server>:<port>/lookup?msisdn=[&nocache]
+
+```
+
+
 |         Parameter                  |            Description                      |
 | ------------------------- | -------------------------------- |
 | \<username\>:\<password\> | Basic authentication parameters  |
@@ -51,33 +48,26 @@ The request has the format:
 ### Response
 
 One of the responses when using Number Portability Lookup service:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "result=<result>;imsi=<imsi>",
-      "language": "html",
-      "name": "Example 1"
-    },
-    {
-      "code": "result=<result>;imsi=<imsi>;location=<location>",
-      "language": "html",
-      "name": "Example 2"
-    }
-  ]
-}
-[/block]
+
+**Example 1**
+```html
+result=<result>;imsi=<imsi>
+```
+
+
+**Example 2**
+```html
+result=<result>;imsi=<imsi>;location=<location>
+```
+
+
 Response when using the Real-Time Lookup service:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "result=<result>;imsi=<imsi>;location=<location>\n",
-      "language": "html"
-    }
-  ]
-}
-[/block]
+```html
+result=<result>;imsi=<imsi>;location=<location>
+
+```
+
+
 |      Parameter         |                    Description                                                        |
 | ------------- | -------------------------------------------------------------------------- |
 | \<result\>    | Lookup result (Response Code)                                              |
@@ -110,51 +100,56 @@ Response when using the Real-Time Lookup service:
 ## Examples
 
 ### HTTP Request
-[block:code]
-{
-  "codes": [
-    {
-      "code": "http://username:password@93.158.78.4:3700/lookup?msisdn=46708100100\n",
-      "language": "shell",
-      "name": "Request"
-    }
-  ]
-}
-[/block]
+
+**Request**
+```shell
+http://username:password@93.158.78.4:3700/lookup?msisdn=46708100100
+
+```
+
+
 **HTTP Request with cache function bypass**
 
 ### Successful response, Number Portability Lookup
-[block:code]
-{
-  "codes": [
-    {
-      "code": "result=OK;imsi=24008\n\nor\n\nresult=OK;imsi=24008;location=46",
-      "language": "shell",
-      "name": "Successful response"
-    }
-  ]
-}
-[/block]
+
+**Successful response**
+```shell
+result=OK;imsi=24008
+
+or
+
+result=OK;imsi=24008;location=46
+```
+
+
 ### Unsuccessful response
-[block:code]
-{
-  "codes": [
-    {
-      "code": "result=UNKNOWN_SUBSCRIBER\n",
-      "language": "shell",
-      "name": "Unsuccessful response"
-    }
-  ]
-}
-[/block]
+
+**Unsuccessful response**
+```shell
+result=UNKNOWN_SUBSCRIBER
+
+```
+
+
 ### Request with successful response, using curl
-[block:code]
-{
-  "codes": [
-    {
-      "code": "$ curl -v -u user:password http://93.158.78.4:3700/lookup?msisdn=46708100200\n* About to connect() to 93.158.78.4 port 3700 (#0)\n* Trying 93.158.78.4…\n* Connected to 93.158.78.4 (93.158.78.4) port 3700 (#0)\n* Server auth using Basic with user ‘user’\n> GET /lookup?msisdn=46708100200 HTTP/1.1\n> Authorization: Basic dXNlcjpwYXNzd29yZA==\n> User-Agent: curl/7.30.0\n> Host: 93.158.78.4:3700\n> Accept: */*\n>\n< HTTP/1.1 200 OK, Success\n< Date: Mon, 12 Feb 2014 11:00:41 +0100\n< Content-Length: 20\n< Content-Type: text/plain; charset=ISO-8859-1\n<\n* Connection #0 to host 93.158.78.4 left intact\n\nresult=OK;imsi=24004",
-      "language": "curl"
-    }
-  ]
-}
-[/block]
+```curl
+$ curl -v -u user:password http://93.158.78.4:3700/lookup?msisdn=46708100200
+* About to connect() to 93.158.78.4 port 3700 (#0)
+* Trying 93.158.78.4…
+* Connected to 93.158.78.4 (93.158.78.4) port 3700 (#0)
+* Server auth using Basic with user ‘user’
+> GET /lookup?msisdn=46708100200 HTTP/1.1
+> Authorization: Basic dXNlcjpwYXNzd29yZA==
+> User-Agent: curl/7.30.0
+> Host: 93.158.78.4:3700
+> Accept: */*
+>
+< HTTP/1.1 200 OK, Success
+< Date: Mon, 12 Feb 2014 11:00:41 +0100
+< Content-Length: 20
+< Content-Type: text/plain; charset=ISO-8859-1
+<
+* Connection #0 to host 93.158.78.4 left intact
+
+result=OK;imsi=24004
+```

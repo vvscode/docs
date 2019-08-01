@@ -32,14 +32,23 @@ This postback notifies you when an MMS MO is received.
 | file            | A series of sub-nodes that contains a single URL to a picture,,video, audio or text file sent in the MMS MO within each node. The URL,points to the location of the content on our servers. For those,developing the back-end handling of the postback URL, you may choose to,download/store these content files for whatever purpose you see fit. You,may also choose to store the URLs for download at a future time. The,file will be removed based on the terms of your contract |
 
 ### MMS MO Example
-[block:code]
-{
-  "codes": [
-    {
-      "code": "<postback>\n    <origin>MMS_MO</origin>\n    <code>N401</code>\n    <from>14082257140</from>\n    <to>28444</to>\n    <keyword>all</keyword>\n    <tracking-id>MMS_MO_iLnCRrL6</tracking-id>\n    <operator-id>31002</operator-id>\n    <timestamp>2014-02-03T11:19:49-05:00</timestamp>\n    <message-subject></message-subject>\n    <content>\n        <file>URL of Content Here</file>\n        <file>URL of Content Here</file>\n        <file>URL of Content Here</file>\n    </content>\n</postback>",
-      "language": "xml",
-      "name": "MMS MO"
-    }
-  ]
-}
-[/block]
+
+**MMS MO**
+```xml
+<postback>
+    <origin>MMS_MO</origin>
+    <code>N401</code>
+    <from>14082257140</from>
+    <to>28444</to>
+    <keyword>all</keyword>
+    <tracking-id>MMS_MO_iLnCRrL6</tracking-id>
+    <operator-id>31002</operator-id>
+    <timestamp>2014-02-03T11:19:49-05:00</timestamp>
+    <message-subject></message-subject>
+    <content>
+        <file>URL of Content Here</file>
+        <file>URL of Content Here</file>
+        <file>URL of Content Here</file>
+    </content>
+</postback>
+```

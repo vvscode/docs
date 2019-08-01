@@ -27,17 +27,20 @@ Callbacks are sent as a JSON encoded HTTP POST requests to the agent-specific we
 ### Callback Payload
 
 The callback payload format is as such:
-[block:code]
+
+**JSON Representation**
+```json
 {
-  "codes": [
-    {
-      "code": "{\n  \"type\": enum(\n    \"status_report_rcs\",\n    \"user_agent_event_rcs\",\n    \"user_agent_message_rcs\"\n  ),\n  ... // type specific fields\n}",
-      "language": "json",
-      "name": "JSON Representation"
-    }
-  ]
+  "type": enum(
+    "status_report_rcs",
+    "user_agent_event_rcs",
+    "user_agent_message_rcs"
+  ),
+  ... // type specific fields
 }
-[/block]
+```
+
+
 #### Fields
 
 Depending on the type of callback the payload will be one of (as indicated by `type` field):
@@ -49,43 +52,53 @@ Depending on the type of callback the payload will be one of (as indicated by `t
 #### Examples
 
 ##### Successfully delivery RCS message
-[block:code]
+```json
 {
-  "codes": [
-    {
-      "code": "{\n  \"type\": \"status_report_rcs\",\n  \"message_id\": \"bc6776ee-7bde-4d6e-9c1e-102e87f92520\",\n  \"at\": \"2017-10-31T13:06:30Z\",\n  \"status_report\": {\n    \"type\": \"delivered\"\n  }\n}",
-      "language": "json",
-      "name": ""
-    }
-  ]
+  "type": "status_report_rcs",
+  "message_id": "bc6776ee-7bde-4d6e-9c1e-102e87f92520",
+  "at": "2017-10-31T13:06:30Z",
+  "status_report": {
+    "type": "delivered"
+  }
 }
-[/block]
+```
+
+
 ##### Message dispatched as SMS fallback
 
 An SMS fallback was delivered since the RCS message was not delivered before it expired.
-[block:code]
+```json
 {
-  "codes": [
-    {
-      "code": "{\n  \"type\": \"status_report_rcs\",\n  \"message_id\": \"9cd91120-5e54-4d42-af22-1a042502ad97\",\n  \"at\": \"2017-10-31T13:06:30Z\",\n  \"status_report\": {\n    \"type\": \"fallback_dispatched\",\n    \"external_ref\": \"23esaaf9912s\",\n    \"revoked\": true,\n    \"reason\": {\n      \"type\": \"expired\"\n    }\n  }\n}",
-      "language": "json",
-      "name": ""
+  "type": "status_report_rcs",
+  "message_id": "9cd91120-5e54-4d42-af22-1a042502ad97",
+  "at": "2017-10-31T13:06:30Z",
+  "status_report": {
+    "type": "fallback_dispatched",
+    "external_ref": "23esaaf9912s",
+    "revoked": true,
+    "reason": {
+      "type": "expired"
     }
-  ]
+  }
 }
-[/block]
+```
+
+
 ##### User agent taps a suggested reply chip
-[block:code]
+```json
 {
-  "codes": [
-    {
-      "code": "{\n  \"type\": \"user_agent_message_rcs\",\n  \"message_id\": \"9lkj32asd712jkasdjkasdkhsadasd\",\n  \"from\": \"4655123456\",\n  \"message\": {\n    \"type\": \"suggestion_response\",\n    \"postback_data\": \"ef425f90-a27b-4956-9ba0-37cdd2d6e160_YES_CHIP\",\n    \"text\": \"Yes\"\n  }\n}",
-      "language": "json",
-      "name": ""
-    }
-  ]
+  "type": "user_agent_message_rcs",
+  "message_id": "9lkj32asd712jkasdjkasdkhsadasd",
+  "from": "4655123456",
+  "message": {
+    "type": "suggestion_response",
+    "postback_data": "ef425f90-a27b-4956-9ba0-37cdd2d6e160_YES_CHIP",
+    "text": "Yes"
+  }
 }
-[/block]
+```
+
+
 ### Status reports
 
 Message status reports are sent whenever a message performs a state transition in the diagram below:
@@ -126,17 +139,28 @@ Detailed description of all available status report payloads
 ##### StatusReport
 
 JSON Representation
-[block:code]
+```json
 {
-  "codes": [
-    {
-      "code": "{\n  \"type\": \"status_report_rcs\",\n  \"message_id\": string,\n  \"at\": timestamp,\n  \"status_report\": {\n    \"type\": enum(\n      \"queued\",\n      \"capability_lookup_dispatched\",\n      \"dispatched\",\n      \"fallback_dispatched\",\n      \"aborted\",\n      \"failed\",\n      \"delivered\",\n      \"displayed\"\n    ),\n    ... // type specific fields\n  }\n}",
-      "language": "json",
-      "name": null
-    }
-  ]
+  "type": "status_report_rcs",
+  "message_id": string,
+  "at": timestamp,
+  "status_report": {
+    "type": enum(
+      "queued",
+      "capability_lookup_dispatched",
+      "dispatched",
+      "fallback_dispatched",
+      "aborted",
+      "failed",
+      "delivered",
+      "displayed"
+    ),
+    ... // type specific fields
+  }
 }
-[/block]
+```
+
+
 
 [block:html]
 {
@@ -144,16 +168,13 @@ JSON Representation
 }
 [/block]
 ##### StatusReportQueued
-[block:code]
+```json
 {
-  "codes": [
-    {
-      "code": "{\n  \"type\": \"queued\"\n}",
-      "language": "json"
-    }
-  ]
+  "type": "queued"
 }
-[/block]
+```
+
+
 ###### Fields
 
 | Field | Type   | Description            | Default | Constraints | Required |
@@ -161,16 +182,13 @@ JSON Representation
 | type  | string | Static string 'queued' | N/A     | N/A         | Yes      |
 
 ##### StatusReportCapabilityLookupDispatched
-[block:code]
+```json
 {
-  "codes": [
-    {
-      "code": "{\n  \"type\": \"capability_lookup_dispatched\"\n}",
-      "language": "json"
-    }
-  ]
+  "type": "capability_lookup_dispatched"
 }
-[/block]
+```
+
+
 ###### Fields
 
 | Field | Type   | Description                                    | Default | Constraints | Required |
@@ -178,16 +196,13 @@ JSON Representation
 | type  | string | Static string 'capability\_lookup\_dispatched' | N/A     | N/A         | Yes      |
 
 ##### StatusReportDispatched
-[block:code]
+```json
 {
-  "codes": [
-    {
-      "code": "{\n  \"type\": \"dispatched\"\n}",
-      "language": "json"
-    }
-  ]
+  "type": "dispatched"
 }
-[/block]
+```
+
+
 ###### Fields
 
 | Field | Type   | Description                | Default | Constraints | Required |
@@ -195,16 +210,24 @@ JSON Representation
 | type  | string | Static string 'dispatched' | N/A     | N/A         | Yes      |
 
 ##### StatusReportFallbackDispatched
-[block:code]
+```json
 {
-  "codes": [
-    {
-      "code": "{\n  \"type\": \"fallback_dispatched\",\n  \"external_ref\": string,\n  \"revoked\": boolean,\n  \"reason\": {\n    \"type\": enum(\n      \"rcs_unavailable\",\n      \"capability_unsupported\",\n      \"expired\",\n      \"agent_error\",\n    ),\n    ... // type specific fields\n  }\n}",
-      "language": "json"
-    }
-  ]
+  "type": "fallback_dispatched",
+  "external_ref": string,
+  "revoked": boolean,
+  "reason": {
+    "type": enum(
+      "rcs_unavailable",
+      "capability_unsupported",
+      "expired",
+      "agent_error",
+    ),
+    ... // type specific fields
+  }
 }
-[/block]
+```
+
+
 ###### Fields
 [block:html]
 {
@@ -212,16 +235,13 @@ JSON Representation
 }
 [/block]
 ##### FallbackReasonRcsUnavailable
-[block:code]
+```json
 {
-  "codes": [
-    {
-      "code": "{\n  \"type\": \"rcs_unavailable\"\n}",
-      "language": "json"
-    }
-  ]
+  "type": "rcs_unavailable"
 }
-[/block]
+```
+
+
 ###### Fields
 
 | Field | Type   | Description                      | Default | Constraints | Required |
@@ -229,16 +249,13 @@ JSON Representation
 | type  | string | Static string 'rcs\_unavailable' | N/A     | N/A         | Yes      |
 
 ##### FallbackReasonCapabilityUnsupported
-[block:code]
+```json
 {
-  "codes": [
-    {
-      "code": "{\n  \"type\": \"capability_unsupported\"\n}",
-      "language": "json"
-    }
-  ]
+  "type": "capability_unsupported"
 }
-[/block]
+```
+
+
 ###### Fields
 
 | Field | Type   | Description                             | Default | Constraints | Required |
@@ -246,16 +263,13 @@ JSON Representation
 | type  | string | Static string 'capability\_unsupported' | N/A     | N/A         | Yes      |
 
 ##### FallbackReasonExpired
-[block:code]
+```json
 {
-  "codes": [
-    {
-      "code": "{\n  \"type\": \"expired\"\n}",
-      "language": "json"
-    }
-  ]
+  "type": "expired"
 }
-[/block]
+```
+
+
 ###### Fields
 
 | Field | Type   | Description             | Default | Constraints | Required |
@@ -263,17 +277,15 @@ JSON Representation
 | type  | string | Static string 'expired' | N/A     | N/A         | Yes      |
 
 ##### FallbackReasonAgentError
-[block:code]
+```json
 {
-  "codes": [
-    {
-      "code": "{\n  \"type\": \"agent_error\",\n  \"code\": integer,\n  \"reason\": string\n}",
-      "language": "json",
-      "name": null
-    }
-  ]
+  "type": "agent_error",
+  "code": integer,
+  "reason": string
 }
-[/block]
+```
+
+
 ###### Fields
 
 | Field  | Type    | Description                                    | Default | Constraints | Required |
@@ -283,16 +295,15 @@ JSON Representation
 | reason | string  | Descriptive message of why the message failed  | N/A     | N/A         | Yes      |
 
 ##### StatusReportAborted
-[block:code]
+```json
 {
-  "codes": [
-    {
-      "code": "{\n  \"type\": \"aborted\",\n  \"revoked\": boolean,\n  \"expired\": boolean\n}",
-      "language": "json"
-    }
-  ]
+  "type": "aborted",
+  "revoked": boolean,
+  "expired": boolean
 }
-[/block]
+```
+
+
 ###### Fields
 
 | Field   | Type    | Description                       | Default | Constraints | Required |
@@ -302,16 +313,17 @@ JSON Representation
 | expired | boolean | Has the RCS message expired?      | No      | N/A         | Yes      |
 
 ##### StatusReportFailed
-[block:code]
+```json
 {
-  "codes": [
-    {
-      "code": "{\n  \"type\": \"failed\",\n  \"revoked\": boolean,\n  \"expired\": boolean,\n  \"code\": integer,\n  \"reason\": string\n}",
-      "language": "json"
-    }
-  ]
+  "type": "failed",
+  "revoked": boolean,
+  "expired": boolean,
+  "code": integer,
+  "reason": string
 }
-[/block]
+```
+
+
 ###### Fields
 
 | Field   | Type    | Description                                    | Default | Constraints | Required |
@@ -323,16 +335,13 @@ JSON Representation
 | reason  | string  | Descriptive message of why the message failed  | No      | N/A         | Yes      |
 
 ##### StatusReportDelivered
-[block:code]
+```json
 {
-  "codes": [
-    {
-      "code": "{\n  \"type\": \"delivered\"\n}",
-      "language": "json"
-    }
-  ]
+  "type": "delivered"
 }
-[/block]
+```
+
+
 ###### Fields
 
 | Field | Type   | Description               | Default | Constraints | Required |
@@ -340,16 +349,13 @@ JSON Representation
 | type  | string | Static string 'delivered' | N/A     | N/A         | Yes      |
 
 ##### StatusReportDisplayed
-[block:code]
+```json
 {
-  "codes": [
-    {
-      "code": "{\n  \"type\": \"displayed\"\n}",
-      "language": "json"
-    }
-  ]
+  "type": "displayed"
 }
-[/block]
+```
+
+
 ###### Fields
 
 | Field | Type   | Description               | Default | Constraints | Required |
@@ -363,16 +369,18 @@ Detailed descriptions of all available user agent event payloads.
 #### JSON Models
 
 ##### UserAgentEvent
-[block:code]
+```json
 {
-  "codes": [
-    {
-      "code": "{\n  \"type\": \"user_agent_event_rcs\",\n  \"from\": MSIDSN,\n  \"event\": {\n    \"type\": enum(\"composing\"),\n    ... // type specific fields\n  }\n}",
-      "language": "json"
-    }
-  ]
+  "type": "user_agent_event_rcs",
+  "from": MSIDSN,
+  "event": {
+    "type": enum("composing"),
+    ... // type specific fields
+  }
 }
-[/block]
+```
+
+
 ###### Fields
 [block:html]
 {
@@ -380,16 +388,13 @@ Detailed descriptions of all available user agent event payloads.
 }
 [/block]
 ##### UserAgentEventComposing
-[block:code]
+```json
 {
-  "codes": [
-    {
-      "code": "{\n  \"type\": \"composing\"\n}",
-      "language": "json"
-    }
-  ]
+  "type": "composing"
 }
-[/block]
+```
+
+
 ###### Fields
 
 | Field | Type   | Description                                                                     | Default | Constraints | Required |
@@ -403,16 +408,24 @@ Detailed descriptions of all available user agent message payloads
 #### JSON Models
 
 ##### UserAgentMessage
-[block:code]
+```json
 {
-  "codes": [
-    {
-      "code": "{\n  \"type\": \"user_agent_message_rcs\",\n  \"message_id\": string,\n  \"from\": MSISDN,\n  \"message\": {\n    \"type\": enum(\n      \"text\",\n      \"file\",\n      \"suggestion_response\",\n      \"location\"\n    ),\n    ... // type specific fields\n  }\n}",
-      "language": "json"
-    }
-  ]
+  "type": "user_agent_message_rcs",
+  "message_id": string,
+  "from": MSISDN,
+  "message": {
+    "type": enum(
+      "text",
+      "file",
+      "suggestion_response",
+      "location"
+    ),
+    ... // type specific fields
+  }
 }
-[/block]
+```
+
+
 ###### Fields
 [block:html]
 {
@@ -420,16 +433,15 @@ Detailed descriptions of all available user agent message payloads
 }
 [/block]
 ##### SuggestionResponse
-[block:code]
+```json
 {
-  "codes": [
-    {
-      "code": "{\n  \"type\": \"suggestion_response\",\n  \"postback_data\": string,\n  \"text\": string\n}",
-      "language": "json"
-    }
-  ]
+  "type": "suggestion_response",
+  "postback_data": string,
+  "text": string
 }
-[/block]
+```
+
+
 ###### Fields
 
 | Field          | Type   | Description                                                                                      | Default | Constraints | Required |
@@ -441,16 +453,15 @@ Detailed descriptions of all available user agent message payloads
 At least one of `postback_data` and `text` will be set.
 
 ##### LocationMessage
-[block:code]
+```json
 {
-  "codes": [
-    {
-      "code": "{\n  \"type\": \"location\",\n  \"latitude\": number,\n  \"longitude\": number\n}",
-      "language": "json"
-    }
-  ]
+  "type": "location",
+  "latitude": number,
+  "longitude": number
 }
-[/block]
+```
+
+
 ###### Fields
 
 | Field     | Type   | Description                | Default | Constraints                  | Required |

@@ -1,7 +1,6 @@
 ---
 title: "Batches Endpoint"
-excerpt: "The most feature rich API Sinch offers. It allows for single messages, scheduled batch send-outs
-using message templates and more."
+excerpt: "The most feature rich API Sinch offers. It allows for single messages, scheduled batch send-outs using message templates and more."
 ---
 ### Send a batch message
 
@@ -37,22 +36,40 @@ JSON body fields:
 |client_reference                   |The client identifier of batch message. If set, it will be added in the delivery report/callback of this batch     |      String      |N/A                 |                            Max 128 characters long                            |                      No                      |
 |max_number_of_message_parts        |Message will be dispatched only if it is not split to more parts than Max Number of Message Parts                  |      String      |N/A                 |                           Must be higher or equal 1                           |                      No                      |
 |max_price_per_message              |Max Price Threshold per message, If pricing per country features are enabled.                                      |      String      |N/A                 |                           Must be greater than zero                           |                      No                      |
-[block:code]
-{
-  "codes": [
-    {
-      "code": "curl -X POST \\\n     -H \"Authorization: Bearer {token}\" \\\n     -H \"Content-Type: application/json\"  -d '\n      {\n          \"from\": \"12345\",\n          \"to\": [\n              \"123456789\"\n          ],\n          \"body\": \"Hi there! How are you?\"\n      }' \\\n  \"https://api.clxcommunications.com/xms/v1/{service_plan_id}/batches\"",
-      "language": "shell",
-      "name": "Send message to one recipient"
-    },
-    {
-      "code": "curl -X POST \\\n     -H \"Authorization: Bearer {token}\" \\\n     -H \"Content-Type: application/json\"  -d '\n      {\n          \"from\": \"12345\",\n          \"to\": [\n              \"123456789\",\n              \"987654321\"\n          ],\n          \"body\": \"Hi there! How are you?\"\n      }' \\\n  \"https://api.clxcommunications.com/xms/v1/{service_plan_id}/batches\"",
-      "language": "shell",
-      "name": "Send message to two recipients"
-    }
-  ]
-}
-[/block]
+
+**Send message to one recipient**
+```shell
+curl -X POST \
+     -H "Authorization: Bearer {token}" \
+     -H "Content-Type: application/json"  -d '
+      {
+          "from": "12345",
+          "to": [
+              "123456789"
+          ],
+          "body": "Hi there! How are you?"
+      }' \
+  "https://api.clxcommunications.com/xms/v1/{service_plan_id}/batches"
+```
+
+
+**Send message to two recipients**
+```shell
+curl -X POST \
+     -H "Authorization: Bearer {token}" \
+     -H "Content-Type: application/json"  -d '
+      {
+          "from": "12345",
+          "to": [
+              "123456789",
+              "987654321"
+          ],
+          "body": "Hi there! How are you?"
+      }' \
+  "https://api.clxcommunications.com/xms/v1/{service_plan_id}/batches"
+```
+
+
 #### Response
 
 `201 Created`
@@ -75,39 +92,87 @@ There was an error with your request. The body is a JSON object described in res
 The system was not able to fulfill your request. The body is a JSON object described in rest\_http\_errors. Possible error codes include `unknown_group`, `unknown_campaign` and `missing_callback_url`.
 
 Response for a successfully created batch message.
-[block:code]
+
+**JSON**
+```json
 {
-  "codes": [
-    {
-      "code": "{\n    \"from\": \"12345\",\n    \"to\": [\n        \"123456789\",\n        \"987654321\"\n    ],\n    \"body\": \"Hi there! How are you?\",\n    \"id\": \"{batch_id}\",\n    \"created_at\": \"2014-10-02T09:34:28.542Z\",\n    \"modified_at\": \"2014-10-02T09:34:28.542Z\",\n    \"canceled\": \"False\"\n}",
-      "language": "json",
-      "name": "JSON"
-    }
-  ]
+    "from": "12345",
+    "to": [
+        "123456789",
+        "987654321"
+    ],
+    "body": "Hi there! How are you?",
+    "id": "{batch_id}",
+    "created_at": "2014-10-02T09:34:28.542Z",
+    "modified_at": "2014-10-02T09:34:28.542Z",
+    "canceled": "False"
 }
-[/block]
+```
+
+
 Send scheduled batch message with expiry.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "curl -X POST \\\n     -H \"Authorization: Bearer {token}\" \\\n     -H \"Content-Type: application/json\"  -d '\n      {\n          \"from\": \"12345\",\n          \"to\": [\n              \"123456789\",\n              \"987654321\"\n          ],\n          \"body\": \"Hi there! How are you?\",\n          \"send_at\": \"2014-10-02T09:30Z\",\n          \"expire_at\": \"2014-10-02T12:30Z\"\n      }' \\\n  \"https://api.clxcommunications.com/xms/v1/{service_plan_id}/batches\"",
-      "language": "shell",
-      "name": "Scheduled batch message"
-    },
-    {
-      "code": "curl -X POST \\\n     -H \"Authorization: Bearer {token}\" \\\n     -H \"Content-Type: application/json\"  -d '\n      {\n          \"from\": \"12345\",\n          \"to\": [\n              \"123456789\",\n              \"987654321\"\n          ],\n          \"body\": \"Hi there! How are you?\",\n          \"delivery_report\": \"summary\",\n          \"callback_url\": \"http://www.example.com\"\n      }' \\\n  \"https://api.clxcommunications.com/xms/v1/{service_plan_id}/batches\"",
-      "language": "shell",
-      "name": "Batch message with custom delivery report URL"
-    },
-    {
-      "code": "curl -X POST \\\n     -H \"Authorization: Bearer {token}\" \\\n     -H \"Content-Type: application/json\"  -d '\n      {\n      \"from\": \"12345\",\n      \"to\": [\n          \"123456789\",\n          \"987654321\"\n       ],\n      \"body\": \"Hi ${name}! How are you?\",\n      \"parameters\": {\n          \"name\": {\n              \"123456789\": \"Joe\",\n              \"default\": \"there\"\n           }\n      }\n  }' \\\n  \"https://api.clxcommunications.com/xms/v1/{service_plan_id}/batches\"",
-      "language": "shell",
-      "name": "Parameterized message"
-    }
-  ]
-}
-[/block]
+
+**Scheduled batch message**
+```shell
+curl -X POST \
+     -H "Authorization: Bearer {token}" \
+     -H "Content-Type: application/json"  -d '
+      {
+          "from": "12345",
+          "to": [
+              "123456789",
+              "987654321"
+          ],
+          "body": "Hi there! How are you?",
+          "send_at": "2014-10-02T09:30Z",
+          "expire_at": "2014-10-02T12:30Z"
+      }' \
+  "https://api.clxcommunications.com/xms/v1/{service_plan_id}/batches"
+```
+
+
+**Batch message with custom delivery report URL**
+```shell
+curl -X POST \
+     -H "Authorization: Bearer {token}" \
+     -H "Content-Type: application/json"  -d '
+      {
+          "from": "12345",
+          "to": [
+              "123456789",
+              "987654321"
+          ],
+          "body": "Hi there! How are you?",
+          "delivery_report": "summary",
+          "callback_url": "http://www.example.com"
+      }' \
+  "https://api.clxcommunications.com/xms/v1/{service_plan_id}/batches"
+```
+
+
+**Parameterized message**
+```shell
+curl -X POST \
+     -H "Authorization: Bearer {token}" \
+     -H "Content-Type: application/json"  -d '
+      {
+      "from": "12345",
+      "to": [
+          "123456789",
+          "987654321"
+       ],
+      "body": "Hi ${name}! How are you?",
+      "parameters": {
+          "name": {
+              "123456789": "Joe",
+              "default": "there"
+           }
+      }
+  }' \
+  "https://api.clxcommunications.com/xms/v1/{service_plan_id}/batches"
+```
+
+
 ### Cancel batch message
 
 A batch can be canceled at any point. If a batch is canceled while it's currently being delivered some messages currently being processed might still be delivered. The delivery report will indicate which messages were canceled and which weren't.
@@ -123,17 +188,15 @@ Canceling a batch scheduled in the future will result in an empty delivery repor
 `200 OK`
 
 The response is a JSON object described in send\_batch\_msg.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "curl-X DELETE \\\n   -H \"Authorization: Bearer {token}\" \\\n  \"https://api.clxcommunications.com/xms/v1/{service_plan_id}/batches/{batch_id}\"",
-      "language": "shell",
-      "name": "Cancel a batch message"
-    }
-  ]
-}
-[/block]
+
+**Cancel a batch message**
+```shell
+curl-X DELETE \
+   -H "Authorization: Bearer {token}" \
+  "https://api.clxcommunications.com/xms/v1/{service_plan_id}/batches/{batch_id}"
+```
+
+
 ### List batch messages
 
 With the list operation you can list batch messages created in the last 14 days that you have created. This operation supports pagination.
@@ -198,17 +261,30 @@ The number of recipients in the batch, the number of messages in the batch and a
 `400 Bad request`
 
 There was an error with your request. The body is a JSON object described in rest\_http\_errors. Possible error codes include **syntax\_invalid\_json**, **syntax\_invalid\_parameter\_format** and **syntax\_constraint\_violation**.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "curl -X POST \\\n     -H \"Authorization: Bearer {token}\" \\\n     -H \"Content-Type: application/json\"  -d '\n      {\n      \"from\": \"12345\",\n      \"to\": [\n          \"123456789\",\n          \"987654321\"\n       ],\n      \"body\": \"Hi ${name}! How are you?\",\n      \"parameters\": {\n          \"name\": {\n              \"123456789\": \"Joe\",\n              \"default\": \"there\"\n           }\n      }\n  }' \\\n  \"https://api.clxcommunications.com/xms/v1/{service_plan_id}/batches/dry_run\"",
-      "language": "shell",
-      "name": "Dry run a batch"
-    }
-  ]
-}
-[/block]
+
+**Dry run a batch**
+```shell
+curl -X POST \
+     -H "Authorization: Bearer {token}" \
+     -H "Content-Type: application/json"  -d '
+      {
+      "from": "12345",
+      "to": [
+          "123456789",
+          "987654321"
+       ],
+      "body": "Hi ${name}! How are you?",
+      "parameters": {
+          "name": {
+              "123456789": "Joe",
+              "default": "there"
+           }
+      }
+  }' \
+  "https://api.clxcommunications.com/xms/v1/{service_plan_id}/batches/dry_run"
+```
+
+
 ### Retrieve a batch message
 
 This operation retrieves a specific batch with the provided batch ID.
@@ -228,37 +304,42 @@ The response is a JSON object described in send\_batch\_msg response.
 If the batch ID is unknown to the system.
 
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "curl -H \"Authorization: Bearer {token}\" \\\n  \"https://api.clxcommunications.com/xms/v1/{service_plan_id}/batches/{batch_id}\"",
-      "language": "shell",
-      "name": "Retrieve a batch"
-    },
-    {
-      "code": "curl -H \"Authorization: Bearer {token}\" \\\n  \"https://api.clxcommunications.com/xms/v1/{service_plan_id}/batches\"",
-      "language": "shell",
-      "name": "Retrieve the first 30 batches from the last 24 hours"
-    },
-    {
-      "code": "curl -H \"Authorization: Bearer {token}\" \\\n  \"https://api.clxcommunications.com/xms/v1/{service_plan_id}/batches?page=2&page_size=50\"",
-      "language": "shell",
-      "name": "Retrieve the third page of batches with a page size of 50 from the last 24 hours"
-    },
-    {
-      "code": "curl -H \"Authorization: Bearer {token}\" \\\n  \"https://api.clxcommunications.com/xms/v1/{service_plan_id}/batches?start_date=2014-06-23&end_date=2014-06-24\"",
-      "language": "shell",
-      "name": "Retrieve batches created on June 23rd, 2014 UTC"
-    },
-    {
-      "code": "curl -H \"Authorization: Bearer {token}\" \\\n  \"https://api.clxcommunications.com/xms/v1/{service_plan_id}/batches?from=12345,54321\"",
-      "language": "shell",
-      "name": "Retrieve the batches sent from 12345 or 54321"
-    }
-  ]
-}
-[/block]
+
+**Retrieve a batch**
+```shell
+curl -H "Authorization: Bearer {token}" \
+  "https://api.clxcommunications.com/xms/v1/{service_plan_id}/batches/{batch_id}"
+```
+
+
+**Retrieve the first 30 batches from the last 24 hours**
+```shell
+curl -H "Authorization: Bearer {token}" \
+  "https://api.clxcommunications.com/xms/v1/{service_plan_id}/batches"
+```
+
+
+**Retrieve the third page of batches with a page size of 50 from the last 24 hours**
+```shell
+curl -H "Authorization: Bearer {token}" \
+  "https://api.clxcommunications.com/xms/v1/{service_plan_id}/batches?page=2&page_size=50"
+```
+
+
+**Retrieve batches created on June 23rd, 2014 UTC**
+```shell
+curl -H "Authorization: Bearer {token}" \
+  "https://api.clxcommunications.com/xms/v1/{service_plan_id}/batches?start_date=2014-06-23&end_date=2014-06-24"
+```
+
+
+**Retrieve the batches sent from 12345 or 54321**
+```shell
+curl -H "Authorization: Bearer {token}" \
+  "https://api.clxcommunications.com/xms/v1/{service_plan_id}/batches?from=12345,54321"
+```
+
+
 ### Update a batch message
 
 This operation will update all provided parameters of a batch for the given batch ID.
@@ -294,17 +375,29 @@ There was an error with your request. The body is a JSON object described in res
 `403 Forbidden`
 
 +The system was not able to fulfill your request. The body is a JSON object described in rest\_http\_errors. +Possible error codes include **batch\_already\_dispatched**.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "curl -X POST \\\n     -H \"Authorization: Bearer {token}\" \\\n     -H \"Content-Type: application/json\"  -d '\n      {\n      \"from\": \"12345\",\n      \"toAdd\": [\n          \"123456789\",\n          \"987654321\"\n       ],\n      \"toRemove\": [\n          \"111111111\",\n          \"999999999\"\n       ],\n      \"body\": \"Hi ${name}! How are you?\"\n\n  }' \\\n  \"https://api.clxcommunications.com/xms/v1/{service_plan_id}/batches/{id}\"",
-      "language": "shell",
-      "name": "Update batch"
-    }
-  ]
-}
-[/block]
+
+**Update batch**
+```shell
+curl -X POST \
+     -H "Authorization: Bearer {token}" \
+     -H "Content-Type: application/json"  -d '
+      {
+      "from": "12345",
+      "toAdd": [
+          "123456789",
+          "987654321"
+       ],
+      "toRemove": [
+          "111111111",
+          "999999999"
+       ],
+      "body": "Hi ${name}! How are you?"
+
+  }' \
+  "https://api.clxcommunications.com/xms/v1/{service_plan_id}/batches/{id}"
+```
+
+
 ### Replace a batch
 
 This operation will replace all the parameters of a batch with the provided values. Effectively the same as cancelling then batch and sending a new one instead.
@@ -324,17 +417,30 @@ The response is a JSON object described in send\_batch\_msg response.
 `400 Bad request`
 
 There was an error with your request. The body is a JSON object described in rest\_http\_errors. Possible error codes include **syntax\_invalid\_json**, **syntax\_invalid\_parameter\_format** and **syntax\_constraint\_violation**.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "curl -X PUT \\\n     -H \"Authorization: Bearer {token}\" \\\n     -H \"Content-Type: application/json\"  -d '\n      {\n      \"from\": \"12345\",\n      \"to\": [\n          \"123456789\",\n          \"987654321\"\n       ],\n      \"body\": \"Hi ${name}! How are you?\",\n      \"parameters\": {\n          \"name\": {\n              \"123456789\": \"Joe\",\n              \"default\": \"there\"\n           }\n      }\n  }' \\\n  \"https://api.clxcommunications.com/xms/v1/{service_plan_id}/batches/{id}\"",
-      "language": "shell",
-      "name": "Replace batch"
-    }
-  ]
-}
-[/block]
+
+**Replace batch**
+```shell
+curl -X PUT \
+     -H "Authorization: Bearer {token}" \
+     -H "Content-Type: application/json"  -d '
+      {
+      "from": "12345",
+      "to": [
+          "123456789",
+          "987654321"
+       ],
+      "body": "Hi ${name}! How are you?",
+      "parameters": {
+          "name": {
+              "123456789": "Joe",
+              "default": "there"
+           }
+      }
+  }' \
+  "https://api.clxcommunications.com/xms/v1/{service_plan_id}/batches/{id}"
+```
+
+
 ### Retrieve a delivery report
 
 Delivery reports can be retrieved even if no callback was requested. The difference between a summary and a full report is only that the full report contains the actual MSISDNs for each status code.
@@ -375,39 +481,74 @@ The response is a JSON object with the following fields:
 `404 Not Found`
 
 The batch ID is not known to the system or the delivery report type is not recognized.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "curl -H \"Authorization: Bearer {token}\" \\\n  \"https://api.clxcommunications.com/xms/v1/{service_plan_id}/batches/{batch_id}/delivery_report\"",
-      "language": "shell",
-      "name": "Request summary report"
-    },
-    {
-      "code": "{\n    \"type\": \"delivery_report_sms\",\n    \"batch_id\": \"{batch_id}\",\n    \"total_message_count\": 3,\n    \"statuses\": [\n        {\n            \"code\": 400,\n            \"status\": \"Queued\",\n            \"count\": 1\n        },\n        {\n            \"code\": 0,\n            \"status\": \"Delivered\",\n            \"count\": 2\n        }\n    ]\n}",
-      "language": "json",
-      "name": "Summary report response"
-    }
-  ]
-}
-[/block]
 
-[block:code]
+**Request summary report**
+```shell
+curl -H "Authorization: Bearer {token}" \
+  "https://api.clxcommunications.com/xms/v1/{service_plan_id}/batches/{batch_id}/delivery_report"
+```
+
+
+**Summary report response**
+```json
 {
-  "codes": [
-    {
-      "code": "curl -H \"Authorization: Bearer {token}\" \\\n  \"https://api.clxcommunications.com/xms/v1/{service_plan_id}/batches/{batch_id}/delivery_report?type=full\"",
-      "language": "shell",
-      "name": "Request full report"
-    },
-    {
-      "code": "{\n    \"type\": \"delivery_report_sms\",\n    \"batch_id\": \"{batch_id}\",\n    \"total_message_count\": 3,\n    \"statuses\": [\n        {\n            \"code\": 400,\n            \"status\": \"Queued\",\n            \"count\": 1,\n            \"recipients\": [\n                \"123456789\"\n            ]\n        },\n        {\n            \"code\": 0,\n            \"status\": \"Delivered\",\n            \"count\": 2,\n            \"recipients\": [\n                \"987654321\",\n                \"123459876\"\n            ]\n        }\n    ]\n}",
-      "language": "json",
-      "name": "Full report response"
-    }
-  ]
+    "type": "delivery_report_sms",
+    "batch_id": "{batch_id}",
+    "total_message_count": 3,
+    "statuses": [
+        {
+            "code": 400,
+            "status": "Queued",
+            "count": 1
+        },
+        {
+            "code": 0,
+            "status": "Delivered",
+            "count": 2
+        }
+    ]
 }
-[/block]
+```
+
+
+
+
+**Request full report**
+```shell
+curl -H "Authorization: Bearer {token}" \
+  "https://api.clxcommunications.com/xms/v1/{service_plan_id}/batches/{batch_id}/delivery_report?type=full"
+```
+
+
+**Full report response**
+```json
+{
+    "type": "delivery_report_sms",
+    "batch_id": "{batch_id}",
+    "total_message_count": 3,
+    "statuses": [
+        {
+            "code": 400,
+            "status": "Queued",
+            "count": 1,
+            "recipients": [
+                "123456789"
+            ]
+        },
+        {
+            "code": 0,
+            "status": "Delivered",
+            "count": 2,
+            "recipients": [
+                "987654321",
+                "123459876"
+            ]
+        }
+    ]
+}
+```
+
+
 ### Retrieve a recipient delivery report
 
 A recipient delivery report contains the message status for a single recipient MSISDN.
@@ -415,29 +556,30 @@ A recipient delivery report contains the message status for a single recipient M
 #### Request
 
 `GET /xms/v1/{service_plan_id}/batches/{batch_id}/delivery_report/{recipient_msisdn}`
-[block:code]
-{
-  "codes": [
-    {
-      "code": "curl -H \"Authorization: Bearer {token}\" \\\n  \"https://api.clxcommunications.com/xms/v1/{service_plan_id}/batches/{batch_id}/delivery_report/123456789\"",
-      "language": "shell",
-      "name": "Request report for 123456789"
-    }
-  ]
-}
-[/block]
+
+**Request report for 123456789**
+```shell
+curl -H "Authorization: Bearer {token}" \
+  "https://api.clxcommunications.com/xms/v1/{service_plan_id}/batches/{batch_id}/delivery_report/123456789"
+```
+
+
 #### Response
-[block:code]
+
+**Recipient delivery report for 123456789**
+```json
 {
-  "codes": [
-    {
-      "code": "{\n    \"type\": \"recipient_delivery_report_sms\",\n    \"batch_id\": \"{batch_id}\",\n    \"recipient\": \"123456789\",\n    \"code\": \"0\",\n    \"status\": \"Delivered\",\n    \"at\": \"2016-10-02T09:34:18.542Z\",\n    \"operator_status_at\": \"2016-10-02T09:34:18.101Z\"\n}",
-      "language": "json",
-      "name": "Recipient delivery report for 123456789"
-    }
-  ]
+    "type": "recipient_delivery_report_sms",
+    "batch_id": "{batch_id}",
+    "recipient": "123456789",
+    "code": "0",
+    "status": "Delivered",
+    "at": "2016-10-02T09:34:18.542Z",
+    "operator_status_at": "2016-10-02T09:34:18.101Z"
 }
-[/block]
+```
+
+
 `200 OK`
 
 The response is a JSON object with the following fields:

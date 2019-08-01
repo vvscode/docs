@@ -55,17 +55,18 @@ Responses with status `400 Bad Request` and `409 Forbidden` will contain a JSON 
 #### Error
 
 JSON Representation
-[block:code]
+
+**JSON Representation for errors**
+```javascript
 {
-  "codes": [
-    {
-      "code": "{\n  \"error\": string,\n  \"field_errors\": [\n    object(FieldError), ...\n  ]\n}",
-      "language": "javascript",
-      "name": "JSON Representation for errors"
-    }
+  "error": string,
+  "field_errors": [
+    object(FieldError), ...
   ]
 }
-[/block]
+```
+
+
 | Field         | Type                  | Description                                                   | Default | Constraints | Required |
 | ------------- | --------------------- | ------------------------------------------------------------- | ------- | ----------- | -------- |
 | error         | string                | Descriptive message of the error                              | No      | N/A         | Yes      |
@@ -74,17 +75,18 @@ JSON Representation
 #### FieldError
 
 JSON Representation
-[block:code]
+
+**JSON Representation**
+```javascript
 {
-  "codes": [
-    {
-      "code": "{\n  \"field\": string,\n  \"errors\": [\n    string, ...\n  ]\n}",
-      "language": "javascript",
-      "name": "JSON Representation"
-    }
+  "field": string,
+  "errors": [
+    string, ...
   ]
 }
-[/block]
+```
+
+
 | Field  | Type            | Description                                | Default | Constraints | Required |
 | ------ | --------------- | ------------------------------------------ | ------- | ----------- | -------- |
 | field  | string          | The field for which this error is relevant | No      | N/A         | Yes      |

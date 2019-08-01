@@ -46,93 +46,242 @@ Duplicate message id, make sure `message_id` in `AgentMessage` is unique. The bo
 ##### Examples
 
 ###### Send text message
-[block:code]
-{
-  "codes": [
-    {
-      "code": "curl https://api.clxcommunications.com/rcs/v1/my-agent-id/messages \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer zIMEJGfwD4oJ4qObPPjwZxwiP5cKARXRJpt9Kf6GSv7uOesvRV\" \\\n  -d '{\n      \"message_id\": \"5f6ec22b-f03a-4961-9c57-6c4e464edae0\",\n      \"to\": \"46555123456\",\n      \"message\": {\n          \"type\": \"text\",\n          \"text\": \"Test message!\"\n      }\n  }'",
-      "language": "curl",
-      "name": "Send text message"
-    }
-  ]
-}
-[/block]
+
+**Send text message**
+```curl
+curl https://api.clxcommunications.com/rcs/v1/my-agent-id/messages \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer zIMEJGfwD4oJ4qObPPjwZxwiP5cKARXRJpt9Kf6GSv7uOesvRV" \
+  -d '{
+      "message_id": "5f6ec22b-f03a-4961-9c57-6c4e464edae0",
+      "to": "46555123456",
+      "message": {
+          "type": "text",
+          "text": "Test message!"
+      }
+  }'
+```
+
+
 ###### Send text message with fallback
-[block:code]
-{
-  "codes": [
-    {
-      "code": "curl https://api.clxcommunications.com/rcs/v1/my-agent-id/messages \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer zIMEJGfwD4oJ4qObPPjwZxwiP5cKARXRJpt9Kf6GSv7uOesvRV\" \\\n  -d '{\n      \"message_id\": \"5bb77a04-78b7-41ff-abd3-a1006f8d6979\",\n      \"to\": \"46555123456\",\n      \"message\": {\n          \"type\": \"text\",\n          \"text\": \"Test message!\"\n      },\n      \"fallback\": {\n          \"message\": {\n              \"type\": \"mt_text\",\n              \"from\": \"MyOriginator\",\n              \"text\": \"Test message!\"\n          }\n      }\n  }'",
-      "language": "curl",
-      "name": "Send text message with fallback"
-    }
-  ]
-}
-[/block]
+
+**Send text message with fallback**
+```curl
+curl https://api.clxcommunications.com/rcs/v1/my-agent-id/messages \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer zIMEJGfwD4oJ4qObPPjwZxwiP5cKARXRJpt9Kf6GSv7uOesvRV" \
+  -d '{
+      "message_id": "5bb77a04-78b7-41ff-abd3-a1006f8d6979",
+      "to": "46555123456",
+      "message": {
+          "type": "text",
+          "text": "Test message!"
+      },
+      "fallback": {
+          "message": {
+              "type": "mt_text",
+              "from": "MyOriginator",
+              "text": "Test message!"
+          }
+      }
+  }'
+```
+
+
 ###### Send text message with (non-default) expire
-[block:code]
-{
-  "codes": [
-    {
-      "code": "curl https://api.clxcommunications.com/rcs/v1/my-agent-id/messages \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer zIMEJGfwD4oJ4qObPPjwZxwiP5cKARXRJpt9Kf6GSv7uOesvRV\" \\\n  -d '{\n      \"message_id\": \"66c4eeea-259b-4ba0-9dcd-cd0545cd9344\",\n      \"to\": \"46555123456\",\n      \"message\": {\n          \"type\": \"text\",\n          \"text\": \"This is a time-sensitive message!\"\n      },\n      \"expire\": {\n          \"timeout\": 3,\n          \"revoke\": true\n      }\n  }'",
-      "language": "curl",
-      "name": " Send text message with (non-default) expire"
-    }
-  ]
-}
-[/block]
+
+** Send text message with (non-default) expire**
+```curl
+curl https://api.clxcommunications.com/rcs/v1/my-agent-id/messages \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer zIMEJGfwD4oJ4qObPPjwZxwiP5cKARXRJpt9Kf6GSv7uOesvRV" \
+  -d '{
+      "message_id": "66c4eeea-259b-4ba0-9dcd-cd0545cd9344",
+      "to": "46555123456",
+      "message": {
+          "type": "text",
+          "text": "This is a time-sensitive message!"
+      },
+      "expire": {
+          "timeout": 3,
+          "revoke": true
+      }
+  }'
+```
+
+
 ###### Send file message
-[block:code]
-{
-  "codes": [
-    {
-      "code": "curl https://api.clxcommunications.com/rcs/v1/my-agent-id/messages \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer zIMEJGfwD4oJ4qObPPjwZxwiP5cKARXRJpt9Kf6GSv7uOesvRV\" \\\n  -d '{\n      \"message_id\": \"41a54db6-6abf-48dd-8a2b-63890981d80d\",\n      \"to\": \"46555123456\",\n      \"message\": {\n          \"type\": \"file\",\n          \"thumbnail\": {\n              \"mime_type\": \"image/png\",\n              \"file_size\": 1234,\n              \"file_uri\": \"http://example.com/my_image_thumbnail.png\"\n          },\n          \"file\": {\n              \"mime_type\": \"image/png\",\n              \"file_name\": \"funny.png\",\n              \"file_size\": 123456,\n              \"file_uri\": \"http://example.com/my_image.png\"\n          }\n      }\n  }'",
-      "language": "curl",
-      "name": "Send file message"
-    }
-  ]
-}
-[/block]
+
+**Send file message**
+```curl
+curl https://api.clxcommunications.com/rcs/v1/my-agent-id/messages \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer zIMEJGfwD4oJ4qObPPjwZxwiP5cKARXRJpt9Kf6GSv7uOesvRV" \
+  -d '{
+      "message_id": "41a54db6-6abf-48dd-8a2b-63890981d80d",
+      "to": "46555123456",
+      "message": {
+          "type": "file",
+          "thumbnail": {
+              "mime_type": "image/png",
+              "file_size": 1234,
+              "file_uri": "http://example.com/my_image_thumbnail.png"
+          },
+          "file": {
+              "mime_type": "image/png",
+              "file_name": "funny.png",
+              "file_size": 123456,
+              "file_uri": "http://example.com/my_image.png"
+          }
+      }
+  }'
+```
+
+
 ###### Send text message and suggestions
-[block:code]
-{
-  "codes": [
-    {
-      "code": "curl https://api.clxcommunications.com/rcs/v1/my-agent-id/messages \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer zIMEJGfwD4oJ4qObPPjwZxwiP5cKARXRJpt9Kf6GSv7uOesvRV\" \\\n  -d '{\n      \"message_id\": \"feed1169-8500-4b66-a65c-5986b8ae59f7\",\n      \"to\": \"46555123456\",\n      \"message\": {\n          \"type\": \"text\",\n          \"text\": \"Test message!\"\n      },\n      \"suggestions\": [\n          {\n              \"type\": \"reply\",\n              \"display_text\": \"Like\",\n              \"postback\": {\n                  \"data\": \"feed1169-8500-4b66-a65c-5986b8ae59f7_LIKE\"\n              }\n          },\n          {\n              \"type\": \"reply\",\n              \"display_text\": \"Stop please\",\n              \"postback\": {\n                  \"data\": \"feed1169-8500-4b66-a65c-5986b8ae59f7_STOP\"\n              }\n          },\n          {\n              \"type\": \"action\",\n              \"display_text\": \"Call us\",\n              \"postback\": {\n                  \"data\": \"feed1169-8500-4b66-a65c-5986b8ae59f7_CALL\"\n              },\n              \"action\": {\n                  \"type\": \"dial_phone_number\",\n                  \"phone_number\": \"+46555123456\"\n              }\n          }\n      ]\n  }'",
-      "language": "curl",
-      "name": "Send text message and suggestions"
-    }
-  ]
-}
-[/block]
+
+**Send text message and suggestions**
+```curl
+curl https://api.clxcommunications.com/rcs/v1/my-agent-id/messages \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer zIMEJGfwD4oJ4qObPPjwZxwiP5cKARXRJpt9Kf6GSv7uOesvRV" \
+  -d '{
+      "message_id": "feed1169-8500-4b66-a65c-5986b8ae59f7",
+      "to": "46555123456",
+      "message": {
+          "type": "text",
+          "text": "Test message!"
+      },
+      "suggestions": [
+          {
+              "type": "reply",
+              "display_text": "Like",
+              "postback": {
+                  "data": "feed1169-8500-4b66-a65c-5986b8ae59f7_LIKE"
+              }
+          },
+          {
+              "type": "reply",
+              "display_text": "Stop please",
+              "postback": {
+                  "data": "feed1169-8500-4b66-a65c-5986b8ae59f7_STOP"
+              }
+          },
+          {
+              "type": "action",
+              "display_text": "Call us",
+              "postback": {
+                  "data": "feed1169-8500-4b66-a65c-5986b8ae59f7_CALL"
+              },
+              "action": {
+                  "type": "dial_phone_number",
+                  "phone_number": "+46555123456"
+              }
+          }
+      ]
+  }'
+```
+
+
 ###### Send standalone rich card message with suggestions on card
-[block:code]
-{
-  "codes": [
-    {
-      "code": "curl https://api.clxcommunications.com/rcs/v1/my-agent-id/messages \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer zIMEJGfwD4oJ4qObPPjwZxwiP5cKARXRJpt9Kf6GSv7uOesvRV\" \\\n  -d '{\n      \"message_id\": \"ea099bc3-541a-4967-bbe3-5598e8209c75\",\n      \"to\": \"46555123456\",\n      \"message\": {\n          \"type\": \"standalone_rich_card\",\n          \"orientation\": \"VERTICAL\",\n          \"thumbnail_alignment\": \"RIGHT\",\n          \"content\": {\n              \"title\": \"Hello1\",\n              \"description\": \"Hello There\",\n              \"media\": {\n                \"height\": \"TALL\",\n                \"thumbnail\": {\n                    \"mime_type\": \"image/png\",\n                    \"size\": 1234,\n                    \"file_uri\": \"http://example.com/my_image_thumbnail.png\"\n                },\n                \"file\": {\n                    \"mime_type\": \"image/png\",\n                    \"name\": \"funny.png\",\n                    \"file_size\": 12345,\n                    \"file_uri\": \"http://example.com/my_image.png\"\n                }\n              },\n              \"suggestions\": [\n                  {\n                      \"type\": \"reply\",\n                      \"display_text\": \"Like\",\n                      \"postback\": {\n                          \"data\": \"feed1169-8500-4b66-a65c-5986b8ae59f7_LIKE\"\n                      }\n                  },\n                  {\n                      \"type\": \"reply\",\n                      \"display_text\": \"Stop please\",\n                      \"postback\": {\n                          \"data\": \"feed1169-8500-4b66-a65c-5986b8ae59f7_STOP\"\n                      }\n                  },\n                  {\n                      \"type\": \"action\",\n                      \"display_text\": \"Call us\",\n                      \"postback\": {\n                          \"data\": \"feed1169-8500-4b66-a65c-5986b8ae59f7_CALL\"\n                      },\n                      \"action\": {\n                        \"type\": \"dial_phone_number\",\n                        \"phone_number\": \"+46555123456\"\n                      }\n                  }\n              ]\n          }\n      }\n  }'",
-      "language": "curl",
-      "name": "Send standalone rich card message with suggestions on card"
-    }
-  ]
-}
-[/block]
+
+**Send standalone rich card message with suggestions on card**
+```curl
+curl https://api.clxcommunications.com/rcs/v1/my-agent-id/messages \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer zIMEJGfwD4oJ4qObPPjwZxwiP5cKARXRJpt9Kf6GSv7uOesvRV" \
+  -d '{
+      "message_id": "ea099bc3-541a-4967-bbe3-5598e8209c75",
+      "to": "46555123456",
+      "message": {
+          "type": "standalone_rich_card",
+          "orientation": "VERTICAL",
+          "thumbnail_alignment": "RIGHT",
+          "content": {
+              "title": "Hello1",
+              "description": "Hello There",
+              "media": {
+                "height": "TALL",
+                "thumbnail": {
+                    "mime_type": "image/png",
+                    "size": 1234,
+                    "file_uri": "http://example.com/my_image_thumbnail.png"
+                },
+                "file": {
+                    "mime_type": "image/png",
+                    "name": "funny.png",
+                    "file_size": 12345,
+                    "file_uri": "http://example.com/my_image.png"
+                }
+              },
+              "suggestions": [
+                  {
+                      "type": "reply",
+                      "display_text": "Like",
+                      "postback": {
+                          "data": "feed1169-8500-4b66-a65c-5986b8ae59f7_LIKE"
+                      }
+                  },
+                  {
+                      "type": "reply",
+                      "display_text": "Stop please",
+                      "postback": {
+                          "data": "feed1169-8500-4b66-a65c-5986b8ae59f7_STOP"
+                      }
+                  },
+                  {
+                      "type": "action",
+                      "display_text": "Call us",
+                      "postback": {
+                          "data": "feed1169-8500-4b66-a65c-5986b8ae59f7_CALL"
+                      },
+                      "action": {
+                        "type": "dial_phone_number",
+                        "phone_number": "+46555123456"
+                      }
+                  }
+              ]
+          }
+      }
+  }'
+```
+
+
 #### JSON Model
 
 ##### AgentMessage
 
 JSON Representation
-[block:code]
+
+**AgentMessage**
+```json
 {
-  "codes": [
+  "message_id": string,
+  "to": string,
+  "message": {
+    "type": enum(
+      "text",
+      "file",
+      "standalone_rich_card",
+      "carousel_rich_card"
+    ),
+    ... // type specific fields
+  },
+  "suggestions": [
     {
-      "code": "{\n  \"message_id\": string,\n  \"to\": string,\n  \"message\": {\n    \"type\": enum(\n      \"text\",\n      \"file\",\n      \"standalone_rich_card\",\n      \"carousel_rich_card\"\n    ),\n    ... // type specific fields\n  },\n  \"suggestions\": [\n    {\n      \"type\": enum(\n        \"action\",\n        \"reply\"\n      )\n      ... // type specific fields\n    }\n  ],\n  \"expire\": object(ExpireInfo),\n  \"fallback\": object(FallbackInfo)\n}",
-      "language": "json",
-      "name": "AgentMessage"
+      "type": enum(
+        "action",
+        "reply"
+      )
+      ... // type specific fields
     }
-  ]
+  ],
+  "expire": object(ExpireInfo),
+  "fallback": object(FallbackInfo)
 }
-[/block]
+```
+
+
 ###### Fields
 [block:html]
 {
@@ -143,17 +292,16 @@ JSON Representation
 
 JSON Representation
 
-[block:code]
+
+**TextMessage**
+```json
 {
-  "codes": [
-    {
-      "code": "{\n  \"type\": \"text\",\n  \"text\": string\n}",
-      "language": "json",
-      "name": "TextMessage"
-    }
-  ]
+  "type": "text",
+  "text": string
 }
-[/block]
+```
+
+
 ###### Fields
 
 | Field | Type   | Description              | Default | Constraints     | Required |
@@ -164,17 +312,17 @@ JSON Representation
 ##### FileMessage
 
 JSON Representation
-[block:code]
+
+**FileMessage**
+```json
 {
-  "codes": [
-    {
-      "code": "{\n  \"type\": \"file\",\n  \"file\": object(FileInfo),\n  \"thumbnail\": object(FileInfo)\n}",
-      "language": "json",
-      "name": "FileMessage"
-    }
-  ]
+  "type": "file",
+  "file": object(FileInfo),
+  "thumbnail": object(FileInfo)
 }
-[/block]
+```
+
+
 ###### Fields
 
 | Field     | Type               | Description                                                 | Default | Constraints | Required |
@@ -186,17 +334,18 @@ JSON Representation
 ##### FileInfo
 
 JSON Representation
-[block:code]
+
+**FileInfo**
+```json
 {
-  "codes": [
-    {
-      "code": "{\n  \"mime_type\": string,\n  \"file_size\": integer,\n  \"file_name\": string,\n  \"file_uri\": string\n}",
-      "language": "json",
-      "name": "FileInfo"
-    }
-  ]
+  "mime_type": string,
+  "file_size": integer,
+  "file_name": string,
+  "file_uri": string
 }
-[/block]
+```
+
+
 ###### Fields
 
 | Field      | Type    | Description                          | Default | Constraints                                                                                                                                       | Required |
@@ -209,17 +358,24 @@ JSON Representation
 ##### StandaloneRichCardMessage
 
 JSON Representation
-[block:code]
+
+**StandaloneRichCardMessage**
+```json
 {
-  "codes": [
-    {
-      "code": "{\n  \"type\": \"standalone_rich_card\",\n  \"orientation\": enum(\n    \"HORIZONTAL\",\n    \"VERTICAL\"\n  ),\n  \"thumbnail_alignment\": enum(\n    \"LEFT\",\n    \"RIGHT\"\n  ),\n  \"content\": object(RichCardContent)\n}",
-      "language": "json",
-      "name": "StandaloneRichCardMessage"
-    }
-  ]
+  "type": "standalone_rich_card",
+  "orientation": enum(
+    "HORIZONTAL",
+    "VERTICAL"
+  ),
+  "thumbnail_alignment": enum(
+    "LEFT",
+    "RIGHT"
+  ),
+  "content": object(RichCardContent)
 }
-[/block]
+```
+
+
 ###### Fields
 [block:html]
 {
@@ -229,17 +385,22 @@ JSON Representation
 ##### CarouselRichCardMessage
 
 JSON Representation
-[block:code]
+
+**CarouselRichCardMessage**
+```json
 {
-  "codes": [
-    {
-      "code": "{\n  \"type\": \"carousel_rich_card\",\n  \"width\": enum(\n    \"SMALL\",\n    \"MEDIUM\"\n  ),\n  \"contents\": [\n    object(RichCardContent), ...\n  ]\n}",
-      "language": "json",
-      "name": "CarouselRichCardMessage"
-    }
+  "type": "carousel_rich_card",
+  "width": enum(
+    "SMALL",
+    "MEDIUM"
+  ),
+  "contents": [
+    object(RichCardContent), ...
   ]
 }
-[/block]
+```
+
+
 ###### Fields
 [block:html]
 {
@@ -249,17 +410,27 @@ JSON Representation
 ##### RichCardContent
 
 JSON Representation
-[block:code]
+
+**RichCardContent**
+```json
 {
-  "codes": [
+  // At least one of title, description and media must be specified
+  "title": string,
+  "description": string,
+  "media": object(RichCardMedia),
+  "suggestions": [
     {
-      "code": "{\n  // At least one of title, description and media must be specified\n  \"title\": string,\n  \"description\": string,\n  \"media\": object(RichCardMedia),\n  \"suggestions\": [\n    {\n      \"type\": enum(\n        \"reply\",\n        \"action\"\n      )\n      ... // type specific fields\n    }\n  ]\n}",
-      "language": "json",
-      "name": "RichCardContent"
+      "type": enum(
+        "reply",
+        "action"
+      )
+      ... // type specific fields
     }
   ]
 }
-[/block]
+```
+
+
 ###### Fields
 [block:html]
 {
@@ -269,17 +440,21 @@ JSON Representation
 ##### RichCardMedia
 
 JSON Representation
-[block:code]
+
+**RichCardMedia**
+```json
 {
-  "codes": [
-    {
-      "code": "{\n  \"file\": object(FileInfo),\n  \"thumbnail\": object(FileInfo),\n  \"height\": enum(\n    \"SHORT\",\n    \"MEDIUM\",\n    \"TALL\"\n  )\n}",
-      "language": "json",
-      "name": "RichCardMedia"
-    }
-  ]
+  "file": object(FileInfo),
+  "thumbnail": object(FileInfo),
+  "height": enum(
+    "SHORT",
+    "MEDIUM",
+    "TALL"
+  )
 }
-[/block]
+```
+
+
 ###### Fields
 [block:html]
 {
@@ -289,17 +464,17 @@ JSON Representation
 ##### SuggestedReply
 
 JSON Representation
-[block:code]
+
+**SuggestedReply**
+```json
 {
-  "codes": [
-    {
-      "code": "{\n  \"type\": \"reply\",\n  \"display_text\": string,\n  \"postback\": object(Postback)\n}",
-      "language": "json",
-      "name": "SuggestedReply"
-    }
-  ]
+  "type": "reply",
+  "display_text": string,
+  "postback": object(Postback)
 }
-[/block]
+```
+
+
 ###### Fields
 
 | Field         | Type               | Description                                                                    | Default | Constraints                | Required |
@@ -311,17 +486,27 @@ JSON Representation
 ##### SuggestedAction
 
 JSON Representation
-[block:code]
+
+**SuggestedAction**
+```json
 {
-  "codes": [
-    {
-      "code": "{\n  \"type\": \"action\",\n  \"display_text\": string,\n  \"postback\": object(Postback),\n  \"action\": {\n    \"type\": enum(\n      \"dial_phone_number\",\n      \"show_location\",\n      \"request_location_push\",\n      \"open_url\",\n      \"create_calendar_event\"\n    )\n    ... // type specific fields\n  }\n}",
-      "language": "json",
-      "name": "SuggestedAction"
-    }
-  ]
+  "type": "action",
+  "display_text": string,
+  "postback": object(Postback),
+  "action": {
+    "type": enum(
+      "dial_phone_number",
+      "show_location",
+      "request_location_push",
+      "open_url",
+      "create_calendar_event"
+    )
+    ... // type specific fields
+  }
 }
-[/block]
+```
+
+
 ###### Fields
 [block:html]
 {
@@ -331,17 +516,16 @@ JSON Representation
 ##### DialPhoneNumber
 
 JSON Representation
-[block:code]
+
+**DialPhoneNumber**
+```json
 {
-  "codes": [
-    {
-      "code": "{\n  \"type\": \"dial_phone_number\",\n  \"phone_number\": string\n}",
-      "language": "json",
-      "name": "DialPhoneNumber"
-    }
-  ]
+  "type": "dial_phone_number",
+  "phone_number": string
 }
-[/block]
+```
+
+
 ###### Fields
 
 | Field         | Type   | Description                         | Default | Constraints                  | Required |
@@ -352,17 +536,18 @@ JSON Representation
 ##### ShowLocation
 
 JSON Representation
-[block:code]
+
+**ShowLocation**
+```json
 {
-  "codes": [
-    {
-      "code": "{\n  \"type\": \"show_location\",\n  \"latitude\": number,\n  \"longitude\": number,\n  \"label\": string\n}",
-      "language": "json",
-      "name": "ShowLocation"
-    }
-  ]
+  "type": "show_location",
+  "latitude": number,
+  "longitude": number,
+  "label": string
 }
-[/block]
+```
+
+
 ###### Fields
 
 | Field     | Type   | Description                                                 | Default | Constraints                  | Required |
@@ -375,17 +560,15 @@ JSON Representation
 ##### RequestLocationPush
 
 JSON Representation
-[block:code]
+
+**RequestLocationPush**
+```json
 {
-  "codes": [
-    {
-      "code": "{\n  \"type\": \"request_location_push\"\n}",
-      "language": "json",
-      "name": "RequestLocationPush"
-    }
-  ]
+  "type": "request_location_push"
 }
-[/block]
+```
+
+
 ###### Fields
 
 | Field | Type   | Description                             | Default | Constraints | Required |
@@ -395,17 +578,16 @@ JSON Representation
 ##### OpenUrl
 
 JSON Representation
-[block:code]
+
+**OpenUrl**
+```json
 {
-  "codes": [
-    {
-      "code": "{\n  \"type\": \"open_url\",\n  \"url\": string\n}",
-      "language": "json",
-      "name": "OpenUrl"
-    }
-  ]
+  "type": "open_url",
+  "url": string
 }
-[/block]
+```
+
+
 ###### Fields
 
 | Field | Type   | Description               | Default | Constraints                                                                                                                                       | Required |
@@ -416,17 +598,19 @@ JSON Representation
 ##### CreateCalendarEvent
 
 JSON Representation
-[block:code]
+
+**CreateCalendarEvent**
+```json
 {
-  "codes": [
-    {
-      "code": "{\n  \"type\": \"create_calendar_event\",\n  \"start_time\": timestamp,\n  \"end_time\": timestamp,\n  \"title\": string,\n  \"description\": string\n}",
-      "language": "json",
-      "name": "CreateCalendarEvent"
-    }
-  ]
+  "type": "create_calendar_event",
+  "start_time": timestamp,
+  "end_time": timestamp,
+  "title": string,
+  "description": string
 }
-[/block]
+```
+
+
 ###### Fields
 
 | Field       | Type   | Description                             | Default | Constraints                              | Required |
@@ -440,17 +624,15 @@ JSON Representation
 ##### Postback
 
 JSON Representation
-[block:code]
+
+**Postback**
+```json
 {
-  "codes": [
-    {
-      "code": "{\n  \"data\": string\n}",
-      "language": "json",
-      "name": "Postback"
-    }
-  ]
+  "data": string
 }
-[/block]
+```
+
+
 ###### Fields
 
 | Field | Type   | Description                                                                                    | Default | Constraints                  | Required |
@@ -460,17 +642,16 @@ JSON Representation
 ##### ExpireInfo
 
 JSON Representation
-[block:code]
+
+**ExpireInfo**
+```json
 {
-  "codes": [
-    {
-      "code": "{\n  \"timeout\": integer,\n  \"revoke\": boolean\n}",
-      "language": "json",
-      "name": "ExpireInfo"
-    }
-  ]
+  "timeout": integer,
+  "revoke": boolean
 }
-[/block]
+```
+
+
 ###### Fields
 
 | Field   | Type    | Description                                                                                                                                                                                                      | Default      | Constraints | Required |
@@ -481,17 +662,16 @@ JSON Representation
 ##### FallbackInfo
 
 JSON Representation
-[block:code]
+
+**FallbackInfo**
+```json
 {
-  "codes": [
-    {
-      "code": "{\n  \"message\": object(XmsBatchMessage)\n  \"conditions\": object(FallbackConditions)\n}",
-      "language": "json",
-      "name": "FallbackInfo"
-    }
-  ]
+  "message": object(XmsBatchMessage)
+  "conditions": object(FallbackConditions)
 }
-[/block]
+```
+
+
 ###### Fields
 
 | Field      | Type                         | Description                                        | Default | Constraints | Required |
@@ -502,17 +682,26 @@ JSON Representation
 ##### FallbackConditions
 
 JSON Representation
-[block:code]
+
+**FallbackConditions**
+```json
 {
-  "codes": [
-    {
-      "code": "{\n  \"rcs_unavailable\": {\n    \"enabled\": boolean\n  },\n  \"capability_unsupported\": {\n    \"enabled\": boolean\n  },\n  \"expired\": {\n    \"enabled\": boolean\n  },\n  \"agent_error\": {\n    \"enabled\": boolean\n  }\n}",
-      "language": "json",
-      "name": "FallbackConditions"
-    }
-  ]
+  "rcs_unavailable": {
+    "enabled": boolean
+  },
+  "capability_unsupported": {
+    "enabled": boolean
+  },
+  "expired": {
+    "enabled": boolean
+  },
+  "agent_error": {
+    "enabled": boolean
+  }
 }
-[/block]
+```
+
+
 ###### Fields
 
 | Field                           | Type    | Description                                                                                                           | Default | Constraints | Required |
@@ -529,17 +718,30 @@ JSON Representation
 ##### XmsBatchMessage
 
 JSON Representation
-[block:code]
+
+**XmsBatchMessage**
+```json
 {
-  "codes": [
-    {
-      "code": "{\n  \"type\": enum(\n    \"mt_text\",\n    \"mt_binary\"\n  )\n  \"from\": string,\n  \"text\": string,\n  \"udh\": string\n  \"campaign_id\": string,\n  \"delivery_report\": enum(\n    \"none\",\n    \"summary\",\n    \"full\",\n    \"per_recipient\"\n  ),\n  \"expire_at\": timestamp,\n  \"callback_url\": string\n}",
-      "language": "json",
-      "name": "XmsBatchMessage"
-    }
-  ]
+  "type": enum(
+    "mt_text",
+    "mt_binary"
+  )
+  "from": string,
+  "text": string,
+  "udh": string
+  "campaign_id": string,
+  "delivery_report": enum(
+    "none",
+    "summary",
+    "full",
+    "per_recipient"
+  ),
+  "expire_at": timestamp,
+  "callback_url": string
 }
-[/block]
+```
+
+
 ###### Fields
 [block:html]
 {
@@ -594,13 +796,9 @@ error.
 ##### Examples
 
 ###### Revoking a message
-[block:code]
-{
-  "codes": [
-    {
-      "code": "curl https://api.clxcommunications.com/rcs/v1/my-agent-id/messages/2bf270e4-08a4-409b-8e0f-85293f6d1709 \\\n  -X DELETE \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer zIMEJGfwD4oJ4qObPPjwZxwiP5cKARXRJpt9Kf6GSv7uOesvRV\" \\",
-      "language": "curl"
-    }
-  ]
-}
-[/block]
+```curl
+curl https://api.clxcommunications.com/rcs/v1/my-agent-id/messages/2bf270e4-08a4-409b-8e0f-85293f6d1709 \
+  -X DELETE \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer zIMEJGfwD4oJ4qObPPjwZxwiP5cKARXRJpt9Kf6GSv7uOesvRV" \
+```

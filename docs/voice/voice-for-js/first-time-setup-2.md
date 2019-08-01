@@ -32,53 +32,33 @@ There are many ways to include Sinch in your project, enabling you to select a s
 ### Hosted with your webapp
 
 You can host the library co-located with your website and include Sinch using
-[block:code]
-{
-  "codes": [
-    {
-      "code": "<script src=\"sinch.min.js\"></script>",
-      "language": "html"
-    }
-  ]
-}
-[/block]
+```html
+<script src="sinch.min.js"></script>
+```
+
+
 ### Load from Sinch CDN
 
 If you prefer to always load the latest version from our CDN, use
-[block:code]
-{
-  "codes": [
-    {
-      "code": "<script src=\"//cdn.sinch.com/latest/sinch.min.js\"></script>",
-      "language": "html"
-    }
-  ]
-}
-[/block]
+```html
+<script src="//cdn.sinch.com/latest/sinch.min.js"></script>
+```
+
+
 To control which version you load from our CDN, use
-[block:code]
-{
-  "codes": [
-    {
-      "code": "<script src=\"//cdn.sinch.com/0.0.1/sinch.min.js\"></script>",
-      "language": "html"
-    }
-  ]
-}
-[/block]
+```html
+<script src="//cdn.sinch.com/0.0.1/sinch.min.js"></script>
+```
+
+
 ### Sinch is available as a npm package
 
 If you are using [NodeJS](http://www.nodejs.org), add a dependency to Sinch by running:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "npm install sinch-rtc --save",
-      "language": "javascript"
-    }
-  ]
-}
-[/block]
+```javascript
+npm install sinch-rtc --save
+```
+
+
 
 [block:callout]
 {
@@ -88,40 +68,25 @@ If you are using [NodeJS](http://www.nodejs.org), add a dependency to Sinch by r
 }
 [/block]
 Import Sinch SDK in your project using
-[block:code]
-{
-  "codes": [
-    {
-      "code": "var SinchClient = require('sinch-rtc');",
-      "language": "javascript"
-    }
-  ]
-}
-[/block]
+```javascript
+var SinchClient = require('sinch-rtc');
+```
+
+
 ### Sinch is available as a Bower module
 
 If you are using [Bower](http://bower.io/), add a dependency to Sinch by running:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "bower install sinch-rtc --save",
-      "language": "shell"
-    }
-  ]
-}
-[/block]
+```shell
+bower install sinch-rtc --save
+```
+
+
 Import the Sinch SDK in your website using
-[block:code]
-{
-  "codes": [
-    {
-      "code": "<script src=\"PATH_TO_BOWER_MODULES/sinch-rtc/sinch.min.js\"></script>",
-      "language": "html"
-    }
-  ]
-}
-[/block]
+```html
+<script src="PATH_TO_BOWER_MODULES/sinch-rtc/sinch.min.js"></script>
+```
+
+
 
 [block:callout]
 {

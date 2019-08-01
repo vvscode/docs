@@ -32,33 +32,59 @@ Our API allows you to customize DDM by setting 3 parameters:
 >  E107, E110, E111, E114, E241, E503, E618, E619, E620, E622, E626, E627, E628, E629, E650
 
 ### Request Example
-[block:code]
-{
-  "codes": [
-    {
-      "code": "<request>\n    <action>sendSavedMMS</action>\n    <api-key>qTFkykO9JTfahCOqJ0V2Wf5Cg1t8iWlZ</api-key>\n    <to>14044790000</to>\n    <from>28444</from>\n    <service-id>12345</service-id>\n    <mms-id>35674</mms-id>\n    <ddm-message-subject>We are detecting your handset</ddm-message-subject>\n    <ddm-message-text>This message is free of charge and will allow us to deliver your content nice and smooth</ddm-message-text>\n    <ddm-message-timeout>10</ddm-message-timeout>\n    <custom-text>\n        <value>My custom text in first slide</value>\n        <slide>1</slide>\n    </custom-text>\n    <custom-subject>My custom subject</custom-subject>\n    <data>\n        <firstname>Bill</firstname>\n        <lastname>Smith</firstname>\n        <accountnumber>XYZ23456</accountnumber>\n        <pin>13579</pin>\n    </data>\n</request>",
-      "language": "xml",
-      "name": "sendSavedMMS Request"
-    }
-  ]
-}
-[/block]
+
+**sendSavedMMS Request**
+```xml
+<request>
+    <action>sendSavedMMS</action>
+    <api-key>qTFkykO9JTfahCOqJ0V2Wf5Cg1t8iWlZ</api-key>
+    <to>14044790000</to>
+    <from>28444</from>
+    <service-id>12345</service-id>
+    <mms-id>35674</mms-id>
+    <ddm-message-subject>We are detecting your handset</ddm-message-subject>
+    <ddm-message-text>This message is free of charge and will allow us to deliver your content nice and smooth</ddm-message-text>
+    <ddm-message-timeout>10</ddm-message-timeout>
+    <custom-text>
+        <value>My custom text in first slide</value>
+        <slide>1</slide>
+    </custom-text>
+    <custom-subject>My custom subject</custom-subject>
+    <data>
+        <firstname>Bill</firstname>
+        <lastname>Smith</firstname>
+        <accountnumber>XYZ23456</accountnumber>
+        <pin>13579</pin>
+    </data>
+</request>
+```
+
+
 ### Response Examples
-[block:code]
-{
-  "codes": [
-    {
-      "code": "<response>\n    <status>Success</status>\n    <mms-id>35674</mms-id>\n    <tracking-id>TU1TXzU5Nzg3OQ==</tracking-id>\n    <to>14044790000</to>\n    <from>28444</from>\n    <status-details>MMS request accepted and queued for delivery</status-details>\n</response>",
-      "language": "xml",
-      "name": "sendSavedMMS Success Response"
-    },
-    {
-      "code": "<response>\n    <status>Failure</status>\n    <error-code>E713</error-code>\n    <to>14044790000</to>\n    <error-info>There is billing problem on your account</error-info>\n</response>",
-      "language": "xml",
-      "name": "sendSavedMMS Failure Response"
-    }
-  ]
-}
-[/block]
+
+**sendSavedMMS Success Response**
+```xml
+<response>
+    <status>Success</status>
+    <mms-id>35674</mms-id>
+    <tracking-id>TU1TXzU5Nzg3OQ==</tracking-id>
+    <to>14044790000</to>
+    <from>28444</from>
+    <status-details>MMS request accepted and queued for delivery</status-details>
+</response>
+```
+
+
+**sendSavedMMS Failure Response**
+```xml
+<response>
+    <status>Failure</status>
+    <error-code>E713</error-code>
+    <to>14044790000</to>
+    <error-info>There is billing problem on your account</error-info>
+</response>
+```
+
+
 **Postback Notifications For SendSavedMMS** When the MMS delivery is
 processed successfully the system will generate a Postback notification.

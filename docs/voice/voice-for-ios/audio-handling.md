@@ -26,14 +26,14 @@ When the users are in the midst of a Sinch SDK call, someone might call users us
 The `SINAudioController` object provides a convenience method `startPlayingSoundFile:loop:` for playing sounds that are related to a call, such as ringtones and busy tones. Details on how to use it can be found in the [Reference](../reference/html/Protocols/SINAudioController.html) documentation.
 
 The sound file must be a mono (1 channel), 16-bit, uncompressed (PCM) `.wav` file with a sample rate of 8kHz, 16kHz, or 32kHz.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "- (void)callReceivedOnRemoteEnd:(id<SINCall>)call {\n    NSString* soundFilePath = [[NSBundle mainBundle] pathForResource:@\"progresstone\" ofType:@\"wav\"];\n    // get audio controller from SINClient\n    id<SINAudioController> audioController = [self.client audioController];\n    [audioController startPlayingSoundFile:soundFilePath loop:NO];\n}",
-      "language": "objectivec"
-    }
-  ]
+```objectivec
+- (void)callReceivedOnRemoteEnd:(id<SINCall>)call {
+    NSString* soundFilePath = [[NSBundle mainBundle] pathForResource:@"progresstone" ofType:@"wav"];
+    // get audio controller from SINClient
+    id<SINAudioController> audioController = [self.client audioController];
+    [audioController startPlayingSoundFile:soundFilePath loop:NO];
 }
-[/block]
+```
+
+
 Applications that prefer to use their own code for playing sounds are free to do so, but they should follow the guidelines for `Audio Sessions <audiosessions>` and `Audio Session Categories <audiosessioncategories>` above.

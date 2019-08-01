@@ -18,31 +18,33 @@ Deletes an MMS template whose mms-id is defined in the XML. All contents in the 
 > E104, E105, E108, E112, E113, E120, E241, E620
 
 ### Request Example
-[block:code]
-{
-  "codes": [
-    {
-      "code": "<request>\n    <action>deleteMMSID</action>\n    <api-key>qTFkykO9JTfahCOqJ0V2Wf5Cg1t8iWlZ</api-key>\n    <mms-id>35674</mms-id>\n</request>",
-      "language": "xml",
-      "name": "deleteMMSID request"
-    }
-  ]
-}
-[/block]
+
+**deleteMMSID request**
+```xml
+<request>
+    <action>deleteMMSID</action>
+    <api-key>qTFkykO9JTfahCOqJ0V2Wf5Cg1t8iWlZ</api-key>
+    <mms-id>35674</mms-id>
+</request>
+```
+
+
 ### Response examples
-[block:code]
-{
-  "codes": [
-    {
-      "code": "<response>\n    <status>Success</status>\n    <mms-id>35674</mms-id>\n</response>",
-      "language": "xml",
-      "name": "deleteMMSID request Success"
-    },
-    {
-      "code": "<response>\n    <status>Failure</status>\n    <error-code>E241</error-code>\n    <error-info>Invalid mms-id / MMS do not exist</error-info>\n</response>",
-      "language": "xml",
-      "name": "deleteMMSID request Failure"
-    }
-  ]
-}
-[/block]
+
+**deleteMMSID request Success**
+```xml
+<response>
+    <status>Success</status>
+    <mms-id>35674</mms-id>
+</response>
+```
+
+
+**deleteMMSID request Failure**
+```xml
+<response>
+    <status>Failure</status>
+    <error-code>E241</error-code>
+    <error-info>Invalid mms-id / MMS do not exist</error-info>
+</response>
+```

@@ -26,77 +26,154 @@ If you specified to send a Device Discovery Message then you may receive one of 
 ## Postback Schema
 
 ### N101 Status Code Examples
-[block:code]
-{
-  "codes": [
-    {
-      "code": "<postback>\n    <origin>MMS_MT</origin>\n    <code>N101</code>\n    <sent-as>MMS</sent-as>\n    <status>Message Sent</status>\n    <mms-id>39597</mms-id>\n    <from>28444</from>\n    <to>12399471613</to>\n    <tracking-id>TU1TXzU5Nzg3OQ==</tracking-id>\n    <operator-id>31003</operator-id>\n    <timestamp>2014-06-07T07:27:29-05:00</timestamp>\n</postback>",
-      "language": "xml",
-      "name": "N101 (Binary)"
-    },
-    {
-      "code": "<postback>\n    <origin>MMS_MT</origin>\n    <code>N101</code>\n    <sent-as>SMS</sent-as>\n    <status>Message Sent</status>\n    <mms-id>39755</mms-id>\n    <from>28444</from>\n    <to>12399471613</to>\n    <tracking-id>TU1TXzU5Nzg3Nw==</tracking-id>\n    <operator-id>31004</operator-id>\n    <timestamp>2014-06-07T07:27:34-05:00</timestamp>\n    <status-details>Handset setting: mms with pass via HTML</status-details>\n</postback>",
-      "language": "xml",
-      "name": "N101 (HTML)"
-    }
-  ]
-}
-[/block]
+
+**N101 (Binary)**
+```xml
+<postback>
+    <origin>MMS_MT</origin>
+    <code>N101</code>
+    <sent-as>MMS</sent-as>
+    <status>Message Sent</status>
+    <mms-id>39597</mms-id>
+    <from>28444</from>
+    <to>12399471613</to>
+    <tracking-id>TU1TXzU5Nzg3OQ==</tracking-id>
+    <operator-id>31003</operator-id>
+    <timestamp>2014-06-07T07:27:29-05:00</timestamp>
+</postback>
+```
+
+
+**N101 (HTML)**
+```xml
+<postback>
+    <origin>MMS_MT</origin>
+    <code>N101</code>
+    <sent-as>SMS</sent-as>
+    <status>Message Sent</status>
+    <mms-id>39755</mms-id>
+    <from>28444</from>
+    <to>12399471613</to>
+    <tracking-id>TU1TXzU5Nzg3Nw==</tracking-id>
+    <operator-id>31004</operator-id>
+    <timestamp>2014-06-07T07:27:34-05:00</timestamp>
+    <status-details>Handset setting: mms with pass via HTML</status-details>
+</postback>
+```
+
+
 ### N102 Status Code Examples
-[block:code]
-{
-  "codes": [
-    {
-      "code": "<postback>\n    <origin>MMS_MT</origin>\n    <code>N102</code>\n    <sent-as>MMS</sent-as>\n    <status>Message Sent/Delivered</status>\n    <mms-id>39597</mms-id>\n    <from>28444</from>\n    <to>12399471613</to>\n    <tracking-id>TU1TXzU5Nzg3OQ==</tracking-id>\n    <operator-id>31003</operator-id>\n    <timestamp>2014-06-07T07:27:34-05:00</timestamp>\n    <handset>moto17c</handset>\n</postback>",
-      "language": "xml",
-      "name": "N102 (Binary)"
-    },
-    {
-      "code": "<postback>\n    <origin>MMS_MT</origin>\n    <code>N102</code>\n    <sent-as>SMS</sent-as>\n    <status>Message Sent/Delivered</status>\n    <from>28444</from>\n    <to>12399471613</to>\n    <tracking-id>TU1TXzU5Nzg3Nw==</tracking-id>\n    <operator-id>31004</operator-id>\n    <timestamp>2014-06-07T07:28:09-05:00</timestamp>\n</postback>",
-      "language": "xml",
-      "name": "N102 (HTML)"
-    }
-  ]
-}
-[/block]
+
+**N102 (Binary)**
+```xml
+<postback>
+    <origin>MMS_MT</origin>
+    <code>N102</code>
+    <sent-as>MMS</sent-as>
+    <status>Message Sent/Delivered</status>
+    <mms-id>39597</mms-id>
+    <from>28444</from>
+    <to>12399471613</to>
+    <tracking-id>TU1TXzU5Nzg3OQ==</tracking-id>
+    <operator-id>31003</operator-id>
+    <timestamp>2014-06-07T07:27:34-05:00</timestamp>
+    <handset>moto17c</handset>
+</postback>
+```
+
+
+**N102 (HTML)**
+```xml
+<postback>
+    <origin>MMS_MT</origin>
+    <code>N102</code>
+    <sent-as>SMS</sent-as>
+    <status>Message Sent/Delivered</status>
+    <from>28444</from>
+    <to>12399471613</to>
+    <tracking-id>TU1TXzU5Nzg3Nw==</tracking-id>
+    <operator-id>31004</operator-id>
+    <timestamp>2014-06-07T07:28:09-05:00</timestamp>
+</postback>
+```
+
+
 ### Error Status Code Examples
 #### E101
 > When the system is unable to send an MMS we return a postback E101
 #### E102
 > When the MMS delivery fails due to various reasons we return a postback E102
-[block:code]
-{
-  "codes": [
-    {
-      "code": "<postback>\n    <origin>MMS_MT</origin>\n    <code>E101</code>\n    <status>Message Failed</status>\n    <mms-id>39755</mms-id>\n    <from>28444</from>\n    <to>12399471613</to>\n    <tracking-id>TU1TXzU5Nzg3Nw==</tracking-id>\n    <operator-id>31004</operator-id>\n    <status-details>Error fetching dynamic content</status-details>\n</postback>",
-      "language": "xml",
-      "name": "E101"
-    },
-    {
-      "code": "<postback>\n    <origin>MMS_MT</origin>\n    <code>E102</code>\n    <status>Message Sent/Rejected</status>\n    <mms-id>39755</mms-id>\n    <from>28444</from>\n    <to>12399471613</to>\n    <tracking-id>TU1TXzU5Nzg3Nw==</tracking-id>\n    <operator-id>31004</operator-id>\n    <status-details>Recipient blocked by mobile operator</status-details>\n</postback>",
-      "language": "xml",
-      "name": "E102"
-    }
-  ]
-}
-[/block]
+
+**E101**
+```xml
+<postback>
+    <origin>MMS_MT</origin>
+    <code>E101</code>
+    <status>Message Failed</status>
+    <mms-id>39755</mms-id>
+    <from>28444</from>
+    <to>12399471613</to>
+    <tracking-id>TU1TXzU5Nzg3Nw==</tracking-id>
+    <operator-id>31004</operator-id>
+    <status-details>Error fetching dynamic content</status-details>
+</postback>
+```
+
+
+**E102**
+```xml
+<postback>
+    <origin>MMS_MT</origin>
+    <code>E102</code>
+    <status>Message Sent/Rejected</status>
+    <mms-id>39755</mms-id>
+    <from>28444</from>
+    <to>12399471613</to>
+    <tracking-id>TU1TXzU5Nzg3Nw==</tracking-id>
+    <operator-id>31004</operator-id>
+    <status-details>Recipient blocked by mobile operator</status-details>
+</postback>
+```
+
+
 ### Device Discovery Message Status Code Examples
-[block:code]
-{
-  "codes": [
-    {
-      "code": "<postback>\n    <origin>MMS_MT</origin>\n    <code>N501</code>\n    <sent-as>MMS</sent-as>\n    <status>Message Sent</status>\n    <mms-id>39755</mms-id>\n    <from>28444</from>\n    <to>12399471613</to>\n    <tracking-id>TU1TXzU5Nzg3Nw==</tracking-id>\n    <operator-id>31004</operator-id>\n    <timestamp>2014-06-07T07:27:34-05:00</timestamp>\n    <status-details></status-details>\n</postback>",
-      "language": "xml",
-      "name": "N501"
-    },
-    {
-      "code": "<postback>\n    <origin>MMS_MT</origin>\n    <code>N502</code>\n    <sent-as>MMS</sent-as>\n    <status>Message Sent/Delivered</status>\n    <mms-id>39597</mms-id>\n    <from>28444</from>\n    <to>12399471613</to>\n    <tracking-id>TU1TXzU5Nzg3OQ==</tracking-id>\n    <operator-id>31003</operator-id>\n    <timestamp>2014-06-07T07:27:34-05:00</timestamp>\n    <handset>moto17c</handset>\n</postback>",
-      "language": "xml",
-      "name": "N502"
-    }
-  ]
-}
-[/block]
+
+**N501**
+```xml
+<postback>
+    <origin>MMS_MT</origin>
+    <code>N501</code>
+    <sent-as>MMS</sent-as>
+    <status>Message Sent</status>
+    <mms-id>39755</mms-id>
+    <from>28444</from>
+    <to>12399471613</to>
+    <tracking-id>TU1TXzU5Nzg3Nw==</tracking-id>
+    <operator-id>31004</operator-id>
+    <timestamp>2014-06-07T07:27:34-05:00</timestamp>
+    <status-details></status-details>
+</postback>
+```
+
+
+**N502**
+```xml
+<postback>
+    <origin>MMS_MT</origin>
+    <code>N502</code>
+    <sent-as>MMS</sent-as>
+    <status>Message Sent/Delivered</status>
+    <mms-id>39597</mms-id>
+    <from>28444</from>
+    <to>12399471613</to>
+    <tracking-id>TU1TXzU5Nzg3OQ==</tracking-id>
+    <operator-id>31003</operator-id>
+    <timestamp>2014-06-07T07:27:34-05:00</timestamp>
+    <handset>moto17c</handset>
+</postback>
+```
+
+
 ## saveMMS Encoding status
 
 When MMS is saved, we generate postback notification. When saving and encoding of the content is successful we generate N003. If encoding of the content failed we generate postback E002 containing mms-id and audio-name/video-name pointing to the content that failed to encode properly. When E002 is returned the mms-id should be considered corrupted. Note: The image-name is not included since image encoding is not supported.
@@ -110,19 +187,23 @@ When MMS is saved, we generate postback notification. When saving and encoding o
 | video-name   | URL to video content that failed to encode properly.     |
 
 ### Status code examples
-[block:code]
-{
-  "codes": [
-    {
-      "code": "<postback>\n    <origin>MMS_MT</origin>\n    <code>N003</code>\n    <mms-id>35674</mms-id>\n</postback>",
-      "language": "xml",
-      "name": "N003 (Success)"
-    },
-    {
-      "code": "<postback>\n    <origin>MMS_MT</origin>\n    <code>E002</code>\n    <mms-id>35674</mms-id>\n    <audio-name>http://www.yoursite.com/audio/1.mp3</audio-name>\n</postback>",
-      "language": "xml",
-      "name": "E002 (Failure)"
-    }
-  ]
-}
-[/block]
+
+**N003 (Success)**
+```xml
+<postback>
+    <origin>MMS_MT</origin>
+    <code>N003</code>
+    <mms-id>35674</mms-id>
+</postback>
+```
+
+
+**E002 (Failure)**
+```xml
+<postback>
+    <origin>MMS_MT</origin>
+    <code>E002</code>
+    <mms-id>35674</mms-id>
+    <audio-name>http://www.yoursite.com/audio/1.mp3</audio-name>
+</postback>
+```

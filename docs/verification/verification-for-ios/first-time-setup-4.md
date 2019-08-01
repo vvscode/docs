@@ -37,14 +37,8 @@ The Sinch Verification SDK depends on the following libraries and frameworks: *l
 ### Sinch Verification is available as a CocoaPod
 
 If you are using [CocoaPods](http://www.cocoapods.org), add the following to your Podfile:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "target '<your xcode project>' do\n    pod 'SinchVerification'\nend",
-      "language": "objectivec",
-      "name": null
-    }
-  ]
-}
-[/block]
+```objectivec
+target '<your xcode project>' do
+    pod 'SinchVerification'
+end
+```

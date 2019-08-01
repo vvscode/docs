@@ -34,16 +34,30 @@ The authentication ticket is then sent to Sinch, using the `.start()` method in 
 }
 [/block]
 This method, where you authenticate users with your backend, may look like this:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "var sinchClient = new SinchClient({\n        applicationKey: 'MY_APPLICATION_KEY',\n        capabilities: {messaging: true},\n    });\n\n// This jQuery call is just an example how you might authenticate users and pass the ticket to Sinch.\n$.post('https://example.com/auth',\n    {username: 'alice', password: 'somethingSecure'},\n    function(authTicket) {\n        sinchClient.start(authTicket)\n            .then(function() {\n                // Handle successful start, like showing the UI\n            })\n            .fail(function(error) {\n                // Handle Sinch error\n            });\n    }, \n    function(error) {\n        // Handle application server error\n    });",
-      "language": "javascript"
-    }
-  ]
-}
-[/block]
+```javascript
+var sinchClient = new SinchClient({
+        applicationKey: 'MY_APPLICATION_KEY',
+        capabilities: {messaging: true},
+    });
+
+// This jQuery call is just an example how you might authenticate users and pass the ticket to Sinch.
+$.post('https://example.com/auth',
+    {username: 'alice', password: 'somethingSecure'},
+    function(authTicket) {
+        sinchClient.start(authTicket)
+            .then(function() {
+                // Handle successful start, like showing the UI
+            })
+            .fail(function(error) {
+                // Handle Sinch error
+            });
+    }, 
+    function(error) {
+        // Handle application server error
+    });
+```
+
+
 This code will first instantiate the sinchClient with your application key. In this example, jQuery is used to perform an ajax request to your application server for authenticating the user *Alice*. jQuery will parse the json object and pass it to `sinchClient.start()`.
 
 When `sinchClient.start()` has successfully started the client, the success callback is executed, which may display the UI, or enable some buttons, or other actions you now want to take.
@@ -70,14 +84,17 @@ Sinch JS authentication involves authenticating end-users by passing a user iden
 }
 [/block]
 Authentication using this method is very straight forward, as you only have to make one method call. The Sinch SDK will take care of the rest under the hood. Implementing Sinch user authentication in your app may look something like this:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "var sinchClient = new SinchClient({\n        applicationKey: 'MY_APPLICATION_KEY',\n        capabilities: {messaging: true},\n    });\n\nsinchClient.start({username: 'alice', password: 'somethingSecure'})\n    .then(function() {\n        // Perform actions to do when authenticated, such as displaying user interface\n    });",
-      "language": "javascript"
-    }
-  ]
-}
-[/block]
+```javascript
+var sinchClient = new SinchClient({
+        applicationKey: 'MY_APPLICATION_KEY',
+        capabilities: {messaging: true},
+    });
+
+sinchClient.start({username: 'alice', password: 'somethingSecure'})
+    .then(function() {
+        // Perform actions to do when authenticated, such as displaying user interface
+    });
+```
+
+
 This code will instantiate SinchClient, and will start the client using the username *‘Alice’*.

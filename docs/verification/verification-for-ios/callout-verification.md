@@ -7,16 +7,41 @@ Verification of a phone number is performed in one step: a PSTN call to the end-
 ## Request a callout verification
 
 To initiate a callout verification, start by creating a `SINVerification`, then request a callout by invoking `-[SINVerification initiateWithCompletionHandler:`.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "// Get user's current region by carrier info\nNSString* defaultRegion = [SINDeviceRegion currentCountryCode];\n\nNSError *parseError = nil;\nid<SINPhoneNumber> phoneNumber = [SINPhoneNumberUtil() parse:@\"<user input>\"\n                                               defaultRegion:defaultRegion\n                                                       error:&parseError];\n\nif (!phoneNumber){\n  // Handle invalid user input\n}\n\nNSString *phoneNumberInE164 = [SINPhoneNumberUtil() formatNumber:phoneNumber\n                                                          format:SINPhoneNumberFormatE164];\n\nid<SINVerification> verification = [SINVerification calloutVerificationWithApplicationKey:@\"<application key>\"\n                                                                              phoneNumber:phoneNumberInE164];\n\n[verification initiateWithCompletionHandler:^(id<SINInitiationResult> result, NSError *error) {\n    if (result.success) {\n      // User's phone number was successfully verified\n    } else {\n      if ([error.domain isEqualToString:SINVerificationErrorDomain] &&\n        error.code == SINVerificationErrorCancelled) {\n        // Handle cancellation error code separately\n        NSLog(@\"Verification cancelled: %@\", error);\n      } else {\n        // Inform user of error, e.g. that input was invalid.\n      }\n    }\n}];",
-      "language": "objectivec"
-    }
-  ]
+```objectivec
+// Get user's current region by carrier info
+NSString* defaultRegion = [SINDeviceRegion currentCountryCode];
+
+NSError *parseError = nil;
+id<SINPhoneNumber> phoneNumber = [SINPhoneNumberUtil() parse:@"<user input>"
+                                               defaultRegion:defaultRegion
+                                                       error:&parseError];
+
+if (!phoneNumber){
+  // Handle invalid user input
 }
-[/block]
+
+NSString *phoneNumberInE164 = [SINPhoneNumberUtil() formatNumber:phoneNumber
+                                                          format:SINPhoneNumberFormatE164];
+
+id<SINVerification> verification = [SINVerification calloutVerificationWithApplicationKey:@"<application key>"
+                                                                              phoneNumber:phoneNumberInE164];
+
+[verification initiateWithCompletionHandler:^(id<SINInitiationResult> result, NSError *error) {
+    if (result.success) {
+      // User's phone number was successfully verified
+    } else {
+      if ([error.domain isEqualToString:SINVerificationErrorDomain] &&
+        error.code == SINVerificationErrorCancelled) {
+        // Handle cancellation error code separately
+        NSLog(@"Verification cancelled: %@", error);
+      } else {
+        // Inform user of error, e.g. that input was invalid.
+      }
+    }
+}];
+```
+
+
 ### Phone numbers - Parsing and E.164 Formatting
 [block:callout]
 {

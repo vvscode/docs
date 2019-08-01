@@ -1,7 +1,6 @@
 ---
 title: "Groups Endpoint"
-excerpt: "The most feaure rich API Sinch offers. It allows for single messages, scheduled batch send-outs
-using message templates and more."
+excerpt: "The most feaure rich API Sinch offers. It allows for single messages, scheduled batch send-outs using message templates and more."
 ---
 ## Groups endpoint
 
@@ -48,53 +47,89 @@ There was an error with your request. The body is a JSON object described in `re
 The system was not able to fulfill your request. The body is a JSON object described in `rest_http_errors`. Possible error codes include **conflict\_group\_name**.
 
 Create a group named *My group* with two members.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "curl -X POST \\\n     -H \"Authorization: Bearer {token}\" \\\n     -H \"Content-Type: application/json\"  -d '\n      {\n          \"members\": [\n              \"123456789\",\n              \"987654321\"\n          ],\n          \"name\": \"My group\"\n}' \\\n  \"https://api.clxcommunications.com/xms/v1/{service_plan_id}/groups\"",
-      "language": "shell",
-      "name": "Create Group"
-    }
-  ]
-}
-[/block]
+
+**Create Group**
+```shell
+curl -X POST \
+     -H "Authorization: Bearer {token}" \
+     -H "Content-Type: application/json"  -d '
+      {
+          "members": [
+              "123456789",
+              "987654321"
+          ],
+          "name": "My group"
+}' \
+  "https://api.clxcommunications.com/xms/v1/{service_plan_id}/groups"
+```
+
+
 Create auto update group for members sending MOs to \`443456789012\`: keyword *JOIN* will add them to the group, keyword *STOP* will remove them from the group.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "curl -X POST \\\n     -H \"Authorization: Bearer {token}\" \\\n     -H \"Content-Type: application/json\"  -d '\n      {\n          \"name\": \"My auto group\",\n          \"auto_update\": {\n                \"to\": \"443456789012\",\n                    \"add\": {\n                        \"first_word\": \"join\"\n                    },\n                    \"remove\": {\n                        \"first_word\": \"stop\"\n                    }\n                }\n}' \\\n  \"https://api.clxcommunications.com/xms/v1/{service_plan_id}/groups\"",
-      "language": "shell",
-      "name": "Create Auto Update Group"
-    }
-  ]
-}
-[/block]
+
+**Create Auto Update Group**
+```shell
+curl -X POST \
+     -H "Authorization: Bearer {token}" \
+     -H "Content-Type: application/json"  -d '
+      {
+          "name": "My auto group",
+          "auto_update": {
+                "to": "443456789012",
+                    "add": {
+                        "first_word": "join"
+                    },
+                    "remove": {
+                        "first_word": "stop"
+                    }
+                }
+}' \
+  "https://api.clxcommunications.com/xms/v1/{service_plan_id}/groups"
+```
+
+
 Create auto update group for shared short code *54321* with keyword `SINCH`: if followed by *JOIN* will add them to the group, if followed by *LEAVE* will remove them from the group. Please note that keywords are not case sensitive so *Sinch* , *SInCh* , *SINCH* and other permutations will all be treated the same.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "curl -X POST \\\n     -H \"Authorization: Bearer {token}\" \\\n     -H \"Content-Type: application/json\"  -d '\n      {\n          \"name\": \"My auto group 2\",\n          \"auto_update\": {\n                \"to\": \"54321\",\n                    \"add\": {\n                        \"first_word\": \"Sinch\",\n                        \"second_word\": \"Join\"\n                    },\n                    \"remove\": {\n                        \"first_word\": \"SINCH\",\n                        \"second_word\": \"leave\"\n                    }\n                }\n}' \\\n  \"https://api.clxcommunications.com/xms/v1/{service_plan_id}/groups\"",
-      "language": "shell",
-      "name": "Create Auto Update Group For Shared Short Code"
-    }
-  ]
-}
-[/block]
+
+**Create Auto Update Group For Shared Short Code**
+```shell
+curl -X POST \
+     -H "Authorization: Bearer {token}" \
+     -H "Content-Type: application/json"  -d '
+      {
+          "name": "My auto group 2",
+          "auto_update": {
+                "to": "54321",
+                    "add": {
+                        "first_word": "Sinch",
+                        "second_word": "Join"
+                    },
+                    "remove": {
+                        "first_word": "SINCH",
+                        "second_word": "leave"
+                    }
+                }
+}' \
+  "https://api.clxcommunications.com/xms/v1/{service_plan_id}/groups"
+```
+
+
 Create a parent group that includes all members of groups with ID *dxCJTlfb1UsF* and *yiinTKVNAEAu*.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "curl -X POST \\\n     -H \"Authorization: Bearer {token}\" \\\n     -H \"Content-Type: application/json\"  -d '\n      {\n          \"name\": \"My groups collection\",\n          \"child_groups\": [\n                \"dxCJTlfb1UsF\",\n                \"yiinTKVNAEAu\"\n          ]\n}' \\\n  \"https://api.clxcommunications.com/xms/v1/{service_plan_id}/groups\"",
-      "language": "shell",
-      "name": "Create Parent Group"
-    }
-  ]
-}
-[/block]
+
+**Create Parent Group**
+```shell
+curl -X POST \
+     -H "Authorization: Bearer {token}" \
+     -H "Content-Type: application/json"  -d '
+      {
+          "name": "My groups collection",
+          "child_groups": [
+                "dxCJTlfb1UsF",
+                "yiinTKVNAEAu"
+          ]
+}' \
+  "https://api.clxcommunications.com/xms/v1/{service_plan_id}/groups"
+```
+
+
 ### List groups
 
 With the list operation you can list all groups that you have created.  This operation supports pagination.
@@ -122,29 +157,23 @@ Query parameters:
 | page\_size | The number of groups returned in this request | Integer                                                            |
 | count      | The total number of groups                    | Integer                                                            |
 | groups     | The page of groups matching                   | Array of objects described in \[Create a group\](\#create-a-group) |
-[block:code]
-{
-  "codes": [
-    {
-      "code": "curl -H \"Authorization: Bearer {token}\" \\\n  \"https://api.clxcommunications.com/xms/v1/{service_plan_id}/groups\"",
-      "language": "shell",
-      "name": "Retrieve the first 30 groups"
-    }
-  ]
-}
-[/block]
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "curl -H \"Authorization: Bearer {token}\" \\\n  \"https://api.clxcommunications.com/xms/v1/{service_plan_id}/groups?page=3&page_size=50\"",
-      "language": "shell",
-      "name": "Retrieve the third page of groups with a page size of 50"
-    }
-  ]
-}
-[/block]
+**Retrieve the first 30 groups**
+```shell
+curl -H "Authorization: Bearer {token}" \
+  "https://api.clxcommunications.com/xms/v1/{service_plan_id}/groups"
+```
+
+
+
+
+**Retrieve the third page of groups with a page size of 50**
+```shell
+curl -H "Authorization: Bearer {token}" \
+  "https://api.clxcommunications.com/xms/v1/{service_plan_id}/groups?page=3&page_size=50"
+```
+
+
 ### Retrieve a group
 
 This operation retrieves a specific group with the provided group ID.
@@ -162,17 +191,14 @@ The response is a JSON object described in `create_group` response.
 `404 Not Found`
 
 If the group ID is unknown to the system.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "curl -H \"Authorization: Bearer {token}\" \\\n  \"https://api.clxcommunications.com/xms/v1/{service_plan_id}/groups/{group_id}\"",
-      "language": "shell",
-      "name": "Retrieve a group"
-    }
-  ]
-}
-[/block]
+
+**Retrieve a group**
+```shell
+curl -H "Authorization: Bearer {token}" \
+  "https://api.clxcommunications.com/xms/v1/{service_plan_id}/groups/{group_id}"
+```
+
+
 ### Retrieve the members of a group
 
 This operation retrieves the members of the group with the provided group ID.
@@ -190,17 +216,14 @@ The response is a JSON array with MSISDNs.
 `404 Not Found`
 
 If the group ID is unknown to the system.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "curl -H \"Authorization: Bearer {token}\" \\\n  \"https://api.clxcommunications.com/xms/v1/{service_plan_id}/groups/{group_id}/members\"",
-      "language": "shell",
-      "name": "Retrieve group members"
-    }
-  ]
-}
-[/block]
+
+**Retrieve group members**
+```shell
+curl -H "Authorization: Bearer {token}" \
+  "https://api.clxcommunications.com/xms/v1/{service_plan_id}/groups/{group_id}/members"
+```
+
+
 ### Update a group
 
 With the update group operation you can add and remove members to an existing group as well as rename the group.
@@ -244,41 +267,53 @@ One or more groups referenced in your request could not be found.
 `404 Not Found`
 
 If the group ID is unknown to the system.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "curl -X POST \\\n     -H \"Authorization: Bearer {token}\" \\\n     -H \"Content-Type: application/json\"  -d '\n      {\n          \"add\": [\n              \"123456789\",\n              \"987654321\"\n          ],\n          \"remove\": [\n              \"432156789\"\n          ]\n}' \\\n  \"https://api.clxcommunications.com/xms/v1/{service_plan_id}/groups/{group_id}\"",
-      "language": "shell",
-      "name": "Update a group by adding two new members and removing one existing"
-    }
-  ]
-}
-[/block]
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "curl -X POST \\\n     -H \"Authorization: Bearer {token}\" \\\n     -H \"Content-Type: application/json\"  -d '\n      {\n          \"name\": \"New group name\"\n}' \\\n  \"https://api.clxcommunications.com/xms/v1/{service_plan_id}/groups/{group_id}\"",
-      "language": "shell",
-      "name": "Rename a group without changing its members"
-    }
-  ]
-}
-[/block]
+**Update a group by adding two new members and removing one existing**
+```shell
+curl -X POST \
+     -H "Authorization: Bearer {token}" \
+     -H "Content-Type: application/json"  -d '
+      {
+          "add": [
+              "123456789",
+              "987654321"
+          ],
+          "remove": [
+              "432156789"
+          ]
+}' \
+  "https://api.clxcommunications.com/xms/v1/{service_plan_id}/groups/{group_id}"
+```
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "curl -X POST \\\n     -H \"Authorization: Bearer {token}\" \\\n     -H \"Content-Type: application/json\"  -d '\n      {\n          \"name\": null\n}' \\\n  \"https://api.clxcommunications.com/xms/v1/{service_plan_id}/groups/{group_id}\"",
-      "language": "shell",
-      "name": "Remove the current name of a group without changing its members"
-    }
-  ]
-}
-[/block]
+
+
+
+**Rename a group without changing its members**
+```shell
+curl -X POST \
+     -H "Authorization: Bearer {token}" \
+     -H "Content-Type: application/json"  -d '
+      {
+          "name": "New group name"
+}' \
+  "https://api.clxcommunications.com/xms/v1/{service_plan_id}/groups/{group_id}"
+```
+
+
+
+
+**Remove the current name of a group without changing its members**
+```shell
+curl -X POST \
+     -H "Authorization: Bearer {token}" \
+     -H "Content-Type: application/json"  -d '
+      {
+          "name": null
+}' \
+  "https://api.clxcommunications.com/xms/v1/{service_plan_id}/groups/{group_id}"
+```
+
+
 ### Replace a group
 
 The replace operation will replace all parameters, including members, of an existing group with new values.
@@ -314,17 +349,23 @@ The system was not able to fulfill your request. The body is a JSON object descr
 `404 Not Found`
 
 If the group ID is unknown to the system.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "curl -X PUT \\\n     -H \"Authorization: Bearer {token}\" \\\n     -H \"Content-Type: application/json\"  -d '\n      {\n          \"members\": [\n              \"123456789\",\n              \"987654321\"\n          ],\n      \"name\": \"New name\"\n}' \\\n  \"https://api.clxcommunications.com/xms/v1/{service_plan_id}/groups/{group_id}\"",
-      "language": "shell",
-      "name": "Replace a group"
-    }
-  ]
-}
-[/block]
+
+**Replace a group**
+```shell
+curl -X PUT \
+     -H "Authorization: Bearer {token}" \
+     -H "Content-Type: application/json"  -d '
+      {
+          "members": [
+              "123456789",
+              "987654321"
+          ],
+      "name": "New name"
+}' \
+  "https://api.clxcommunications.com/xms/v1/{service_plan_id}/groups/{group_id}"
+```
+
+
 ### Delete a group
 
 Deletes a group from the system. Any message created for a deleted group will be rejected. If a group is deleted that's part of the to-array of a message scheduled for the future then the group will be considered empty at the time of sending.
@@ -342,14 +383,10 @@ The group was successfully deleted.
 `404 Not Found`
 
 If the group ID is unknown to the system.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "curl -X DELETE \\\n     -H \"Authorization: Bearer {token}\" \\\n     \"https://api.clxcommunications.com/xms/v1/{service_plan_id}/groups/{group_id}\"",
-      "language": "shell",
-      "name": "Delete a group"
-    }
-  ]
-}
-[/block]
+
+**Delete a group**
+```shell
+curl -X DELETE \
+     -H "Authorization: Bearer {token}" \
+     "https://api.clxcommunications.com/xms/v1/{service_plan_id}/groups/{group_id}"
+```

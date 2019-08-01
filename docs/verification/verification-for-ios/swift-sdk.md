@@ -5,31 +5,52 @@ excerpt: ""
 The Sinch Verification iOS SDK is also available for [Swift](https://developer.apple.com/).
 
 ## Example usage
-[block:code]
-{
-  "codes": [
-    {
-      "code": "import SinchVerification;\n\ndo {\n\n    let input = \"<user input>\"\n\n    // Get user's current region by carrier info\n    let defaultRegion = DeviceRegion.currentCountryCode()\n\n    let phoneNumber = try PhoneNumberUtil().parse(input, defaultRegion:defaultRegion)\n    let phoneNumberE164 = PhoneNumberUtil().format(phoneNumber, format: PhoneNumberFormat.E164)\n\n    let verification = SMSVerification(applicationKey:\"<APP KEY>\", phoneNumber: phoneNumberInE164)\n\n    verification.initiate { (result: InitiationResult, error: NSError?) -> Void in\n        // handle outcome\n    }\n\n    let code = \"<user input code from SMS>\"\n\n    verification.verify(code, completion: { (success: Bool, error:NSError?) -> Void in\n        // handle outcome\n    })\n\n} catch let error as PhoneNumberParseError {\n    // Handle phone number parsing error, i.e. invalid user input.\n}",
-      "language": "swift"
+```swift
+import SinchVerification;
+
+do {
+
+    let input = "<user input>"
+
+    // Get user's current region by carrier info
+    let defaultRegion = DeviceRegion.currentCountryCode()
+
+    let phoneNumber = try PhoneNumberUtil().parse(input, defaultRegion:defaultRegion)
+    let phoneNumberE164 = PhoneNumberUtil().format(phoneNumber, format: PhoneNumberFormat.E164)
+
+    let verification = SMSVerification(applicationKey:"<APP KEY>", phoneNumber: phoneNumberInE164)
+
+    verification.initiate { (result: InitiationResult, error: NSError?) -> Void in
+        // handle outcome
     }
-  ]
+
+    let code = "<user input code from SMS>"
+
+    verification.verify(code, completion: { (success: Bool, error:NSError?) -> Void in
+        // handle outcome
+    })
+
+} catch let error as PhoneNumberParseError {
+    // Handle phone number parsing error, i.e. invalid user input.
 }
-[/block]
+```
+
+
 ## Importing the Sinch Verification Swift SDK
 
 ### Import as CocoaPod
 
 If you are using [CocoaPods](http://www.cocoapods.org), add the following to your Podfile:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "platform :ios, '8.0'\n\ntarget '<your target>' do\n    use_frameworks!\n    pod 'SinchVerification-Swift'\nend",
-      "language": "objectivec"
-    }
-  ]
-}
-[/block]
+```objectivec
+platform :ios, '8.0'
+
+target '<your target>' do
+    use_frameworks!
+    pod 'SinchVerification-Swift'
+end
+```
+
+
 
 [block:callout]
 {
@@ -112,16 +133,11 @@ If you integrate the Sinch SDK via *CocoaPods*, you must not check the option "I
 4.  Setup to run `strip-frameworks.sh` as a *"Run Script Phase"*
 Create a new *"Run Script Phase"* in your application target's *"Build Phases"* and paste the following snippet:
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "bash ${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/SinchVerification.framework/strip-frameworks.sh",
-      "language": "shell"
-    }
-  ]
-}
-[/block]
+```shell
+bash ${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/SinchVerification.framework/strip-frameworks.sh
+```
+
+
 
 [block:image]
 {
@@ -176,16 +192,11 @@ Create a new *"Run Script Phase"* in your application target's *"Build Phases"* 
 **That's it\!**
 
 Now the SDK can be imported as follows (from any of your .swift files)
-[block:code]
-{
-  "codes": [
-    {
-      "code": "import SinchVerification",
-      "language": "swift"
-    }
-  ]
-}
-[/block]
+```swift
+import SinchVerification
+```
+
+
 
 [block:callout]
 {

@@ -12,17 +12,15 @@ The Sinch SDK can be downloaded `here <sinchvvvdownloads>`. It contains: the lib
 ### Sinch is availible as a CocoaPod
 
 If you are using [CocoaPods](http://www.cocoapods.org), add the following to your Podfile:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "target '<your xcode project>' do\n\tpod 'SinchRTC'\nend",
-      "language": "ruby",
-      "name": "Code"
-    }
-  ]
-}
-[/block]
+
+**Code**
+```ruby
+target '<your xcode project>' do
+	pod 'SinchRTC'
+end
+```
+
+
 
 [block:callout]
 {
