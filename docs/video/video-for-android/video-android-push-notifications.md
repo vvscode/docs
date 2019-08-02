@@ -27,16 +27,12 @@ Unlike GCM setup, FCM application developer does not need to manually add any pe
 ## Enable push notifications
 
 To enable push notifications, set the following capability before starting the Sinch client:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "sinchClient.setSupportManagedPush(true);\nsinchClient.start();",
-      "language": "java"
-    }
-  ]
-}
-[/block]
+```java
+sinchClient.setSupportManagedPush(true);
+sinchClient.start();
+```
+
+
 
 [block:callout]
 {
@@ -46,31 +42,32 @@ To enable push notifications, set the following capability before starting the S
 }
 [/block]
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "public class FcmListenerService extends FirebaseMessagingService {\n\n@Override\npublic void onMessageReceived(RemoteMessage remoteMessage){\n    if (SinchHelpers.isSinchPushPayload(remoteMessage.getData())) {\n        // it's Sinch message - relay it to SinchClient\n    } else {\n        // it's NOT Sinch message - process yourself\n    }",
-      "language": "java"
+```java
+public class FcmListenerService extends FirebaseMessagingService {
+
+@Override
+public void onMessageReceived(RemoteMessage remoteMessage){
+    if (SinchHelpers.isSinchPushPayload(remoteMessage.getData())) {
+        // it's Sinch message - relay it to SinchClient
+    } else {
+        // it's NOT Sinch message - process yourself
     }
-  ]
-}
-[/block]
+```
+
+
 ## Receive and forward push notifications to a Sinch client
 
 For more details regarding how to implement receiving a FCM downstream message, please see the [Android developer site for FCM](https://firebase.google.com/docs/cloud-messaging/android/receive).
 
 Once you have received the `RemoteMessage` in your `FirebaseMessagingService`, forward it to the Sinch client using the method `relayRemotePushNotificationPayload`.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "// make sure you have created a SinchClient\nif (SinchHelpers.isSinchPushPayload(remoteMessage.getData())) {\n    NotificationResult result = sinchClient.relayRemotePushNotificationPayload(remoteMessage.getData());\n}",
-      "language": "java"
-    }
-  ]
+```java
+// make sure you have created a SinchClient
+if (SinchHelpers.isSinchPushPayload(remoteMessage.getData())) {
+    NotificationResult result = sinchClient.relayRemotePushNotificationPayload(remoteMessage.getData());
 }
-[/block]
+```
+
+
 The returned `result` can be inspected to see whether the push was for an IM or a call using `result.isMessage()` and `result.isCall()`.
 
 ### Incoming message
@@ -86,27 +83,28 @@ If the payload that was forwarded to the Sinch client was for a call, the `onInc
 The Sinch SDK supports adding custom headers in push notification messages when initiating a call, so developers do not need to implement their own push mechanism if they only need to deliver small pieces of information along the Sinch managed push between their app instances. The Sinch SDK allows up to *1024* bytes of custom headers.
 
 Setting custom headers on the sender side when initiating a call:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "// setting up custom headers\nMap<String,String> headers = new HashMap<>();\nheaders.put(\"The first value is \", \"@123\");\nheaders.put(\"Custom value \", \"two!\");\nCall call = callClient.callUser(userId, headers);   ",
-      "language": "java"
-    }
-  ]
-}
-[/block]
+```java
+// setting up custom headers
+Map<String,String> headers = new HashMap<>();
+headers.put("The first value is ", "@123");
+headers.put("Custom value ", "two!");
+Call call = callClient.callUser(userId, headers);   
+```
+
+
 If custom headers were supplied by call initiator, they can be retrieved from notification result using `getHeaders()` API:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "// make sure you have created a SinchClient\nif (SinchHelpers.isSinchPushPayload(remoteMessage.getData())) {\nNotificationResult result = sinchClient.relayRemotePushNotificationPayload(remoteMessage.getData());\n  if (result.isCall()) {\n    CallNotificationResult callResult = result.getCallResult();\n    Map<String, String> customHeaders = callResult.getHeaders());\n  }\n}",
-      "language": "java"
-    }
-  ]
+```java
+// make sure you have created a SinchClient
+if (SinchHelpers.isSinchPushPayload(remoteMessage.getData())) {
+NotificationResult result = sinchClient.relayRemotePushNotificationPayload(remoteMessage.getData());
+  if (result.isCall()) {
+    CallNotificationResult callResult = result.getCallResult();
+    Map<String, String> customHeaders = callResult.getHeaders());
+  }
 }
-[/block]
+```
+
+
 
 [block:callout]
 {
@@ -116,29 +114,36 @@ If custom headers were supplied by call initiator, they can be retrieved from no
 }
 [/block]
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "// SinchClient is not needed to be created at all!\nif (SinchHelpers.isSinchPushPayload(remoteMessage.getData())) {\n  NotificationResult result = SinchHelpers.queryPushNotificationPayload(applicationContext, remoteMessage.getData());\n  if (result.isCall()) {\n    CallNotificationResult callResult = result.getCallResult();\n    Map<String, String> customHeaders = callResult.getHeaders());\n    // analyse headers, decide whether to process message/call and start Sinch client or ignore\n    ...\n  }\n}",
-      "language": "java"
-    }
-  ]
+```java
+// SinchClient is not needed to be created at all!
+if (SinchHelpers.isSinchPushPayload(remoteMessage.getData())) {
+  NotificationResult result = SinchHelpers.queryPushNotificationPayload(applicationContext, remoteMessage.getData());
+  if (result.isCall()) {
+    CallNotificationResult callResult = result.getCallResult();
+    Map<String, String> customHeaders = callResult.getHeaders());
+    // analyse headers, decide whether to process message/call and start Sinch client or ignore
+    ...
+  }
 }
-[/block]
+```
+
+
 ### Show local notifications for missed calls
 
 When the push notification is enabled on a Sinch client, besides the incoming call notification, the Sinch SDK will also send a push notification for a canceled call when the caller cancels the call before it is answered. This gives developers a good opportunity to present local notifications for missed calls in their apps:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "NotificationResult result = sinchService.relayRemotePushNotificationPayload(payload);\n// handle result, e.g. show a notification for a missed call:    \nif (result.isValid() && result.isCall()) {\n    CallNotificationResult callResult = result.getCallResult();\n    if (callResult.isCallCanceled()) {\n        // user-defined method to show notification\n        createNotification(callResult.getRemoteUserId());\n    }\n}",
-      "language": "java"
+```java
+NotificationResult result = sinchService.relayRemotePushNotificationPayload(payload);
+// handle result, e.g. show a notification for a missed call:    
+if (result.isValid() && result.isCall()) {
+    CallNotificationResult callResult = result.getCallResult();
+    if (callResult.isCallCanceled()) {
+        // user-defined method to show notification
+        createNotification(callResult.getRemoteUserId());
     }
-  ]
 }
-[/block]
+```
+
+
 
 [block:callout]
 {

@@ -15,18 +15,21 @@ The Sinch SDK can be downloaded [here](././page/downloads). It contains: the lib
 
 The Sinch SDK library is distributed in [AAR](http://tools.android.com/tech-docs/new-build-system/aar-format) format. To use it in your project either:
 
->  - Copy the **.aar** file to the `libs` folder and edit the build.gradle file to include
-[block:code]
-{
-  "codes": [
-    {
-      "code": "repositories {\n    flatDir {\n        dirs 'libs'\n    }\n}\n\ndependencies {\n    compile(name:'sinch-android-rtc', version:'+', ext:'aar')\n}",
-      "language": "text"
-    }
-  ]
+- Copy the **.aar** file to the `libs` folder and edit the build.gradle file to include
+
+```groovy
+repositories {
+  flatDir {
+      dirs 'libs'
+  }
 }
-[/block]
->  - Or using Android Studio choose `File -> New -> New Module -> Import .JAR/.AAR Package` option
+
+dependencies {
+  compile(name:'sinch-android-rtc', version:'+', ext:'aar')
+}
+```
+
+- Or using Android Studio choose `File -> New -> New Module -> Import .JAR/.AAR Package` option
 
 ## Running ProGuard
 
@@ -35,16 +38,15 @@ If you are using ProGuard, we bundle an example proguard-project.txt file that m
 ## Permissions
 
 A minimum set of permissions are needed for the app to use the Sinch SDK. These are specified in the `AndroidManifest.xml` file. If the calling functionality will be used, all five permissions listed here are needed. However, if the calling functionality isn’t used, the last three (RECORD\_AUDIO, MODIFY\_AUDIO\_SETTINGS and READ\_PHONE\_STATE) can be omitted.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "<uses-permission android:name=\"android.permission.INTERNET\" />\n<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />\n<uses-permission android:name=\"android.permission.RECORD_AUDIO\" />\n<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\" />\n<uses-permission android:name=\"android.permission.READ_PHONE_STATE\" />",
-      "language": "xml"
-    }
-  ]
-}
-[/block]
+```xml
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="android.permission.RECORD_AUDIO" />
+<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+```
+
+
 
 [block:callout]
 {

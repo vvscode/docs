@@ -7,29 +7,22 @@ The Sinch SDK supports four types of calls: *app-to-app (audio or video)*, *app-
 Calls are placed through the `CallClient` and events are received using the `CallClientListener`. The call client is owned by the SinchClient and accessed using `sinchClient.getCallClient()`. Calling is not enabled by default.
 
 Enable calling with the following method before starting the `SinchClient`:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "sinchClient.setSupportCalling(true);",
-      "language": "java"
-    }
-  ]
-}
-[/block]
+```java
+sinchClient.setSupportCalling(true);
+```
+
+
 ## Set up an *app-to-app* call
 
 Use the CallClient to start the call (the `callUser` method). Pass the user identifier of the callee (the user receiving the call) to the call method, so that Sinch services can connect the call to the callee.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "CallClient callClient = sinchClient.getCallClient();\nCall call = callClient.callUser(\"<remote user id>\");\n// Or for video call: Call call = callClient.callUserVideo(\"<remote user id>\");\ncall.addCallListener(...);",
-      "language": "java"
-    }
-  ]
-}
-[/block]
+```java
+CallClient callClient = sinchClient.getCallClient();
+Call call = callClient.callUser("<remote user id>");
+// Or for video call: Call call = callClient.callUserVideo("<remote user id>");
+call.addCallListener(...);
+```
+
+
 A call object is returned, containing details about the participants in the call, call details such as start time, call state, possible errors, and so on.
 
 Assuming the callee’s device is available, the method `onCallProgressing` is called on the `CallListener`. It notifies the application that the outgoing call is progressing. If a progress tone should be played, this is where it should be started.
@@ -51,16 +44,13 @@ An *app-to-sip* call is a call that is made to a SIP server. Setting up an *app-
 ## Set up a *conference* call
 
 A *conference* call can be made to connect a user to a conference room where multiple users can be connected at the same time. The identifier for a conference room may not be longer than 64 characters.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "CallClient callClient = sinchClient.getCallClient();\nCall call = callClient.callConference(\"<conferenceId>\");\ncall.addCallListener(...);",
-      "language": "java"
-    }
-  ]
-}
-[/block]
+```java
+CallClient callClient = sinchClient.getCallClient();
+Call call = callClient.callConference("<conferenceId>");
+call.addCallListener(...);
+```
+
+
 It is also possible to connect users to a conference call via the `Sinch REST API <callouts>`.
 
 ## Handle incoming calls
@@ -68,27 +58,25 @@ It is also possible to connect users to a conference call via the `Sinch REST AP
 To answer calls, the application must be notified when the user receives an incoming call.
 
 Add a `CallClientListener` to the `CallClient` to act on the incoming calls. The `CallClientListener` is notified using `onIncomingCall` as calls come in to the device.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "CallClient callClient = sinchClient.getCallClient();\ncallClient.addCallClientListener(...);",
-      "language": "java"
-    }
-  ]
-}
-[/block]
+```java
+CallClient callClient = sinchClient.getCallClient();
+callClient.addCallClientListener(...);
+```
+
+
 When the incoming call method is executed, the call can either be connected automatically without any user action, or it can wait for the user to press the answer or the hangup button. If the call is set up to wait for a user response, we recommended that a ringtone is played to notify the user that there is an incoming call.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "@Override\npublic void onIncomingCall(CallClient callClient, Call call) {\n    // Start playing ringing tone\n    ... \n\n    // Add call listener\n    call.addCallListener(...);          \n}       ",
-      "language": "java"
-    }
-  ]
-}
-[/block]
+```java
+@Override
+public void onIncomingCall(CallClient callClient, Call call) {
+    // Start playing ringing tone
+    ... 
+
+    // Add call listener
+    call.addCallListener(...);          
+}       
+```
+
+
 To get events related to the call, add a call listener. The call object contains details about participants, start time, potential error codes, and error messages.
 
 ### Incoming video call
@@ -100,16 +88,15 @@ When incoming call is a video call, the `onIncomingCall` callback will be execut
 To answer the call, use the `answer` method on the call to accept it. If a ringtone was previously played, it should be stopped now.
 
 User presses the answer button:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "// User answers the call\ncall.answer();\n\n// Stop playing ringing tone\n...     ",
-      "language": "java"
-    }
-  ]
-}
-[/block]
+```java
+// User answers the call
+call.answer();
+
+// Stop playing ringing tone
+...     
+```
+
+
 Now, the clients on both ends establish the connection. When the call is established and the voice streams are running in both directions, the `onCallEstablished` listener method is called.
 
 ### Decline incoming call
@@ -117,46 +104,39 @@ Now, the clients on both ends establish the connection. When the call is establi
 If the call should not be answered, use the `hangup` method on the call to decline. The caller is notified that the incoming call was denied. If a ringtone was previously played, it should be stopped now.
 
 User presses the hangup button:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "// User does not want to answer\ncall.hangup();\n\n// Stop playing ringing tone\n...     ",
-      "language": "java"
-    }
-  ]
-}
-[/block]
+```java
+// User does not want to answer
+call.hangup();
+
+// Stop playing ringing tone
+...     
+```
+
+
 ## Disconnecting a Call
 
 When the user wants to disconnect an ongoing call, use the `hangup` method. Either user taking part in a call can disconnect it.
 
 Hanging up a call:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "call.hangup();",
-      "language": "java"
-    }
-  ]
-}
-[/block]
+```java
+call.hangup();
+```
+
+
 When either party disconnects a call, the application is notified using the call listener method `onCallEnded`. This allows the user interface to be updated, an alert tone to be played, or similar actions to occur.
 
 A call can be disconnected before it has been completely established.
 
 Hanging up a connecting call:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "// Starting a call\nCall call = callClient.callUser(\"<remote user id>\");\n\n// User changed his/her mind, let’s hangup\ncall.hangup();",
-      "language": "java"
-    }
-  ]
-}
-[/block]
+```java
+// Starting a call
+Call call = callClient.callUser("<remote user id>");
+
+// User changed his/her mind, let’s hangup
+call.hangup();
+```
+
+
 ## Volume control
 
 To make sure that the volume of the call can be modified by the hardware volume controls, `setVolumeControlStream(AudioManager.STREAM_VOICE_CALL)` must be called on the `Activity` where the call is handled. Make sure that `volumeControlStream` is reset to a suitable value when the call has ended.
@@ -164,13 +144,9 @@ To make sure that the volume of the call can be modified by the hardware volume 
 For example, after creating a call (using `CallClient.callUser`) or when answering a call (using `Call.answer()`) you should call `setVolumeControlStream(AudioManager.STREAM_VOICE_CALL);`.
 
 When the call ends, set the volume control stream back to it’s previous value. For example in your implementation of `CallListener`:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "@Override\npublic void onCallEnded(Call call) {\n    setVolumeControlStream(AudioManager.USE_DEFAULT_STREAM_TYPE);\n}",
-      "language": "java"
-    }
-  ]
+```java
+@Override
+public void onCallEnded(Call call) {
+    setVolumeControlStream(AudioManager.USE_DEFAULT_STREAM_TYPE);
 }
-[/block]
+```

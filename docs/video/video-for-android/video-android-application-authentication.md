@@ -52,35 +52,64 @@ This scheme has the benefit of the application secret never being directly acces
 ### Generating the signature
 
 The *Application Server* is responsible for generating a valid signature for each registration request that it accepts as a valid user registration. The *sequence* is a [cryptographic nonce](http://en.wikipedia.org/wiki/Cryptographic_nonce), and must be a monotonically increasing value. The signature is then generated as as follows (pseudogrammar):
-[block:code]
-{
-  "codes": [
-    {
-      "code": "string userId;\nstring applicationKey; // E.g. \"196087a1-e815-4bc4-8984-60d8d8a43f1d\"\nstring applicationSecret; // E.g. \"oYdgGRXoxEuJhGDY2KQ/HQ==\"\nuint64 sequence = previous_sequence + 1; // E.g. previous_sequence = 0\n\nstring stringToSign = userId + applicationKey + sequence + applicationSecret;\n\n// Use a Base64-encoder that don't introduce line-breaks, \n// or trim the output signature afterwards.\nstring signature = Base64.encode(SHA1.digest(stringToSign));",
-      "language": "objectivec"
-    }
-  ]
-}
-[/block]
+```objectivec
+string userId;
+string applicationKey; // E.g. "196087a1-e815-4bc4-8984-60d8d8a43f1d"
+string applicationSecret; // E.g. "oYdgGRXoxEuJhGDY2KQ/HQ=="
+uint64 sequence = previous_sequence + 1; // E.g. previous_sequence = 0
+
+string stringToSign = userId + applicationKey + sequence + applicationSecret;
+
+// Use a Base64-encoder that don't introduce line-breaks, 
+// or trim the output signature afterwards.
+string signature = Base64.encode(SHA1.digest(stringToSign));
+```
+
+
 For example, in Java:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "// Generating the Signature - Java\n// import java.security.MessageDigest;\n// import org.apache.commons.codec.binary.Base64;\n\nString userId; \nString applicationKey; // E.g. \"196087a1-e815-4bc4-8984-60d8d8a43f1d\";\nString applicationSecret; // E.g. \"oYdgGRXoxEuJhGDY2KQ/HQ==\";\nlong sequence; // fetch and increment last used sequence\n\nString toSign = userId + applicationKey + sequence + applicationSecret;\n\nMessageDigest messageDigest = MessageDigest.getInstance(\"SHA-1\");\nbyte[] hash = messageDigest.digest(toSign.getBytes(\"UTF-8\"));\n\nString signature = Base64.encodeBase64String(hash).trim();",
-      "language": "java"
-    }
-  ]
-}
-[/block]
+```java
+// Generating the Signature - Java
+// import java.security.MessageDigest;
+// import org.apache.commons.codec.binary.Base64;
+
+String userId; 
+String applicationKey; // E.g. "196087a1-e815-4bc4-8984-60d8d8a43f1d";
+String applicationSecret; // E.g. "oYdgGRXoxEuJhGDY2KQ/HQ==";
+long sequence; // fetch and increment last used sequence
+
+String toSign = userId + applicationKey + sequence + applicationSecret;
+
+MessageDigest messageDigest = MessageDigest.getInstance("SHA-1");
+byte[] hash = messageDigest.digest(toSign.getBytes("UTF-8"));
+
+String signature = Base64.encodeBase64String(hash).trim();
+```
+
+
 ## Set up the Sinch client and provide authorization credentials for user registration
-[block:code]
-{
-  "codes": [
-    {
-      "code": "// Instantiate a SinchClient using the SinchClientBuilder,\n// and don't specify the application secret, only the application key.\nandroid.content.Context context = this.getApplicationContext();\nSinchClient sinchClient = Sinch.getSinchClientBuilder().context(context)\n                                                  .applicationKey(\"<application key>\")\n                                                  .environmentHost(\"sandbox.sinch.com\")\n                                                  .userId(\"<user id>\")\n                                                  .build();\n\nsinchClient.addSinchClientListener(...);\n\n// SinchClientListener implementation\npublic void onRegistrationCredentialsRequired(SinchClient client, \n                                              ClientRegistration registrationCallback) {\n    // This will on the first run for this user call onRegistrationCredentialsRequired on the client listener.\n    // Perform API request to server which keeps the Application Secret.\n    myApiService.getAuthorizedSignatureForUser(\"<user id>\", new OnCompletedCallback() {\n        public void onCompleted(String signature, long sequence) {\n            // pass the signature and sequence back to the Sinch SDK\n            // via the ClientRegistration interface.\n            registrationCallback.register(signature, sequence);\n        }\n    });\n}",
-      "language": "java"
-    }
-  ]
+```java
+// Instantiate a SinchClient using the SinchClientBuilder,
+// and don't specify the application secret, only the application key.
+android.content.Context context = this.getApplicationContext();
+SinchClient sinchClient = Sinch.getSinchClientBuilder().context(context)
+                                                  .applicationKey("<application key>")
+                                                  .environmentHost("sandbox.sinch.com")
+                                                  .userId("<user id>")
+                                                  .build();
+
+sinchClient.addSinchClientListener(...);
+
+// SinchClientListener implementation
+public void onRegistrationCredentialsRequired(SinchClient client, 
+                                              ClientRegistration registrationCallback) {
+    // This will on the first run for this user call onRegistrationCredentialsRequired on the client listener.
+    // Perform API request to server which keeps the Application Secret.
+    myApiService.getAuthorizedSignatureForUser("<user id>", new OnCompletedCallback() {
+        public void onCompleted(String signature, long sequence) {
+            // pass the signature and sequence back to the Sinch SDK
+            // via the ClientRegistration interface.
+            registrationCallback.register(signature, sequence);
+        }
+    });
 }
-[/block]
+```

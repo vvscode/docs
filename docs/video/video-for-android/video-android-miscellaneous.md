@@ -24,16 +24,11 @@ The environment is passed as the parameter *environmentHost* when instantiating 
 
 User IDs can only contain characters in the *printable ASCII character set*. That is:
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "    !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~",
-      "language": "text"
-    }
-  ]
-}
-[/block]
+```text
+    !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
+```
+
+
 User IDs **must not** be longer than **40** characters.
 
 ## Encryption export regulations
@@ -100,16 +95,20 @@ The push notification data can also be unregistered by calling the `SinchClient.
 The following sections assumes that GCM is used, but the use pattern for other push services is similar.
 
 The easiest way to enable offline calls or messages using GCM is to first call `SinchClient.setSupportPushNotifications(true)` and then register the device specific push notification data with `SinchClient.registerPushNotificationData`. In a simple example we can use the registration id received from Google when registering to GCM.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "// Register with the GCM service to get a device specific registrationId\n// Should be done in a background job\nGoogleCloudMessaging gcm = GoogleCloudMessaging.getInstance(context);\nString regId = gcm.register(\"Your-Sender-ID\");\n\n...\n\nsinchClient.setSupportPushNotifications(true);\nsinchClient.start();\nsinchClient.registerPushNotificationData(regId);",
-      "language": "java"
-    }
-  ]
-}
-[/block]
+```java
+// Register with the GCM service to get a device specific registrationId
+// Should be done in a background job
+GoogleCloudMessaging gcm = GoogleCloudMessaging.getInstance(context);
+String regId = gcm.register("Your-Sender-ID");
+
+...
+
+sinchClient.setSupportPushNotifications(true);
+sinchClient.start();
+sinchClient.registerPushNotificationData(regId);
+```
+
+
 Please refer to Google’s [Google Cloud Messaging for Android](http://developer.android.com/google/gcm/index.html) for more information on how to use the GCM service.
 [block:callout]
 {
@@ -129,29 +128,27 @@ Also refer to Google’s [Google Cloud Messaging for Android](http://developer.a
 When the recipient’s application is offline and the app needs to notify the user using a push notification, the caller’s or sender’s application is notified using the callback method `CallListener.onShouldSendPushNotification`.
 
 The callback includes a List of `PushPair`s. The pairs contain a payload that is Sinch- and call-specific. Moreover the pairs contain a push data byte array. The Sinch specific payload should be embedded in the push notification sent to the recipient’s device(s). The push data is the same push data that the recipient’s application registered earlier. There might be multiple registered devices for the recipient user (for example, the same user is using the application on both a phone and a tablet), which is why the callback includes a List of Push Pairs.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "public void onShouldSendPushNotification(Call call, List<PushPair> pushPairs) {\n    // Send payload and push data to application server\n    // which should communicate with GCM Service to send push notifications.\n}",
-      "language": "java"
-    }
-  ]
+```java
+public void onShouldSendPushNotification(Call call, List<PushPair> pushPairs) {
+    // Send payload and push data to application server
+    // which should communicate with GCM Service to send push notifications.
 }
-[/block]
+```
+
+
 A push notification should be sent to each device, where each entry in the parameter `pushPairs` list corresponds to one device. Each push notification should include the Sinch-specific payload so it can be forwarded to the Sinch client running on the destination device.
 
 The Sinch-specific payload should be embedded as custom payload data in the GCM Payload.
-[block:code]
+```java
 {
-  "codes": [
-    {
-      "code": "{\n  \"registration_ids\" : [\"APA91bHun4MxP5egoKMwt2KZFBaFUH-1RYqx...\", ...],\n  \"data\" : {\n    \"Sinch\" : <payload>,\n  },\n}",
-      "language": "java"
-    }
-  ]
+  "registration_ids" : ["APA91bHun4MxP5egoKMwt2KZFBaFUH-1RYqx...", ...],
+  "data" : {
+    "Sinch" : <payload>,
+  },
 }
-[/block]
+```
+
+
 Please refer to Google’s [Google Cloud Messaging for Android](http://developer.android.com/google/gcm/index.html) for more information.
 
 #### On the callee side
@@ -159,16 +156,15 @@ Please refer to Google’s [Google Cloud Messaging for Android](http://developer
 As a prerequisite, offline calling and messaging must be enabled on the receiver’s side (see `Push Notifications sent via your application server <push-notifications-sent-via-your-application-server>`).
 
 When the application receives a push notification from the Google Cloud Messaging Service, the application should extract the Sinch-specific payload from the push notification, and forwarding it to the Sinch client using the method `relayRemotePushNotificationPayload`.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "protected void onMessage(final Context context, final Intent intent) {\n    String sinchPayload = intent.getStringExtra(\"Sinch\");\n\n    sinchClient.relayRemotePushNotificationPayload(sinchPayload);\n}",
-      "language": "java"
-    }
-  ]
+```java
+protected void onMessage(final Context context, final Intent intent) {
+    String sinchPayload = intent.getStringExtra("Sinch");
+
+    sinchClient.relayRemotePushNotificationPayload(sinchPayload);
 }
-[/block]
+```
+
+
 ## Glossary
 
 This glossary defines some of the domain specific terms used throughout this document.

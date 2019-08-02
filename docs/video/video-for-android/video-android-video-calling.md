@@ -9,79 +9,69 @@ Just like audio calls, video calls are placed through the `CallClient` and event
 ## Showing the video streams
 
 Once you have created a `VideoCallListener` and added it to a call, the `onVideoTrackAdded()` method will be called.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "@Override\npublic void onVideoTrackAdded(Call call) {\n    // Get a reference to your SinchClient, in the samples this is done through the service interface:\n    VideoController vc = getSinchServiceInterface().getVideoController();\n    View myPreview = vc.getLocalView();\n    View remoteView = vc.getRemoteView();\n\n    // Add the views to your view hierarchy\n    ...\n}",
-      "language": "java"
-    }
-  ]
+```java
+@Override
+public void onVideoTrackAdded(Call call) {
+    // Get a reference to your SinchClient, in the samples this is done through the service interface:
+    VideoController vc = getSinchServiceInterface().getVideoController();
+    View myPreview = vc.getLocalView();
+    View remoteView = vc.getRemoteView();
+
+    // Add the views to your view hierarchy
+    ...
 }
-[/block]
+```
+
+
 After the call has ended, don’t forget to remove the views from your view hierarchy again.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "@Override\npublic void onCallEnded(Call call) {\n    // Remove Sinch video views from your view hierarchy\n}",
-      "language": "java"
-    }
-  ]
+```java
+@Override
+public void onCallEnded(Call call) {
+    // Remove Sinch video views from your view hierarchy
 }
-[/block]
+```
+
+
 ### Pausing video stream
 
 To pause the local video stream, use the `pauseVideo()` method on the call.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "// User pause the video stream \ncall.pauseVideo();",
-      "language": "java"
-    }
-  ]
-}
-[/block]
+```java
+// User pause the video stream 
+call.pauseVideo();
+```
+
+
 ### Resuming video stream
 
 To resume the local video stream, use the `resumeVideo()` method on the call.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "// User resumes the video stream \ncall.resumeVideo();",
-      "language": "java"
-    }
-  ]
-}
-[/block]
+```java
+// User resumes the video stream 
+call.resumeVideo();
+```
+
+
 ### Pausing video stream delegates
 
 Once you have created a `VideoCallListener` and added it to a call, the `onVideoTrackPaused()` method will be called when the remote user pause the video stream.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "@Override\npublic void onVideoTrackPaused(Call call) {\n     // Implement what to be done when remote user pause video stream.\n}",
-      "language": "java"
-    }
-  ]
+```java
+@Override
+public void onVideoTrackPaused(Call call) {
+     // Implement what to be done when remote user pause video stream.
 }
-[/block]
+```
+
+
 ### Resuming video stream delegates
 
 Once you have created a `VideoCallListener` and added it to a call, the `onVideoTrackResumed()` method will be called when the remote user resumes the video stream.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "@Override\npublic void onVideoTrackResumed(Call call) {\n     // Implement what to be done when remote user resumes video stream.\n}",
-      "language": "java"
-    }
-  ]
+```java
+@Override
+public void onVideoTrackResumed(Call call) {
+     // Implement what to be done when remote user resumes video stream.
 }
-[/block]
+```
+
+
 ### Video content fitting and aspect ratio
 
 How the remote video stream is fitted into a view can be controller by the `setResizeBehaviour()` method with possible arguments `VideoScalingType.ASPECT_FIT`, `VideoScalingType.ASPECT_FILL` and `VideoScalingType.ASPECT_BALANCED`. The local preview will always use `VideoScalingType.ASPECT_FIT`.
@@ -97,41 +87,43 @@ The Sinch SDK can provide access to raw video frames via a callback function. Th
 Your video frame handler needs to implement `VideoFrameListener` interface by implementing the `onFrame()` callback. Note that it is important to explicitly release the video frame by calling `release()`.
 
 Example:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "import com.sinch.android.rtc.video.VideoFrame;\nimport com.sinch.android.rtc.video.VideoFrameListener;\n\npublic class YourVideoFrameHandler implements VideoFrameListener {\n    public synchronized void onFrame(String callId, VideoFrame videoFrame) {\n    ... // Process videoFrame\n    videoFrame.release(); // Release videoFrame\n    }\n}",
-      "language": "java"
+```java
+import com.sinch.android.rtc.video.VideoFrame;
+import com.sinch.android.rtc.video.VideoFrameListener;
+
+public class YourVideoFrameHandler implements VideoFrameListener {
+    public synchronized void onFrame(String callId, VideoFrame videoFrame) {
+    ... // Process videoFrame
+    videoFrame.release(); // Release videoFrame
     }
-  ]
 }
-[/block]
+```
+
+
 Use `setVideoFrameListener()` to register your video frame handler as the callback to receive video frames.
 
 Example:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "YourVideoFrameHandler videoFrameHandler = new YourVideoFrameHandler();\nVideoController vc = getSinchServiceInterface().getVideoController();\nvc.setVideoFrameListener(videoFrameHandler);",
-      "language": "java"
-    }
-  ]
-}
-[/block]
+```java
+YourVideoFrameHandler videoFrameHandler = new YourVideoFrameHandler();
+VideoController vc = getSinchServiceInterface().getVideoController();
+vc.setVideoFrameListener(videoFrameHandler);
+```
+
+
 ### Converting video frame from I420 to NV21
 
 The Sinch SDK provides a helper function to convert the default I420 frame to NV21 Frame, which is handy to work with when you need to save it as an image on Android. Use `VideoUtils.I420toNV21Frame(VideoFrame)` for the conversion. Note that this helper does *NOT* release the original I420 video frame.
 
 Example:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "import com.sinch.android.rtc.video.VideoUtils; // To use I420toNV21Frame\n\nVideoFrame videoFrame = ... // Get the video frame from onFrame() callback\nVideoFrame nv21Frame = VideoUtils.I420toNV21Frame(videoFrame);\n\nYuvImage image = new YuvImage(nv21Frame.yuvPlanes()[0].array(),\n                              ImageFormat.NV21,\n                              nv21Frame.width(),\n                              nv21Frame.height(),\n                              nv21Frame.yuvStrides());",
-      "language": "java"
-    }
-  ]
-}
-[/block]
+```java
+import com.sinch.android.rtc.video.VideoUtils; // To use I420toNV21Frame
+
+VideoFrame videoFrame = ... // Get the video frame from onFrame() callback
+VideoFrame nv21Frame = VideoUtils.I420toNV21Frame(videoFrame);
+
+YuvImage image = new YuvImage(nv21Frame.yuvPlanes()[0].array(),
+                              ImageFormat.NV21,
+                              nv21Frame.width(),
+                              nv21Frame.height(),
+                              nv21Frame.yuvStrides());
+```
