@@ -184,6 +184,12 @@ async function pushDocs(dir, slugs, options) {
             files = files.filter(file => includeOnly.includes(file));
         }
 
+        if (files.length === 0) {
+            console.warn('No files to found to push.');
+            return;
+        }
+
+        console.log(`Pushing ${files.length} content files to Readme...`);
         for (const file of files) {
             pushDoc(file, options);
         }
