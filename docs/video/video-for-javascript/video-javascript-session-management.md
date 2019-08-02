@@ -1,0 +1,62 @@
+---
+title: "Session Management"
+excerpt: ""
+---
+Between each page view, page reload or visit to the website, the current session is lost. Often there is an interest in re-using the same session and not forcing the end-user to re-authenticate. This can be solved by passing a session object into `sinchClient.start()`, and if the session is valid it will resume and you don’t have to prompt the user for any sign in. If it fails, you should fall back to whatever authentication method you’d like to use.
+
+In order to be able to restore a session, it’s first required to save it on successful login.
+
+## Saving a session
+
+If you’d like to save the session after authentication, the code may look something like this:
+[block:code]
+{
+  "codes": [
+    {
+      "code": "var sinchClient = new SinchClient({\n        applicationKey: 'MY_APPLICATION_KEY',\n        capabilities: {messaging: true},\n    });\n\nsinchClient.start({username: 'alice', password: 'somethingSecure'})\n    then(function() {\n        localStorage['sinchSession-' + sinchClient.applicationKey] = JSON.stringify(sinchClient.getSession());\n    });",
+      "language": "javascript"
+    }
+  ]
+}
+[/block]
+This code will start a sinchClient, authenticate using Sinch authentication and on success store the session in `localStorage`.
+[block:callout]
+{
+  "type": "info",
+  "body": "In the future, Sinch may handle this for you",
+  "title": "Note"
+}
+[/block]
+## Resuming a session
+
+Next time the same visitor come back to the website, it’s nice if we can resume the same session. If we assume we have a saved session object, similar to the example above, we can resume it by passing the sessionObject to `sinchClient.start()`.
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/6faf940-authentication_papi_resume.png",
+        "authentication_papi_resume.png",
+        455,
+        533,
+        "#f5f5f5"
+      ],
+      "caption": "Resume authenticated\nsession"
+    }
+  ]
+}
+[/block]
+In this case the code may look something like this:
+[block:code]
+{
+  "codes": [
+    {
+      "code": "//Parse the saved session object\nvar sessionObj = JSON.parse(localStorage['sinchSession-' + sinchClient.applicationKey] || '{}');\n\n//If there is a valid session object\nif(sessionObj.userId) {\n    sinchClient.start(sessionObj)\n        .then(handleStartSuccess)\n        .fail(showLoginUI); //On failure, the session was not valid => user must re-login\n}\nelse {\n    showLoginUI(); //There is no session => user must login\n}",
+      "language": "javascript"
+    }
+  ]
+}
+[/block]
+The session object can be stored in any secure way you see best fit, for example in the browser `localStorage` as shown above. The session object can be retrieved from sinchClient using the `sinchClient.getSession()` method after a successful call to `sinchClient.start()`.
+
+See the Sample IM app for an example on working with sessions.

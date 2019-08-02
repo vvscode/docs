@@ -1,0 +1,152 @@
+---
+title: "Push notifications"
+excerpt: ""
+---
+When an application is not running, or the `Active Connection` feature is not enabled, the user must be notified of an incoming call or instant message by a push notification.
+
+By invoking `setSupportManagedPush(true)` the Sinch SDK will automatically register to *Firebase Cloud Messaging* and the Sinch backend will initiate push messages to your application when needed. This feature requires Google Play Services on the device. If you distribute your application through other channels than Google Play, push notifications will not be available on devices that do not have Google Play Services.
+
+If using the Sinch backend and Google Cloud Messaging is not viable in the application, please see \[Push Notifications sent via your application server\]\[\] and \[Active connection\]\[\].
+
+As a developer, you will be responsible for implementing the code that receives the FCM push message. For an example implementation, please see the sample app “Sinch Push” which is bundled with the SDK.
+
+Sinch SDK moved from deprecated *Google Cloud Messaging* (GCM) to it’s most up-to-date and Google-recommended version *Firebase Cloud Messaging* (FCM), which requires client app to be modified in accordance with the Google’s official [GCM to FCM migration guide](https://developers.google.com/cloud-messaging/android/android-migrate-fcm)
+
+The following sections cover how to support receiving calls and messages via push notifications.
+
+## FCM configuration file required (google-services.json)
+
+You can add Firebase to your app either semi-automatically using Android Studio, or manually [following this step-by-step official guide](https://firebase.google.com/docs/android/setup). In brief, to perform manual setup you first need to register your application in [firebase console](https://console.firebase.google.com/). If you already have GCM project, the console will prompt you to import it as new Firebase Cloud Messaging project. Register your application using the console, and download relevant google-services.json into your project’s main folder. More information about adding Firebase to your Android app can be found [here](https://firebase.google.com/docs/android/setup)
+
+Sample SDK projects *sinch-rtc-sample-push* and *sinch-rtc-sample-video-push* will require you to supply your own *google-services.json* in order to be built. In the absence of this file gradle will show relevant error with explanation and relevant links and stop the build. That *google-services.json* file is the main mean of automatization of support of Firebase services to your app. Android Studio’s *‘com.google.gms.google-services’* plugin parses and adds relevant resources and permissions to your applications manifest automatically.
+
+## Permissions required
+
+Unlike GCM setup, FCM application developer does not need to manually add any permission to application manifest. For relevant changes in you application’s manifest when migrating from GCM to FCM please consult official [GCM to FCM migration guide](https://developers.google.com/cloud-messaging/android/android-migrate-fcm)
+
+## Enable push notifications
+
+To enable push notifications, set the following capability before starting the Sinch client:
+[block:code]
+{
+  "codes": [
+    {
+      "code": "sinchClient.setSupportManagedPush(true);\nsinchClient.start();",
+      "language": "java"
+    }
+  ]
+}
+[/block]
+
+[block:callout]
+{
+  "type": "info",
+  "title": "Note",
+  "body": "- You must catch the `MissingGCMException` if you distribute your app to devices without *Google Play Services*.\n- Using `setSupportManagedPush(true)` will register a token with Firebase Cloud Messaging using a Sender ID connected to Sinch, which will *NOT* unregister your own token, so you *CAN* use Firebase Cloud Messages for your own purpose filtering them in *onMessageReceived(RemoteMessage remoteMessage)* method of your FCM Listening Service using Sinch helper API *SinchHelpers.isSinchPushPayload*."
+}
+[/block]
+
+[block:code]
+{
+  "codes": [
+    {
+      "code": "public class FcmListenerService extends FirebaseMessagingService {\n\n@Override\npublic void onMessageReceived(RemoteMessage remoteMessage){\n    if (SinchHelpers.isSinchPushPayload(remoteMessage.getData())) {\n        // it's Sinch message - relay it to SinchClient\n    } else {\n        // it's NOT Sinch message - process yourself\n    }",
+      "language": "java"
+    }
+  ]
+}
+[/block]
+## Receive and forward push notifications to a Sinch client
+
+For more details regarding how to implement receiving a FCM downstream message, please see the [Android developer site for FCM](https://firebase.google.com/docs/cloud-messaging/android/receive).
+
+Once you have received the `RemoteMessage` in your `FirebaseMessagingService`, forward it to the Sinch client using the method `relayRemotePushNotificationPayload`.
+[block:code]
+{
+  "codes": [
+    {
+      "code": "// make sure you have created a SinchClient\nif (SinchHelpers.isSinchPushPayload(remoteMessage.getData())) {\n    NotificationResult result = sinchClient.relayRemotePushNotificationPayload(remoteMessage.getData());\n}",
+      "language": "java"
+    }
+  ]
+}
+[/block]
+The returned `result` can be inspected to see whether the push was for an IM or a call using `result.isMessage()` and `result.isCall()`.
+
+### Incoming message
+
+If the payload that was forwarded to the Sinch client was for an instant message, call `SinchClient.startListeningOnActiveConnection()` which will make sure the `onIncomingMessage` callback is called. See \[Active Connection\]\[\] for more information.
+
+### Incoming call
+
+If the payload that was forwarded to the Sinch client was for a call, the `onIncomingCall` callback will automatically be triggered as for any other call. The `CallNotificationResult` object provides details about participants, whether the call timed out and whether the call offers video.
+
+### Send and receive custom headers via Sinch managed push
+
+The Sinch SDK supports adding custom headers in push notification messages when initiating a call, so developers do not need to implement their own push mechanism if they only need to deliver small pieces of information along the Sinch managed push between their app instances. The Sinch SDK allows up to *1024* bytes of custom headers.
+
+Setting custom headers on the sender side when initiating a call:
+[block:code]
+{
+  "codes": [
+    {
+      "code": "// setting up custom headers\nMap<String,String> headers = new HashMap<>();\nheaders.put(\"The first value is \", \"@123\");\nheaders.put(\"Custom value \", \"two!\");\nCall call = callClient.callUser(userId, headers);   ",
+      "language": "java"
+    }
+  ]
+}
+[/block]
+If custom headers were supplied by call initiator, they can be retrieved from notification result using `getHeaders()` API:
+[block:code]
+{
+  "codes": [
+    {
+      "code": "// make sure you have created a SinchClient\nif (SinchHelpers.isSinchPushPayload(remoteMessage.getData())) {\nNotificationResult result = sinchClient.relayRemotePushNotificationPayload(remoteMessage.getData());\n  if (result.isCall()) {\n    CallNotificationResult callResult = result.getCallResult();\n    Map<String, String> customHeaders = callResult.getHeaders());\n  }\n}",
+      "language": "java"
+    }
+  ]
+}
+[/block]
+
+[block:callout]
+{
+  "type": "info",
+  "title": "Note",
+  "body": "It is possible to retrieve custom headers from the push message using *SinchHelpers.queryPushNotificationPayload* without starting the client."
+}
+[/block]
+
+[block:code]
+{
+  "codes": [
+    {
+      "code": "// SinchClient is not needed to be created at all!\nif (SinchHelpers.isSinchPushPayload(remoteMessage.getData())) {\n  NotificationResult result = SinchHelpers.queryPushNotificationPayload(applicationContext, remoteMessage.getData());\n  if (result.isCall()) {\n    CallNotificationResult callResult = result.getCallResult();\n    Map<String, String> customHeaders = callResult.getHeaders());\n    // analyse headers, decide whether to process message/call and start Sinch client or ignore\n    ...\n  }\n}",
+      "language": "java"
+    }
+  ]
+}
+[/block]
+### Show local notifications for missed calls
+
+When the push notification is enabled on a Sinch client, besides the incoming call notification, the Sinch SDK will also send a push notification for a canceled call when the caller cancels the call before it is answered. This gives developers a good opportunity to present local notifications for missed calls in their apps:
+[block:code]
+{
+  "codes": [
+    {
+      "code": "NotificationResult result = sinchService.relayRemotePushNotificationPayload(payload);\n// handle result, e.g. show a notification for a missed call:    \nif (result.isValid() && result.isCall()) {\n    CallNotificationResult callResult = result.getCallResult();\n    if (callResult.isCallCanceled()) {\n        // user-defined method to show notification\n        createNotification(callResult.getRemoteUserId());\n    }\n}",
+      "language": "java"
+    }
+  ]
+}
+[/block]
+
+[block:callout]
+{
+  "type": "info",
+  "title": "Note",
+  "body": "If the message forwarded to the Sinch client happened to be *call cancel* message, the client arranges the termination of the call automatically resulting in `CallListener.onCallEnded()` event being triggered, allowing UI to handle canceling the call."
+}
+[/block]
+## Unregister a device
+
+If the user of the application logs out or performs a similar action, the push notification device token can be unregistered via `SinchClient.unregisterManagedPush()` to prevent further notifications to be sent to the device. Starting a client with `setSupportManagedPush(true)` will register the device again.
