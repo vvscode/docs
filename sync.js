@@ -10,6 +10,8 @@ const stagedGitFiles = require('staged-git-files');
 const crypto = require('crypto');
 const frontMatter = require('gray-matter');
 
+const markdownize = require('./lib/markdownize');
+
 const DEFAULT_CONFIG_FILE = 'config.yml';
 const DEFAULT_DOCS_DIR = 'docs';
 const CONFIG_APIKEY = 'apikey';
@@ -35,20 +37,67 @@ program
     .command('fetch [category_slugs]')
     .description('Fetches up-to-date Markdown content files from readme.io, overwriting local files. ' +
         'When called with a comma-delimited list of category slugs, only those categories will be fetched.')
-    .option('-o, --output <dir>', 'Destination directory where docs Markdown files will be written', DEFAULT_DOCS_DIR)
+    .option('-d, --dir <dir>', 'Destination directory where docs Markdown files will be written', DEFAULT_DOCS_DIR)
     .action((slug, cmd) => {
-        fetchDocs(listCategorySlugs(slug), cmd.output);
+        fetchDocs(describeCategories(cmd.dir, slug), cmd.output);
     });
 
 program
     .command('push [category_slugs]', )
     .description('Pushes local Markdown content files to readme.io. ' +
         'When called with a comma-delimited list of category slugs, only those categories will be pushed.')
-    .option('-i, --input <dir>', `Directory where the Markdown content files will be loaded from.`, DEFAULT_DOCS_DIR)
-    .option('-m, --staged-only', `Only push files staged files that have been modified. Important: files must have been added to the index with 'git add'`)
-    .option('-d, --dry-run', `No remote content will be updated but command output will show what would be done.`)
-    .action((slug, cmd) => {
-        pushDocs(cmd.input, listCategorySlugs(slug), { stagedOnly: cmd.stagedOnly, dryRun: cmd.dryRun });
+    .option('-d, --dir <dir>', `Directory where the Markdown content files will be loaded from.`, DEFAULT_DOCS_DIR)
+    .option('--staged-only', `Only push files staged files that have been modified. Important: files must have been added to the index with 'git add'`)
+    .option('--dry-run', `No remote content will be updated but command output will show what would be done.`)
+    .action(async (slug, cmd) => {
+        const options = { stagedOnly: cmd.stagedOnly, dryRun: cmd.dryRun };
+
+        var files = await findMarkdownForCategories(describeCategories(cmd.dir, slug));
+
+        if (options.stagedOnly) {
+            files = await keepOnlyStagedGitFiles(files);
+        }
+
+        if (files.length === 0) {
+            console.warn('No files to found to push.');
+            return;
+        }
+
+        for (const file of files) {
+            pushDoc(file, options);
+        }
+    });
+
+program
+    .command('markdownize [category_slugs]', )
+    .description('Converts proprietary Readme widgets to standard Markdown.')
+    .option('-d, --dir <dir>', `Directory where the Markdown content files will be loaded from.`, DEFAULT_DOCS_DIR)
+    .option('-w, --widgets <widgets>', `Comma-separated list of Readme widgets to replace to Markdown. Supported widgets: 'code', 'callout', 'image', 'html'`)
+    .option('-f, --file <file>', `Path to a single file to process, relative to current working directory.`)
+    .option('--dry-run', `Will only output modifications that would be made, without actually saving them.`)
+    .action(async (slug, cmd) => {
+        const options = { dryRun: cmd.dryRun };
+
+        var files;
+        if (cmd.file) {
+            files = [cmd.file];
+        } else {
+            files = await findMarkdownForCategories(describeCategories(cmd.dir, slug));
+        }
+
+        if (files.length === 0) {
+            console.warn('No files to found to markdownize.');
+            return;
+        }
+
+        var widgets = markdownize.widgetTypes;
+        if (cmd.widgets) {
+            widgets = cmd.widgets.split(',');
+        }
+
+        for (const file of files) {
+            markdownize.markdownize(file, widgets, options);
+        }
     });
 
 program.parse(process.argv);
@@ -85,22 +134,23 @@ function httpOptions() {
     }
 }
 
-function listCategorySlugs(slugs) {
+function describeCategories(dir, slugs) {
     const configFile = globalOption('config_file', DEFAULT_CONFIG_FILE);
-    return slugs ? slugs.split(',') : loadConfigYaml(configFile).categories;
+    var categories = slugs ? slugs.split(',') : loadConfigYaml(configFile).categories;
+    return categories.map(name => {
+        return { slug: name, path: path.join(dir, name)}
+    })
 }
 
 function getDoc(slug) {
     return request.get(`https://dash.readme.io/api/v1/docs/${slug}`, httpOptions());
 }
 
-async function fetchDocs(slugs, outputPath) {
-    for (const slug of slugs) {
-        var downloadDir = path.join(outputPath, slug);
-
-        const docs = await request.get(`https://dash.readme.io/api/v1/categories/${slug}/docs`, httpOptions());
+async function fetchDocs(categories, outputPath) {
+    for (const category of categories) {
+        const docs = await request.get(`https://dash.readme.io/api/v1/categories/${category.slug}/docs`, httpOptions());
         for (const doc of docs) {
-            fetchDoc(doc, downloadDir);
+            fetchDoc(doc, category.path);
         }
     }
 }
@@ -166,32 +216,28 @@ async function pushDoc(file, options) {
     }
 }
 
-async function pushDocs(dir, slugs, options) {
-    var includeOnly;
+async function keepOnlyStagedGitFiles(files) {
+    const stagedFiles = await stagedGitFiles();
+    return files.filter(stagedFiles.map(descriptor => descriptor.filename).includes);
+}
 
-    if (options.stagedOnly) {
-        const stagedFiles = await stagedGitFiles();
-        includeOnly = stagedFiles.map(descriptor => descriptor.filename);
-    }
+/**
+ * Finds all Markdown content files found in the directory of a content category.
+ * @param categories Array of category descriptors.
+ */
+async function findMarkdownForCategories(categories) {
+    return new Promise(resolve => {
+        Promise.all(categories.map(category => findMarkdownFiles(category.path)))
+            .then(paths => {
+               resolve(paths.reduce((curr, prev) => curr.concat(prev)));
+            });
+    });
+}
 
-    glob(path.join(dir, '**/*.md'), {}, (err, items) => {
-        var files = slugs
-            .map(slug => path.join(dir, slug))
-            .map(categoryPath => items.filter(item => item.startsWith(categoryPath)))
-            .reduce((curr, prev) => prev.concat(curr));
-
-        if (includeOnly) {
-            files = files.filter(file => includeOnly.includes(file));
-        }
-
-        if (files.length === 0) {
-            console.warn('No files to found to push.');
-            return;
-        }
-
-        console.log(`Pushing ${files.length} content files to Readme...`);
-        for (const file of files) {
-            pushDoc(file, options);
-        }
+async function findMarkdownFiles(dir) {
+    return new Promise( resolve => {
+        glob(path.join(dir, '**/*.md'), {}, (err, files) => {
+            resolve(files);
+        });
     });
 }
