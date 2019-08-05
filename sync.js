@@ -9,6 +9,7 @@ const glob = require('glob');
 const stagedGitFiles = require('staged-git-files');
 const crypto = require('crypto');
 const frontMatter = require('gray-matter');
+const chalk = require('chalk');
 
 const markdownize = require('./lib/markdownize');
 
@@ -166,7 +167,7 @@ excerpt: "${docDetails.excerpt}"
 ${docDetails.body}`;
 
     const outputFile = path.join(outputPath, `${slug}.md`);
-    console.log(`Writing contents of doc [${doc.slug}] to file [${outputFile}]`);
+    console.log(chalk.green(`Writing contents of doc [${doc.slug}] to file [${outputFile}]`));
 
     fs.mkdirSync(outputPath, {recursive: true});
     fs.writeFile(outputFile, contents, (err) => {
@@ -196,12 +197,12 @@ async function pushDoc(file, options) {
     const existingDoc = await getDoc(slug);
 
     if (existingDoc.lastUpdatedHash === hash) {
-        console.log(`Contents of page [${slug}] was not pushed because contents are the same.`);
+        console.log(chalk.cyan(`Contents of page [${slug}] was not pushed because contents are the same.`));
         return;
     }
 
     if (options.dryRun) {
-        console.log(`DRY RUN: Would push contents of [${file}] to readme.io`);
+        console.log(chalk.dim(`DRY RUN: Would push contents of [${file}] to readme.io`));
     } else {
         await request
             .put(`https://dash.readme.io//api/v1/docs/${slug}`, {
@@ -212,7 +213,7 @@ async function pushDoc(file, options) {
                     lastUpdatedHash: hash,
                 }),
             });
-        console.log(`Pushed contents of [${file}] to readme.io`);
+        console.log(chalk.green(`Pushed contents of [${file}] to readme.io`));
     }
 }
 
