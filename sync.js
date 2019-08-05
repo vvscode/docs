@@ -52,7 +52,7 @@ program
     .action(async (slug, cmd) => {
         const options = { stagedOnly: cmd.stagedOnly, dryRun: cmd.dryRun };
 
-        var files = await findMarkdownForCategories(describeCategories(cmd.dir, slug));
+        var files = findMarkdownFiles(describeCategories(cmd.dir, slug));
 
         if (options.stagedOnly) {
             files = await keepOnlyStagedGitFiles(files);
@@ -82,7 +82,7 @@ program
         if (cmd.file) {
             files = [cmd.file];
         } else {
-            files = await findMarkdownForCategories(describeCategories(cmd.dir, slug));
+            files = findMarkdownFiles(describeCategories(cmd.dir, slug));
         }
 
         if (files.length === 0) {
@@ -218,26 +218,16 @@ async function pushDoc(file, options) {
 
 async function keepOnlyStagedGitFiles(files) {
     const stagedFiles = await stagedGitFiles();
-    return files.filter(stagedFiles.map(descriptor => descriptor.filename).includes);
+    return files.filter(file => stagedFiles.map(descriptor => descriptor.filename).includes(file));
 }
 
 /**
  * Finds all Markdown content files found in the directory of a content category.
  * @param categories Array of category descriptors.
  */
-async function findMarkdownForCategories(categories) {
-    return new Promise(resolve => {
-        Promise.all(categories.map(category => findMarkdownFiles(category.path)))
-            .then(paths => {
-               resolve(paths.reduce((curr, prev) => curr.concat(prev)));
-            });
-    });
-}
-
-async function findMarkdownFiles(dir) {
-    return new Promise( resolve => {
-        glob(path.join(dir, '**/*.md'), {}, (err, files) => {
-            resolve(files);
-        });
-    });
+function findMarkdownFiles(categories) {
+    return categories
+        .map(category => category.path)
+        .map(dir => glob.sync(path.join(dir, '**/*.md')))
+        .reduce((curr, prev) => curr.concat(prev));
 }
