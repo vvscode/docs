@@ -34,13 +34,12 @@ sinchClient.start();
 
 
 
-[block:callout]
-{
-  "type": "info",
-  "title": "Note",
-  "body": "- You must catch the `MissingGCMException` if you distribute your app to devices without *Google Play Services*.\n- Using `setSupportManagedPush(true)` will register a token with Firebase Cloud Messaging using a Sender ID connected to Sinch, which will *NOT* unregister your own token, so you *CAN* use Firebase Cloud Messages for your own purpose filtering them in *onMessageReceived(RemoteMessage remoteMessage)* method of your FCM Listening Service using Sinch helper API *SinchHelpers.isSinchPushPayload*."
-}
-[/block]
+
+> **Note**    
+>
+> - You must catch the `MissingGCMException` if you distribute your app to devices without *Google Play Services*.
+> - Using `setSupportManagedPush(true)` will register a token with Firebase Cloud Messaging using a Sender ID connected to Sinch, which will *NOT* unregister your own token, so you *CAN* use Firebase Cloud Messages for your own purpose filtering them in *onMessageReceived(RemoteMessage remoteMessage)* method of your FCM Listening Service using Sinch helper API *SinchHelpers.isSinchPushPayload*.
+
 
 ```java
 public class FcmListenerService extends FirebaseMessagingService {
@@ -106,13 +105,11 @@ NotificationResult result = sinchClient.relayRemotePushNotificationPayload(remot
 
 
 
-[block:callout]
-{
-  "type": "info",
-  "title": "Note",
-  "body": "It is possible to retrieve custom headers from the push message using *SinchHelpers.queryPushNotificationPayload* without starting the client."
-}
-[/block]
+
+> **Note**    
+>
+> It is possible to retrieve custom headers from the push message using *SinchHelpers.queryPushNotificationPayload* without starting the client.
+
 
 ```java
 // SinchClient is not needed to be created at all!
@@ -145,13 +142,11 @@ if (result.isValid() && result.isCall()) {
 
 
 
-[block:callout]
-{
-  "type": "info",
-  "title": "Note",
-  "body": "If the message forwarded to the Sinch client happened to be *call cancel* message, the client arranges the termination of the call automatically resulting in `CallListener.onCallEnded()` event being triggered, allowing UI to handle canceling the call."
-}
-[/block]
+
+> **Note**    
+>
+> If the message forwarded to the Sinch client happened to be *call cancel* message, the client arranges the termination of the call automatically resulting in `CallListener.onCallEnded()` event being triggered, allowing UI to handle canceling the call.
+
 ## Unregister a device
 
 If the user of the application logs out or performs a similar action, the push notification device token can be unregistered via `SinchClient.unregisterManagedPush()` to prevent further notifications to be sent to the device. Starting a client with `setSupportManagedPush(true)` will register the device again.

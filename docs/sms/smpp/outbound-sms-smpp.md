@@ -35,11 +35,74 @@ To access Sinch SMPP server the client IP range must be announced and added to t
 | replace\_sm / replace\_sm\_resp             |
 
 ### Source Address
-[block:html]
-{
-  "html": "<div class=\"marked-table\">\n  <table class=\"docutils\">\n    <colgroup>\n      <col width=\"18%\" />\n      <col width=\"7%\" />\n      <col width=\"17%\" />\n      <col width=\"14%\" />\n      <col width=\"17%\" />\n      <col width=\"26%\" />\n    </colgroup>\n    <thead valign=\"bottom\">\n      <tr class=\"row-odd\">\n        <th class=\"head\" colspan=\"5\">Source Address</th>\n        <th class=\"head\" rowspan=\"2\">Arrive on handset</th>\n      </tr>\n      <tr class=\"row-even\">\n        <th class=\"head\">Sent to Sinch</th>\n        <th class=\"head\" colspan=\"2\">Type Of Number(TON)</th>\n        <th class=\"head\" colspan=\"2\">Number Plan Indicator(NPI)</th>\n      </tr>\n    </thead>\n    <tbody valign=\"top\">\n      <tr class=\"row-odd\">\n        <td>00461234567889</td>\n        <td>0x00</td>\n        <td>Unknown</td>\n        <td>0x01</td>\n        <td>MSISDN</td>\n        <td>046123456789</td>\n      </tr>\n      <tr class=\"row-even\">\n        <td>01234567889</td>\n        <td>0x00</td>\n        <td>Unknown</td>\n        <td>0x01</td>\n        <td>MSISDN</td>\n        <td>123456789</td>\n      </tr>\n      <tr class=\"row-odd\">\n        <td>461234567889</td>\n        <td>0x01</td>\n        <td>International</td>\n        <td>0x01</td>\n        <td>MSISDN</td>\n        <td>+46123456789</td>\n      </tr>\n      <tr class=\"row-even\">\n        <td>1234567889</td>\n        <td>0x02</td>\n        <td>National</td>\n        <td>0x01</td>\n        <td>MSISDN</td>\n        <td>123456789</td>\n      </tr>\n      <tr class=\"row-odd\">\n        <td>Sinch</td>\n        <td>0x05</td>\n        <td>Alphanumeric</td>\n        <td>0x00</td>\n        <td>Unknown</td>\n        <td>Sinch</td>\n      </tr>\n    </tbody>\n  </table>\n</div>\n<style></style>"
-}
-[/block]
+
+<div class="marked-table">
+  <table class="docutils">
+    <colgroup>
+      <col width="18%" />
+      <col width="7%" />
+      <col width="17%" />
+      <col width="14%" />
+      <col width="17%" />
+      <col width="26%" />
+    </colgroup>
+    <thead valign="bottom">
+      <tr class="row-odd">
+        <th class="head" colspan="5">Source Address</th>
+        <th class="head" rowspan="2">Arrive on handset</th>
+      </tr>
+      <tr class="row-even">
+        <th class="head">Sent to Sinch</th>
+        <th class="head" colspan="2">Type Of Number(TON)</th>
+        <th class="head" colspan="2">Number Plan Indicator(NPI)</th>
+      </tr>
+    </thead>
+    <tbody valign="top">
+      <tr class="row-odd">
+        <td>00461234567889</td>
+        <td>0x00</td>
+        <td>Unknown</td>
+        <td>0x01</td>
+        <td>MSISDN</td>
+        <td>046123456789</td>
+      </tr>
+      <tr class="row-even">
+        <td>01234567889</td>
+        <td>0x00</td>
+        <td>Unknown</td>
+        <td>0x01</td>
+        <td>MSISDN</td>
+        <td>123456789</td>
+      </tr>
+      <tr class="row-odd">
+        <td>461234567889</td>
+        <td>0x01</td>
+        <td>International</td>
+        <td>0x01</td>
+        <td>MSISDN</td>
+        <td>+46123456789</td>
+      </tr>
+      <tr class="row-even">
+        <td>1234567889</td>
+        <td>0x02</td>
+        <td>National</td>
+        <td>0x01</td>
+        <td>MSISDN</td>
+        <td>123456789</td>
+      </tr>
+      <tr class="row-odd">
+        <td>Sinch</td>
+        <td>0x05</td>
+        <td>Alphanumeric</td>
+        <td>0x00</td>
+        <td>Unknown</td>
+        <td>Sinch</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<style></style>
+
 Type of source address is defined by the source address TON and NPI parameters.
 
 >   - Alphanumeric sender is limited to a maximum length of 11 characters
@@ -47,11 +110,39 @@ Type of source address is defined by the source address TON and NPI parameters.
 >   - To enable a handset to respond to a short code we recommend to use TON=0x00 and NPI=0x01
 
 ### Destination address
-[block:html]
-{
-  "html": "<div class=\"marked-table\">\n  <table class=\"docutils\">\n    <colgroup>\n      <col width=\"23%\" />\n      <col width=\"9%\" />\n      <col width=\"23%\" />\n      <col width=\"20%\" />\n      <col width=\"23%\" />\n    </colgroup>\n    <thead valign=\"bottom\">\n      <tr class=\"row-odd\">\n        <th class=\"head\" colspan=\"5\">Destination Address</th>\n      </tr>\n    </thead>\n    <tbody valign=\"top\">\n      <tr class=\"row-even\">\n        <td>Sent to Sinch</td>\n        <td colspan=\"2\">Type Of Number (TON)</td>\n        <td colspan=\"2\">Number Plan Indicator (NPI)</td>\n      </tr>\n      <tr class=\"row-odd\">\n        <td>46123456789</td>\n        <td colspan=\"2\">0x01 | International</td>\n        <td>0x01</td>\n        <td>MSISDN</td>\n      </tr>\n    </tbody>\n  </table>\n</div>\n\n<style></style>"
-}
-[/block]
+
+<div class="marked-table">
+  <table class="docutils">
+    <colgroup>
+      <col width="23%" />
+      <col width="9%" />
+      <col width="23%" />
+      <col width="20%" />
+      <col width="23%" />
+    </colgroup>
+    <thead valign="bottom">
+      <tr class="row-odd">
+        <th class="head" colspan="5">Destination Address</th>
+      </tr>
+    </thead>
+    <tbody valign="top">
+      <tr class="row-even">
+        <td>Sent to Sinch</td>
+        <td colspan="2">Type Of Number (TON)</td>
+        <td colspan="2">Number Plan Indicator (NPI)</td>
+      </tr>
+      <tr class="row-odd">
+        <td>46123456789</td>
+        <td colspan="2">0x01 | International</td>
+        <td>0x01</td>
+        <td>MSISDN</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<style></style>
+
 ### MSISDN Format
 
 In GSM, MSISDN is built up as:

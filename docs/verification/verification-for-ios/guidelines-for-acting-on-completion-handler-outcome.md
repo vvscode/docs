@@ -19,13 +19,11 @@ Note that the following error codes can be recovered from by asking the user for
 
 - `SINVerificationErrorInvalidInput`
 - `SINVerificationErrorIncorrectCode`
-[block:callout]
-{
-  "type": "warning",
-  "title": "Important",
-  "body": "If a verification is cancelled, the error code `SINVerificationErrorCancelled` will be given. It is important that the application handle this error code in a way that is not annoying the user. E.g. a cancellation is often a consequence of the user's actions so it is in a sense an expected outcome and should in most cases not be shown as an error in a `UIAlert` (or similar)."
-}
-[/block]
+
+> **WARNING: Important**    
+>
+> If a verification is cancelled, the error code `SINVerificationErrorCancelled` will be given. It is important that the application handle this error code in a way that is not annoying the user. E.g. a cancellation is often a consequence of the user's actions so it is in a sense an expected outcome and should in most cases not be shown as an error in a `UIAlert` (or similar).
+
 ## Network connectivity errors
 
 The Sinch Verification SDK will try to resend HTTP requests to the Sinch backend if such a request failed due to a network-related error. For example, if a request fails due to the user not having internet connectivity, or the request simply timed out, the SDK schedules a number of retries within 30 seconds. But unless it succeeds during those retries, it will eventually invoke the completion handler blocks with the underlying `NSError`. For example, it would use domain `NSURLErrorDomain` and error code `NSURLErrorNotConnectedToInternet`.

@@ -121,13 +121,11 @@ Counter
 #### Current Calls
 
 Number of ongoing calls
-[block:callout]
-{
-  "type": "info",
-  "body": "The system updates the value of the counter every two minutes. The result value depends on how many calls were ongoing when the system updated the counter, and not when the request to the API was made.",
-  "title": "Note"
-}
-[/block]
+
+> **Note**    
+>
+> The system updates the value of the counter every two minutes. The result value depends on how many calls were ongoing when the system updated the counter, and not when the request to the API was made.
+
 *Example*
 ```text
 [GET] https://reportingapi.sinch.com/v1/counters/currentcalls

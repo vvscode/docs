@@ -39,13 +39,11 @@ self.verification = verification; // retain the verification instance
 The call to `initiateWithCompletionHandler:` triggers sending a verification SMS. This method can be called multiple times, in case another SMS should be sent.
 
 ### Phone numbers - Parsing and E.164 Formatting
-[block:callout]
-{
-  "type": "warning",
-  "title": "Important",
-  "body": "When passing a number as a `NSString*` to create a `SINVerification`, the string should contain a number in *E.164* format. See the section `Phone numbers <phonenumbers>` for details."
-}
-[/block]
+
+> **WARNING: Important**    
+>
+> When passing a number as a `NSString*` to create a `SINVerification`, the string should contain a number in *E.164* format. See the section `Phone numbers <phonenumbers>` for details.
+
 ## Set the content language of an SMS verification
 
 It is possible to specify the content language when initiating an SMS verification from the SDK. This is specified via a list of [IETF](https://tools.ietf.org/html/rfc3282) language tags in order of priority. If the first language is not available, the next one will be selected and so forth. The default is "en-US".
@@ -67,13 +65,11 @@ id<SINVerification> verification = [SINVerification SMSVerificationWithApplicati
 
 
 
-[block:callout]
-{
-  "type": "info",
-  "title": "Note",
-  "body": "The content language specified can be overridden by carrier provider specific templates, due to compliance and legal requirements, such as [US shortcode requirements (pdf)](https://www.usshortcodes.com/info/static/docs/CTIA%20Short%20Code%20Monitoring%20Handbook%20v1.5.2.pdf)."
-}
-[/block]
+
+> **Note**    
+>
+> The content language specified can be overridden by carrier provider specific templates, due to compliance and legal requirements, such as [US shortcode requirements (pdf)](https://www.usshortcodes.com/info/static/docs/CTIA%20Short%20Code%20Monitoring%20Handbook%20v1.5.2.pdf).
+
 ## Validate code
 
 To complete the verification of the phone number, the user should be instructed to enter the code from the SMS to the application, and the code should be passed to `-[SINVerification verifyCode:completionHandler:]`. For example:

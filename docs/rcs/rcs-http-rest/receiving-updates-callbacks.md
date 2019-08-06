@@ -162,11 +162,71 @@ JSON Representation
 
 
 
-[block:html]
-{
-  "html": "<div class=\"marked-table\">\n<table>\n<thead>\n<tr class=\"header\">\n<th>Field</th>\n<th>Type</th>\n<th>Description</th>\n<th>Default</th>\n<th>Constraints</th>\n<th>Required</th>\n</tr>\n</thead>\n<tbody>\n<tr class=\"odd\">\n<td>type</td>\n<td>string</td>\n<td>Static string 'status_report_rcs'</td>\n<td>N/A</td>\n<td>N/A</td>\n<td>Yes</td>\n</tr>\n<tr class=\"even\">\n<td>message_id</td>\n<td>string</td>\n<td>Message id for which this status report is relevant</td>\n<td>No</td>\n<td>^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$</td>\n<td>Yes</td>\n</tr>\n<tr class=\"odd\">\n<td>at</td>\n<td>string</td>\n<td>Timestamp of then the status report was created in the Sinch service</td>\n<td>No</td>\n<td>A timestamp in RFC3339 UTC \"Zulu\" format</td>\n<td>Yes</td>\n</tr>\n<tr class=\"even\">\n<td>status_report</td>\n<td><dl>\n<dt>oneOf:</dt>\n<dd><ul>\n<li>object(<code class=\"interpreted-text\" data-role=\"ref\">StatusReportQueued</code>)</li>\n<li>object(<code class=\"interpreted-text\" data-role=\"ref\">StatusReportCapabilityLookupDispatched</code>)</li>\n<li>object(<code class=\"interpreted-text\" data-role=\"ref\">StatusReportDispatched</code>)</li>\n<li>object(<code class=\"interpreted-text\" data-role=\"ref\">StatusReportFallbackDispatched</code>)</li>\n<li>object(<code class=\"interpreted-text\" data-role=\"ref\">StatusReportAborted</code>)</li>\n<li>object(<code class=\"interpreted-text\" data-role=\"ref\">StatusReportFailed</code>)</li>\n<li>object(<code class=\"interpreted-text\" data-role=\"ref\">StatusReportDelivered</code>)</li>\n<li>object(<code class=\"interpreted-text\" data-role=\"ref\">StatusReportDisplayed</code>)</li>\n</ul>\n</dd>\n</dl></td>\n<td>Object describing the status report. The type of report is identified by the type property.</td>\n<td>No</td>\n<td>N/A</td>\n<td>Yes</td>\n</tr>\n</tbody>\n</table>\n</div>\n\n<style></style>"
-}
-[/block]
+
+<div class="marked-table">
+<table>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+<th>Constraints</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>type</td>
+<td>string</td>
+<td>Static string 'status_report_rcs'</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>message_id</td>
+<td>string</td>
+<td>Message id for which this status report is relevant</td>
+<td>No</td>
+<td>^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>at</td>
+<td>string</td>
+<td>Timestamp of then the status report was created in the Sinch service</td>
+<td>No</td>
+<td>A timestamp in RFC3339 UTC "Zulu" format</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>status_report</td>
+<td><dl>
+<dt>oneOf:</dt>
+<dd><ul>
+<li>object(<code class="interpreted-text" data-role="ref">StatusReportQueued</code>)</li>
+<li>object(<code class="interpreted-text" data-role="ref">StatusReportCapabilityLookupDispatched</code>)</li>
+<li>object(<code class="interpreted-text" data-role="ref">StatusReportDispatched</code>)</li>
+<li>object(<code class="interpreted-text" data-role="ref">StatusReportFallbackDispatched</code>)</li>
+<li>object(<code class="interpreted-text" data-role="ref">StatusReportAborted</code>)</li>
+<li>object(<code class="interpreted-text" data-role="ref">StatusReportFailed</code>)</li>
+<li>object(<code class="interpreted-text" data-role="ref">StatusReportDelivered</code>)</li>
+<li>object(<code class="interpreted-text" data-role="ref">StatusReportDisplayed</code>)</li>
+</ul>
+</dd>
+</dl></td>
+<td>Object describing the status report. The type of report is identified by the type property.</td>
+<td>No</td>
+<td>N/A</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<style></style>
+
 ##### StatusReportQueued
 ```json
 {
@@ -229,11 +289,67 @@ JSON Representation
 
 
 ###### Fields
-[block:html]
-{
-  "html": "<div class=\"marked-table\">\n<table>\n<thead>\n<tr class=\"header\">\n<th>Field</th>\n<th>Type</th>\n<th>Description</th>\n<th>Default</th>\n<th>Constraints</th>\n<th>Required</th>\n</tr>\n</thead>\n<tbody>\n<tr class=\"odd\">\n<td>type</td>\n<td>string</td>\n<td>Static string 'fallback_dispatched'</td>\n<td>N/A</td>\n<td>N/A</td>\n<td>Yes</td>\n</tr>\n<tr class=\"even\">\n<td>external_ref</td>\n<td>string</td>\n<td>SMS HTTP REST API batch id after fallback</td>\n<td>No</td>\n<td>N/A</td>\n<td>Yes</td>\n</tr>\n<tr class=\"odd\">\n<td>revoked</td>\n<td>boolean</td>\n<td>Has the RCS message been revoked?</td>\n<td>No</td>\n<td>N/A</td>\n<td>Yes</td>\n</tr>\n<tr class=\"even\">\n<td>reason</td>\n<td><dl>\n<dt>oneOf:</dt>\n<dd><ul>\n<li>object(<code class=\"interpreted-text\" data-role=\"ref\">FallbackReasonRcsUnavailable</code>)</li>\n<li>object(<code class=\"interpreted-text\" data-role=\"ref\">FallbackReasonCapabilityUnsupported</code>)</li>\n<li>object(<code class=\"interpreted-text\" data-role=\"ref\">FallbackReasonExpired</code>)</li>\n<li>object(<code class=\"interpreted-text\" data-role=\"ref\">FallbackReasonAgentError</code>)</li>\n</ul>\n</dd>\n</dl></td>\n<td>The reason why the fallback occurred, always based on one of the provided fallback conditions</td>\n<td>No</td>\n<td>N/A</td>\n<td>Yes</td>\n</tr>\n</tbody>\n</table>\n</div>\n\n<style></style>"
-}
-[/block]
+
+<div class="marked-table">
+<table>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+<th>Constraints</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>type</td>
+<td>string</td>
+<td>Static string 'fallback_dispatched'</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>external_ref</td>
+<td>string</td>
+<td>SMS HTTP REST API batch id after fallback</td>
+<td>No</td>
+<td>N/A</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>revoked</td>
+<td>boolean</td>
+<td>Has the RCS message been revoked?</td>
+<td>No</td>
+<td>N/A</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>reason</td>
+<td><dl>
+<dt>oneOf:</dt>
+<dd><ul>
+<li>object(<code class="interpreted-text" data-role="ref">FallbackReasonRcsUnavailable</code>)</li>
+<li>object(<code class="interpreted-text" data-role="ref">FallbackReasonCapabilityUnsupported</code>)</li>
+<li>object(<code class="interpreted-text" data-role="ref">FallbackReasonExpired</code>)</li>
+<li>object(<code class="interpreted-text" data-role="ref">FallbackReasonAgentError</code>)</li>
+</ul>
+</dd>
+</dl></td>
+<td>The reason why the fallback occurred, always based on one of the provided fallback conditions</td>
+<td>No</td>
+<td>N/A</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<style></style>
+
 ##### FallbackReasonRcsUnavailable
 ```json
 {
@@ -382,11 +498,56 @@ Detailed descriptions of all available user agent event payloads.
 
 
 ###### Fields
-[block:html]
-{
-  "html": "<div class=\"marked-table\">\n<table>\n<thead>\n<tr class=\"header\">\n<th>Field</th>\n<th>Type</th>\n<th>Description</th>\n<th>Default</th>\n<th>Constraints</th>\n<th>Required</th>\n</tr>\n</thead>\n<tbody>\n<tr class=\"odd\">\n<td>type</td>\n<td>string</td>\n<td>Static string 'user_agent_event_rcs'</td>\n<td>N/A</td>\n<td>N/A</td>\n<td>Yes</td>\n</tr>\n<tr class=\"even\">\n<td>from</td>\n<td>string</td>\n<td>MSISDN of the device that sent the event</td>\n<td>No</td>\n<td>No</td>\n<td>Yes</td>\n</tr>\n<tr class=\"odd\">\n<td>event</td>\n<td><dl>\n<dt>oneOf:</dt>\n<dd><ul>\n<li>object(<code class=\"interpreted-text\" data-role=\"ref\">UserAgentEventComposing</code>)</li>\n</ul>\n</dd>\n</dl></td>\n<td>Object describing the event</td>\n<td>No</td>\n<td>N/A</td>\n<td>Yes</td>\n</tr>\n</tbody>\n</table>\n</div>\n\n<style></style>"
-}
-[/block]
+
+<div class="marked-table">
+<table>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+<th>Constraints</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>type</td>
+<td>string</td>
+<td>Static string 'user_agent_event_rcs'</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>from</td>
+<td>string</td>
+<td>MSISDN of the device that sent the event</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>event</td>
+<td><dl>
+<dt>oneOf:</dt>
+<dd><ul>
+<li>object(<code class="interpreted-text" data-role="ref">UserAgentEventComposing</code>)</li>
+</ul>
+</dd>
+</dl></td>
+<td>Object describing the event</td>
+<td>No</td>
+<td>N/A</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<style></style>
+
 ##### UserAgentEventComposing
 ```json
 {
@@ -427,11 +588,67 @@ Detailed descriptions of all available user agent message payloads
 
 
 ###### Fields
-[block:html]
-{
-  "html": "<div class=\"marked-table\">\n<table>\n<thead>\n<tr class=\"header\">\n<th>Field</th>\n<th>Type</th>\n<th>Description</th>\n<th>Default</th>\n<th>Constraints</th>\n<th>Required</th>\n</tr>\n</thead>\n<tbody>\n<tr class=\"odd\">\n<td>type</td>\n<td>string</td>\n<td>Static string 'user_agent_message_rcs'</td>\n<td>N/A</td>\n<td>N/A</td>\n<td>Yes</td>\n</tr>\n<tr class=\"even\">\n<td>message_id</td>\n<td>string</td>\n<td>Unique message id for this user message</td>\n<td>No</td>\n<td>No</td>\n<td>Yes</td>\n</tr>\n<tr class=\"odd\">\n<td>from</td>\n<td>string</td>\n<td>MSISDN of the device that sent the message</td>\n<td>No</td>\n<td>No</td>\n<td>Yes</td>\n</tr>\n<tr class=\"even\">\n<td>message</td>\n<td><dl>\n<dt>oneOf:</dt>\n<dd><ul>\n<li>object(<code class=\"interpreted-text\" data-role=\"ref\">TextMessage</code>)</li>\n<li>object(<code class=\"interpreted-text\" data-role=\"ref\">FileMessage</code>)</li>\n<li>object(<code class=\"interpreted-text\" data-role=\"ref\">SuggestionResponse</code>)</li>\n<li>object(<code class=\"interpreted-text\" data-role=\"ref\">LocationMessage</code>)</li>\n</ul>\n</dd>\n</dl></td>\n<td>The message content</td>\n<td>No</td>\n<td>N/A</td>\n<td>Yes</td>\n</tr>\n</tbody>\n</table>\n</div>\n\n<style></style>"
-}
-[/block]
+
+<div class="marked-table">
+<table>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+<th>Constraints</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>type</td>
+<td>string</td>
+<td>Static string 'user_agent_message_rcs'</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>message_id</td>
+<td>string</td>
+<td>Unique message id for this user message</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>from</td>
+<td>string</td>
+<td>MSISDN of the device that sent the message</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>message</td>
+<td><dl>
+<dt>oneOf:</dt>
+<dd><ul>
+<li>object(<code class="interpreted-text" data-role="ref">TextMessage</code>)</li>
+<li>object(<code class="interpreted-text" data-role="ref">FileMessage</code>)</li>
+<li>object(<code class="interpreted-text" data-role="ref">SuggestionResponse</code>)</li>
+<li>object(<code class="interpreted-text" data-role="ref">LocationMessage</code>)</li>
+</ul>
+</dd>
+</dl></td>
+<td>The message content</td>
+<td>No</td>
+<td>N/A</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<style></style>
+
 ##### SuggestionResponse
 ```json
 {
@@ -467,5 +684,7 @@ At least one of `postback_data` and `text` will be set.
 | Field     | Type   | Description                | Default | Constraints                  | Required |
 | --------- | ------ | -------------------------- | ------- | ---------------------------- | -------- |
 | type      | string | Static string 'location'   | N/A     | N/A                          | Yes      |
+| latitude  | number | Latitude of user location  | No      | MinValue: -90 MaxValue: 90   | Yes      |
+| longitude | number | Longitude of user location | No      | MinValue: -180 MaxValue: 180 | Yes      | string | Static string 'location'   | N/A     | N/A                          | Yes      |
 | latitude  | number | Latitude of user location  | No      | MinValue: -90 MaxValue: 90   | Yes      |
 | longitude | number | Longitude of user location | No      | MinValue: -180 MaxValue: 180 | Yes      |

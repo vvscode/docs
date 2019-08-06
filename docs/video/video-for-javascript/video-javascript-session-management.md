@@ -23,13 +23,11 @@ sinchClient.start({username: 'alice', password: 'somethingSecure'})
 
 
 This code will start a sinchClient, authenticate using Sinch authentication and on success store the session in `localStorage`.
-[block:callout]
-{
-  "type": "info",
-  "body": "In the future, Sinch may handle this for you",
-  "title": "Note"
-}
-[/block]
+
+> **Note**    
+>
+> In the future, Sinch may handle this for you
+
 ## Resuming a session
 
 Next time the same visitor come back to the website, it’s nice if we can resume the same session. If we assume we have a saved session object, similar to the example above, we can resume it by passing the sessionObject to `sinchClient.start()`.

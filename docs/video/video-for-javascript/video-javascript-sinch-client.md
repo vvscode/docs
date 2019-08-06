@@ -45,10 +45,7 @@ SinchClient.start(loginObj)
 
 
 The benefit of using promises is that it's easy to make a *chain of method calls* and the code is clearer, but either method works.
-[block:callout]
-{
-  "type": "info",
-  "body": "If both callbacks and promises are used, the execution order is for callbacks to be executed first followed by the methods in the promise-chain, specified using \\`\\`.then()\\`\\`",
-  "title": "Note"
-}
-[/block]
+
+> **Note**    
+>
+> If both callbacks and promises are used, the execution order is for callbacks to be executed first followed by the methods in the promise-chain, specified using \`\`.then()\`\`

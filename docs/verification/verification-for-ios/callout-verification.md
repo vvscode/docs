@@ -43,13 +43,11 @@ id<SINVerification> verification = [SINVerification calloutVerificationWithAppli
 
 
 ### Phone numbers - Parsing and E.164 Formatting
-[block:callout]
-{
-  "type": "warning",
-  "body": "When passing a number as a `NSString*` to create a `SINVerification`, the string should contain a number in *E.164* format. See the section [Phone numbers](#phonenumbers) for details.",
-  "title": "Important"
-}
-[/block]
+
+> **WARNING: Important**    
+>
+> When passing a number as a `NSString*` to create a `SINVerification`, the string should contain a number in *E.164* format. See the section [Phone numbers](#phonenumbers) for details.
+
 ### Re-attemping a callout
 
 The method `initiateWithCompletionHandler:` should not be invoked multiple times. If the application UI flow is structured so that a user can initiate retries for callout verification, it is recommended to create a new instance of `SINVerification` for each attempt.

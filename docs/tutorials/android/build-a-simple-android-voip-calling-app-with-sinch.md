@@ -3,21 +3,8 @@ title: "Build a Simple Android VoIP Calling App With Sinch"
 excerpt: "This tutorial will walk you through building a simple Android VoIP calling app. It covers building an Android app to app system."
 ---
 his tutorial will walk you through building a simple Android VoIP calling app. When you are finished, it will look something like this:
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/f841b87-call-hangup.png",
-        "call-hangup.png",
-        874,
-        629,
-        "#c6c2c7"
-      ]
-    }
-  ]
-}
-[/block]
+![call-hangup.png](https://files.readme.io/f841b87-call-hangup.png)
+
 The completed source code for this tutorial is available at [github.com/sinch/app-app-calling-android](https://github.com/sinch/app-app-calling-android).
 
 This covers building an Android app to app system. If you are looking for app to phone, check out our `other tutorial here <app-to-phone-calling-android>`.
@@ -28,37 +15,11 @@ First, you will need to create a new project in Android Studio. (You can use Ecl
 
 To generate an API key and secret, create an app in the Sinch Dashboard. Name the app anything you like, and press “create.” (You do not need a description or call control callback.)
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/db6fda1-new-app-button.png",
-        "new-app-button.png",
-        1418,
-        238,
-        "#faf6f9"
-      ]
-    }
-  ]
-}
-[/block]
+![new-app-button.png](https://files.readme.io/db6fda1-new-app-button.png)
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/c911bf6-new-app.png",
-        "new-app.png",
-        703,
-        367,
-        "#f4ebf9"
-      ]
-    }
-  ]
-}
-[/block]
+
+![new-app.png](https://files.readme.io/c911bf6-new-app.png)
+
 Hold onto the key and secret from this app; you will use them in just a few minutes.
 
 Next, download the Sinch Android SDK from `here <sinchvvvdownloads>`. To add the Sinch SDK to your project:
@@ -327,21 +288,8 @@ To test the app:
 ## Add login
 
 In this section, you are going to add a simple login screen so that users can call more than just one person. Your login screen will look like this:
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/282d269-login-screen.png",
-        "login-screen.png",
-        681,
-        560,
-        "#e1e1e1"
-      ]
-    }
-  ]
-}
-[/block]
+![login-screen.png](https://files.readme.io/282d269-login-screen.png)
+
 To set this up, you will need to do the following:
 
 - Create a new activity, **LoginActivity**

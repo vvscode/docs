@@ -67,13 +67,13 @@ public void onMessageFailed(MessageClient client, Message message, MessageFailur
 
 
 
-[block:callout]
-{
-  "type": "info",
-  "body": "- Messages are persisted internally in the SDK. In case the message was not sent successfully it will be retried automatically at a later point in time. The message will be retried for 12 hours and then fail permanently firing the failure callback.\n- Messages are stored in the backend for 30 days before being removed. If the recipient has not started the app and downloaded the message history within this time frame, the message will be lost and no notification will be received.\n- A message should be retried only in case of network unavailability (use `messageFailureInfo.getSinchError().getErrorType().equals(ErrorType.NETWORK)`). In this case create a new `WritableMessage` (using `new WritableMessage(message)`) and send that instance because the previous message is considered stale.",
-  "title": "Note"
-}
-[/block]
+
+> **Note**    
+>
+> - Messages are persisted internally in the SDK. In case the message was not sent successfully it will be retried automatically at a later point in time. The message will be retried for 12 hours and then fail permanently firing the failure callback.
+> - Messages are stored in the backend for 30 days before being removed. If the recipient has not started the app and downloaded the message history within this time frame, the message will be lost and no notification will be received.
+> - A message should be retried only in case of network unavailability (use `messageFailureInfo.getSinchError().getErrorType().equals(ErrorType.NETWORK)`). In this case create a new `WritableMessage` (using `new WritableMessage(message)`) and send that instance because the previous message is considered stale.
+
 ## Receive a message
 
 Incoming messages (`Message`) are delivered using the method `onIncomingMessage` on the `MessageClientListener`.

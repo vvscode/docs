@@ -17,8 +17,34 @@ The use cases for Number Lookup services are many but most common is to use Numb
 Depending on the use case different data about the MSISDN is needed - that’s why we have packaged our Number Lookup services in to two different products: Number Portability Lookup and Real-Time Lookup. The Number Portability Lookup service is optimized for Call and SMS routing and provides you with MCC+MNC of the operator the subscriber belongs to. Data sources used for the service are national MNP databases and HLR queries. The Real-Time Lookup service is based on real-time HLR queries only, and is commonly used for authentication services where additional information in addition to MCC+MNC is needed.
 
 Input for a Number Lookup query is always an MSISDN - the table below illustrates which data is returned when using our Number Lookup services via the two interfaces.
-[block:html]
-{
-  "html": "<div class=\"marked-table\">\n<table>\n<colgroup>\n<col style=\"width: 44%\" />\n<col style=\"width: 16%\" />\n<col style=\"width: 36%\" />\n</colgroup>\n<tbody>\n<tr class=\"odd\">\n<td></td>\n<td><strong>ENUM</strong></td>\n<td><strong>HTTP/HTTPS</strong></td>\n</tr>\n<tr class=\"even\">\n<td><strong>Number Portability Lookup</strong></td>\n<td>MCC + MNC</td>\n<td>MCC + MNC</td>\n</tr>\n<tr class=\"odd\">\n<td><strong>Real-Time Lookup</strong></td>\n<td>MCC + MNC</td>\n<td><div class=\"line-block\">MCC + MNCCountry Code<br />\nHandset Status Code</div></td>\n</tr>\n</tbody>\n</table>\n\n</div>\n\n<style></style>"
-}
-[/block]
+
+<div class="marked-table">
+<table>
+<colgroup>
+<col style="width: 44%" />
+<col style="width: 16%" />
+<col style="width: 36%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td></td>
+<td><strong>ENUM</strong></td>
+<td><strong>HTTP/HTTPS</strong></td>
+</tr>
+<tr class="even">
+<td><strong>Number Portability Lookup</strong></td>
+<td>MCC + MNC</td>
+<td>MCC + MNC</td>
+</tr>
+<tr class="odd">
+<td><strong>Real-Time Lookup</strong></td>
+<td>MCC + MNC</td>
+<td><div class="line-block">MCC + MNCCountry Code<br />
+Handset Status Code</div></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+<style></style>

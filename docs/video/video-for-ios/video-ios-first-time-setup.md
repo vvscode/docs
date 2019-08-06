@@ -22,13 +22,11 @@ end
 
 
 
-[block:callout]
-{
-  "type": "info",
-  "title": "Tip",
-  "body": "Using the pod allows you to skip the manual steps in the next section."
-}
-[/block]
+
+> **Tip**    
+>
+> Using the pod allows you to skip the manual steps in the next section.
+
 ## Add the *Sinch.framework*
 Drag the *Sinch.framework* bundle from the SDK distribution package folder into the Frameworks section in the Xcode Project Navigator.
 

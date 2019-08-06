@@ -29,13 +29,11 @@ messageClient.addEventListener(myListenerObj);
 
 
 
-[block:callout]
-{
-  "type": "info",
-  "body": "The getMessageClient() requires a sinchClient with the messaging capability set to true",
-  "title": "Note"
-}
-[/block]
+
+> **Note**    
+>
+> The getMessageClient() requires a sinchClient with the messaging capability set to true
+
 ## Send a message
 
 Sending a message with the Sinch SDK is easy. First, get hold of a `MessageClient` instance for a particular `SinchClient` instance. This can be done by calling the method `getMessageClient()`. Then use this instance to create a new `Message` object. This object can then be sent using `send()` in your `MessageClient` instance.
@@ -76,13 +74,11 @@ messageClient.send(message)
 
 
 
-[block:callout]
-{
-  "type": "info",
-  "body": "If both callbacks and promises are used, the execution order is for callbacks to be executed first, followed by the methods in the promise-chain, specified using \\`\\`.then()\\`\\`",
-  "title": "Note"
-}
-[/block]
+
+> **Note**    
+>
+> If both callbacks and promises are used, the execution order is for callbacks to be executed first, followed by the methods in the promise-chain, specified using \`\`.then()\`\`
+
 ### Alternative user identity
 
 When sending to other identities than username, supply an object where the key is the identification type and the value is the user identity. For example.
@@ -97,13 +93,12 @@ Valid identities for users are:
 >   - *username* any alphanumeric string
 >   - *email* avalid e-mail adress
 >   - *number* a phone number
-[block:callout]
-{
-  "type": "info",
-  "title": "Note",
-  "body": "At the moment, sending to other identities than username is not\nimplemented."
-}
-[/block]
+
+> **Note**    
+>
+> At the moment, sending to other identities than username is not
+> implemented.
+
 ## Delivery receipt
 
 When a client receives a message, it sends an acknowledgement indicating which message was received. You can listen to these delivery receipts and take suitable action, for example, displaying which users have read a particular message.
@@ -128,13 +123,11 @@ messageClient.addEventListener(myEventListener);
 
 
 
-[block:callout]
-{
-  "type": "info",
-  "body": "If a recipient is online on one or multiple devices, the delivery report listener will only be called once on the first delivery receipt.",
-  "title": "Note"
-}
-[/block]
+
+> **Note**    
+>
+> If a recipient is online on one or multiple devices, the delivery report listener will only be called once on the first delivery receipt.
+
 In order to remove a specific event listener, use the method `removeEventListener()`
 ```javascript
 // Define a custom event listener object
@@ -149,13 +142,11 @@ messageClient.removeEventListener(myEventListener);
 
 
 
-[block:callout]
-{
-  "type": "info",
-  "body": "Several event listeners can be added, and they will be executed in the order which they were added.",
-  "title": "Note"
-}
-[/block]
+
+> **Note**    
+>
+> Several event listeners can be added, and they will be executed in the order which they were added.
+
 ## Receive a message
 
 In order to receive messages, `SinchClient` must be instantiated either with configuration option `supportActiveConnection` set to true or by invoking `startActiveConnection` after your `SinchClient` object has successfully started.
@@ -201,13 +192,11 @@ messageClient.removeEventListener(myEventListener);
 
 
 
-[block:callout]
-{
-  "type": "info",
-  "body": "Several event listeners can be added, they will be executed in the order which they where added.",
-  "title": "Note"
-}
-[/block]
+
+> **Note**    
+>
+> Several event listeners can be added, they will be executed in the order which they where added.
+
 ## Send a message to multiple recipients
 
 When creating a new message, it’s possible to define *multiple recipients* by giving an array of recipients instead of a username string or identity object.

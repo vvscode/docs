@@ -17,11 +17,29 @@ Getting started with the Sinch Video SDK is simple thanks to the extensive docum
 1.  [create an account](https://portal.sinch.com/#/signup),
 2.  [download the SDK](page:downloads)
 3.  get started in minutes following one of the user guide below.
-[block:html]
-{
-  "html": "<div class=\"ug-links\">\n  <div class=\"row\">\n    <a href=\"./video-for-ios\" class=\"col-md-4 ug-link\">\n      <div class=\"ug-title\">\n        <i class=\"fab fa-apple\"></i><span class=\"title\">iOS</span>\n      </div>\n    </a>\n    <a href=\"./video-for-android\" class=\"col-md-4 ug-link\">\n      <div class=\"ug-title\">\n        <i class=\"fab fa-android\"></i><span class=\"title\">Android</span>\n      </div>\n    </a>\n    <a href=\"./video-for-javascript\" class=\"col-md-4 ug-link\">\n      <div class=\"ug-title\">\n        <i class=\"fab fa-js\"></i><span class=\"title\">JavaScript</span>\n      </div>\n    </a>\n  </div>\n</div>\n\n<style></style>"
-}
-[/block]
+
+<div class="ug-links">
+  <div class="row">
+    <a href="./video-for-ios" class="col-md-4 ug-link">
+      <div class="ug-title">
+        <i class="fab fa-apple"></i><span class="title">iOS</span>
+      </div>
+    </a>
+    <a href="./video-for-android" class="col-md-4 ug-link">
+      <div class="ug-title">
+        <i class="fab fa-android"></i><span class="title">Android</span>
+      </div>
+    </a>
+    <a href="./video-for-javascript" class="col-md-4 ug-link">
+      <div class="ug-title">
+        <i class="fab fa-js"></i><span class="title">JavaScript</span>
+      </div>
+    </a>
+  </div>
+</div>
+
+<style></style>
+
 ## Need help?
 
 If you have any questions, feel free to check out our help section or contact us.

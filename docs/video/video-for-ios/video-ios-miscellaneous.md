@@ -98,22 +98,9 @@ An application is considered offline in the following scenarios:
 For these scenarios, push notifications can be used to be able to receive incoming calls and instant messages. The following sections cover how to support receiving calls and messages using push notifications.
 
 When offline, the recipient of a call or message receives a push notification containing a Sinch-specific payload which enables the Sinch client to connect the incoming call or message. Acting on the push notification brings the application to the foreground which allows the user to answer the call or view the message.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/44701e4-push-sequence-diagram_apple.png",
-        "push-sequence-diagram_apple.png",
-        1028,
-        721,
-        "#f9f9f9"
-      ],
-      "caption": "The figure above describes the following sequence of events: Both users start their applications and Sinch clients. When A (the caller) calls B (the callee), B’s application is in a state where it is not considered online (that is reachable using an active socket connection). Sinch notices that B is not online, and tells A to send a push notification to B so that B can answer the call."
-    }
-  ]
-}
-[/block]
+![push-sequence-diagram_apple.png](https://files.readme.io/44701e4-push-sequence-diagram_apple.png)
+The figure above describes the following sequence of events: Both users start their applications and Sinch clients. When A (the caller) calls B (the callee), B’s application is in a state where it is not considered online (that is reachable using an active socket connection). Sinch notices that B is not online, and tells A to send a push notification to B so that B can answer the call.
+
 When the Sinch client on the caller’s (or sender’s) side observes that the destination client is offline, it notifies the application to trigger the sending of a push notification to the callee’s device.
 
 ### Push notification data
@@ -271,4 +258,4 @@ This glossary defines some of the domain specific terms used throughout this doc
 
 ### Active Connection in Background
 
-Apple has since iOS 10 discontinued support for maintaining a *VoIP* control connection alive via `-[UIApplication setKeepAliveTimeout:handler:]`. Attempting to use this method on an iOS device running iOS 10 results in the following warning log: `Legacy VoIP background mode is deprecated and no longer supported`. The Sinch feature *Active connection in background* was using the keep alive handler API and is as a consequence no longer supported on iOS. It is recommended to use [VoIP Push Notifications](localandremotepushnotifications) to achieve the equivalent functionality.
+Apple has since iOS 10 discontinued support for maintaining a *VoIP* control connection alive via `-[UIApplication setKeepAliveTimeout:handler:]`. Attempting to use this method on an iOS device running iOS 10 results in the following warning log: `Legacy VoIP background mode is deprecated and no longer supported`. The Sinch feature *Active connection in background* was using the keep alive handler API and is as a consequence no longer supported on iOS. It is recommended to use [VoIP Push Notifications](localandremotepushnotifications) to achieve the equivalent functionality.ications) to achieve the equivalent functionality.

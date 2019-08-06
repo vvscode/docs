@@ -92,11 +92,57 @@ JSON Representation
 
 
 ###### Fields
-[block:html]
-{
-  "html": "<div class=\"marked-table\">\n<table>\n<thead>\n<tr class=\"header\">\n<th>Field</th>\n<th>Type</th>\n<th>Description</th>\n<th>Default</th>\n<th>Constraints</th>\n<th>Required</th>\n</tr>\n</thead>\n<tbody>\n<tr class=\"odd\">\n<td>to</td>\n<td>string</td>\n<td>MSISDN of the recipient</td>\n<td>No</td>\n<td>^(?:00)[1-9][0-9]{8,16}$</td>\n<td>Yes</td>\n</tr>\n<tr class=\"even\">\n<td>event_id</td>\n<td>string</td>\n<td>Globally unique event ID</td>\n<td>No</td>\n<td>^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$</td>\n<td>Yes</td>\n</tr>\n<tr class=\"odd\">\n<td>event</td>\n<td><dl>\n<dt>oneOf:</dt>\n<dd><ul>\n<li>object(<code class=\"interpreted-text\" data-role=\"ref\">AgentComposingEvent</code>)</li>\n<li>object(<code class=\"interpreted-text\" data-role=\"ref\">AgentReadEvent</code>)</li>\n</ul>\n</dd>\n</dl></td>\n<td>Object describing the event to send to the user</td>\n<td>No</td>\n<td>N/A</td>\n<td>Yes</td>\n</tr>\n</tbody>\n</table>\n</div>\n\n<style></style>"
-}
-[/block]
+
+<div class="marked-table">
+<table>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+<th>Constraints</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>to</td>
+<td>string</td>
+<td>MSISDN of the recipient</td>
+<td>No</td>
+<td>^(?:00)[1-9][0-9]{8,16}$</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>event_id</td>
+<td>string</td>
+<td>Globally unique event ID</td>
+<td>No</td>
+<td>^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>event</td>
+<td><dl>
+<dt>oneOf:</dt>
+<dd><ul>
+<li>object(<code class="interpreted-text" data-role="ref">AgentComposingEvent</code>)</li>
+<li>object(<code class="interpreted-text" data-role="ref">AgentReadEvent</code>)</li>
+</ul>
+</dd>
+</dl></td>
+<td>Object describing the event to send to the user</td>
+<td>No</td>
+<td>N/A</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<style></style>
+
 ##### AgentComposingEvent
 
 JSON Representation

@@ -63,29 +63,23 @@ Delivering a message can fail for various reasons: there might not be a network 
 
 
 
-[block:callout]
-{
-  "type": "info",
-  "body": "Messages are persisted internally in the SDK. In case the message was not sent successfully it will be retried automatically at a later point in time. The message will be retried for 12 hours and then fail permanently firing the failure callback.",
-  "title": "Note"
-}
-[/block]
 
-[block:callout]
-{
-  "type": "info",
-  "title": "Note",
-  "body": "Messages are stored in the backend for 30 days before being removed. If the recipient has not started the app and downloaded the message history within this time, the message will be lost and no notification received."
-}
-[/block]
+> **Note**    
+>
+> Messages are persisted internally in the SDK. In case the message was not sent successfully it will be retried automatically at a later point in time. The message will be retried for 12 hours and then fail permanently firing the failure callback.
 
-[block:callout]
-{
-  "type": "info",
-  "title": "Note",
-  "body": "A message should be retried only in case of network unavailability (use `[[failureInfo.error domain] isEqualToString:SINErrorDomainNetwork]`). In this case, create a new instance of `SINOutgoingMessage` (using `+[SINOutgoingMessage messageWithMessage:]`) and send that instance because the previous message is considered stale."
-}
-[/block]
+
+
+> **Note**    
+>
+> Messages are stored in the backend for 30 days before being removed. If the recipient has not started the app and downloaded the message history within this time, the message will be lost and no notification received.
+
+
+
+> **Note**    
+>
+> A message should be retried only in case of network unavailability (use `[[failureInfo.error domain] isEqualToString:SINErrorDomainNetwork]`). In this case, create a new instance of `SINOutgoingMessage` (using `+[SINOutgoingMessage messageWithMessage:]`) and send that instance because the previous message is considered stale.
+
 ## Receiving a message
 
 Incoming messages are delivered to the delegate:
@@ -112,13 +106,11 @@ Incoming messages are delivered to the delegate:
 
 
 
-[block:callout]
-{
-  "type": "info",
-  "title": "Note",
-  "body": "The application handles iOS local notifications for instant messages which is different than how incoming calls are handled. The Sinch SDK manages the local notifications for incoming calls."
-}
-[/block]
+
+> **Note**    
+>
+> The application handles iOS local notifications for instant messages which is different than how incoming calls are handled. The Sinch SDK manages the local notifications for incoming calls.
+
 ## Sending a message to multiple recipients
 
 To send a message to multiple recipients, create the outgoing message with the `+[SINOutgoingMessage messageWithRecipients:text:]`.

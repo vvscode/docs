@@ -120,21 +120,24 @@ If a User Reference was supplied in the request, it will be appended to the end 
 When a DC value is not specified in a request, it is assumed to be a plain 7-bit latin1 text message. The HTTPSMS server will automatically convert plain latin1 text to the GSM alphabet so you do not have to do this yourself. If a character is supplied that is outside of the GSM alphabet, it will be converted into a white space.
 
 If the message body you wish to send is already GSM encoded then you must set the DC parameter to a value of 6, or 7 if it is a flash message. A separate document is available outlining the GSM alphabet and its mapping to ISO-8859-1.
-[block:callout]
-{
-  "type": "info",
-  "title": "Note",
-  "body": "Note that all characters regardless of the message encoding type should conform to the URL encoding guidelines. For example, a latin1 space character is URL encoded to\n>    - Latin1 spacecharacter is URL encoded to *%20*\n>    - Latin1 *@* symbol is URL encoded to *%40*\n>    - A GSM space character is also *%20*\n>    - However, a GSM *@* symbol is URL encoded to *%00*"
-}
-[/block]
 
-[block:callout]
-{
-  "type": "info",
-  "body": "The *€* (Euro) symbol is outside of the standard ISO-8859-1 (latin1) character set, however the HTTPSMS system supports both the Windows-1252 (winlatin1), and ISO-8859-15 (latin9) representations as hex *80*, and *A4* respectively. If using the GSM alphabet, the Euro symbol is represented as 2 characters; hex *1B65*. These hex values are [url_encoding by preceding them with a *%* as\n>    - *%80*,\n>    - *%A4*, and\n>    - *%1B%65* respectively.",
-  "title": "Note"
-}
-[/block]
+> **Note**    
+>
+> Note that all characters regardless of the message encoding type should conform to the URL encoding guidelines. For example, a latin1 space character is URL encoded to
+> >    - Latin1 spacecharacter is URL encoded to *%20*
+> >    - Latin1 *@* symbol is URL encoded to *%40*
+> >    - A GSM space character is also *%20*
+> >    - However, a GSM *@* symbol is URL encoded to *%00*
+
+
+
+> **Note**    
+>
+> The *€* (Euro) symbol is outside of the standard ISO-8859-1 (latin1) character set, however the HTTPSMS system supports both the Windows-1252 (winlatin1), and ISO-8859-15 (latin9) representations as hex *80*, and *A4* respectively. If using the GSM alphabet, the Euro symbol is represented as 2 characters; hex *1B65*. These hex values are [url_encoding by preceding them with a *%* as
+> >    - *%80*,
+> >    - *%A4*, and
+> >    - *%1B%65* respectively.
+
 ### Special GSM Characters
 
 There are 9 special characters that are counted as 2 individual
@@ -164,21 +167,17 @@ Also referred to as a long message, multipart message or extended message, a con
 In theory it is possible to utilise 255 messages (39,015 characters) for a concatenated SMS. However, 3 SMS (or 459 characters), is generally considered to be the longest length message that will be displayed on the majority of mobile handsets.
 
 The HTTP SMS server will automatically concatenate up to three SMS messages; longer messages need to be submitted individually with an appropriate User Data Header.
-[block:callout]
-{
-  "type": "info",
-  "title": "Note",
-  "body": "Concatenated SMS are billed by the number of individual SMS messages used. If you send a 459 character message, you will be charged for 3 SMS."
-}
-[/block]
 
-[block:callout]
-{
-  "type": "info",
-  "title": "Note",
-  "body": "Sending a special character that is listed in section 5.2.2 could result in the message length exceeding the maximum per SMS and therefore using an extra SMS which you will be charged for."
-}
-[/block]
+> **Note**    
+>
+> Concatenated SMS are billed by the number of individual SMS messages used. If you send a 459 character message, you will be charged for 3 SMS.
+
+
+
+> **Note**    
+>
+> Sending a special character that is listed in section 5.2.2 could result in the message length exceeding the maximum per SMS and therefore using an extra SMS which you will be charged for.
+
 Binary and Unicode SMS are concatenated in the same way but in terms of hex encoded bytes. The below table shows the maximum hex encoded lengths per number of SMS.
 [block:html]
 {
@@ -296,13 +295,11 @@ Another method of retrieving delivery receipts and incoming SMS is to make a HTT
 
 `hosts` and `secure_request_url` may also be used for client polled retrieval.
 
-[block:callout]
-{
-  "type": "info",
-  "title": "Note",
-  "body": "Delivery reports must be retrieved from the same host that the original SMS was submitted to. For example, if you submit messages to *sms2.mblox.com*, delivery reports for these messages are only available from *sms2.mblox.com*. - Incoming SMS can only be retrieved from *sms1.mblox.com*"
-}
-[/block]
+
+> **Note**    
+>
+> Delivery reports must be retrieved from the same host that the original SMS was submitted to. For example, if you submit messages to *sms2.mblox.com*, delivery reports for these messages are only available from *sms2.mblox.com*. - Incoming SMS can only be retrieved from *sms1.mblox.com*
+
 ### Delivery Report Status Codes
 
 A delivery receipt will contain a status code with one of the following values:

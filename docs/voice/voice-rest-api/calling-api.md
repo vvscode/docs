@@ -404,13 +404,11 @@ Plays messages in an ongoing call and optionally hangs up the call.
 
 
 This method can be used to play messages in an ongoing call and potentially perform an action, such as hanging up the call. There are two instructions available to play a message. The *PlayFiles* instruction can be used to play an IVR message, while the *Say* instruction can be used to play a text-to-speech message. The message, if specified, is played only on the caller side. A caller can, for example, hear a message saying the total minutes have expired and that the call will be disconnected.
-[block:callout]
-{
-  "type": "warning",
-  "body": "This method can only be used for calls that are originating from or terminating to the PSTN network.",
-  "title": "Important"
-}
-[/block]
+
+> **WARNING: Important**    
+>
+> This method can only be used for calls that are originating from or terminating to the PSTN network.
+
 For more information on playing messages and performing actions on calls see the `Callback API <callbackapi>`.
 
 *Example IVR*
@@ -546,13 +544,11 @@ This is a protected resource and requires an `application signed request <applic
 **reason** contains the reason why a call ended. It may have one of the following values:
 
 > ``"N/A"`` | ``"TIMEOUT"`` | ``"CALLERHANGUP"`` | ``"CALLEEHANGUP"`` | ``"BLOCKED"`` | ``"NOCREDITPARTNER"`` | ``"MANAGERHANGUP"`` |``"CANCEL"`` | ``"GENERALERROR"``
-[block:callout]
-{
-  "type": "warning",
-  "title": "Important",
-  "body": "This method can only be used for calls that are originating from or terminating to the PSTN network."
-}
-[/block]
+
+> **WARNING: Important**    
+>
+> This method can only be used for calls that are originating from or terminating to the PSTN network.
+
 ## Get Conference Info
 
 **\[GET\] /conferences/id/{conferenceId}**

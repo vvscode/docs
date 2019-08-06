@@ -49,13 +49,11 @@ sinchClient.delegate = ... ;
 
 
 
-[block:callout]
-{
-  "type": "info",
-  "title": "Note",
-  "body": "If the application is meant to only make outgoing calls but not receive incoming calls, don’t call the `startListeningOnActiveConnection`. Outgoing calls can be made after calling the start method, and after the delegate has received the callback `clientDidStart:`."
-}
-[/block]
+
+> **Note**    
+>
+> If the application is meant to only make outgoing calls but not receive incoming calls, don’t call the `startListeningOnActiveConnection`. Outgoing calls can be made after calling the start method, and after the delegate has received the callback `clientDidStart:`.
+
 For applications that want to receive incoming calls while not running in the foreground, `push notifications <localandremotepushnotifications>` are required.
 
 ### Life cycle management of a *SINClient*-instance

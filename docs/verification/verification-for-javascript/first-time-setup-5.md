@@ -18,13 +18,11 @@ The Sinch SDK can be downloaded [here](page:downloads) . It contains: the Sinch 
 ## Running sample apps
 
 Make sure you configure your application key in the sample apps by replacing the placeholder text "MY\_APPLICATION\_KEY" with your key. Samples can be run in the browser as files by double-clicking the index.html file. Make sure you open the developer console in your browser to catch possible error messages.
-[block:callout]
-{
-  "type": "info",
-  "body": "Currently, calling only works in the Chrome or Firefox browsers. Chrome additionally requires the web page to be loaded using http or https and is not compatible with local storage (i.e., file://).",
-  "title": "Note"
-}
-[/block]
+
+> **Note**    
+>
+> Currently, calling only works in the Chrome or Firefox browsers. Chrome additionally requires the web page to be loaded using http or https and is not compatible with local storage (i.e., file://).
+
 ## Development
 
 There are many ways to include Sinch in your project, enabling you to select a suitable method depending on how your project is set up.
@@ -60,13 +58,11 @@ npm install sinch-rtc --save
 
 
 
-[block:callout]
-{
-  "type": "info",
-  "body": "The --save flag is optional for saving the dependency in package.json",
-  "title": "Note"
-}
-[/block]
+
+> **Note**    
+>
+> The --save flag is optional for saving the dependency in package.json
+
 Import Sinch SDK in your project using
 ```javascript
 var SinchClient = require('sinch-rtc');
@@ -88,10 +84,7 @@ Import the Sinch SDK in your website using
 
 
 
-[block:callout]
-{
-  "type": "info",
-  "body": "The --save flag is optional for saving the dependency in bower.json",
-  "title": "Note"
-}
-[/block]
+
+> **Note**    
+>
+> The --save flag is optional for saving the dependency in bower.json

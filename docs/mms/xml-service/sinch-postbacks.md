@@ -18,11 +18,75 @@ When the mobile network operator does not support MMS or the destination handset
 The fallback-sms-text is included in the SMS message text. The possible MMS status code that you may receive for the delivery status is one of following: N101, N102, E101, E102.
 
 If you specified to send a Device Discovery Message then you may receive one of the following status codes regarding the delivery status of the Device Discovery Message: N501, N502, E501, E502.
-[block:html]
-{
-  "html": "<div class=\"marked-table\">\n<table>\n<colgroup>\n<col style=\"width: 9%\" />\n<col style=\"width: 90%\" />\n</colgroup>\n<tbody>\n<tr class=\"odd\">\n<td><strong>Variable</strong></td>\n<td><strong>Description</strong></td>\n</tr>\n<tr class=\"even\">\n<td>origin</td>\n<td>The notification origin, for example, MMS_MT means an MMS terminated on a mobile.</td>\n</tr>\n<tr class=\"odd\">\n<td>code</td>\n<td>The postback notification code.</td>\n</tr>\n<tr class=\"even\">\n<td>sent-as</td>\n<td>Indicates if the MMS was delivered as MMS (binary) or SMS (HTML).</td>\n</tr>\n<tr class=\"odd\">\n<td>mms-id</td>\n<td>Id of the MMS Template.</td>\n</tr>\n<tr class=\"even\">\n<td>status</td>\n<td><div class=\"line-block\">For N101 and N501, notification status can be “Message Sent”.<br />\nFor N102 and N502, notification status can be “Message Sent/Delivered”.<br />\nFor E101 and E501, notification status can be “Message Failed”.<br />\nFor E102 and E502, notification status can be “Message,Sent/Expired”, “Message Sent/Rejected”, “Message Sent/Failed” or,“Message Sent/Not Supported”.</div></td>\n</tr>\n<tr class=\"odd\">\n<td>from</td>\n<td>The shortcode the message is sent from</td>\n</tr>\n<tr class=\"even\">\n<td>handset</td>\n<td>Handset profile returned inside Delivery Receipt. This is present only in N102 notification.</td>\n</tr>\n<tr class=\"odd\">\n<td>to</td>\n<td>The recipient of the message.</td>\n</tr>\n<tr class=\"even\">\n<td>tracking-id</td>\n<td>The ID to correlate API requests, and delivery receipts.</td>\n</tr>\n<tr class=\"odd\">\n<td>operator-id</td>\n<td>Carrier Identification.</td>\n</tr>\n<tr class=\"even\">\n<td>timestamp</td>\n<td>The timestamp the MMS was sent (N101) or when the MMS was delivered (N102).</td>\n</tr>\n<tr class=\"odd\">\n<td>status-details</td>\n<td>Any additional information passed back from the carrier.</td>\n</tr>\n</tbody>\n</table>\n</div>\n\n<style></style>"
-}
-[/block]
+
+<div class="marked-table">
+<table>
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Variable</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="even">
+<td>origin</td>
+<td>The notification origin, for example, MMS_MT means an MMS terminated on a mobile.</td>
+</tr>
+<tr class="odd">
+<td>code</td>
+<td>The postback notification code.</td>
+</tr>
+<tr class="even">
+<td>sent-as</td>
+<td>Indicates if the MMS was delivered as MMS (binary) or SMS (HTML).</td>
+</tr>
+<tr class="odd">
+<td>mms-id</td>
+<td>Id of the MMS Template.</td>
+</tr>
+<tr class="even">
+<td>status</td>
+<td><div class="line-block">For N101 and N501, notification status can be “Message Sent”.<br />
+For N102 and N502, notification status can be “Message Sent/Delivered”.<br />
+For E101 and E501, notification status can be “Message Failed”.<br />
+For E102 and E502, notification status can be “Message,Sent/Expired”, “Message Sent/Rejected”, “Message Sent/Failed” or,“Message Sent/Not Supported”.</div></td>
+</tr>
+<tr class="odd">
+<td>from</td>
+<td>The shortcode the message is sent from</td>
+</tr>
+<tr class="even">
+<td>handset</td>
+<td>Handset profile returned inside Delivery Receipt. This is present only in N102 notification.</td>
+</tr>
+<tr class="odd">
+<td>to</td>
+<td>The recipient of the message.</td>
+</tr>
+<tr class="even">
+<td>tracking-id</td>
+<td>The ID to correlate API requests, and delivery receipts.</td>
+</tr>
+<tr class="odd">
+<td>operator-id</td>
+<td>Carrier Identification.</td>
+</tr>
+<tr class="even">
+<td>timestamp</td>
+<td>The timestamp the MMS was sent (N101) or when the MMS was delivered (N102).</td>
+</tr>
+<tr class="odd">
+<td>status-details</td>
+<td>Any additional information passed back from the carrier.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<style></style>
+
 ## Postback Schema
 
 ### N101 Status Code Examples

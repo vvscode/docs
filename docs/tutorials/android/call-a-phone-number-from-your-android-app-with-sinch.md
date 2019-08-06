@@ -11,21 +11,8 @@ You can find the finished code for this tutorial at [github.com/sinch/android-ps
 To get started, create a blank project in Android Studio or Eclipse. You only need one activity for this app; I’ll call mine **CallActivity**.
 
 To use the Sinch SDK, you will need to create a developer account. If you don’t have one yet, sign up [here](https://portal.sinch.com/#/signup). Once inside the developer dashboard, you can create a new app by clicking **Apps**\>**Create new app**, and filling in an app name.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/4bcca58-create-new-app.png",
-        "create-new-app.png",
-        953,
-        519,
-        "#f5eefa"
-      ]
-    }
-  ]
-}
-[/block]
+![create-new-app.png](https://files.readme.io/4bcca58-create-new-app.png)
+
 Once you’ve created your app, you will see your app key and secret in the dashboard. Write these down because you will need these in a few minutes.
 
 To download a copy of the latest version of the Sinch Android SDK, click `here <sinchvvvdownloads>`. Once you’ve downloaded the SDK, follow these instructions to include it in your project:
@@ -48,21 +35,8 @@ To download a copy of the latest version of the Sinch Android SDK, click `here <
 
 The view for this app is very simple. It will be a single button that functions as both the **call** and **hang-up** button. There will also be a TextView that shows the state of the call (ringing or connected, for example).
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/55ef969-view.png",
-        "view.png",
-        658,
-        509,
-        "#e9e9e9"
-      ]
-    }
-  ]
-}
-[/block]
+![view.png](https://files.readme.io/55ef969-view.png)
+
 ```xml
 <Button
     android:layout_width="wrap_content"

@@ -5,40 +5,14 @@ excerpt: "This tutorial helps you build an NPS SMS system with Sinch and Delight
 As you probably already know, every time we resolve a support request we ask you if you would share Sinch with a friend. Soon, we’ll even ask you about tutorials like the one you’re checking out now. Why?
 
 Well, we want to know we are doing the right thing for you dear developer. *And* my boss Daniel will give me the evil eye -
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/f6a2a38-Forsman.jpg",
-        "Forsman.jpg",
-        500,
-        502,
-        "#b49e92"
-      ]
-    }
-  ]
-}
-[/block]
+![Forsman.jpg](https://files.readme.io/f6a2a38-Forsman.jpg)
+
 \- if we don’t. By using a system called Net Promoter Score (NPS), [Delighted](https://delighted.com/) helps us keep track of how likely you guys are to recommend us. For you who haven’t heard of NPS, you might think I’m a little bit greedy, but here’s how it works:
 
 NPS is based on a proven single question, and 2 part answers.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/63c91a9-scsh.png",
-        "scsh.png",
-        396,
-        56,
-        "#f8f8f8"
-      ]
-    }
-  ]
-}
-[/block]
+![scsh.png](https://files.readme.io/63c91a9-scsh.png)
+
 First, you’ll answer with a 0-10 numerical rating which makes our data quantifiable over time. Then you’re asked to write an open-ended follow up which adds some really valuable context to the rating. Depending on the score, you’ll either fall into the Promoters’ category (9s and 10s), the Passives’ (7s and 8s), or the Detractors’ (6s and below). The NPS is calculated by *% of Promoters - % of Detractors*, which’ll generate a score between -100 to 100. The system essentially tells us whether we’re a slam dunk or [not](http://www.reactiongifs.com/r/slam-dunk.gif).
 
 *For more info, check out* [Delighted’s NPS page](https://delighted.com/net-promoter-score) *or try out their awesome* [API](https://delighted.com/docs/api\)) *yourself.*
@@ -48,22 +22,9 @@ First, you’ll answer with a 0-10 numerical rating which makes our data quantif
 In September this year, I did a talk at [API World](http://integrate2015.sched.org/speaker/christian64?iframe=no&w=i:0;&sidebar=yes&bg=no&utm_source=Sinch+Partners&utm_campaign=a442daf0b7-Newsletter_September_v29_16_2015&utm_medium=email&utm_term=0_424b5acd88-a442daf0b7-132935801#.VgKvaSCqpBd) and I thought it would be cool to ask for feedback via SMS. Therefore, I made a small NuGet for interacting with the [Delighted API](https://www.nuget.org/packages/Delighted.Api/0.1.1.1). I want to show you how to super easy get an incoming SMS and forward that data to delighted.
 
 You can download the code from [Github](https://github.com/sinch/csharp-nps-sms-delighted) or deploy directly to your azure account:
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/0b42044-deploybutton.png",
-        "deploybutton.png",
-        161,
-        34,
-        "#6fc7e2"
-      ],
-      "caption": "https://azuredeploy.net/?repository=https://github.com/sinch/csharp-nps-sms-delighted"
-    }
-  ]
-}
-[/block]
+![deploybutton.png](https://files.readme.io/0b42044-deploybutton.png)
+https://azuredeploy.net/?repository=https://github.com/sinch/csharp-nps-sms-delighted
+
 ### Prerequisites
 
 > 1.  [Sinch account and an SMS enabled number](https://portal.sinch.com/#/signup)
@@ -75,21 +36,8 @@ You can download the code from [Github](https://github.com/sinch/csharp-nps-sms-
 
 [Login to your dashboard](https://portal.sinch.com/#/login), click on numbers and rent one (make sure it’s an SMS enabled number).
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/47e3aa3-rentnumber.png",
-        "rentnumber.png",
-        1171,
-        523,
-        "#f8f3fb"
-      ]
-    }
-  ]
-}
-[/block]
+![rentnumber.png](https://files.readme.io/47e3aa3-rentnumber.png)
+
 Choose you app - or create one and click on the little pen - add the number you just rented to the app, and confugure the callback URL. The callback URL’s where we post incoming messages, and you can read more about that in `the documentation <smsmessagingcallbackapi>`.
 
 ### CODE\!
@@ -148,21 +96,8 @@ YAY, I suppsed it worked?
 
 Now, one of the things I really value with the feedback system is of course getting comments from you guys, so I wanted to add that. Let’s change the code (here is where it becomes a little hacky since we are trying to get a number and the rest as a comment from an SMS)\!
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/0efda3b-filter_d.png",
-        "filter_d.png",
-        211,
-        286,
-        "#eef1f1"
-      ]
-    }
-  ]
-}
-[/block]
+![filter_d.png](https://files.readme.io/0efda3b-filter_d.png)
+
 ### Recieving SMS
 
 I’ve decided to ask the audience to send an SMS with a score and a comment. I also want to track the event with a property on the person.

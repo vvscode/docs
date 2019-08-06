@@ -39,13 +39,11 @@ sinchClient.startListeningOnActiveConnection()
 
 
 Calling `startListeningOnActiveConnection` allows your application to receive incoming calls and messages without using push notifications.
-[block:callout]
-{
-  "type": "info",
-  "body": "If the application is meant to only make outgoing calls but not receive incoming calls, don’t call `startListeningOnActiveConnection` or `setSupportManagedPush`. Outgoing calls can be made after calling the start method.",
-  "title": "Note"
-}
-[/block]
+
+> **Note**    
+>
+> If the application is meant to only make outgoing calls but not receive incoming calls, don’t call `startListeningOnActiveConnection` or `setSupportManagedPush`. Outgoing calls can be made after calling the start method.
+
 ## Start the Sinch client
 
 Before starting the client, add a client listener (see [Reference](../reference/index.html?com/sinch/android/rtc/SinchClientListener.html) documentation):

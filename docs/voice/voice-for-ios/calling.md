@@ -89,13 +89,11 @@ If `VoIP push notifications <enablingvoippushnotifications>` is enabled, add log
 
 
 
-[block:callout]
-{
-  "type": "warning",
-  "title": "Important",
-  "body": "See \\[Local and Remote Push Notifications\\]\\[\\] for further details on how to present and handle a user notification for an incoming call when the application is in the background."
-}
-[/block]
+
+> **WARNING: Important**    
+>
+> See \[Local and Remote Push Notifications\]\[\] for further details on how to present and handle a user notification for an incoming call when the application is in the background.
+
 ### Incoming video call
 
 When incoming call is a video call, the `didReceiveIncomingCall` delegate method will be executed, just like for the incoming audio call. The `SINCallDetails` object provides a `isVideoOffered` property to check whether the call offers a video track. See the \[Video calling\] section for details on how to add video views.

@@ -13,25 +13,21 @@ Two different authentication schemes are available: authentication by client acc
 This application authentication scheme is based on giving the application direct access to the Application Secret, which enables the Sinch Client SDK in the application to self-sign an authorized request to perform user registration. Choosing this authentication scheme corresponds to initiating the Sinch client by using the factory method that takes both an Application Key and an Application Secret.
 
 Using this authentication scheme is the quickest way to get started as the client application instances can directly perform authorized requests against the Sinch service.
-[block:callout]
-{
-  "type": "warning",
-  "title": "Caution",
-  "body": "It is not recommended to have the application secret in plain text in the source code in the release version of the application."
-}
-[/block]
+
+> **WARNING: Caution**    
+>
+> It is not recommended to have the application secret in plain text in the source code in the release version of the application.
+
 ## Authentication supported by application server
 
 This application authentication scheme is based on the client application instance not having direct access to the Application Secret. Instead, when the Sinch client needs to perform an authorized request to register a user identity against the Sinch service, it needs to be provided with an authentication signature and a registration sequence to perform the registration. This should be provided by the application’s backend service, for example, by using a HTTP request over an SSL connection.
 
 This scheme has the benefit of the application secret never being directly accessible by the client applications and provides a better level of security as well as flexibility.
-[block:callout]
-{
-  "type": "info",
-  "body": "The need for the Sinch client to request an authentication signature and registration sequence is only required once per user and device–not on every application launch.",
-  "title": "Note"
-}
-[/block]
+
+> **Note**    
+>
+> The need for the Sinch client to request an authentication signature and registration sequence is only required once per user and device–not on every application launch.
+
 
 [block:image]
 {

@@ -39,12 +39,11 @@ For these scenarios, push notifications can be used to receive incoming calls an
 
 
 
-[block:callout]
-{
-  "type": "info",
-  "body": "When creating the managed push instance, the Apple Push Service Environment (also referred to as *APS Environment*) must be specified and it must match how your application is code signed and provisioned. Please see the section `Apple Push Service environments and provisioning <apple-push-service-environments-and-provisioning>` for details."
-}
-[/block]
+
+> **undefined**    
+>
+> When creating the managed push instance, the Apple Push Service Environment (also referred to as *APS Environment*) must be specified and it must match how your application is code signed and provisioned. Please see the section `Apple Push Service environments and provisioning <apple-push-service-environments-and-provisioning>` for details.
+
 ### Enable push notifications on a Sinch client
 
 When creating a Sinch client, managed push notifications must be enabled:
@@ -108,13 +107,11 @@ SIN_INCOMING_VIDEO_CALL_DISPLAY_NAME = "Incoming video call from %@";
 
 
 `SIN_INCOMING_CALL_DISPLAY_NAME` (or `SIN_INCOMING_IM_DISPLAY_NAME`) will be used if display name have been set by the caller via `-[SINManagedPush setDisplayName:` or `-[SINClient setPushNotificationDisplayName:]`. Display name is included in a push notification on a best-effort basis. For example, if the target device has very limited push payload size constraints (e.g. iOS 7 can only handle 255 byte push notification payload), then the display name may not be included.
-[block:callout]
-{
-  "type": "info",
-  "title": "Note",
-  "body": "This is not applicable to VoIP type push notifications because in that case the Sinch SDK will present a local notification (see* `-[SINCallClientDelegate client:localNotificationForIncomingCall:`*)*"
-}
-[/block]
+
+> **Note**    
+>
+> This is not applicable to VoIP type push notifications because in that case the Sinch SDK will present a local notification (see* `-[SINCallClientDelegate client:localNotificationForIncomingCall:`*)*
+
 Please see [Apple’s Local and Remote Notification Programming Guide](https://developer.apple.com/library/ios/documentation NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW21) on remote push notification and localization strings for more details.
 
 ## Presenting local notifications for incoming calls

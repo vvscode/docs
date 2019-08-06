@@ -2,13 +2,12 @@
 title: "HTTP Basic"
 excerpt: "Our basic HTTP API offers a simple way to send and receive single SMS messages. For more features such as bulk send, group send, scheduling, parameterization and higher security you may want to consider our `http_rest_sms_api` api."
 ---
-[block:callout]
-{
-  "type": "info",
-  "title": "Note",
-  "body": "You need to reach out to our Sales team to get your credentials to use\nthis service. You can contact them [here](https://www.sinch.com/contact-us/)."
-}
-[/block]
+
+> **Note**    
+>
+> You need to reach out to our Sales team to get your credentials to use
+> this service. You can contact them [here](https://www.sinch.com/contact-us/).
+
 ## Outbound SMS HTTP
 
 ### Account details

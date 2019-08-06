@@ -27,11 +27,34 @@ In most cases, Sinch can be used without needing a back-end or any configuration
 1.  [create an account](https://portal.sinch.com/#/signup),
 2.  [download the SDK](page:downloads)
 3.  get started in minutes following one of the user guide below.
-[block:html]
-{
-  "html": "<div class=\"ug-links\">\n  <div class=\"row\">\n    <a href=\"./verification-for-ios\" class=\"col-md-3 ug-link\">\n      <div class=\"ug-title\">\n        <i class=\"fab fa-apple\"></i><span class=\"title\">iOS</span>\n      </div>\n    </a>\n    <a href=\"./verification-for-android\" class=\"col-md-3 ug-link\">\n      <div class=\"ug-title\">\n        <i class=\"fab fa-android\"></i><span class=\"title\">Android</span>\n      </div>\n    </a>\n    <a href=\"./verification-for-javascript\" class=\"col-md-3 ug-link\">\n      <div class=\"ug-title\">\n        <i class=\"fab fa-js\"></i><span class=\"title\">JavaScript</span>\n      </div>\n    </a>\n    <a href=\"./verification-rest-api\" class=\"col-md-3 ug-link\">\n      <div class=\"ug-title\">\n        <i class=\"fa fa-code\"></i><span class=\"title\">REST</span>\n      </div>\n    </a>\n  </div>\n</div>\n\n<style></style>"
-}
-[/block]
+
+<div class="ug-links">
+  <div class="row">
+    <a href="./verification-for-ios" class="col-md-3 ug-link">
+      <div class="ug-title">
+        <i class="fab fa-apple"></i><span class="title">iOS</span>
+      </div>
+    </a>
+    <a href="./verification-for-android" class="col-md-3 ug-link">
+      <div class="ug-title">
+        <i class="fab fa-android"></i><span class="title">Android</span>
+      </div>
+    </a>
+    <a href="./verification-for-javascript" class="col-md-3 ug-link">
+      <div class="ug-title">
+        <i class="fab fa-js"></i><span class="title">JavaScript</span>
+      </div>
+    </a>
+    <a href="./verification-rest-api" class="col-md-3 ug-link">
+      <div class="ug-title">
+        <i class="fa fa-code"></i><span class="title">REST</span>
+      </div>
+    </a>
+  </div>
+</div>
+
+<style></style>
+
 ## How should the SDK and REST API be combined?
 
 The SDK and REST API work together to ensure you the highest possible security and a full control over the verification solution. We recommend the following approach to integrate any of the Verification SDK in your apps:

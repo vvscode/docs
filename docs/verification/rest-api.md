@@ -71,13 +71,11 @@ The following diagram shows how to use the Verification APIs when using the iOS,
 }
 [/block]
 
-[block:callout]
-{
-  "type": "warning",
-  "title": "Important",
-  "body": "In this scenario, the *Verification Request* and *Report Verification* APIs do not need to be called explicitly by the app, since the SDK is handling that for you."
-}
-[/block]
+
+> **WARNING: Important**    
+>
+> In this scenario, the *Verification Request* and *Report Verification* APIs do not need to be called explicitly by the app, since the SDK is handling that for you.
+
 If you have configured a verification callback URL in the Sinch Portal (recommended), with every verification that is initiated by the app, Sinch will send a `Verification Request Event <veri-req-event>` to your backend, to get permission to perform the verification. If your backend allows the verification request to proceed, Sinch will trigger a flashcall, SMS or call towards the phone to be verified. Once the phone receives the flash-call, SMS or voice call, the SDK will report back the CLI or PIN respectively so that the Sinch dashboard can compare its validity. The Sinch backend responds with the result of the verification to the client and sends a `Verification Result Event <veri-res-event>` to your backend. The status of a verification can also be queried ad-hoc by using the "Query Verification" APIs.
 
 ## Without the mobile or web SDK

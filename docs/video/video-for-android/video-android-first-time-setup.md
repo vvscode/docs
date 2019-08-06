@@ -48,13 +48,11 @@ A minimum set of permissions are needed for the app to use the Sinch SDK. These 
 
 
 
-[block:callout]
-{
-  "type": "info",
-  "title": "Note",
-  "body": "By default, the Sinch SDK hangs up any Sinch call if the regular phone app has an active call. This functionality requires the permission READ\\_PHONE\\_STATE. However, if this default functionality isn’t wanted, turn it off by calling `sinchClient.getCallClient().setRespectNativeCalls(false);` and the permission READ\\_PHONE\\_STATE is not needed."
-}
-[/block]
+
+> **Note**    
+>
+> By default, the Sinch SDK hangs up any Sinch call if the regular phone app has an active call. This functionality requires the permission READ\_PHONE\_STATE. However, if this default functionality isn’t wanted, turn it off by calling `sinchClient.getCallClient().setRespectNativeCalls(false);` and the permission READ\_PHONE\_STATE is not needed.
+
 ### Verify manifest in runtime during development
 
 To verify that the manifest has the necessary permissions the `sinchClient.checkManifest()` method can be used. This method should be called before starting the client and will throw an exception if the manifest isn’t setup correctly. `sinchClient.checkManifest()` should only be called during development. When the application is ready for release the method call can safely be removed.

@@ -17,13 +17,11 @@ id<SINPhoneNumber> phoneNumber = [SINPhoneNumberUtil() parse:@"<user input>"
 
 
 
-[block:callout]
-{
-  "type": "warning",
-  "title": "Important",
-  "body": "When passing a number as a `NSString*` to create a `SINVerification`, the string should contain a number in *E.164* format."
-}
-[/block]
+
+> **WARNING: Important**    
+>
+> When passing a number as a `NSString*` to create a `SINVerification`, the string should contain a number in *E.164* format.
+
 A number that have been parsed into a `id<SINPhoneNumber>` can then be formatted as *E.164*:
 ```objectivec
 NSString *phoneNumberInE164 = [SINPhoneNumberUtil() formatNumber:phoneNumber format:SINPhoneNumberFormatE164];

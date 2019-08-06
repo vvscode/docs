@@ -43,13 +43,11 @@ call.addEventListener(callListeners);
 
 
 
-[block:callout]
-{
-  "type": "info",
-  "body": "If the audio is not connected properly to the audio element, as shown above, there will be no sound.",
-  "title": "Note"
-}
-[/block]
+
+> **Note**    
+>
+> If the audio is not connected properly to the audio element, as shown above, there will be no sound.
+
 ## Set up an *web-to-phone* call
 
 An *web-to-phone* call is a call that is made to a phone on the regular telephone network. Setting up an *web-to-phone* call is not much different from setting up a *web-to-web* call. Instead of invoking the `callUser` method, invoke the `callPhoneNumber` method on the `CallClient` object. Sufficient funds must be available on the Sinch account and a valid phone number specified for the call to connect successfully. The phone number should be specified according to the E.164 number formatting (<http://en.wikipedia.org/wiki/E.164>) recommendation and should be prefixed with a ‘+’. E.g. to call the US phone number 415 555 0101, the phone number should be specified as “+14155550101”. The ‘+’ is the required prefix and the US country code ‘1’ prepended to the local subscriber number.
@@ -225,13 +223,11 @@ call.hangup();
 
 
 ## Video calling
-[block:callout]
-{
-  "type": "warning",
-  "body": "The Sinch JS SDK Video Calling features are still under development and not suitable for a production environment",
-  "title": "Beta"
-}
-[/block]
+
+> **WARNING: Beta**    
+>
+> The Sinch JS SDK Video Calling features are still under development and not suitable for a production environment
+
 Video calling can be activated for data calling by adding the capability “video” when starting the client. With this capability, video will now be added to all data-calls. Web to phone (PSTN) calling will be unaffected. A video call is set up in the same way as a voice only call:
 ```javascript
 var sinchClient = new SinchClient({applicationKey: '...', capabilities: {calling: true, video: true}}); // Notice the video capability
@@ -243,13 +239,11 @@ call.addEventListener(...);
 For callbacks, hangup and other methods on the call object when performing a video call, please reference the API docs for audio-only calls.
 
 ## Group calling
-[block:callout]
-{
-  "type": "warning",
-  "body": "The Sinch JS SDK group calling feature is still under development and not suitable for a production environment",
-  "title": "Beta"
-}
-[/block]
+
+> **WARNING: Beta**    
+>
+> The Sinch JS SDK group calling feature is still under development and not suitable for a production environment
+
 Group calling allows participants to broadcast their presence to a particular “conference room”, upon which all participants already online will automatically add the new participant to the call. This results in a flexible “all-to-all” video conferencing solution.
 
 For starting the sinchClient with the capability of making a group call, the capability “multiCall” must be set.

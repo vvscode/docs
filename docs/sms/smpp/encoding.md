@@ -3,11 +3,53 @@ title: "Encoding"
 excerpt: ""
 ---
 ### Default SMSC encoding
-[block:html]
-{
-  "html": "<div class=\"marked-table\">\n  <table class=\"docutils\">\n    <colgroup>\n      <col width=\"7%\" />\n      <col width=\"93%\" />\n    </colgroup>\n    <thead valign=\"bottom\">\n      <tr class=\"row-odd\">\n        <th class=\"head\" colspan=\"2\">Data Coding</th>\n      </tr>\n    </thead>\n    <tbody valign=\"top\">\n      <tr class=\"row-even\">\n        <td>0x00</td>\n        <td>Default GSM 7 bit encoding</td>\n      </tr>\n      <tr class=\"row-odd\">\n        <td>0x01</td>\n        <td>US-ASCII</td>\n      </tr>\n      <tr class=\"row-even\">\n        <td>0x02</td>\n        <td>Binary</td>\n      </tr>\n      <tr class=\"row-odd\">\n        <td>0x03</td>\n        <td>ISO8859-1 (Latin-1), only characters within GSM-7 character table can be parsed to handset</td>\n      </tr>\n      <tr class=\"row-even\">\n        <td>0x04</td>\n        <td>Binary</td>\n      </tr>\n      <tr class=\"row-odd\">\n        <td>0x08</td>\n        <td>UCS2/UTF-16BE</td>\n      </tr>\n      <tr class=\"row-even\">\n        <td>&gt;0xF0</td>\n        <td>Same as DCS value. See SMPP v3.4 Issue1.2 specification</td>\n      </tr>\n    </tbody>\n  </table>\n</div>\n\n<style></style>"
-}
-[/block]
+
+<div class="marked-table">
+  <table class="docutils">
+    <colgroup>
+      <col width="7%" />
+      <col width="93%" />
+    </colgroup>
+    <thead valign="bottom">
+      <tr class="row-odd">
+        <th class="head" colspan="2">Data Coding</th>
+      </tr>
+    </thead>
+    <tbody valign="top">
+      <tr class="row-even">
+        <td>0x00</td>
+        <td>Default GSM 7 bit encoding</td>
+      </tr>
+      <tr class="row-odd">
+        <td>0x01</td>
+        <td>US-ASCII</td>
+      </tr>
+      <tr class="row-even">
+        <td>0x02</td>
+        <td>Binary</td>
+      </tr>
+      <tr class="row-odd">
+        <td>0x03</td>
+        <td>ISO8859-1 (Latin-1), only characters within GSM-7 character table can be parsed to handset</td>
+      </tr>
+      <tr class="row-even">
+        <td>0x04</td>
+        <td>Binary</td>
+      </tr>
+      <tr class="row-odd">
+        <td>0x08</td>
+        <td>UCS2/UTF-16BE</td>
+      </tr>
+      <tr class="row-even">
+        <td>&gt;0xF0</td>
+        <td>Same as DCS value. See SMPP v3.4 Issue1.2 specification</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<style></style>
+
 ### GSM 7 bit default alphabet and extension table
 
 **3GPP TS 23.038 / GSM 03.38**

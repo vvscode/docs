@@ -12,13 +12,11 @@ String defaultRegion = PhoneNumberUtils.getDefaultCountryIso();
 
 
 
-[block:callout]
-{
-  "type": "warning",
-  "title": "Important",
-  "body": "When passing a number as a string to create a `Verification`, the string should contain a number in *E.164* format."
-}
-[/block]
+
+> **WARNING: Important**    
+>
+> When passing a number as a string to create a `Verification`, the string should contain a number in *E.164* format.
+
 A number can be formatted as *E.164* like this:
 ```java
 String phoneNumberInE164 = PhoneNumberUtils.formatNumberToE164(phoneNumberString, defaultRegion);

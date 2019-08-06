@@ -43,10 +43,7 @@ In addition to these standard error codes, the REST API provides an additional s
 | 409               | Price threshold exceeded     | Aborted    | Message failed as the price of the message exceeds the defined threshold.                                                  |
 | 410               | Unmatched default originator | Aborted    | No default originator exists/configured for this recipient when sending message without originator.                        |
 | 411               | Exceeded parts limit         | Aborted    | Message failed as the number of message parts exceeds the defined max number of message parts.                             |
-[block:callout]
-{
-  "type": "info",
-  "title": "Note",
-  "body": "New error codes may be added over time."
-}
-[/block]
+
+> **Note**    
+>
+> New error codes may be added over time.

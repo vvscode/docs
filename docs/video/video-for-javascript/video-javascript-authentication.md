@@ -9,13 +9,11 @@ It is possible to integrate Sinch with your existing user management solution. W
 This solution requires you to generate an authentication ticket using your application key and application secret on your Application Server. See the [Reference Documentation](http://www.sinch.com/docs/javascript/reference/) for more information about generating this ticket.
 
 The authentication ticket is then sent to Sinch, using the `.start()` method in the `SinchClient` instance. The ticket is exchanged into a Sinch session, and the rest of the process is identical to when Sinch manages your users.
-[block:callout]
-{
-  "type": "info",
-  "body": "Included with the Sinch JS SDK are samples for getting you started with the integration of your authentication scheme with Sinch.",
-  "title": "Note"
-}
-[/block]
+
+> **Note**    
+>
+> Included with the Sinch JS SDK are samples for getting you started with the integration of your authentication scheme with Sinch.
+
 
 [block:image]
 {

@@ -5,13 +5,11 @@ excerpt: ""
 Verification of a phone number is performed in two steps: requesting a verification code and verifying the received code. If all of the permissions are provided (see [Permissions](#permissions)), the Verification SDK attempts to automatically verify any matching code that is received through SMS or flash call during the verification process. This means that during a flash call verification, the Verification SDK will automatically hang up the incoming call if (and only if) it matches the expected pattern. During an SMS verification, if enabled, any received messages text will be matched against the template, and if it matches, the code will be extracted and automatically sent to the Sinch backend. The Verification SDK will callback to the `VerificationListener` during the process, see [VerificationListener](#verificationlistener) for more information.
 
 If the permissions needed for automatic verification are not provided, the `verify` method on the `Verification` object should be invoked with a user-supplied verification code to verify the phone number.
-[block:callout]
-{
-  "type": "info",
-  "title": "Note",
-  "body": "The SDK will abort verification process and trigger the \\`\\`onVerificationFailed\\`\\` callback after a certain time, typically around 20 seconds. However, the SDK will continue to listen for calls for an additional time after the verification has failed, in order to intercept and report any possible late calls."
-}
-[/block]
+
+> **Note**    
+>
+> The SDK will abort verification process and trigger the \`\`onVerificationFailed\`\` callback after a certain time, typically around 20 seconds. However, the SDK will continue to listen for calls for an additional time after the verification has failed, in order to intercept and report any possible late calls.
+
 ## Permissions
 
 The `android.permission.INTERNET` permission is required for the Verification SDK to work. To handle flash call verification automatically, use `READ_PHONE_STATE`, and `CALL_PHONE`. `CALL_PHONE` is used to automatically hang up the call.
@@ -43,13 +41,11 @@ verification.initiate();
 
 
 
-[block:callout]
-{
-  "type": "warning",
-  "title": "Important",
-  "body": "It is important to pass `ApplicationContext` to the verification config builder, as the verification object might outlive the activity or fragment it is instantiated from."
-}
-[/block]
+
+> **WARNING: Important**    
+>
+> It is important to pass `ApplicationContext` to the verification config builder, as the verification object might outlive the activity or fragment it is instantiated from.
+
 ## SMS Verification
 
 To initiate an SMS verification, start by creating a `Verification` object through `SinchVerification.createSmsVerification`, then start the verification process by invoking `initiate()` on the `Verification` object. This method can be called multiple times, for example, if another SMS should be sent.
@@ -97,13 +93,11 @@ Verification verification = SinchVerification.createSmsVerification(config, phon
 
 
 
-[block:callout]
-{
-  "type": "info",
-  "title": "Note",
-  "body": "The content language specified can be overridden by carrier provider specific templates, due to compliance and legal requirements, such as [US shortcode requirements (pdf)](https://www.usshortcodes.com/info/static/docs/CTIA%20Short%20Code%20Monitoring%20Handbook%20v1.5.2.pdf)."
-}
-[/block]
+
+> **Note**    
+>
+> The content language specified can be overridden by carrier provider specific templates, due to compliance and legal requirements, such as [US shortcode requirements (pdf)](https://www.usshortcodes.com/info/static/docs/CTIA%20Short%20Code%20Monitoring%20Handbook%20v1.5.2.pdf).
+
 ## Verification listener
 
 The `VerificationListener` provides callbacks during the verification process. If initiation is successful, the `onInitiated()` callback runs and the verification code interceptor is started automatically. If initiation fails, the `onInitiationError()` callback runs and the exception describing the error is passed. If code verification is successful, the `onVerified()` callback is called. If verification fails, `onVerificationError()` callback runs and the exception describing the error is passed.
@@ -148,13 +142,11 @@ VerificationListener listener = new VerificationListener() {
 
 
 ### Phone numbers
-[block:callout]
-{
-  "type": "warning",
-  "title": "Important",
-  "body": "The phone number should be specified according to the E.164 number formatting (<http://en.wikipedia.org/wiki/E.164>) recommendation and should be prefixed with a <span class=\"title-ref\">+</span>. See the section `Phone numbers <phonenumbers>` for details."
-}
-[/block]
+
+> **WARNING: Important**    
+>
+> The phone number should be specified according to the E.164 number formatting (<http://en.wikipedia.org/wiki/E.164>) recommendation and should be prefixed with a <span class="title-ref">+</span>. See the section `Phone numbers <phonenumbers>` for details.
+
 ## Validate code manually
 
 To complete the verification of the phone number, the code should be passed to `verify`. For SMS verification, the code is in the message body. For flash calls, the caller id is the code. Example:

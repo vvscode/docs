@@ -23,21 +23,8 @@ formatter.onTextFieldTextDidChange = ^(UITextField *textField) {
 
 
 Example how *As-You-Type-Formatting* can look for the user:
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/0f34ef0-aytf.gif",
-        "aytf.gif",
-        384,
-        134,
-        "#f8f6fa"
-      ]
-    }
-  ]
-}
-[/block]
+![aytf.gif](https://files.readme.io/0f34ef0-aytf.gif)
+
 ## Listing regions and country dialing codes
 
 Example of populating a *UITableView* with a list of countries and their country calling code (in *Swift*):

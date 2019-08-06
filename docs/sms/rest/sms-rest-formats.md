@@ -9,13 +9,14 @@ JSON (`application/json`) is the content type of both requests and responses if 
 Requests with invalid JSON will be rejected.
 
 Null values can be omitted in requests and will be omitted in responses. In some cases explicitly setting `null` will overwrite a previously set value with `null`. See [Update a group](doc:sms-rest-groups-endpoint#section-update-a-group) for an example.
-[block:callout]
-{
-  "type": "info",
-  "title": "Note",
-  "body": "New features might result in additional request and response\nparameters. New request parameters will either have a default value or\nconsidered optional to retain backwards compatibility. It is highly\nrecommended to ignore any unexpected parameters when reading JSON in API responses and in callback handlers."
-}
-[/block]
+
+> **Note**    
+>
+> New features might result in additional request and response
+> parameters. New request parameters will either have a default value or
+> considered optional to retain backwards compatibility. It is highly
+> recommended to ignore any unexpected parameters when reading JSON in API responses and in callback handlers.
+
 ### MSISDN
 
 Only MSISDNs in international format are accepted by the API.

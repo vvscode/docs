@@ -110,13 +110,11 @@ sinchClient.registerPushNotificationData(regId);
 
 
 Please refer to Google’s [Google Cloud Messaging for Android](http://developer.android.com/google/gcm/index.html) for more information on how to use the GCM service.
-[block:callout]
-{
-  "type": "info",
-  "title": "Note",
-  "body": "As described in the `Push Data Notification <pushnotificationdata>` section, the data that you register with the `registerPushNotificationData` method is defined by you. If using GCM, it must at a minimum include the registrationId from Google (so a GCM server can push to a particular device)."
-}
-[/block]
+
+> **Note**    
+>
+> As described in the `Push Data Notification <pushnotificationdata>` section, the data that you register with the `registerPushNotificationData` method is defined by you. If using GCM, it must at a minimum include the registrationId from Google (so a GCM server can push to a particular device).
+
 ### Send and receive push notifications
 
 To send push messages the application developer must have a server that is configured for sending push notifications to the Google Cloud Messaging Service. Please see the `Sinch REST API User Guide <usingrestapi>` for details on how to handle feedback from Google Cloud Messaging Service.
