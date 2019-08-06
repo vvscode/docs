@@ -2,7 +2,6 @@
 title: "Sinch MMS MO Postbacks"
 excerpt: ""
 ---
-
 > **Note**    
 >
 > MO MMS functionality is limited to Verizon, Sprint and T-Mobile initially. MO MMS for AT\&T will be supported shortly after commercial launch.
