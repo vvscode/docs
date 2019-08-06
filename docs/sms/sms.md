@@ -43,11 +43,6 @@ Get started in minutes following one of the user guides below.
        </a>
      </div>
    </div>
-   
-   
-   <style>
-   
-   </style>
 </div>
 
 
