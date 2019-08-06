@@ -18,27 +18,27 @@ Getting started with the Sinch Video SDK is simple thanks to the extensive docum
 2.  [download the SDK](page:downloads)
 3.  get started in minutes following one of the user guide below.
 
-<div class="ug-links">
-  <div class="row">
-    <a href="./video-for-ios" class="col-md-4 ug-link">
-      <div class="ug-title">
-        <i class="fab fa-apple"></i><span class="title">iOS</span>
-      </div>
-    </a>
-    <a href="./video-for-android" class="col-md-4 ug-link">
-      <div class="ug-title">
-        <i class="fab fa-android"></i><span class="title">Android</span>
-      </div>
-    </a>
-    <a href="./video-for-javascript" class="col-md-4 ug-link">
-      <div class="ug-title">
-        <i class="fab fa-js"></i><span class="title">JavaScript</span>
-      </div>
-    </a>
+<div class="magic-block-html">
+  <div class="ug-links">
+    <div class="row">
+      <a href="./video-for-ios" class="col-md-4 ug-link">
+        <div class="ug-title">
+          <i class="fab fa-apple"></i><span class="title">iOS</span>
+        </div>
+      </a>
+      <a href="./video-for-android" class="col-md-4 ug-link">
+        <div class="ug-title">
+          <i class="fab fa-android"></i><span class="title">Android</span>
+        </div>
+      </a>
+      <a href="./video-for-javascript" class="col-md-4 ug-link">
+        <div class="ug-title">
+          <i class="fab fa-js"></i><span class="title">JavaScript</span>
+        </div>
+      </a>
+    </div>
   </div>
 </div>
-
-<style></style>
 
 ## Need help?
 

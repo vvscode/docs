@@ -26,28 +26,30 @@ Getting started with the Sinch Voice API and SDK is simple thanks to the extensi
 2.  [download the Sinch Voice SDK](page:downloads) 
 3.  and get started in minutes following one of the user guides below.
 
-<div class="ug-links">
-  <div class="row">
-    <a href="./voice-for-ios" class="col-md-3 ug-link">
-      <div class="ug-title">
-        <i class="fab fa-apple"></i><span class="title">iOS</span>
-      </div>
-    </a>
-    <a href="./voice-for-android" class="col-md-3 ug-link">
-      <div class="ug-title">
-        <i class="fab fa-android"></i><span class="title">Android</span>
-      </div>
-    </a>
-    <a href="./voice-for-js" class="col-md-3 ug-link">
-      <div class="ug-title">
-        <i class="fab fa-js"></i><span class="title">JavaScript</span>
-      </div>
-    </a>
-    <a href="./voice-rest-api" class="col-md-3 ug-link">
-      <div class="ug-title">
-        <i class="fa fa-code"></i><span class="title">REST</span>
-      </div>
-    </a>
+<div class="magic-block-html">
+  <div class="ug-links">
+    <div class="row">
+      <a href="./voice-for-ios" class="col-md-3 ug-link">
+        <div class="ug-title">
+          <i class="fab fa-apple"></i><span class="title">iOS</span>
+        </div>
+      </a>
+      <a href="./voice-for-android" class="col-md-3 ug-link">
+        <div class="ug-title">
+          <i class="fab fa-android"></i><span class="title">Android</span>
+        </div>
+      </a>
+      <a href="./voice-for-js" class="col-md-3 ug-link">
+        <div class="ug-title">
+          <i class="fab fa-js"></i><span class="title">JavaScript</span>
+        </div>
+      </a>
+      <a href="./voice-rest-api" class="col-md-3 ug-link">
+        <div class="ug-title">
+          <i class="fa fa-code"></i><span class="title">REST</span>
+        </div>
+      </a>
+    </div>
   </div>
 </div>
 

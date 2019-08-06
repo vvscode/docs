@@ -18,33 +18,32 @@ Depending on the use case different data about the MSISDN is needed - that’s w
 
 Input for a Number Lookup query is always an MSISDN - the table below illustrates which data is returned when using our Number Lookup services via the two interfaces.
 
-<div class="marked-table">
-<table>
-<colgroup>
-<col style="width: 44%" />
-<col style="width: 16%" />
-<col style="width: 36%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td></td>
-<td><strong>ENUM</strong></td>
-<td><strong>HTTP/HTTPS</strong></td>
-</tr>
-<tr class="even">
-<td><strong>Number Portability Lookup</strong></td>
-<td>MCC + MNC</td>
-<td>MCC + MNC</td>
-</tr>
-<tr class="odd">
-<td><strong>Real-Time Lookup</strong></td>
-<td>MCC + MNC</td>
-<td><div class="line-block">MCC + MNCCountry Code<br />
-Handset Status Code</div></td>
-</tr>
-</tbody>
-</table>
-
+<div class="magic-block-html">
+    <div class="marked-table">
+        <table>
+            <colgroup>
+                <col style="width: 44%" />
+                <col style="width: 16%" />
+                <col style="width: 36%" />
+            </colgroup>
+            <tbody>
+            <tr class="odd">
+                <td></td>
+                <td><strong>ENUM</strong></td>
+                <td><strong>HTTP/HTTPS</strong></td>
+            </tr>
+            <tr class="even">
+                <td><strong>Number Portability Lookup</strong></td>
+                <td>MCC + MNC</td>
+                <td>MCC + MNC</td>
+            </tr>
+            <tr class="odd">
+                <td><strong>Real-Time Lookup</strong></td>
+                <td>MCC + MNC</td>
+                <td><div class="line-block">MCC + MNCCountry Code<br />
+                    Handset Status Code</div></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
-<style></style>

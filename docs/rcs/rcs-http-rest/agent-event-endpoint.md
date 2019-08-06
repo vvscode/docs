@@ -93,55 +93,56 @@ JSON Representation
 
 ###### Fields
 
-<div class="marked-table">
-<table>
-<thead>
-<tr class="header">
-<th>Field</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-<th>Constraints</th>
-<th>Required</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>to</td>
-<td>string</td>
-<td>MSISDN of the recipient</td>
-<td>No</td>
-<td>^(?:00)[1-9][0-9]{8,16}$</td>
-<td>Yes</td>
-</tr>
-<tr class="even">
-<td>event_id</td>
-<td>string</td>
-<td>Globally unique event ID</td>
-<td>No</td>
-<td>^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$</td>
-<td>Yes</td>
-</tr>
-<tr class="odd">
-<td>event</td>
-<td><dl>
-<dt>oneOf:</dt>
-<dd><ul>
-<li>object(<code class="interpreted-text" data-role="ref">AgentComposingEvent</code>)</li>
-<li>object(<code class="interpreted-text" data-role="ref">AgentReadEvent</code>)</li>
-</ul>
-</dd>
-</dl></td>
-<td>Object describing the event to send to the user</td>
-<td>No</td>
-<td>N/A</td>
-<td>Yes</td>
-</tr>
-</tbody>
-</table>
+<div class="magic-block-html">
+    <div class="marked-table">
+        <table>
+            <thead>
+            <tr class="header">
+                <th>Field</th>
+                <th>Type</th>
+                <th>Description</th>
+                <th>Default</th>
+                <th>Constraints</th>
+                <th>Required</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="odd">
+                <td>to</td>
+                <td>string</td>
+                <td>MSISDN of the recipient</td>
+                <td>No</td>
+                <td>^(?:00)[1-9][0-9]{8,16}$</td>
+                <td>Yes</td>
+            </tr>
+            <tr class="even">
+                <td>event_id</td>
+                <td>string</td>
+                <td>Globally unique event ID</td>
+                <td>No</td>
+                <td>^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$</td>
+                <td>Yes</td>
+            </tr>
+            <tr class="odd">
+                <td>event</td>
+                <td><dl>
+                    <dt>oneOf:</dt>
+                    <dd><ul>
+                        <li>object(<code class="interpreted-text" data-role="ref">AgentComposingEvent</code>)</li>
+                        <li>object(<code class="interpreted-text" data-role="ref">AgentReadEvent</code>)</li>
+                    </ul>
+                    </dd>
+                </dl></td>
+                <td>Object describing the event to send to the user</td>
+                <td>No</td>
+                <td>N/A</td>
+                <td>Yes</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
 
-<style></style>
 
 ##### AgentComposingEvent
 

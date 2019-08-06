@@ -12,31 +12,31 @@ Sinch delivers messages from end users to your platform by supplying the MMS as 
 
 **1. HTTP header elements**
 
-<div class="marked-table">
-<table>
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 54%" />
-<col style="width: 19%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><strong>Header Name</strong></td>
-<td><strong>Description</strong></td>
-<td><strong>Mandatory</strong></td>
-</tr>
-<tr class="even">
-<td>X-Mblox-Carrier-Id</td>
-<td><div class="line-block">Sinch Mobile Operator ID.<br />
-Examples: AT&amp;T=0001470, Verizon=0001890.<br />
-See all <code class="interpreted-text" data-role="ref">mblox_operator_ids</code></div></td>
-<td>No</td>
-</tr>
-</tbody>
-</table>
+<div class="magic-block-html">
+    <div class="marked-table">
+        <table>
+            <colgroup>
+                <col style="width: 25%" />
+                <col style="width: 54%" />
+                <col style="width: 19%" />
+            </colgroup>
+            <tbody>
+            <tr class="odd">
+                <td><strong>Header Name</strong></td>
+                <td><strong>Description</strong></td>
+                <td><strong>Mandatory</strong></td>
+            </tr>
+            <tr class="even">
+                <td>X-Mblox-Carrier-Id</td>
+                <td><div class="line-block">Sinch Mobile Operator ID.<br />
+                    Examples: AT&amp;T=0001470, Verizon=0001890.<br />
+                    See all <code class="interpreted-text" data-role="ref">mblox_operator_ids</code></div></td>
+                <td>No</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
-<style></style>
 
 **2. Elements in the SOAP header and body**
 

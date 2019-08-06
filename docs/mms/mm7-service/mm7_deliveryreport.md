@@ -100,7 +100,6 @@ Content-Length: 2546
 X-Mblox-Carrier-Id: 0001890
 Connection: Keep-Alive
 
-
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/" xmlns=
 "http://www.3gpp.org/ftp/Specs/archive/23_series/23.140/schema/REL-6-MM7-1-4">

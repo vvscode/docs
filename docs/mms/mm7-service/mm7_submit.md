@@ -14,31 +14,31 @@ You can supply the mobile operator details as an ID in the request header of an 
 
 SMIL is required in all the SubmitReq MM7 Requests. It's an XML based language to write interactive multimedia presentations. More information about SMIL can be found here: <http:www.w3.org/TR/SMIL/>.
 
-<div class="marked-table">
-<table>
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 54%" />
-<col style="width: 19%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><strong>Header Name</strong></td>
-<td><strong>Description</strong></td>
-<td><strong>Mandatory</strong></td>
-</tr>
-<tr class="even">
-<td>X-Mblox-Carrier-Id</td>
-<td><div class="line-block">Sinch Mobile Operator ID.<br />
-Examples: AT&amp;T=0001470, Verizon=0001890.<br />
-See all <code class="interpreted-text" data-role="ref">mblox_operator_ids</code></div></td>
-<td>No</td>
-</tr>
-</tbody>
-</table>
+<div class="magic-block-html">
+    <div class="marked-table">
+        <table>
+            <colgroup>
+                <col style="width: 25%" />
+                <col style="width: 54%" />
+                <col style="width: 19%" />
+            </colgroup>
+            <tbody>
+            <tr class="odd">
+                <td><strong>Header Name</strong></td>
+                <td><strong>Description</strong></td>
+                <td><strong>Mandatory</strong></td>
+            </tr>
+            <tr class="even">
+                <td>X-Mblox-Carrier-Id</td>
+                <td><div class="line-block">Sinch Mobile Operator ID.<br />
+                    Examples: AT&amp;T=0001470, Verizon=0001890.<br />
+                    See all <code class="interpreted-text" data-role="ref">mblox_operator_ids</code></div></td>
+                <td>No</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
-<style></style>
 
 ## MM7\_Submit.REQ
 

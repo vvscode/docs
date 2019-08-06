@@ -4,51 +4,51 @@ excerpt: ""
 ---
 ### Default SMSC encoding
 
-<div class="marked-table">
-  <table class="docutils">
-    <colgroup>
-      <col width="7%" />
-      <col width="93%" />
-    </colgroup>
-    <thead valign="bottom">
-      <tr class="row-odd">
-        <th class="head" colspan="2">Data Coding</th>
-      </tr>
-    </thead>
-    <tbody valign="top">
-      <tr class="row-even">
-        <td>0x00</td>
-        <td>Default GSM 7 bit encoding</td>
-      </tr>
-      <tr class="row-odd">
-        <td>0x01</td>
-        <td>US-ASCII</td>
-      </tr>
-      <tr class="row-even">
-        <td>0x02</td>
-        <td>Binary</td>
-      </tr>
-      <tr class="row-odd">
-        <td>0x03</td>
-        <td>ISO8859-1 (Latin-1), only characters within GSM-7 character table can be parsed to handset</td>
-      </tr>
-      <tr class="row-even">
-        <td>0x04</td>
-        <td>Binary</td>
-      </tr>
-      <tr class="row-odd">
-        <td>0x08</td>
-        <td>UCS2/UTF-16BE</td>
-      </tr>
-      <tr class="row-even">
-        <td>&gt;0xF0</td>
-        <td>Same as DCS value. See SMPP v3.4 Issue1.2 specification</td>
-      </tr>
-    </tbody>
-  </table>
+<div class="magic-block-html">
+    <div class="marked-table">
+        <table class="docutils">
+            <colgroup>
+                <col width="7%" />
+                <col width="93%" />
+            </colgroup>
+            <thead valign="bottom">
+            <tr class="row-odd">
+                <th class="head" colspan="2">Data Coding</th>
+            </tr>
+            </thead>
+            <tbody valign="top">
+            <tr class="row-even">
+                <td>0x00</td>
+                <td>Default GSM 7 bit encoding</td>
+            </tr>
+            <tr class="row-odd">
+                <td>0x01</td>
+                <td>US-ASCII</td>
+            </tr>
+            <tr class="row-even">
+                <td>0x02</td>
+                <td>Binary</td>
+            </tr>
+            <tr class="row-odd">
+                <td>0x03</td>
+                <td>ISO8859-1 (Latin-1), only characters within GSM-7 character table can be parsed to handset</td>
+            </tr>
+            <tr class="row-even">
+                <td>0x04</td>
+                <td>Binary</td>
+            </tr>
+            <tr class="row-odd">
+                <td>0x08</td>
+                <td>UCS2/UTF-16BE</td>
+            </tr>
+            <tr class="row-even">
+                <td>&gt;0xF0</td>
+                <td>Same as DCS value. See SMPP v3.4 Issue1.2 specification</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
-<style></style>
 
 ### GSM 7 bit default alphabet and extension table
 

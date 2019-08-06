@@ -284,89 +284,88 @@ JSON Representation
 
 ###### Fields
 
-<div class="marked-table">
-<table>
-<thead>
-<tr class="header">
-<th>Field</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-<th>Constraints</th>
-<th>Required</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>message_id</td>
-<td>string</td>
-<td>Provide a globally unique id for this message</td>
-<td>No</td>
-<td>^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$</td>
-<td>Yes</td>
-</tr>
-<tr class="even">
-<td>to</td>
-<td>string</td>
-<td>MSISDN of the recipient</td>
-<td>No</td>
-<td>^(?:00)[1-9][0-9]{8,16}$</td>
-<td>Yes</td>
-</tr>
-<tr class="odd">
-<td>message</td>
-<td><dl>
-<dt><em>oneOf:</em></dt>
-<dd><ul>
-<li>object(<code class="interpreted-text" data-role="ref">TextMessage</code>)</li>
-<li>object(<code class="interpreted-text" data-role="ref">FileMessage</code>)</li>
-<li>object(<code class="interpreted-text" data-role="ref">StandaloneRichCardMessage</code>)</li>
-<li>object(<code class="interpreted-text" data-role="ref">CarouselRichCardMessage</code>)</li>
-</ul>
-</dd>
-</dl></td>
-<td>The content of the message</td>
-<td>No</td>
-<td>No</td>
-<td>Yes</td>
-</tr>
-<tr class="even">
-<td>suggestions</td>
-<td><dl>
-<dt>arrayOf:</dt>
-<dd><ul>
-<li>object(<code class="interpreted-text" data-role="ref">SuggestedAction</code>)</li>
-<li>object(<code class="interpreted-text" data-role="ref">SuggestedReply</code>)</li>
-</ul>
-</dd>
-</dl></td>
-<td>A list of suggestions comprised of suggested replies and suggested actions.</td>
-<td>No</td>
-<td>MaxLength: 11</td>
-<td>No</td>
-</tr>
-<tr class="odd">
-<td>expire</td>
-<td>object(<code class="interpreted-text" data-role="ref">ExpireInfo</code>)</td>
-<td>Object describing how the message should expire</td>
-<td>No</td>
-<td>No</td>
-<td>No</td>
-</tr>
-<tr class="even">
-<td>fallback</td>
-<td>object(<code class="interpreted-text" data-role="ref">FallbackInfo</code>)</td>
-<td>Object describing fallback message and under which conditions it should be triggered</td>
-<td>No</td>
-<td>No</td>
-<td>No</td>
-</tr>
-</tbody>
-</table>
-
+<div class="magic-block-html">
+    <div class="marked-table">
+        <table>
+            <thead>
+            <tr class="header">
+                <th>Field</th>
+                <th>Type</th>
+                <th>Description</th>
+                <th>Default</th>
+                <th>Constraints</th>
+                <th>Required</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="odd">
+                <td>message_id</td>
+                <td>string</td>
+                <td>Provide a globally unique id for this message</td>
+                <td>No</td>
+                <td>^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$</td>
+                <td>Yes</td>
+            </tr>
+            <tr class="even">
+                <td>to</td>
+                <td>string</td>
+                <td>MSISDN of the recipient</td>
+                <td>No</td>
+                <td>^(?:00)[1-9][0-9]{8,16}$</td>
+                <td>Yes</td>
+            </tr>
+            <tr class="odd">
+                <td>message</td>
+                <td><dl>
+                    <dt><em>oneOf:</em></dt>
+                    <dd><ul>
+                        <li>object(<code class="interpreted-text" data-role="ref">TextMessage</code>)</li>
+                        <li>object(<code class="interpreted-text" data-role="ref">FileMessage</code>)</li>
+                        <li>object(<code class="interpreted-text" data-role="ref">StandaloneRichCardMessage</code>)</li>
+                        <li>object(<code class="interpreted-text" data-role="ref">CarouselRichCardMessage</code>)</li>
+                    </ul>
+                    </dd>
+                </dl></td>
+                <td>The content of the message</td>
+                <td>No</td>
+                <td>No</td>
+                <td>Yes</td>
+            </tr>
+            <tr class="even">
+                <td>suggestions</td>
+                <td><dl>
+                    <dt>arrayOf:</dt>
+                    <dd><ul>
+                        <li>object(<code class="interpreted-text" data-role="ref">SuggestedAction</code>)</li>
+                        <li>object(<code class="interpreted-text" data-role="ref">SuggestedReply</code>)</li>
+                    </ul>
+                    </dd>
+                </dl></td>
+                <td>A list of suggestions comprised of suggested replies and suggested actions.</td>
+                <td>No</td>
+                <td>MaxLength: 11</td>
+                <td>No</td>
+            </tr>
+            <tr class="odd">
+                <td>expire</td>
+                <td>object(<code class="interpreted-text" data-role="ref">ExpireInfo</code>)</td>
+                <td>Object describing how the message should expire</td>
+                <td>No</td>
+                <td>No</td>
+                <td>No</td>
+            </tr>
+            <tr class="even">
+                <td>fallback</td>
+                <td>object(<code class="interpreted-text" data-role="ref">FallbackInfo</code>)</td>
+                <td>Object describing fallback message and under which conditions it should be triggered</td>
+                <td>No</td>
+                <td>No</td>
+                <td>No</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
-<style></style>
 
 #### TextMessage
 
@@ -458,70 +457,70 @@ JSON Representation
 
 ###### Fields
 
-<div class="marked-table">
-<table>
-<thead>
-<tr class="header">
-<th>Field</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-<th>Constraints</th>
-<th>Required</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>type</td>
-<td>string</td>
-<td>Static string 'standalone_rich_card'</td>
-<td>N/A</td>
-<td>N/A</td>
-<td>Yes</td>
-</tr>
-<tr class="even">
-<td>orientation</td>
-<td>string</td>
-<td>Orientation of the card</td>
-<td>No</td>
-<td><dl>
-<dt>Valid values:</dt>
-<dd><ul>
-<li>HORIZONTAL</li>
-<li>VERTICAL</li>
-</ul>
-</dd>
-</dl></td>
-<td>Yes</td>
-</tr>
-<tr class="odd">
-<td>thumbnail_alignment</td>
-<td>string</td>
-<td>Image preview alignment for cards with horizontal layout</td>
-<td>No</td>
-<td><dl>
-<dt>Valid values:</dt>
-<dd><ul>
-<li>LEFT</li>
-<li>RIGHT</li>
-</ul>
-</dd>
-</dl></td>
-<td>Yes</td>
-</tr>
-<tr class="even">
-<td>content</td>
-<td>object(<code class="interpreted-text" data-role="ref">RichCardContent</code>)</td>
-<td>Object describing the content of the rich card.</td>
-<td>No</td>
-<td>N/A</td>
-<td>Yes</td>
-</tr>
-</tbody>
-</table>
+<div class="magic-block-html">
+    <div class="marked-table">
+        <table>
+            <thead>
+            <tr class="header">
+                <th>Field</th>
+                <th>Type</th>
+                <th>Description</th>
+                <th>Default</th>
+                <th>Constraints</th>
+                <th>Required</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="odd">
+                <td>type</td>
+                <td>string</td>
+                <td>Static string 'standalone_rich_card'</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>Yes</td>
+            </tr>
+            <tr class="even">
+                <td>orientation</td>
+                <td>string</td>
+                <td>Orientation of the card</td>
+                <td>No</td>
+                <td><dl>
+                    <dt>Valid values:</dt>
+                    <dd><ul>
+                        <li>HORIZONTAL</li>
+                        <li>VERTICAL</li>
+                    </ul>
+                    </dd>
+                </dl></td>
+                <td>Yes</td>
+            </tr>
+            <tr class="odd">
+                <td>thumbnail_alignment</td>
+                <td>string</td>
+                <td>Image preview alignment for cards with horizontal layout</td>
+                <td>No</td>
+                <td><dl>
+                    <dt>Valid values:</dt>
+                    <dd><ul>
+                        <li>LEFT</li>
+                        <li>RIGHT</li>
+                    </ul>
+                    </dd>
+                </dl></td>
+                <td>Yes</td>
+            </tr>
+            <tr class="even">
+                <td>content</td>
+                <td>object(<code class="interpreted-text" data-role="ref">RichCardContent</code>)</td>
+                <td>Object describing the content of the rich card.</td>
+                <td>No</td>
+                <td>N/A</td>
+                <td>Yes</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
-<style></style>
 
 ##### CarouselRichCardMessage
 
@@ -544,55 +543,55 @@ JSON Representation
 
 ###### Fields
 
-<div class="marked-table">
-<table>
-<thead>
-<tr class="header">
-<th>Field</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-<th>Constraints</th>
-<th>Required</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>type</td>
-<td>string</td>
-<td>Static string 'carousel_rich_card'</td>
-<td>N/A</td>
-<td>N/A</td>
-<td>Yes</td>
-</tr>
-<tr class="even">
-<td>width</td>
-<td>string</td>
-<td>The width of the cards in the carousel</td>
-<td>No</td>
-<td><dl>
-<dt>Valid values:</dt>
-<dd><ul>
-<li>SMALL</li>
-<li>MEDIUM</li>
-</ul>
-</dd>
-</dl></td>
-<td>Yes</td>
-</tr>
-<tr class="odd">
-<td>contents</td>
-<td>arrayOf(<code class="interpreted-text" data-role="ref">RichCardContent</code>)</td>
-<td>The list of contents for each card in the carousel. There must be at least 2 and at most 10 cards in a carousel</td>
-<td>No</td>
-<td>MinLength: 2 MaxLength: 10</td>
-<td>Yes</td>
-</tr>
-</tbody>
-</table>
+<div class="magic-block-html">
+    <div class="marked-table">
+        <table>
+            <thead>
+            <tr class="header">
+                <th>Field</th>
+                <th>Type</th>
+                <th>Description</th>
+                <th>Default</th>
+                <th>Constraints</th>
+                <th>Required</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="odd">
+                <td>type</td>
+                <td>string</td>
+                <td>Static string 'carousel_rich_card'</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>Yes</td>
+            </tr>
+            <tr class="even">
+                <td>width</td>
+                <td>string</td>
+                <td>The width of the cards in the carousel</td>
+                <td>No</td>
+                <td><dl>
+                    <dt>Valid values:</dt>
+                    <dd><ul>
+                        <li>SMALL</li>
+                        <li>MEDIUM</li>
+                    </ul>
+                    </dd>
+                </dl></td>
+                <td>Yes</td>
+            </tr>
+            <tr class="odd">
+                <td>contents</td>
+                <td>arrayOf(<code class="interpreted-text" data-role="ref">RichCardContent</code>)</td>
+                <td>The list of contents for each card in the carousel. There must be at least 2 and at most 10 cards in a carousel</td>
+                <td>No</td>
+                <td>MinLength: 2 MaxLength: 10</td>
+                <td>Yes</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
-<style></style>
 
 ##### RichCardContent
 
@@ -620,63 +619,63 @@ JSON Representation
 
 ###### Fields
 
-<div class="marked-table">
-<table>
-<thead>
-<tr class="header">
-<th>Field</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-<th>Constraints</th>
-<th>Required</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>title</td>
-<td>string</td>
-<td>Title of the card</td>
-<td>No</td>
-<td>MaxLength: 200</td>
-<td>No</td>
-</tr>
-<tr class="even">
-<td>description</td>
-<td>string</td>
-<td>Description of the card</td>
-<td>No</td>
-<td>MaxLength: 2000</td>
-<td>No</td>
-</tr>
-<tr class="odd">
-<td>media</td>
-<td>object(<code class="interpreted-text" data-role="ref">RichCardMedia</code>)</td>
-<td>Object describing the media to be included in the card</td>
-<td>No</td>
-<td>N/A</td>
-<td>No</td>
-</tr>
-<tr class="even">
-<td>suggestions</td>
-<td><dl>
-<dt>arrayOf:</dt>
-<dd><ul>
-<li>object(<code class="interpreted-text" data-role="ref">SuggestedAction</code>)</li>
-<li>object(<code class="interpreted-text" data-role="ref">SuggestedReply</code>)</li>
-</ul>
-</dd>
-</dl></td>
-<td>List of suggestions to be included within the rich card</td>
-<td>No</td>
-<td>MaxLength: 4</td>
-<td>No</td>
-</tr>
-</tbody>
-</table>
+<div class="magic-block-html">
+    <div class="marked-table">
+        <table>
+            <thead>
+            <tr class="header">
+                <th>Field</th>
+                <th>Type</th>
+                <th>Description</th>
+                <th>Default</th>
+                <th>Constraints</th>
+                <th>Required</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="odd">
+                <td>title</td>
+                <td>string</td>
+                <td>Title of the card</td>
+                <td>No</td>
+                <td>MaxLength: 200</td>
+                <td>No</td>
+            </tr>
+            <tr class="even">
+                <td>description</td>
+                <td>string</td>
+                <td>Description of the card</td>
+                <td>No</td>
+                <td>MaxLength: 2000</td>
+                <td>No</td>
+            </tr>
+            <tr class="odd">
+                <td>media</td>
+                <td>object(<code class="interpreted-text" data-role="ref">RichCardMedia</code>)</td>
+                <td>Object describing the media to be included in the card</td>
+                <td>No</td>
+                <td>N/A</td>
+                <td>No</td>
+            </tr>
+            <tr class="even">
+                <td>suggestions</td>
+                <td><dl>
+                    <dt>arrayOf:</dt>
+                    <dd><ul>
+                        <li>object(<code class="interpreted-text" data-role="ref">SuggestedAction</code>)</li>
+                        <li>object(<code class="interpreted-text" data-role="ref">SuggestedReply</code>)</li>
+                    </ul>
+                    </dd>
+                </dl></td>
+                <td>List of suggestions to be included within the rich card</td>
+                <td>No</td>
+                <td>MaxLength: 4</td>
+                <td>No</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
-<style></style>
 
 ##### RichCardMedia
 
@@ -698,56 +697,56 @@ JSON Representation
 
 ###### Fields
 
-<div class="marked-table">
-<table>
-<thead>
-<tr class="header">
-<th>Field</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-<th>Constraints</th>
-<th>Required</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>file</td>
-<td>object(<code class="interpreted-text" data-role="ref">FileInfo</code>)</td>
-<td>Object describing the media to be included in the card</td>
-<td>No</td>
-<td>N/A</td>
-<td>Yes</td>
-</tr>
-<tr class="even">
-<td>thumbnail</td>
-<td>object(<code class="interpreted-text" data-role="ref">FileInfo</code>)</td>
-<td>Object describing the thumbnail of the media in the card.</td>
-<td>No</td>
-<td>N/A</td>
-<td>No</td>
-</tr>
-<tr class="odd">
-<td>height</td>
-<td>string</td>
-<td>The height of the media within a vertically oriented rich card</td>
-<td>No</td>
-<td><dl>
-<dt>Valid values:</dt>
-<dd><ul>
-<li>SHORT</li>
-<li>MEDIUM</li>
-<li>TALL</li>
-</ul>
-</dd>
-</dl></td>
-<td>Yes</td>
-</tr>
-</tbody>
-</table>
+<div class="magic-block-html">
+    <div class="marked-table">
+        <table>
+            <thead>
+            <tr class="header">
+                <th>Field</th>
+                <th>Type</th>
+                <th>Description</th>
+                <th>Default</th>
+                <th>Constraints</th>
+                <th>Required</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="odd">
+                <td>file</td>
+                <td>object(<code class="interpreted-text" data-role="ref">FileInfo</code>)</td>
+                <td>Object describing the media to be included in the card</td>
+                <td>No</td>
+                <td>N/A</td>
+                <td>Yes</td>
+            </tr>
+            <tr class="even">
+                <td>thumbnail</td>
+                <td>object(<code class="interpreted-text" data-role="ref">FileInfo</code>)</td>
+                <td>Object describing the thumbnail of the media in the card.</td>
+                <td>No</td>
+                <td>N/A</td>
+                <td>No</td>
+            </tr>
+            <tr class="odd">
+                <td>height</td>
+                <td>string</td>
+                <td>The height of the media within a vertically oriented rich card</td>
+                <td>No</td>
+                <td><dl>
+                    <dt>Valid values:</dt>
+                    <dd><ul>
+                        <li>SHORT</li>
+                        <li>MEDIUM</li>
+                        <li>TALL</li>
+                    </ul>
+                    </dd>
+                </dl></td>
+                <td>Yes</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
-<style></style>
 
 ##### SuggestedReply
 
@@ -797,66 +796,66 @@ JSON Representation
 
 ###### Fields
 
-<div class="marked-table">
-<table>
-<thead>
-<tr class="header">
-<th>Field</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-<th>Constraints</th>
-<th>Required</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>type</td>
-<td>string</td>
-<td>Static string 'action'</td>
-<td>N/A</td>
-<td>N/A</td>
-<td>Yes</td>
-</tr>
-<tr class="even">
-<td>display_text</td>
-<td>string</td>
-<td>The text that will be shown in the suggested action</td>
-<td>No</td>
-<td>MinLength: 1 MaxLength: 25</td>
-<td>Yes</td>
-</tr>
-<tr class="odd">
-<td>postback</td>
-<td>object(<code class="interpreted-text" data-role="ref">Postback</code>)</td>
-<td>Optional data that will be sent back to the agent when the user taps the action</td>
-<td>No</td>
-<td>N/A</td>
-<td>No</td>
-</tr>
-<tr class="even">
-<td>action</td>
-<td><dl>
-<dt>oneOf:</dt>
-<dd><ul>
-<li>object(<code class="interpreted-text" data-role="ref">DialPhoneNumber</code>)</li>
-<li>object(<code class="interpreted-text" data-role="ref">ShowLocation</code>)</li>
-<li>object(<code class="interpreted-text" data-role="ref">RequestLocationPush</code>)</li>
-<li>object(<code class="interpreted-text" data-role="ref">OpenUrl</code>)</li>
-<li>object(<code class="interpreted-text" data-role="ref">CreateCalendarEvent</code>)</li>
-</ul>
-</dd>
-</dl></td>
-<td>Object defining the action</td>
-<td>No</td>
-<td>N/A</td>
-<td>Yes</td>
-</tr>
-</tbody>
-</table>
+<div class="magic-block-html">
+    <div class="marked-table">
+        <table>
+            <thead>
+            <tr class="header">
+                <th>Field</th>
+                <th>Type</th>
+                <th>Description</th>
+                <th>Default</th>
+                <th>Constraints</th>
+                <th>Required</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="odd">
+                <td>type</td>
+                <td>string</td>
+                <td>Static string 'action'</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>Yes</td>
+            </tr>
+            <tr class="even">
+                <td>display_text</td>
+                <td>string</td>
+                <td>The text that will be shown in the suggested action</td>
+                <td>No</td>
+                <td>MinLength: 1 MaxLength: 25</td>
+                <td>Yes</td>
+            </tr>
+            <tr class="odd">
+                <td>postback</td>
+                <td>object(<code class="interpreted-text" data-role="ref">Postback</code>)</td>
+                <td>Optional data that will be sent back to the agent when the user taps the action</td>
+                <td>No</td>
+                <td>N/A</td>
+                <td>No</td>
+            </tr>
+            <tr class="even">
+                <td>action</td>
+                <td><dl>
+                    <dt>oneOf:</dt>
+                    <dd><ul>
+                        <li>object(<code class="interpreted-text" data-role="ref">DialPhoneNumber</code>)</li>
+                        <li>object(<code class="interpreted-text" data-role="ref">ShowLocation</code>)</li>
+                        <li>object(<code class="interpreted-text" data-role="ref">RequestLocationPush</code>)</li>
+                        <li>object(<code class="interpreted-text" data-role="ref">OpenUrl</code>)</li>
+                        <li>object(<code class="interpreted-text" data-role="ref">CreateCalendarEvent</code>)</li>
+                    </ul>
+                    </dd>
+                </dl></td>
+                <td>Object defining the action</td>
+                <td>No</td>
+                <td>N/A</td>
+                <td>Yes</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
-<style></style>
 
 ##### DialPhoneNumber
 
@@ -1089,104 +1088,104 @@ JSON Representation
 
 ###### Fields
 
-<div class="marked-table">
-<table>
-<thead>
-<tr class="header">
-<th>Field</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-<th>Constraints</th>
-<th>Required</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>from</td>
-<td>string</td>
-<td>Sender number</td>
-<td>No</td>
-<td>MinLength: 1 MaxLength: 128</td>
-<td>Yes</td>
-</tr>
-<tr class="even">
-<td>type</td>
-<td>string</td>
-<td>Identifies the type of the message</td>
-<td>No</td>
-<td><dl>
-<dt>Valid types are:</dt>
-<dd><ul>
-<li>mt_text</li>
-<li>mt_binary</li>
-</ul>
-</dd>
-</dl></td>
-<td>Yes</td>
-</tr>
-<tr class="odd">
-<td>text</td>
-<td>string</td>
-<td>The message content. Normal text string for mt_text and Base64 encoded for mt_binary</td>
-<td>No</td>
-<td>MaxLength: 2000</td>
-<td>Yes</td>
-</tr>
-<tr class="even">
-<td>udh</td>
-<td>string</td>
-<td>The UDH header of a binary message</td>
-<td>No</td>
-<td>^[0-9a-fA-F]\*$</td>
-<td>No</td>
-</tr>
-<tr class="odd">
-<td>campaign_id</td>
-<td>string</td>
-<td>The campaign/service ID this message belongs to. (Only applicable for the USA.)</td>
-<td>No</td>
-<td>MaxLength: 2000</td>
-<td>No</td>
-</tr>
-<tr class="even">
-<td>delivery_report</td>
-<td>string</td>
-<td>Request delivery report callback. Note that delivery reports can be fetched from the SMS HTTP REST API regardless of this setting</td>
-<td>none</td>
-<td><dl>
-<dt>Valid types are:</dt>
-<dd><ul>
-<li>none</li>
-<li>summary</li>
-<li>full</li>
-<li>per_recipient</li>
-</ul>
-</dd>
-</dl></td>
-<td>No</td>
-</tr>
-<tr class="odd">
-<td>expire_at</td>
-<td>string</td>
-<td>If set the system will stop trying to deliver the message at this point</td>
-<td>3 days</td>
-<td>A timestamp in RFC3339 UTC "Zulu" format</td>
-<td>No</td>
-</tr>
-<tr class="even">
-<td>callback_url</td>
-<td>string</td>
-<td>Override the default callback URL for this message</td>
-<td>No</td>
-<td>+ MaxLength: 2048 + URL - As defined by RFC 2396: Uniform Resource Identifiers (URI): Generic Syntax, amended by RFC 2732: Format for Literal IPv6 Addresses in URLs.</td>
-<td>No</td>
-</tr>
-</tbody>
-</table>
+<div class="magic-block-html">
+    <div class="marked-table">
+        <table>
+            <thead>
+            <tr class="header">
+                <th>Field</th>
+                <th>Type</th>
+                <th>Description</th>
+                <th>Default</th>
+                <th>Constraints</th>
+                <th>Required</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="odd">
+                <td>from</td>
+                <td>string</td>
+                <td>Sender number</td>
+                <td>No</td>
+                <td>MinLength: 1 MaxLength: 128</td>
+                <td>Yes</td>
+            </tr>
+            <tr class="even">
+                <td>type</td>
+                <td>string</td>
+                <td>Identifies the type of the message</td>
+                <td>No</td>
+                <td><dl>
+                    <dt>Valid types are:</dt>
+                    <dd><ul>
+                        <li>mt_text</li>
+                        <li>mt_binary</li>
+                    </ul>
+                    </dd>
+                </dl></td>
+                <td>Yes</td>
+            </tr>
+            <tr class="odd">
+                <td>text</td>
+                <td>string</td>
+                <td>The message content. Normal text string for mt_text and Base64 encoded for mt_binary</td>
+                <td>No</td>
+                <td>MaxLength: 2000</td>
+                <td>Yes</td>
+            </tr>
+            <tr class="even">
+                <td>udh</td>
+                <td>string</td>
+                <td>The UDH header of a binary message</td>
+                <td>No</td>
+                <td>^[0-9a-fA-F]\*$</td>
+                <td>No</td>
+            </tr>
+            <tr class="odd">
+                <td>campaign_id</td>
+                <td>string</td>
+                <td>The campaign/service ID this message belongs to. (Only applicable for the USA.)</td>
+                <td>No</td>
+                <td>MaxLength: 2000</td>
+                <td>No</td>
+            </tr>
+            <tr class="even">
+                <td>delivery_report</td>
+                <td>string</td>
+                <td>Request delivery report callback. Note that delivery reports can be fetched from the SMS HTTP REST API regardless of this setting</td>
+                <td>none</td>
+                <td><dl>
+                    <dt>Valid types are:</dt>
+                    <dd><ul>
+                        <li>none</li>
+                        <li>summary</li>
+                        <li>full</li>
+                        <li>per_recipient</li>
+                    </ul>
+                    </dd>
+                </dl></td>
+                <td>No</td>
+            </tr>
+            <tr class="odd">
+                <td>expire_at</td>
+                <td>string</td>
+                <td>If set the system will stop trying to deliver the message at this point</td>
+                <td>3 days</td>
+                <td>A timestamp in RFC3339 UTC "Zulu" format</td>
+                <td>No</td>
+            </tr>
+            <tr class="even">
+                <td>callback_url</td>
+                <td>string</td>
+                <td>Override the default callback URL for this message</td>
+                <td>No</td>
+                <td>+ MaxLength: 2048 + URL - As defined by RFC 2396: Uniform Resource Identifiers (URI): Generic Syntax, amended by RFC 2732: Format for Literal IPv6 Addresses in URLs.</td>
+                <td>No</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
-<style></style>
 
 ### Revoking a sent message
 
