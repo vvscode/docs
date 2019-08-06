@@ -58,11 +58,75 @@ This table lists each parameter that can be submitted with the request URL. Para
 | M         | Message Body        | The SMS text for plain messages or UCS2 hex for Unicode. For binary, hex encoded 8-bit data.                                        |
 
 #### Optional Parameters
-[block:html]
-{
-  "html": "<div class=\"marked-table\">\n<table>\n<thead>\n<tr class=\"header\">\n<th>Parameter</th>\n<th>Name</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody>\n<tr class=\"odd\">\n<td><p>ST</p></td>\n<td><p>Source Address Type (TON)</p></td>\n<td><dl>\n<dt>Controls the type of originator where:</dt>\n<dd><div class=\"line-block\">1 = International numeric<br />\n0 = National numeric<br />\n5 = Alphanumeric</div>\n</dd>\n</dl></td>\n</tr>\n<tr class=\"even\">\n<td><p>DC</p></td>\n<td><p>Data Coding Type</p></td>\n<td><dl>\n<dt>Controls the type of message content where:</dt>\n<dd><div class=\"line-block\">0 = Flash<br />\n1 = Normal (default)<br />\n2 = Binary<br />\n4 = UCS2<br />\n5 = Flash UCS2<br />\n6 = Normal GSM encoded</div>\n</dd>\n</dl></td>\n</tr>\n<tr class=\"odd\">\n<td><p>DR</p></td>\n<td><p>Delivery Receipt Request</p></td>\n<td><dl>\n<dt>Controls whether a delivery receipt is requested for the message where:</dt>\n<dd><div class=\"line-block\">0 = No (default)<br />\n1 = Yes<br />\n2 = Record Only<br />\n7 = Flash Normal GSM encoded</div>\n</dd>\n</dl></td>\n</tr>\n<tr class=\"even\">\n<td>UR</td>\n<td>User Reference</td>\n<td>Unique reference supplied by user to aid with matching delivery receipts. Maximum 16 alphanumeric characters including _ and -</td>\n</tr>\n<tr class=\"odd\">\n<td>V</td>\n<td>Validity Period</td>\n<td>The number of minutes to attempt delivery before the message expires. Maximum 10080.</td>\n</tr>\n<tr class=\"even\">\n<td>UD</td>\n<td>User Data Header</td>\n<td>Hex encoded UDH to be used with binary messages.</td>\n</tr>\n</tbody>\n</table>\n</div>\n\n<style></style>"
-}
-[/block]
+
+<div class="magic-block-html">
+    <div class="marked-table">
+   <table>
+   <thead>
+   <tr class="header">
+   <th>Parameter</th>
+   <th>Name</th>
+   <th>Description</th>
+   </tr>
+   </thead>
+   <tbody>
+   <tr class="odd">
+   <td><p>ST</p></td>
+   <td><p>Source Address Type (TON)</p></td>
+   <td><dl>
+   <dt>Controls the type of originator where:</dt>
+   <dd><div class="line-block">1 = International numeric<br />
+   0 = National numeric<br />
+   5 = Alphanumeric</div>
+   </dd>
+   </dl></td>
+   </tr>
+   <tr class="even">
+   <td><p>DC</p></td>
+   <td><p>Data Coding Type</p></td>
+   <td><dl>
+   <dt>Controls the type of message content where:</dt>
+   <dd><div class="line-block">0 = Flash<br />
+   1 = Normal (default)<br />
+   2 = Binary<br />
+   4 = UCS2<br />
+   5 = Flash UCS2<br />
+   6 = Normal GSM encoded</div>
+   </dd>
+   </dl></td>
+   </tr>
+   <tr class="odd">
+   <td><p>DR</p></td>
+   <td><p>Delivery Receipt Request</p></td>
+   <td><dl>
+   <dt>Controls whether a delivery receipt is requested for the message where:</dt>
+   <dd><div class="line-block">0 = No (default)<br />
+   1 = Yes<br />
+   2 = Record Only<br />
+   7 = Flash Normal GSM encoded</div>
+   </dd>
+   </dl></td>
+   </tr>
+   <tr class="even">
+   <td>UR</td>
+   <td>User Reference</td>
+   <td>Unique reference supplied by user to aid with matching delivery receipts. Maximum 16 alphanumeric characters including _ and -</td>
+   </tr>
+   <tr class="odd">
+   <td>V</td>
+   <td>Validity Period</td>
+   <td>The number of minutes to attempt delivery before the message expires. Maximum 10080.</td>
+   </tr>
+   <tr class="even">
+   <td>UD</td>
+   <td>User Data Header</td>
+   <td>Hex encoded UDH to be used with binary messages.</td>
+   </tr>
+   </tbody>
+   </table>
+   </div>
+</div>
+
 ### Server Response
 
 The server forms a HTTP response based on the outcome of the following processes:
@@ -93,11 +157,72 @@ HTTP Header: *200 OK* Content: *OK messageid \[messageidn\] \[UR:userreference\]
 If all of the above checks are successful for at least 1 of the destination numbers and there is enough credit to send to all of the destination numbers, a response will be returned with a HTTP header status code of 200 OK. The response content will contain the word OK followed by one or more numeric message ID’s (e.g. *1000000123456789*) and the User Reference if one was supplied in the request.
 
 #### Unsuccessful Response
-[block:html]
-{
-  "html": "<div class=\"marked-table\">\n<table>\n<thead>\n<tr class=\"header\">\n<th>Error</th>\n<th>HTTP Header</th>\n<th>HTTP Content</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody>\n<tr class=\"odd\">\n<td><blockquote>\n<p><span class=\"title-ref\">-5</span></p>\n</blockquote></td>\n<td><span class=\"title-ref\">402 Payment Required</span></td>\n<td><span class=\"title-ref\">ERR -5</span></td>\n<td>Insufficient credit</td>\n</tr>\n<tr class=\"even\">\n<td><blockquote>\n<p><span class=\"title-ref\">-10</span></p>\n</blockquote></td>\n<td><span class=\"title-ref\">401 Unauthorized</span></td>\n<td><span class=\"title-ref\">ERR -10</span></td>\n<td>Invalid username or password</td>\n</tr>\n<tr class=\"odd\">\n<td><blockquote>\n<p><span class=\"title-ref\">-15</span></p>\n</blockquote></td>\n<td><span class=\"title-ref\">503 Service Unavailable</span></td>\n<td><span class=\"title-ref\">ERR -15</span></td>\n<td>Invalid destination or destination not covered</td>\n</tr>\n<tr class=\"even\">\n<td><blockquote>\n<p><span class=\"title-ref\">-20</span></p>\n</blockquote></td>\n<td><span class=\"title-ref\">500 Internal Server Error</span></td>\n<td><span class=\"title-ref\">ERR -20</span></td>\n<td>System error, please retry</td>\n</tr>\n<tr class=\"odd\">\n<td><blockquote>\n<p><span class=\"title-ref\">-25</span></p>\n</blockquote></td>\n<td><span class=\"title-ref\">400 Bad Request</span></td>\n<td><span class=\"title-ref\">ERR -25</span></td>\n<td>Bad request; check parameters</td>\n</tr>\n<tr class=\"even\">\n<td><blockquote>\n<p><span class=\"title-ref\">-30</span></p>\n</blockquote></td>\n<td><span class=\"title-ref\">429 Service Unavailable</span></td>\n<td><span class=\"title-ref\">ERR -30</span></td>\n<td>Throughput exceeded</td>\n</tr>\n</tbody>\n</table>\n</div>\n\n<style></style>"
-}
-[/block]
+
+<div class="magic-block-html">
+    <div class="marked-table">
+   <table>
+   <thead>
+   <tr class="header">
+   <th>Error</th>
+   <th>HTTP Header</th>
+   <th>HTTP Content</th>
+   <th>Description</th>
+   </tr>
+   </thead>
+   <tbody>
+   <tr class="odd">
+   <td><blockquote>
+   <p><span class="title-ref">-5</span></p>
+   </blockquote></td>
+   <td><span class="title-ref">402 Payment Required</span></td>
+   <td><span class="title-ref">ERR -5</span></td>
+   <td>Insufficient credit</td>
+   </tr>
+   <tr class="even">
+   <td><blockquote>
+   <p><span class="title-ref">-10</span></p>
+   </blockquote></td>
+   <td><span class="title-ref">401 Unauthorized</span></td>
+   <td><span class="title-ref">ERR -10</span></td>
+   <td>Invalid username or password</td>
+   </tr>
+   <tr class="odd">
+   <td><blockquote>
+   <p><span class="title-ref">-15</span></p>
+   </blockquote></td>
+   <td><span class="title-ref">503 Service Unavailable</span></td>
+   <td><span class="title-ref">ERR -15</span></td>
+   <td>Invalid destination or destination not covered</td>
+   </tr>
+   <tr class="even">
+   <td><blockquote>
+   <p><span class="title-ref">-20</span></p>
+   </blockquote></td>
+   <td><span class="title-ref">500 Internal Server Error</span></td>
+   <td><span class="title-ref">ERR -20</span></td>
+   <td>System error, please retry</td>
+   </tr>
+   <tr class="odd">
+   <td><blockquote>
+   <p><span class="title-ref">-25</span></p>
+   </blockquote></td>
+   <td><span class="title-ref">400 Bad Request</span></td>
+   <td><span class="title-ref">ERR -25</span></td>
+   <td>Bad request; check parameters</td>
+   </tr>
+   <tr class="even">
+   <td><blockquote>
+   <p><span class="title-ref">-30</span></p>
+   </blockquote></td>
+   <td><span class="title-ref">429 Service Unavailable</span></td>
+   <td><span class="title-ref">ERR -30</span></td>
+   <td>Throughput exceeded</td>
+   </tr>
+   </tbody>
+   </table>
+   </div>
+</div>
+
 Message ID’s are displayed in the order that destination numbers are provided in, in the request. If a message is successfully sent to a destination number, a positive numeric message ID will be returned. It is possible that some destination numbers are successful and some are unsuccessful. In the later case, a negative numeric value of -15 (Invalid destination or destination not covered) or -20 (System error, please retry) will be returned as the message ID.
 
 If a User Reference was supplied in the request, it will be appended to the end of the response, prefixed with <span class="title-ref">UR:</span> A single white space separates all message ID’s and the User Reference. There will never be a white space at the end of the content.
@@ -112,11 +237,60 @@ If a User Reference was supplied in the request, it will be appended to the end 
 | Unsuccessful request                                                   | <span class="title-ref">400 Bad Request</span> | <span class="title-ref">ERR -25</span>                              |
 
 ### Message Types & Encoding
-[block:html]
-{
-  "html": "<div class=\"marked-table\">\n<table>\n<thead>\n<tr class=\"header\">\n<th>Type of SMS</th>\n<th>DC Value</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody>\n<tr class=\"odd\">\n<td>Plain (7-bit)</td>\n<td><span class=\"title-ref\">1</span> (default)</td>\n<td>Plain SMS text such as English encoded as ISO-8859-1 (latin1)</td>\n</tr>\n<tr class=\"even\">\n<td>Flash Plain (7-bit)</td>\n<td><span class=\"title-ref\">0</span></td>\n<td>Same as the above but pops up on screen without the user have to select to read the message</td>\n</tr>\n<tr class=\"odd\">\n<td><p>Binary (8-bit)</p></td>\n<td><p><span class=\"title-ref\">2</span></p></td>\n<td><div class=\"line-block\">Hex encoded binary data, accompanied with a User Data Header<br />\nand is used for the transmission of WAP Push, monophonic ringtones,<br />\noperator logos, v-cards, and other smart message formats</div></td>\n</tr>\n<tr class=\"even\">\n<td>Unicode (UCS2)</td>\n<td><span class=\"title-ref\">4</span></td>\n<td>UCS2 hex used for representing characters not in the GSM alphabet, such as Arabic, Chinese or Russian</td>\n</tr>\n<tr class=\"odd\">\n<td>Flash Unicode (UCS2)</td>\n<td><span class=\"title-ref\">5</span></td>\n<td>Same as above but delivered as a flash (pop up) message</td>\n</tr>\n<tr class=\"even\">\n<td>Plain (7-bit) GSM encoded</td>\n<td><span class=\"title-ref\">6</span></td>\n<td>Plain SMS text such as English, encoded in the GSM alphabet</td>\n</tr>\n<tr class=\"odd\">\n<td>Flash plain (7-bit) GSM encoded</td>\n<td><span class=\"title-ref\">7</span></td>\n<td>Same as above but delivered as a flash (pop up) message</td>\n</tr>\n</tbody>\n</table>\n</div>\n\n<style></style>"
-}
-[/block]
+
+<div class="magic-block-html">
+    <div class="marked-table">
+   <table>
+   <thead>
+   <tr class="header">
+   <th>Type of SMS</th>
+   <th>DC Value</th>
+   <th>Description</th>
+   </tr>
+   </thead>
+   <tbody>
+   <tr class="odd">
+   <td>Plain (7-bit)</td>
+   <td><span class="title-ref">1</span> (default)</td>
+   <td>Plain SMS text such as English encoded as ISO-8859-1 (latin1)</td>
+   </tr>
+   <tr class="even">
+   <td>Flash Plain (7-bit)</td>
+   <td><span class="title-ref">0</span></td>
+   <td>Same as the above but pops up on screen without the user have to select to read the message</td>
+   </tr>
+   <tr class="odd">
+   <td><p>Binary (8-bit)</p></td>
+   <td><p><span class="title-ref">2</span></p></td>
+   <td><div class="line-block">Hex encoded binary data, accompanied with a User Data Header<br />
+   and is used for the transmission of WAP Push, monophonic ringtones,<br />
+   operator logos, v-cards, and other smart message formats</div></td>
+   </tr>
+   <tr class="even">
+   <td>Unicode (UCS2)</td>
+   <td><span class="title-ref">4</span></td>
+   <td>UCS2 hex used for representing characters not in the GSM alphabet, such as Arabic, Chinese or Russian</td>
+   </tr>
+   <tr class="odd">
+   <td>Flash Unicode (UCS2)</td>
+   <td><span class="title-ref">5</span></td>
+   <td>Same as above but delivered as a flash (pop up) message</td>
+   </tr>
+   <tr class="even">
+   <td>Plain (7-bit) GSM encoded</td>
+   <td><span class="title-ref">6</span></td>
+   <td>Plain SMS text such as English, encoded in the GSM alphabet</td>
+   </tr>
+   <tr class="odd">
+   <td>Flash plain (7-bit) GSM encoded</td>
+   <td><span class="title-ref">7</span></td>
+   <td>Same as above but delivered as a flash (pop up) message</td>
+   </tr>
+   </tbody>
+   </table>
+   </div>
+</div>
+
 When a DC value is not specified in a request, it is assumed to be a plain 7-bit latin1 text message. The HTTPSMS server will automatically convert plain latin1 text to the GSM alphabet so you do not have to do this yourself. If a character is supplied that is outside of the GSM alphabet, it will be converted into a white space.
 
 If the message body you wish to send is already GSM encoded then you must set the DC parameter to a value of 6, or 7 if it is a flash message. A separate document is available outlining the GSM alphabet and its mapping to ISO-8859-1.
@@ -159,11 +333,40 @@ longer and therefore being [concatenated](#section-concatenated-messages).
 ### Concatenated Messages
 
 Also referred to as a long message, multipart message or extended message, a concatenated message is formed from several standard SMS containing a 7 byte concatenation header at the beginning of each one. Since this 7 byte header is within the message, it reduces the total size of each SMS to 153 characters each. The table below shows the maximum message length per number of SMS used for plain 7-bit messages.
-[block:html]
-{
-  "html": "<div class=\"marked-table\">\n<table>\n<thead>\n<tr class=\"header\">\n<th>Number of SMS</th>\n<th>Maximum Message Length</th>\n</tr>\n</thead>\n<tbody>\n<tr class=\"odd\">\n<td><blockquote>\n<p>1</p>\n</blockquote></td>\n<td>160</td>\n</tr>\n<tr class=\"even\">\n<td><blockquote>\n<p>2</p>\n</blockquote></td>\n<td>306</td>\n</tr>\n<tr class=\"odd\">\n<td><blockquote>\n<p>3</p>\n</blockquote></td>\n<td>459</td>\n</tr>\n</tbody>\n</table>\n</div>\n\n<style></style>"
-}
-[/block]
+
+<div class="magic-block-html">
+    <div class="marked-table">
+   <table>
+   <thead>
+   <tr class="header">
+   <th>Number of SMS</th>
+   <th>Maximum Message Length</th>
+   </tr>
+   </thead>
+   <tbody>
+   <tr class="odd">
+   <td><blockquote>
+   <p>1</p>
+   </blockquote></td>
+   <td>160</td>
+   </tr>
+   <tr class="even">
+   <td><blockquote>
+   <p>2</p>
+   </blockquote></td>
+   <td>306</td>
+   </tr>
+   <tr class="odd">
+   <td><blockquote>
+   <p>3</p>
+   </blockquote></td>
+   <td>459</td>
+   </tr>
+   </tbody>
+   </table>
+   </div>
+</div>
+
 In theory it is possible to utilise 255 messages (39,015 characters) for a concatenated SMS. However, 3 SMS (or 459 characters), is generally considered to be the longest length message that will be displayed on the majority of mobile handsets.
 
 The HTTP SMS server will automatically concatenate up to three SMS messages; longer messages need to be submitted individually with an appropriate User Data Header.
@@ -179,22 +382,94 @@ The HTTP SMS server will automatically concatenate up to three SMS messages; lon
 > Sending a special character that is listed in section 5.2.2 could result in the message length exceeding the maximum per SMS and therefore using an extra SMS which you will be charged for.
 
 Binary and Unicode SMS are concatenated in the same way but in terms of hex encoded bytes. The below table shows the maximum hex encoded lengths per number of SMS.
-[block:html]
-{
-  "html": "<div class=\"marked-table\">\n<table>\n<thead>\n<tr class=\"header\">\n<th>Number of SMS</th>\n<th>Binary data including UDH maximum length hex</th>\n<th>UCS2 maximum length hex</th>\n</tr>\n</thead>\n<tbody>\n<tr class=\"odd\">\n<td><blockquote>\n<p>1</p>\n</blockquote></td>\n<td>266</td>\n<td>280</td>\n</tr>\n<tr class=\"even\">\n<td><blockquote>\n<p>2</p>\n</blockquote></td>\n<td>512</td>\n<td>536</td>\n</tr>\n<tr class=\"odd\">\n<td><blockquote>\n<p>3</p>\n</blockquote></td>\n<td>768</td>\n<td>804</td>\n</tr>\n</tbody>\n</table>\n</div>\n\n<style></style>"
-}
-[/block]
+
+<div class="magic-block-html">
+    <div class="marked-table">
+   <table>
+   <thead>
+   <tr class="header">
+   <th>Number of SMS</th>
+   <th>Binary data including UDH maximum length hex</th>
+   <th>UCS2 maximum length hex</th>
+   </tr>
+   </thead>
+   <tbody>
+   <tr class="odd">
+   <td><blockquote>
+   <p>1</p>
+   </blockquote></td>
+   <td>266</td>
+   <td>280</td>
+   </tr>
+   <tr class="even">
+   <td><blockquote>
+   <p>2</p>
+   </blockquote></td>
+   <td>512</td>
+   <td>536</td>
+   </tr>
+   <tr class="odd">
+   <td><blockquote>
+   <p>3</p>
+   </blockquote></td>
+   <td>768</td>
+   <td>804</td>
+   </tr>
+   </tbody>
+   </table>
+   </div>
+</div>
+
 Both a User Data Header and concatenation header are required for multipart binary data. The table above takes this into account and uses the hex encoded lengths as this data should be submitted to the HTTPSMS system in hex encoded format.
 
 ### Sender ID (Originator)
 
 Use one of the TON values listed below for the ST parameter to give more
 control over the originator address type.
-[block:html]
-{
-  "html": "<div class=\"marked-table\">\n<table>\n<thead>\n<tr class=\"header\">\n<th>Source TON</th>\n<th>Sender ID type</th>\n<th>Description</th>\n<th>Examples</th>\n</tr>\n</thead>\n<tbody>\n<tr class=\"odd\">\n<td><blockquote>\n<p>1</p>\n</blockquote></td>\n<td>International Numeric</td>\n<td>Adds a + to the beginning of a number to produce international formatting. Up to 16 digits.</td>\n<td>\"<strong>+447987651234</strong>\"</td>\n</tr>\n<tr class=\"even\">\n<td><blockquote>\n<p>0</p>\n</blockquote></td>\n<td><p>Local numeric and shortcode</p></td>\n<td><p>Allows for national numeric format or shortcode. Up to 16 digits.</p></td>\n<td><div class=\"line-block\">\"<strong>07943215678</strong>\"<br />\n\"<strong>34567</strong>\"</div></td>\n</tr>\n<tr class=\"odd\">\n<td><blockquote>\n<p>5</p>\n</blockquote></td>\n<td><p>Alphanumeric</p></td>\n<td><p>Supports up to 11 alphanumeric characters</p></td>\n<td><div class=\"line-block\">\"<strong>Alert</strong>\"<br />\n\"<strong>CompanyName</strong>\"</div></td>\n</tr>\n</tbody>\n</table>\n</div>\n\n<style></style>"
-}
-[/block]
+
+<div class="magic-block-html">
+    <div class="marked-table">
+   <table>
+   <thead>
+   <tr class="header">
+   <th>Source TON</th>
+   <th>Sender ID type</th>
+   <th>Description</th>
+   <th>Examples</th>
+   </tr>
+   </thead>
+   <tbody>
+   <tr class="odd">
+   <td><blockquote>
+   <p>1</p>
+   </blockquote></td>
+   <td>International Numeric</td>
+   <td>Adds a + to the beginning of a number to produce international formatting. Up to 16 digits.</td>
+   <td>"<strong>+447987651234</strong>"</td>
+   </tr>
+   <tr class="even">
+   <td><blockquote>
+   <p>0</p>
+   </blockquote></td>
+   <td><p>Local numeric and shortcode</p></td>
+   <td><p>Allows for national numeric format or shortcode. Up to 16 digits.</p></td>
+   <td><div class="line-block">"<strong>07943215678</strong>"<br />
+   "<strong>34567</strong>"</div></td>
+   </tr>
+   <tr class="odd">
+   <td><blockquote>
+   <p>5</p>
+   </blockquote></td>
+   <td><p>Alphanumeric</p></td>
+   <td><p>Supports up to 11 alphanumeric characters</p></td>
+   <td><div class="line-block">"<strong>Alert</strong>"<br />
+   "<strong>CompanyName</strong>"</div></td>
+   </tr>
+   </tbody>
+   </table>
+   </div>
+</div>
+
 ### Flash Messages
 
 A flash message is an SMS that automatically pops up on the handset screen without the user having to manually open the message. Note that it is not possible to save a flash message on some handsets.

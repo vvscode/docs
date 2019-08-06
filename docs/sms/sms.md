@@ -27,11 +27,29 @@ Getting started with the Sinch SMS API is simple.
 
 Get started in minutes following one of the user guides below.
 
-[block:html]
-{
-  "html": "<div class=\"ug-links\">\n  <div class=\"row\">\n    <a href=\"./rest\" class=\"col-md-6 ug-link\">\n      <div class=\"ug-title\">\n        <i class=\"fa fa-code\"></i><span class=\"title\">REST</span>\n      </div>\n    </a>\n    <a href=\"./smpp\" class=\"col-md-6 ug-link\">\n      <div class=\"ug-title\">\n        <i class=\"fa fa-mobile-phone\"></i><span class=\"title\">SMPP</span>\n      </div>\n    </a>\n  </div>\n</div>\n\n\n<style>\n\n</style>"
-}
-[/block]
+
+<div class="magic-block-html">
+    <div class="ug-links">
+     <div class="row">
+       <a href="./rest" class="col-md-6 ug-link">
+         <div class="ug-title">
+           <i class="fa fa-code"></i><span class="title">REST</span>
+         </div>
+       </a>
+       <a href="./smpp" class="col-md-6 ug-link">
+         <div class="ug-title">
+           <i class="fa fa-mobile-phone"></i><span class="title">SMPP</span>
+         </div>
+       </a>
+     </div>
+   </div>
+   
+   
+   <style>
+   
+   </style>
+</div>
+
 
 ## Need help?
 If you have any questions, feel free to check out our help section or contact us.
