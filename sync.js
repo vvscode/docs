@@ -7,11 +7,11 @@ const request = require('request-promise-native');
 const path = require('path');
 const glob = require('glob');
 const stagedGitFiles = require('staged-git-files');
-const crypto = require('crypto');
-const frontMatter = require('gray-matter');
 const chalk = require('chalk');
+const readlineSync = require('readline-sync');
 
 const markdownize = require('./lib/markdownize');
+const { Catalog, Page, XrefLink, UrlLink, MailtoLink } = require('./lib/catalog');
 
 const DEFAULT_CONFIG_FILE = 'config.yml';
 const DEFAULT_DOCS_DIR = 'docs';
@@ -39,8 +39,19 @@ program
     .description('Fetches up-to-date Markdown content files from readme.io, overwriting local files. ' +
         'When called with a comma-delimited list of category slugs, only those categories will be fetched.')
     .option('-d, --dir <dir>', 'Destination directory where docs Markdown files will be written', DEFAULT_DOCS_DIR)
-    .action((slug, cmd) => {
-        fetchDocs(describeCategories(cmd.dir, slug), cmd.output);
+    .action(async (slug, cmd) => {
+        const modifiedContentFiles = (await stagedGitFiles())
+            .map(details => details.filename)
+            .filter(file => file.startsWith(cmd.dir));
+
+        if (modifiedContentFiles.length > 0) {
+            console.log(chalk.yellow(modifiedContentFiles.join('\n')));
+            if (!readlineSync.keyInYN('The above files have staged changes that could be overwritten. Are you sure you want to proceed?')) {
+                return;
+            }
+        }
+
+        savePagesToDisk(listCategories(slug), cmd.dir);
     });
 
 program
@@ -48,24 +59,25 @@ program
     .description('Pushes local Markdown content files to readme.io. ' +
         'When called with a comma-delimited list of category slugs, only those categories will be pushed.')
     .option('-d, --dir <dir>', `Directory where the Markdown content files will be loaded from.`, DEFAULT_DOCS_DIR)
+    .option('-f, --file <file>', `Path to a single file to process, relative to the directory specified with -d/--dir option.`)
     .option('--staged-only', `Only push files staged files that have been modified. Important: files must have been added to the index with 'git add'`)
     .option('--dry-run', `No remote content will be updated but command output will show what would be done.`)
     .action(async (slug, cmd) => {
-        const options = { stagedOnly: cmd.stagedOnly, dryRun: cmd.dryRun };
+        const options = {
+            file: cmd.file,
+            stagedOnly: cmd.stagedOnly,
+            dryRun: cmd.dryRun
+        };
+        const catalog = Catalog.build(cmd.dir);
 
-        var files = findMarkdownFiles(describeCategories(cmd.dir, slug));
-
-        if (options.stagedOnly) {
-            files = await keepOnlyStagedGitFiles(files);
-        }
-
-        if (files.length === 0) {
+        const pages = await selectPages(catalog, options);
+        if (pages.length === 0) {
             console.warn('No files to found to push.');
             return;
         }
 
-        for (const file of files) {
-            pushDoc(file, options);
+        for (const page of pages) {
+            pushPage(page, options);
         }
     });
 
@@ -73,36 +85,126 @@ program
     .command('markdownize [category_slugs]', )
     .description('Converts proprietary Readme widgets to standard Markdown.')
     .option('-d, --dir <dir>', `Directory where the Markdown content files will be loaded from.`, DEFAULT_DOCS_DIR)
+    .option('-f, --file <file>', `Path to a single file to process, relative to the directory specified with -d/--dir option.`)
     .option('-w, --widgets <widgets>', `Comma-separated list of Readme widgets to replace to Markdown. Supported widgets: 'code', 'callout', 'image', 'html'`)
-    .option('-f, --file <file>', `Path to a single file to process, relative to current working directory.`)
+    .option('-v, --verbose', `Output more details about the replacements being made.`)
     .option('--dry-run', `Will only output modifications that would be made, without actually saving them.`)
     .action(async (slug, cmd) => {
-        const options = { dryRun: cmd.dryRun };
+        const options = {
+            categories: slug,
+            file: cmd.file,
+            dryRun: cmd.dryRun,
+            verbose: cmd.dryRun || cmd.verbose,
+        };
+        const catalog = Catalog.build(cmd.dir);
 
-        var files;
-        if (cmd.file) {
-            files = [cmd.file];
-        } else {
-            files = findMarkdownFiles(describeCategories(cmd.dir, slug));
-        }
-
-        if (files.length === 0) {
+        const pages = await selectPages(catalog, options);
+        if (pages.length === 0) {
             console.warn('No files to found to markdownize.');
             return;
         }
 
-        var widgets = markdownize.widgetTypes;
+        let widgets = markdownize.widgetTypes;
         if (cmd.widgets) {
             widgets = cmd.widgets.split(',');
         }
 
-        for (const file of files) {
-            markdownize.markdownize(file, widgets, options);
+        for (const page of pages) {
+            const updated = markdownize.markdownize(page, widgets, options);
+            if (!options.dryRun) {
+                if (page.content !== updated) {
+                    page.content = updated;
+                    console.log(chalk.green(`Writing updated Markdown to [${page.path}]`));
+                    await page.writeTo(cmd.dir);
+                }
+            }
+        }
+    });
+
+program
+    .command('validate [category_slugs]', )
+    .description(`Validates Markdown content files. 
+    
+The following validations are available:
+
+ - 'url':      Verifies that URLs do resolve to an existing. An HTTP HEAD request is performed for each URL.
+ - 'xref':     Verifies that internal cross references point to known content.
+ - 'mailto':   Verifies that mailto: links (links to email addresses) are correctly formed.
+ 
+All validations are performed unless --validations is specified.
+    `)
+    .option('-d, --dir <dir>', `Directory where the Markdown content files will be loaded from.`, DEFAULT_DOCS_DIR)
+    .option('-f, --file <file>', `Path to a single file to process, relative to the directory specified with -d/--dir option.`)
+    .option('--staged-only', `Only validate Git staged files. Important: files must have been added to the index with 'git add'`)
+    .option('--validations <validations>', `Comma-delimited list of validations to perform. See command help for supported validations.`)
+    .action(async (slug, cmd) => {
+        const options = {
+            categories: slug,
+            file: cmd.file,
+            stagedOnly: cmd.stagedOnly,
+        };
+        const catalog = Catalog.build(cmd.dir);
+
+        const pages = await selectPages(catalog, options);
+        if (pages.length === 0) {
+            console.warn('No files to found to validate.');
+            return;
+        }
+
+        let validations = ['xref', 'url', 'mailto'];
+        if (cmd.validations) {
+            validations = cmd.validations.split(',');
+        }
+
+        for (const page of pages) {
+            // xref:
+            if (validations.includes('xref')) {
+                validateLinks(catalog, page, XrefLink, (link, err) => {
+                    console.log(`${page.path}:${link.lineNumber} Cross reference [${link.href}] seems broken: ${err}`);
+                });
+            }
+
+            // mailto:
+            if (validations.includes('mailto')) {
+                validateLinks(catalog, page, MailtoLink, (link, err) => {
+                    console.log(`${page.path}:${link.lineNumber} Link to email [${link.href}] seems broken: ${err}`);
+                });
+            }
+
+            // url:
+            if (validations.includes('url')) {
+                validateLinks(catalog, page, UrlLink, (link, err) => {
+                    console.log(`${page.path}:${link.lineNumber} URL [${link.href}] seems broken: ${err}`);
+                });
+            }
         }
     });
 
 program.parse(process.argv);
 
+
+async function selectPages(catalog, options) {
+    let pages;
+    if (options.file) {
+        pages = catalog.findPageByPath(options.file);
+    } else {
+        const categories = listCategories(options.categories);
+        pages = catalog.findPagesInCategories(categories);
+    }
+
+    if (options.stagedOnly) {
+        const stagedFiles = await stagedGitFiles();
+        pages = pages.filter(page => stagedFiles.includes(page.path));
+    }
+    return pages;
+}
+
+function validateLinks(catalog, page, type, invalidCallback) {
+    const links = page.links.filter(link => link instanceof type);
+    for (const link of links) {
+        link.resolve(catalog).catch(err => invalidCallback(link, err));
+    }
+}
 
 
 function loadConfigYaml(path) {
@@ -135,100 +237,79 @@ function httpOptions() {
     }
 }
 
-function describeCategories(dir, slugs) {
+function listCategories(slugs) {
     const configFile = globalOption('config_file', DEFAULT_CONFIG_FILE);
-    var categories = slugs ? slugs.split(',') : loadConfigYaml(configFile).categories;
-    return categories.map(name => {
-        return { slug: name, path: path.join(dir, name)}
-    })
+    return slugs ? slugs.split(',') : loadConfigYaml(configFile).categories;
 }
 
-function getDoc(slug) {
+function loadPage(slug) {
     return request.get(`https://dash.readme.io/api/v1/docs/${slug}`, httpOptions());
 }
 
-async function fetchDocs(categories, outputPath) {
+async function savePagesToDisk(categories, baseDir) {
     for (const category of categories) {
-        const docs = await request.get(`https://dash.readme.io/api/v1/categories/${category.slug}/docs`, httpOptions());
-        for (const doc of docs) {
-            fetchDoc(doc, category.path);
+        const pagesInCategory = await request.get(`https://dash.readme.io/api/v1/categories/${category}/docs`, httpOptions());
+        for (const json of pagesInCategory) {
+            savePageToDisk(json, category, null, baseDir);
         }
     }
 }
 
-async function fetchDoc(doc, outputPath) {
-    const slug = doc.slug;
-    const docDetails = await getDoc(slug);
+async function savePageToDisk(pageJson, category, parent, baseDir) {
+    const slug = pageJson.slug;
+    const docDetails = await loadPage(slug);
 
-    var contents = `---
-title: "${docDetails.title}"
-excerpt: "${docDetails.excerpt}"
----
-${docDetails.body}`;
+    const page = jsonToPage(docDetails, category, parent);
 
-    const outputFile = path.join(outputPath, `${slug}.md`);
-    console.log(chalk.green(`Writing contents of doc [${doc.slug}] to file [${outputFile}]`));
+    const outputFile = await page.writeTo(baseDir);
+    console.log(chalk.green(`Wrote contents of doc [${page.ref}] to file [${outputFile}]`));
 
-    fs.mkdirSync(outputPath, {recursive: true});
-    fs.writeFile(outputFile, contents, (err) => {
-        if (err) console.log(err);
-    });
-
-    const children = doc.children;
+    const children = pageJson.children;
     if (children) {
         for (const child of children) {
-            fetchDoc(child, path.join(outputPath, slug));
+            savePageToDisk(child, category, page, baseDir);
         }
     }
 }
 
-async function pushDoc(file, options) {
-    const filename = path.parse(file).base;
-    const slug = filename.replace(path.extname(filename), '');
+/**
+ * Converts JSON received from the Readme API to a `Page` object instance.
+ * @param json The JSON object loaded from the API.
+ * @param category An optional category to assign to the page (string)
+ * @param parent An optional parent `Page` object.
+ * @returns {Page}
+ */
+function jsonToPage(json, category, parent) {
+    const headers = {
+        title: json.title,
+        excerpt: json.excerpt,
+    };
+    return new Page(category, parent ? parent.slug : null, json.slug, json.body, headers);
+}
 
-    const data = fs.readFileSync(file, 'utf8');
-    const hash = crypto
-        .createHash('sha1')
-        .update(data)
-        .digest('hex');
-
+async function pushPage(page, options) {
     const opts = httpOptions();
-    const matter = frontMatter(data);
-    const existingDoc = await getDoc(slug);
+    const pageJson = await loadPage(page.slug);
 
-    if (existingDoc.lastUpdatedHash === hash) {
-        console.log(chalk.cyan(`Contents of page [${slug}] was not pushed because contents are the same.`));
+    const loadedPage = jsonToPage(pageJson);
+
+    if (loadedPage.hash === page.hash) {
+        console.log(chalk.cyan(`Contents of page [${page.slug}] was not pushed because contents are the same.`));
         return;
     }
 
     if (options.dryRun) {
-        console.log(chalk.dim(`DRY RUN: Would push contents of [${file}] to readme.io`));
+        console.log(chalk.dim(`DRY RUN: Would push contents of [${page.ref}] to readme.io`));
     } else {
         await request
-            .put(`https://dash.readme.io//api/v1/docs/${slug}`, {
+            .put(`https://dash.readme.io//api/v1/docs/${page.slug}`, {
                 ...opts,
-                json: Object.assign(existingDoc, {
-                    body: matter.content,
-                    ...matter.data,
-                    lastUpdatedHash: hash,
+                json: Object.assign(pageJson, {
+                    body: page.content,
+                    ...page.headers,
+                    lastUpdatedHash: page.hash,
                 }),
             });
-        console.log(chalk.green(`Pushed contents of [${file}] to readme.io`));
+        console.log(chalk.green(`Pushed contents of [${page.ref}] to readme.io`));
     }
-}
-
-async function keepOnlyStagedGitFiles(files) {
-    const stagedFiles = await stagedGitFiles();
-    return files.filter(file => stagedFiles.map(descriptor => descriptor.filename).includes(file));
-}
-
-/**
- * Finds all Markdown content files found in the directory of a content category.
- * @param categories Array of category descriptors.
- */
-function findMarkdownFiles(categories) {
-    return categories
-        .map(category => category.path)
-        .map(dir => glob.sync(path.join(dir, '**/*.md')))
-        .reduce((curr, prev) => curr.concat(prev));
 }
