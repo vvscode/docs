@@ -4,14 +4,13 @@ const program = require('commander');
 const yaml = require('js-yaml');
 const fs = require('fs');
 const request = require('request-promise-native');
-const path = require('path');
-const glob = require('glob');
 const stagedGitFiles = require('staged-git-files');
 const chalk = require('chalk');
 const readlineSync = require('readline-sync');
 
 const markdownize = require('./lib/markdownize');
 const { Catalog, Page, XrefLink, UrlLink, MailtoLink } = require('./lib/catalog');
+const { Api } = require('./lib/api-client');
 
 const DEFAULT_CONFIG_FILE = 'config.yml';
 const DEFAULT_DOCS_DIR = 'docs';
@@ -51,7 +50,12 @@ program
             }
         }
 
-        savePagesToDisk(listCategories(slug), cmd.dir);
+        const readme = apiClient();
+
+        readme.fetchPages(listCategories(slug), async page => {
+            const outputFile = await page.writeTo(cmd.dir);
+            console.log(chalk.green(`Wrote contents of doc [${page.ref}] to file [${outputFile}]`));
+        });
     });
 
 program
@@ -76,8 +80,9 @@ program
             return;
         }
 
+        const readme = apiClient();
         for (const page of pages) {
-            pushPage(page, options);
+            readme.pushPage(page, options);
         }
     });
 
@@ -183,6 +188,11 @@ All validations are performed unless --validations is specified.
 program.parse(process.argv);
 
 
+function apiClient() {
+    return new Api(globalOption(CONFIG_APIKEY), globalOption(CONFIG_DOCSVERSION));
+}
+
+
 async function selectPages(catalog, options) {
     let pages;
     if (options.file) {
@@ -198,6 +208,7 @@ async function selectPages(catalog, options) {
     }
     return pages;
 }
+
 
 function validateLinks(catalog, page, type, invalidCallback) {
     const links = page.links.filter(link => link instanceof type);
@@ -216,6 +227,7 @@ function loadConfigYaml(path) {
     }
 }
 
+
 function globalOption(config, defaultValue) {
     const envVar = config.toUpperCase();
     const value = process.env[envVar];
@@ -227,89 +239,8 @@ function globalOption(config, defaultValue) {
     return value || defaultValue;
 }
 
-function httpOptions() {
-    return {
-        auth: { user: globalOption(CONFIG_APIKEY) },
-        headers: {
-            'x-readme-version': globalOption(CONFIG_DOCSVERSION),
-        },
-        json: true,
-    }
-}
 
 function listCategories(slugs) {
     const configFile = globalOption('config_file', DEFAULT_CONFIG_FILE);
     return slugs ? slugs.split(',') : loadConfigYaml(configFile).categories;
-}
-
-function loadPage(slug) {
-    return request.get(`https://dash.readme.io/api/v1/docs/${slug}`, httpOptions());
-}
-
-async function savePagesToDisk(categories, baseDir) {
-    for (const category of categories) {
-        const pagesInCategory = await request.get(`https://dash.readme.io/api/v1/categories/${category}/docs`, httpOptions());
-        for (const json of pagesInCategory) {
-            savePageToDisk(json, category, null, baseDir);
-        }
-    }
-}
-
-async function savePageToDisk(pageJson, category, parent, baseDir) {
-    const slug = pageJson.slug;
-    const docDetails = await loadPage(slug);
-
-    const page = jsonToPage(docDetails, category, parent);
-
-    const outputFile = await page.writeTo(baseDir);
-    console.log(chalk.green(`Wrote contents of doc [${page.ref}] to file [${outputFile}]`));
-
-    const children = pageJson.children;
-    if (children) {
-        for (const child of children) {
-            savePageToDisk(child, category, page, baseDir);
-        }
-    }
-}
-
-/**
- * Converts JSON received from the Readme API to a `Page` object instance.
- * @param json The JSON object loaded from the API.
- * @param category An optional category to assign to the page (string)
- * @param parent An optional parent `Page` object.
- * @returns {Page}
- */
-function jsonToPage(json, category, parent) {
-    const headers = {
-        title: json.title,
-        excerpt: json.excerpt,
-    };
-    return new Page(category, parent ? parent.slug : null, json.slug, json.body, headers);
-}
-
-async function pushPage(page, options) {
-    const opts = httpOptions();
-    const pageJson = await loadPage(page.slug);
-
-    const loadedPage = jsonToPage(pageJson);
-
-    if (loadedPage.hash === page.hash) {
-        console.log(chalk.cyan(`Contents of page [${page.slug}] was not pushed because contents are the same.`));
-        return;
-    }
-
-    if (options.dryRun) {
-        console.log(chalk.dim(`DRY RUN: Would push contents of [${page.ref}] to readme.io`));
-    } else {
-        await request
-            .put(`https://dash.readme.io//api/v1/docs/${page.slug}`, {
-                ...opts,
-                json: Object.assign(pageJson, {
-                    body: page.content,
-                    ...page.headers,
-                    lastUpdatedHash: page.hash,
-                }),
-            });
-        console.log(chalk.green(`Pushed contents of [${page.ref}] to readme.io`));
-    }
 }
