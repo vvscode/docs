@@ -65,11 +65,15 @@ contents directory matches the slug of the page in Readme.
 
 Pushing contents for all categories defined in `config.yml`:
 
-    $ ./sync.js --key {KEY} --docsversion {VERSION} push
+    $ ./sync.js --apikey {KEY} --docsversion {VERSION} push
     
 Pushing contents for a specific category:
 
-    $ ./sync.js --key {KEY} --docsversion {VERSION} push sms
+    $ ./sync.js --apikey {KEY} --docsversion {VERSION} push sms
+    
+Simulate (dry run) a push of only locally Git-staged files:  
+
+    $ ./sync.js --apikey {KEY} --docsversion {VERSION} push sms --staged-only --dry-run   
     
 #### `fetch`
 
@@ -81,9 +85,41 @@ that represent the category/page hierarchy in Readme.
 
 Fetching contents of all categories defined in `config.yml`:
 
-    $ ./sync.js --key {KEY} --docsversion {VERSION} fetch
+    $ ./sync.js --apikey {KEY} --docsversion {VERSION} fetch
     
 Fetching contents for a specific category:
 
-    $ ./sync.js --key {KEY} --docsversion {VERSION} fetch sms
+    $ ./sync.js --apikey {KEY} --docsversion {VERSION} fetch sms
 
+#### `markdownize`
+
+Converts Readme-specific widget blocks to standard Markdown.
+
+**Usage examples**
+
+Replace all Readme widgets with their Markdown equivalent:
+ 
+    $ ./sync.js --apikey {KEY} --docsversion {VERSION} markdownize 
+
+Only show what changes would be performing without actually saving them:
+ 
+    $ ./sync.js --apikey {KEY} --docsversion {VERSION} markdownize --dry-run
+    
+Only convert Code and Image widgets from a specific content file:
+ 
+    $ ./sync.js --apikey {KEY} --docsversion {VERSION} markdownize --file sms/sms.md --widgets code,image
+    
+#### `validate`
+
+Runs a few sanity checks on content files, such as checking for broken links (both internal / cross references and remote URL links).    
+ 
+**Usage examples** 
+ 
+Run all validations on all content files:
+ 
+    $ ./sync.js --apikey {KEY} --docsversion {VERSION} validate  
+    
+Validate only cross references for a single file:
+ 
+    $ ./sync.js --apikey {KEY} --docsversion {VERSION} markdownize --file sms/sms.md --validations xrefs
+ 
