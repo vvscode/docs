@@ -13,39 +13,13 @@ So let’s start building.
 ## How to add Anonymous Calling
 
 In this tutorial we’re building a super simple API using C\# to redirect phone calls to a given number using our SVAML. We’ll use the caller ID of the calling party to determine where to connect the call. The flow of the calls in this kind of solution looks like this:
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/9f49808-napkin-diagram.png",
-        "napkin-diagram.png",
-        814,
-        385,
-        "#f5f5f5"
-      ]
-    }
-  ]
-}
-[/block]
+![napkin-diagram.png](https://files.readme.io/9f49808-napkin-diagram.png)
+
 In this tutorial, we are going to implement the backend part.
 
 As usual, you can find the full source code on [GitHub](https://github.com/sinch/net-redirect-call) or deploy directly to your Azure account if you want to try it out.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/0ccd0aa-deploybutton.png",
-        "deploybutton.png",
-        161,
-        34,
-        "#6fc7e2"
-      ]
-    }
-  ]
-}
-[/block]
+![deploybutton.png](https://files.readme.io/0ccd0aa-deploybutton.png)
+
 ## Prerequisites
 
 > 1.  A [Sinch account](https://portal.sinch.com/#/signup) and an app with keys
@@ -54,21 +28,8 @@ As usual, you can find the full source code on [GitHub](https://github.com/sinch
 ## Configure your app
 
 Once you have a phone number - in my case +1 213-454-0537 - assign it to your app by clicking on the pen and then Voice:
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/91e752c-dashboard.jpg",
-        "dashboard.jpg",
-        757,
-        285,
-        "#eee3f6"
-      ]
-    }
-  ]
-}
-[/block]
+![dashboard.jpg](https://files.readme.io/91e752c-dashboard.jpg)
+
 Enter a callback URL. This is the URL the Sinch service will hit when there is a call happening associated with your app.
 
 ## Code

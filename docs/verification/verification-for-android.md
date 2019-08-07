@@ -23,18 +23,4 @@ This document provides an overview for developers integrating with Sinch Verific
 > Removing `<uses-permission android:name="android.permission.READ_CALL_LOG" />` will effectively break flash call feature on Android 9 and newer. If you plan to use flash call feature, you’ll need to keep this permission in your manifest. Since this is one of the permissions restricted in normal use, you’ll have to declare how this permission will be used in your app. Below you’ll find a screenshot that shows properly selected use case for flash calls.
 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/9b057ba-permission-requests.png",
-        "permission-requests.png",
-        949,
-        891,
-        "#f9f9f9"
-      ]
-    }
-  ]
-}
-[/block]
+![permission-requests.png](https://files.readme.io/9b057ba-permission-requests.png)

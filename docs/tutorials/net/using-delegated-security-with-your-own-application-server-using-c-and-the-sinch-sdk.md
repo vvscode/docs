@@ -101,21 +101,8 @@ public string Signature(string userId) {
 ## Try it out
 
 To try it out, add the files from our `JS calling tutorial <using-sinch-js-sdk-make-voice-calls>` to a folder named SinchCalling.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/4d3fb41-addsinchcalling.PNG",
-        "addsinchcalling.PNG",
-        202,
-        324,
-        "#eaedf2"
-      ]
-    }
-  ]
-}
-[/block]
+![addsinchcalling.PNG](https://files.readme.io/4d3fb41-addsinchcalling.PNG)
+
 Open up the index.html and find:
 
 ```javascript

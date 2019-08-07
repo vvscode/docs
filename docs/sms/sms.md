@@ -5,13 +5,11 @@ excerpt: "This document provides a detailed user guide and reference documentati
 ## Overview
 
 We offer a number of different APIs and libraries that make it easy for you to use our SMS services globally, to send and receive messages.
-[block:callout]
-{
-  "type": "info",
-  "title": "Note",
-  "body": "If you are a local customer of Sinch Germany GmbH, using our domestic German platform, please contact our [German support team](support-de@sinch.com) for further assistance."
-}
-[/block]
+
+> **Note**    
+>
+> If you are a local customer of Sinch Germany GmbH, using our domestic German platform, please contact our [German support team](support-de@sinch.com) for further assistance.
+
 ## The different SMS APIs
 
 ### [REST](doc:rest) 

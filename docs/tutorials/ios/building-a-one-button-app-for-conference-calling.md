@@ -5,41 +5,15 @@ excerpt: "In this tutorial you will learn how to make a one-button application f
 Remember telephone [hotlines back in the 80s](http://guff.com/15-bizarre-1-900-numbers-from-the-80s-and-90s) ? I’ve been thinking about building a one-button app that does something stupid just like [Yo](https://www.justyo.co/). When we released [Conference Calling](https://www.sinch.com/products/voice/) ), I thought of the awesome video conferencing sites that are nothing more than a URL, and I wanted to make that kind of app, but for Conference Calling on mobile.
 
 Here comes **So**. An app like Yo, but for hanging out in voice-only group chat rooms. After you download the app, you create a “room” and invite your friends to hangout in it. Whenever you feel like it, open So, click on the button and see who’s active at the time.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/43bab80-Product.png",
-        "Product.png",
-        1600,
-        1162,
-        "#b7acc9"
-      ]
-    }
-  ]
-}
-[/block]
+![Product.png](https://files.readme.io/43bab80-Product.png)
+
 As always the full source code is available on GitHub, [click to download](https://github.com/sinch/ios-conferencecalling-so).
 
 ## Setup
 
 Login to your Sinch account or go to [sinch.com](https://www.sinch.com/signup) and sign up for free. Then, go to your apps at the dashboard and create a new clientapi app. Take note of your app’s unique key and secret.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/7c486ee-sandbox-apps.jpg",
-        "sandbox-apps.jpg",
-        1364,
-        273,
-        "#f8f0fb"
-      ]
-    }
-  ]
-}
-[/block]
+![sandbox-apps.jpg](https://files.readme.io/7c486ee-sandbox-apps.jpg)
+
 Open up XCode and create a new project using the Single-View Application template. Then set up CocoaPods to work with our app. In this tutorial, we’re going to use a small **UIFramework** I made.
 
 Open the directory for the project you just created in Terminal and type:
@@ -196,21 +170,8 @@ This snippet of code creates a special link, and composes a personal message tha
 ## Listen to URLTypes
 
 Open the info tab of your target to edit the p list and add an URL type to match the one you choose. In my case it’s `soap://`. The iPhone will search for an app that listens, whenever someone clicks on a link with `soap://`.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/f77e551-Project_1.png",
-        "Project_1.png",
-        1748,
-        1100,
-        "#f1f0f1"
-      ]
-    }
-  ]
-}
-[/block]
+![Project_1.png](https://files.readme.io/f77e551-Project_1.png)
+
 ## Reacting to a clicked URLTypes
 
 Now that we have a URL type defined, we can react to a clicked link instead of just launching the app **AppDelegate.m**. Add:

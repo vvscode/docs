@@ -138,21 +138,8 @@ We want our home view to show a list of current conferences and the ability to s
 
 Now run it, create a conference, and your page should look like this:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/543ce7d-homepage.png",
-        "homepage.png",
-        1007,
-        663,
-        "#e5e5e5"
-      ]
-    }
-  ]
-}
-[/block]
+![homepage.png](https://files.readme.io/543ce7d-homepage.png)
+
 That’s it for admin page. Next step is to add the callbacks to enable people to connect to the conference.
 
 ## Callback controller
@@ -213,21 +200,8 @@ First, you look at what type of event is coming in. Based on that, you 1) Play a
 
 Go to your dashboard and assign your rented number. Configure the Voice URL to be `http://your-site/callback/post`
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/2efcc83-dashboard.png",
-        "dashboard.png",
-        841,
-        374,
-        "#e8ddf5"
-      ]
-    }
-  ]
-}
-[/block]
+![dashboard.png](https://files.readme.io/2efcc83-dashboard.png)
+
 Deploy and take it for test spin\!
 
 ## Manage Conference Participants
@@ -337,21 +311,8 @@ Last enable the list in the Home/Index.cshtml to to be clickable. Change the lis
 ```
 
 Deploy, make a call to the number, and enter your pin. Hit the details and you should see something like this:
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/f520aed-confdetails.png",
-        "confdetails.png",
-        801,
-        359,
-        "#f9f9f9"
-      ]
-    }
-  ]
-}
-[/block]
+![confdetails.png](https://files.readme.io/f520aed-confdetails.png)
+
 ## Mute and Kick participants
 
 Go back to your **Home/Details.cshtml** view and add a couple of action links in the list of participants - one for muting/unmuting, and one for kicking out a participant.

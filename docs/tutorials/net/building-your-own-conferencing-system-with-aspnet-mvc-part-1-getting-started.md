@@ -14,39 +14,13 @@ This is part 1 of a new 2-part series, and when we are finished, we will have th
 > 6.  See the participants of a conference (next article)
 
 Sinch supports both regular phone calling and WebRTC calling for conferencing, as well as one-on-one conversations. When I built this system I started out from the [.NET Conference Calling template](https://github.com/sinch/net-ConferenceCalling) and went from there. The complete solution can be downloaded from GitHub [here](https://github.com/sinch/net-demo.sinch.com).
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/d48dc83-startpage.png",
-        "startpage.png",
-        1009,
-        866,
-        "#6f7887"
-      ]
-    }
-  ]
-}
-[/block]
+![startpage.png](https://files.readme.io/d48dc83-startpage.png)
+
 ## Using The System
 
 You can just deploy it to Azure using the deploy button below, and Azure will set up a database and configure Sinch app keys and secrets for you. Or you can just fork it and deploy the code wherever you want.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/9a633f6-deploybutton.png",
-        "deploybutton.png",
-        161,
-        34,
-        "#6fc7e2"
-      ]
-    }
-  ]
-}
-[/block]
+![deploybutton.png](https://files.readme.io/9a633f6-deploybutton.png)
+
 Now that this is out of the way, what we want to do is to enable both regular phones and web browsers to join a conference. The `ICE callback <incomingcalleventcallback>` information can help us in customizing the functionality for each use case.
 
 > 1.  Calling in from a phone - We want to play a prompt to the user to enter the conference PIN in order to be connected
@@ -147,21 +121,8 @@ public class ConferenceAtendee {
 ```
 
 **ConferenceController.cs** This is a pretty big controller as it hosts both the functionality to join a conference and to create a conference. Let’s take a look at **Create**. There are two actions where you create a conference.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/c5ec8a3-createconference.png",
-        "createconference.png",
-        1009,
-        866,
-        "#757d8c"
-      ]
-    }
-  ]
-}
-[/block]
+![createconference.png](https://files.readme.io/c5ec8a3-createconference.png)
+
 ```csharp
 [Authorize]
 [Route("~/Conference/Create")]
@@ -269,21 +230,8 @@ private IConference Getconference(string conferenceId) {
 ##Call Out To A Phone Number
 
 One other cool feature is that you can call out to a phone number to add them to the conference.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/4b8cd82-confdetails.png",
-        "confdetails.png",
-        1011,
-        868,
-        "#767d8b"
-      ]
-    }
-  ]
-}
-[/block]
+![confdetails.png](https://files.readme.io/4b8cd82-confdetails.png)
+
 ```csharp
 [Route("~/Conference/Callout")]
 public async Task<JsonResult> CallOut(string number, string conferenceId) {

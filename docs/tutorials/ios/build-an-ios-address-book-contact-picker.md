@@ -12,21 +12,8 @@ In this tutorial, we will be creating a contacts app for iOS that uses the Sinch
 You’ll also want a phone close by for testing later in the tutorial.
 
 At the end of the tutorial, you will have something that looks a bit like this:
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/0e9cd02-App-Screen-small.png",
-        "App-Screen-small.png",
-        282,
-        500,
-        "#a2a2a3"
-      ]
-    }
-  ]
-}
-[/block]
+![App-Screen-small.png](https://files.readme.io/0e9cd02-App-Screen-small.png)
+
 ## 1. Setup
 
 Open up XCode and create a new project using the Master-Detail Application template. This template will give us a nice base to start with, as it already has some of the components we need. Make sure that you choose Objective-C under language and iPhone under device.
@@ -257,69 +244,17 @@ Now go to **Main.storybaord**. First, change the title label in the Master view 
 
 Select the Table View by clicking on it. Then go to Editor\>Pin and select “Bottom Space to Superview.”
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/e267015-autolayout-pins.png",
-        "autolayout-pins.png",
-        507,
-        385,
-        "#d9e0dc"
-      ]
-    }
-  ]
-}
-[/block]
+![autolayout-pins.png](https://files.readme.io/e267015-autolayout-pins.png)
+
 Do this for “Top Space to Superview,” “Trailing Space to Superview,” and “Leading Space to Superview.” Remember to select the Table View before adding each pin. If done correctly, you’ll get a nice blue outline around your Table View, indicating that your Auto Layout pins were placed properly.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/f0cd1a2-autolayout.png",
-        "autolayout.png",
-        717,
-        706,
-        "#f2f3f3"
-      ]
-    }
-  ]
-}
-[/block]
+![autolayout.png](https://files.readme.io/f0cd1a2-autolayout.png)
+
 Then, add a Table View Cell to the Table View:
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/a0ecd8a-Table-Cell.png",
-        "Table-Cell.png",
-        689,
-        689,
-        "#f3f3f3"
-      ]
-    }
-  ]
-}
-[/block]
+![Table-Cell.png](https://files.readme.io/a0ecd8a-Table-Cell.png)
+
 Now, switch to the Assistant Editor and have your right pane display **DetailViewController.h**. Go ahead and delete the detailDiscriptionLabel. Hold down control and click and drag from the Table View to your interface to add a UITableView property. We’re going to display the selected contact’s numbers here, so give the table an appropriate name, such as numberTable.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/fd61f53-add-property.png",
-        "add-property.png",
-        735,
-        492,
-        "#f3f4f4"
-      ]
-    }
-  ]
-}
-[/block]
+![add-property.png](https://files.readme.io/fd61f53-add-property.png)
+
 Do the same with the Detail title, which will be a UINavigationItem. Call it something descriptive like contactTitle.
 
 ## 4. Contact details

@@ -5,37 +5,11 @@ excerpt: "This tutorial will add feature to the previous tutorial where you lear
 In this tutorial, we will be adding a feature to a previous project, the Facebook friend calling app. If you haven’t already, you can check that tutorial out [here](https://github.com/sinch/ios-call-your-facebookfriends).
 
 The feature we’ll be implementing is displaying user profile images. Once we’re done, the app will look something like this:
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/6ddbdf8-Login.png",
-        "Login.png",
-        300,
-        534,
-        "#f7f8fa"
-      ]
-    }
-  ]
-}
-[/block]
+![Login.png](https://files.readme.io/6ddbdf8-Login.png)
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/be9dd38-Call.png",
-        "Call.png",
-        300,
-        534,
-        "#fbfbfb"
-      ]
-    }
-  ]
-}
-[/block]
+
+![Call.png](https://files.readme.io/be9dd38-Call.png)
+
 ## 1. Setup
 
 Download the existing Facebook friend calling app from [Github](https://github.com/sinch/ios-call-your-facebookfriends) and install the necessary pods.

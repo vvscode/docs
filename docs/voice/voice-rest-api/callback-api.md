@@ -156,13 +156,11 @@ Example:
 
 
 **suppressCallbacks** if set to true, you are opting out of the callbacks for ACE and DiCE for this call.
-[block:callout]
-{
-  "type": "info",
-  "title": "Note",
-  "body": "You do not need to set *cli* or *number* if the values supplied by the client suffice."
-}
-[/block]
+
+> **Note**    
+>
+> You do not need to set *cli* or *number* if the values supplied by the client suffice.
+
 #### ConnectMXP
 ```json
 {
@@ -190,13 +188,11 @@ Example:
 
 
 **destination** is an optional parameter that allows you to specify or override the final call destination.
-[block:callout]
-{
-  "type": "info",
-  "body": "If you don’t dial the final destination, e.g. if you call another clinet and want a PSTN number to be called, then you need to specify the ‘destination’ parameter.",
-  "title": "Note"
-}
-[/block]
+
+> **Note**    
+>
+> If you don’t dial the final destination, e.g. if you call another clinet and want a PSTN number to be called, then you need to specify the ‘destination’ parameter.
+
 #### ConnectConf
 ```json
 {
@@ -326,13 +322,13 @@ With the *runMenu* action, the user will start listening to an IVR menu. This me
 **repeats** is the number of times that the repeatPrompt will be played.
 
 **maxDigits** is the maximum number of digits that is expected from a user to press. Once these digits are collected, a `PIE Event <PIE>` will be triggered containing these digits. The digits are collected when either the maximum number of digits are entered, the user presses “\#” or the user waits 5 seconds after the last entered digit.
-[block:callout]
-{
-  "type": "warning",
-  "title": "Important Notice",
-  "body": "Not all Actions are supported by all events. Each event lists the supported actions.\n\nURLs for the callbacks described in the section that follows are configured in the Sinch dashboard. If no URL is configured, the callback will not be invoked."
-}
-[/block]
+
+> **WARNING: Important Notice**    
+>
+> Not all Actions are supported by all events. Each event lists the supported actions.
+> 
+> URLs for the callbacks described in the section that follows are configured in the Sinch dashboard. If no URL is configured, the callback will not be invoked.
+
 ## Incoming Call Event Callback (ICE)
 
 When a call reaches the Sinch dashboard, the system makes a POST request to the specified calling callback URL.
@@ -400,13 +396,20 @@ You can find more information on callback request signing `here <callbackrequest
     Android, Javascript) though the data connection.
 
 **duration** shows the duration of the current call.
-[block:callout]
-{
-  "type": "info",
-  "body": "There is currently a known issue, which prevents*domain\\* to display “conference”, when the call is coming from a SDK client. It will display *pstn* instead. This will be fixed in a future release. You can still detect that this is a conference call originating a SDK client by looking into the “to” identity, which will look like this:\n\n*example of “to” field for a conference call*\n\n```json\n{\n    \"type\":\"conference\",\n    \"endpoint\":\"myCoolConference\"\n}\n```",
-  "title": "Note"
-}
-[/block]
+
+> **Note**    
+>
+> There is currently a known issue, which prevents*domain\* to display “conference”, when the call is coming from a SDK client. It will display *pstn* instead. This will be fixed in a future release. You can still detect that this is a conference call originating a SDK client by looking into the “to” identity, which will look like this:
+> 
+> *example of “to” field for a conference call*
+> 
+> ```json
+> {
+>     "type":"conference",
+>     "endpoint":"myCoolConference"
+> }
+> ```
+
 ### Response
 ```text
 [Svaml]

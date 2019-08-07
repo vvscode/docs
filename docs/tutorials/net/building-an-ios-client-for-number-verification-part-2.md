@@ -24,73 +24,21 @@ Using this framework, you should be able to drop it in an app, call a method and
 
 > 1.  Create a workspace name it **NumberValidator**
 > 2.  Create a new Cocoa Touch Framework
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/5c01fff-createproject.png",
-        "createproject.png",
-        719,
-        424,
-        "#f1f2f4"
-      ]
-    }
-  ]
-}
-[/block]
+![createproject.png](https://files.readme.io/5c01fff-createproject.png)
+
 > 3. Add it to the workspace
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/5f07073-addtoworkspace.png",
-        "addtoworkspace.png",
-        496,
-        146,
-        "#e1e2e3"
-      ]
-    }
-  ]
-}
-[/block]
+![addtoworkspace.png](https://files.readme.io/5f07073-addtoworkspace.png)
+
 Repeat steps 1 through 3 but add a Single Page application and call it **NumberValidatorSampleApp**.
 
 When you are finished, your workspace should look like this:
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/4939f8e-workspace_finished.png",
-        "workspace_finished.png",
-        1245,
-        570,
-        "#f1f1f2"
-      ]
-    }
-  ]
-}
-[/block]
+![workspace_finished.png](https://files.readme.io/4939f8e-workspace_finished.png)
+
 ## Setting the scene
 
 Create a storyboard in NumberValidator and name it **NumberValidatorStoryBoard**. Add one **NavigationController** and two view controllers so it looks like this:
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/8c3f162-storyboard.png",
-        "storyboard.png",
-        640,
-        398,
-        "#f8f8f8"
-      ]
-    }
-  ]
-}
-[/block]
+![storyboard.png](https://files.readme.io/8c3f162-storyboard.png)
+
 It doesn’t show very well on the image, but add a label just below the **Next** and **Done** buttons. Also add a **UIActivity** and center it in the views.
 
 ## Collecting user number
@@ -304,21 +252,8 @@ Add the cancel event to the **EnterPhoneNumber.m**. Find the cancel action and c
 
 In a framework app, you need to decide which headers should be visible, so select your **NumberValidator** project and go into *build phases*. Drag the header files so they look like this:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/01cef31-publicheaders.png",
-        "publicheaders.png",
-        714,
-        548,
-        "#f8f8f9"
-      ]
-    }
-  ]
-}
-[/block]
+![publicheaders.png](https://files.readme.io/01cef31-publicheaders.png)
+
 You also want to open up the **NumberValidator.h** and add the following imports to make them visible with only one import in the consumer.
 
 ```objectivec
@@ -328,21 +263,8 @@ You also want to open up the **NumberValidator.h** and add the following imports
 
 ##Creating a test client 
 Select the **NumberValidatorSampleApp** and go to *build phases*. Drag the **NumberValidator.framework** to Link Binary With Libraries. Open the story **Main.Storyboard** and add a button. Connect it with an action called validate.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/fa4c1dc-sampleappview.png",
-        "sampleappview.png",
-        449,
-        635,
-        "#fdfdfd"
-      ]
-    }
-  ]
-}
-[/block]
+![sampleappview.png](https://files.readme.io/fa4c1dc-sampleappview.png)
+
 In **ViewController.m**, add an import to our NumberValidator framework.
 
 ```objectivec

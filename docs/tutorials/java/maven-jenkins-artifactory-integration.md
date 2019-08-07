@@ -11,125 +11,34 @@ Before this, we had the luxury of needing only one dependency, which was not a b
 This should take about 30 minutes to complete and you will need some familiarity with Maven to get started.
 
 ## Setting up Artifactory
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/6fc4bd1-artifactory.png",
-        "artifactory.png",
-        291,
-        202,
-        "#dfdbdc"
-      ]
-    }
-  ]
-}
-[/block]
+![artifactory.png](https://files.readme.io/6fc4bd1-artifactory.png)
+
 First, download and install Artifactory from its [official site](http://www.jfrog.com/open-source/).
 
 We are using a Windows server virtual machine as a base for the Artifactory service to run. To install Artifactory, all you need to do is open the downloaded archive, go to `%ARTIFACTORY_HOME%\bin` and execute the file `artifactory.bat`.
 
 This script searches for the Java executable and runs Artifactory’s main class. After installing Artifactory, start the service either via Windows Services menu or using Command Prompt `(sc start|stop Artifactory)`.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/09117c0-services.png",
-        "services.png",
-        836,
-        247,
-        "#dedfe3"
-      ]
-    }
-  ]
-}
-[/block]
+![services.png](https://files.readme.io/09117c0-services.png)
+
 After that, Artifactory should be available at `http://SERVER_DOMAIN:8081/artifactory`. The dashboard looks something like this:
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/4d4915f-dashboard.png",
-        "dashboard.png",
-        975,
-        419,
-        "#e4eedf"
-      ]
-    }
-  ]
-}
-[/block]
+![dashboard.png](https://files.readme.io/4d4915f-dashboard.png)
+
 Next, we need to get it integrated into the CI server, which, in this case, is Jenkins. There is a pretty simple and user-friendly plugin for this called [Artifactory plugin](https://wiki.jenkins-ci.org/display/JENKINS/Artifactory+Plugin). After installing it, you should find a new ‘Artifactory’ section in your Jenkins settings, where you need to specify a Artifactory URL and user credentials.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/2f71604-developer-rights.png",
-        "developer-rights.png",
-        975,
-        461,
-        "#f8f8f8"
-      ]
-    }
-  ]
-}
-[/block]
+![developer-rights.png](https://files.readme.io/2f71604-developer-rights.png)
+
 Now we have a pipeline that can publish artifacts to the remote Artifactory server.
 
 The next step is configuring a job that will build our target project and push the compiled JAR to Artifactory.
 
 Create a new job and, in the settings page, find the Build section and a specify path to the POM file. You will also need to add Maven goals to get your project files built. In this case, we would also like to synchronize the Jenkins build version with the deployed artifact’s version. This is made via passing Jenkins `BUILD_NUMBER` variable to Maven.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/4703352-build.png",
-        "build.png",
-        975,
-        171,
-        "#f3f3f4"
-      ]
-    }
-  ]
-}
-[/block]
+![build.png](https://files.readme.io/4703352-build.png)
+
 In the post-build actions section, add deploy artifacts to the Artifactory step, specify that you would like to add your artifacts, and check the ‘Deploy Maven Artifacts’ checkbox.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/c5a229c-deploy.png",
-        "deploy.png",
-        975,
-        257,
-        "#f4f4f4"
-      ]
-    }
-  ]
-}
-[/block]
+![deploy.png](https://files.readme.io/c5a229c-deploy.png)
+
 You will also need to specify a project name and path to your repository.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/a8632d5-source-settings.png",
-        "source-settings.png",
-        975,
-        275,
-        "#f5f5f6"
-      ]
-    }
-  ]
-}
-[/block]
+![source-settings.png](https://files.readme.io/a8632d5-source-settings.png)
+
 As a final step, modify the target project’s POM file. Make sure you have `Maven-compiler-plugin` and `Maven-jar-plugin` in the plugins section.
 
 ```html
@@ -173,21 +82,8 @@ It is also important to add groupId, artifactId, version, and packaging to the t
 Bingo! Everything is set up to publish a compiled JAR file to a remote server. All you need to do is save all your changes, push it to your remote repository, and press the ‘Start building’ button in your Jenkins job that is connected to Artifactory.
 
 After the job has finalized all of its steps in the ‘Build history’ section, you should see a link to Artifactory where all the produced artifacts are stored.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/9fb2b47-build-history.png",
-        "build-history.png",
-        588,
-        149,
-        "#eae8e8"
-      ]
-    }
-  ]
-}
-[/block]
+![build-history.png](https://files.readme.io/9fb2b47-build-history.png)
+
 From now on, it is possible to use published artifacts in other projects as a Maven dependency.
 
 To set this up, add a dependency with the groupId and artifactId you specified in the previous steps. The version of the added dependency you can specify based on the version number that is deployed to Artifactory, e.g.:
@@ -221,37 +117,11 @@ And that’s it!
 
 The following scheme shows how the combination of Maven, Jenkins, and Artifactory works in a split team environment to maintain a shared test automation framework.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/17a04bb-process1.png",
-        "process1.png",
-        975,
-        111,
-        "#dbdbdf"
-      ]
-    }
-  ]
-}
-[/block]
+![process1.png](https://files.readme.io/17a04bb-process1.png)
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/0f098d3-process2.png",
-        "process2.png",
-        975,
-        286,
-        "#dde3e9"
-      ]
-    }
-  ]
-}
-[/block]
+
+![process2.png](https://files.readme.io/0f098d3-process2.png)
+
 A common workflow working with Artifactory is as follows:
 
 > 1.  Changes in target project are pushed to Git repository.

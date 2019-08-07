@@ -52,13 +52,11 @@ end
 
 
 
-[block:callout]
-{
-  "type": "info",
-  "title": "Note",
-  "body": "The directive \\`\\`use\\_frameworks\\!\\`\\` is necessary to make cocoapods add the framework to '*Embedded Binaries*'"
-}
-[/block]
+
+> **Note**    
+>
+> The directive \`\`use\_frameworks\!\`\` is necessary to make cocoapods add the framework to '*Embedded Binaries*'
+
 #### Note on uploading to App Store / iTunes Connect
 
 If you integrate the Sinch SDK via *CocoaPods*, you must not check the option "Include bitcode" when uploading the application binary. The reason is a [bug in CocoaPods](https://github.com/CocoaPods/CocoaPods/issues/4624). In the upload dialog in Xcode Organizer it should look something like this:
@@ -107,13 +105,11 @@ import SinchVerification
 
 
 
-[block:callout]
-{
-  "type": "info",
-  "title": "Note",
-  "body": "This import method requires iOS Deployment Target iOS 8.0 or above"
-}
-[/block]       "https://files.readme.io/0f8e419-swift-run-script-contents.png",
+
+> **Note**    
+>
+> This import method requires iOS Deployment Target iOS 8.0 or above
+       "https://files.readme.io/0f8e419-swift-run-script-contents.png",
         "swift-run-script-contents.png",
         732,
         151,
@@ -127,21 +123,8 @@ import SinchVerification
 
 5.  Make sure that *libc++*, *libz* and *libicucore* are linked (See `here <firsttimesetupios>`)
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/9b2867b-link-binary-with-libraries-xcode.png",
-        "link-binary-with-libraries-xcode.png",
-        499,
-        202,
-        "#f7f6f6"
-      ]
-    }
-  ]
-}
-[/block]
+![link-binary-with-libraries-xcode.png](https://files.readme.io/9b2867b-link-binary-with-libraries-xcode.png)
+
 **That's it\!**
 
 Now the SDK can be imported as follows (from any of your .swift files)

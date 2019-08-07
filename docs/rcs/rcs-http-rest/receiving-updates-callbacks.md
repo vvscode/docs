@@ -102,23 +102,9 @@ An SMS fallback was delivered since the RCS message was not delivered before it 
 ### Status reports
 
 Message status reports are sent whenever a message performs a state transition in the diagram below:
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/7a614d0-status_states.png",
-        "status_states.png",
-        619,
-        811,
-        "#cfcfc7"
-      ],
-      "caption": "Message state transitions and flow diagram. Rectangles represent states communicated using `StatusReport` callback payloads. The logic in the flow diagram is controlled by various options passed to the `FallbackInfo` when sending a message, combined with events such as message expiry (see `ExpireInfo`), supplier errors, etc.",
-      "sizing": "full"
-    }
-  ]
-}
-[/block]
+![status_states.png](https://files.readme.io/7a614d0-status_states.png)
+Message state transitions and flow diagram. Rectangles represent states communicated using `StatusReport` callback payloads. The logic in the flow diagram is controlled by various options passed to the `FallbackInfo` when sending a message, combined with events such as message expiry (see `ExpireInfo`), supplier errors, etc.
+
 #### Status descriptions
 
 | Status                         | Description                                                                                              |

@@ -16,21 +16,8 @@ Building such a system helps you:
 See the flow below. This tutorial is implementing the RFC 6238 that Google Authenticator uses.
 
 ## Appflow
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/1652434-render.png",
-        "render.png",
-        705,
-        361,
-        "#f4f4f4"
-      ]
-    }
-  ]
-}
-[/block]
+![render.png](https://files.readme.io/1652434-render.png)
+
 The goal is to have a template project using Sinch for SMS and SMS free 2FA that you can use in production for you website.
 
 This tutorial will take 60 to 120 minutes to finish; the finished sample can be [downloaded here](https://github.com/sinch/net-two-factor-auth/archive/master.zip).
@@ -43,21 +30,8 @@ This tutorial will take 60 to 120 minutes to finish; the finished sample can be 
 
 > 1.  Create a new a project
 > 2.  Select MVC project with basic authentication and WebAPI  
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/95a84ba-createprojectwithapi.png",
-        "createprojectwithapi.png",
-        770,
-        575,
-        "#e0e6ea"
-      ]
-    }
-  ]
-}
-[/block]
+![createprojectwithapi.png](https://files.readme.io/95a84ba-createprojectwithapi.png)
+
 > 3.  In PM console, update your packages `pm>update-package`
 > 4.  In PM console, install Sinch.SMS `pm>Install-Package Sinch.SMS`
 > 5.  In PM console, install OTPSharp `pm>Install-Package OtpSharp`
@@ -218,37 +192,11 @@ public async Task<ActionResult> DisableTwoFactorAuthentication()
 ### Run it
 
 Run the application by pressing **F5**, and log in again. You should now be presented with this:
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/8257732-loginscreen1.png",
-        "loginscreen1.png",
-        832,
-        532,
-        "#e1dcd5"
-      ]
-    }
-  ]
-}
-[/block]
+![loginscreen1.png](https://files.readme.io/8257732-loginscreen1.png)
+
 Press *Next* and get this:
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/3c7e5fd-loginscreen2.png",
-        "loginscreen2.png",
-        832,
-        532,
-        "#e1dcd5"
-      ]
-    }
-  ]
-}
-[/block]
+![loginscreen2.png](https://files.readme.io/3c7e5fd-loginscreen2.png)
+
 That’s not ideal, and in this sample, we are only going to support one, so as soon as someone tries to log in, we will skip directly to verify code. But first, let’s prepare an API to handle the mobile client.
 
 ## Adding API endpoints to verify phone and tokens
@@ -690,21 +638,8 @@ The above code forwards the data as well to the completion block. If you recall,
 ## Choose a PIN UI
 
 Let’s add and change the current UI to let us set a PIN. When we are done, it should look like below:
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/81510ca-storyboardpart4.png",
-        "storyboardpart4.png",
-        1838,
-        894,
-        "#fafafa"
-      ]
-    }
-  ]
-}
-[/block]
+![storyboardpart4.png](https://files.readme.io/81510ca-storyboardpart4.png)
+
 > 1.  Create a controller and call it **ChoosePinController**
 > 2.  Open up the ValidationStoryBoard.storyboard and add a new view
 >     1.  Change the titles of the Done button on the entered view to Next
@@ -714,21 +649,8 @@ Let’s add and change the current UI to let us set a PIN. When we are done, it 
 >     5.  Add a button and set the title to Save PIN
 
 Your view should now look like this:
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/060f4d2-choosepin-new.png",
-        "choosepin-new.png",
-        820,
-        446,
-        "#f6f6f7"
-      ]
-    }
-  ]
-}
-[/block]
+![choosepin-new.png](https://files.readme.io/060f4d2-choosepin-new.png)
+
 ## Hook up the text field and buttons
 
 Add an outlet and action for the text field and button **ChoosePinController**. At the same time, add a property that will hold the sharedSecret and the phone number while the user chooses a PIN.
@@ -846,21 +768,8 @@ Now the phone is verified. We have stored a user-generated PIN code and shared s
 
 > 1.  Add a new storyboard and call it **TOTP.storyboard**
 > 2.  Add text field and Next buttons like in the screenshot  
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/586ef06-totpview.png",
-        "totpview.png",
-        409,
-        838,
-        "#fcfcfd"
-      ]
-    }
-  ]
-}
-[/block]
+![totpview.png](https://files.readme.io/586ef06-totpview.png)
+
 > 3.  Create a UIVIewController and call it **TOTPController**
 > 4.  Set the file owner of the new created view to TOTPController and add outlets and actions to the buttons and text field.
 > 5.  Embed the controller in a navigation controller and set the storyboard of the navigation controller to TOTP (it will be used to launch the process in ValidationHelper later)

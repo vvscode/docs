@@ -29,22 +29,8 @@ This scheme has the benefit of the application secret never being directly acces
 > The need for the Sinch client to request an authentication signature and registration sequence is only required once per user and device–not on every application launch.
 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/0711e55-authentication_via_application_server.png",
-        "authentication_via_application_server.png",
-        686,
-        497,
-        "#f5f5f5"
-      ],
-      "sizing": "smart"
-    }
-  ]
-}
-[/block]
+![authentication_via_application_server.png](https://files.readme.io/0711e55-authentication_via_application_server.png)
+
 ### Generating the signature
 
 The *Application Server* is responsible for generating a valid signature for each registration request that it accepts as a valid user registration. The *sequence* is a [cryptographic nonce](http://en.wikipedia.org/wiki/Cryptographic_nonce), and must be a monotonically increasing value. The signature is then generated as as follows (pseudogrammar):

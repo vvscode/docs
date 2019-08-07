@@ -139,35 +139,8 @@ I like to use Postman for Chrome to test out my REST APIs. You can get it [here]
 Hit F5 to start the app locally and make a note of the port. In my case, it was 2945. Then head over to `http://localhost:yourport/Help` and you should see how to call our new API.
 
 In Postman, generate an SMS:
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/012ac31-postman_generate.png",
-        "postman_generate.png",
-        674,
-        87,
-        "#f5f5f5"
-      ]
-    }
-  ]
-}
-[/block]
+![postman_generate.png](https://files.readme.io/012ac31-postman_generate.png)
+
 And to verify code:
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/c045b11-postman_verify.png",
-        "postman_verify.png",
-        748,
-        39,
-        "#f6f6f6"
-      ],
-      "caption": "Testing a C# authentication system"
-    }
-  ]
-}
-[/block]
+![postman_verify.png](https://files.readme.io/c045b11-postman_verify.png)
+Testing a C# authentication system

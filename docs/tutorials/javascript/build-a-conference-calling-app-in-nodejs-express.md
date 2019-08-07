@@ -17,53 +17,14 @@ To get started, you will need:
 ## Rent a number
 
 Go to your dashboard, and click on numbers. Then click on the “Rent Numbers” button.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/01d0dc4-rentnumber1.png",
-        "rentnumber1.png",
-        1306,
-        614,
-        "#f5f3f7"
-      ]
-    }
-  ]
-}
-[/block]
+![rentnumber1.png](https://files.readme.io/01d0dc4-rentnumber1.png)
+
 Then, pick a local number you will be calling in to.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/4034dc9-rentnumber3.jpg",
-        "rentnumber3.jpg",
-        800,
-        419,
-        "#f7f4f8"
-      ]
-    }
-  ]
-}
-[/block]
+![rentnumber3.jpg](https://files.readme.io/4034dc9-rentnumber3.jpg)
+
 After your rented a number you need to configure your app. If you dont have one, just create a new one.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/219c19d-rentnumber_callback.png",
-        "rentnumber_callback.png",
-        860,
-        352,
-        "#f2e7f8"
-      ]
-    }
-  ]
-}
-[/block]
+![rentnumber_callback.png](https://files.readme.io/219c19d-rentnumber_callback.png)
+
 For this tutorial the endpoint for callbacks will be `http://yourserver/sinch` so make sure you have a place to host and configure your callback to that address.
 
 So now I have an app that as soon as someone dials **+14153493281** will make a callback to my URL. Because I have nothing there right now, the call will just hangup.
@@ -150,21 +111,8 @@ module.exports = router;
 ```
 
 The only thing this router does at the moment is to echo whatever you post in to Sinch. Try it out and make sure it works. I am using Postman to create my day to day testing.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/422a82a-postman_hello.png",
-        "postman_hello.png",
-        1157,
-        604,
-        "#eef1f1"
-      ]
-    }
-  ]
-}
-[/block]
+![postman_hello.png](https://files.readme.io/422a82a-postman_hello.png)
+
 ## Add Sinch funcationality.
 
 As mentioned before, as soon as someone calls in on a the phone number, Sinch will make a callback to my backend and I can respond with what we call **SVAML**. More information about our REST API’s can be found `here <voicerestapi>` and for this tutorial we are particularly interested in the `ICE event <incomingcalleventcallback>`.

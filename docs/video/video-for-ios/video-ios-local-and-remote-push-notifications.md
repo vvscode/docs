@@ -198,21 +198,8 @@ The Sinch SDK will automatically use VoIP push if *PushKit.framework* is linked 
 It is required to implement `-[SINCallClientDelegate localNotificationForIncomingCall:]` when using VoIP push.
 
 To enable VoIP push on devices that are capable of it and also fall back on regular remote notifications for iOS 6 and 7, we recommended to *weak link* PushKit.framework. In the Xcode target settings, go to *Build Phases* and the section *Link Binary With Libraries* and in the *Status* field on the right-hand side, select **Optional** (instead of *Required*):
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/e8e9dbd-weak_link_pushkit.png",
-        "weak_link_pushkit.png",
-        490,
-        79,
-        "#f7f7f7"
-      ]
-    }
-  ]
-}
-[/block]
+![weak_link_pushkit.png](https://files.readme.io/e8e9dbd-weak_link_pushkit.png)
+
 For more details on VoIP push notifications, see [here](https://developer.apple.com/library/prerelease/content/documentation/Performance/Conceptual/EnergyGuide-iOS/OptimizeVoIP.html)
 
 ## Sinch local notifications and the Notification Center

@@ -7,21 +7,8 @@ You can find the finished project [here](http://www.github.com/sinch/java-sms-tu
 ## Setup
 
 If you don’t yet have a Sinch developer account, create one at [sinch.com/signup](https://portal.sinch.com/#/signup). Us take note of the app key and secret.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/7816f2a-new-app.png",
-        "new-app.png",
-        703,
-        367,
-        "#f4ebf9"
-      ]
-    }
-  ]
-}
-[/block]
+![new-app.png](https://files.readme.io/7816f2a-new-app.png)
+
 ## Library for Base64 encoding
 
 You will need to download and add the commons codec library to your

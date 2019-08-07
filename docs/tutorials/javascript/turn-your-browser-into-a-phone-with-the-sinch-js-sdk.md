@@ -3,21 +3,8 @@ title: "Turn Your Browser Into a Phone With the Sinch JS SDK"
 excerpt: "A step-by-step walk through on how to build a web app to make VoIP calls between browsers using JavaScript. Read more."
 ---
 The UI isn’t anything to write home about, but the finished web app will looking something like this:
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/350da25-overview.png",
-        "overview.png",
-        589,
-        191,
-        "#e5deea"
-      ]
-    }
-  ]
-}
-[/block]
+![overview.png](https://files.readme.io/350da25-overview.png)
+
 The finished code for this tutorial can be found on [our Github](https://github.com/sinch/js-web-calling).
 
 ## Setup

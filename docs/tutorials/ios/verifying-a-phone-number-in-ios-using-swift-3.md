@@ -10,58 +10,19 @@ In this tutorial you’ll learn how to verify a user’s phone number using our 
 We also offer [Flash Call Verification](https://www.sinch.com/products/verification/flash-call/), but this is available for Android only.
 
 At the end of this tutorial we will have a basic app that looks like this:
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/1791cf5-screen1.png",
-        "screen1.png",
-        1001,
-        1717,
-        "#e1dae3"
-      ]
-    }
-  ]
-}
-[/block]
+![screen1.png](https://files.readme.io/1791cf5-screen1.png)
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/3f17669-screen2.png",
-        "screen2.png",
-        1000,
-        1717,
-        "#e7e3e7"
-      ]
-    }
-  ]
-}
-[/block]
+
+![screen2.png](https://files.readme.io/3f17669-screen2.png)
+
 ## Getting Started
 
 ### Sinch Setup
 
 > 1.  [Create an account](https://portal.sinch.com/#/signup)
 > 2.  Create an app and change set authorization to public (for now) 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/c8676b2-configureapp.png",
-        "configureapp.png",
-        735,
-        220,
-        "#ece1f3"
-      ]
-    }
-  ]
-}
-[/block]
+![configureapp.png](https://files.readme.io/c8676b2-configureapp.png)
+
 > 3.  Take note of the application key
 
 Head over to Xcode to get some basic setup.
@@ -184,21 +145,8 @@ Open up **Main.Storyboard** and add a view controller to the board and set the f
 > 5.  Add a segue from **ViewController.swift** to **EnterCodeViewController.swift** and call it **enterPin**.
 
 Add your constraints and make it look how you want, but it should look something like this:
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/96c697e-screen2.png",
-        "screen2.png",
-        1000,
-        1717,
-        "#e7e3e7"
-      ]
-    }
-  ]
-}
-[/block]
+![screen2.png](https://files.readme.io/96c697e-screen2.png)
+
 ### Initiating an SMS verification
 
 Initiating an SMS verification is very similar to Callout. The big difference here is when you get the success callback, it doesn’t mean its verified, it just means that we have sent an SMS. What we need to do after that is to send in a code that we get from user input to verify the code. In this case we do that in a separate view controller. So once we have the success, we perform the segue to show the entertain controller.

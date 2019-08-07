@@ -13,41 +13,15 @@ Sinch offers 2 ways to secure your app, the first one is the `Callback/webhook <
 This is the recommended way of securing your verification. Using Sinch Verification we send two events to your back end (if configured), one when someone wants to create a verification and one when the client tried to authenticate.
 
 We chose this approach for a couple of reasons, the first was to enable developers to easy try it out with no backend, the second was that we did not want to have the key and secret in-app, and OAuth seemed over complicated for a process that will most likely only occur once.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/d51cc29-diagram.png",
-        "diagram.png",
-        599,
-        342,
-        "#e5e9f0"
-      ]
-    }
-  ]
-}
-[/block]
+![diagram.png](https://files.readme.io/d51cc29-diagram.png)
+
 You can verify that the request is from us by signing the request you receive and comparing the hash with `authorization <usingrest-authorization>`, or if you prefer, ship a custom variable like your Token for your own api requests and validate that in the custom variables.
 
 ## Using node to respond to your callbacks
 
 Today I will set up a backend to allow or deny a verification attempt using Node.JS and [Express](http://expressjs.com/) . For testing and generating requests I will use our [api explorer](https://portal.sinch.com/#/apps) that you’ll find in the dashboard
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/7b820fb-apiexplorer.png",
-        "apiexplorer.png",
-        1056,
-        509,
-        "#f6eff9"
-      ]
-    }
-  ]
-}
-[/block]
+![apiexplorer.png](https://files.readme.io/7b820fb-apiexplorer.png)
+
 >   - Create the app
 
 ```shell
@@ -210,85 +184,20 @@ Start up ngrok:
 ```shell
 >ngrok http 8080
 ```
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/2daa49d-ngrok.png",
-        "ngrok.png",
-        1303,
-        195,
-        "#282828"
-      ]
-    }
-  ]
-}
-[/block]
+![ngrok.png](https://files.readme.io/2daa49d-ngrok.png)
+
 I will head over to my app in the dashboard and change the url to the above url.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/5b49eb8-seturl.png",
-        "seturl.png",
-        1396,
-        362,
-        "#ebddf3"
-      ]
-    }
-  ]
-}
-[/block]
+![seturl.png](https://files.readme.io/5b49eb8-seturl.png)
+
 Using the dev tools in the portal to hit my number again, and what happens?
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/8c0d74d-ngrockfail.png",
-        "ngrockfail.png",
-        2706,
-        1833,
-        "#e6e7e7"
-      ]
-    }
-  ]
-}
-[/block]
+![ngrockfail.png](https://files.readme.io/8c0d74d-ngrockfail.png)
+
 Looks like I forgot to add my number to the list of allowed numbers to verify, so with Postman (another awesome tool) I quickly add my number to the list.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/93569c7-postmanaddnumber.png",
-        "postmanaddnumber.png",
-        2376,
-        947,
-        "#f7f8fa"
-      ]
-    }
-  ]
-}
-[/block]
+![postmanaddnumber.png](https://files.readme.io/93569c7-postmanaddnumber.png)
+
 Ok, hit the number again and this time I get the expected allow\!
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/600ddab-ngrokallow.png",
-        "ngrokallow.png",
-        2592,
-        1531,
-        "#f2f3f4"
-      ]
-    }
-  ]
-}
-[/block]
+![ngrokallow.png](https://files.readme.io/600ddab-ngrokallow.png)
+
 ## What’s next?
 
 In order to use our verificaiton SDK, next steps for a real app would be to add logging, support for more types of verificaitons, and of course persistence and real security on my added numbers end points. To add some more security and verify the requests I get from the sinch plattform using our [request module](https://www.npmjs.com/package/sinch-request).

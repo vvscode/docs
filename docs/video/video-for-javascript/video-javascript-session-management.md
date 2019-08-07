@@ -31,22 +31,10 @@ This code will start a sinchClient, authenticate using Sinch authentication and 
 ## Resuming a session
 
 Next time the same visitor come back to the website, it’s nice if we can resume the same session. If we assume we have a saved session object, similar to the example above, we can resume it by passing the sessionObject to `sinchClient.start()`.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/6faf940-authentication_papi_resume.png",
-        "authentication_papi_resume.png",
-        455,
-        533,
-        "#f5f5f5"
-      ],
-      "caption": "Resume authenticated\nsession"
-    }
-  ]
-}
-[/block]
+![authentication_papi_resume.png](https://files.readme.io/6faf940-authentication_papi_resume.png)
+Resume authenticated
+session
+
 In this case the code may look something like this:
 ```javascript
 //Parse the saved session object

@@ -11,37 +11,11 @@ To get the most out of this tutorial, you will need to be familiar with the foll
 >   - XCode
 >   - Objective-C
 >   - CocoaPods
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/d69f696-Login.png",
-        "Login.png",
-        250,
-        445,
-        "#fdfdfd"
-      ]
-    }
-  ]
-}
-[/block]
+![Login.png](https://files.readme.io/d69f696-Login.png)
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/60b716c-Call-Out.png",
-        "Call-Out.png",
-        250,
-        445,
-        "#fafbfb"
-      ]
-    }
-  ]
-}
-[/block]
+
+![Call-Out.png](https://files.readme.io/60b716c-Call-Out.png)
+
 ## 1. Setup
 
 First, you will want to create an app on your [Sinch Dashboard](https://portal.sinch.com/#/login). Take note of the application key and secret, as we will need them later.
@@ -111,21 +85,8 @@ Now we can call the method in `viewDidLoad`:
     [self requestFriends];
 }
 ```
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/6b85228-Friends.png",
-        "Friends.png",
-        250,
-        445,
-        "#fbfcfc"
-      ]
-    }
-  ]
-}
-[/block]
+![Friends.png](https://files.readme.io/6b85228-Friends.png)
+
 Let’s work on displaying a friend’s info once he or she is selected. First, go to **DetailViewController.m**. Add the following method that will display the contact’s picture:
 
 ```objectivec
@@ -162,21 +123,8 @@ Then, go to the method `configureView`. Add to the if-statement to fill in a fri
 ```
 
 Great\! Now the user will be able to choose from a list of friends to see a player’s info.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/b475d80-Friend-Info-2.png",
-        "Friend-Info-2.png",
-        250,
-        445,
-        "#f9f9f9"
-      ]
-    }
-  ]
-}
-[/block]
+![Friend-Info-2.png](https://files.readme.io/b475d80-Friend-Info-2.png)
+
 ## 3. Making calls with SinchService
 
 We’ll be using SinchService to send and receive calls. SinchService allows us to handle calling from anywhere in our app by initializing a SINService object in the application’s AppDelegate.
@@ -365,35 +313,9 @@ When using Sinch calling, you can immediately tell when a call has established o
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 ```
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/c7eb8ba-Friend-Info-1.png",
-        "Friend-Info-1.png",
-        250,
-        445,
-        "#f8f9f9"
-      ]
-    }
-  ]
-}
-[/block]
+![Friend-Info-1.png](https://files.readme.io/c7eb8ba-Friend-Info-1.png)
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/21285e0-Call-Out.png",
-        "Call-Out.png",
-        250,
-        445,
-        "#fafbfb"
-      ]
-    }
-  ]
-}
-[/block]
+
+![Call-Out.png](https://files.readme.io/21285e0-Call-Out.png)
+
 That’s it\! You’ve created a fully functional app that lets you call your tennis friends using Sinch calling. There are even more features that you can add to this project such as Managed Push to help receive calls when the app is not open. `Learn more about Managed Push with SinchService here <ios-managedpush-with-sinchservice>`. To find more tutorials, be sure to check out the `Sinch Tutorial Site <tutorialssite>` or the [Sinch GitHub](https://github.com/sinch).

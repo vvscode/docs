@@ -33,21 +33,8 @@ After this, you’ll see an XCode workspace file with the extension “**.xcwork
 In our app, we wil first have the user log into Facebook. After this, the user will see a list of friends with the app who they can call. This means that we’ll need a login screen.
 
 First create a new cocoa touch class with subclass UIViewController and call it **LoginViewController**. Then, open **Main.storyboard**, create a new view controller and assign it the LoginViewController custom class. Remove the segue between the navigation controller and master view controller and put you login view between them. Connect the three with appropriate segues to look like this:
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/e452f04-Storyboard-Segues.png",
-        "Storyboard-Segues.png",
-        1132,
-        383,
-        "#f8f8f8"
-      ]
-    }
-  ]
-}
-[/block]
+![Storyboard-Segues.png](https://files.readme.io/e452f04-Storyboard-Segues.png)
+
 ## 2. Using Facebook
 
 Let’s add a login button to the login screen. If you need help doing this, you can check out [Facebook’s login documentation](https://developers.facebook.com/docs/facebook-login/ios/v2.3#login-button). Make sure that you enable the “user\_friends” permission.
@@ -65,21 +52,8 @@ Now, add a button to our login screen in **Main.storyboard** that will trigger a
     }
 }
 ```
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/4839d0d-Login.png",
-        "Login.png",
-        375,
-        667,
-        "#fafbfc"
-      ]
-    }
-  ]
-}
-[/block]
+![Login.png](https://files.readme.io/4839d0d-Login.png)
+
 We’ll need a way to store info for any friend that the user calls or recieves calls from. Create a class called **CFriend** that will store a friend’s name and ID. We’re keeping track of ID’s since these will serve as usernames later on. Now, add to the following code to **CFriend.h** in the interface:
 
 ```objectivec
@@ -166,21 +140,8 @@ Go to `tableView:cellForRowAtIndexPath:` and change two of the lines to read as 
 ```
 
 You should now be able to login and see a list of friends who have the app. You can use [Facebook’s test user feature](https://developers.facebook.com/docs/apps/test-users) to test your app out.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/d359d15-Friend-List.png",
-        "Friend-List.png",
-        375,
-        667,
-        "#fcfcfd"
-      ]
-    }
-  ]
-}
-[/block]
+![Friend-List.png](https://files.readme.io/d359d15-Friend-List.png)
+
 ## 3. Call Screen
 
 Before we continue, there is a flaw in the current design of our app: we can only access our call screen, **DetailViewController**, from **MasterViewController**. While this is fine for making calls, we want to be able to recieve calls and display the call screen from anywhere in the app.
@@ -220,21 +181,8 @@ Go to **Main.storyboard** and add two buttons to **DetailViewController**, givin
 
 @end
 ```
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/7cf91e5-Storyboard-Call-Screen.png",
-        "Storyboard-Call-Screen.png",
-        677,
-        687,
-        "#fefefe"
-      ]
-    }
-  ]
-}
-[/block]
+![Storyboard-Call-Screen.png](https://files.readme.io/7cf91e5-Storyboard-Call-Screen.png)
+
 ## 4. Making and Recieving Calls with SinchService
 
 If you haven’t already, go to your [Sinch Dashboard](https://portal.sinch.com/#/login/) and create a new app. Take note of you app’s key and secret.
@@ -449,35 +397,9 @@ Finally, there are delegate methods for whenever a call establishes or ends. Imp
 
 Now, whenever the user’s call ends, we dismiss the call screen, taking the user back to wherever he or she was in the app before the call began.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/76f503c-Outgoing-Call.png",
-        "Outgoing-Call.png",
-        375,
-        667,
-        "#fefefe"
-      ]
-    }
-  ]
-}
-[/block]
+![Outgoing-Call.png](https://files.readme.io/76f503c-Outgoing-Call.png)
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/03f4721-Incoming-Call.png",
-        "Incoming-Call.png",
-        375,
-        667,
-        "#fefefe"
-      ]
-    }
-  ]
-}
-[/block]
+
+![Incoming-Call.png](https://files.readme.io/03f4721-Incoming-Call.png)
+
 Congratulations, you have create an app to call your Facebook friends using SinchService\! There are even more features that you can add to this project. Managed Push, for example, can help you reach a user when their app is not open using push notificaitons. To learn more on how to use Managed Push with SinchService, check out this [tutorial](https://github.com/sinch/ios-managedpush-with-sinchservice).

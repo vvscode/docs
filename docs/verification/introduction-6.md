@@ -66,21 +66,8 @@ The SDK and REST API work together to ensure you the highest possible security a
   *   control if a given phone number can be associated to multiple accounts
  3.  Let the SDK automatically intercept (Android only) and report flash calls/SMS to the Sinch backend
  4.  Consolidate the final verification status in your backend using the Verification Result Event callback
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/eb29e43-verification_flow.png",
-        "verification_flow.png",
-        646,
-        372,
-        "#dee6e4"
-      ]
-    }
-  ]
-}
-[/block]
+![verification_flow.png](https://files.readme.io/eb29e43-verification_flow.png)
+
 ## Verification results and success rates
 
 Keep track of verification success rates and results in real time through the Sinch Dashboard. For each verification method, get accurate metrics on how your app is performing:

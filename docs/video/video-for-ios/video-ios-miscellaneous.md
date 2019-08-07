@@ -175,13 +175,11 @@ Because there might be multiple registered devices for the recipient user (for e
 
 
 
-[block:callout]
-{
-  "type": "info",
-  "body": "This example shows the calling case. Messaging works the same way.",
-  "title": "Note"
-}
-[/block]
+
+> **Note**    
+>
+> This example shows the calling case. Messaging works the same way.
+
 A push notification should be sent to each device, where each `pushPair.pushData` entry in the array corresponds to one device. The push notification should include the Sinch-specific payload so it can be forwarded to the Sinch client running on the destination device.
 
 The Sinch-specific payload should be embedded as custom payload data in the Apple Push Notification Payload, see JSON example below.
@@ -231,13 +229,11 @@ When the application receives a push notification from the Apple Push Notificati
 
 
 
-[block:callout]
-{
-  "type": "info",
-  "body": "You should have similar logic of relaying the push notification payload to the *SINClient*-instance in your implementation of `-[UIApplicationDelegate application: didReceiveRemoteNotification:]`.",
-  "title": "Note"
-}
-[/block]
+
+> **Note**    
+>
+> You should have similar logic of relaying the push notification payload to the *SINClient*-instance in your implementation of `-[UIApplicationDelegate application: didReceiveRemoteNotification:]`.
+
 ## Glossary
 
 This glossary defines some of the domain specific terms used throughout this document.

@@ -55,21 +55,8 @@ URI:  https://verificationapi-v1.sinch.com/verification/v1
 In combination with the Mobile or Web SDK (recommended)
 
 The following diagram shows how to use the Verification APIs when using the iOS, Android or Javascript SDKs to initiate a verification.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/1ad7295-verification.png",
-        "verification.png",
-        1280,
-        720,
-        "#faf9fb"
-      ]
-    }
-  ]
-}
-[/block]
+![verification.png](https://files.readme.io/1ad7295-verification.png)
+
 
 
 > **WARNING: Important**    
@@ -81,19 +68,6 @@ If you have configured a verification callback URL in the Sinch Portal (recommen
 ## Without the mobile or web SDK
 
 If you are not using the mobile or web Verification SDKs, then you need to implement all the client logic for intercepting calls (in case of flashcalls) and reporting the CLI or PIN (in case of SMS or callout verification) inside your app. The following diagram shows how to use Sinch Verification in this scenario.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/82d9a08-verification_without_sdk.png",
-        "verification_without_sdk.png",
-        1280,
-        720,
-        "#fbfbfc"
-      ]
-    }
-  ]
-}
-[/block]
+![verification_without_sdk.png](https://files.readme.io/82d9a08-verification_without_sdk.png)
+
 The verification requests will be triggered from your backend towards Sinch with the `Verification Request API <veri-req>`, by doing an `application signed request <applicationsignedrequest>`. Sinch dashboard will respond with the CLI filter (for flashcalls) or the template (in case of an SMS), or the polling intervals (in case of a callout). As soon as the flashcall or SMS is received by your app, your backend will need to report back to Sinch the CLI or PIN that was reported through the `Report Verification API <report-veri>`. Sinch will respond with the result of the verification.

@@ -82,37 +82,11 @@ ngrok http 5500
 ```
 
 After starting ngrok you should see the dynamic domain name you were given. Open a browser and point it to <http://localhost:4040/> and you should see this:
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/4920505-ngrokportal.png",
-        "ngrokportal.png",
-        1787,
-        1237,
-        "#dfe1e2"
-      ]
-    }
-  ]
-}
-[/block]
+![ngrokportal.png](https://files.readme.io/4920505-ngrokportal.png)
+
 Take note of the url. Before I connect up a real phone number in the Sinch portal, I want to make a sample request to the url. Head over to <http://svaml.net/simulator> to simulate an incoming call event.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/ea03e1b-svamlnet.png",
-        "svamlnet.png",
-        1629,
-        1911,
-        "#eaebeb"
-      ]
-    }
-  ]
-}
-[/block]
+![svamlnet.png](https://files.readme.io/ea03e1b-svamlnet.png)
+
 Change the url to the ngrok url. Hit test and you should now see what was posted to the server and what the response was in your <http://localhost:4040/>. Everything looks good\! If something’s not working the way you wanted, you can use your favorite node debugger and step thru code from real integration traffic. Awesome, right?
 
 ## Wrapping up
@@ -124,21 +98,8 @@ To make this happen you must have an application in the Sinch platform and a pho
 > 1.  Rent a number with voice capability in the [rent number](https://portal.sinch.com/#/numbers)
 > 2.  Go to your app <https://portal.sinch.com/#/apps> or create one
 > 3.  Configure the voice tab by adding your newly rented number and add your ngrok url
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/c47c644-sinchdashboard.png",
-        "sinchdashboard.png",
-        2093,
-        1386,
-        "#f1ecf3"
-      ]
-    }
-  ]
-}
-[/block]
+![sinchdashboard.png](https://files.readme.io/c47c644-sinchdashboard.png)
+
 Call the number and start seeing real live requests from the Sinch platform.
 
 Hope you found this helpful and if you have any questions dm me on @cjsinch

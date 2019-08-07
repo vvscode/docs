@@ -3,21 +3,8 @@ title: "Building a simple SMS notification system with Sinch"
 excerpt: "This tutorial will show you how to build a simple notification system by using Sinch. This will be a system I built for the Western Grands. Every year there are three main events in Quarter Midget racing, one for each region and one dirt event."
 ---
 A few months back, my son and I started to race [quarter midgets](https://en.wikipedia.org/wiki/Quarter_Midget_racing). It’s been a lot of fun, and a steep learning curve. Believe me, getting perfectly aligned cells without using tables in HTML is pretty easy compared to tuning a racing chassis\! It’s also amazing to meet the people that put in the hard work and their heart to make racing (somewhat) affordable for kids. Anyway, everyone is encouraged to contribute to the club with their skills - in my case, coding is a skill I am at least somewhat competent in. In this article I’ll show you a simple notification system I built for the Western Grands. Every year there are three main events in Quarter Midget racing, one for each region and one dirt event. Our club [Tri Valley Quarter Midget Association](https://www.tvqma.org/) has the honor of hosting the events this time around.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/34030b1-qmcar.jpg",
-        "qmcar.jpg",
-        2337,
-        1314,
-        "#7d7d82"
-      ]
-    }
-  ]
-}
-[/block]
+![qmcar.jpg](https://files.readme.io/34030b1-qmcar.jpg)
+
 This year, 250 cars and about 125 drivers will come from all over the Western States to race at our track in 17 different classes, for three intensive days. To manage all the races and drivers, and make sure everyone is in the right place at the right time, there’s a lot of logistics to take care of. To give you an idea of the schedule, 2 days alone are taken up with parking trailers, then every car needs to be checked for the correct fuel, inspected for safety, get weighed, have lap times measured and last but not least, get the cars and kids out on the track. Then each kid has practice laps, qualifying laps, heats, Lower Mains and the A mains. This is usually managed by a single person announcing over a PA system where people need to be at certain times. This year, the event is going to be too big for this to be effective. If someone is in their trailer, there’s no way they’ll be able to hear the announcer during the Grands. To solve this problem, I suggested a simple SMS system for the Tower and Pit stewards, enabling them to send SMS to communicate announcements. We believe this system has the potential to help people be on time, and also give them the confidence to relax and have fun\! After all, that’s what it’s all about\!
 
 ## Prerequisites
@@ -31,39 +18,13 @@ So the basic idea is that the track official who would usually announce somethin
 First we needed to collect phone numbers from racers, we managed this by advertising on social media, and having signs around the track asking people to send an SMS containing ‘START’ to +1 888-851-0949. Once a text was sent, the number was added to the database.
 
 The next thing we needed was a way for track officials to send out messages. In this case, we had two possibilities: 1. Via a website 2. Via a whitelist of numbers with the ability to send SMS to the number listed above
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/a0a6699-flowchart.png",
-        "flowchart.png",
-        524,
-        261,
-        "#f1f1f1"
-      ]
-    }
-  ]
-}
-[/block]
+![flowchart.png](https://files.readme.io/a0a6699-flowchart.png)
+
 ### Managing signups via SMS
 
 I bought a number in the [portal](https://portal.sinch.com/#/numbers) (Yeah, I know we should have way more countries in stock, it’s coming. For now mail me if you need a particular country), created an app and assigned the number a webhook url to receive SMS. During development I always use the awesome tool `ngrok <getting-second-number-testing-sinch-callbackswebhooks-ngrok>` during development.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/7787cde-dashboardcallback.png",
-        "dashboardcallback.png",
-        1103,
-        812,
-        "#f6f5f9"
-      ]
-    }
-  ]
-}
-[/block]
+![dashboardcallback.png](https://files.readme.io/7787cde-dashboardcallback.png)
+
 Next I needed to add a WebApi controller to handle all incoming SMS.
 
 *SMSController.cs*

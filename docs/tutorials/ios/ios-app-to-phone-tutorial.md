@@ -37,21 +37,8 @@ Save the file and in the terminal window type:
 Lastly, set the architectures on your project and the pod project to `armv7` and `armv7s`.
 
 Setting up the client Open the **Main.storyboard** in Xcode and add a textfield and a button. Set the text of the button to “Call.”
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/705b075-callscreen.png",
-        "callscreen.png",
-        431,
-        844,
-        "#fefdfd"
-      ]
-    }
-  ]
-}
-[/block]
+![callscreen.png](https://files.readme.io/705b075-callscreen.png)
+
 Add outlets and actions in **ViewController.h** like this:
 
 ```objectivec

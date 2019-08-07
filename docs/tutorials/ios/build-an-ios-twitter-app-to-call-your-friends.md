@@ -5,37 +5,11 @@ excerpt: "In this tutorial, you will learn how to make an app that lets users ca
 Twitter is a great way for people to connect, but it’s a shame that they can’t connect with voice calling. Sure, you can tag each other or direct message (DM) back and forth, but that can get a bit impersonal at times. In this tutorial, we’ll be making an app that lets users call people who they follow on Twitter. We’ll do this using Sinch [app-to-app calling](https://www.sinch.com/products/voice/data-calling/) to privately place calls with the user’s Twitter handle.
 
 To get the most out of this tutorial, you’ll need to be familiar with the following areas:
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/c558fa2-Login.png",
-        "Login.png",
-        250,
-        445,
-        "#a4a4a4"
-      ]
-    }
-  ]
-}
-[/block]
+![Login.png](https://files.readme.io/c558fa2-Login.png)
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/a1edafc-Call-in.png",
-        "Call-in.png",
-        250,
-        445,
-        "#fafafb"
-      ]
-    }
-  ]
-}
-[/block]
+
+![Call-in.png](https://files.readme.io/a1edafc-Call-in.png)
+
 ## 1. Setup
 
 Create an app on your [Sinch Dashboard](https://portal.sinch.com/#/login). Take note of the application key and secret, as you will need them later.
@@ -222,21 +196,8 @@ cell.detailTextLabel.text = [NSString stringWithFormat:@"@%@", object.username];
 
 Bingo\!
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/c2aefcd-Friends.png",
-        "Friends.png",
-        250,
-        445,
-        "#f9f9fa"
-      ]
-    }
-  ]
-}
-[/block]
+![Friends.png](https://files.readme.io/c2aefcd-Friends.png)
+
 So far we’ve integrated Twitter into our app. Now let’s add calling.
 
 ## 3. Call screen and calling with SinchService
@@ -461,21 +422,8 @@ Finally, let’s take advantage of some handy delegate methods to change some of
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 ```
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/573ba24-Call-out.png",
-        "Call-out.png",
-        250,
-        445,
-        "#fcfcfc"
-      ]
-    }
-  ]
-}
-[/block]
+![Call-out.png](https://files.readme.io/573ba24-Call-out.png)
+
 Congrats\! You’ve created a basic app that lets users call people they follow on Twitter. As you can see, it’s simple to integrate Sinch into your app.
 
 One feature you might want to add to this app is Managed Push. (`Learn more about Managed Push with SinchService <ios-managedpush-with-sinchservice>`.) You can also find more Sinch tutorials on the <span class="title-ref">Sinch tutorial site \<tutorialsite\></span> or on [Sinch’s GitHub](https://github.com/sinch). Of course, you can also find us on Twitter [@SinchDev](https://twitter.com/sinchdev).

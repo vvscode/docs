@@ -5,21 +5,8 @@ excerpt: "At Sinch, we’ve been fortunate not only to provide an intuitive API,
 At Sinch, we’ve been fortunate not only to provide an intuitive API, but also contribute to the open-source community around it. Part of that initiative is the SinchService for iOS. With it, we’ve abstracted a lot of the heavy lifting and common functionality so you can get started with Sinch as fast as possible.
 
 In this tutorial, we’ll take a look at the SinchService, discuss some best practices, and explain how to use it. This builds on Christian’s `How to Use iOS Managed Push tutorial <tutorial-iosmanagedpush>`.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/c0c6fa4-pushImage-small.png",
-        "pushImage-small.png",
-        282,
-        500,
-        "#9a999d"
-      ]
-    }
-  ]
-}
-[/block]
+![pushImage-small.png](https://files.readme.io/c0c6fa4-pushImage-small.png)
+
 ## Getting started
 
 To get started with this tutorial, be sure to download the starter project `here <sinchvvvdownloads>`. The SDK comes packaged with a few sample projects, but the one we are interested in is called “SinchCallingPushWithService”. Note that if you already have a project using the Sinch SDK, you can use that as well.
@@ -42,21 +29,8 @@ No matter if you are using the sample app or one of your own, you’ll need to h
 Note that if you don’t include certificates for VoIP services or user Pushkit, the legacy push notifications will still function just fine.
 
 Once you’ve generated the certificates, upload them to your Sinch dashboard for the application you’re working with. All three push notifications certificate types are supported:
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/8d7ed75-ssKeys.PNG",
-        "ssKeys.PNG",
-        1790,
-        888,
-        "#f8f3fa"
-      ]
-    }
-  ]
-}
-[/block]
+![ssKeys.PNG](https://files.readme.io/8d7ed75-ssKeys.PNG)
+
 At this point, you’re ready to start using Sinch and push notifications. Let’s take a look at some of the things SinchService can do for us.
 
 ## SinchService: Why use it?

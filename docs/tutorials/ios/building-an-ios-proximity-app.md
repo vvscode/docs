@@ -9,21 +9,8 @@ Sinch is the easiest way to integrate real-time instant messaging and voice comm
 Today, we will be working on a project to integrate Sinch into an iOS application. This will let users connect with other users nearby using Apple’s multi-peer connectivity framework; once a connection has been made, either user will be able to call the other. We will achieve this by exchanging userIDs once a connection is established between two devices. This application will also use Parse as a means of managing users, logins, and storage of some basic data.
 
 Check out a few screenshots of what we will be building.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/fd51ff2-overview.jpg",
-        "overview.jpg",
-        1656,
-        500,
-        "#f8f8f9"
-      ]
-    }
-  ]
-}
-[/block]
+![overview.jpg](https://files.readme.io/fd51ff2-overview.jpg)
+
 To complete this tutorial, you will need some basic Objective-C language knowledge. It’s very in-depth and we hope that beginners and intermediate developers are all able to complete this tutorial. You can also download the whole GitHub repo at <https://github.com/sinch/ios-proximity-tutorial/> .
 
 Just for some quick insight, here’s the basic concepts behind the multi-peer connectivity framework. This framework uses pre-existing Wi-Fi networks and Bluetooth to connect one iOS device to another. The platform itself has provisions for the transfer of various file types and also has the ability to stream data from one device to another. Apple’s AirDrop platform is presumably built on none other than the multi-peer framework.
@@ -31,21 +18,8 @@ Just for some quick insight, here’s the basic concepts behind the multi-peer c
 To get started, download the starter project from the GitHub repository, which contains all the storyboards and view controllers to complete this tutorial. Along the way, you may be required to add a few classes, though. We’ve connected all the views and buttons to their respective methods within the code to simplify this tutorial. Once you’ve opened the starter project in Xcode, navigate to www.parse.com. You will need to sign up for a free account, create a project, download the [iOS SDK](https://parse.com/downloads/ios/parse-library/latest), and use the quick-start guide to acquire your App ID and Client ID. Once you have those, take note of them and head over to the Xcode project.
 
 When testing this, you might have trouble finding other devices or attempting to connect to other devices; this mainly occurs when trying to connect through Bluetooth because the AirDrop security settings on one of the devices doesn’t allow every device to connect. If you’re having trouble, swipe up on your iOS device, select AirDrop, and then select ‘Everyone.’ This will allow any other device to connect to yours via AirDrop. Be sure to change the settings back once you’re done testing. If it still isn’t working, make sure that both of the devices’ Bluetooth is set to “on” or that they’re connected to the same Wi-Fi network.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/a96da27-airdrop.png",
-        "airdrop.png",
-        338,
-        600,
-        "#817f7e"
-      ]
-    }
-  ]
-}
-[/block]
+![airdrop.png](https://files.readme.io/a96da27-airdrop.png)
+
 There are two methods of adding Parse and Sinch to our project: We can either import them as frameworks or use CocoaPods. For many reasons, CocoaPods is best, mainly because of version compatibility. If you’re unaware of how to use CocoaPods, head over to the [CocoaPods](https://guides.cocoapods.org/using/getting-started.html) site and follow the guides. Once you’ve worked out how to make a Podfile, edit that Podfile and add two pods. The two pods will be Sinch and Parse. The finished Podfile should look like this:
 
     target 'SinchMultiPeer' do
@@ -57,21 +31,8 @@ There are two methods of adding Parse and Sinch to our project: We can either im
 
     end
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/282d7c0-podfile.png",
-        "podfile.png",
-        639,
-        407,
-        "#fafafa"
-      ]
-    }
-  ]
-}
-[/block]
+![podfile.png](https://files.readme.io/282d7c0-podfile.png)
+
 After you’ve finished editing the Podfile, be sure to save it and use the cd command in terminal to navigate to your project. Use the command `pod install` to add the finishing touches. Installing the pods could take some time, so be patient. From now on, you will be required to use the .xcworkspaces file to finish your project instead of the .xcodeproj file; make sure to switch over now.
 
 If you do go down the road of adding the files by importing the frameworks, you will need to make some modifications to the linker tags when you add Sinch to the project. Check out the other guides on `Sinch <tutorialssite>` to get the full instructions on how to go about this.
@@ -93,21 +54,8 @@ You will now need to add some local frameworks in Xcode to ensure the Parse fram
 >   - libsqlite3.dylib
 
 Your Xcode window should look something like this:
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/21f4bb4-frameworks.png",
-        "frameworks.png",
-        1280,
-        800,
-        "#eeeeee"
-      ]
-    }
-  ]
-}
-[/block]
+![frameworks.png](https://files.readme.io/21f4bb4-frameworks.png)
+
 Now you’re ready to start coding. Navigate over to the AppDelegate.m file. Below ‘\#import “AppDelegate.h”, import the Parse framework so that you can start using it. Add this code:
 
 ```objectivec
@@ -254,21 +202,8 @@ Now go ahead and do the same in the signupViewController. Keep in mind that ther
 Although we can log in and sign up at this point, there isn’t much else we can do. Now it’s time to get to work. First, we will find some friends using the multi-peer framework. Then we will work out how to connect with them using the Sinch SDK.
 
 Before we get to work, take a quick look at the storyboard; it’s like our roadmap. From our login/signup view controllers, you will see a navigation controller. Embedded in our navigation controller is our view controller titled “Chats,” which is connected to the newFriends class. Both our multi-peer and Sinch frameworks will be implemented here. From there, we have two view controllers: our call screen and our incoming call screen. Those should be pretty self-explanatory; they’re both connected to their respective classes.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/ffe55f9-storyboard.png",
-        "storyboard.png",
-        1075,
-        686,
-        "#fcfcfc"
-      ]
-    }
-  ]
-}
-[/block]
+![storyboard.png](https://files.readme.io/ffe55f9-storyboard.png)
+
 To add multi-peer connectivity, add the framework. This can be done in the same place we added all of those frameworks earlier on. Once you’ve done that, head over to newFriends.m and import the framework into the file, like this:
 
 ```objectivec
