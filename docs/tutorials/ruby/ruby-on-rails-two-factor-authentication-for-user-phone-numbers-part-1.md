@@ -119,53 +119,14 @@ I like to use Postman for Chrome to test out my REST APIs. You can get it [here]
 Use `$ rails s` to start a local Rails server and take note of the port. In my case it was 3000.
 
 In Postman, generate a code:
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/4eb818f-postman_generate.png",
-        "postman_generate.png",
-        829,
-        521,
-        "#fafafb"
-      ]
-    }
-  ]
-}
-[/block]
+![postman_generate.png](https://files.readme.io/4eb818f-postman_generate.png)
+
 See the code arrive in an SMS:
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/29de93d-sms_code.jpg",
-        "sms_code.jpg",
-        1080,
-        610,
-        "#93aab4"
-      ]
-    }
-  ]
-}
-[/block]
+![sms_code.jpg](https://files.readme.io/29de93d-sms_code.jpg)
+
 Then verify the code:
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/4105d3b-postman_verify.png",
-        "postman_verify.png",
-        1312,
-        621,
-        "#fcfcfc"
-      ]
-    }
-  ]
-}
-[/block]
+![postman_verify.png](https://files.readme.io/4105d3b-postman_verify.png)
+
 ## Hosting
 
 If you’re going to follow part 2 of this tutorial, you will need to host this backend somewhere. I chose [Heroku](http://www.heroku.com), since it’s easy to host a Rails app there and it has a huge free tier. After you’ve created an account, [follow the steps on the site to deploy your app](https://devcenter.heroku.com/articles/getting-started-with-rails4#deploy-your-application-to-heroku). Make sure to follow through the section on migrating your database.

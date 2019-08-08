@@ -8,19 +8,6 @@ When using the `Sinch JavaScript SDK <voiceforjs>` locally in Chrome, it is nece
 > 2.  Quit Chrome\! Don’t just close your open tabs, but actually **quit\!** 
 > 3.  From your terminal, run `$ YOUR_EXECUTABLE_PATH --allow-file-access-from-files`
 > 4.  Chrome should launch now. Navigate back to [chrome://version](chrome://version/) to see that the flag has been added properly 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/9069eea-example.png",
-        "example.png",
-        681,
-        145,
-        "#ebe9ec"
-      ]
-    }
-  ]
-}
-[/block]
+![example.png](https://files.readme.io/9069eea-example.png)
+
 > 5.  To quit, press **Ctrl-C** in the terminal tab that is running Chrome.

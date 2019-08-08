@@ -19,21 +19,8 @@ First, let’s set up the Slash command for users to use.
 >   - Create a [new Slash Command](https://sinch.slack.com/services/new)
 >   - Set the method to `POST` and fill in the autocomplete help text and descriptive label. This is just to help your end users
 >   - In this project we are not using the token for authentication, but if you are scaling this out, you might want to look into this for authentication
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/d544186-slack-command.png",
-        "slack-command.png",
-        1910,
-        1032,
-        "#f6f7f7"
-      ]
-    }
-  ]
-}
-[/block]
+![slack-command.png](https://files.readme.io/d544186-slack-command.png)
+
 ## PHP Script
 
 First we want to receive the data a user is sending from Slack. We can do that with the following lines:
@@ -77,21 +64,8 @@ Then set the message body with the rest of the array with `$message = array("mes
 ## User feedback
 
 Finally, we will send a success message to the user in Slack using `echo "\n Your message was sent.";`.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/97b669f-messageid.png",
-        "messageid.png",
-        376,
-        77,
-        "#f5f5f4"
-      ]
-    }
-  ]
-}
-[/block]
+![messageid.png](https://files.readme.io/97b669f-messageid.png)
+
 In the end, we get this:
 
 ```php
@@ -133,21 +107,8 @@ echo "\n Your message was sent.";
 ```
 
 There is also another message sent to the user on line 30 in the code which will send a Sinch message ID back to the user, or an error message. You can remove this if you want to deal with it yourself.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/c6fb1db-feedback.png",
-        "feedback.png",
-        976,
-        702,
-        "#f8faf9"
-      ]
-    }
-  ]
-}
-[/block]
+![feedback.png](https://files.readme.io/c6fb1db-feedback.png)
+
 ## Testing
 
 Run a few tests in Slack to check the system works. You must enter a phone number with the international dialling code at the beginning, either as **+12784210884** or **0012784210884**. If you enter a number like 12784210884, you will get an error as the Sinch API needs the international dialling code to send.

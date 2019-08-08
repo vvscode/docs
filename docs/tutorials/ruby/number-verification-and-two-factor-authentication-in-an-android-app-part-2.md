@@ -9,21 +9,8 @@ excerpt: "Learn how to build an Android Client App that uses verification API."
 In this part of the tutorial, you will build an Android client app that uses the verification API you built in `part 1 <ruby-on-rails-authentication>`.
 
 Your finished app will look like this:
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/3ca9504-app-screen.png",
-        "app-screen.png",
-        903,
-        613,
-        "#d5d5d6"
-      ]
-    }
-  ]
-}
-[/block]
+![app-screen.png](https://files.readme.io/3ca9504-app-screen.png)
+
 Start by creating a new project in Android Studio. I’ll call the first activity **GetCodeActivity**. In this activity, the user will input his or her phone number and then you will make a request to your-website.com/generate (from part 1 of this tutorial) to generate a one-time code.
 
 Start by adding permission to use the internet:
