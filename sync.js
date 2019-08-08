@@ -3,7 +3,7 @@
 const program = require('commander');
 const yaml = require('js-yaml');
 const fs = require('fs');
-const request = require('request-promise-native');
+const path = require('path');
 const stagedGitFiles = require('staged-git-files');
 const chalk = require('chalk');
 const readlineSync = require('readline-sync');
@@ -39,6 +39,11 @@ program
         'When called with a comma-delimited list of category slugs, only those categories will be fetched.')
     .option('-d, --dir <dir>', 'Destination directory where docs Markdown files will be written', DEFAULT_DOCS_DIR)
     .action(async (slug, cmd) => {
+        const options = {
+            dir: cmd.dir,
+            categories: slug,
+        };
+
         const modifiedContentFiles = (await stagedGitFiles())
             .map(details => details.filename)
             .filter(file => file.startsWith(cmd.dir));
@@ -52,10 +57,24 @@ program
 
         const readme = apiClient();
 
-        readme.fetchPages(listCategories(slug), async page => {
+        let fetchedPages = await readme.fetchPages(listCategories(slug), async page => {
             const outputFile = await page.writeTo(cmd.dir);
             console.log(chalk.green(`Wrote contents of doc [${page.ref}] to file [${outputFile}]`));
         });
+
+        let fetchedPagePaths = fetchedPages.map(page => page.path);
+
+        // build the catalog from local content files
+        const catalog = Catalog.build(cmd.dir);
+        const catalogPagePaths = (await selectPages(catalog, options)).map(page => page.path);
+
+        const staleLocalPages = catalogPagePaths.filter(path => !fetchedPagePaths.includes(path));
+
+        if (staleLocalPages.length > 0) {
+            console.log(chalk.yellow(`WARNING: Found ${staleLocalPages.length} possibly stale local content pages; they were not fetched from Readme:`));
+            staleLocalPages.forEach(path => console.log(chalk.yellow(` - ${path}`)));
+            console.log(chalk.yellow(`They might have been deleted or moved.`));
+        }
     });
 
 program
@@ -68,7 +87,9 @@ program
     .option('--dry-run', `No remote content will be updated but command output will show what would be done.`)
     .action(async (slug, cmd) => {
         const options = {
+            dir: cmd.dir,
             file: cmd.file,
+            categories: slug,
             stagedOnly: cmd.stagedOnly,
             dryRun: cmd.dryRun
         };
@@ -96,8 +117,9 @@ program
     .option('--dry-run', `Will only output modifications that would be made, without actually saving them.`)
     .action(async (slug, cmd) => {
         const options = {
-            categories: slug,
+            dir: cmd.dir,
             file: cmd.file,
+            categories: slug,
             dryRun: cmd.dryRun,
             verbose: cmd.dryRun || cmd.verbose,
         };
@@ -144,8 +166,9 @@ All validations are performed unless --validations is specified.
     .option('--validations <validations>', `Comma-delimited list of validations to perform. See command help for supported validations.`)
     .action(async (slug, cmd) => {
         const options = {
-            categories: slug,
+            dir: cmd.dir,
             file: cmd.file,
+            categories: slug,
             stagedOnly: cmd.stagedOnly,
         };
         const catalog = Catalog.build(cmd.dir);
@@ -204,7 +227,8 @@ async function selectPages(catalog, options) {
 
     if (options.stagedOnly) {
         const stagedFiles = await stagedGitFiles();
-        pages = pages.filter(page => stagedFiles.includes(page.path));
+        const stagedFilePaths = stagedFiles.map(stagedFile => stagedFile.filename);
+        pages = pages.filter(page => stagedFilePaths.includes(path.join(options.dir, page.path)));
     }
     return pages;
 }
