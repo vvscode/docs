@@ -125,5 +125,5 @@ Run all validations on all content files:
     
 Validate only cross references for a single file:
  
-    $ ./readme.js markdownize --file sms/sms.md --validations xrefs
+    $ ./readme.js markdownize --file sms/sms.md --validators xrefs
  

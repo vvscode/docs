@@ -11,7 +11,8 @@ const chalk = require('chalk');
 const readlineSync = require('readline-sync');
 
 const markdownize = require('./lib/markdownize');
-const { Catalog, Page, XrefLink, UrlLink, MailtoLink } = require('./lib/catalog');
+const validators = require('./lib/validators');
+const { Catalog } = require('./lib/catalog');
 const { Api } = require('./lib/api-client');
 
 const DEFAULT_CONFIG_FILE = 'config.yml';
@@ -154,7 +155,7 @@ program
     .command('validate [category_slugs]', )
     .description(`Validates Markdown content files. 
     
-The following validations are available:
+The following validators are available:
 
  - 'urls':      Verifies that URLs do resolve to an existing. An HTTP HEAD request is performed for each URL.
  - 'xrefs':     Verifies that internal cross references point to known content.
@@ -166,7 +167,7 @@ All validations are performed unless --validations is specified.
     .option('-d, --dir <dir>', `Directory where the Markdown content files will be loaded from.`, DEFAULT_DOCS_DIR)
     .option('-f, --file <file>', `Path to a single file to process, relative to the directory specified with -d/--dir option.`)
     .option('--staged-only', `Only validate Git staged files. Important: files must have been added to the index with 'git add'`)
-    .option('--validations <validations>', `Comma-delimited list of validations to perform. See command help for supported validations.`)
+    .option('--validators <validators>', `Comma-delimited list of validators to run. See command help for supported validators.`)
     .action(async (slug, cmd) => {
         const options = {
             dir: cmd.dir,
@@ -182,30 +183,23 @@ All validations are performed unless --validations is specified.
             return;
         }
 
-        let validations = ['xrefs', 'urls', 'mailtos', 'headings'];
-        if (cmd.validations) {
-            validations = cmd.validations.split(',');
+        const availableValidators = Object.keys(validators);
+        let selectedValidators = availableValidators;
+        if (cmd.validators) {
+            selectedValidators = cmd.validators.split(',');
         }
 
+        selectedValidators = selectedValidators.map(name => {
+            if (name in availableValidators) return availableValidators[name];
+            console.log(chalk.red(`Validator '${name}' is not recognized.`));
+            process.exit(1);
+        });
+
         for (const page of pages) {
-            const logInvalidElement = (element, err) => {
-                console.log(`${chalk.cyan(element.ref)} [${chalk.yellow(element.desc)}]: ${err}`);
-            };
-
-            if (validations.includes('xrefs')) {
-                validateLinks(catalog, page, XrefLink, logInvalidElement);
-            }
-
-            if (validations.includes('mailtos')) {
-                validateLinks(catalog, page, MailtoLink, logInvalidElement);
-            }
-
-            if (validations.includes('urls')) {
-                validateLinks(catalog, page, UrlLink, logInvalidElement);
-            }
-
-            if (validations.includes('headings')) {
-                validateHeadings(catalog, page, logInvalidElement);
+            for (const validator of selectedValidators) {
+                validator.validate(catalog, page, (element, err) => {
+                    console.log(`${chalk.cyan(element.ref)} [${chalk.yellow(element.desc)}]: ${err}`);
+                });
             }
         }
     });
@@ -236,27 +230,12 @@ async function selectPages(catalog, options) {
 }
 
 
-function validateLinks(catalog, page, type, invalidCallback) {
-    const links = page.listLinks().filter(link => link instanceof type);
-    for (const link of links) {
-        link.resolve(catalog).catch(err => invalidCallback(link, err));
-    }
-}
-
-function validateHeadings(catalog, page, invalidCallback) {
-    const headings = page.listHeadings().filter(heading => heading.depth === 1);
-    headings.forEach(heading => invalidCallback(heading,
-        'Heading with level 1 are reserved for page titles. ' +
-        'Use headings of level 2 and more in content files.'));
-}
-
-
 function loadConfigYaml(path) {
     try {
         return yaml.safeLoad(fs.readFileSync(path, 'utf8'));
     } catch (e) {
         console.log(e);
-        process.exit();
+        process.exit(1);
     }
 }
 
@@ -267,7 +246,7 @@ function globalOption(config, defaultValue) {
 
     if (value === undefined && defaultValue === undefined) {
         console.log(`Global option '${config}' is required. Provide it with --${config} option or ${envVar} environment variable.`);
-        process.exit();
+        process.exit(1);
     }
     return value || defaultValue;
 }
