@@ -5,9 +5,9 @@ excerpt: "In this tutorial, you'll learn the basics of sending an SMS from a Jav
 ---
 This tutorial will walk you through the steps to send an SMS using Sinch's Java SDK from a server or command line application.
 
-# Prerequisites
+## Prerequisites
 
-## Create your free Sinch account
+### Create your free Sinch account
 
 Before starting, first make sure you have a Sinch account. You can create an account with free credits to start sending messages using the [Sinch Dashboard](https://dashboard.sinch.com/signup).
 
@@ -17,7 +17,7 @@ Once your account is created and you're logged into the dashboard, you can obtai
 >
 > When your account is in trial mode (such as when you've just created it), the message body of each message will be replaced by a generic message to prevent malicious uses of our API. Your messages will also be sent from a random phone number.
 
-## Check your Java JDK version
+### Check your Java JDK version
 
 The Sinch Java SDK is compatible with **Java 6** and above. You will need to make sure the Java Development Kit (JDK) is installed on your computer. You can verify if you have the right version of the JDK installed by running this command in the terminal: 
 
@@ -27,16 +27,16 @@ javac -version
 
 If the command fails or the displayed version is smaller than `1.6`, you should download and install a more recent version of the JDK, available on the [Java SE Downloads](https://www.oracle.com/technetwork/java/javase/downloads/index.html) page.
 
-## Get the Sinch Java SDK library
+### Get the Sinch Java SDK library
 
 The Java SDK is published on the [Maven Central](https://repo1.maven.org/maven2/com/clxcommunications/sdk-xms) repository which means it can easily be added to your project if you're using Gradle, Maven or another dependency management tool for the Java language. Instructions for most of the tools are
 available on [mvnrepository](https://mvnrepository.com/artifact/com.clxcommunications/sdk-xms).
 
 You can also manually download the JAR file from [Maven Central](https://repo1.maven.org/maven2/com/clxcommunications/sdk-xms) but you'll also need to add all of the other dependencies listed on [mvnrepository](https://mvnrepository.com/artifact/com.clxcommunications/sdk-xms). 
 
-# Send an SMS with Java
+## Send an SMS with Java
 
-## Create a connection to the REST API
+### Create a connection to the REST API
 
 The SDK requires you to first create an `ApiConnection` object that you will re-use for interacting with the API for the entire duration your application is running. This `ApiConnection` instance should be created once and closed when your application is shut down. It is not recommended and not efficient to create an `ApiConnection` instance for every interaction with the API.
 
@@ -51,7 +51,7 @@ ApiConnection connection = ApiConnection.builder()
         .start();
 ```
 
-## Send an SMS to one or multiple recipients
+### Send an SMS to one or multiple recipients
 
 Once an `ApiConnection` object is created and started, you can use it to interact with the API, such as sending an SMS message to one recipient:
 
@@ -78,15 +78,17 @@ connection.createBatch(ClxApi.batchTextSms()
         .build());
 ```
 
-## Close the connection to the REST API when your application shuts down
+### Close the connection to the REST API when your application shuts down
 
-When your application is shutting down, you should stop the `ApiConnection` that was created to interact with the REST API:
+When you're done using the `ApiConnection` or when your application is shutting down, you should stop the `ApiConnection` that was created to interact with the REST API:
 
 ```java
 connection.stop();
 ```
 
-There are multiple ways you can ensure the `ApiConnection` is closed upon shut down of your application:
+This is to ensure all resources created by the SDK such as the thread pool are stopped and freed. 
+
+There are multiple ways you can ensure the `ApiConnection` is closed:
 
  - **_try/finally_ statement**
    
@@ -128,7 +130,7 @@ try (connection) {
  
    Dependency Injection frameworks such as Spring, Guice or Picocontainer offer specific tools to execute code when the JVM is shutting down, such as the [`@PreDestroy` annotation](https://docs.oracle.com/javase/8/docs/api/javax/annotation/PreDestroy.html)
   
-# Wrap up
+## Wrap up
 
 To wrap up, here's the complete sources of a minimal Java application that starts a connection to the Sinch REST API, sends a message then closes the connection.
 
