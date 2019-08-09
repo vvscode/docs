@@ -38,8 +38,13 @@ program.option(`-c, --config [config]`,
 
 program
     .command('fetch [category_slugs]')
-    .description('Fetches up-to-date Markdown content files from readme.io, overwriting local files. ' +
-        'When called with a comma-delimited list of category slugs, only those categories will be fetched.')
+    .description(`
+Fetches up-to-date Markdown content files from readme.io, overwriting local files.
+When called with a comma-delimited list of category slugs, only pages from those categories will be fetched.
+
+After crawling remote pages, the contents of the local catalog will be analyzed to find stale pages (pages present 
+locally but not present on Readme). If any are found, the program will offer to prune them.
+`)
     .option('-d, --dir <dir>', 'Destination directory where docs Markdown files will be written', DEFAULT_DOCS_DIR)
     .action(async (slug, cmd) => {
         const options = {
@@ -74,10 +79,10 @@ program
         const staleLocalPages = catalogPages.filter(page => !fetchedPagePaths.includes(page.path));
 
         if (staleLocalPages.length > 0) {
-            console.log(chalk.yellow(`WARNING: Found ${staleLocalPages.length} possibly stale local content pages; they were not fetched from Readme:`));
+            console.log(chalk.yellow(`WARNING: Found ${staleLocalPages.length} possibly stale local content pages; they were not fetched after crawling Readme:`));
             staleLocalPages.forEach(page => console.log(chalk.yellow(` - ${page.ref}`)));
 
-            if (readlineSync.keyInYN(chalk.yellow(`They might have been deleted or moved. Do you want to delete these pages?`))) {
+            if (readlineSync.keyInYN(chalk.yellow(`They might have been deleted or moved. Do you want to prune these pages?`))) {
                 catalog.deletePages(cmd.dir, staleLocalPages);
             }
         }
