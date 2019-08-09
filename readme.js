@@ -69,14 +69,17 @@ program
 
         // build the catalog from local content files
         const catalog = Catalog.build(cmd.dir);
-        const catalogPagePaths = (await selectPages(catalog, options)).map(page => page.path);
+        const catalogPages = (await selectPages(catalog, options));
 
-        const staleLocalPages = catalogPagePaths.filter(path => !fetchedPagePaths.includes(path));
+        const staleLocalPages = catalogPages.filter(page => !fetchedPagePaths.includes(page.path));
 
         if (staleLocalPages.length > 0) {
             console.log(chalk.yellow(`WARNING: Found ${staleLocalPages.length} possibly stale local content pages; they were not fetched from Readme:`));
-            staleLocalPages.forEach(path => console.log(chalk.yellow(` - ${path}`)));
-            console.log(chalk.yellow(`They might have been deleted or moved.`));
+            staleLocalPages.forEach(page => console.log(chalk.yellow(` - ${page.ref}`)));
+
+            if (readlineSync.keyInYN(chalk.yellow(`They might have been deleted or moved. Do you want to delete these pages?`))) {
+                catalog.deletePages(cmd.dir, staleLocalPages);
+            }
         }
     });
 
