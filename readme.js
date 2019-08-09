@@ -74,7 +74,7 @@ locally but not present on Readme). If any are found, the program will offer to 
 
         // build the catalog from local content files
         const catalog = Catalog.build(cmd.dir);
-        const catalogPages = (await selectPages(catalog, options));
+        const catalogPages = await selectPages(catalog, options);
 
         const staleLocalPages = catalogPages.filter(page => !fetchedPagePaths.includes(page.path));
 
