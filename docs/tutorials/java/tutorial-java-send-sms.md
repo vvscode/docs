@@ -16,7 +16,7 @@ Once your account is created and you're logged into the dashboard, you can obtai
 >
 > When your account is in trial mode (such as when you've just created it), the message body of each message will be replaced by a generic message to prevent malicious uses of our API. Your messages will also be sent from a random phone number.
 
-## Check you Java JDK version
+## Check your Java JDK version
 
 The Sinch Java SDK is compatible with **Java 6** and above. You will need to make sure the Java Development Kit (JDK) is installed on your computer. You can verify if you have the right version of the JDK installed by running this command in the terminal: 
 

@@ -7,9 +7,9 @@ This repository holds the sources for the documentation hosted on [readme.io](ht
 All contents are stored in `.md` files under the `docs` directory. Each subdirectory represents a category slug, and
 subsequent subdirectories mimic the page hierarchy in Readme.
 
-## `sync.js` CLI
+## `readme.js` CLI
 
-## Preparation
+### Preparation
 
 If NVM (Node Version Manager) is not installed, [install it](https://github.com/nvm-sh/nvm#installation-and-update).
 
@@ -29,17 +29,21 @@ user interface.
 
 ### Configuration
 
-Global configurations can be provided either via `--` options on the command line, or via environment variables. 
-If both are provided (not recommended), the `--` option will have precedence over the environment variable.
+Global configurations can be provided either :
+ - via `--` global options on the command line
+ - via environment variables
+ - via a [`.env` file](https://www.npmjs.com/package/dotenv) to automatically set environment variables (recommended approach)
+ 
+If both global options and environment variables are provided, the `--` global option will have precedence over the environment variable.
 
-The following global configurations are available:
+The following configurations are available:
 
-| Option            | Environment Variable |
+| Global Option     | Environment Variable |
 | ---               | ---                  |
 | `--apikey`        | `APIKEY`             |
 | `--docsversion`   | `DOCSVERSION`        |
 
-See help (`-h`) for details of each configuration option.
+See the general help (`./readme.js -h`) for details of each configuration option.
 
 In addition to the global configuration, the file `config.yml` contains general configuration for the CLI. 
 The following fields are available:
@@ -52,7 +56,7 @@ The following fields are available:
 
 You can get help for the CLI or for any command by running it with `-h` argument:
 
-    $ ./sync.js [command] -h 
+    $ ./readme.js [command] -h 
 
 ### Commands
 
@@ -65,15 +69,15 @@ contents directory matches the slug of the page in Readme.
 
 Pushing contents for all categories defined in `config.yml`:
 
-    $ ./sync.js --apikey {KEY} --docsversion {VERSION} push
+    $ ./readme.js push
     
 Pushing contents for a specific category:
 
-    $ ./sync.js --apikey {KEY} --docsversion {VERSION} push sms
+    $ ./readme.js push sms
     
 Simulate (dry run) a push of only locally Git-staged files:  
 
-    $ ./sync.js --apikey {KEY} --docsversion {VERSION} push sms --staged-only --dry-run   
+    $ ./readme.js push sms --staged-only --dry-run   
     
 #### `fetch`
 
@@ -85,11 +89,11 @@ that represent the category/page hierarchy in Readme.
 
 Fetching contents of all categories defined in `config.yml`:
 
-    $ ./sync.js --apikey {KEY} --docsversion {VERSION} fetch
+    $ ./readme.js fetch
     
 Fetching contents for a specific category:
 
-    $ ./sync.js --apikey {KEY} --docsversion {VERSION} fetch sms
+    $ ./readme.js fetch sms
 
 #### `markdownize`
 
@@ -99,15 +103,15 @@ Converts Readme-specific widget blocks to standard Markdown.
 
 Replace all Readme widgets with their Markdown equivalent:
  
-    $ ./sync.js --apikey {KEY} --docsversion {VERSION} markdownize 
+    $ ./readme.js markdownize 
 
 Only show what changes would be performing without actually saving them:
  
-    $ ./sync.js --apikey {KEY} --docsversion {VERSION} markdownize --dry-run
+    $ ./readme.js markdownize --dry-run
     
 Only convert Code and Image widgets from a specific content file:
  
-    $ ./sync.js --apikey {KEY} --docsversion {VERSION} markdownize --file sms/sms.md --widgets code,image
+    $ ./readme.js markdownize --file sms/sms.md --widgets code,image
     
 #### `validate`
 
@@ -117,9 +121,9 @@ Runs a few sanity checks on content files, such as checking for broken links (bo
  
 Run all validations on all content files:
  
-    $ ./sync.js --apikey {KEY} --docsversion {VERSION} validate  
+    $ ./readme.js validate  
     
 Validate only cross references for a single file:
  
-    $ ./sync.js --apikey {KEY} --docsversion {VERSION} markdownize --file sms/sms.md --validations xrefs
+    $ ./readme.js markdownize --file sms/sms.md --validations xrefs
  

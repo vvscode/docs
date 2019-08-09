@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+require('dotenv').config();
+
 const program = require('commander');
 const yaml = require('js-yaml');
 const fs = require('fs');
