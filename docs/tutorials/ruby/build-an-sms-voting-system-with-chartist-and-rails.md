@@ -1,4 +1,5 @@
 ---
+id: "5d4aa84cdf8b4f033dd8ad51"
 title: "Build an SMS Voting System With Chartist and Rails"
 excerpt: "Build an SMS Voting System With Chartist and Rails. An easy way to let users vote. This tutorial we will be building an SMS voting system that displays a list of submissions with a corresponding “app number” which attendees can then text to a phone number to place their vote."
 ---

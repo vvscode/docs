@@ -1,4 +1,5 @@
 ---
+id: "5d4a7b86c3794b001a93a3b8"
 title: "Using Delegated Security With Your Own Application Server Using C# and the Sinch SDK"
 excerpt: "Our recommended way for authenticating with Sinch is by using delegated security. This is especially important when you are using the WebSDK, since there is no good way of hiding your application security."
 ---

@@ -1,4 +1,5 @@
 ---
+id: "5d4be92441a72300110e9eb4"
 title: "Sending SMS With Python"
 excerpt: "In this tutorial, you will use the Python module SinchSMS to send an SMS message. Learn how our API allows you to send simple notifications, verifications & more"
 ---

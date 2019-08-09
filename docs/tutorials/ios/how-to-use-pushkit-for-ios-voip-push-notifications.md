@@ -1,4 +1,5 @@
 ---
+id: "5d494763f46bc50018a36211"
 title: "How to use Pushkit for iOS VoIP push notifications"
 excerpt: "In this tutorial we will investigate the PushKit framework and make it run with the Sinch Voice API."
 ---

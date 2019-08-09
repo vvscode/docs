@@ -1,4 +1,5 @@
 ---
+id: "5d4a96092422ba0018b86386"
 title: "Send OTP codes with text to speech calls using Sinch and Node.js"
 excerpt: "Send OTP codes with text to speech calls using Sinch and Node.js In this tutorial you will learn how to use node.js to build a text to speech call that reads out pin-codes."
 ---

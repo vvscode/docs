@@ -1,4 +1,5 @@
 ---
+id: "5d4be4eb41a72300110e9e38"
 title: "Use the Sinch JavaScript SDK in Your Servlet Project"
 excerpt: "This tutorial will focus mostly on authentication; after that, the implementation in your HTML and JavaScript files is the same as the sample projects included in the SDK."
 ---

@@ -1,4 +1,5 @@
 ---
+id: "5d4a988afcad4b005512a856"
 title: "Send an SMS with the Sinch .Net server-side SDK"
 excerpt: "In this tutorial we’ll be creating an application to send an SMS. We’ll be using a clientapi environment, and in the clientapi, you can only send messages to verified numbers on your account."
 ---

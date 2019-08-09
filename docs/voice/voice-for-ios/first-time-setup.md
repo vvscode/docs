@@ -1,4 +1,5 @@
 ---
+id: "5d3ae65bf91f08004770fc9a"
 title: "First time setup"
 excerpt: "Follow this step-by-step guide if you want to set up the Sinch Voice w/ Video SDK for the first time."
 ---

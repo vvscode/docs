@@ -1,4 +1,5 @@
 ---
+id: "5d4a794792e3f200145ec45e"
 title: "Maven + Jenkins + Artifactory Integration"
 excerpt: "In this quick tutorial, you will learn how to get started using Artifactory, Maven, and Jenkins in sync. Continue reading our simple step-by-step guide now."
 ---

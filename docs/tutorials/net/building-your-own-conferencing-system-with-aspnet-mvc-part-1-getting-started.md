@@ -1,4 +1,5 @@
 ---
+id: "5d4a7e7a86b8040030b6d75f"
 title: "Building Your Own Conferencing System With ASP.NET MVC - Part 1: Getting Started"
 excerpt: "We look at the conferencing system that we built to use with our customers. This is part 1 of a new 2-part series"
 ---

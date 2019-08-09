@@ -1,4 +1,5 @@
 ---
+id: "5d47f4744c1aeb01827967c9"
 title: "Verify Phone Numbers – Flash Call Verification"
 excerpt: "This tutorial will show you how to verify your users with no interaction required from the user in two minutes. This uses the Sinch Flash Call technology for Android, and lets you ensure that a user is in possession of a phone number by relying on the regular phone network."
 ---

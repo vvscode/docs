@@ -1,4 +1,5 @@
 ---
+id: "5d4959a1db1f6b00660575b5"
 title: "Sign requests in Java"
 excerpt: "This tutorial will walk you through building a simple Java project that uses Sinch to sign a request to send an SMS. Why sign your requests instead of using basic authentication?"
 ---

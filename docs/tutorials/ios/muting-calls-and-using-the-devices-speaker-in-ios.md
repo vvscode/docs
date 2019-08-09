@@ -1,4 +1,5 @@
 ---
+id: "5d494889b4930e012f58f7e0"
 title: "Muting Calls and Using the Device’s Speaker in iOS"
 excerpt: "In this tutorial, we will build an ordinary iOS app-to-phone calling app. However, we will be investigating some of the cool features Sinch has added to make muting calls and using the iOS device’s speaker really easy."
 ---

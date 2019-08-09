@@ -1,4 +1,5 @@
 ---
+id: "5d36c8f26574a2001a683336"
 title: "getMMSTemplates"
 excerpt: ""
 ---

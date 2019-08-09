@@ -1,4 +1,5 @@
 ---
+id: "5d4aa2714e517a00497c950a"
 title: "Authenticate to the Sinch JavaScript SDK From Your PHP Backend"
 excerpt: "In this tutorial you will learn how to authenticate to Sinch JS SDK from a PHP backend. Use it to securely start the Sinch Client."
 ---

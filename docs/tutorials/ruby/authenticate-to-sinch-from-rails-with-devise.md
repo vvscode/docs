@@ -1,4 +1,5 @@
 ---
+id: "5d4aa81faa381f005e53c18b"
 title: "Authenticate to Sinch From Rails With Devise"
 excerpt: "This tutorial will walk through the steps to authenticate users to the Sinch JavaScript SDK with a Rails backend. You will use the devise gem to securely authenticate and store your users’ info."
 ---

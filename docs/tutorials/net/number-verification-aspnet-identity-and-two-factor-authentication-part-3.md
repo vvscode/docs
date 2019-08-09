@@ -1,4 +1,5 @@
 ---
+id: "5d4a8b66aa381f005e53be33"
 title: "Number Verification, ASP.NET Identity and Two-Factor Authentication - Part 3"
 excerpt: "Number Verification, ASP.NET Identity and Two-Factor Authentication - Part 3 In this tutorial you learn how to create an SMS provider for Microsoft Identity that comes shipped with in the .NET framework."
 ---

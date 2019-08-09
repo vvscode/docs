@@ -1,4 +1,5 @@
 ---
+id: "5d4bf133c2f6510047fc814e"
 title: "Start Chrome With Flags (Mac)"
 excerpt: "When using the Sinch JavaScript SDK locally in Chrome, it is necessary to start Chrome with the flag. Learn how to do it with our simple step-by-step guide."
 ---

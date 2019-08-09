@@ -1,4 +1,5 @@
 ---
+id: "5d3704ec7763410039e668c5"
 title: "Voice for JavaScript"
 excerpt: "The Sinch JavaScript Voice SDK is a product that makes adding voice calling, instant messaging or phone verification to web apps easy. It handles the complexity of signaling and audio management while providing you the freedom to create a stunning user interface."
 ---

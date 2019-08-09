@@ -1,4 +1,5 @@
 ---
+id: "5d4a9387ecf31d0012f88059"
 title: "Sinch SMS node module"
 excerpt: "Node module to send SMS world-wide from within a Node or web application (using Browserify)."
 ---

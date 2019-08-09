@@ -1,4 +1,5 @@
 ---
+id: "5d3f68e7ad465c01602f1f6d"
 title: "Starting the Client and Providing Authorization Credentials for User Registration"
 excerpt: ""
 ---

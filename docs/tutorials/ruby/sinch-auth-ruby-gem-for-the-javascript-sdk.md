@@ -1,4 +1,5 @@
 ---
+id: "5d4aa9cdfcad4b005512aa50"
 title: "Sinch Auth Ruby Gem for the JavaScript SDK"
 excerpt: "This tutorial shows how you can use the gem sinch_auth to generate a user ticket that authenticates users through the Sinch JavaScript SDK."
 ---

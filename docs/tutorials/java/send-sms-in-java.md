@@ -1,4 +1,5 @@
 ---
+id: "5d495a07c2ba17002250a695"
 title: "Send SMS in Java"
 excerpt: "This tutorial will walk you through building a simple Java SMS project that uses Sinch to send an SMS."
 ---

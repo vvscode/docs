@@ -1,4 +1,5 @@
 ---
+id: "5d403d4c428ba9003d354cdb"
 title: "Set up the Sinch client and provide authorization credentials for user registration"
 excerpt: ""
 ---

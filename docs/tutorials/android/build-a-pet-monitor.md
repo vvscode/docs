@@ -1,4 +1,5 @@
 ---
+id: "5d4aa06dd968c1012ebc51ef"
 title: "Build a Pet Monitor"
 excerpt: "Want to check in on your pet while you’re at work, but not willing to shell out the big bucks for custom hardware devices? If you have an Android tablet and phone, you can build a voice communication system to chat with your pet in no time at all."
 ---

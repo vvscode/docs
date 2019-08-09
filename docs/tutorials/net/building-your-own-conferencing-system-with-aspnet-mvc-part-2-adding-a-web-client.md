@@ -1,4 +1,5 @@
 ---
+id: "5d4a8157c3794b001a93a461"
 title: "Building Your Own Conferencing System With ASP.NET MVC - Part 2: Adding A Web Client"
 excerpt: "If you followed the first tutorial we continue on that one and we will look at building a web based client to connect users to a conference."
 ---
