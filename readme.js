@@ -156,9 +156,10 @@ program
     
 The following validations are available:
 
- - 'url':      Verifies that URLs do resolve to an existing. An HTTP HEAD request is performed for each URL.
- - 'xref':     Verifies that internal cross references point to known content.
- - 'mailto':   Verifies that mailto: links (links to email addresses) are correctly formed.
+ - 'urls':      Verifies that URLs do resolve to an existing. An HTTP HEAD request is performed for each URL.
+ - 'xrefs':     Verifies that internal cross references point to known content.
+ - 'mailtos':   Verifies that mailto: links (links to email addresses) are correctly formed.
+ - 'headings':  Verifies that section headings are at minimum 2 levels deep
  
 All validations are performed unless --validations is specified.
     `)
@@ -181,31 +182,30 @@ All validations are performed unless --validations is specified.
             return;
         }
 
-        let validations = ['xref', 'url', 'mailto'];
+        let validations = ['xrefs', 'urls', 'mailtos', 'headings'];
         if (cmd.validations) {
             validations = cmd.validations.split(',');
         }
 
         for (const page of pages) {
-            // xref:
-            if (validations.includes('xref')) {
-                validateLinks(catalog, page, XrefLink, (link, err) => {
-                    console.log(`${page.path}:${link.lineNumber} Cross reference [${link.href}] seems broken: ${err}`);
-                });
+            const logInvalidElement = (element, err) => {
+                console.log(`${chalk.cyan(element.ref)} [${chalk.yellow(element.desc)}]: ${err}`);
+            };
+
+            if (validations.includes('xrefs')) {
+                validateLinks(catalog, page, XrefLink, logInvalidElement);
             }
 
-            // mailto:
-            if (validations.includes('mailto')) {
-                validateLinks(catalog, page, MailtoLink, (link, err) => {
-                    console.log(`${page.path}:${link.lineNumber} Link to email [${link.href}] seems broken: ${err}`);
-                });
+            if (validations.includes('mailtos')) {
+                validateLinks(catalog, page, MailtoLink, logInvalidElement);
             }
 
-            // url:
-            if (validations.includes('url')) {
-                validateLinks(catalog, page, UrlLink, (link, err) => {
-                    console.log(`${page.path}:${link.lineNumber} URL [${link.href}] seems broken: ${err}`);
-                });
+            if (validations.includes('urls')) {
+                validateLinks(catalog, page, UrlLink, logInvalidElement);
+            }
+
+            if (validations.includes('headings')) {
+                validateHeadings(catalog, page, logInvalidElement);
             }
         }
     });
@@ -237,10 +237,17 @@ async function selectPages(catalog, options) {
 
 
 function validateLinks(catalog, page, type, invalidCallback) {
-    const links = page.links.filter(link => link instanceof type);
+    const links = page.listLinks().filter(link => link instanceof type);
     for (const link of links) {
         link.resolve(catalog).catch(err => invalidCallback(link, err));
     }
+}
+
+function validateHeadings(catalog, page, invalidCallback) {
+    const headings = page.listHeadings().filter(heading => heading.depth === 1);
+    headings.forEach(heading => invalidCallback(heading,
+        'Heading with level 1 are reserved for page titles. ' +
+        'Use headings of level 2 and more in content files.'));
 }
 
 
