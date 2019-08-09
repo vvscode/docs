@@ -198,7 +198,7 @@ All validations are performed unless --validations is specified.
         }
 
         selectedValidators = selectedValidators.map(name => {
-            if (name in availableValidators) return availableValidators[name];
+            if (availableValidators.includes(name)) return validators[name];
             console.log(chalk.red(`Validator '${name}' is not recognized.`));
             process.exit(1);
         });
