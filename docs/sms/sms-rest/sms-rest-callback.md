@@ -14,9 +14,9 @@ The REST API offers the following callback options which can be configured for y
 
 ### Delivery report callback
 
-A delivery report contains the status and status code for each recipient of a batch. To get a delivery report callback for a message or batch of messages you need to set the `delivery_report` field accordingly when [creating a batch](doc:batches-endpoint#section-send-a-batch-message). The formats of the different types of delivery reports are described in [Retrieve a delivery report](doc:batches-endpoint#section-retrieve-a-delivery-report) and in [Retrieve a recipient delivery report](doc:batches-endpoint#section-retrieve-a-recipient-delivery-report).
+A delivery report contains the status and status code for each recipient of a batch. To get a delivery report callback for a message or batch of messages you need to set the `delivery_report` field accordingly when [creating a batch](doc:sms-rest-batches-endpoint#section-send-a-batch-message). The formats of the different types of delivery reports are described in [Retrieve a delivery report](doc:sms-rest-batches-endpoint#section-retrieve-a-delivery-report) and in [Retrieve a recipient delivery report](doc:sms-rest-batches-endpoint#section-retrieve-a-recipient-delivery-report).
 
-The callback URL can either be provided for each batch in the [Send a batch message](doc:batches-endpoint#section-send-a-batch-message) operation or provisioned globally for your account.
+The callback URL can either be provided for each batch in the [Send a batch message](doc:sms-rest-batches-endpoint#section-send-a-batch-message) operation or provisioned globally for your account.
 
 ### Inbound message callback
 

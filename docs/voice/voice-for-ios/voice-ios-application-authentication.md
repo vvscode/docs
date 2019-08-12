@@ -69,7 +69,8 @@ String signature = Base64.encodeBase64String(hash).trim();
 ```
 
 
-## Starting the Client and Providing Authorization Credentials for User Registration
+### Starting the Client and Providing Authorization Credentials for User Registration
+
 ```objectivec
 // Instantiate a client object using the client factory method.
 id<SINClient> client = [Sinch clientWithApplicationKey:@"<application key>" 
