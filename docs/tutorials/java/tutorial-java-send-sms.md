@@ -7,35 +7,13 @@ This tutorial will walk you through the steps to send an SMS using Sinch's Java 
 
 ## Prerequisites
 
-### Create your free Sinch account
+Before starting, please make sure that:
 
-Before starting, first make sure you have a Sinch account. You can create an account with free credits using the [Sinch Dashboard](https://dashboard.sinch.com/signup) to start sending messages in minutes.
+ - You have created your Sinch account
+ - The right version of the JDK is installed on your computer
+ - You have added the Sinch Java SDK JAR to your project
 
-Once your account is created and you're logged into the dashboard, you can obtain your credentials to the REST API (Service Plan ID and API Token) in the [APIs](https://dashboard.sinch.com/sms/api/rest) section. You'll use these credentials in the next steps below.
-
-> **Trial mode limitations**
->
-> When your account is in trial mode (such as when you've just created it), sending messages has the following limitations:
-> 
->  - The body of each message will be replaced by a generic message to prevent malicious uses of our API. 
->  - Your messages will also be sent from a random phone number and the `sender` value will be ignored (although the API still requires a value so you must provide some value for the sender).
-
-### Check your Java JDK version
-
-The Sinch Java SDK is compatible with **Java 6** and above. You will need to make sure the Java Development Kit (JDK) is installed on your computer. You can verify if you have the right version of the JDK installed by running this command in the terminal: 
-
-```shell
-javac -version
-```
-
-If the command fails or the displayed version is smaller than `1.6`, you should download and install a more recent version of the JDK, available on the [Java SE Downloads](https://www.oracle.com/technetwork/java/javase/downloads/index.html) page.
-
-### Get the Sinch Java SDK library
-
-The Java SDK is published on the [Maven Central](https://repo1.maven.org/maven2/com/clxcommunications/sdk-xms) repository which means it can easily be added to your project if you're using Gradle, Maven or another dependency management tool for the Java language. Instructions for most of the tools are
-available on [mvnrepository](https://mvnrepository.com/artifact/com.clxcommunications/sdk-xms).
-
-You can also manually download the JAR file from [Maven Central](https://repo1.maven.org/maven2/com/clxcommunications/sdk-xms) but you'll also need to add all of the other dependencies listed on [mvnrepository](https://mvnrepository.com/artifact/com.clxcommunications/sdk-xms). 
+All details of those steps are available on the [Java Getting Started page](doc:java).
 
 ## Send an SMS with Java
 
