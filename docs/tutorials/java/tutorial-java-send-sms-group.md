@@ -64,9 +64,9 @@ You can also accomplish the same things as the above in a single statement using
 
 ```java
 StreamSupport.stream(groups.pages().spliterator(), false)
-                .flatMap(page -> page.content().stream())
-                .filter(group -> "subscribers".equals(group.name()))
-                .findFirst()
+        .flatMap(page -> page.content().stream())
+        .filter(group -> "subscribers".equals(group.name()))
+        .findFirst()
 ```
 
 If no group was found with our name, we'll need to **create a group**:
@@ -83,8 +83,8 @@ Now that we are certain our `subscribers` group exists, we can add our subscribe
 
 ```java
 connection.updateGroup(group.id(), ClxApi.groupUpdate()
-            .addMemberInsertion("{PHONE1}", "{PHONE2}", "{PHONE3}")
-            .build());
+        .addMemberInsertion("{PHONE1}", "{PHONE2}", "{PHONE3}")
+        .build());
 ```
 
 ### Send a Message to Your Group
@@ -93,10 +93,10 @@ To send a message to one of your groups, simply use the group ID as one of the r
 
 ```java
 connection.createBatch(ClxApi.batchTextSms()
-                .sender("ignored")
-                .addRecipient(group.id().toString())
-                .body("Hello from Sinch!")
-                .build());
+        .sender("ignored")
+        .addRecipient(group.id().toString())
+        .body("Hello from Sinch!")
+        .build());
 ```
 
 ## Wrap Up
