@@ -45,7 +45,9 @@ The following configurations are available:
 
 See the general help (`./readme.js -h`) for details of each configuration option.
 
-In addition to the global configuration, the file `config.yml` contains general configuration for the CLI. 
+### `config.yml` configuration file
+
+In addition to the global configurations above, the file `config.yml` contains general configuration for the CLI that are not expected to change between commands. 
 The following fields are available:
 
 | Field         | Description |
@@ -83,7 +85,7 @@ Simulate (dry run) a push of only locally Git-staged files:
 
 Fetches up-to-date contents from Readme via their public API in a local folder. 
 This command will create or update local `.md` files that represent the current content in Readme, organized in directories 
-that represent the category/page hierarchy in Readme.  
+that mimic the category/page hierarchy stored in Readme.  
 
 **Usage examples**
 
@@ -101,11 +103,11 @@ Converts Readme-specific widget blocks to standard Markdown.
 
 **Usage examples**
 
-Replace all Readme widgets with their Markdown equivalent:
+Replace all Readme widgets with their Markdown equivalent, in each and every page:
  
     $ ./readme.js markdownize 
 
-Only show what changes would be performing without actually saving them:
+Only show what changes would be performed without actually persisting them:
  
     $ ./readme.js markdownize --dry-run
     
@@ -115,7 +117,7 @@ Only convert Code and Image widgets from a specific content file:
     
 #### `validate`
 
-Runs a few sanity checks on content files, such as checking for broken links (both internal / cross references and remote URL links).    
+Runs a few sanity checks on content files, such as checking for broken links (both internal / cross references and remote URL links). See command help (`-h`) for details on supported validators. 
  
 **Usage examples** 
  
