@@ -69,11 +69,11 @@ contents directory matches the slug of the page in Readme.
 
 **Usage examples**
 
-Pushing contents for all categories defined in `config.yml`:
+Push contents for all categories defined in `config.yml`:
 
     $ ./readme.js push
     
-Pushing contents for a specific category:
+Push contents for a specific category:
 
     $ ./readme.js push sms
     
@@ -89,11 +89,11 @@ that mimic the category/page hierarchy stored in Readme.
 
 **Usage examples**
 
-Fetching contents of all categories defined in `config.yml`:
+Fetch contents of all categories defined in `config.yml`:
 
     $ ./readme.js fetch
     
-Fetching contents for a specific category:
+Fetch contents for a specific category:
 
     $ ./readme.js fetch sms
 
