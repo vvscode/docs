@@ -9,13 +9,16 @@ This tutorial will walk you through the steps to send an SMS using Sinch's Java 
 
 ### Create your free Sinch account
 
-Before starting, first make sure you have a Sinch account. You can create an account with free credits to start sending messages using the [Sinch Dashboard](https://dashboard.sinch.com/signup).
+Before starting, first make sure you have a Sinch account. You can create an account with free credits using the [Sinch Dashboard](https://dashboard.sinch.com/signup) to start sending messages in minutes.
 
 Once your account is created and you're logged into the dashboard, you can obtain your credentials to the REST API (Service Plan ID and API Token) in the [APIs](https://dashboard.sinch.com/sms/api/rest) section. You'll use these credentials in the next steps below.
 
 > **Trial mode limitations**
 >
-> When your account is in trial mode (such as when you've just created it), the message body of each message will be replaced by a generic message to prevent malicious uses of our API. Your messages will also be sent from a random phone number.
+> When your account is in trial mode (such as when you've just created it), sending messages has the following limitations:
+> 
+>  - The body of each message will be replaced by a generic message to prevent malicious uses of our API. 
+>  - Your messages will also be sent from a random phone number and the `sender` value will be ignored (although the API still requires a value so you must provide some value for the sender).
 
 ### Check your Java JDK version
 
@@ -59,7 +62,7 @@ Once an `ApiConnection` object is created and started, you can use it to interac
 import com.clxcommunications.xms.ClxApi;
 
 connection.createBatch(ClxApi.batchTextSms()
-        .sender("12345")
+        .sender("ignored")
         .addRecipient("{RECIPIENT_PHONE_NUMBER}")
         .body("Hello from Sinch!")
         .build());
@@ -71,7 +74,7 @@ Or sending the same message to multiple recipients:
 import com.clxcommunications.xms.ClxApi;
 
 connection.createBatch(ClxApi.batchTextSms()
-        .sender("12345")
+        .sender("ignored")
         .addRecipient("{RECIPIENT_1_PHONE_NUMBER}")
         .addRecipient("{RECIPIENT_2_PHONE_NUMBER}")
         .body("Hello from Sinch!")
@@ -161,7 +164,7 @@ public class SendMessage {
         try {
             MtBatchTextSmsResult result =
                     conn.createBatch(ClxApi.batchTextSms()
-                            .sender("12345")
+                            .sender("ignored")
                             .addRecipient(RECIPIENT_PHONE_NUMBER)
                             .body("Hello from Sinch!")
                             .build());
