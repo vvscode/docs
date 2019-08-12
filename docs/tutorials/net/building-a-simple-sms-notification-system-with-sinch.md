@@ -257,7 +257,7 @@ I wanted to make it super easy for officials to send a quick message. Getting dr
 
 *Dashboard.cshtml*
 
-```cshtml
+```
 @model TVQMANotifications.Models.DashboardModel
 @{
     ViewBag.Title = "TVQMA Dashboard";
