@@ -1,6 +1,6 @@
 {
   "name": "sinch-readmeio",
-  "version": "1.0",
+  "version": "1.0.0",
   "description": "Source docs for Readme.io with automated sync tool",
   "repository": "https://github.com/sinch/docs-readmeio",
   "main": "readme.js",
