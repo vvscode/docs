@@ -3,7 +3,6 @@ id: "5d42b23589418f00c5e95f83"
 title: "First time setup"
 excerpt: ""
 ---
-# First time setup
 
 This is a step-by-step guide about setting up the Sinch SDK for the first time.
 

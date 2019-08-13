@@ -3,7 +3,6 @@ id: "5d42da91313357001c716fa6"
 title: "Verification Callback API"
 excerpt: ""
 ---
-# Verification Callback API
 
 ## Verification Request Event
 
@@ -43,7 +42,7 @@ You can find more information on callback request signing `here <callbackrequest
 
     [ResponseBody]
         RequestEventResponse
-    
+
     [RequestEventResponse]
     {
         string - action
@@ -51,15 +50,15 @@ You can find more information on callback request signing `here <callbackrequest
         FlashCall? - flashCall
         Callout? - callout
     }
-    
+
     [Sms]
         string - code
         string[]? - acceptLanguage
-    
+
     [FlashCall]
         string? - cli
         int? - dialTimeout
-    
+
     [Callout]
         string? - locale
         string? - ttsMenu
@@ -189,7 +188,7 @@ You can find more information on callback request signing `here
 
     [RequestBody]
         ResultEvent
-    
+
     [ResultEvent]
     {
         string - id
