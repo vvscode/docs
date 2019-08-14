@@ -1,7 +1,7 @@
 ---
 id: "5d415dd9838e2600527d1991"
 title: "REST API"
-excerpt: "This document serves as a user guide and documentation on how to use the Sinch Verification REST APIs. For general information on how to use the Sinch APIs including methods, types, errors and authorization, please check the `Using REST <usingrestapi>` page."
+excerpt: "This document serves as a user guide and documentation on how to use the Sinch Verification REST APIs. For general information on how to use the Sinch APIs including methods, types, errors and authorization, please check the [Using REST](doc:using-rest) page."
 ---
 ## Overview
 
