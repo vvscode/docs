@@ -7,7 +7,7 @@ As a second step, you need to create an instance with the ‘authorization’ st
 
 ## Headers
 
-This is a protected resource and requires a `user signed request <usersignedrequest>`.
+This is a protected resource and requires a [user signed request](doc:usersignedrequest).
 
     Authorization: User {authorization}
     X-Timestamp: {now}

@@ -259,4 +259,4 @@ Now you have a good understanding of how the Sinch client works and how to make 
 
 **More reading:**
     
-> - `Custom authentication with .net <using-delegated-security-application-server-using-c-sinch-sdk>`
+> - [Custom authentication with .net](doc:using-delegated-security-application-server-using-c-sinch-sdk)

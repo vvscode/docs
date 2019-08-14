@@ -3,13 +3,13 @@ id: "5d4aa81faa381f005e53c18b"
 title: "Authenticate to Sinch From Rails With Devise"
 excerpt: "This tutorial will walk through the steps to authenticate users to the Sinch JavaScript SDK with a Rails backend. You will use the devise gem to securely authenticate and store your users’ info."
 ---
-This tutorial will walk you through authenticating users to the [Sinch JavaScript SDK](https://www.sinch.com/web-sdk/) with a Rails backend. You will use the devise gem to securely authenticate and store your users’ info. Once users are authenticated with devise, you will generate a token and pass it to the Sinch JavaScript SDK. From there, you can follow our `calling or messaging tutorials <tutorialssite>` to build out the functionality of your app.
+This tutorial will walk you through authenticating users to the [Sinch JavaScript SDK](https://www.sinch.com/web-sdk/) with a Rails backend. You will use the devise gem to securely authenticate and store your users’ info. Once users are authenticated with devise, you will generate a token and pass it to the Sinch JavaScript SDK. From there, you can follow our [calling or messaging tutorials](doc:tutorialssite) to build out the functionality of your app.
 
 ## Sinch setup
 
 > 1.  Sign up for a [Sinch account](https://www.sinch.com/signup)
 > 2.  In the developer dashboard, create a new app and take note of the app key and secret
-> 3.  Download the `Sinch JavaScript SDK <sinchvvvdownloads>`
+> 3.  Download the [Sinch JavaScript SDK](doc:sinchvvvdownloads)
 
 ## Project setup
 
@@ -174,5 +174,5 @@ Open the developer console in your browser to see real-time updates of the Sinch
 
 Congratulations, you did it\! You can now use the Sinch client to add calling or messaging to your web app. Check out the following tutorials to continue with your app:
 
->   - `Web-web calling tutorial <turn-browser-phone-js-sdk>`
->   - `Web-phone calling tutorial <using-sinch-js-sdk-make-voice-calls>`
+>   - [Web-web calling tutorial](doc:turn-browser-phone-js-sdk)
+>   - [Web-phone calling tutorial](doc:using-sinch-js-sdk-make-voice-calls)

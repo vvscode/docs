@@ -24,7 +24,7 @@ The *Application Key* and *Application Secret* are obtained from the Sinch Devel
 ## Specifying capabilities
 
 The SINClient can be configured to enable / disable certain functionality. Please see the [Reference](../reference/html/Protocols/SINClient.html) for details.
- The following example shows how to setup the client with both voice calling and instant messaging enabled, and using `push notifications <localandremotepushnotifications>`.
+ The following example shows how to setup the client with both voice calling and instant messaging enabled, and using [push notifications](doc:localandremotepushnotifications).
 ```objectivec
 // Specify the client capabilities. 
 // (At least one of the messaging or calling capabilities should be enabled.)
@@ -55,7 +55,7 @@ sinchClient.delegate = ... ;
 >
 > If the application is meant to only make outgoing calls but not receive incoming calls, don’t call the `startListeningOnActiveConnection`. Outgoing calls can be made after calling the start method, and after the delegate has received the callback `clientDidStart:`.
 
-For applications that want to receive incoming calls while not running in the foreground, `push notifications <localandremotepushnotifications>` are required.
+For applications that want to receive incoming calls while not running in the foreground, [push notifications](doc:localandremotepushnotifications) are required.
 
 ### Life cycle management of a *SINClient*-instance
 

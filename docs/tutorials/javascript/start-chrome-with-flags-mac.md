@@ -3,7 +3,7 @@ id: "5d4bf133c2f6510047fc814e"
 title: "Start Chrome With Flags (Mac)"
 excerpt: "When using the Sinch JavaScript SDK locally in Chrome, it is necessary to start Chrome with the flag. Learn how to do it with our simple step-by-step guide."
 ---
-When using the `Sinch JavaScript SDK <voiceforjs>` locally in Chrome, it is necessary to start Chrome with the flag `--allow-file-access-from-files`.
+When using the [Sinch JavaScript SDK](doc:voiceforjs) locally in Chrome, it is necessary to start Chrome with the flag `--allow-file-access-from-files`.
 
 > 1.  Find the path to Chrome on your computer by opening [chrome://version](chrome://version/). Look for **Executable Path**. Copy that path.
 > 2.  Quit Chrome\! Don’t just close your open tabs, but actually **quit\!** 

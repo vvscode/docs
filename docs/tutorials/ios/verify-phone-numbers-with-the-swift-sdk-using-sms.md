@@ -9,10 +9,10 @@ Our Verification product enables you to ensure that a user is in possession of a
 
 Why would you use our SDK instead of rolling it yourself as we have showed in previous tutorials?
 
->   - `Rails/Android Authentication <ruby-on-rails-authentication>`
->   - `C#/iOS <building-a-c-authentication-system-with-net>`
->   - `C#/Web <build-two-factor-authentication-system-pt-3>`
->   - `Build Your Own Magic One-Touch Login <build-authenticator-app-sinch-otp-sharp>`
+>   - [Rails/Android Authentication](doc:ruby-on-rails-authentication)
+>   - [C#/iOS](doc:building-a-c-authentication-system-with-net)
+>   - [C#/Web](doc:build-two-factor-authentication-system-pt-3)
+>   - [Build Your Own Magic One-Touch Login](doc:build-authenticator-app-sinch-otp-sharp)
 
 ## We provide good value with our cloud SDK
 
@@ -75,4 +75,4 @@ This function initiates an [SMS verification request](https://www.sinch.com/prod
 
 In this simple sample app, I just pop to the root view controller, but you get an idea of how simple it is to integrate.
 
-For more information about using our Swift SDK, read about our `verification product <verification-ios>`.
+For more information about using our Swift SDK, read about our [verification product](doc:verification-ios).

@@ -7,9 +7,9 @@ When using Sinch for voice calling, the Sinch dashboard can be seen as a big tel
 
 For most call scenarios, you can use the Sinch SDKs on a smartphone or on web client to establish calls without the need of backend integration. For additional control or flexibility of the calls, you can use the Sinch REST APIs to manage the calls.
 
-Controlling a call from your application backend is done by responding to callbacks from the Sinch dashboard and/or by calling REST APIs in the Sinch dashboard from your application backend. For more details on the callbacks triggered from the Sinch dashboard see the `Callback API <callbackAPI>`.
+Controlling a call from your application backend is done by responding to callbacks from the Sinch dashboard and/or by calling REST APIs in the Sinch dashboard from your application backend. For more details on the callbacks triggered from the Sinch dashboard see the [Callback API](doc:callbackAPI).
 
-For more details on the REST APIs to that can be used to manage calls see the `Calling API <calling-api>`.
+For more details on the REST APIs to that can be used to manage calls see the [Calling API](doc:calling-api).
 
 These are the typical call scenarios that you can control with the Sinch Callback and Calling APIs:
 
@@ -28,11 +28,11 @@ To use callback events you need to assign a callback URL in the Sinch portal und
 
 | Event  | HTTP Verb | Functionality                                                  |
 | ------ | --------- | -------------------------------------------------------------- |
-| ICE    | POST      | `Incoming Call Event callback <incomingcalleventcallback>`     |
-| ACE    | POST      | `Answer Call Event callback <answeredcalleventcallback>`       |
-| DiCE   | POST      | `Disconnect Call Event callback <disconnectcalleventcallback>` |
-| PIE    | POST      | `Prompt Input Event callback <PIE>`                            |
-| Notify | POST      | `Notify Event callback <notifyeventcallback>`                  |
+| ICE    | POST      | [Incoming Call Event callback](doc:incomingcalleventcallback)     |
+| ACE    | POST      | [Answer Call Event callback](doc:answeredcalleventcallback)       |
+| DiCE   | POST      | [Disconnect Call Event callback](doc:disconnectcalleventcallback) |
+| PIE    | POST      | [Prompt Input Event callback](doc:PIE)                            |
+| Notify | POST      | [Notify Event callback](doc:notifyeventcallback)                  |
 
 ### Calling API
 
@@ -40,18 +40,18 @@ To use callback events you need to assign a callback URL in the Sinch portal und
 
 | URL                                                    | HTTP Verb | Functionality                                                                                        |
 | ------------------------------------------------------ | --------- | ---------------------------------------------------------------------------------------------------- |
-| /configuration/numbers/                                | GET       | `Get a list of your numbers <getnumbers>`                                                            |
-| /configuration/numbers/                                | POST      | `Assign numbers to an app <updatenumbers>`                                                           |
-| /configuration/callbacks/applications/{applicationkey} | GET       | `Get callback URLs of your app <getcallbacks>`                                                       |
-| /configuration/callbacks/applications/{applicationkey} | POST      | `Update the callback URLs of your app <updatecallbacks>`                                             |
-| /calling/query/number/{number}                         | GET       | `Query a number <querynumber>`                                                                       |
+| /configuration/numbers/                                | GET       | [Get a list of your numbers](doc:getnumbers)                                                            |
+| /configuration/numbers/                                | POST      | [Assign numbers to an app](doc:updatenumbers)                                                           |
+| /configuration/callbacks/applications/{applicationkey} | GET       | [Get callback URLs of your app](doc:getcallbacks)                                                       |
+| /configuration/callbacks/applications/{applicationkey} | POST      | [Update the callback URLs of your app](doc:updatecallbacks)                                             |
+| /calling/query/number/{number}                         | GET       | [Query a number](doc:querynumber)                                                                       |
 | /calls/id/{callId}                                     | PATCH     | :ref:<span class="title-ref">Manage call \<managecall\></span>                                       |
-| /calls/id/{callId}                                     | GET       | `Get call result <getcallresult>`                                                                    |
-| /conferences/id/{conferenceId}                         | GET       | `Get conference info <getconferenceinfo>`                                                            |
+| /calls/id/{callId}                                     | GET       | [Get call result](doc:getcallresult)                                                                    |
+| /conferences/id/{conferenceId}                         | GET       | [Get conference info](doc:getconferenceinfo)                                                            |
 | /conferences/id/{conferenceId}/{callId}                | PATCH     | :ref:<span class="title-ref">Mute/unmute conference participant \<muteunmuteconfparticipant\></span> |
-| /conferences/id/{conferenceId}/{callId}                | DELETE    | `Kick conference participant <kickconfparticipant>`                                                  |
-| /conferences/id/{conferenceId}                         | DELETE    | `Kick all conference participants <kickallconfparticipants>`                                         |
-| /callouts                                              | POST      | `Place text-to-speech or conference call <confttscallouts>`                                          |
+| /conferences/id/{conferenceId}/{callId}                | DELETE    | [Kick conference participant](doc:kickconfparticipant)                                                  |
+| /conferences/id/{conferenceId}                         | DELETE    | [Kick all conference participants](doc:kickallconfparticipants)                                         |
+| /callouts                                              | POST      | [Place text-to-speech or conference call](doc:confttscallouts)                                          |
 
 ### Reporting API
 
@@ -59,32 +59,32 @@ To use callback events you need to assign a callback URL in the Sinch portal und
 
 | URL                                     | HTTP Verb | Functionality                           |
 | --------------------------------------- | --------- | --------------------------------------- |
-| /users/{type}/{endpoint}/calls/{domain} | GET       | `User call report <usercallreport>`     |
-| /counters/{id}                          | GET       | `Get counter <counters>`                |
-| /services/{id}                          | GET       | `Get service status <getservicestatus>` |
+| /users/{type}/{endpoint}/calls/{domain} | GET       | [User call report](doc:usercallreport)     |
+| /counters/{id}                          | GET       | [Get counter](doc:counters)                |
+| /services/{id}                          | GET       | [Get service status](doc:getservicestatus) |
 
 ## App to app calls
 
 In this scenario, calls are originated from and terminated to an app using the iOS, Android or Javascript SDK. Both call legs are established over the data connection of the smartphone or computer (VoIP). For additional call control, you can specify a callback URL where Sinch will send call-related events. By capturing and responding to these events from your backend, you can allow, deny and control the calls. You can configure the call back URL under your app’s voice settings in the Sinch [dashboard](https://www.sinch.com/dashboard/).
 
-For more information please check the `Callback API <callbackAPI>`. The callback event that is used in app to app calls is the Incoming Call Event callback.
+For more information please check the [Callback API](doc:callbackAPI). The callback event that is used in app to app calls is the Incoming Call Event callback.
 
 ## App to phone calls
 
 In this scenario, calls are originated from an app using the iOS, Android or Javascript SDK and are terminated to the fixed or mobile phone network. For additional call control, you can configure a callback URL under your app’s voice settings in the Sinch dashboard, where Sinch will send call-related events. By capturing and responding to these events from your backend, you can allow or deny calls to go through. Events will also be triggered when the calls will be answered or disconnected.
 
-For more information please check the `Callback API <callbackAPI>`. The callback events that are used in app to phone calls are the Incoming Call Event callback, the Answer Call Event callback and the Disconnect Call Event callback. You can also manage an ongoing call from your backend with the Manage Call API, which is part of the `Calling API <calling-api>`.
+For more information please check the [Callback API](doc:callbackAPI). The callback events that are used in app to phone calls are the Incoming Call Event callback, the Answer Call Event callback and the Disconnect Call Event callback. You can also manage an ongoing call from your backend with the Manage Call API, which is part of the [Calling API](doc:calling-api).
 
 ## Phone to phone calls
 
 In this scenario, calls are originated from a voice number and are terminated to the fixed or mobile phone network. You can rent and configure voice numbers from the Sinch [dashboard](https://www.sinch.com/dashboard/) by following these steps:
 > 1.  Rent a Voice number from the Sinch [dashboard](https://portal.sinch.com/#/login), under the tab “Numbers”.
-> 2.  Assign the number to your application. Under the “Apps” tab, select your app and assign the number under the app Voice settings. Alternatively, you can rent and configure numbers with REST APIs. For more information please check the `Number Administration documentation <numberadministration>`.
+> 2.  Assign the number to your application. Under the “Apps” tab, select your app and assign the number under the app Voice settings. Alternatively, you can rent and configure numbers with REST APIs. For more information please check the [Number Administration documentation](doc:numberadministration).
 > 3.  Configure a callback URL under your app’s Voice settings, where Sinch will send call-related events.
 
 When a user calls your configured voice number, the Sinch dashboard will trigger an Incoming Call Event callback towards your callback URL. The destination number - where the call will be connected to - has to be specified in your response to the Incoming Call Event callback. Similarly to app to phone calls, the Sinch dashboard will trigger additional events for call control.
 
-For more information please check the `Callback API <callbackAPI>`. The callback events that are used in phone to phone calls are the Incoming Call Event callback, the Answer Call Event callback and the Disconnect Call Event callback. You can also manage an ongoing call from your backend with the Manage Call API, which is part of the `Calling API <calling-api>`.
+For more information please check the [Callback API](doc:callbackAPI). The callback events that are used in phone to phone calls are the Incoming Call Event callback, the Answer Call Event callback and the Disconnect Call Event callback. You can also manage an ongoing call from your backend with the Manage Call API, which is part of the [Calling API](doc:calling-api).
 
 ## Conference calls
 
@@ -102,7 +102,7 @@ For more information check the Incoming Call Event callback and the ConnectConf 
 
 ### Calling in a conference from a phone number
 
-You can also allow users to dial in a conference by calling a fixed phone number. To do this, first follow the steps mentioned in `Phone to phone calls <phonetophonecallingoverview>` to configure a number in your app and set a callback URL. Every time a user calls your configured number, an Incoming Call Event callback will be triggered towards your URL. By responding to this event with the ConnectConf action, you can connect the call to a conference.
+You can also allow users to dial in a conference by calling a fixed phone number. To do this, first follow the steps mentioned in [Phone to phone calls](doc:phonetophonecallingoverview) to configure a number in your app and set a callback URL. Every time a user calls your configured number, an Incoming Call Event callback will be triggered towards your URL. By responding to this event with the ConnectConf action, you can connect the call to a conference.
 
 For more information check the Incoming Call Event callback and the ConnectConf action.
 
@@ -110,17 +110,17 @@ For more information check the Incoming Call Event callback and the ConnectConf 
 
 By using the conference callout API, you can trigger calls to fixed or mobile phones and connect them all to the same conference room.
 
-For more information please check the `Callouts <callouts>` API.
+For more information please check the [Callouts](doc:callouts) API.
 
 ### Conference management
 
 The Sinch dashboard allows you to control an ongoing conference through REST APIs. There are several conference-control options available, such as muting/unmuting participants or kicking out a participant or all participants from the conference when the conference ends.
 
-For more information check the conferencing APIs that are available under the `Calling API <calling-api>`.
+For more information check the conferencing APIs that are available under the [Calling API](doc:calling-api).
 
 ### Conference recording
 
-The Sinch dashboard allows recording of conference calls. The recorded files are stored in your own Amazon S3 bucket. For more information on how to record a conference, please check the ConnectConf action in the `Callback API <callbackAPI>`.
+The Sinch dashboard allows recording of conference calls. The recorded files are stored in your own Amazon S3 bucket. For more information on how to record a conference, please check the ConnectConf action in the [Callback API](doc:callbackAPI).
 
 Conference recording is disabled by default. To enable conference recording for your account please contact Sinch support, providing your Amazon S3 bucket information, where the recordings will be stored.
 
@@ -128,7 +128,7 @@ Conference recording is disabled by default. To enable conference recording for 
 
 With the text-to-speech REST API, you can trigger a call to be placed to a fixed or mobile phone number and play a synthesized text message.
 
-For more information please check the `Callouts <callouts>` API.
+For more information please check the [Callouts](doc:callouts) API.
 
 ## SIP trunking
 
@@ -146,7 +146,7 @@ Once the call arrives in the Sinch dashboard, your backend will get an Incoming 
 
 ### SIP termination
 
-You can route any type of call from the Sinch dashboard to your SIP server. If your calls are originated from an Android, iOS or Javascript client, you can route calls to your SIP server simply by calling the respective method that initiates calls towards SIP. If your calls are originated towards a PSTN inbound number, you can automatically forward calls to your SIP server using the SIP forwarding option in the Sinch Portal (setting available under Apps \>\> Voice and Video \>\> Connect Calls). For any other origination method or if you need more control, you can instruct a call to be connected to your SIP server by responding to the Incoming Call Event callback with the `ConnectSIP <connectsipaction>` action.
+You can route any type of call from the Sinch dashboard to your SIP server. If your calls are originated from an Android, iOS or Javascript client, you can route calls to your SIP server simply by calling the respective method that initiates calls towards SIP. If your calls are originated towards a PSTN inbound number, you can automatically forward calls to your SIP server using the SIP forwarding option in the Sinch Portal (setting available under Apps \>\> Voice and Video \>\> Connect Calls). For any other origination method or if you need more control, you can instruct a call to be connected to your SIP server by responding to the Incoming Call Event callback with the [ConnectSIP](doc:connectsipaction) action.
 
 #### IP Whitelisting
 

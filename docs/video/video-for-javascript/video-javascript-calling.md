@@ -106,7 +106,7 @@ call.addEventListener(callListeners);
 ```
 
 
-It is also possible to connect users to a conference call via the `Sinch REST API <confttscallouts>`.
+It is also possible to connect users to a conference call via the [Sinch REST API](doc:confttscallouts).
 
 ## Play ringback tone
 

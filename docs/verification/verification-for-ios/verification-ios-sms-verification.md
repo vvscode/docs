@@ -43,7 +43,7 @@ The call to `initiateWithCompletionHandler:` triggers sending a verification SMS
 
 > **WARNING: Important**    
 >
-> When passing a number as a `NSString*` to create a `SINVerification`, the string should contain a number in *E.164* format. See the section `Phone numbers <phonenumbers>` for details.
+> When passing a number as a [NSString*` to create a `SINVerification`, the string should contain a number in *E.164* format. See the section `Phone numbers](doc:phonenumbers) for details.
 
 ## Set the content language of an SMS verification
 

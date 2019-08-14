@@ -7,7 +7,7 @@ In this tutorial, we’ll show you the different ways you can ensure that your a
 
 ## Two different ways of securing your app
 
-Sinch offers 2 ways to secure your app, the first one is the `Callback/webhook <verificationcallbackapi>` way of securing it which we’ll dive into today, and the other is Application Signed requests, but that’s a post for another day.
+Sinch offers 2 ways to secure your app, the first one is the [Callback/webhook](doc:verificationcallbackapi) way of securing it which we’ll dive into today, and the other is Application Signed requests, but that’s a post for another day.
 
 ### Webhooks
 
@@ -16,7 +16,7 @@ This is the recommended way of securing your verification. Using Sinch Verificat
 We chose this approach for a couple of reasons, the first was to enable developers to easy try it out with no backend, the second was that we did not want to have the key and secret in-app, and OAuth seemed over complicated for a process that will most likely only occur once.
 ![diagram.png](https://files.readme.io/d51cc29-diagram.png)
 
-You can verify that the request is from us by signing the request you receive and comparing the hash with `authorization <usingrest-authorization>`, or if you prefer, ship a custom variable like your Token for your own api requests and validate that in the custom variables.
+You can verify that the request is from us by signing the request you receive and comparing the hash with [authorization](doc:usingrest-authorization), or if you prefer, ship a custom variable like your Token for your own api requests and validate that in the custom variables.
 
 ## Using node to respond to your callbacks
 
@@ -119,7 +119,7 @@ router.post('/sinch', function (req, res) {
 });
 ```
 
-Next, I will add implementation to handle the RequestEvent by checking if the number is in allowed number array. This is also where you can set the code and make some other changes to the Veriifcation requests. View the docs for more `details <verification-restapi>`.
+Next, I will add implementation to handle the RequestEvent by checking if the number is in allowed number array. This is also where you can set the code and make some other changes to the Veriifcation requests. View the docs for more [details](doc:verification-restapi).
 
 ```javascript
 router.post('/sinch', function (req, res) {
@@ -178,7 +178,7 @@ function removeNumber(number) {
 }
 ```
 
-Now I just need to test\! To do that, I will use [ngrok](https://ngrok.com/), , which if you havent set up, you’ll want to. Check out my `previous post about ngrok <https://www.sinch.com/tutorials/getting-second-number-testing-sinch-callbackswebhooks-ngrok>` and why I love it.
+Now I just need to test\! To do that, I will use [ngrok](https://ngrok.com/), , which if you havent set up, you’ll want to. Check out my [previous post about ngrok](https://www.sinch.com/tutorials/getting-second-number-testing-sinch-callbackswebhooks-ngrok) and why I love it.
 
 Start up ngrok:
 

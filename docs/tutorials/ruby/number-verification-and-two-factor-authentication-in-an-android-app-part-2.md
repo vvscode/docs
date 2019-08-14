@@ -7,7 +7,7 @@ excerpt: "Learn how to build an Android Client App that uses verification API."
 >
 > To verify numbers even easier, check out our [Verification SDK](https://www.sinch.com/products/verification/sms/)
 
-In this part of the tutorial, you will build an Android client app that uses the verification API you built in `part 1 <ruby-on-rails-authentication>`.
+In this part of the tutorial, you will build an Android client app that uses the verification API you built in [part 1](doc:ruby-on-rails-authentication).
 
 Your finished app will look like this:
 ![app-screen.png](https://files.readme.io/3ca9504-app-screen.png)

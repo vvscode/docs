@@ -69,5 +69,5 @@ If you don’t yet have an app key and secret from Sinch, you can get them for f
 
 Once you’ve successfully generated the ticket, you can use it to securely start the Sinch client. Follow any of our client-side JavaScript tutorials to use the Sinch client to make phone calls and send instant messages:
 
->   - `Phone calling <using-sinch-js-sdk-make-voice-calls>`
->   - `App-to-app calling <turn-browser-phone-js-sdk>`
+>   - [Phone calling](doc:using-sinch-js-sdk-make-voice-calls)
+>   - [App-to-app calling](doc:turn-browser-phone-js-sdk)

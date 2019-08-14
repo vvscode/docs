@@ -146,7 +146,7 @@ VerificationListener listener = new VerificationListener() {
 
 > **WARNING: Important**    
 >
-> The phone number should be specified according to the E.164 number formatting (<http://en.wikipedia.org/wiki/E.164>) recommendation and should be prefixed with a <span class="title-ref">+</span>. See the section `Phone numbers <phonenumbers>` for details.
+> The phone number should be specified according to the E.164 number formatting (<http://en.wikipedia.org/wiki/E.164>) recommendation and should be prefixed with a <span class="title-ref">+</span>. See the section [Phone numbers](doc:phonenumbers) for details.
 
 ## Validate code manually
 

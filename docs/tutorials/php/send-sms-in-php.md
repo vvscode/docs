@@ -51,4 +51,4 @@ php name_of_script_file.php
 
 ## Note about authentication
 
-Please note that using basic authentication (as shown above) is only supported in Sinch clientapi applications. For production apps, we require that you sign your requests. To sign your requests in PHP, take a look at `this tutorial <authentication-php-sinch-javascript-sdk>`.
+Please note that using basic authentication (as shown above) is only supported in Sinch clientapi applications. For production apps, we require that you sign your requests. To sign your requests in PHP, take a look at [this tutorial](doc:authentication-php-sinch-javascript-sdk).

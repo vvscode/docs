@@ -157,7 +157,7 @@ Please refer to Apple’s [Local and Push Notification Programming Guide](https:
 
 ### Sending and receiving Apple push notifications
 
-To send push messages, you must have a server that is configured for sending push notifications to Apple Push Notification Service. Please see the `Sinch REST API User Guide <usingrestapi>` for details on how to handle feedback from Apple Push Notification Service.
+To send push messages, you must have a server that is configured for sending push notifications to Apple Push Notification Service. Please see the [Sinch REST API User Guide](doc:usingrestapi) for details on how to handle feedback from Apple Push Notification Service.
 
 Please also refer to Apple’s [Local and Push Notification Programming Guide](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Introduction.html) for further details on push notifications.
 

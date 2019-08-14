@@ -39,7 +39,7 @@ https://azuredeploy.net/?repository=https://github.com/sinch/csharp-nps-sms-deli
 
 ![rentnumber.png](https://files.readme.io/47e3aa3-rentnumber.png)
 
-Choose you app - or create one and click on the little pen - add the number you just rented to the app, and confugure the callback URL. The callback URL’s where we post incoming messages, and you can read more about that in `the documentation <smsmessagingcallbackapi>`.
+Choose you app - or create one and click on the little pen - add the number you just rented to the app, and confugure the callback URL. The callback URL’s where we post incoming messages, and you can read more about that in [the documentation](doc:smsmessagingcallbackapi).
 
 ### CODE\!
 

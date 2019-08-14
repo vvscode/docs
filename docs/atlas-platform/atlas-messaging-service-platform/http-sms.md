@@ -603,11 +603,11 @@ These are all the individual HTTP SMS API packages available. Each package inclu
 
 Download:
 
->   - `Sinch HTTPSMS Net.zip <./static/CLX HTTPSMS Net.zip>`.
->   - `Sinch HTTPSMS PHP.zip <./static/CLX HTTPSMS PHP.zip>`.
->   - `Sinch HTTPSMS Perl.zip <./static/CLX HTTPSMS Perl.zip>`.
->   - `Sinch HTTPSMS Java.zip <./static/CLX HTTPSMS Java.zip>`.
->   - `Sinch HTTPSMS Python.zip <./static/CLX HTTPSMS Python.zip>`.
+>   - [Sinch HTTPSMS Net.zip](./static/CLX HTTPSMS Net.zip).
+>   - [Sinch HTTPSMS PHP.zip](./static/CLX HTTPSMS PHP.zip).
+>   - [Sinch HTTPSMS Perl.zip](./static/CLX HTTPSMS Perl.zip).
+>   - [Sinch HTTPSMS Java.zip](./static/CLX HTTPSMS Java.zip).
+>   - [Sinch HTTPSMS Python.zip](./static/CLX HTTPSMS Python.zip).
 
 ## Additional Info
 

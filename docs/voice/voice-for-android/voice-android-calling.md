@@ -52,7 +52,7 @@ call.addCallListener(...);
 ```
 
 
-It is also possible to connect users to a conference call via the `Sinch REST API <callouts>`.
+It is also possible to connect users to a conference call via the [Sinch REST API](doc:callouts).
 
 ## Handle incoming calls
 

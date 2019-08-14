@@ -9,7 +9,7 @@ Before we dive in, I want to show you the awesome tool, ngrok. One of the more d
 
 ## Getting started
 
-In this example we are going to build a simple node app that will respond with SVAML to connect any call to a chosen number to my SF-based mobile. To read more about different events and how you can respond, read the docs `here <voicerestapi>`
+In this example we are going to build a simple node app that will respond with SVAML to connect any call to a chosen number to my SF-based mobile. To read more about different events and how you can respond, read the docs [here](doc:voicerestapi)
 
 Create a file and call it app.js
 

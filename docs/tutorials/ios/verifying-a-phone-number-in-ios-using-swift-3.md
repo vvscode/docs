@@ -206,4 +206,4 @@ Now that’s out of the way, open up **EnterCodeViewController.swift** and go to
 
 You now have a verified number for your user. With this implementation you only know on the client side that the number is verified. In a real world app, you would need to tell your backend that the number is verified. You could accomplish that in two ways. Either calling that update on the success flow from the client. Or your own callbacks that we have for verification (recommended).
 
-For more details, check out our `verification documentation <verificationcallbackapi>`.
+For more details, check out our [verification documentation](doc:verificationcallbackapi).

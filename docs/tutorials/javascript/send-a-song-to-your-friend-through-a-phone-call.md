@@ -8,7 +8,7 @@ Last week, we sponsored [The Next Web hackathon](http://thenextweb.com/conferenc
 ## Preparation
 
 > 1.  [Signup](https://portal.sinch.com/#/signup) for a Sinch account
-> 2.  Download the JS SDK from `here <sinchvvvdownloads>`
+> 2.  Download the JS SDK from [here](doc:sinchvvvdownloads)
 > 3.  Click ‘Create new app’
 > 4.  Name your app and click ‘Create’
 > 5.  Take note of your app key and secret as you will need them in a few minutes

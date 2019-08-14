@@ -26,7 +26,7 @@ Gets the aggregated call data for a specific user for a duration of up to 30 day
 
 ### Authorization
 
-This is a protected resource and requires an `application signed request <applicationsignedrequest>`.
+This is a protected resource and requires an [application signed request](doc:applicationsignedrequest).
 
 ### Request
 ```text
@@ -34,7 +34,7 @@ https://reportingapi.sinch.com/v1/users/{type}/{endpoint}/calls/{domain}
 ```
 
 
-**type**, **endpoint**, **user identity** (see `Calling API documentation <calling-api>`).
+**type**, **endpoint**, **user identity** (see [Calling API documentation](doc:calling-api)).
 
 **domain** Optional parameter that specifies the terminating domain. Can be data or pstn. Default: **data**
 ```text
@@ -82,7 +82,7 @@ Gets current value of a predefined instrumentation counter
 
 ### Authorization
 
-This is a protected resource and requires an `application signed request <applicationsignedrequest>`.
+This is a protected resource and requires an [application signed request](doc:applicationsignedrequest).
 
 ### Request
 ```text

@@ -7,7 +7,7 @@ This API returns all available numbers, so that you can pick which ones you want
 
 ## Headers
 
-This is a protected resource and requires an `instance signed request <instancesignedrequest>`.
+This is a protected resource and requires an [instance signed request](doc:instancesignedrequest).
 
     Authorization: Instance {instance ID}:{instance signature}
     X-Timestamp: {now}

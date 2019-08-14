@@ -7,7 +7,7 @@ This endpoints allows you to check out the numbers that you have reserved, so th
 
 ### Headers
 
-This is a protected resource and requires an `instance signed request <instancesignedrequest>`.
+This is a protected resource and requires an [instance signed request](doc:instancesignedrequest).
 
     Authorization: Instance {instance ID}:{instance signature}
     X-Timestamp: {now}

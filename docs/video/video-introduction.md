@@ -9,7 +9,7 @@ Sinch offers software development kits for Video Calling – the Sinch SDKs – 
 
 ## What are the supported platforms?
 
-Video calling is supported on `iOS <videoapiios>`, `Android <videoapiandroid>` and `JavaScript SDK <videoforjs>` and video calls can be placed seamlessly across the three platforms.
+Video calling is supported on [iOS](doc:videoapiios), [Android](doc:videoapiandroid) and [JavaScript SDK](doc:videoforjs) and video calls can be placed seamlessly across the three platforms.
 
 ## How do I get started?
 

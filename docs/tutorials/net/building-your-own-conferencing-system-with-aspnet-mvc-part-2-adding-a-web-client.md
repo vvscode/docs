@@ -3,7 +3,7 @@ id: "5d4a8157c3794b001a93a461"
 title: "Building Your Own Conferencing System With ASP.NET MVC - Part 2: Adding A Web Client"
 excerpt: "If you followed the first tutorial we continue on that one and we will look at building a web based client to connect users to a conference."
 ---
-In `part 1 <building-a-conferencing-system>`, we built the foundation for our conference calling system, and in this part of the tutorial, we will look at building a web based client to connect users to a conference.
+In [part 1](doc:building-a-conferencing-system), we built the foundation for our conference calling system, and in this part of the tutorial, we will look at building a web based client to connect users to a conference.
 
 All of the source code is available on [GitHub here](https://github.com/sinch/net-demo.sinch.com).
 
@@ -24,7 +24,7 @@ You can either deploy this project straight to Azure using the button below. It 
 
 Of *Controllers/CallbackController.cs*
 
-If you remember from part 1 we had the `Controllers/CallbackController.cs <_controllers-callbackcontroller>`, and on the **MXP** row we set the caller ID which connects to the conference.
+If you remember from part 1 we had the `Controllers/CallbackController.cs`, and on the **MXP** row we set the caller ID which connects to the conference.
 
 ```csharp
 public async Task<SvamletModel> Post(CallbackEventModel model) {
@@ -113,7 +113,7 @@ For this website I found a wonderful bootstrap theme called **Material** that is
 <audio id="ringtone" src="~/content/phone_ring.wav" loop></audio>
 ```
 
-The next thing to do is to start a Sinch client when the user enters their name and a PIN. Since I don’t want to have the secret in my JavaScript, I created an endpoint to Sign a user ticket on the **ConferenceController**. You can read more about ticket generation in the `Sinch documentation <_js-authentication>`.
+The next thing to do is to start a Sinch client when the user enters their name and a PIN. Since I don’t want to have the secret in my JavaScript, I created an endpoint to Sign a user ticket on the **ConferenceController**. You can read more about ticket generation in the [Sinch documentation](_js-authentication).
 
 **ConfrenceController.cs**
 
@@ -613,5 +613,5 @@ That’s all. Now we have a fully working web client to work with our backend se
 
 If you liked this tutorial, you might also like the following:
 
->   - `Building Your Own Conference Calling System (Part 1) <building-a-conferencing-system>`
->   - `Building a Conference Calling System in C# (a different version) <build-conference-calling-system-c>`
+>   - [Building Your Own Conference Calling System (Part 1)](doc:building-a-conferencing-system)
+>   - [Building a Conference Calling System in C# (a different version)](doc:build-conference-calling-system-c)

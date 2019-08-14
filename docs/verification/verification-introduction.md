@@ -15,7 +15,7 @@ The Sinch Verification service takes care of all the different steps in a verifi
 
 ## What are the different verification services?
 
-The Sinch SDK is currently available for `iOS <verification-ios>`, `Android <verification-android>` and `JavaScript <verification-js>` platforms.
+The Sinch SDK is currently available for [iOS](doc:verification-ios), [Android](doc:verification-android) and [JavaScript](doc:verification-js) platforms.
 
 Back-end services such as authorization or data consolidation are also exposed over REST APIs, primarily for back-end to back-end integration.
 

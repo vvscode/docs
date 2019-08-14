@@ -30,4 +30,4 @@ Copy and paste this into your terminal, wait a few seconds, and you should recei
 
 ## What’s next?
 
-This is just a basic demo of our [SMS API](https://www.sinch.com/products/messaging/sms/), but read `our documentation <sms-classic-sinch>` and other `tutorials <tutorialssite>` to see how you can integrate this with your own backend. Have questions? Just email the team [here](mailto:hello@sinch.com).
+This is just a basic demo of our [SMS API](https://www.sinch.com/products/messaging/sms/), but read [our documentation <sms-classic-sinch>` and other `tutorials](doc:tutorialssite) to see how you can integrate this with your own backend. Have questions? Just email the team [here](mailto:hello@sinch.com).
