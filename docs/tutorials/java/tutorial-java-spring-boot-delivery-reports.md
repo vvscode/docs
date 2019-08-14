@@ -3,7 +3,6 @@ id: "5d5416211d5d6203a1abfa78"
 title: "Receive SMS delivery reports in a Spring Boot application"
 excerpt: "In this more advanced installment of our Java tutorial series, you'll learn how you can keep track of the delivery of SMS messages you send via the Sinch REST API."
 ---
-
 The Sinch REST API keeps track of the delivery status of each message you send and makes that status available to your application in 2 ways:
 
  1) Via [polling / pull](doc:sms-rest-batches-endpoint#section-retrieve-a-delivery-report): your application can fetch the delivery notifications at regular intervals with GET HTTP requests.
@@ -155,5 +154,4 @@ This confirms that our application can successfully accept delivery reports sent
 
 This tutorial has shown how to create a POST endpoint that can parse delivery reports callbacks sent by the Sinch REST API. In addition, you've learnt how to use Ngrok to expose a locally-running Web application and use that to your advantage to do a full round-trip test of delivery reports.
 
-A fully functional Ngrok + Spring Boot project has been [published to GitHub](https://github.com/sinch/tutorial-java-sms-delivery-reports) to quickly get up and running to test Sinch delivery reports with your REST API account. You're free to try it out! 
-
+A fully functional Ngrok + Spring Boot project has been [published to GitHub](https://github.com/sinch/tutorial-java-sms-delivery-reports) to quickly get up and running to test Sinch delivery reports with your REST API account. You're free to try it out!
