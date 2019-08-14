@@ -3,7 +3,6 @@ id: "5d42da91313357001c716fa6"
 title: "Verification Callback API"
 excerpt: ""
 ---
-
 ## Verification Request Event
 
 This callback event is a POST request to the specified verification callback URL and is triggered when a new verification request is made from the SDK client or the Verification Request API. This callback event is only triggered when a verification callback URL is specified.
