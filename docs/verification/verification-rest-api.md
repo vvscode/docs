@@ -38,11 +38,11 @@ URI:  https://verificationapi-v1.sinch.com/verification/v1
 
 | URL                                  | HTTP Verb | Functionality                                 | Notes                                      |
 | ------------------------------------ | --------- | --------------------------------------------- | ------------------------------------------ |
-| /verifications                       | POST      | `Verification Request <veri-req>`             | Not needed when using the Verification SDK |
-| /verifications/{type}/{endpoint}     | PUT       | `Report Verification <report-veri>`           | Not needed when using the Verification SDK |
-| /verifications/id/{id}               | GET       | `Query Verification by ID <query-id>`         | none                                       |
-| /verifications/reference/{reference} | GET       | `Query Verification by reference <query-ref>` | none                                       |
-| /verifications/{type}/{endpoint}     | GET       | `Query Verification by Endpoint <query-ep>`   | none                                       |
+| /verifications                       | POST      | [Verification Request](doc:verification-rest-verification-api#section-verification-request)             | Not needed when using the Verification SDK |
+| /verifications/{type}/{endpoint}     | PUT       | [Report Verification](doc:verification-rest-verification-api#section-report-verification)           | Not needed when using the Verification SDK |
+| /verifications/id/{id}               | GET       | [Query Verification by ID](doc:verification-rest-verification-api#section-query-by-id)         | none                                       |
+| /verifications/reference/{reference} | GET       | [Query Verification by reference](doc:verification-rest-verification-api#section-query-verification-by-reference) | none                                       |
+| /verifications/{type}/{endpoint}     | GET       | [Query Verification by Endpoint](doc:verification-rest-verification-api#section-query-by-endpoint)   | none                                       |
 
 ### Verification Callback API
 
