@@ -1,18 +1,52 @@
 version: 2
 jobs:
-  validate:
+  push_master:
     docker:
       - image: circleci/node:10.16.1
+    environment:
+      DOCSVERSION: 1.0
     steps:
       - checkout
       - run:
           name: install-npm
           command: npm install
       - run:
-          name: validate
-          command: "./readme.js validate --validators xrefs"
+          name: push
+          command: "./readme.js push"
+  push_next:
+    docker:
+      - image: circleci/node:10.16.1
+      environment:
+        DOCSVERSION: 9.9.9
+      steps:
+        - checkout
+        - run:
+            name: install-npm
+            command: npm install
+        - run:
+            name: push
+            command: "./readme.js push"
+
 workflows:
   version: 2
-  validate:
+
+  live:
     jobs:
-      - validate
+      - hold:
+          type: approval # manual approval
+          filters:
+            branches:
+              only: master
+      - push_master:
+          requires:
+            - hold
+          filters:
+            branches:
+              only: master
+
+  next:
+    jobs:
+      - push_next:
+          filters:
+            branches:
+              only: next
