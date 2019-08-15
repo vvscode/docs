@@ -174,8 +174,9 @@ All validations are performed unless --validations is specified.
     `)
     .option('-d, --dir <dir>', `Directory where the Markdown content files will be loaded from.`, DEFAULT_DOCS_DIR)
     .option('-f, --file <file>', `Path to a single file to process, relative to the directory specified with -d/--dir option.`)
-    .option('--staged-only', `Only validate Git staged files. Important: files must have been added to the index with 'git add'`)
     .option('--validators <validators>', `Comma-delimited list of validators to run. See command help for supported validators.`)
+    .option('--staged-only', `Only validate Git staged files. Important: files must have been added to the index with 'git add'`)
+    .option('--no-fail', `By default, the command will exit with an error code if any validation errors are found. With this flag, the exit code will always be 0 (success).`)
     .action(async (slug, cmd) => {
         const options = {
             dir: cmd.dir,
@@ -203,13 +204,32 @@ All validations are performed unless --validations is specified.
             process.exit(1);
         });
 
+        // Execute validations and compile stats
+        let promises = [];
+        let errorCount = 0;
         for (const page of pages) {
             for (const validator of selectedValidators) {
-                validator.validate(catalog, page, (element, err) => {
-                    console.log(`${chalk.cyan(element.ref)} [${chalk.yellow(element.desc)}]: ${err}`);
-                });
+                promises.push(
+                    validator.validate(catalog, page, (element, err) => {
+                        console.log(`${chalk.cyan(element.ref)} [${chalk.yellow(element.desc)}]: ${err}`);
+                        errorCount++;
+                    }))
+                ;
             }
         }
+
+        // Wait until all validations are completed, then output stats and optionally exit with error code
+        Promise.all(promises).then(() => {
+            if (errorCount > 0) {
+                let color = cmd.fail ? chalk.red : chalk.yellow;
+                console.log(color(`${errorCount} validation errors were found in catalog.`));
+                if (cmd.fail) {
+                    process.exitCode = 1;
+                }
+            } else {
+                console.log(chalk.green(`No validation errors found.`));
+            }
+        });
     });
 
 program.parse(process.argv);
