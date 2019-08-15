@@ -3,8 +3,8 @@ jobs:
   push_master:
     docker:
       - image: circleci/node:10.16.1
-    environment:
-      DOCSVERSION: 1.0
+      environment:
+        DOCSVERSION: 1.0
     steps:
       - checkout
       - run:
@@ -16,8 +16,8 @@ jobs:
   push_next:
     docker:
       - image: circleci/node:10.16.1
-      environment:
-        DOCSVERSION: 9.9.9
+        environment:
+          DOCSVERSION: 9.9.9
       steps:
         - checkout
         - run:
