@@ -1,0 +1,18 @@
+version: 2
+jobs:
+  validate:
+    docker:
+      - image: circleci/node:10.16.1
+    steps:
+      - checkout
+      - run:
+          name: install-npm
+          command: npm install
+      - run:
+          name: validate
+          command: "./readme.js validate --validators xrefs"
+workflows:
+  version: 2
+  validate:
+    jobs:
+      - validate
