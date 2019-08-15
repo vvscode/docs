@@ -18,14 +18,14 @@ jobs:
       - image: circleci/node:10.16.1
         environment:
           DOCSVERSION: 9.9.9
-      steps:
-        - checkout
-        - run:
-            name: install-npm
-            command: npm install
-        - run:
-            name: push
-            command: "./readme.js push"
+    steps:
+      - checkout
+      - run:
+          name: install-npm
+          command: npm install
+      - run:
+          name: push
+          command: "./readme.js push"
 
 workflows:
   version: 2
