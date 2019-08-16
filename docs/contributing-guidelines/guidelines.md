@@ -47,7 +47,7 @@ OAS enables us to:
 - Auto-generate Helper libraries
 - You choose to either design first in OAS, or use tools for your language to generate dynamic swagger at build or runtime.
 
-You can find a list of tools [here](#tools).
+You can find a list of tools [here](#section-tools).
 
 ## Best practices and tone of voice
 
@@ -182,8 +182,7 @@ if possible. Be open about areas that will frustrate our developers
 - [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint),
     a popular linter by David Anson.
 
-- [Code Spell
-    Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker),
+- [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker),
     an offline spell checker by Street Side Software.
 
 ### Markdown Office integration

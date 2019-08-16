@@ -61,7 +61,7 @@ The archive did not contain ... .xcarchive/BCSymbolMaps/<UUID>.bcsymbolmap as ex
 
 **A** (If you are using *CocoaPods*):
 
-Make sure that the Xcode build setting *Valid Architectures* (VALID\_ARCHS) does *not* contain any of the iOS Simulator architectures (i386 or x86\_64). (For details, see [here](https://github.com/CocoaPods/CocoaPods/blob/691e3de4405a0b7174ccd9ca85912a045d286aa2/lib/cocoapods/generator embed_frameworks_script.rb#L111) for details on how *CocoaPods* is stripping iOS Simulator architectures.)
+Make sure that the Xcode build setting *Valid Architectures* (VALID\_ARCHS) does *not* contain any of the iOS Simulator architectures (i386 or x86\_64). (See [here](https://github.com/CocoaPods/CocoaPods/blob/691e3de4405a0b7174ccd9ca85912a045d286aa2/lib/cocoapods/generator/embed_frameworks_script.rb#L111) for details on how *CocoaPods* is stripping iOS Simulator architectures.)
 
 If you have the error concerning `.bcsymbolmap` files, try unchecking the *Include bitcode* checkbox when uploading your application binary.
 

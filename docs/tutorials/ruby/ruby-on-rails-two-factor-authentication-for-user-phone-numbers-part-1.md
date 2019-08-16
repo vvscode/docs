@@ -115,7 +115,7 @@ SinchSms.status(key, secret, message_id);
 
 ## Testing with Postman
 
-I like to use Postman for Chrome to test out my REST APIs. You can get it [here](https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm?hl=en).
+I like to use Postman to test out my REST APIs. You can get it [here](https://www.getpostman.com/downloads/).
 
 Use `$ rails s` to start a local Rails server and take note of the port. In my case it was 3000.
 

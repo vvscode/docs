@@ -584,7 +584,7 @@ It is possible to specify the content language for SMS verification. The desired
 ---
 **Note** 
 
-The content language specified in the API request or in the callback can be overridden by carrier provider specific templates, due to complience and legal requirements, such as [US shortcode requirements (pdf)](https://www.usshortcodes.com/info/static/docs/CTIA%20Short%20Code%20Monitoring%20Handbook%20v1.5.2.pdf).
+The content language specified in the API request or in the callback can be overridden by carrier provider specific templates, due to complience and legal requirements, such as [US shortcode requirements (pdf)](https://www.wmcglobal.com/storage/us_resources/ctia-short-code-monitoring-handbook-current-Short-Code-Monitoring-Handbook-v1.7.pdf).
 
 ---
 

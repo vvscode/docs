@@ -153,13 +153,13 @@ The next step is to register the *push notification data* with the *SINClient*, 
 ```
 
 
-Please refer to Apple’s [Local and Push Notification Programming Guide](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Introduction.html) for more information on how to obtain the Apple Push Notification Device Token.
+Please refer to Apple’s [Local and Push Notification Programming Guide](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/) for more information on how to obtain the Apple Push Notification Device Token.
 
 ### Sending and receiving Apple push notifications
 
 To send push messages, you must have a server that is configured for sending push notifications to Apple Push Notification Service. Please see the [Sinch REST API User Guide](doc:usingrestapi) for details on how to handle feedback from Apple Push Notification Service.
 
-Please also refer to Apple’s [Local and Push Notification Programming Guide](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Introduction.html) for further details on push notifications.
+Please also refer to Apple’s [Local and Push Notification Programming Guide](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/) for further details on push notifications.
 
 #### On the caller side
 
@@ -197,7 +197,7 @@ The Sinch-specific payload should be embedded as custom payload data in the Appl
 
 The Sinch-specific payload will not exceed 100 bytes, meaning that there should be 156 bytes available in the push notification payload for application-specific purposes.
 
-Please refer to Apple’s [Local and Push Notification Programming Guide](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Introduction.html) for further details.
+Please refer to Apple’s [Local and Push Notification Programming Guide](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/) for further details.
 
 #### On the callee side
 

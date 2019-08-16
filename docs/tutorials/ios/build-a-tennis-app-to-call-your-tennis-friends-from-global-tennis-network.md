@@ -27,7 +27,7 @@ We will be working with a starter project that you can download from [GitHub](ht
 
 ## 2. Using the GTN API
 
-Before we start, take a quick look at **TennisParser.h** and **TennisParser.m**. I went ahead and made this class for the purpose of this tutorial. It has methods for each of the three ways we’ll need to parse data that we get from the GTN API. Since the API returns data in XML, the class uses an NSXMLParser object. I won’t go into the details of how that’s done, but you can read up about NSXMLParser on [Apple’s Developer Website](https://developer.apple.com/library/prerelease/ios//documentation/Cocoa/Reference/Foundation/Classes NSXMLParser_Class/index.html).
+Before we start, take a quick look at **TennisParser.h** and **TennisParser.m**. I went ahead and made this class for the purpose of this tutorial. It has methods for each of the three ways we’ll need to parse data that we get from the GTN API. Since the API returns data in XML, the class uses an NSXMLParser object. I won’t go into the details of how that’s done, but you can read up about NSXMLParser on [Apple’s Developer Website](https://developer.apple.com/documentation/foundation/nsxmlparser?language=objc).
 
 To start, we will want to log in the user in when his or her credentials are entered. Go to **LoginViewController.m** and implement the method `LoginAction` as follows:
 

@@ -25,7 +25,7 @@ You can also add more libraries to the pod file as well. Once you’ve navigated
 
 #### Push notification certificates
 
-No matter if you are using the sample app or one of your own, you’ll need to have push notifications enabled. If you haven’t done this before, you’ll want to follow the [guide created by Apple](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters ApplePushService.html).
+No matter if you are using the sample app or one of your own, you’ll need to have push notifications enabled. If you haven’t done this before, you’ll want to follow the [guide created by Apple](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1).
 
 Note that if you don’t include certificates for VoIP services or user Pushkit, the legacy push notifications will still function just fine.
 

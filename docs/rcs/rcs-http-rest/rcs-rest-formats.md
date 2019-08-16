@@ -23,7 +23,7 @@ All MSISDNs returned by the REST API will be without a `+` or `00` prefix, even 
 
 ### Timestamps
 
-Timestamps are represented using the [ISO-8601 standard](http://en.wikipedia.org/wiki/ISO\_8601).
+Timestamps are represented using the [ISO-8601 standard](https://en.wikipedia.org/wiki/ISO_8601).
 
 All timestamps returned by the API will be in UTC with millisecond precision.
 

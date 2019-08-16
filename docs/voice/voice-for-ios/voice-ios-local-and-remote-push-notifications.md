@@ -113,7 +113,7 @@ SIN_INCOMING_VIDEO_CALL_DISPLAY_NAME = "Incoming video call from %@";
 >
 > This is not applicable to VoIP type push notifications because in that case the Sinch SDK will present a local notification (see* `-[SINCallClientDelegate client:localNotificationForIncomingCall:`*)*
 
-Please see [Apple’s Local and Remote Notification Programming Guide](https://developer.apple.com/library/ios/documentation NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW21) on remote push notification and localization strings for more details.
+Please see [Apple’s Local and Remote Notification Programming Guide](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1) on remote push notification and localization strings for more details.
 
 ## Presenting local notifications for incoming calls
 
