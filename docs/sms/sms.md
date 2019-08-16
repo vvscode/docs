@@ -9,7 +9,7 @@ We offer a number of different APIs and libraries that make it easy for you to u
 
 > **Note**    
 >
-> If you are a local customer of Sinch Germany GmbH, using our domestic German platform, please contact our [German support team](support-de@sinch.com) for further assistance.
+> If you are a local customer of Sinch Germany GmbH, using our domestic German platform, please contact our [German support team](mailto:support-de@sinch.com) for further assistance.
 
 ## The different SMS APIs
 

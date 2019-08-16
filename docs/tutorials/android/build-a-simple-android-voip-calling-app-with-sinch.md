@@ -356,4 +356,4 @@ recipientId = intent.getStringExtra("recipientId");
 
 Now you can use the callerId variable when starting the SinchClient, and recipientId when making a call.
 
-And that’s it for this VoIP tutorial. If you have any questions, we’re always available on Twitter @SinchDev. You can also reach us via email at [dev@sinch.com](dev@sinch.com).
+And that’s it for this VoIP tutorial. If you have any questions, we’re always available on Twitter @SinchDev. You can also reach us via email at [dev@sinch.com](mailto:dev@sinch.com).
