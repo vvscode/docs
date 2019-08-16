@@ -12,7 +12,7 @@ const readlineSync = require('readline-sync');
 
 const markdownize = require('./lib/markdownize');
 const validators = require('./lib/validators');
-const { Catalog } = require('./lib/catalog');
+const { Catalog, Page } = require('./lib/catalog');
 const { Api } = require('./lib/api-client');
 
 const DEFAULT_CONFIG_FILE = 'config.yml';
@@ -63,7 +63,11 @@ locally but not present on Readme). If any are found, the program will offer to 
             }
         }
 
-        const readme = apiClient();
+        // build the catalog from local content files
+        let catalog = Catalog.build(cmd.dir);
+        catalog = await selectPages(catalog, options);
+
+        const readme = apiClient(catalog, options);
 
         let fetchedPages = await readme.fetchPages(listCategories(slug), async page => {
             const outputFile = await page.writeTo(cmd.dir);
@@ -72,11 +76,7 @@ locally but not present on Readme). If any are found, the program will offer to 
 
         let fetchedPagePaths = fetchedPages.map(page => page.path);
 
-        // build the catalog from local content files
-        const catalog = Catalog.build(cmd.dir);
-        const catalogPages = await selectPages(catalog, options);
-
-        const staleLocalPages = catalogPages.filter(page => !fetchedPagePaths.includes(page.path));
+        const staleLocalPages = catalog.pages.filter(page => !fetchedPagePaths.includes(page.path));
 
         if (staleLocalPages.length > 0) {
             console.log(chalk.yellow(`WARNING: Found ${staleLocalPages.length} possibly stale local content pages; they were not fetched after crawling Readme:`));
@@ -95,6 +95,7 @@ program
     .option('-d, --dir <dir>', `Directory where the Markdown content files will be loaded from.`, DEFAULT_DOCS_DIR)
     .option('-f, --file <file>', `Path to a single file to process, relative to the directory specified with -d/--dir option.`)
     .option('--staged-only', `Only push files staged files that have been modified. Important: files must have been added to the index with 'git add'`)
+    .option('--prune', `When enabled, remote pages that do not exist locally will be pruned (deleted).`)
     .option('--dry-run', `No remote content will be updated but command output will show what would be done.`)
     .action(async (slug, cmd) => {
         const options = {
@@ -102,19 +103,35 @@ program
             file: cmd.file,
             categories: slug,
             stagedOnly: cmd.stagedOnly,
-            dryRun: cmd.dryRun
+            dryRun: cmd.dryRun,
+            prune: cmd.prune,
         };
-        const catalog = Catalog.build(cmd.dir);
 
-        const pages = await selectPages(catalog, options);
-        if (pages.length === 0) {
+        let catalog = Catalog.build(cmd.dir);
+
+        catalog = await selectPages(catalog, options);
+        if (catalog.length === 0) {
             console.warn('No files to found to push.');
             return;
         }
 
-        const readme = apiClient();
-        for (const page of pages) {
-            readme.pushPage(page, options);
+        const readme = apiClient(catalog, options);
+        for (const page of catalog.pages) {
+            readme.pushPage(page);
+        }
+
+        if (options.prune) {
+            // Compare local catalog with remote catalog (taking care of filtering pages as they were locally)
+            let remotePages = await readme.fetchPages(listCategories(options.categories));
+            let remoteCatalog = new Catalog(remotePages);
+            remoteCatalog = await selectPages(remoteCatalog, options);
+
+            const toPrune = remoteCatalog.select(Page.notIn(catalog));
+
+            // Then prune all pages present remotely that could not be found locally
+            for (const page of toPrune.pages) {
+                readme.deletePage(page.slug);
+            }
         }
     });
 
@@ -134,10 +151,10 @@ program
             dryRun: cmd.dryRun,
             verbose: cmd.dryRun || cmd.verbose,
         };
-        const catalog = Catalog.build(cmd.dir);
+        let catalog = Catalog.build(cmd.dir);
 
-        const pages = await selectPages(catalog, options);
-        if (pages.length === 0) {
+        catalog = await selectPages(catalog, options);
+        if (catalog.length === 0) {
             console.warn('No files to found to markdownize.');
             return;
         }
@@ -147,7 +164,7 @@ program
             widgets = cmd.widgets.split(',');
         }
 
-        for (const page of pages) {
+        for (const page of catalog.pages) {
             const updated = markdownize.markdownize(page, widgets, options);
             if (!options.dryRun) {
                 if (page.content !== updated) {
@@ -184,10 +201,10 @@ All validations are performed unless --validations is specified.
             categories: slug,
             stagedOnly: cmd.stagedOnly,
         };
-        const catalog = Catalog.build(cmd.dir);
+        let catalog = Catalog.build(cmd.dir);
 
-        const pages = await selectPages(catalog, options);
-        if (pages.length === 0) {
+        catalog = await selectPages(catalog, options);
+        if (catalog.length === 0) {
             console.warn('No files to found to validate.');
             return;
         }
@@ -207,7 +224,7 @@ All validations are performed unless --validations is specified.
         // Execute validations and compile stats
         let promises = [];
         let errorCount = 0;
-        for (const page of pages) {
+        for (const page of catalog.pages) {
             for (const validator of selectedValidators) {
                 promises.push(
                     validator.validate(catalog, page, (element, err) => {
@@ -235,26 +252,27 @@ All validations are performed unless --validations is specified.
 program.parse(process.argv);
 
 
-function apiClient() {
-    return new Api(globalOption(CONFIG_APIKEY), globalOption(CONFIG_DOCSVERSION));
+function apiClient(catalog, options) {
+    return new Api(globalOption(CONFIG_APIKEY), globalOption(CONFIG_DOCSVERSION), catalog, options);
 }
 
 
 async function selectPages(catalog, options) {
-    let pages;
+    const filters = [];
     if (options.file) {
-        pages = catalog.findPageByPath(options.file);
+        filters.push(Page.byPath(options.file));
     } else {
-        const categories = listCategories(options.categories);
-        pages = catalog.findPagesInCategories(categories);
+        filters.push(Page.inCategories(listCategories(options.categories)));
     }
 
     if (options.stagedOnly) {
         const stagedFiles = await stagedGitFiles();
         const stagedFilePaths = stagedFiles.map(stagedFile => stagedFile.filename);
-        pages = pages.filter(page => stagedFilePaths.includes(path.join(options.dir, page.path)));
+
+        filters.push(page => stagedFilePaths.includes(path.join(options.dir, page.path)));
     }
-    return pages;
+
+    return catalog.select(...filters);
 }
 
 
