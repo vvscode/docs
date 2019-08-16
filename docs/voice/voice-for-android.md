@@ -1,5 +1,4 @@
 ---
-id: "5d3704db78154a0011f13b32"
 title: "Voice for Android"
 excerpt: "The Sinch SDK is a product that makes adding voice calling and/or instant messaging to mobile apps easy. Continue reading this step-by-step guide now."
 ---

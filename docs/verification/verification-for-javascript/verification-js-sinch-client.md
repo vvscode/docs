@@ -1,5 +1,4 @@
 ---
-id: "5d42b23c50c427005e2a62f0"
 title: "Sinch Client"
 excerpt: ""
 ---

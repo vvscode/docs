@@ -1,5 +1,4 @@
 ---
-id: "5d284cfe80914d02df2e51db"
 title: "SMPP"
 excerpt: "For our customers that require low level control of SMS messaging and lowest possible latency we offer our Enhanced SMPP service."
 ---

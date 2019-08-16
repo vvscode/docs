@@ -1,5 +1,4 @@
 ---
-id: "5d417a6c582372006ddfe882"
 title: "SMS Verification"
 excerpt: ""
 ---

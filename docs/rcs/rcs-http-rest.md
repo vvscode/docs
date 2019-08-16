@@ -1,5 +1,4 @@
 ---
-id: "5d348a0fa74af200125900e9"
 title: "REST"
 excerpt: ""
 ---

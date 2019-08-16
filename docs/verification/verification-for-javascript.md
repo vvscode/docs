@@ -1,5 +1,4 @@
 ---
-id: "5d415ed1fc662e001a8d7797"
 title: "Verification for JavaScript"
 excerpt: ""
 ---

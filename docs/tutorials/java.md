@@ -1,5 +1,4 @@
 ---
-id: "5d4488eca3ecf000723c6517"
 title: "Java"
 excerpt: "Tutorials for our Java SDK"
 ---

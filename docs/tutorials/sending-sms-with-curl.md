@@ -1,5 +1,4 @@
 ---
-id: "5d4be7fed673d800343f1c53"
 title: "Sending SMS With cURL"
 excerpt: "In this tutorial, you will use cURL to send an SMS message to a mobile phone. We’ve also made a video tutorial to guide you through the process. Find out more."
 ---

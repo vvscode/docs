@@ -1,5 +1,4 @@
 ---
-id: "5d53ed7cc86caf005119196c"
 title: "Log in"
 excerpt: ""
 ---

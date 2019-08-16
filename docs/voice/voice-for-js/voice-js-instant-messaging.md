@@ -1,5 +1,4 @@
 ---
-id: "5d40464b6d21f6002e919680"
 title: "Instant Messaging"
 excerpt: ""
 ---

@@ -1,5 +1,4 @@
 ---
-id: "5d53ef6775d0640012d75c74"
 title: "Types"
 excerpt: ""
 ---

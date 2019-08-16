@@ -1,5 +1,4 @@
 ---
-id: "5d4a8f9becf31d0012f87fc4"
 title: "Number Verification: Build Your Own Authenticator App With Sinch and OTP-Sharp - Part 4"
 excerpt: "In this tutorial, we are going to build a 2FA system that only sends one SMS per app install to enable 2FA for web. Continue reading this step-by-step guide."
 ---

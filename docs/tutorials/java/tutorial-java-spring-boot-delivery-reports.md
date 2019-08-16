@@ -1,5 +1,4 @@
 ---
-id: "5d5416211d5d6203a1abfa78"
 title: "Receive SMS delivery reports in a Spring Boot application"
 excerpt: "In this more advanced installment of our Java tutorial series, you'll learn how you can keep track of the delivery of SMS messages you send via the Sinch REST API."
 ---

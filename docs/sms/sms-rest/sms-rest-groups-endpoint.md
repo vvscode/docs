@@ -1,5 +1,4 @@
 ---
-id: "5d2c551ef91dc40012e992b3"
 title: "Groups Endpoint"
 excerpt: "The most feaure rich API Sinch offers. It allows for single messages, scheduled batch send-outs using message templates and more."
 ---

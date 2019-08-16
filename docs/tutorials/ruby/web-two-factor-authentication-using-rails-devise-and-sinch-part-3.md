@@ -1,5 +1,4 @@
 ---
-id: "5d4be216c77100002b2bd613"
 title: "Web Two-Factor Authentication Using Rails, Devise and Sinch - Part 3"
 excerpt: "Web Two-Factor Authentication Using Rails, Devise and Sinch. When users sign up for your app, they will be prompted to enter their phone number. Every time they sign in after that OTP will be texted to their phone."
 ---

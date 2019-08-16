@@ -1,5 +1,4 @@
 ---
-id: "5d414a84d8fd860041a8d2f9"
 title: "Video for Android"
 excerpt: ""
 ---

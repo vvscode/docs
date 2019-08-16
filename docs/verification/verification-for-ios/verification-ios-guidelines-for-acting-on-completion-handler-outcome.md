@@ -1,5 +1,4 @@
 ---
-id: "5d417ba4d2ea0200ff87d559"
 title: "Guidelines for acting on completion handler outcome"
 excerpt: ""
 ---

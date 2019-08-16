@@ -1,5 +1,4 @@
 ---
-id: "5d357cc8991ba80051df49ff"
 title: "MM7 Service"
 excerpt: ""
 ---

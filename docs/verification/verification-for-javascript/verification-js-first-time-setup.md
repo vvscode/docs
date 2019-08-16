@@ -1,5 +1,4 @@
 ---
-id: "5d42b23589418f00c5e95f83"
 title: "First time setup"
 excerpt: ""
 ---

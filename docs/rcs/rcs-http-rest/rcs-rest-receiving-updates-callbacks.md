@@ -1,5 +1,4 @@
 ---
-id: "5d348f07b26a25006038d62a"
 title: "Receiving Updates & Callbacks"
 excerpt: ""
 ---

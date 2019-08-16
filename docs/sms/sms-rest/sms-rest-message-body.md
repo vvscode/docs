@@ -1,5 +1,4 @@
 ---
-id: "5d2c453007b34d00650f11d4"
 title: "Message Body"
 excerpt: ""
 ---

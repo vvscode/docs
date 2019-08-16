@@ -1,5 +1,4 @@
 ---
-id: "5d491e76eb08fb002bdc5a6d"
 title: "Building a simple SMS notification system with Sinch"
 excerpt: "This tutorial will show you how to build a simple notification system by using Sinch. This will be a system I built for the Western Grands. Every year there are three main events in Quarter Midget racing, one for each region and one dirt event."
 ---

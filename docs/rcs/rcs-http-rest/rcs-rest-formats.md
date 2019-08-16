@@ -1,5 +1,4 @@
 ---
-id: "5d348b38bb46300045b80a67"
 title: "Formats"
 excerpt: ""
 ---

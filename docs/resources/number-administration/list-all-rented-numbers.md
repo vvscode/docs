@@ -1,5 +1,4 @@
 ---
-id: "5d53ee36c98e440026ab82a5"
 title: "List all rented numbers"
 excerpt: ""
 ---

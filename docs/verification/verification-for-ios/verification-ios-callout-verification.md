@@ -1,5 +1,4 @@
 ---
-id: "5d417b54e8a7a80012bb9fd2"
 title: "Callout Verification"
 excerpt: ""
 ---

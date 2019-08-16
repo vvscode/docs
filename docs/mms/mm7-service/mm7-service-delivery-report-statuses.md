@@ -1,5 +1,4 @@
 ---
-id: "5d35bc097c3ad501eadf6c1d"
 title: "Delivery Report Statuses"
 excerpt: ""
 ---

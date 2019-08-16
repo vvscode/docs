@@ -1,5 +1,4 @@
 ---
-id: "5d238f078e56e9003a4f89f1"
 title: "REST"
 excerpt: "The most feaure rich API Sinch offers. It allows for single messages, scheduled batch send-outs using message templates and more."
 ---

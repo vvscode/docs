@@ -1,5 +1,4 @@
 ---
-id: "5d31edf14a8a2204bf341f53"
 title: "Outbound SMS SMPP"
 excerpt: ""
 ---

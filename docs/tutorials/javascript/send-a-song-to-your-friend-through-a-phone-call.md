@@ -1,5 +1,4 @@
 ---
-id: "5d4aa4861b99320071eac5f0"
 title: "Send a Song to Your Friend Through a Phone Call"
 excerpt: "Learn how you can send a song to a friend or loved one using the Sinch JS SDK - It's quicker than you think! Sign up today and download the JS SDK now."
 ---

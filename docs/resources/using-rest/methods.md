@@ -1,5 +1,4 @@
 ---
-id: "5d53ef246ba536033f160abf"
 title: "Methods"
 excerpt: ""
 ---

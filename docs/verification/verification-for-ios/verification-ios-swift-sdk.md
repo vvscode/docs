@@ -1,5 +1,4 @@
 ---
-id: "5d417e55d8fd860041a8d987"
 title: "Swift SDK"
 excerpt: ""
 ---

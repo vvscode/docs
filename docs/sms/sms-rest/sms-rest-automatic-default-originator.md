@@ -1,5 +1,4 @@
 ---
-id: "5d2c55b49e8aef006d18d8b4"
 title: "Automatic Default Originator"
 excerpt: ""
 ---

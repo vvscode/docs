@@ -1,5 +1,4 @@
 ---
-id: "5d36f51035c6c3006529f67b"
 title: "ENUM Interface"
 excerpt: ""
 ---

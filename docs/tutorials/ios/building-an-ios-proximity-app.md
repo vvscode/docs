@@ -1,5 +1,4 @@
 ---
-id: "5d49328a4f6f26001ed56be5"
 title: "Building an iOS Proximity App"
 excerpt: "In this tutorial we will be working on a project to integrate Sinch into an iOS application. This will let users connect with other users nearby using Apple’s multi-peer connectivity framework; once a connection has been made, either user will be able to call the other."
 ---

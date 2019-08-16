@@ -1,5 +1,4 @@
 ---
-id: "5d540bdc75a874005fdbe6d2"
 title: "Authorization"
 excerpt: ""
 ---

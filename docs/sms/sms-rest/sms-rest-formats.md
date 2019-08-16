@@ -1,5 +1,4 @@
 ---
-id: "5d2c3d602a2616003e6826da"
 title: "Formats"
 excerpt: "This section will take a brief look at some of the formats used in the REST API."
 ---

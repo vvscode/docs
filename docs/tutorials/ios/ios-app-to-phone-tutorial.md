@@ -1,5 +1,4 @@
 ---
-id: "5d491fbf0efb310014afb834"
 title: "iOS App to Phone Tutorial"
 excerpt: "In this tutorial you will learn how to use the Sinch SDK to make a voice call from an iOS app from to a regular phone number."
 ---

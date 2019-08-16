@@ -1,5 +1,4 @@
 ---
-id: "5d349d5cc4a7fa00110059eb"
 title: "Agent Event Endpoint"
 excerpt: ""
 ---

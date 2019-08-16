@@ -1,5 +1,4 @@
 ---
-id: "5d4a99f76931b30037a697c7"
 title: "Receive an SMS with the Sinch .NET server-side SDK - Pt. 2"
 excerpt: "Use Sinch .NET server-side SDK to receive SMS to your Web API application."
 ---

@@ -1,5 +1,4 @@
 ---
-id: "5d53ee6579cc2000139dcc77"
 title: "Get numbers assigned to an application"
 excerpt: ""
 ---

@@ -1,5 +1,4 @@
 ---
-id: "5d494cd6be937800590ad61f"
 title: "Add Calling to Your Existing App in 2 Minutes"
 excerpt: "If you’re like me, when you start testing a new SDK or service, you just want to start building and prototyping straight away. While our SDK is simple to use, you still have to add your own UI to make a calling app that users will understand."
 ---

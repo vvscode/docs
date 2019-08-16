@@ -1,5 +1,4 @@
 ---
-id: "5d36ce8d966668005e21407c"
 title: "Sinch Postbacks"
 excerpt: ""
 ---

@@ -1,5 +1,4 @@
 ---
-id: "5d2c48b5be6dfb003c750aec"
 title: "Inbounds Endpoint"
 excerpt: ""
 ---

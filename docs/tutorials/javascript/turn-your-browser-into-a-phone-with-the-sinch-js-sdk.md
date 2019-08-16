@@ -1,5 +1,4 @@
 ---
-id: "5d4a76502422ba0018b85f22"
 title: "Turn Your Browser Into a Phone With the Sinch JS SDK"
 excerpt: "A step-by-step walk through on how to build a web app to make VoIP calls between browsers using JavaScript. Read more."
 ---

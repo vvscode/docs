@@ -1,5 +1,4 @@
 ---
-id: "5d53edcc90c08900496b98b3"
 title: "Get organisation"
 excerpt: ""
 ---

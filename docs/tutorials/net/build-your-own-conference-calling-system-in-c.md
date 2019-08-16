@@ -1,5 +1,4 @@
 ---
-id: "5d4a7c556956200061704737"
 title: "Build your own Conference Calling System in C#"
 excerpt: "In this tutorial, we’ll show how easy it is to build a regular conference calling solution with both Dial in & Dial out functionality.  Continue reading."
 ---

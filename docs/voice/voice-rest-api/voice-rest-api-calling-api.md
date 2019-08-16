@@ -1,5 +1,4 @@
 ---
-id: "5d4059be68a354006c7a65ea"
 title: "Calling API"
 excerpt: ""
 ---

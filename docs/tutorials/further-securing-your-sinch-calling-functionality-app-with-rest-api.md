@@ -1,5 +1,4 @@
 ---
-id: "5d4aa97b27f66a0025ce7b9b"
 title: "Further Securing Your Sinch Calling Functionality App With REST API"
 excerpt: "The callback APIs are a really powerful way to get information about your calls and further secure them. This is the final step before you allow calls to be connected."
 ---

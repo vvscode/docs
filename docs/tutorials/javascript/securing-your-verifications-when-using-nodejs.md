@@ -1,5 +1,4 @@
 ---
-id: "5d4a9727eb4a2c0066cc4075"
 title: "Securing your Verifications when using Node.JS"
 excerpt: "In this tutorial learn how the different ways you can ensure that your app is secure and nobody is using your account for fraudulent verifications."
 ---

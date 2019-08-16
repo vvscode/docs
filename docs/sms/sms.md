@@ -1,5 +1,4 @@
 ---
-id: "5ce6ca75c0632d003f2c2fff"
 title: "Introduction"
 excerpt: "This document provides a detailed user guide and reference documentation on the Sinch SMS REST API. Find out more information about our SMS REST API now."
 ---

@@ -1,5 +1,4 @@
 ---
-id: "5d42c27a4618020044193df5"
 title: "Miscellaneous"
 excerpt: ""
 ---

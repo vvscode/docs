@@ -1,5 +1,4 @@
 ---
-id: "5d42dc0050c427005e2a67ea"
 title: "Call Detail Records"
 excerpt: ""
 ---

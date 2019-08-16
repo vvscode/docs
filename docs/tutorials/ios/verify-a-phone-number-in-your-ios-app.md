@@ -1,5 +1,4 @@
 ---
-id: "5d494bf8db1f6b006605737e"
 title: "Verify a Phone Number in Your iOS App"
 excerpt: "In this tutorial, we are going to explore our Verification SDK for iOS. As of this writing, the method we support for iOS is SMS verification. With our Verification SDK, you won’t need any backend yourself, or you can implement a simple endpoint to receive that a number is verified."
 ---

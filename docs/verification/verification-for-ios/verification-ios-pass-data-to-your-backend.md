@@ -1,5 +1,4 @@
 ---
-id: "5d417c683bdc5d0030e4c043"
 title: "Pass data to your backend"
 excerpt: ""
 ---

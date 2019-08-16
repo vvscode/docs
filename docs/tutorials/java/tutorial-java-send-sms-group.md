@@ -1,5 +1,4 @@
 ---
-id: "5d517f1cf1f5e100e7749787"
 title: "Send an SMS to a pre-defined group of recipients"
 excerpt: "This tutorial will show you how to use Groups, a more advanced feature of the Sinch REST API, to send a single message to a pre-defined list of recipients."
 ---

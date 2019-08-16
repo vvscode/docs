@@ -1,5 +1,4 @@
 ---
-id: "5d492f14f46bc50018a35ec6"
 title: "Build an iOS Custom Ringtone Calling App"
 excerpt: "In this tutorial, we will be creating an app that lets you call a person using a custom ringtone using app-to-app calls. Outgoing calls will specify a person to call, as well as a URL for the ringtone that will play when the person receives his or her incoming call."
 ---

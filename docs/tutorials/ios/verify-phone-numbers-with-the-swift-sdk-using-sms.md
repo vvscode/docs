@@ -1,5 +1,4 @@
 ---
-id: "5d494920a04743010540fc23"
 title: "Verify Phone Numbers with the Swift SDK using SMS"
 excerpt: "We recently made our first Swift SDK available for the Sinch Verification product range. Before we dig into the Swift parts, let’s talk about verification and why you would want it."
 ---

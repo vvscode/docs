@@ -1,5 +1,4 @@
 ---
-id: "5d414913e9971f006c450c9a"
 title: "Glossary"
 excerpt: ""
 ---

@@ -1,5 +1,4 @@
 ---
-id: "5d4047cdffcf8a001c1d4a27"
 title: "Authentication"
 excerpt: ""
 ---

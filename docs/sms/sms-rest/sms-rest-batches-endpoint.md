@@ -1,5 +1,4 @@
 ---
-id: "5d389863c366d203e24e4d44"
 title: "Batches Endpoint"
 excerpt: "The most feature rich API Sinch offers. It allows for single messages, scheduled batch send-outs using message templates and more."
 ---

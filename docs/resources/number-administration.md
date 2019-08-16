@@ -1,5 +1,4 @@
 ---
-id: "5d53eb0e75a874005fdbe3cb"
 title: "Number Administration"
 excerpt: ""
 ---

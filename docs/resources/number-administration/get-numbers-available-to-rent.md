@@ -1,5 +1,4 @@
 ---
-id: "5d53eded79cc2000139dcc68"
 title: "Get numbers available to rent"
 excerpt: ""
 ---

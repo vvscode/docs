@@ -1,5 +1,4 @@
 ---
-id: "5d4a942e86b8040030b6daa4"
 title: "Getting a second number and testing Sinch Callbacks/Webhooks with ngrok"
 excerpt: "In this tutorial you will learn how you can redirect a Sinch number to your own mobile number. Since a few friends (and my boss) live in Sweden, I thought it’d be cool to have a Swedish number that can be redirected to my US mobile."
 ---

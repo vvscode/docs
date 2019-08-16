@@ -1,5 +1,4 @@
 ---
-id: "5d34893b25a69c005d698414"
 title: "Introduction"
 excerpt: "This API provides Universal Profile 2.0 RCS messaging with granular controls to allow fallback to SMS when a handset is not RCS enabled. Find out more today."
 ---

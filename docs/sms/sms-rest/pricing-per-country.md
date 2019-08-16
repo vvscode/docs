@@ -1,5 +1,4 @@
 ---
-id: "5d2c567b6c20400021f366ae"
 title: "Pricing Per Country"
 excerpt: ""
 ---

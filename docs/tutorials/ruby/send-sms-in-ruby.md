@@ -1,5 +1,4 @@
 ---
-id: "5d4bebadb02725001fc09e22"
 title: "Send SMS in Ruby"
 excerpt: "Learn how to use the sinch_sms gem to send an SMS with Sinch."
 ---

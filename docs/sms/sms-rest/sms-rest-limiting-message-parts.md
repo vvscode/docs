@@ -1,5 +1,4 @@
 ---
-id: "5d2c56bc68aa2700183f11fe"
 title: "Limiting Message Parts"
 excerpt: "Learn how to control the number of messages parts that can be sent for a single outbound message from your account"
 ---

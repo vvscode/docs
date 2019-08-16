@@ -1,5 +1,4 @@
 ---
-id: "5d416f7b6eedfd00189c8349"
 title: "Improving verification performance with a great UI"
 excerpt: ""
 ---

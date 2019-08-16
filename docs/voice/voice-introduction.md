@@ -1,5 +1,4 @@
 ---
-id: "5d3702da131c98010884c881"
 title: "Introduction"
 excerpt: "Sinch offers a platform for real time communication over the Internet. It consists of different software development kits – the Sinch SDKs. Find out more now."
 ---

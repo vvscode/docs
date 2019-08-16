@@ -1,5 +1,4 @@
 ---
-id: "5d2c572c4c60cf004e5e8550"
 title: "Pricing & Price Threshold"
 excerpt: ""
 ---

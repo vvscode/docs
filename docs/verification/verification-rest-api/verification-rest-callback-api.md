@@ -1,5 +1,4 @@
 ---
-id: "5d42da91313357001c716fa6"
 title: "Verification Callback API"
 excerpt: ""
 ---

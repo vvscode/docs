@@ -1,5 +1,4 @@
 ---
-id: "5d4be686065750016571b7fa"
 title: "Send an SMS from Slack"
 excerpt: "At our latest innovation day here at Sinch, I finally got the chance to re-live my PHP days and build a Slack SMS slash command. Find out more information."
 ---

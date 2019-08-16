@@ -1,5 +1,4 @@
 ---
-id: "5d3484f8f23fc50067bfdddd"
 title: "Sinch Campaign Manager User Guide"
 excerpt: ""
 ---

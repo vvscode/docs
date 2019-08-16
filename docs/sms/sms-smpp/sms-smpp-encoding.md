@@ -1,5 +1,4 @@
 ---
-id: "5d31ee635135e7005eb5ba87"
 title: "Encoding"
 excerpt: ""
 ---

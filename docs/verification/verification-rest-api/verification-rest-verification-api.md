@@ -1,5 +1,4 @@
 ---
-id: "5d42d55b7e46b100657b71c6"
 title: "Verification API"
 excerpt: ""
 ---

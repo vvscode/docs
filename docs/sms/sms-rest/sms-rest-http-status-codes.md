@@ -1,5 +1,4 @@
 ---
-id: "5d2c3ea0b7f4d30153ac0a36"
 title: "HTTP Status Codes"
 excerpt: "The REST API returns an HTTP status and code each time a request is made."
 ---

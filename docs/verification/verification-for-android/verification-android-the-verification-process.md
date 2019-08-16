@@ -1,5 +1,4 @@
 ---
-id: "5d416ceb9c49e7005969916c"
 title: "The verification process"
 excerpt: ""
 ---

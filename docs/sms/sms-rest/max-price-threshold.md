@@ -1,5 +1,4 @@
 ---
-id: "5d2c56b068aa2700183f11fd"
 title: "Max Price Threshold"
 excerpt: ""
 ---

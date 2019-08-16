@@ -1,5 +1,4 @@
 ---
-id: "5d3f3b791307ff0066ccc5ff"
 title: "Parameterization"
 excerpt: "Provide content that varies depending on recipient with message parameters."
 ---

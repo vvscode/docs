@@ -1,5 +1,4 @@
 ---
-id: "5d53ee2d498078001f3c506d"
 title: "Checkout reserved numbers"
 excerpt: ""
 ---

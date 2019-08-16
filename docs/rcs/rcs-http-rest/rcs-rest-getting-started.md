@@ -1,5 +1,4 @@
 ---
-id: "5d348a2f629f430025dd7eef"
 title: "Getting Started"
 excerpt: ""
 ---

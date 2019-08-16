@@ -1,5 +1,4 @@
 ---
-id: "5ce6ca4b2c7a3f00e4f45242"
 title: "Introduction"
 excerpt: "WhatsApp for Bussiness messaging"
 ---

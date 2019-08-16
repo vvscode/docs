@@ -1,5 +1,4 @@
 ---
-id: "5d492727b28695001193b9de"
 title: "Build a Tennis App to Call Your Tennis Friends From Global Tennis Network"
 excerpt: "In this tutorial, you will learn how to create an app that calls friends from your Global Tennis Network profile. While keeping your phone number private, this feature will allow you to call up other tennis players."
 ---

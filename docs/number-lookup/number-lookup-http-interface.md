@@ -1,5 +1,4 @@
 ---
-id: "5d36fc3956ab690116333c37"
 title: "HTTP Interface"
 excerpt: ""
 ---

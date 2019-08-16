@@ -1,5 +1,4 @@
 ---
-id: "5d2c3b87c3634f002c896802"
 title: "Getting Started"
 excerpt: "The most feature-rich API Sinch offers. It allows for single messages, scheduled batch send-outs using message templates and more."
 ---

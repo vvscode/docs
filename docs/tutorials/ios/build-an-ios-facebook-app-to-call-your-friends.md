@@ -1,5 +1,4 @@
 ---
-id: "5d4921742ef46f005c0575c3"
 title: "Build an iOS Facebook App to Call Your Friends"
 excerpt: "This tutorial shows you how to create an iOS app that lets you call your Facebook friends using app-to-app calls."
 ---

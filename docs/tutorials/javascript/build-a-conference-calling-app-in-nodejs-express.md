@@ -1,5 +1,4 @@
 ---
-id: "5d495fe3e065c00024e1cf3c"
 title: "Build a Conference Calling App in Node.js & Express"
 excerpt: "In this tutorial we are going to create a very simple conference calling app where you can call in to a number and be connected to anyone. A little bit like the carrier hotlines back in the day."
 ---

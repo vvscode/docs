@@ -1,5 +1,4 @@
 ---
-id: "5d4a89a3280e61004519ca95"
 title: "Building an iOS Client for Number Verification - Part 2"
 excerpt: "We implement the number verification system for a mobile device in this tutorial."
 ---

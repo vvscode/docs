@@ -1,5 +1,4 @@
 ---
-id: "5d4aaa59ecf31d0012f88312"
 title: "Signing Sinch API Requests in Ruby"
 excerpt: "Why sign your requests instead of using basic authentication? It’s much more secure and Sinch doesn’t support basic authentication for production applications."
 ---

@@ -1,5 +1,4 @@
 ---
-id: "5d35c34b1e1b360439131bb4"
 title: "sendSavedMMS"
 excerpt: ""
 ---

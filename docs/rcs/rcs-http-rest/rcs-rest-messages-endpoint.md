@@ -1,5 +1,4 @@
 ---
-id: "5d3497e21f1dc200d47a1542"
 title: "Messages Endpoint"
 excerpt: ""
 ---
