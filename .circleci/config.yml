@@ -26,6 +26,17 @@ jobs:
       - run:
           name: push
           command: "./readme.js push"
+  validate:
+    docker:
+      - image: circleci/node:10.16.1
+    steps:
+      - checkout
+      - run:
+          name: install-npm
+          command: npm install
+      - run:
+          name: validate
+          command: "./readme.js validate --no-fail"
 
 workflows:
   version: 2
@@ -46,6 +57,7 @@ workflows:
 
   next:
     jobs:
+      - validate
       - push_next:
           filters:
             branches:
