@@ -17,4 +17,4 @@ This document outlines how to administrate numbers through the same endpoints us
       - Assigning to an application
       - Unassigning from an application
 
-For general information on how to use the Sinch APIs including methods, types, errors and authorization, please check the [Using REST](doc:usingrestapi) page.
+For general information on how to use the Sinch APIs including methods, types, errors and authorization, please check the [Using REST](doc:using-rest) page.

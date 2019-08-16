@@ -7,7 +7,7 @@ First you need to login to retrieve a token that will be used to create an insta
 
 ## Headers
 
-This is a [public resource](doc:publicresources).
+This is a [public resource](doc:authorization#section-public-resources).
 
 When logging in, you should always pass in the header the “number administration” key. This is the key that you should pass:
 
