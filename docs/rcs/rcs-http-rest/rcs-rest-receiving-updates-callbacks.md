@@ -113,7 +113,7 @@ Message state transitions and flow diagram. Rectangles represent states communic
 | queued                         | Message has entered the RCS REST API system. This is the initial state for a message.                    |
 | capability\_lookup\_dispatched | Message is awaiting capability lookup request dispatched with the RCS supplier.                          |
 | dispatched                     | Message was dispatched to the selected RCS supplier / operator platform.                                 |
-| fallback\_dispatched           | Message was not sent as RCS message, and a fallback SMS has been dispatched. See [SMS Fallback](doc:sms-fallback). |
+| fallback\_dispatched           | Message was not sent as RCS message, and a fallback SMS has been dispatched. See [SMS Fallback](doc:rcs-rest-sms-fallback). |
 | aborted                        | Message expired or was revoked, and no fallback SMS was requested.                                       |
 | failed                         | Message failed to be dispatched as RCS, and fallback SMS also failed.                                    |
 | delivered                      | Message was successfully delivered to the handset.                                                       |
