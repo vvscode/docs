@@ -201,10 +201,10 @@ All validations are performed unless --validations is specified.
             categories: slug,
             stagedOnly: cmd.stagedOnly,
         };
-        let catalog = Catalog.build(cmd.dir);
+        let entireCatalog = Catalog.build(cmd.dir);
 
-        catalog = await selectPages(catalog, options);
-        if (catalog.length === 0) {
+        let pages = (await selectPages(entireCatalog, options)).pages;
+        if (pages.length === 0) {
             console.warn('No files to found to validate.');
             return;
         }
@@ -224,10 +224,10 @@ All validations are performed unless --validations is specified.
         // Execute validations and compile stats
         let promises = [];
         let errorCount = 0;
-        for (const page of catalog.pages) {
+        for (const page of pages) {
             for (const validator of selectedValidators) {
                 promises.push(
-                    validator.validate(catalog, page, (element, err) => {
+                    validator.validate(entireCatalog, page, (element, err) => {
                         console.log(`${chalk.cyan(element.ref)} [${chalk.yellow(element.desc)}]: ${err}`);
                         errorCount++;
                     }))
