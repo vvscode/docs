@@ -28,7 +28,7 @@ Undefined symbols for architecture:
 ```
 
 
-**A**: You must add and link against the iOS system libraries and Frameworks listed in [First time setup](doc:firsttimesetupios).
+**A**: You must add and link against the iOS system libraries and Frameworks listed in [First time setup](doc:verification-ios-first-time-setup).
 
 **Q**: How do I resolve Swift linker errors (runtime errors), such as:
 ```text
@@ -67,4 +67,4 @@ If you have the error concerning `.bcsymbolmap` files, try unchecking the *Inclu
 
 **A** (If you have manually added the *SinchVerification.framework* to *Embedded Binaries*):
 
-Make sure you have added the [strip-frameworks.sh` as part of a Xcode *"Run Script Phase"*, see the `Swift section](doc:ios-swift-verification) for details.
+Make sure you have added the [strip-frameworks.sh` as part of a Xcode *"Run Script Phase"*, see the `Swift section](doc:verification-ios-swift-sdk) for details.

@@ -61,7 +61,7 @@ Get information about your numbers. It returns a list of numbers that you own, a
 
 ### Authorization
 
-This is a protected resource and requires an [application signed request](doc:applicationsignedrequest) or [basic auth](doc:basicauthorization).
+This is a protected resource and requires an [application signed request](doc:authorization#section-application-signed-request) or [basic auth](doc:basicauthorization).
 
 ### Response
 ```json
@@ -144,7 +144,7 @@ Assign a number or a list of numbers to an application.
 
 ### Authorization
 
-This is a protected resource and requires an [application signed request](doc:applicationsignedrequest) or [basic auth](doc:basicauthorization).
+This is a protected resource and requires an [application signed request](doc:authorization#section-application-signed-request) or [basic auth](doc:basicauthorization).
 
 ### Response
 ```json
@@ -199,7 +199,7 @@ request will be used.
 
 ### Authorization
 
-This is a protected resource and requires an [application signed request](doc:applicationsignedrequest) or [basic auth](doc:basicauthorization).
+This is a protected resource and requires an [application signed request](doc:authorization#section-application-signed-request) or [basic auth](doc:basicauthorization).
 
 ### Response
 ```json
@@ -230,7 +230,7 @@ Get callback URLs.
 
 ### Authorization
 
-This is a protected resource and requires an [application signed request](doc:applicationsignedrequest) or [basic auth](doc:basicauthorization).
+This is a protected resource and requires an [application signed request](doc:authorization#section-application-signed-request) or [basic auth](doc:basicauthorization).
 
 ### Response
 ```json
@@ -303,7 +303,7 @@ Update callback URLs.
 
 ### Authorization
 
-This is a protected resource and requires an [application signed request](doc:applicationsignedrequest) or [basic auth](doc:basicauthorization).
+This is a protected resource and requires an [application signed request](doc:authorization#section-application-signed-request) or [basic auth](doc:basicauthorization).
 
 ### Response
 ```json
@@ -333,7 +333,7 @@ Get information about the requested number.
 
 ### Authorization
 
-This is a protected resource and requires an [application signed request](doc:applicationsignedrequest) or [basic auth](doc:basicauthorization).
+This is a protected resource and requires an [application signed request](doc:authorization#section-application-signed-request) or [basic auth](doc:basicauthorization).
 
 ### Response
 ```json
@@ -480,7 +480,7 @@ For more information on playing messages and performing actions on calls see the
 
 ### Authorization
 
-This is a protected resource and requires an [application signed request](doc:applicationsignedrequest) or [basic auth](doc:basicauthorization).
+This is a protected resource and requires an [application signed request](doc:authorization#section-application-signed-request) or [basic auth](doc:basicauthorization).
 
 ### Errors
 
@@ -502,7 +502,7 @@ Gets information about a specific call.
 
 ### Authorization
 
-This is a protected resource and requires an [application signed request](doc:applicationsignedrequest) or [basic auth](doc:basicauthorization).
+This is a protected resource and requires an [application signed request](doc:authorization#section-application-signed-request) or [basic auth](doc:basicauthorization).
 
 ### Response
 ```json
@@ -564,7 +564,7 @@ Gets information about an ongoing conference
 
 ### Authorization
 
-This is a protected resource and requires an [application signed request](doc:applicationsignedrequest) or [basic auth](doc:basicauthorization).
+This is a protected resource and requires an [application signed request](doc:authorization#section-application-signed-request) or [basic auth](doc:basicauthorization).
 
 ### Response
 ```json
@@ -649,7 +649,7 @@ Mutes or unmutes a participant in an ongoing conference
 
 ### Authorization
 
-This is a protected resource and requires an [application signed request](doc:applicationsignedrequest) or [basic auth](doc:basicauthorization).
+This is a protected resource and requires an [application signed request](doc:authorization#section-application-signed-request) or [basic auth](doc:basicauthorization).
 
 ### Errors
 
@@ -663,7 +663,7 @@ Kicks a participant from an ongoing conference
 
 ### Authorization
 
-This is a protected resource and requires an [application signed request](doc:applicationsignedrequest) or [basic auth](doc:basicauthorization).
+This is a protected resource and requires an [application signed request](doc:authorization#section-application-signed-request) or [basic auth](doc:basicauthorization).
 
 ## Kick All Conference Participants
 
@@ -671,7 +671,7 @@ This is a protected resource and requires an [application signed request](doc:ap
 
 ### Authorization
 
-This is a protected resource and requires an [application signed request](doc:applicationsignedrequest) or [basic auth](doc:basicauthorization).
+This is a protected resource and requires an [application signed request](doc:authorization#section-application-signed-request) or [basic auth](doc:basicauthorization).
 
 ## Conference and Text-To-Speech Callouts<span id="callouts"></span>
 
@@ -783,7 +783,7 @@ With the text-to-speech callout, the server initiates a call to a phone number a
 
 ### Authorization
 
-This is a protected resource and requires an [application signed request](doc:applicationsignedrequest) or [basic auth](doc:basicauthorization).
+This is a protected resource and requires an [application signed request](doc:authorization#section-application-signed-request) or [basic auth](doc:basicauthorization).
 
 ### Request
 ```json
@@ -900,4 +900,4 @@ If **enableDice** is set to true and the application has a callback URL specifie
 
 ### Authorization
 
-This is a protected resource and requires an [application signed request](doc:applicationsignedrequest) or [basic auth](doc:basicauthorization).
+This is a protected resource and requires an [application signed request](doc:authorization#section-application-signed-request) or [basic auth](doc:basicauthorization).

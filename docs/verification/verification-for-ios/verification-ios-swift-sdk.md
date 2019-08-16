@@ -93,7 +93,7 @@ bash ${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/SinchVerification.framework
 
 (This step is required to work around an [App Store / iTunes Connect bug](http://www.openradar.meradar?id=6409498411401216))
 
-5.  Make sure that *libc++*, *libz* and *libicucore* are linked (See [here](doc:firsttimesetupios))
+5.  Make sure that *libc++*, *libz* and *libicucore* are linked (See [here](doc:verification-ios-first-time-setup))
 
 ![link-binary-with-libraries-xcode.png](https://files.readme.io/9b2867b-link-binary-with-libraries-xcode.png)
 
@@ -122,7 +122,7 @@ import SinchVerification
 
 (This step is required to work around an [App Store / iTunes Connect bug](http://www.openradar.meradar?id=6409498411401216))
 
-5.  Make sure that *libc++*, *libz* and *libicucore* are linked (See [here](doc:firsttimesetupios))
+5.  Make sure that *libc++*, *libz* and *libicucore* are linked (See [here](doc:verification-ios-first-time-setup))
 
 ![link-binary-with-libraries-xcode.png](https://files.readme.io/9b2867b-link-binary-with-libraries-xcode.png)
 

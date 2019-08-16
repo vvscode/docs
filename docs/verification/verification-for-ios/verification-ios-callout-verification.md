@@ -47,7 +47,7 @@ id<SINVerification> verification = [SINVerification calloutVerificationWithAppli
 
 > **WARNING: Important**    
 >
-> When passing a number as a `NSString*` to create a `SINVerification`, the string should contain a number in *E.164* format. See the section [Phone numbers](#phonenumbers) for details.
+> When passing a number as a `NSString*` to create a `SINVerification`, the string should contain a number in *E.164* format. See the section [Phone numbers](doc:verification-ios-phone-numbers) for details.
 
 ### Re-attemping a callout
 

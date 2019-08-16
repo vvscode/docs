@@ -3,7 +3,7 @@ id: "5d416ceb9c49e7005969916c"
 title: "The verification process"
 excerpt: ""
 ---
-Verification of a phone number is performed in two steps: requesting a verification code and verifying the received code. If all of the permissions are provided (see [Permissions](#permissions)), the Verification SDK attempts to automatically verify any matching code that is received through SMS or flash call during the verification process. This means that during a flash call verification, the Verification SDK will automatically hang up the incoming call if (and only if) it matches the expected pattern. During an SMS verification, if enabled, any received messages text will be matched against the template, and if it matches, the code will be extracted and automatically sent to the Sinch backend. The Verification SDK will callback to the `VerificationListener` during the process, see [VerificationListener](#verificationlistener) for more information.
+Verification of a phone number is performed in two steps: requesting a verification code and verifying the received code. If all of the permissions are provided (see [Permissions](#section-permissions)), the Verification SDK attempts to automatically verify any matching code that is received through SMS or flash call during the verification process. This means that during a flash call verification, the Verification SDK will automatically hang up the incoming call if (and only if) it matches the expected pattern. During an SMS verification, if enabled, any received messages text will be matched against the template, and if it matches, the code will be extracted and automatically sent to the Sinch backend. The Verification SDK will callback to the `VerificationListener` during the process, see [VerificationListener](#section-verification-listener) for more information.
 
 If the permissions needed for automatic verification are not provided, the `verify` method on the `Verification` object should be invoked with a user-supplied verification code to verify the phone number.
 
@@ -146,7 +146,7 @@ VerificationListener listener = new VerificationListener() {
 
 > **WARNING: Important**    
 >
-> The phone number should be specified according to the E.164 number formatting (<http://en.wikipedia.org/wiki/E.164>) recommendation and should be prefixed with a <span class="title-ref">+</span>. See the section [Phone numbers](doc:phonenumbers) for details.
+> The phone number should be specified according to the E.164 number formatting (<http://en.wikipedia.org/wiki/E.164>) recommendation and should be prefixed with a <span class="title-ref">+</span>. See the section [Phone numbers](doc:verification-android-phone-numbers) for details.
 
 ## Validate code manually
 

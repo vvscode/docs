@@ -24,7 +24,7 @@ The Sinch SDK is currently available for [iOS](doc:voiceforios), [Android](doc:v
 Getting started with the Sinch Voice API and SDK is simple thanks to the extensive documentation for each platform and the different tutorials and sample application available together with the SDKs. In most cases, Sinch can be used without needing a back-end or any configuration just follow these steps.
 
 1.  [create an account](https://portal.sinch.com/#/signup),
-2.  [download the Sinch Voice SDK](page:downloads) 
+2.  [download the Sinch Voice SDK](doc:downloads) 
 3.  and get started in minutes following one of the user guides below.
 
 <div class="magic-block-html">

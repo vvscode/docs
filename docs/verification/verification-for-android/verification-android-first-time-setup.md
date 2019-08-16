@@ -13,7 +13,7 @@ This is a step-by-step guide about setting up the Sinch Verification SDK for the
 
 ## Download
 
-The Sinch Verification SDK can be downloaded [here](page:downloads). It contains: the library aar, this user guide, reference documentation, and a sample app.
+The Sinch Verification SDK can be downloaded [here](doc:downloads). It contains: the library aar, this user guide, reference documentation, and a sample app.
 
 ## Add the Sinch library
 
