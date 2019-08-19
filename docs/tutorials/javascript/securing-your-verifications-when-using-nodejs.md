@@ -6,7 +6,7 @@ In this tutorial, we’ll show you the different ways you can ensure that your a
 
 ## Two different ways of securing your app
 
-Sinch offers 2 ways to secure your app, the first one is the [Callback/webhook](doc:verificationcallbackapi) way of securing it which we’ll dive into today, and the other is Application Signed requests, but that’s a post for another day.
+Sinch offers 2 ways to secure your app, the first one is the [Callback/webhook](doc:verification-rest-callback-api) way of securing it which we’ll dive into today, and the other is Application Signed requests, but that’s a post for another day.
 
 ### Webhooks
 
@@ -15,14 +15,14 @@ This is the recommended way of securing your verification. Using Sinch Verificat
 We chose this approach for a couple of reasons, the first was to enable developers to easy try it out with no backend, the second was that we did not want to have the key and secret in-app, and OAuth seemed over complicated for a process that will most likely only occur once.
 ![diagram.png](https://files.readme.io/d51cc29-diagram.png)
 
-You can verify that the request is from us by signing the request you receive and comparing the hash with [authorization](doc:usingrest-authorization), or if you prefer, ship a custom variable like your Token for your own api requests and validate that in the custom variables.
+You can verify that the request is from us by signing the request you receive and comparing the hash with [authorization](doc:verification-rest-verification-api#section-authorization), or if you prefer, ship a custom variable like your Token for your own api requests and validate that in the custom variables.
 
 ## Using node to respond to your callbacks
 
 Today I will set up a backend to allow or deny a verification attempt using Node.JS and [Express](http://expressjs.com/) . For testing and generating requests I will use our [api explorer](https://portal.sinch.com/#/apps) that you’ll find in the dashboard
 ![apiexplorer.png](https://files.readme.io/7b820fb-apiexplorer.png)
 
->   - Create the app
+ - Create the app
 
 ```shell
 npm init
@@ -81,11 +81,11 @@ module.exports = app;
 
 Using PostMan, I post to the localhost:8080/sinch and see the message response,not very exciting so here’s what I want to do:
 
-> 1.  Create an endpoint that is secured with your own custom login token for users (i.e oauth2 or your custom auth scheme) where I add numbers you want to verify
-> 2.  Store in a database (in this tutorial I will just use in memory as an example)
-> 3.  A sinch webhook endpoint that will:
->     1.  Look up the number on initate request. Allow if it’s a hit, otherwise deny.
->     2.  When a verification is successful, remove it from the list of numbers.
+ 1.  Create an endpoint that is secured with your own custom login token for users (i.e oauth2 or your custom auth scheme) where I add numbers you want to verify
+ 1.  Store in a database (in this tutorial I will just use in memory as an example)
+ 1.  A sinch webhook endpoint that will:
+     1.  Look up the number on initate request. Allow if it’s a hit, otherwise deny.
+     1.  When a verification is successful, remove it from the list of numbers.
 
 ### Endpoint to add numbers
 
@@ -118,7 +118,7 @@ router.post('/sinch', function (req, res) {
 });
 ```
 
-Next, I will add implementation to handle the RequestEvent by checking if the number is in allowed number array. This is also where you can set the code and make some other changes to the Veriifcation requests. View the docs for more [details](doc:verification-restapi).
+Next, I will add implementation to handle the RequestEvent by checking if the number is in allowed number array. This is also where you can set the code and make some other changes to the Veriifcation requests. View the docs for more [details](doc:verification-rest-api).
 
 ```javascript
 router.post('/sinch', function (req, res) {

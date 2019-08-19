@@ -6,11 +6,11 @@ excerpt: "We implement the number verification system for a mobile device in thi
 > 
 > To verify numbers even easier, check out our [Verification SDK](https://www.sinch.com/products/verification/sms/)
 
-In [Part 1 of this tutorial](doc:building-a-c-authentication-system-with-net), we created some server-side code to generate codes that are sent by [our SMS API](https://www.sinch.com/products/messaging/sms/) to a phone number. In Part 2, we will implement the number verification system for a mobile device. Then, in [Part 3](doc:build-two-factor-authentication-system-pt-3), we will add the two-factor authentication system to the iOS client and a website. This tutorial will take about 30 minutes to complete.
+In [Part 1 of this tutorial](doc:building-a-c-authentication-system-with-net-part-1), we created some server-side code to generate codes that are sent by [our SMS API](https://www.sinch.com/products/messaging/sms/) to a phone number. In Part 2, we will implement the number verification system for a mobile device. Then, in [Part 3](doc:number-verification-aspnet-identity-and-two-factor-authentication-part-3), we will add the two-factor authentication system to the iOS client and a website. This tutorial will take about 30 minutes to complete.
 
 ## Prerequisites
 
-> 1.  Complete [Part 1](doc:building-a-c-authentication-system-with-net) of this tutorial, or [download the repo](https://github.com/sinch/net-two-factor-auth)
+> 1.  Complete [Part 1](doc:building-a-c-authentication-system-with-net-part-1) of this tutorial, or [download the repo](https://github.com/sinch/net-two-factor-auth)
 > 2.  Versed in iOS development
 > 3.  Xcode 6
 
@@ -316,4 +316,4 @@ Lastly, in **dealoc**, unregister for the notifications:
 
 ## Conclusion
 
-In this tutorial, we learned how to build a Cocoa frameworks reusable library and how to make your stuff modularized in iOS. We also learned how to consume our service we created in [Part 1 of this series](doc:build-two-authentication-system). Next up in [Part 3](doc:build-two-factor-authentication-system-pt-3), we will build a small website and add two-factor authentication.
+In this tutorial, we learned how to build a Cocoa frameworks reusable library and how to make your stuff modularized in iOS. We also learned how to consume our service we created in [Part 1 of this series](doc:building-a-c-authentication-system-with-net-part-1). Next up in [Part 3](doc:number-verification-aspnet-identity-and-two-factor-authentication-part-3), we will build a small website and add two-factor authentication.

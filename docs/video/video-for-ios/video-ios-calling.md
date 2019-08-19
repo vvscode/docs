@@ -58,7 +58,7 @@ id<SINCall> call = [callClient callConferenceWithId:@"<conferenceId>"];
 ```
 
 
-It is also possible to connect users to a conference call via the [Sinch REST API](doc:confttscallouts).
+It is also possible to connect users to a conference call via the [Sinch REST API](doc:voice-rest-api-calling-api#section-text-to-speech).
 
 ## Handling incoming calls
 

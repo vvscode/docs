@@ -4,7 +4,7 @@ excerpt: "Send OTP codes with text to speech calls using Sinch and Node.js In th
 ---
 ![pincodes-texttospeech.png](https://files.readme.io/a6712af-pincodes-texttospeech.png)
 
-In this tutorial I will show you how to use node.js to build a [text to speech](https://en.wikipedia.org/wiki/Speech_synthesis) call that reads out pin-codes. To read more about the Sinch callout API please see the [documentation](doc:confttscallouts).
+In this tutorial I will show you how to use node.js to build a [text to speech](https://en.wikipedia.org/wiki/Speech_synthesis) call that reads out pin-codes. To read more about the Sinch callout API please see the [documentation](doc:voice-rest-api-calling-api#section-text-to-speech).
 
 ## Other use cases
 
@@ -12,9 +12,9 @@ Common use cases for this type of call are weather- and fraud alerts, when you s
 
 ## What you need to get started
 
->   - Node development environment
->   - Application- key and secret. Get one here if you don’t have one already - [Sign up](https://portal.sinch.com/#/signup).
->   - Some credits on your account. Set up your phone on the dashboard and my boss will give you $2 to get you started\!
+ - Node development environment
+ - Application- key and secret. Get one here if you don’t have one already - [Sign up](https://portal.sinch.com/#/signup).
+ - Some credits on your account. Set up your phone on the dashboard and my boss will give you $2 to get you started\!
 
 ## Code
 

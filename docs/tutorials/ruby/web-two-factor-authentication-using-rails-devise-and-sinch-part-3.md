@@ -6,7 +6,7 @@ excerpt: "Web Two-Factor Authentication Using Rails, Devise and Sinch. When user
 >
 > To verify numbers even easier, check out our [Verification SDK](https://www.sinch.com/products/verification/sms/)
 
-This tutorial builds on [part 1](doc:ruby-on-rails-authentication) of my two-factor authentication series. Please make sure you have completed part 1, as that takes care of setup and some of the database.
+This tutorial builds on [part 1](doc:ruby-on-rails-two-factor-authentication-for-user-phone-numbers-part-1) of my two-factor authentication series. Please make sure you have completed part 1, as that takes care of setup and some of the database.
 
 When users sign up for your app, they will be prompted to enter their phone number. Every time they sign in after that, a one-time password (OTP) will be texted to their phone. They will type that OTP into the website as a second step of the login process.
 ![web-app.png](https://files.readme.io/b989e79-web-app.png)

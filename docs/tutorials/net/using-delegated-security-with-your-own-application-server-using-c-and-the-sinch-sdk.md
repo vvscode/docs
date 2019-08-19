@@ -100,7 +100,7 @@ public string Signature(string userId) {
 
 ## Try it out
 
-To try it out, add the files from our [JS calling tutorial](doc:using-sinch-js-sdk-make-voice-calls) to a folder named SinchCalling.
+To try it out, add the files from our [JS calling tutorial](doc:using-sinch-js-sdk-to-call-a-phone-number) to a folder named `SinchCalling`.
 ![addsinchcalling.PNG](https://files.readme.io/4d3fb41-addsinchcalling.PNG)
 
 Open up the index.html and find:
@@ -134,4 +134,4 @@ Download our demo backend [here](https://github.com/sinch/net-backend-sample).
 
 **Read more:**
 
->   - [Using Sinch JS SDK to call a phone number](doc:using-sinch-js-sdk-make-voice-calls)
+>   - [Using Sinch JS SDK to call a phone number](doc:using-sinch-js-sdk-to-call-a-phone-number)

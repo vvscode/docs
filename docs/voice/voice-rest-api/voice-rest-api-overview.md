@@ -6,7 +6,7 @@ When using Sinch for voice calling, the Sinch dashboard can be seen as a big tel
 
 For most call scenarios, you can use the Sinch SDKs on a smartphone or on web client to establish calls without the need of backend integration. For additional control or flexibility of the calls, you can use the Sinch REST APIs to manage the calls.
 
-Controlling a call from your application backend is done by responding to callbacks from the Sinch dashboard and/or by calling REST APIs in the Sinch dashboard from your application backend. For more details on the callbacks triggered from the Sinch dashboard see the [Callback API](doc:callbackAPI).
+Controlling a call from your application backend is done by responding to callbacks from the Sinch dashboard and/or by calling REST APIs in the Sinch dashboard from your application backend. For more details on the callbacks triggered from the Sinch dashboard see the [Callback API](doc:voice-rest-api-callback-api).
 
 For more details on the REST APIs to that can be used to manage calls see the [Calling API](doc:calling-api).
 
@@ -27,7 +27,7 @@ To use callback events you need to assign a callback URL in the Sinch portal und
 
 | Event  | HTTP Verb | Functionality                                                  |
 | ------ | --------- | -------------------------------------------------------------- |
-| ICE    | POST      | [Incoming Call Event callback](doc:incomingcalleventcallback)     |
+| ICE    | POST      | [Incoming Call Event callback](doc:voice-rest-api-callback-api)     |
 | ACE    | POST      | [Answer Call Event callback](doc:answeredcalleventcallback)       |
 | DiCE   | POST      | [Disconnect Call Event callback](doc:disconnectcalleventcallback) |
 | PIE    | POST      | [Prompt Input Event callback](doc:PIE)                            |
@@ -50,7 +50,7 @@ To use callback events you need to assign a callback URL in the Sinch portal und
 | /conferences/id/{conferenceId}/{callId}                | PATCH     | :ref:<span class="title-ref">Mute/unmute conference participant \<muteunmuteconfparticipant\></span> |
 | /conferences/id/{conferenceId}/{callId}                | DELETE    | [Kick conference participant](doc:kickconfparticipant)                                                  |
 | /conferences/id/{conferenceId}                         | DELETE    | [Kick all conference participants](doc:kickallconfparticipants)                                         |
-| /callouts                                              | POST      | [Place text-to-speech or conference call](doc:confttscallouts)                                          |
+| /callouts                                              | POST      | [Place text-to-speech or conference call](doc:voice-rest-api-calling-api#section-text-to-speech)                                          |
 
 ### Reporting API
 
@@ -66,13 +66,13 @@ To use callback events you need to assign a callback URL in the Sinch portal und
 
 In this scenario, calls are originated from and terminated to an app using the iOS, Android or Javascript SDK. Both call legs are established over the data connection of the smartphone or computer (VoIP). For additional call control, you can specify a callback URL where Sinch will send call-related events. By capturing and responding to these events from your backend, you can allow, deny and control the calls. You can configure the call back URL under your app’s voice settings in the Sinch [dashboard](https://www.sinch.com/dashboard/).
 
-For more information please check the [Callback API](doc:callbackAPI). The callback event that is used in app to app calls is the Incoming Call Event callback.
+For more information please check the [Callback API](doc:voice-rest-api-callback-api). The callback event that is used in app to app calls is the Incoming Call Event callback.
 
 ## App to phone calls
 
 In this scenario, calls are originated from an app using the iOS, Android or Javascript SDK and are terminated to the fixed or mobile phone network. For additional call control, you can configure a callback URL under your app’s voice settings in the Sinch dashboard, where Sinch will send call-related events. By capturing and responding to these events from your backend, you can allow or deny calls to go through. Events will also be triggered when the calls will be answered or disconnected.
 
-For more information please check the [Callback API](doc:callbackAPI). The callback events that are used in app to phone calls are the Incoming Call Event callback, the Answer Call Event callback and the Disconnect Call Event callback. You can also manage an ongoing call from your backend with the Manage Call API, which is part of the [Calling API](doc:calling-api).
+For more information please check the [Callback API](doc:voice-rest-api-callback-api). The callback events that are used in app to phone calls are the Incoming Call Event callback, the Answer Call Event callback and the Disconnect Call Event callback. You can also manage an ongoing call from your backend with the Manage Call API, which is part of the [Calling API](doc:calling-api).
 
 ## Phone to phone calls
 
@@ -83,7 +83,7 @@ In this scenario, calls are originated from a voice number and are terminated to
 
 When a user calls your configured voice number, the Sinch dashboard will trigger an Incoming Call Event callback towards your callback URL. The destination number - where the call will be connected to - has to be specified in your response to the Incoming Call Event callback. Similarly to app to phone calls, the Sinch dashboard will trigger additional events for call control.
 
-For more information please check the [Callback API](doc:callbackAPI). The callback events that are used in phone to phone calls are the Incoming Call Event callback, the Answer Call Event callback and the Disconnect Call Event callback. You can also manage an ongoing call from your backend with the Manage Call API, which is part of the [Calling API](doc:calling-api).
+For more information please check the [Callback API](doc:voice-rest-api-callback-api). The callback events that are used in phone to phone calls are the Incoming Call Event callback, the Answer Call Event callback and the Disconnect Call Event callback. You can also manage an ongoing call from your backend with the Manage Call API, which is part of the [Calling API](doc:calling-api).
 
 ## Conference calls
 
@@ -119,7 +119,7 @@ For more information check the conferencing APIs that are available under the [C
 
 ### Conference recording
 
-The Sinch dashboard allows recording of conference calls. The recorded files are stored in your own Amazon S3 bucket. For more information on how to record a conference, please check the ConnectConf action in the [Callback API](doc:callbackAPI).
+The Sinch dashboard allows recording of conference calls. The recorded files are stored in your own Amazon S3 bucket. For more information on how to record a conference, please check the ConnectConf action in the [Callback API](doc:voice-rest-api-callback-api).
 
 Conference recording is disabled by default. To enable conference recording for your account please contact Sinch support, providing your Amazon S3 bucket information, where the recordings will be stored.
 

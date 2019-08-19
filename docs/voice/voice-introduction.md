@@ -16,7 +16,7 @@ When using Sinch for Voice calling, the Sinch platform can be seen as a big tele
 
 ## What are the supported platforms?
 
-The Sinch SDK is currently available for [iOS](doc:voiceforios), [Android](doc:voiceforandroid) and [JavaScript](doc:voiceforjs) platforms and most of the Sinch back-end services are also exposed over [REST APIs](doc:voicerestapi), primarily for back-end to back-end integration.
+The Sinch SDK is currently available for [iOS](doc:voiceforios), [Android](doc:voiceforandroid) and [JavaScript](doc:voice-for-js) platforms and most of the Sinch back-end services are also exposed over [REST APIs](doc:voicerestapi), primarily for back-end to back-end integration.
 
 ## How do I get started?
 

@@ -4,11 +4,11 @@ excerpt: "The callback APIs are a really powerful way to get information about y
 ---
 The callback APIs are a really powerful way to get information about your calls and further secure them. This is the final step before you allow calls to be connected. If you have followed our other tutorials, you are likely familiar with the different states of a call: progressing, established, and ended. With the callback API, you get the same events, enabling you to make decisions just before you connect the call to the server.
 
-For detailed information, see our [documentation](doc:callbackAPI).
+For detailed information, see our [documentation](doc:voice-rest-api-callback-api).
 
 ## Prerequisites
 
-> 1.  Complete [this tutorial](doc:using-delegated-security-application-server-using-c-sinch-sdk).
+> 1.  Complete [this tutorial](doc:using-delegated-security-with-your-own-application-server-using-c-and-the-sinch-sdk).
 > 2.  Deploy the solution to a public accessible web server. This is necessary because the Sinch backend needs to be able to post to your callback handler.
 
 ## Setup
@@ -46,7 +46,7 @@ public class Action {
 }
 ```
 
-Svaml contains instructions and actions. For example, an instruction is playing a sound file to a user, and an action is connecting to a call. For a complete list of instructions and actions, see the [documentation](doc:voicerestapi).
+Svaml contains instructions and actions. For example, an instruction is playing a sound file to a user, and an action is connecting to a call. For a complete list of instructions and actions, see the [documentation](doc:voice-rest-api).
 
 Next, create this method in your **callbackcontroller**:
 

@@ -7,7 +7,7 @@ excerpt: "Follow this step-by-step guide if you want to set up the Sinch Voice w
 > 2.  Setup a new Application using the Dashboard where you can then obtain an *Application Key* and an *Application Secret*.
 
 ## Download
-The Sinch SDK can be downloaded [here](doc:sinchvvvdownloads). It contains: the library binary, this user guide, reference documentation, and sample apps for calling and instant messaging.
+The Sinch SDK can be downloaded [here](doc:downloads). It contains: the library binary, this user guide, reference documentation, and sample apps for calling and instant messaging.
 
 ### Sinch is availible as a CocoaPod
 

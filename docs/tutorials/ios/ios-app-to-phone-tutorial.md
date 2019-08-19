@@ -91,9 +91,11 @@ Create a method called `initSinchClient`, add your application key and secret, a
 
 As you can see, you now have a warning. Let’s fix that by adding the `SINCallClientDelegate` to the `ViewController.h` file:
 
-[@interface ViewController : UIViewController](doc:SINCallClientDelegate)
+```objectivec
+@interface ViewController : UIViewController <SINCallClientDelegate>
+```
 
-If you have followed the [iOS app-to-app calling tutorial](doc:ios-simple-voice-app-tutorial), you might notice that we are not listening to active connections with `[_client startListeningOnActiveConnection]`. That’s because it’s unnecessary when you only want to make PSTN and outgoing calls.
+If you have followed the [iOS app-to-app calling tutorial](doc:build-an-ios-facebook-app-to-call-your-friends), you might notice that we are not listening to active connections with `[_client startListeningOnActiveConnection]`. That’s because it’s unnecessary when you only want to make PSTN and outgoing calls.
 
 Also, not starting an active connection will save you money.
 
@@ -125,4 +127,4 @@ And there you have it. For a production app, your next steps will be to implemen
 
 Happy coding\!
 
-If you enjoyed this tutorial, read our other iOS and [app-calling tutorials](doc:tutorialssite).
+If you enjoyed this tutorial, read our other iOS and [app-calling tutorials](doc:tutorials).

@@ -40,5 +40,5 @@ In the view where you want to use the Sinch client, you will create a new Sinch 
 
 Once the client is started, you can use it to make browser-to-browser phone calls, browser-to-phone calls, and send web-to-web instant messages. Follow the tutorials below to build these features:
 
->   - [Browser-to-Browser Calling](doc:using-sinch-js-sdk-make-voice-calls)
->   - [Browser-to-Phone Calling](doc:turn-browser-phone-js-sdk)
+>   - [Browser-to-Browser Calling](doc:using-sinch-js-sdk-to-call-a-phone-number)
+>   - [Browser-to-Phone Calling](doc:turn-your-browser-into-a-phone-with-the-sinch-js-sdk)

@@ -8,7 +8,7 @@ excerpt: "This tutorial shows you how to build your own Ruby on Rails two-factor
 
 More and more websites and apps rely on knowing your phone number and, in many cases, using that number for two-factor authentication (2FA). (More info about [2FA here](https://www.sinch.com/opinion/what-is-two-factor-authentication/)).
 
-In this tutorial, you will learn how to build your own Ruby on Rails two-factor authentication system in about 30 minutes. In [part 2](doc:ruby-two-factor-auth-part-2), you will implement it in an Android app, and it [part 3](doc:ruby-two-factor-auth-part-3), you will implement it as part of the login process in a Rails app.
+In this tutorial, you will learn how to build your own Ruby on Rails two-factor authentication system in about 30 minutes. In [part 2](doc:number-verification-and-two-factor-authentication-in-an-android-app-part-2), you will implement it in an Android app, and it [part 3](doc:web-two-factor-authentication-using-rails-devise-and-sinch-part-3), you will implement it as part of the login process in a Rails app.
 
 The full sample code can be downloaded [here](https://github.com/sinch/ruby-two-factor-auth).
 

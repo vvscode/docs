@@ -53,9 +53,9 @@ You don’t want anonymous users to be able to go to your site and make a call w
 
 Next, you need to register or log in the user.
 
-> 1.  Add a Sinch client variable with your application key
-> 2.  Hook up register button to a click event
-> 3.  Hook up the login button to a click event
+ 1.  Add a Sinch client variable with your application key
+ 1.  Hook up register button to a click event
+ 1.  Hook up the login button to a click event
 
 ```javascript
 <script language="javascript">
@@ -191,9 +191,9 @@ $('#callNumber').click(function (event) {
 
 As you can see, you are missing event handlers for the call. A call can be in three states: *inprogress*, *established* and *ended*; they occur in that order. You’ll want to do the following:
 
-> 1.  When call is in progress, play a ringtone like you hear on your regular phone
-> 2.  When the call is established (someone has picked up or you are connected to their voicemail), stop playing the ringtone and instead play sound from the call
-> 3.  When the call has ended, shut down the audio from the call and change the UI so the user can place a new call. In addition, your app will display some details about the call, like the duration.
+ 1.  When call is in progress, play a ringtone like you hear on your regular phone
+ 1.  When the call is established (someone has picked up or you are connected to their voicemail), stop playing the ringtone and instead play sound from the call
+ 1.  When the call has ended, shut down the audio from the call and change the UI so the user can place a new call. In addition, your app will display some details about the call, like the duration.
 
 ```javascript
 var callListeners = {
@@ -258,4 +258,4 @@ Now you have a good understanding of how the Sinch client works and how to make 
 
 **More reading:**
     
-> - [Custom authentication with .net](doc:using-delegated-security-application-server-using-c-sinch-sdk)
+ - [Custom authentication with .net](doc:using-delegated-security-with-your-own-application-server-using-c-and-the-sinch-sdk)

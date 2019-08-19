@@ -34,7 +34,7 @@ console.log(sinchSms.getStatus("123456789");
 
 If you’re interested in digging into the node modules for authentication and sending SMS, you can find the source code on GitHub:
 
-> 1.  [sinch-auth](https://github.com/ChewTeaYeah/sinch-auth)
-> 2.  [sinch-messaging](https://github.com/ChewTeaYeah/sinch-messaging)
+ 1.  [sinch-auth](https://github.com/ChewTeaYeah/sinch-auth)
+ 1.  [sinch-messaging](https://github.com/ChewTeaYeah/sinch-messaging)
 
 To get your own app key and secret, [sign up](https://portal.sinch.com/#/signup) for a Sinch account and create a new app. To start, you will have $2 on your account to send some test messages. See [SMS pricing by country here](https://www.sinch.com/products/messaging/sms/).

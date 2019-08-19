@@ -6,7 +6,7 @@ If you’re like me, when you start testing a new SDK or service, you just want 
 
 Full disclosure: I have a minor investment in a company called [iRezQ](http://irezq.com), an app that warns you about nearby traffic accidents, which it detects using your device’s accelerometer and an algorithm developed in collaboration with some insurance companies.
 
-I wanted to test if VoIP calling could help iRezQ save some money and add an extra feature on top of the existing functionality using our [Voice API](doc:voicedocumentation).
+I wanted to test if VoIP calling could help iRezQ save some money and add an extra feature on top of the existing functionality using our [Voice API](doc:voice-introduction).
 
 ## Setup
 

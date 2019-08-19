@@ -21,7 +21,7 @@ Sinch supports both regular phone calling and WebRTC calling for conferencing, a
 You can just deploy it to Azure using the deploy button below, and Azure will set up a database and configure Sinch app keys and secrets for you. Or you can just fork it and deploy the code wherever you want.
 ![deploybutton.png](https://files.readme.io/9a633f6-deploybutton.png)
 
-Now that this is out of the way, what we want to do is to enable both regular phones and web browsers to join a conference. The [ICE callback](doc:incomingcalleventcallback) information can help us in customizing the functionality for each use case.
+Now that this is out of the way, what we want to do is to enable both regular phones and web browsers to join a conference. The [ICE callback](doc:voice-rest-api-callback-api) information can help us in customizing the functionality for each use case.
 
 > 1.  Calling in from a phone - We want to play a prompt to the user to enter the conference PIN in order to be connected
 > 2.  When calling from a browser - We just want to present a PIN code window even before they attempt to call, and then connect the browser caller with no further interaction
@@ -265,7 +265,7 @@ public async Task<JsonResult> CallOut(string number, string conferenceId) {
 }
 ```
 
-As you might notice, I’ve created a brand new API endpoint on the **SinchServerSDK**. The backend team rolls out features so quickly so sometimes it’s hard to keep up with the SDK parts of it. Fortunately, it’s super easy to use the **Sinch.WebAPI** client to handle request signing etc. You can read more about [callouts](doc:confttscallouts) in our documentation. The above method is posted by pressing the green button with a JavaScript snippet in **views/conference/details.cshtml**
+As you might notice, I’ve created a brand new API endpoint on the **SinchServerSDK**. The backend team rolls out features so quickly so sometimes it’s hard to keep up with the SDK parts of it. Fortunately, it’s super easy to use the **Sinch.WebAPI** client to handle request signing etc. You can read more about [callouts](doc:voice-rest-api-calling-api#section-text-to-speech) in our documentation. The above method is posted by pressing the green button with a JavaScript snippet in **views/conference/details.cshtml**
 
 ```javascript
 $('#callout').bind('click', function(event) {

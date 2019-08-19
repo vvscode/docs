@@ -47,7 +47,7 @@ It only works on iOS 8. With our SDK (and probably any [WebRTC SDK](https://www.
 >   - Install [Xcode 6.1](http://developer.apple.com)
 >   - Install iOS 8.1 beta on an iOS device
 >   - Create an account with [Sinch](http://https://portal.sinch.com/#/signup)
->   - Download the SDK from [here](doc:sinchvvvdownloads). (We are going to use the sample calling app, so download the SDK instead of CocoaPods.)
+>   - Download the SDK from [here](doc:downloads). (We are going to use the sample calling app, so download the SDK instead of CocoaPods.)
 >   - Grab a coffee
 >   - Implement some server-side code to send push
 >   - Implement PushKit in the sample app
@@ -62,7 +62,6 @@ Head over to <https://developer.apple.com/account/ios/certificate/certificateCre
 Click Next and select your App ID.
 
 Download the certificate and in keychain access search for VoIP, control+click to export the certificate with private key, and save it.
-![undefined](undefined)
 
 Create a development provisioning profile for the com.sinch.pushkit
 
@@ -249,9 +248,9 @@ The above method is very similar to the regular notification service, and you ju
 }
 ```
 
-In the above method, you are checking that the push has a SIN payload (for more details, see [here](doc:voicedocumentation)) scheduling a local notification and scheduling a local notification.
+In the above method, you are checking that the push has a SIN payload (for more details, see [here](doc:voice-introduction)) scheduling a local notification and scheduling a local notification.
 
-Done\! You are ready to receive push. Find the method clientDidStart and add a change so it looks like this:
+Done! You are ready to receive push. Find the method clientDidStart and add a change so it looks like this:
 
 ```objectivec
 - (void)clientDidStart:(id<SINClient>)client {

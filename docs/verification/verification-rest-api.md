@@ -6,9 +6,9 @@ excerpt: "This document serves as a user guide and documentation on how to use t
 
 Use the Sinch Verification Service to verify end-user's mobile phone numbers. The Sinch Verification APIs should be used in combination with the Verification SDKs for a complete end-to-end solution, though it is possible to only use the APIs. Currently, there are three verification methods supported:
 
->   - FlashCall verification - Android only
->   - PIN SMS verification - iOS, Android, Javascript
->   - Callout verification (voice call) - iOS only
+ - FlashCall verification - Android only
+ - PIN SMS verification - iOS, Android, Javascript
+ - Callout verification (voice call) - iOS only
 
 ## FlashCall verification
  With the flashCall verification method, a user's phone number is verified by triggering a "missed call" towards this number. The call is intercepted by the Android SDK in the mobile app and blocked automatically.

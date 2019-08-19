@@ -2,13 +2,13 @@
 title: "Verify a Phone Number in Your iOS App"
 excerpt: "In this tutorial, we are going to explore our Verification SDK for iOS. As of this writing, the method we support for iOS is SMS verification. With our Verification SDK, you won’t need any backend yourself, or you can implement a simple endpoint to receive that a number is verified."
 ---
-In this tutorial, we are going to explore our Verification SDK for iOS. As of this writing, the method we support for iOS is [SMS verification](doc:swift-sms-verification), which we wrote about in [earlier tutorials](doc:build-two-factor-authentication-system-pt-2). With our Verification SDK, you won’t need any backend yourself, or you can implement a simple endpoint to receive that a number is verified. .. You can check out more [Verification Tutorials](https://www.sinch.com/tutorials/?tags%5B%5D=verification&utm_source=sinch&utm_medium=xlink&utm_campaign=verifyall)
+In this tutorial, we are going to explore our Verification SDK for iOS. As of this writing, the method we support for iOS is [SMS verification](doc:verification-ios-sms-verification), which we wrote about in [earlier tutorials](doc:building-an-ios-client-for-number-verification-part-2). With our Verification SDK, you won’t need any backend yourself, or you can implement a simple endpoint to receive that a number is verified. .. You can check out more [Verification Tutorials](https://www.sinch.com/tutorials/?tags%5B%5D=verification&utm_source=sinch&utm_medium=xlink&utm_campaign=verifyall)
 
 ## Setup
 
 I created a start project that contains the framework and a couple of screens you can download [here](https://github.com/sinch/ios-verification-tutorial). If you prefer to add it to your app directly, here is how you set it up:
 
-> 1.  Download the SDK [here](doc:sinchvvvdownloads)
+> 1.  Download the SDK [here](doc:downloads)
 > 2.  Add the `SinchVerification.Framework` to your app, OR
 > 3.  Use [CocoaPods](http://cocoapods.org) -`pod 'SinchVerification', '0.9-beta1'`
 

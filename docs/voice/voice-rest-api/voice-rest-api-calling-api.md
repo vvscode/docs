@@ -409,7 +409,7 @@ This method can be used to play messages in an ongoing call and potentially perf
 >
 > This method can only be used for calls that are originating from or terminating to the PSTN network.
 
-For more information on playing messages and performing actions on calls see the [Callback API](doc:callbackapi).
+For more information on playing messages and performing actions on calls see the [Callback API](doc:voice-rest-api-callback-api).
 
 *Example IVR*
 ```text

@@ -485,7 +485,7 @@ In this tutorial, we are verifying the phone number twice: first when you create
 
 The generation of the TOPT code is from [this excellent repo](https://github.com/yazid/iOS-TOTP). Yazid did a superb job of cleaning out Google’s bloated sample code.
 
-To get up to speed, create a new project as we did in [Part 2](doc:build-two-factor-authentication-system-pt-2), but name it NumberValidatorWithOTP. When you are done with that, come back here (or copy the repo and name refactor).
+To get up to speed, create a new project as we did in [Part 2](doc:building-an-ios-client-for-number-verification-part-2), but name it NumberValidatorWithOTP. When you are done with that, come back here (or copy the repo and name refactor).
 
 ### Preparation
 

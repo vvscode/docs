@@ -95,7 +95,7 @@ Then, **GET** `http://yourserver/api/Configure` and you should see that we succe
 
 ## Implementing the callback controller
 
-Create WebAPI controller called **SinchController**; this controller will be responsible for parsing and responding to SVAML. Sinch swag CTO Björn Fransson is sharing his NuGet with all the SVAML we support, including some undocumented features—can you spot them? For the list of supported SVAML, check out the [documentation](doc:svaml-quick-ref) if you prefer to make it yourself instead of NuGet.
+Create WebAPI controller called **SinchController**; this controller will be responsible for parsing and responding to SVAML. Sinch swag CTO Björn Fransson is sharing his NuGet with all the SVAML we support, including some undocumented features—can you spot them? For the list of supported SVAML, check out the [documentation](doc:voice-rest-api-callback-api#section-svaml-quick-reference) if you prefer to make it yourself instead of NuGet.
 
 ```nugetgithub
 pm> Install-Package Sinch.ServerSdk

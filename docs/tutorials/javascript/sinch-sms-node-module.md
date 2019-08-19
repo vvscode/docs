@@ -52,8 +52,8 @@ New to Sinch? In order to get started, please visit [our website](https://portal
 
 ## Methods
 
->   - **send**(number, message) - Send SMS `message` to `number`
->   - **getStatus**(messageId) - Retrieve status for message `messageId`
+ - **send**(number, message) - Send SMS `message` to `number`
+ - **getStatus**(messageId) - Retrieve status for message `messageId`
 
 *Above methods return promises, see sample for how to chain further action on success / fail.*
 

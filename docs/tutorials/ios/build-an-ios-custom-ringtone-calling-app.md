@@ -238,4 +238,4 @@ That’s it\! You should be able to test the app out. There’s also a completed
 
 Custom ringtones is just one example of how you can send useful information over Sinch calls. By passing headers to a Sinch call, you can add to your app’s functionality.
 
-For more tutorials, head over to the [Sinch Tutorial Site](doc:tutorialssite) or the [Sinch Github](https://github.com/sinch).
+For more tutorials, head over to the [Sinch Tutorial Site](doc:tutorials) or the [Sinch Github](https://github.com/sinch).

@@ -2,15 +2,15 @@
 title: "Send a Song to Your Friend Through a Phone Call"
 excerpt: "Learn how you can send a song to a friend or loved one using the Sinch JS SDK - It's quicker than you think! Sign up today and download the JS SDK now."
 ---
-Last week, we sponsored [The Next Web hackathon](http://thenextweb.com/conference/usa/hack-battle) in New York City. We met a developer, Herb, who had an idea to use the Deezer API to send a song to a friend over the phone. We couldn’t get it to work that weekend, but we’ve now figured it out. Here I’ll share with you how to manipulate the AudioStreams in the Sinch JS SDK. So, here you go, [Ivo](https://twitter.com/ilukac)\!
+Last week, we sponsored [The Next Web](https://thenextweb.com/conference/) Hackathon in New York City. We met a developer, Herb, who had an idea to use the Deezer API to send a song to a friend over the phone. We couldn’t get it to work that weekend, but we’ve now figured it out. Here I’ll share with you how to manipulate the AudioStreams in the Sinch JS SDK. So, here you go, [Ivo](https://twitter.com/ilukac)\!
 
 ## Preparation
 
-> 1.  [Signup](https://portal.sinch.com/#/signup) for a Sinch account
-> 2.  Download the JS SDK from [here](doc:sinchvvvdownloads)
-> 3.  Click ‘Create new app’
-> 4.  Name your app and click ‘Create’
-> 5.  Take note of your app key and secret as you will need them in a few minutes
+ 1.  [Signup](https://portal.sinch.com/#/signup) for a Sinch account
+ 1.  Download the JS SDK from [here](doc:downloads)
+ 1.  Click ‘Create new app’
+ 1.  Name your app and click ‘Create’
+ 1.  Take note of your app key and secret as you will need them in a few minutes
 
 ## Time to code
 

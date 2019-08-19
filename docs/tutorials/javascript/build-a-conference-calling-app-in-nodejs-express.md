@@ -10,9 +10,9 @@ This tutorial will take approx. 15 min to finish.
 
 To get started, you will need:
 
-> 1.  A [Sinch account](https://portal.sinch.com/#/signup) and an app with keys
-> 2.  A phone number [rented from Sinch](portal.sinch.com/dashboard/#/numbers); make sure it’s a voice number
-> 3.  A place to host your backend, I am hosting my app on Azure for free
+ 1.  A [Sinch account](https://portal.sinch.com/#/signup) and an app with keys
+ 1.  A phone number [rented from Sinch](https://portal.sinch.com/dashboard/#/numbers); make sure it’s a voice number
+ 1.  A place to host your backend, I am hosting my app on Azure for free
 
 ## Rent a number
 
@@ -115,7 +115,7 @@ The only thing this router does at the moment is to echo whatever you post in to
 
 ## Add Sinch funcationality.
 
-As mentioned before, as soon as someone calls in on a the phone number, Sinch will make a callback to my backend and I can respond with what we call **SVAML**. More information about our REST API’s can be found [here](doc:voicerestapi) and for this tutorial we are particularly interested in the [ICE event](doc:incomingcalleventcallback).
+As mentioned before, as soon as someone calls in on a the phone number, Sinch will make a callback to my backend and I can respond with what we call **SVAML**. More information about our REST API’s can be found [here](doc:voice-rest-api) and for this tutorial we are particularly interested in the [ICE event](doc:voice-rest-api-callback-api).
 
 Whenever someone calls in, I want to connect them to my conference with their caller ID. So reading the docs, I see that to connect to a conference (which is in fact exactly what a hotline is), I just need to respond with this:
 
@@ -236,6 +236,6 @@ I hope you enjoyed this tutorial and if you have any questions, please add a com
 
 If you want to continue building a conference calling app, take a look at the other resources we have:
 
->   - [Sinch REST Documentation](doc:voicerestapi)
->   - [Building a Conference Calling System in .NET](doc:building-a-conferencing-system)
->   - [Hosting node on Azure](https://azure.microsoft.com/en-us/documentation/articles/web-sites-nodejs-develop-deploy-mac/)
+ - [Sinch REST Documentation](doc:voice-rest-api)
+ - [Building a Conference Calling System in .NET](doc:build-a-conference-calling-app-in-nodejs-express)
+ - [Hosting node on Azure](https://azure.microsoft.com/en-us/documentation/articles/web-sites-nodejs-develop-deploy-mac/)

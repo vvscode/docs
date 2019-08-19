@@ -8,7 +8,7 @@ Before we dive in, I want to show you the awesome tool, ngrok. One of the more d
 
 ## Getting started
 
-In this example we are going to build a simple node app that will respond with SVAML to connect any call to a chosen number to my SF-based mobile. To read more about different events and how you can respond, read the docs [here](doc:voicerestapi)
+In this example we are going to build a simple node app that will respond with SVAML to connect any call to a chosen number to my SF-based mobile. To read more about different events and how you can respond, read the docs [here](doc:voice-rest-api)
 
 Create a file and call it app.js
 
@@ -95,9 +95,9 @@ Let’s wrap this up and add a number to Sweden as I mentioned at the start.
 
 To make this happen you must have an application in the Sinch platform and a phone number (DM me @cjsinch if you need some more test credits)
 
-> 1.  Rent a number with voice capability in the [rent number](https://portal.sinch.com/#/numbers)
-> 2.  Go to your app <https://portal.sinch.com/#/apps> or create one
-> 3.  Configure the voice tab by adding your newly rented number and add your ngrok url
+ 1.  Rent a number with voice capability in the [rent number](https://portal.sinch.com/#/numbers)
+ 1.  Go to your app <https://portal.sinch.com/#/apps> or create one
+ 1.  Configure the voice tab by adding your newly rented number and add your ngrok url
 ![sinchdashboard.png](https://files.readme.io/c47c644-sinchdashboard.png)
 
 Call the number and start seeing real live requests from the Sinch platform.

@@ -2,12 +2,12 @@
 title: "Build a Simple Android VoIP Calling App With Sinch"
 excerpt: "This tutorial will walk you through building a simple Android VoIP calling app. It covers building an Android app to app system."
 ---
-his tutorial will walk you through building a simple Android VoIP calling app. When you are finished, it will look something like this:
+This tutorial will walk you through building a simple Android VoIP calling app. When you are finished, it will look something like this:
 ![call-hangup.png](https://files.readme.io/f841b87-call-hangup.png)
 
 The completed source code for this tutorial is available at [github.com/sinch/app-app-calling-android](https://github.com/sinch/app-app-calling-android).
 
-This covers building an Android app to app system. If you are looking for app to phone, check out our [other tutorial here](doc:app-to-phone-calling-android).
+This covers building an Android app to app system. If you are looking for app to phone, check out our [other tutorial here](doc:call-a-phone-number-from-your-android-app-with-sinch).
 
 ## Setup
 
@@ -22,7 +22,7 @@ To generate an API key and secret, create an app in the Sinch Dashboard. Name th
 
 Hold onto the key and secret from this app; you will use them in just a few minutes.
 
-Next, download the Sinch Android SDK from [here](doc:sinchvvvdownloads). To add the Sinch SDK to your project:
+Next, download the Sinch Android SDK from [here](doc:downloads). To add the Sinch SDK to your project:
 
 1.  Copy the entire libs folder to your project’s app folder
 

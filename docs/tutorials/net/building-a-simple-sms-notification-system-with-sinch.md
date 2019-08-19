@@ -22,7 +22,7 @@ The next thing we needed was a way for track officials to send out messages. In 
 
 ### Managing signups via SMS
 
-I bought a number in the [portal](https://portal.sinch.com/#/numbers) (Yeah, I know we should have way more countries in stock, it’s coming. For now mail me if you need a particular country), created an app and assigned the number a webhook url to receive SMS. During development I always use the awesome tool [ngrok](doc:getting-second-number-testing-sinch-callbackswebhooks-ngrok) during development.
+I bought a number in the [portal](https://portal.sinch.com/#/numbers) (Yeah, I know we should have way more countries in stock, it’s coming. For now mail me if you need a particular country), created an app and assigned the number a webhook url to receive SMS. During development I always use the awesome tool [ngrok](doc:getting-a-second-number-and-testing-sinch-callbackswebhooks-with-ngrok) during development.
 ![dashboardcallback.png](https://files.readme.io/7787cde-dashboardcallback.png)
 
 Next I needed to add a WebApi controller to handle all incoming SMS.

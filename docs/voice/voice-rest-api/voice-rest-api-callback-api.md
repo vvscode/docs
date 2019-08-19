@@ -303,7 +303,7 @@ With the *runMenu* action, the user will start listening to an IVR menu. This me
 ```
 
 
-**runMenu** is a valid response action to an [incoming call event (ICE)](doc:incomingcalleventcallback) or [answered call event (ACE)](doc:answeredcalleventcallback). It instructs what menu to play to the user and what actions to take based on the user’s input. It can also be used in combination with the [manageCall API](doc:managecall), for conference calls.
+**runMenu** is a valid response action to an [incoming call event (ICE)](doc:voice-rest-api-callback-api) or [answered call event (ACE)](doc:answeredcalleventcallback). It instructs what menu to play to the user and what actions to take based on the user’s input. It can also be used in combination with the [manageCall API](doc:managecall), for conference calls.
 
 **menus** is a list of menus that are available. The menu with “id” : “main” will always play first, otherwise an error will be returned.
 
