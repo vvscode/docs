@@ -3,8 +3,6 @@ jobs:
   push_master:
     docker:
       - image: circleci/node:10.16.1
-        environment:
-          DOCSVERSION: 1.0
     steps:
       - checkout
       - run:
@@ -12,12 +10,10 @@ jobs:
           command: npm install
       - run:
           name: push
-          command: "./readme.js push"
+          command: "DOCSVERSION=1.0 ./readme.js push"
   push_next:
     docker:
       - image: circleci/node:10.16.1
-        environment:
-          DOCSVERSION: 9.9.9
     steps:
       - checkout
       - run:
@@ -25,7 +21,7 @@ jobs:
           command: npm install
       - run:
           name: push
-          command: "./readme.js push"
+          command: "DOCSVERSION=9.9.9 ./readme.js push --prune"
   validate:
     docker:
       - image: circleci/node:10.16.1
