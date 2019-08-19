@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/sinch/docs/tree/next.svg?style=svg&circle-token=acb4c7610022a9c27e9e356ffcc2b6d96dba1b2b)](https://circleci.com/gh/sinch/docs/tree/next)
+
 # Public documentation sources for Sinch
 
 This repository holds the sources for the documentation hosted on [readme.io](http://sinch.readme.io).
