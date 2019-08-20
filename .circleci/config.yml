@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  push_master:
+  push:
     docker:
       - image: circleci/node:10.16.1
     steps:
@@ -10,18 +10,7 @@ jobs:
           command: npm install
       - run:
           name: push
-          command: "DOCSVERSION=1.0 ./readme.js push"
-  push_next:
-    docker:
-      - image: circleci/node:10.16.1
-    steps:
-      - checkout
-      - run:
-          name: install-npm
-          command: npm install
-      - run:
-          name: push
-          command: "DOCSVERSION=9.9.9 ./readme.js push --prune"
+          command: "DOCSVERSION=1.0 ./readme.js push --prune"
   validate:
     docker:
       - image: circleci/node:10.16.1
@@ -37,24 +26,19 @@ jobs:
 workflows:
   version: 2
 
-  live:
+  publish:
     jobs:
-      - hold:
-          type: approval # manual approval
-          filters:
-            branches:
-              only: master
-      - push_master:
+      - validate:
+      - push:
           requires:
-            - hold
+            - validate
           filters:
             branches:
               only: master
 
-  next:
+  check:
     jobs:
-      - validate
-      - push_next:
+      - validate:
           filters:
             branches:
-              only: next
+              ignore: master
