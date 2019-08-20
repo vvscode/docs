@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/sinch/docs/tree/next.svg?style=svg&circle-token=acb4c7610022a9c27e9e356ffcc2b6d96dba1b2b)](https://circleci.com/gh/sinch/docs/tree/next)
+[![CircleCI](https://circleci.com/gh/sinch/docs.svg?style=svg&circle-token=acb4c7610022a9c27e9e356ffcc2b6d96dba1b2b)](https://circleci.com/gh/sinch/docs)
 
 # Public documentation sources for Sinch
 
