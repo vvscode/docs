@@ -28,7 +28,7 @@ workflows:
 
   publish:
     jobs:
-      - validate:
+      - validate
       - push:
           requires:
             - validate
