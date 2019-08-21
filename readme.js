@@ -229,7 +229,7 @@ All validations are performed unless --validations is specified.
         for (const page of pages) {
             for (const validator of selectedValidators) {
                 promises.push(
-                    validator.validate(entireCatalog, page, (element, err) => {
+                    validator.validate(entireCatalog, page, options, (element, err) => {
                         console.log(`${chalk.cyan(element.ref)} [${chalk.yellow(element.desc)}]: ${err}`);
                         errorCount++;
                     }))
