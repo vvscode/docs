@@ -182,10 +182,12 @@ program
     
 The following validators are available:
 
- - 'urls':      Verifies that URLs do resolve to an existing. An HTTP HEAD request is performed for each URL.
- - 'xrefs':     Verifies that internal cross references point to known content.
- - 'mailtos':   Verifies that mailto: links (links to email addresses) are correctly formed.
- - 'headings':  Verifies that section headings are at minimum 2 levels deep
+ - 'urls':         Verifies that URLs do resolve to an existing target. An HTTP HEAD request is performed for each URL.
+ - 'xrefs':        Verifies that internal cross references point to known content.
+ - 'mailtos':      Verifies that mailto: links (links to email addresses) are correctly formed.
+ - 'headings':     Verifies that section headings are at minimum 2 levels deep
+ - 'localimages':  Verifies that local images (specified with a relative path) do exist.
+ - 'remoteimages': Verifies that remote image (specified as a URL) resolve to an existing target.
  
 All validations are performed unless --validations is specified.
     `)
