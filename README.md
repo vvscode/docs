@@ -65,9 +65,9 @@ changes.
 
 #### `hostedFiles`
 
-This filter is to be used when image files are hosted on a publicly-accessible Web server. 
-All paths for images specified as relative in content files will be converted to an equivalent public URL based on the `baseUrl` configuration value. 
-Image paths are assumed to be specified as relative to the page in which the images are included.
+This filter is to be used when content files are hosted on a publicly-accessible Web server. 
+All paths specified as relative paths will be converted to an equivalent public URL based on the filter's `baseUrl` configuration value. 
+Paths are assumed to be specified as relative to the page in which the files are referenced.
 
 **Configuration attributes**:
 
