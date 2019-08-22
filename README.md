@@ -40,10 +40,10 @@ If both global options and environment variables are provided, the `--` global o
 
 The following configurations are available:
 
-| Global Option     | Environment Variable |
-| ---               | ---                  |
-| `--apikey`        | `APIKEY`             |
-| `--docsversion`   | `DOCSVERSION`        |
+| Global Option   | Environment Variable |
+| ---             | ---                  |
+| `--apikey`      | `APIKEY`             |
+| `--docsversion` | `DOCSVERSION`        |
 
 See the general help (`./readme.js -h`) for details of each configuration option.
 
@@ -52,9 +52,37 @@ See the general help (`./readme.js -h`) for details of each configuration option
 In addition to the global configurations above, the file `config.yml` contains general configuration for the CLI that are not expected to change between commands. 
 The following fields are available:
 
-| Field         | Description |
-| ---           | ---         |
-|`categories`   | List of category slugs that exist on Readme documentation site. These slugs have been implied from the label of each category. This list is used by the CLI to list all categories when no specific slug is specified. |
+| Field        | Description                                                                                                                                                                                                            |
+| ---          | ---                                                                                                                                                                                                                    |
+| `categories` | List of category slugs that exist on Readme documentation site. These slugs have been implied from the label of each category. This list is used by the CLI to list all categories when no specific slug is specified. |
+| `filters`    | Content filters to enable. Description of what filters are and which one is available is [below](#content-filters). Each filter can have specific configuration options that should be specified as child attributes under the filter's name in the YAML configuration.                                                                                                                       |
+
+### Content Filters
+
+Content filters are transformations that can be applied to content pages before they are pushed to Readme. To ensure local
+content stays unchanged when that content gets fetched back from Readme, all filters must be able to rollback their 
+changes.
+
+#### `hostedFiles`
+
+This filter is to be used when image files are hosted on a publicly-accessible Web server. 
+All paths for images specified as relative in content files will be converted to an equivalent public URL based on the `baseUrl` configuration value. 
+Image paths are assumed to be specified as relative to the page in which the images are included.
+
+**Configuration attributes**:
+
+| Field     | Description                                         |
+| ---       | ---                                                 |
+| `baseUrl` | The base URL where the files are publicly available |
+
+
+**Example YAML configuration**
+
+```yaml
+filters:
+  - hostedFiles:
+      baseUrl: https://GITHUB_USERNAME.github.io/REPO/
+```
 
 ### Get help
 

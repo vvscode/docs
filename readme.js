@@ -10,10 +10,13 @@ const stagedGitFiles = require('staged-git-files');
 const chalk = require('chalk');
 const readlineSync = require('readline-sync');
 
-const markdownize = require('./lib/markdownize');
-const validators = require('./lib/validators');
 const { Catalog, Page } = require('./lib/catalog');
 const { Api } = require('./lib/api-client');
+const markdownize = require('./lib/markdownize');
+const availableValidators = require('./lib/validators');
+const availableFilters = require('./lib/filters');
+
+
 
 const DEFAULT_CONFIG_FILE = 'config.yml';
 const DEFAULT_DOCS_DIR = 'docs';
@@ -48,6 +51,7 @@ locally but not present on Readme). If any are found, the program will offer to 
     .option('-d, --dir <dir>', 'Destination directory where docs Markdown files will be written', DEFAULT_DOCS_DIR)
     .action(async (slug, cmd) => {
         const options = {
+            config: loadConfigYaml(),
             dir: cmd.dir,
             categories: slug,
         };
@@ -69,9 +73,15 @@ locally but not present on Readme). If any are found, the program will offer to 
 
         const readme = apiClient(catalog, options);
 
-        let fetchedPages = await readme.fetchPages(listCategories(slug), async page => {
+        let fetchedPages = await readme.fetchPages(listCategories(slug, options.config), async page => {
+            for (const filter of createFilters(options.config)) {
+                page = filter.rollback(page);
+            }
+
             const outputFile = await page.writeTo(cmd.dir);
             console.log(chalk.green(`Wrote contents of doc [${page.ref}] to file [${outputFile}]`));
+
+            return page;
         });
 
         let fetchedPagePaths = fetchedPages.map(page => page.path);
@@ -99,6 +109,7 @@ program
     .option('--dry-run', `No remote content will be updated but command output will show what would be done.`)
     .action(async (slug, cmd) => {
         const options = {
+            config: loadConfigYaml(),
             dir: cmd.dir,
             file: cmd.file,
             categories: slug,
@@ -116,13 +127,17 @@ program
         }
 
         const readme = apiClient(catalog, options);
-        for (const page of catalog.pages) {
+        for (let page of catalog.pages) {
+            for (const filter of createFilters(options.config)) {
+                page = filter.apply(page);
+            }
+
             readme.pushPage(page);
         }
 
         if (options.prune) {
             // Compare local catalog with remote catalog (taking care of filtering pages as they were locally)
-            let remotePages = await readme.fetchPages(listCategories(options.categories));
+            let remotePages = await readme.fetchPages(listCategories(options.categories, options.config));
             let remoteCatalog = new Catalog(remotePages);
             remoteCatalog = await selectPages(remoteCatalog, options);
 
@@ -145,6 +160,7 @@ program
     .option('--dry-run', `Will only output modifications that would be made, without actually saving them.`)
     .action(async (slug, cmd) => {
         const options = {
+            config: loadConfigYaml(),
             dir: cmd.dir,
             file: cmd.file,
             categories: slug,
@@ -186,8 +202,7 @@ The following validators are available:
  - 'xrefs':        Verifies that internal cross references point to known content.
  - 'mailtos':      Verifies that mailto: links (links to email addresses) are correctly formed.
  - 'headings':     Verifies that section headings are at minimum 2 levels deep
- - 'localimages':  Verifies that local images (specified with a relative path) do exist.
- - 'remoteimages': Verifies that remote image (specified as a URL) resolve to an existing target.
+ - 'images':       Verifies that images (either specified with a relative path or with a remote URL) do exist.
  
 All validations are performed unless --validations is specified.
     `)
@@ -198,10 +213,12 @@ All validations are performed unless --validations is specified.
     .option('--no-fail', `By default, the command will exit with an error code if any validation errors are found. With this flag, the exit code will always be 0 (success).`)
     .action(async (slug, cmd) => {
         const options = {
+            config: loadConfigYaml(),
             dir: cmd.dir,
             file: cmd.file,
             categories: slug,
             stagedOnly: cmd.stagedOnly,
+            validators: cmd.validators,
         };
         let entireCatalog = Catalog.build(cmd.dir);
 
@@ -211,17 +228,7 @@ All validations are performed unless --validations is specified.
             return;
         }
 
-        const availableValidators = Object.keys(validators);
-        let selectedValidators = availableValidators;
-        if (cmd.validators) {
-            selectedValidators = cmd.validators.split(',');
-        }
-
-        selectedValidators = selectedValidators.map(name => {
-            if (availableValidators.includes(name)) return validators[name];
-            console.log(chalk.red(`Validator '${name}' is not recognized.`));
-            process.exit(1);
-        });
+        let selectedValidators = selectValidators(options);
 
         // Execute validations and compile stats
         let promises = [];
@@ -264,7 +271,7 @@ async function selectPages(catalog, options) {
     if (options.file) {
         filters.push(Page.byPath(options.file));
     } else {
-        filters.push(Page.inCategories(listCategories(options.categories)));
+        filters.push(Page.inCategories(listCategories(options.categories, options.config)));
     }
 
     if (options.stagedOnly) {
@@ -278,13 +285,18 @@ async function selectPages(catalog, options) {
 }
 
 
-function loadConfigYaml(path) {
-    try {
-        return yaml.safeLoad(fs.readFileSync(path, 'utf8'));
-    } catch (e) {
-        console.log(e);
-        process.exit(1);
+function selectValidators(options) {
+    const validatorNames = Object.keys(availableValidators);
+    let selectedValidators = validatorNames;
+    if (options.validators) {
+        selectedValidators = cmd.validators.split(',');
     }
+
+    return selectedValidators.map(name => {
+        if (validatorNames.includes(name)) return availableValidators[name];
+        console.log(chalk.red(`Validator '${name}' is not recognized.`));
+        process.exit(1);
+    });
 }
 
 
@@ -300,7 +312,35 @@ function globalOption(config, defaultValue) {
 }
 
 
-function listCategories(slugs) {
+function loadConfigYaml() {
     const configFile = globalOption('config_file', DEFAULT_CONFIG_FILE);
-    return slugs ? slugs.split(',') : loadConfigYaml(configFile).categories;
+    try {
+        return yaml.safeLoad(fs.readFileSync(configFile, 'utf8'));
+    } catch (e) {
+        console.log(e);
+        process.exit(1);
+    }
+}
+
+
+function listCategories(slugs, config) {
+    return slugs ? slugs.split(',') : config.categories;
+}
+
+
+function createFilters(config) {
+    const filters = [];
+
+    if (config.filters) {
+        for (const [filterName, filterConfig] of Object.entries(config.filters)) {
+            if (!(filterName in availableFilters)) {
+                console.error(chalk.red(`Unknown filter [${filterName}] specified in config file.`));
+                process.exit(1);
+            }
+            const filter = new availableFilters[filterName](filterConfig);
+            filters.push(filter);
+        }
+    }
+
+    return filters;
 }
