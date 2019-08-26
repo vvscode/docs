@@ -33,7 +33,7 @@ https://reportingapi.sinch.com/v1/users/{type}/{endpoint}/calls/{domain}
 ```
 
 
-**type**, **endpoint**, **user identity** (see [Calling API documentation](doc:calling-api)).
+**type**, **endpoint**, **user identity** (see [Calling API documentation](doc:voice-rest-api-calling-api)).
 
 **domain** Optional parameter that specifies the terminating domain. Can be data or pstn. Default: **data**
 ```text
