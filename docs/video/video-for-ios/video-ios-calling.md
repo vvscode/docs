@@ -32,7 +32,7 @@ When the other party answers, the `callDidEstablish:` call delegate method is ca
 
 An *app-to-phone* call is a call that is made to a phone on the regular telephone network. Setting up an *app-to-phone* call is not much different from setting up an *app-to-app* call.
 
-Instead of invoking the `callUserWithId:` method, invoke the `callPhoneNumber:` method on the `SINCallClient` object. Sufficient funds must be available on the Sinch account and a valid phone number specified for the call to connect successfully. The phone number should be specified according to the E.164 number formatting (<http://en.wikipedia.org/wiki/E.164>) recommendation and should be prefixed with a ‘+’. E.g. to call the US phone number 415 555 0101, the phone number should be specified as “+14155550101”. The ‘+’ is the required prefix and the US country code ‘1’ prepended to the local subscriber number.
+Instead of invoking the `callUserWithId:` method, invoke the `callPhoneNumber:` method on the `SINCallClient` object. Sufficient funds must be available on the Sinch account and a valid phone number specified for the call to connect successfully. The phone number should be specified according to the [E.164 number formatting](http://en.wikipedia.org/wiki/E.164) recommendation and should be prefixed with a ‘+’. E.g. to call the US phone number 415 555 0101, the phone number should be specified as “+14155550101”. The ‘+’ is the required prefix and the US country code ‘1’ prepended to the local subscriber number.
 
 Placing an *app-to-phone* call requires an account with credits; topping up credits can be done on the Account page. Credits are used each time an *app-to-phone* call is placed and the balance history is updated after each call.
 
@@ -77,7 +77,7 @@ When the delegate method is executed, the call can either be connected automatic
 
 To get events related to the call, set the call delegate. The call object contains details about participants, start time, potential error codes, and error messages.
 
-If [VoIP push notifications](doc:enablingvoippushnotifications) is enabled, add logic for presenting a local notification if the app is in the background when receiving the call:
+If [VoIP push notifications](doc:video-ios-local-and-remote-push-notifications#section-enabling-voip-push-notifications) is enabled, add logic for presenting a local notification if the app is in the background when receiving the call:
 ```objectivec
 - (SINLocalNotification *)client:(id<SINClient>)client 
   localNotificationForIncomingCall:(id<SINCall>)call {

@@ -17,13 +17,13 @@ SinchClient sinchClient = Sinch.getSinchClientBuilder().context(context)
 ```
 
 
-The *Application Key* and *Application Secret* are obtained from the Sinch Developer Dashboard. See [Production and Sandbox Environments](production_and_sandbox_env) for valid values for *environmentHost*. The User ID should uniquely identify the user on the particular device.
+The *Application Key* and *Application Secret* are obtained from the Sinch Developer Dashboard. See [Production and Sandbox Environments](doc:video-android-miscellaneous#section-production-and-sandbox-environments) for valid values for *environmentHost*. The User ID should uniquely identify the user on the particular device.
 
 *Note:* All listener callbacks emitted from the Sinch SDK are invoked on the same thread that the call to `SinchClientBuilder.build` is made on. If the invoking thread is *not* the main-thread, it needs to have an associated `Looper`.
 
 ## Specify capabilities
 
-The SinchClient can be configured to enable or disable certain functionality. Please see the [Reference](../reference/index.html?com/sinch/android/rtc/SinchClient.html) for a comprehensive description of each capability.
+The SinchClient can be configured to enable or disable certain functionality. Please see the [Reference](reference/index.html?com/sinch/android/rtc/SinchClient.html) for a comprehensive description of each capability.
 
 The following example shows how to setup the client with both voice calling and instant messaging enabled.
 ```java
@@ -46,7 +46,7 @@ Calling `startListeningOnActiveConnection` allows your application to receive in
 
 ## Start the Sinch client
 
-Before starting the client, add a client listener (see [Reference](../reference/index.html?com/sinch/android/rtc/SinchClientListener.html) documentation):
+Before starting the client, add a client listener (see [Reference](reference/index.html?com/sinch/android/rtc/SinchClientListener.html) documentation):
 ```java
 sinchClient.addSinchClientListener(new SinchClientListener() {
 

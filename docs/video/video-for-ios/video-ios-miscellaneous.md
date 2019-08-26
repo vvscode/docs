@@ -156,7 +156,7 @@ Please refer to Apple’s [Local and Push Notification Programming Guide](https:
 
 ### Sending and receiving Apple push notifications
 
-To send push messages, you must have a server that is configured for sending push notifications to Apple Push Notification Service. Please see the [Sinch REST API User Guide](doc:usingrestapi) for details on how to handle feedback from Apple Push Notification Service.
+To send push messages, you must have a server that is configured for sending push notifications to Apple Push Notification Service. Please see the [Sinch REST API User Guide](doc:video-ios-local-and-remote-push-notifications) for details on how to handle feedback from Apple Push Notification Service.
 
 Please also refer to Apple’s [Local and Push Notification Programming Guide](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/) for further details on push notifications.
 
@@ -254,4 +254,4 @@ This glossary defines some of the domain specific terms used throughout this doc
 
 ### Active Connection in Background
 
-Apple has since iOS 10 discontinued support for maintaining a *VoIP* control connection alive via `-[UIApplication setKeepAliveTimeout:handler:]`. Attempting to use this method on an iOS device running iOS 10 results in the following warning log: `Legacy VoIP background mode is deprecated and no longer supported`. The Sinch feature *Active connection in background* was using the keep alive handler API and is as a consequence no longer supported on iOS. It is recommended to use [VoIP Push Notifications](localandremotepushnotifications) to achieve the equivalent functionality.ications) to achieve the equivalent functionality.
+Apple has since iOS 10 discontinued support for maintaining a *VoIP* control connection alive via `-[UIApplication setKeepAliveTimeout:handler:]`. Attempting to use this method on an iOS device running iOS 10 results in the following warning log: `Legacy VoIP background mode is deprecated and no longer supported`. The Sinch feature *Active connection in background* was using the keep alive handler API and is as a consequence no longer supported on iOS. It is recommended to use [VoIP Push Notifications](doc:video-ios-local-and-remote-push-notifications) to achieve the equivalent functionality.ications) to achieve the equivalent functionality.

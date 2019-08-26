@@ -4,7 +4,8 @@ excerpt: ""
 ---
 ## Setting up a video call
 
-Just like audio calls, video calls are placed through the [SINCallClient` and events are received using the `SINCallClientDelegate`. The call client is owned by the SinchClient and accessed using `[sinchClient callClient]`. Calling is not enabled by default. For a more general introduction to calling with the SinchClient, see `Calling](doc:callingios).
+Just like audio calls, video calls are placed through the `SINCallClient` and events are received using the `SINCallClientDelegate`. The call client is owned by the SinchClient and accessed using `[sinchClient callClient]`. Calling is not enabled by default. 
+For a more general introduction to calling with the SinchClient, see [Calling](doc:video-ios-calling).
 
 ## Showing the video streams
 
