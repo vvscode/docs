@@ -75,12 +75,12 @@ Query parameters:
 
 **200 OK**
 
-| Name       | Description                                             | JSON Type                                                                |
-| ---------- | ------------------------------------------------------- | ------------------------------------------------------------------------ |
-| page       | The requested page                                      | Integer                                                                  |
-| page\_size | The number of inbounds returned in this request         | Integer                                                                  |
-| count      | The total number of inbounds matching the given filters | Integer                                                                  |
-| inbounds   | The page of inbounds matching the given filters         | Array of objects described in \[Inbounds endpoint\](\#inbounds-endpoint) |
+| Name       | Description                                             | JSON Type                                                                         |
+| ---------- | ------------------------------------------------------- | ------------------------------------------------------------------------          |
+| page       | The requested page                                      | Integer                                                                           |
+| page\_size | The number of inbounds returned in this request         | Integer                                                                           |
+| count      | The total number of inbounds matching the given filters | Integer                                                                           |
+| inbounds   | The page of inbounds matching the given filters         | Array of objects described in [Inbounds endpoint](doc:sms-rest-inbounds-endpoint) |
 
 ### Retrieve inbound message
 

@@ -2,7 +2,7 @@
 title: "Message Body"
 excerpt: ""
 ---
-When specifying the message body in the request, the characters used as well as the length of the message affect how many actual SMS messages are sent out. When using [parameterization](doc:parameterization), the length of each message may also vary depending on the recipient-specific data.
+When specifying the message body in the request, the characters used as well as the length of the message affect how many actual SMS messages are sent out. When using [parameterization](doc:sms-rest-parameterization), the length of each message may also vary depending on the recipient-specific data.
 
 ### Supported Characters
 

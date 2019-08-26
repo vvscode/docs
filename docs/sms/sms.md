@@ -12,15 +12,15 @@ We offer a number of different APIs and libraries that make it easy for you to u
 
 ## The different SMS APIs
 
-### [REST](doc:rest) 
+### [REST](doc:sms-rest) 
 The easiest and most feature-rich API we offer. It allows for single messages, scheduled batch sending, message templates and more. You can also use our server-side libraries if you like to work natively in your programming language of choice. 
 
-### [SMPP](doc:smpp)
+### [SMPP](doc:sms-smpp)
 SMPP interfaces for full control and low latency. 
 
 ## Getting started
 Getting started with the Sinch SMS API is simple.
-- Create an SMS account in the [Sinch Dasboard](https://dashboard.sinch.com/#/signup "Sinch Dasboard")
+- Create an SMS account in the [Sinch Dashboard](https://dashboard.sinch.com/#/signup)
 - Get the REST API key available on your dashboard.
 
 Get started in minutes following one of the user guides below.
@@ -50,5 +50,5 @@ The guides above are our standard and recommended integration options. However, 
 
 You can find our other APIs below:
 
-- [HTTP Basic](doc:http-basic) 
-- [Cloud SMPP](doc:cloud-smpp)
+- [HTTP Basic](doc:sms-other-http-basic) 
+- [Cloud SMPP](doc:sms-other-cloud-smpp)

@@ -27,7 +27,7 @@ All MSISDNs returned by the REST API will be without a `+` or `00` prefix, even 
 
 ### Timestamp
 
-Timestamps are used for expressing a moment in time. They are represented using the [ISO-8601 standard](http://en.wikipedia.org/wiki/ISO_8601/). Examples of those are the fields `send_at` and `expire_at` in the [Send a batch message](doc:batches-endpoint#section-send-a-batch-message) operation.
+Timestamps are used for expressing a moment in time. They are represented using the [ISO-8601 standard](https://en.wikipedia.org/wiki/ISO_8601). Examples of those are the fields `send_at` and `expire_at` in the [Send a batch message](doc:sms-rest-batches-endpoint#section-send-a-batch-message) operation.
 
 A time offset can be specified in accordance with [ISO-8601 time offsets from UTC](http://en.wikipedia.org/wiki/ISO_8601#Time_offsets_from_UTC). If no time offset is specified (_local time_ in ISO-8601) then UTC will be used.
 
