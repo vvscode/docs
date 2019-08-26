@@ -60,7 +60,7 @@ Get information about your numbers. It returns a list of numbers that you own, a
 
 ### Authorization
 
-This is a protected resource and requires an [application signed request](doc:authorization#section-application-signed-request) or [basic auth](doc:basicauthorization).
+This is a protected resource and requires an [application signed request](doc:authorization#section-application-signed-request) or [basic auth](doc:authorization#section-basic-authorization).
 
 ### Response
 ```json
@@ -143,7 +143,7 @@ Assign a number or a list of numbers to an application.
 
 ### Authorization
 
-This is a protected resource and requires an [application signed request](doc:authorization#section-application-signed-request) or [basic auth](doc:basicauthorization).
+This is a protected resource and requires an [application signed request](doc:authorization#section-application-signed-request) or [basic auth](doc:authorization#section-basic-authorization).
 
 ### Response
 ```json
@@ -198,7 +198,7 @@ request will be used.
 
 ### Authorization
 
-This is a protected resource and requires an [application signed request](doc:authorization#section-application-signed-request) or [basic auth](doc:basicauthorization).
+This is a protected resource and requires an [application signed request](doc:authorization#section-application-signed-request) or [basic auth](doc:authorization#section-basic-authorization).
 
 ### Response
 ```json
@@ -229,7 +229,7 @@ Get callback URLs.
 
 ### Authorization
 
-This is a protected resource and requires an [application signed request](doc:authorization#section-application-signed-request) or [basic auth](doc:basicauthorization).
+This is a protected resource and requires an [application signed request](doc:authorization#section-application-signed-request) or [basic auth](doc:authorization#section-basic-authorization).
 
 ### Response
 ```json
@@ -302,7 +302,7 @@ Update callback URLs.
 
 ### Authorization
 
-This is a protected resource and requires an [application signed request](doc:authorization#section-application-signed-request) or [basic auth](doc:basicauthorization).
+This is a protected resource and requires an [application signed request](doc:authorization#section-application-signed-request) or [basic auth](doc:authorization#section-basic-authorization).
 
 ### Response
 ```json
@@ -332,7 +332,7 @@ Get information about the requested number.
 
 ### Authorization
 
-This is a protected resource and requires an [application signed request](doc:authorization#section-application-signed-request) or [basic auth](doc:basicauthorization).
+This is a protected resource and requires an [application signed request](doc:authorization#section-application-signed-request) or [basic auth](doc:authorization#section-basic-authorization).
 
 ### Response
 ```json
@@ -479,7 +479,7 @@ For more information on playing messages and performing actions on calls see the
 
 ### Authorization
 
-This is a protected resource and requires an [application signed request](doc:authorization#section-application-signed-request) or [basic auth](doc:basicauthorization).
+This is a protected resource and requires an [application signed request](doc:authorization#section-application-signed-request) or [basic auth](doc:authorization#section-basic-authorization).
 
 ### Errors
 
@@ -501,7 +501,7 @@ Gets information about a specific call.
 
 ### Authorization
 
-This is a protected resource and requires an [application signed request](doc:authorization#section-application-signed-request) or [basic auth](doc:basicauthorization).
+This is a protected resource and requires an [application signed request](doc:authorization#section-application-signed-request) or [basic auth](doc:authorization#section-basic-authorization).
 
 ### Response
 ```json
@@ -563,7 +563,7 @@ Gets information about an ongoing conference
 
 ### Authorization
 
-This is a protected resource and requires an [application signed request](doc:authorization#section-application-signed-request) or [basic auth](doc:basicauthorization).
+This is a protected resource and requires an [application signed request](doc:authorization#section-application-signed-request) or [basic auth](doc:authorization#section-basic-authorization).
 
 ### Response
 ```json
@@ -648,7 +648,7 @@ Mutes or unmutes a participant in an ongoing conference
 
 ### Authorization
 
-This is a protected resource and requires an [application signed request](doc:authorization#section-application-signed-request) or [basic auth](doc:basicauthorization).
+This is a protected resource and requires an [application signed request](doc:authorization#section-application-signed-request) or [basic auth](doc:authorization#section-basic-authorization).
 
 ### Errors
 
@@ -662,7 +662,7 @@ Kicks a participant from an ongoing conference
 
 ### Authorization
 
-This is a protected resource and requires an [application signed request](doc:authorization#section-application-signed-request) or [basic auth](doc:basicauthorization).
+This is a protected resource and requires an [application signed request](doc:authorization#section-application-signed-request) or [basic auth](doc:authorization#section-basic-authorization).
 
 ## Kick All Conference Participants
 
@@ -670,10 +670,10 @@ This is a protected resource and requires an [application signed request](doc:au
 
 ### Authorization
 
-This is a protected resource and requires an [application signed request](doc:authorization#section-application-signed-request) or [basic auth](doc:basicauthorization).
+This is a protected resource and requires an [application signed request](doc:authorization#section-application-signed-request) or [basic auth](doc:authorization#section-basic-authorization).
 
-## Conference and Text-To-Speech Callouts<span id="callouts"></span>
-
+## Conference and Text-To-Speech Callouts
+R
 **\[POST\] /callouts**
 
 Requests a call to be initiated from the server
@@ -782,7 +782,7 @@ With the text-to-speech callout, the server initiates a call to a phone number a
 
 ### Authorization
 
-This is a protected resource and requires an [application signed request](doc:authorization#section-application-signed-request) or [basic auth](doc:basicauthorization).
+This is a protected resource and requires an [application signed request](doc:authorization#section-application-signed-request) or [basic auth](doc:authorization#section-basic-authorization).
 
 ### Request
 ```json
@@ -899,4 +899,4 @@ If **enableDice** is set to true and the application has a callback URL specifie
 
 ### Authorization
 
-This is a protected resource and requires an [application signed request](doc:authorization#section-application-signed-request) or [basic auth](doc:basicauthorization).
+This is a protected resource and requires an [application signed request](doc:authorization#section-application-signed-request) or [basic auth](doc:authorization#section-basic-authorization).

@@ -109,7 +109,7 @@ For more information check the Incoming Call Event callback and the ConnectConf 
 
 By using the conference callout API, you can trigger calls to fixed or mobile phones and connect them all to the same conference room.
 
-For more information please check the [Callouts](doc:callouts) API.
+For more information please check the [Callouts](doc:voice-rest-api-calling-api#section-conference-and-text-to-speech-callouts) API.
 
 ### Conference management
 
@@ -127,7 +127,7 @@ Conference recording is disabled by default. To enable conference recording for 
 
 With the text-to-speech REST API, you can trigger a call to be placed to a fixed or mobile phone number and play a synthesized text message.
 
-For more information please check the [Callouts](doc:callouts) API.
+For more information please check the [Callouts](doc:voice-rest-api-calling-api#section-conference-and-text-to-speech-callouts) API.
 
 ## SIP trunking
 

@@ -23,7 +23,7 @@ The *Application Key* and *Application Secret* are obtained from the Sinch Devel
 
 ## Specify capabilities
 
-The SinchClient can be configured to enable or disable certain functionality. Please see the [Reference](../reference/index.html?com/sinch/android/rtc/SinchClient.html) for a comprehensive description of each capability.
+The SinchClient can be configured to enable or disable certain functionality. Please see the [Reference](reference/index.html?com/sinch/android/rtc/SinchClient.html) for a comprehensive description of each capability.
 
 The following example shows how to setup the client with both voice calling and instant messaging enabled.
 ```java
@@ -46,7 +46,7 @@ Calling `startListeningOnActiveConnection` allows your application to receive in
 
 ## Start the Sinch client
 
-Before starting the client, add a client listener (see [Reference](../reference/index.html?com/sinch/android/rtc/SinchClientListener.html) documentation):
+Before starting the client, add a client listener (see [Reference](reference/index.html?com/sinch/android/rtc/SinchClientListener.html) documentation):
 ```java
 sinchClient.addSinchClientListener(new SinchClientListener() {
 

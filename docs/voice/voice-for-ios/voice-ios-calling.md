@@ -77,7 +77,7 @@ When the delegate method is executed, the call can either be connected automatic
 
 To get events related to the call, set the call delegate. The call object contains details about participants, start time, potential error codes, and error messages.
 
-If [VoIP push notifications](doc:enablingvoippushnotifications) is enabled, add logic for presenting a local notification if the app is in the background when receiving the call:
+If [VoIP push notifications](doc:voice-ios-local-and-remote-push-notifications#section-enabling-voip-push-notifications) is enabled, add logic for presenting a local notification if the app is in the background when receiving the call:
 ```objectivec
 - (SINLocalNotification *)client:(id<SINClient>)client 
   localNotificationForIncomingCall:(id<SINCall>)call {

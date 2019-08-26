@@ -40,15 +40,15 @@ SVAML is a call control markup language developed by Sinch. When your backend re
 
 #### Actions
 
-| Action                             | Functionality                                        | Allowed in          |
-| ---------------------------------- | ---------------------------------------------------- | ------------------- |
-| [Hangup](doc:hangupaction)            | Instructs to hangup the call                         | ICE or ACE response |
-| [Continue](doc:continueaction)        | Instructs to continue with the call                  | ACE response        |
-| [ConnectPSTN](doc:continuepstnaction) | Instructs how the PSTN call will be connected        | ICE response        |
-| [ConnectMXP](doc:connectmxpaction)    | Instructs whether the app-app call will be connected | ICE response        |
-| [ConnectConf](doc:connectconfaction)  | Instructs to connect the call to a conference        | ICE response        |
-| [ConnectSIP](doc:connectsipaction)    | Instructs to connect the call to a SIP server        | ICE response        |
-| `RunMenu <runmenuaction`           | Instructs to play a menu to the user                 | ICE or ACE response |
+| Action                                 | Functionality                                        | Allowed in          |
+| ----------------------------------     | ---------------------------------------------------- | ------------------- |
+| [Hangup](#section-hangup)              | Instructs to hangup the call                         | ICE or ACE response |
+| [Continue](#section-continue)          | Instructs to continue with the call                  | ACE response        |
+| [ConnectPSTN](#section-connectpstn)    | Instructs how the PSTN call will be connected        | ICE response        |
+| [ConnectMXP](#section-connectmxp)      | Instructs whether the app-app call will be connected | ICE response        |
+| [ConnectConf](#section-connectconf)    | Instructs to connect the call to a conference        | ICE response        |
+| [ConnectSIP](#section-connectsip-beta) | Instructs to connect the call to a SIP server        | ICE response        |
+| `RunMenu <runmenuaction`               | Instructs to play a menu to the user                 | ICE or ACE response |
 
 ### Instructions
 
@@ -229,7 +229,7 @@ myConference.1234.20151027120655.wav
 
 By default, conference recording is disabled. To enable it, please contact Sinch support.
 
-#### ConnectSIP (beta)
+#### ConnectSIP - beta
 ```json
 {
     "name" : "connectSIP",
@@ -268,7 +268,7 @@ The SIP traffic will be routed to your SIP server from the IP address, so make s
 
 #### RunMenu
 
-With the *runMenu* action, the user will start listening to an IVR menu. This menu can play pre-recorded or text-to-speech messages, collect DTMF tones and trigger the [PIE Callback Event](doc:PIE) towards your backend, notifying of the actions that the user took.
+With the *runMenu* action, the user will start listening to an IVR menu. This menu can play pre-recorded or text-to-speech messages, collect DTMF tones and trigger the [PIE Callback Event](#section-prompt-input-event-callback-pie-) towards your backend, notifying of the actions that the user took.
 
 *Example of runMenu action*
 ```json
@@ -303,7 +303,7 @@ With the *runMenu* action, the user will start listening to an IVR menu. This me
 ```
 
 
-**runMenu** is a valid response action to an [incoming call event (ICE)](doc:voice-rest-api-callback-api) or [answered call event (ACE)](doc:answeredcalleventcallback). It instructs what menu to play to the user and what actions to take based on the user’s input. It can also be used in combination with the [manageCall API](doc:managecall), for conference calls.
+**runMenu** is a valid response action to an [Incoming Call Event (ICE)](#section-incoming-call-event-callback-ice-) or [answered call event (ACE)](#section-answered-call-event-callback-ace-). It instructs what menu to play to the user and what actions to take based on the user’s input. It can also be used in combination with the [manageCall API](doc:voice-rest-api-calling-api#section-manage-call), for conference calls.
 
 **menus** is a list of menus that are available. The menu with “id” : “main” will always play first, otherwise an error will be returned.
 
@@ -315,13 +315,13 @@ With the *runMenu* action, the user will start listening to an IVR menu. This me
 
 **dtmf** indicates a DTMF digit that a user can press.
 
-**action** indicates the action that will be taken if the user presses the pre-defined “dtmf” digit. It can either trigger a [PIE Event](doc:PIE) with the “return” action, or it can navigate to another menu with the “menu” action.
+**action** indicates the action that will be taken if the user presses the pre-defined “dtmf” digit. It can either trigger a [PIE Event](#section-prompt-input-event-callback-pie-) with the “return” action, or it can navigate to another menu with the “menu” action.
 
 **repeatPrompt** is the prompt that will be repeatedly play to the user if the correct DTMF digit is not pressed.
 
 **repeats** is the number of times that the repeatPrompt will be played.
 
-**maxDigits** is the maximum number of digits that is expected from a user to press. Once these digits are collected, a [PIE Event](doc:PIE) will be triggered containing these digits. The digits are collected when either the maximum number of digits are entered, the user presses “\#” or the user waits 5 seconds after the last entered digit.
+**maxDigits** is the maximum number of digits that is expected from a user to press. Once these digits are collected, a [PIE Event](#section-prompt-input-event-callback-pie-) will be triggered containing these digits. The digits are collected when either the maximum number of digits are entered, the user presses “\#” or the user waits 5 seconds after the last entered digit.
 
 > **WARNING: Important Notice**    
 >
@@ -333,7 +333,7 @@ With the *runMenu* action, the user will start listening to an IVR menu. This me
 
 When a call reaches the Sinch dashboard, the system makes a POST request to the specified calling callback URL.
 
-This event, called the “ICE” event, can be triggered by either an incoming data call or an incoming PSTN call. It supports the instruction [PlayFiles](doc:playfiles) to play a prompt and [Say](doc:say) to play a text-to-speech message and the [ConnectPSTN](doc:connectpstnaction), [ConnectMXP](doc:connectmxpaction), and [Hangup](doc:hangupaction) actions.
+This event, called the “ICE” event, can be triggered by either an incoming data call or an incoming PSTN call. It supports the instruction [PlayFiles](#section-playfiles) to play a prompt and [Say](#section-say) to play a text-to-speech message and the [ConnectPSTN](#section-connectpstn), [ConnectMXP](#section-connectmxp), and [Hangup](#section-hangup) actions.
 
 If there is no response to the callback within the timeout period, an error message is played, and the call is disconnected.
 
@@ -467,7 +467,7 @@ You can find more information on callback request signing [here](doc:authorizati
 
 ## Answered Call Event Callback (ACE)
 
-This callback is made when the call is picked up by the callee (person receiving the call). It is a POST request to the specified calling callback URL. This event does not support instructions and ignores any instructions passed. It only supports the actions [Continue](doc:continueaction) and [Hangup](doc:hangupaction).
+This callback is made when the call is picked up by the callee (person receiving the call). It is a POST request to the specified calling callback URL. This event does not support instructions and ignores any instructions passed. It only supports the actions [Continue](#section-continue) and [Hangup](#section-hangup).
 
 If there is no response to the callback within the timeout period, the call is connected.
 
@@ -522,7 +522,7 @@ You can find more information on callback request signing [here](doc:authorizati
 
 ## Disconnect Call Event Callback (DiCE)
 
-This callback is made when the call is disconnected. It is a POST request to the specified calling callback URL. This event does not support instructions and only supports the [hangup](doc:hangupaction) action.
+This callback is made when the call is disconnected. It is a POST request to the specified calling callback URL. This event does not support instructions and only supports the [hangup](#section-hangup) action.
 
 This callback is a notification. No response is needed.
 
@@ -599,8 +599,9 @@ You can find more information on callback request signing [here](doc:authorizati
 200 OK
 ```
 
+## Prompt Input Event Callback (PIE)
 
-This callback is triggered as a result of a [runMenu](doc:runmenuaction) action. It can be triggered from either a user pressing a number of DTMF digits, or by the “return” command.
+This callback is triggered as a result of a [runMenu](#section-runmenu) action. It can be triggered from either a user pressing a number of DTMF digits, or by the “return” command.
 
 It is a POST request to the specified calling callback URL. Your application can respond with SVAML logic.
 
