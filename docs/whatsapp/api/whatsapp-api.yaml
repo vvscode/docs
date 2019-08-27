@@ -1,0 +1,1748 @@
+openapi: "3.0.0"
+info:
+  title: Sinch WhatsApp API
+  version: "1.0.1"
+  description: |
+    # Introduction
+      The Sinch WhatsApp Business Messaging API provides a rich, enterprise grade messaging solution for clients who wish to communicate with their customers via WhatsApp.
+
+      With over 1.5bn users globally using WhatsApp regularly to communicate with friends and family, it really does represent the digital extension of the users living room. It’s the inner circle of your customer’s communication so bringing your trusted brand communications to that inner circle has huge potential.
+
+      Integrating the Sinch WhatsApp Business Messaging API with your own backend systems enables Rich, High fidelity, contextual conversations to be established via the WhatsApp channel.
+
+      This API specification covers the range of features available.
+    # Authentication
+      The Sinch WhatsApp API securely authenticates via a bot identifier and bearer token pair. During the initial client on boarding process, these will be provided by your account manager.
+
+      To be able to authenticate the access token needs to be passed. For all WhatsApp end-points it is required to set the bearer token in the authorization HTTP header like: `Authorization: Bearer AbCdEf123456`. Where the string `"AbCdEf123456"` is the bearer authorization token.  
+
+    # Opt-In and Outs
+      All Business initiated conversations via the Sinch WhatsApp Business API must start with an “Opt-In” by the user.  This can be collected through any third party.  Eg.  An SMS message, In-Line with a Web Form, In an Email, or even via a deep-link in print media.
+      
+      You can record a opt in by the API call described below and once the “Opt-In” is recorded you’ll be able to message that customer via the Sinch WhatsApp Business API.
+
+      Businesses must provide a method by which customers may opt-out of receiving future messages from your organisation.  The opt-out should be handled using the API call below.
+#####################################################
+servers:
+  - url: https://us1.whatsapp.api.sinch.com
+    description: US Production
+  - url: https://eu1.whatsapp.api.sinch.com
+    description: EU Production
+#####################################################
+tags:
+  - name: Message
+    description: The message endpoint is used as the primary endpoint of the API and this is where all the messages are sent through.
+  - name: Group
+    description: A collection of endpoints used to manage groups that are linked to a specific bot.
+#  - name: Callback
+#    description: There are two different types of callbacks that are being sent back from the Sinch Whats App API. Namely statuses and notifications where statuses are updates on the message being sent, such as delivered, read or failed. Notifications are messages that the end users wants to send back to the bots which the bots can act upon. Please note that the callback section in this documentation is not an endpoint.
+#####################################################
+x-tagGroups:
+  - name: Opt Ins and Outs
+    tags:
+      - Opt In
+      - Opt Out
+  - name: Messages
+    tags: 
+      - Message
+      - Group
+
+#  - name: Callbacks
+#    tags:
+#      - Callback
+#####################################################
+security:
+  - bearerAuth: []
+#####################################################
+paths:
+  /whatsapp/v1/{bot-id}/provision/optin:
+    post:
+      tags:
+        - Opt In
+      summary: Opt in numbers to enable the receiving of business messages via Whats App
+      operationId: addOptIns
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: bot-id
+          in: path
+          required: true
+          description: The identifier of the bot that wishes to send messages.
+          schema:
+            type: string
+      requestBody:
+        description: The numbers that you wish to opt in, which allows the current bot to send messages to them.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Optin'
+            example:
+              {
+                "numbers": [
+                  "46732001122",
+                  "46732002244",
+                  "46732003366"
+                ]
+              }
+      responses:
+        '200': 
+          description: Expected result to a valid request.
+        '400':
+          description: Bad request.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BadRequestResponse"
+              example:
+                {
+                  "message": "Validation error",
+                  "reason": "Field [numbers] can not be empty."
+                }
+        '401':
+          description: Unauthorized bot.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UnauthorizedResponse"
+  /whatsapp/v1/{bot-id}/provision/optout:
+    post:
+      tags:
+        - Opt Out
+      summary: Opt out numbers to disable the receiving of business messages via Whats App
+      operationId: removeOptIn
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: bot-id
+          in: path
+          required: true
+          description: The identifier of the bot that wishes to send messages.
+          schema:
+            type: string
+      requestBody:
+        description: The numbers that you wish to opt in, which allows the current bot to send messages to them.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Optout'
+            example:
+              {
+                "numbers": [
+                  "46732001122",
+                  "46732002244",
+                  "46732003366"
+                ]
+              }
+      responses:
+        '200': 
+          description: Expected result to a valid request.
+        '400':
+          description: Bad request.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BadRequestResponse"
+              example:
+                {
+                  "message": "Validation error",
+                  "reason": "Field [numbers] can not be empty."
+                }
+        '401':
+          description: Unauthorized bot.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UnauthorizedResponse"
+
+  /whatsapp/v1/{bot-id}/messages:
+    post:
+      tags:
+        - Message
+      summary: Send a Whats App message using Sinch Whats App API
+      operationId: sendMessage
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: bot-id
+          in: path
+          required: true
+          description: The identifier of the bot that wishes to send messages.
+          schema:
+            type: string
+      requestBody:
+        description: Message to send
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WhatsAppMessage'
+            examples:
+              TemplateExample:
+                $ref: '#/components/examples/TemplateExample'
+              TextExample:
+                $ref: '#/components/examples/TextExample'
+              ImageExample:
+                $ref: '#/components/examples/ImageExample'
+              DocumentExample:
+                $ref: '#/components/examples/DocumentExample'
+              AudioExample:
+                $ref: '#/components/examples/AudioExample'
+              VideoExample:
+                $ref: '#/components/examples/VideoExample'
+              LocationMessage:
+                $ref: '#/components/examples/LocationExample'
+              ContactsMessage:
+                $ref: '#/components/examples/ContactsExample'
+
+      responses:
+        '201': 
+          description: Expected result to a valid request.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Receipt"
+              example:
+                {
+                  "type": "whatsapp",
+                  "statuses": {
+                    "message_id": "f1690238-9c72-49c3-b1c6-b701f8765732",
+                    "recipient": "+46732001122",
+                    "status": "success",
+                    "state": "queued"
+                  }
+                }
+        '400':
+          description: Bad request.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BadRequestResponse"
+        '401':
+          description: Unauthorized bot.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UnauthorizedResponse"
+        '503':
+          description: Service unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ServiceUnavailableResponse"
+      x-code-samples:
+      - lang: "Java"
+        source: "System.out.println('Hello World');"
+      - lang: "Python"
+        source: "print('Hello world')"
+      - lang: "JavaScript"
+        source: "console.log('Hello world');"
+      callbacks:
+        Callback:
+          '{pre-registered-callback-url}':
+            post:
+              requestBody:
+                description: The returned status updates and notifications from the API.
+                content:
+                  application/json:
+                    schema:
+                      $ref: '#/components/schemas/Callback'
+                    examples:
+                      StatusCallbackExample:
+                        $ref: '#/components/examples/StatusCallbackExample'
+                      NotificationCallbackExample:
+                        $ref: '#/components/examples/NotificationCallbackExample'
+              responses:
+                '200':
+                  description: Your server returns this code if it accepts the callback
+
+  /whatsapp/v1/{bot-id}/groups:
+    get:
+      #List groups
+      tags:
+        - Group
+      summary: List all groups associated with your bot.
+      operationId: listGroups
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: bot-id
+          in: path
+          required: true
+          description: The identifier of the bot that wishes to send messages.
+          schema:
+            type: string
+      responses:
+        '200': 
+          description: List of group ids associated with the bot.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ListGroupsResponse"
+        '401':
+          description: Unauthorized bot.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UnauthorizedResponse"
+        '503':
+          description: Service unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ServiceUnavailableResponse"
+    post:
+      #Create Group
+      tags:
+        - Group
+      summary: Create a new group
+      operationId: createGroup
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: bot-id
+          in: path
+          required: true
+          description: The identifier of the bot that wishes to send messages.
+          schema:
+            type: string
+      requestBody:
+        description: Group subject
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GroupSubjectMessage'
+            examples:
+              SubjectExample:
+                $ref: '#/components/examples/GroupSubjectExample'
+      responses:
+        '200': 
+          description: Expected result to a valid request.
+        '400':
+          description: Bad request.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BadRequestResponse"
+              examples:
+                MissingSubjectExample:
+                  $ref: '#/components/examples/MissingSubjectExample'
+        '401':
+          description: Unauthorized bot.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UnauthorizedResponse"
+        '503':
+          description: Service unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ServiceUnavailableResponse"
+  /whatsapp/v1/{bot-id}/groups/{group-id}:
+    get: 
+      #Get group information
+      tags:
+        - Group
+      summary: List all information associated with the specified group id.
+      operationId: getGroupInformation
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: bot-id
+          in: path
+          required: true
+          description: The identifier of the bot that wishes to send messages.
+          schema:
+            type: string
+        - name: group-id
+          in: path
+          required: true
+          description: The identifier of the group.
+          schema:
+            type: string
+      responses:
+        '200': 
+          description: Expected result to a valid request.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GroupInformationResponse"
+        '401':
+          description: Unauthorized bot.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UnauthorizedResponse"
+        '503':
+          description: Service unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ServiceUnavailableResponse"
+    patch:
+      #Update subject
+      tags:
+        - Group
+      summary: Update a groups subject
+      operationId: updateGroupSubject
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: bot-id
+          in: path
+          required: true
+          description: The identifier of the bot that wishes to send messages.
+          schema:
+            type: string
+        - name: group-id
+          in: path
+          required: true
+          description: The identifier of the group.
+          schema:
+            type: string
+      requestBody:
+        description: Group subject
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GroupSubjectMessage'
+            examples:
+              SubjectExample:
+                $ref: '#/components/examples/GroupSubjectExample'
+      responses:
+        '200': 
+          description: Expected result to a valid request.
+        '400':
+          description: Bad request.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BadRequestResponse"
+              examples:
+                MissingSubjectExample:
+                  $ref: '#/components/examples/MissingSubjectExample'
+        '401':
+          description: Unauthorized bot.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UnauthorizedResponse"
+        '503':
+          description: Service unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ServiceUnavailableResponse"
+    delete:
+      #Leave group
+      tags:
+        - Group
+      summary: Leave a specified group
+      operationId: leaveGroup
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: bot-id
+          in: path
+          required: true
+          description: The identifier of the bot that wishes to send messages.
+          schema:
+            type: string
+        - name: group-id
+          in: path
+          required: true
+          description: The identifier of the group.
+          schema:
+            type: string
+      responses:
+        '200': 
+          description: Expected result to a valid request.
+        '401':
+          description: Unauthorized bot.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UnauthorizedResponse"
+        '503':
+          description: Service unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ServiceUnavailableResponse"
+  /whatsapp/v1/{bot-id}/groups/{group-id}/member:
+    delete:
+      #Remove group member
+      tags:
+        - Group
+      summary: Remove group members
+      operationId: removeGroupMembers
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: bot-id
+          in: path
+          required: true
+          description: The identifier of the bot that wishes to send messages.
+          schema:
+            type: string
+        - name: group-id
+          in: path
+          required: true
+          description: The identifier of the group.
+          schema:
+            type: string
+      requestBody:
+        description: List of group members to be removed
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NumberListMessage'
+            examples:
+              NumberListExample:
+                $ref: '#/components/examples/NumberListExample'
+      responses:
+        '200': 
+          description: Expected result to a valid request.
+        '400':
+          description: Bad request.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BadRequestResponse"
+              examples:
+                MissingSubjectExample:
+                  $ref: '#/components/examples/MissingNumbersExample'
+        '401':
+          description: Unauthorized bot.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UnauthorizedResponse"
+        '503':
+          description: Service unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ServiceUnavailableResponse"
+  /whatsapp/v1/{bot-id}/groups/{group-id}/icon:
+    post:
+      #Set group icon
+      summary: Update group icon
+      operationId: updateGroupIcon
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: bot-id
+          in: path
+          required: true
+          description: The identifier of the bot that wishes to send messages.
+          schema:
+            type: string
+        - name: group-id
+          in: path
+          required: true
+          description: The identifier of the group.
+          schema:
+            type: string
+      requestBody:
+        description: Url of photo to be used as group icon.
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UrlMessage'
+            examples:
+              SubjectExample:
+                $ref: '#/components/examples/UrlMessageExample'
+      responses:
+        '200': 
+          description: Expected result to a valid request.
+        '400':
+          description: Bad request.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BadRequestResponse"
+              examples:
+                MissingSubjectExample:
+                  $ref: '#/components/examples/MissingUrlExample'
+        '401':
+          description: Unauthorized bot.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UnauthorizedResponse"
+        '503':
+          description: Service unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ServiceUnavailableResponse"
+  /whatsapp/v1/{bot-id}/groups/{group-id}/admin:
+    post:
+      #Add group admins
+      tags:
+        - Group
+      summary: Add admins to the specified group
+      operationId: addGroupAdmins
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: bot-id
+          in: path
+          required: true
+          description: The identifier of the bot that wishes to send messages.
+          schema:
+            type: string
+        - name: group-id
+          in: path
+          required: true
+          description: The identifier of the group.
+          schema:
+            type: string
+      requestBody:
+        description: List of admins to be added to the group
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NumberListMessage'
+            examples:
+              NumberListExample:
+                $ref: '#/components/examples/NumberListExample'
+      responses:
+        '200': 
+          description: Expected result to a valid request.
+        '400':
+          description: Bad request.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BadRequestResponse"
+              examples:
+                MissingSubjectExample:
+                  $ref: '#/components/examples/MissingNumbersExample'
+        '401':
+          description: Unauthorized bot.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UnauthorizedResponse"
+        '503':
+          description: Service unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ServiceUnavailableResponse"
+    delete:
+      #Remove group admins
+      tags:
+        - Group
+      summary: Remove admins from the specified group
+      operationId: removeGroupAdmins
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: bot-id
+          in: path
+          required: true
+          description: The identifier of the bot that wishes to send messages.
+          schema:
+            type: string
+        - name: group-id
+          in: path
+          required: true
+          description: The identifier of the group.
+          schema:
+            type: string
+      requestBody:
+        description: List of admins to be removed from the group
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NumberListMessage'
+            examples:
+              NumberListExample:
+                $ref: '#/components/examples/NumberListExample'
+      responses:
+        '200': 
+          description: Expected result to a valid request.
+        '400':
+          description: Bad request.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BadRequestResponse"
+              examples:
+                MissingSubjectExample:
+                  $ref: '#/components/examples/MissingNumbersExample'
+        '401':
+          description: Unauthorized bot.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UnauthorizedResponse"
+        '503':
+          description: Service unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ServiceUnavailableResponse"
+  /whatsapp/v1/{bot-id}/groups/{group-id}/invite:
+    get:
+      #Get group invite
+      tags:
+        - Group
+      summary: Grab a valid group invite link to the specified group.
+      operationId: getGroupInvite
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: bot-id
+          in: path
+          required: true
+          description: The identifier of the bot that wishes to send messages.
+          schema:
+            type: string
+        - name: group-id
+          in: path
+          required: true
+          description: The identifier of the group.
+          schema:
+            type: string
+      responses:
+        '200': 
+          description: Expected result to a valid request.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GroupInviteResponse"
+        '401':
+          description: Unauthorized bot.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UnauthorizedResponse"
+        '503':
+          description: Service unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ServiceUnavailableResponse"
+    delete:
+      #Delete group invite
+      tags:
+        - Group
+      summary: Delete the active group invite link.
+      operationId: deleteGroupInvite
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: bot-id
+          in: path
+          required: true
+          description: The identifier of the bot that wishes to send messages.
+          schema:
+            type: string
+        - name: group-id
+          in: path
+          required: true
+          description: The identifier of the group.
+          schema:
+            type: string
+      responses:
+        '200': 
+          description: Expected result to a valid request.
+        '401':
+          description: Unauthorized bot.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UnauthorizedResponse"
+        '503':
+          description: Service unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ServiceUnavailableResponse"
+components:
+  schemas:
+    GroupSubjectMessage:
+      description: Message containing group subject.
+      type: object
+      required:
+        - subject
+      properties:
+        subject:
+          description: Group subject as a string.
+          type: string
+    GroupInformationResponse:
+      description: Message containing information about a group.
+      type: object
+      required:
+        - admins
+        - creation_time
+        - creator
+        - members
+        - subject
+      properties:
+        admins:
+          description: Array containing all admins of the group.
+          type: array
+          items:
+            type: string
+        creation_time:
+          description: Creation time of the group.
+          type: string
+        creator:
+          description: Number of the creator of the group.
+          type: string
+        members:
+          description: Array containing all members of the group.
+          type: array
+          items:
+            type: string
+        subject:
+          description: Subject of the group
+          type: string
+      example:
+        admins: ["0732000000", "0732001122"]
+        creator: "0732000000"
+        members: ["0732001122"]
+        subject: "Sinch WhatsApp Group"
+        creation_time: "2019-08-09T09:25:32.000Z"
+    ListGroupsResponse:
+      description: Response containing a list of group ids associated with the bot.
+      type: object
+      required:
+        - groups
+      properties:
+        groups:
+          description: Array of group ids that are associated to the given bot.
+          type: array
+          items: 
+            type: string
+      example:
+        groups: ["group:447506616260-1565342732"]
+    NumberListMessage:
+      description: Message containing a list of numbers
+      type: object
+      required:
+        - numbers
+      properties:
+        numbers:
+          description: Array of phone numbers (msisdns).
+          type: array
+          items:
+            type: string
+    UrlMessage:
+      description: Message containing a url link to a image resource
+      type: object
+      required:
+        - url
+      properties:
+        url:
+          description: Valid url to a image resource
+          type: string
+    GroupInviteResponse:
+      description: A response containing an active invite link to a WhatsApp group.
+      type: object
+      required:
+        - invite_link
+      properties:
+        invite_link:
+          type: string
+      example:
+        invite_link: "https://chat.whatsapp.com/xyz123"
+    Optin:
+      description: a
+      type: object
+      required:
+        - numbers
+      properties:
+        numbers:
+          description: Array of phone numbers (msisdns).
+          type: array
+          items:
+            type: string
+          minItems: 1
+          maxItems: 20
+    Optout:
+      description: a
+      type: object
+      required:
+        - numbers
+      properties:
+        numbers:
+          description: Array of phone numbers (msisdns).
+          type: array
+          items:
+            type: string
+          minItems: 1
+          maxItems: 20
+    Callback:
+      description: a object containing callback information from the Sinch Whats App API.
+      type: object
+      properties:
+        type:
+          type: string
+          enum:
+          - whatsapp
+          example: whatsapp
+        notifications:
+          description: Array of notification objects. These are responses that the users send back which the bot can act upon.
+          type: array
+          items:
+            $ref: '#/components/schemas/Notification'
+        statuses:
+          description: Array of status updates. Such as delivered/read events.
+          type: array
+          items:
+            $ref: '#/components/schemas/Status'
+      example:
+        {
+          "statuses": [
+            {
+              "message_id": "asd8gdf-asdqweq-89aasmn",
+              "recipient": "+46732001122",
+              "status": "success | failure",
+              "state": "queued | dispatched | sent | delivered | read | failed | no_opt_in | no_capability"
+            }
+          ],
+          "notifications": [
+            {
+              "from": "0732001122",
+              "message_id": "asd82fv-asd35eq-55bcyf",
+              "message": {
+                "type": "text",
+                "body": "Hey bot, how are you?"
+              }
+            }
+          ]
+        } 
+
+    Notification:
+      type: object
+      properties:
+        from:
+          type: string
+          description: The originator of this message
+          example: "0732001122"
+        in_group:
+          type: string
+          description: The group id if the message was sent in a group
+        message_id:
+          type: string
+          description: Generated message id for this notification
+          example: "asd8gdf-asdqweq-89aasmn"
+        message:
+          type: object
+          $ref: '#/components/schemas/NotificationContent'
+        to:
+          type: string
+          description: The bot receiving this notification
+          example: "sinchbot"
+    NotificationContent:
+      discriminator:
+        propertyName: type
+        mapping:
+          text: '#/components/schemas/NotificationTextMessage'
+          location: '#/components/schemas/NotificationLocationMessage'
+          contacts: '#/components/schemas/NotificationContactsMessage'
+          image: '#/components/schemas/NotificationImageMessage'
+          document: '#/components/schemas/NotificationDocumentMessage'
+          audio: '#/components/schemas/NotificationAudioMessage'
+          video: '#/components/schemas/NotificationVideoMessage'
+          voice: '#/components/schemas/NotificationVoiceMessage'
+          group_event: '#/components/schemas/NotificationGroupEventMessage' 
+      required:
+        - type
+      properties:
+        type:
+          type: object
+          $ref: '#/components/schemas/MessageType'
+    NotificationTextMessage:
+      type: object
+      required:
+        - type
+        - body
+      properties:
+        type:
+          $ref: '#/components/schemas/MessageType'
+          example: text
+        body:
+          type: string
+          description: The text of the text message
+          example: "Hello Bot"
+    NotificationLocationMessage:
+      type: object
+      required:
+        - type
+        - latitude
+        - longitude
+      properties:
+        type:
+          $ref: '#/components/schemas/MessageType'
+          example: location
+        latitude:
+          type: number
+          minimum: -90
+          maximum: 90
+          example: 55.7047
+        longitude:
+          type: number
+          minimum: -180
+          maximum: 180
+          example: 13.1910
+        name:
+          description: The name for the location. Will be displayed in the message.
+          type: string
+          example: Sinch Ideon Lund
+        address:
+          description: The address for the location. Will be displayed in the message.
+          type: string
+          example: Scheelevägen 17b
+        url:
+          description: Optional url for the location.
+          type: string
+          example: www.sinch.com
+    NotificationContactsMessage:
+      type: object
+      required:
+        - type
+        - contacts
+      properties:
+        type:
+          $ref: '#/components/schemas/MessageType'
+          example: contacts
+        contacts:
+          type: array
+          items:
+            $ref: '#/components/schemas/ContactCard'
+    NotificationAudioMessage:
+      type: object
+      required:
+      - type
+      - url
+      - mime_type
+      properties:
+        type:
+          $ref: '#/components/schemas/MessageType'
+          example: audio
+        url:
+          type: string
+          description: The url where to download the media file from.
+        mime_type:
+          type: string
+          description: The mime type of this file.
+        caption:
+          type: string
+          description: Optional description of this resource.
+        filename:
+          type: string
+          description: Optional filename on the sender's device.
+    NotificationDocumentMessage:
+      type: object
+      required:
+      - type
+      - url
+      - mime_type
+      properties:
+        type:
+          $ref: '#/components/schemas/MessageType'
+          example: document
+        url:
+          type: string
+          description: The url where to download the media file from.
+        mime_type:
+          type: string
+          description: The mime type of this file.
+        caption:
+          type: string
+          description: Optional description of this resource.
+        filename:
+          type: string
+          description: Optional filename on the sender's device.
+    NotificationImageMessage:
+      type: object
+      required:
+      - type
+      - url
+      - mime_type
+      properties:
+        type:
+          $ref: '#/components/schemas/MessageType'
+          example: image
+        url:
+          type: string
+          description: The url where to download the media file from.
+        mime_type:
+          type: string
+          description: The mime type of this file.
+        caption:
+          type: string
+          description: Optional description of this resource.
+    NotificationVideoMessage:
+      type: object
+      required:
+      - type
+      - url
+      - mime_type
+      properties:
+        type:
+          $ref: '#/components/schemas/MessageType'
+          example: video
+        url:
+          type: string
+          description: The url where to download the media file from.
+        mime_type:
+          type: string
+          description: The mime type of this file.
+        caption:
+          type: string
+          description: Optional description of this resource.
+    NotificationVoiceMessage:
+      type: object
+      required:
+      - type
+      - url
+      - mime_type
+      properties:
+        type:
+          $ref: '#/components/schemas/MessageType'
+          example: voice
+        url:
+          type: string
+          description: The url where to download the media file from.
+        mime_type:
+          type: string
+          description: The mime type of this file.
+        caption:
+          type: string
+          description: Optional description of this resource.
+    NotificationGroupEvent:
+      type: object
+      required:
+        - type
+        - event_type
+        - in_group
+      properties:
+        type:
+          $ref: '#/components/schemas/MessageType'
+          example: group_event
+        event_type:
+          type: string
+          description: Type of group event.
+        body:
+          type: string
+          description: Description of event.
+        in_group:
+          type: string
+          description: Group id of group that the event occured in.
+        members:
+          type: array
+          items:
+            type: string
+          description: Array of member numbers.
+
+    Status:
+      type: object
+      properties:
+        message_id:
+          type: string
+        recipient:
+          type: string
+        status:
+          type: string
+          enum:
+          - success
+          - failure
+        state:
+          type: string
+          enum:
+          - queued
+          - dispatched
+          - sent
+          - delivered
+          - read
+          - deleted
+          - no_capability
+          - no_opt_in
+          - failed
+
+    MessageContent:
+      discriminator:
+        propertyName: type
+        mapping:
+          template: '#/components/schemas/TemplateMessage'
+          text: '#/components/schemas/TextMessage'
+          image: '#/components/schemas/ImageMessage'
+          document: '#/components/schemas/DocumentMessage'
+          audio: '#/components/schemas/AudioMessage'
+          video: '#/components/schemas/VideoMessage'
+          location: '#/components/schemas/LocationMessage'
+          contacts: '#/components/schemas/ContactsMessage'
+      required:
+        - type
+      properties:
+        type:
+          type: object
+          $ref: '#/components/schemas/MessageType'
+
+    MessageType:
+      type: string
+      enum:
+      - template
+      - text
+      - location
+      - contacts
+      - image
+      - document
+      - audio
+      - video
+      - voice 
+      - group_event
+    WhatsAppMessage:
+      required:
+        - to
+        - message
+      properties:
+        to:
+          description: Array of phone numbers (msisdns) or group ids.  Required.
+          type: array
+          items:
+            type: string
+          minItems: 1
+          maxItems: 20
+        message:
+          type: object
+          $ref: '#/components/schemas/MessageContent'
+      example:
+        {
+          "to": ["0732001122", "group:447506616260-1565342732"],
+          "message": {
+            "type": "text",
+            "text": "Greetings from the Sinch WhatsApp API!"
+          }
+        }
+    ChannelType:
+      type: string
+      enum:
+      - whatsapp
+    Receipt:
+      required:
+        - type
+      properties:
+        type:
+          type: object
+          $ref: '#/components/schemas/ChannelType'
+        statuses:
+          type: object
+          $ref: '#/components/schemas/Status'
+        notifications:
+          type: object
+          $ref: '#/components/schemas/Notification'
+    TemplateMessage:
+      required:
+        - type
+        - template_name
+      properties:
+        type:
+          $ref: '#/components/schemas/MessageType'
+          example: template
+        template_name:
+          description: Name of the template. This has to be registered before hand.
+          type: string
+          example: personal_greeting
+        language:
+          description: Fallback language if the template message is not available in the user's language/locale setting on the device. Accepts both language and language_locale formats (e.g., en and en_US)
+        params:
+          description: An array holding each string parameter that will be injected into the specified template. Required if the refered template contains variables.
+          type: array
+          items: 
+            type: string
+          example: ["John Doe"]
+        ttl:
+          description: Time to live of the template message. If the receiver has not opened the template message before the time to live expires, the message will be deleted and a failed callback will be sent. The time to live can be specified in ISO-8601 Duration format or in seconds as a string.
+          type: string
+          example: "P1D"
+    TextMessage:
+      required:
+        - type
+        - text
+      properties:
+        type:
+          $ref: '#/components/schemas/MessageType'
+          example: text
+        text:
+          description: The actual text body.  Required.
+          type: string
+          example: Hey from the Sinch WhatsApp API
+        preview_url: 
+          type: boolean
+          description: Boolean value to determine if a supplied url link will be previewed in the text message
+          example: true
+    ImageMessage:
+      required:
+        - type
+        - url
+      properties:
+        type:
+          $ref: '#/components/schemas/MessageType'
+          example: image
+        url:
+          description: The url to the image (jpg | jpeg | png).
+          type: string
+          example: www.example.com/image.jpg
+        caption:
+          description: Optional caption that will be displayed underneath the image.
+          type: string
+          example: This is an caption for an example image.
+    DocumentMessage:
+      required:
+        - type
+        - url
+      properties:
+        type:
+          $ref: '#/components/schemas/MessageType'
+          example: document
+        url:
+          description: The url to the document (pdf).
+          type: string
+          example: www.example.com/document.pdf
+        caption:
+          description: Optional caption that will be displayed as the document title.
+          type: string
+          example: Super fascinating document.
+        filename:
+          description: The optional filename for the specific document.
+          type: string
+          example: document.pdf
+    AudioMessage:
+      required:
+        - type
+        - url
+      properties:
+        type:
+          $ref: '#/components/schemas/MessageType'
+          example: audio
+        url:
+          description: The url to the audio file (mp3).
+          type: string
+          example: www.example.com/song.mp3
+    VideoMessage:
+      required:
+        - type
+        - url
+      properties:
+        type:
+          $ref: '#/components/schemas/MessageType'
+          example: video
+        url:
+          description: The url to the video file (mp4).
+          type: string
+          example: www.example.com/video.mp4
+    LocationMessage:
+      required:
+        - type
+        - lat
+        - lng
+      properties:
+        type:
+          $ref: '#/components/schemas/MessageType'
+          example: location
+        lat:
+          description: The latitude position as a float number.
+          type: number
+          minimum: -90
+          maximum: 90
+          example: 55.7047
+        lng:
+          description: The longitude position as a float number.
+          type: number
+          minimum: -180
+          maximum: 180
+          example: 13.1910
+        name:
+          description: The name for the location. Will be displayed in the message.
+          type: string
+          example: Sinch Ideon Lund
+        address:
+          description: The address for the location. Will be displayed in the message.
+          type: string
+          example: Scheelevägen 17b
+    ContactsMessage:
+      required:
+        - type
+        - contacts
+      properties:
+        type:
+          $ref: '#/components/schemas/MessageType'
+          example: contacts
+        contacts:
+          type: array
+          items:
+            $ref: '#/components/schemas/ContactCard'
+    ContactCard:
+      required:
+        - name
+      properties:
+        addresses:
+          type: array
+          items:
+            $ref: '#/components/schemas/ContactCardAddress'
+        birthday:
+          type: string
+        emails:
+          type: array
+          items:
+            $ref: '#/components/schemas/ContactCardEmail'
+        name:
+          $ref: '#/components/schemas/ContactCardName'
+        org:
+          $ref: '#/components/schemas/ContactCardOrganization'
+        phones:
+          type: array
+          items:
+            $ref: '#/components/schemas/ContactCardPhone'
+        urls:
+          type: array
+          items:
+            $ref: '#/components/schemas/ContactCardUrl'
+    ContactCardAddress:
+      required:
+        - city
+      properties:
+        city:
+          type: string
+          example: Lund
+        country:
+          type: string
+          example: Sweden
+        country_code:
+          type: string
+          example: SE
+        state:
+          type: string
+          example: Skåne
+        street:
+          type: string
+          example: Scheelevägen 17b
+        type:
+          type: string
+          example: WORK
+        zip:
+          type: string
+          example: 223 63
+    ContactCardEmail:
+      required:
+        - email
+      properties:
+        email:
+          type: string
+          example: john.doe@sinch.com
+        type:
+          type: string
+          example: WORK
+    ContactCardName:
+      required:
+        - formatted_name
+      properties:
+        first_name:
+          type: string
+          example: John
+        last_name:
+          type: string
+          example: Doe
+        formatted_name:
+          type: string
+          example: John Doe
+    ContactCardOrganization:
+      required:
+        - company
+      properties:
+        company:
+          type: string
+          example: Sinch Communications
+        department:
+          type: string
+          example: R&D
+        title:
+          type: string
+          example: Manager
+    ContactCardPhone:
+      required:
+        - phone
+      properties:
+        phone:
+          type: string
+          example: 0732001122
+        type:
+          type: string
+          example: WORK
+        wa_id:
+          type: string
+          example: 0732001122
+    ContactCardUrl:
+      required:
+        - url
+      properties:
+        url:
+          type: string
+          example: www.sinch.com
+        type:
+          type: string
+          example: WORK
+          
+    BadRequestResponse:
+      properties:
+        title:
+          type: string
+        reason:
+          type: string
+      example:
+        message: "Validation error"
+        reason: "Field [to] can not be empty."
+    UnauthorizedResponse:
+      properties:
+        title:
+          type: string
+        reason:
+          type: string
+      example:
+        message: "401"
+        reason: "Unauthorized bot"        
+    InternalServerErrorResponse:
+      properties:
+        title:
+          type: string
+        reason:
+          type: string
+      example:
+        message: "500"
+        reason: "Internal server error"
+    ServiceUnavailableResponse:
+      properties:
+        title:
+          type: string
+        reason:
+          type: string
+      example:
+        message: "503"
+        reason: "Internal service not available, request could not be handled"
+  examples:
+    TextExample:
+      summary: Text Message
+      value: {
+          "to": [
+              "46732001122", "group:447506616260-1565342732"
+          ],
+          "message": {
+              "type": "text",
+              "text": "Greetings from Sinch"
+          }
+      }
+    ImageExample:
+      summary: Image Message
+      value: {
+        "to": [
+            "46732001122", "group:447506616260-1565342732"
+        ],
+        "message": {
+          "type": "image",
+          "url": "https://example.com/image.jpg",
+          "caption": "Example Image"
+        }
+      }
+    DocumentExample:
+      summary: Document Message
+      value: {
+        "to": [
+            "46732001122", "group:447506616260-1565342732"
+        ],
+        "message": {
+          "type": "document",
+          "url": "https://example.com/document.pdf",
+          "caption": "Example study",
+          "filename": "document.pdf"
+        }
+      }
+    AudioExample:
+      summary: Audio Message
+      value: {
+        "to": [
+            "46732001122", "group:447506616260-1565342732"
+        ],
+        "message": {
+          "type": "audio",
+          "url": "https://example.com/song.mp3"
+        }
+      }
+    VideoExample:
+      summary: Video Message
+      value: {
+        "to": [
+            "46732001122", "group:447506616260-1565342732"
+        ],
+        "message": {
+          "type": "video",
+          "url": "https://example.com/video.mp4"
+        }
+      }
+    TemplateExample:
+      summary: Template Message
+      value: {
+        "to": [
+            "46732001122", "group:447506616260-1565342732"
+        ],
+        "message": {
+          "type": "template",
+          "template_name": "sinch_test_greeting",
+          "params": [
+            "Nick"
+          ],
+          "ttl": "P1D"
+        }
+      }
+    LocationExample:
+      summary: Location Message
+      value: {
+        "to": [
+            "46732001122", "group:447506616260-1565342732"
+        ],
+        "message": {
+          "type": "location",
+          "lat": 55.7047,
+          "lng":13.1910,
+          "name": "Sinch Ideon Lund",
+          "address": "Scheelevägen 17"
+        }
+      }
+    ContactsExample:
+      summary: Contact Cards Message
+      value: {
+        "to": [
+            "46732001122", "group:447506616260-1565342732"
+        ],
+        "message": {
+          "type": "contacts",
+          "contacts": [
+                    {
+                        "addresses": [
+                            {
+                                "city": "Menlo Park",
+                                "country": "United States",
+                                "country_code": "us",
+                                "state": "CA",
+                                "street": "1 Hacker Way",
+                                "type": "HOME",
+                                "zip": "94025"
+                            }
+                        ],
+                        "birthday": "2012-08-18",
+                        "emails": [
+                            {
+                                "email": "test@fb.com",
+                                "type": "WORK"
+                            }
+                        ],
+                        "name": {
+                            "first_name": "John",
+                            "formatted_name": "John Smith",
+                            "last_name": "Smith"
+                        },
+                        "org": {
+                            "company": "WhatsApp",
+                            "department": "Design",
+                            "title": "Manager"
+                        },
+                        "phones": [
+                            {
+                                "phone": "+1 (650) 555-1234",
+                                "type": "WORK",
+                                "wa_id": "16505551234"
+                            }
+                        ],
+                        "urls": [
+                            {
+                                 "url": "https://www.facebook.com",
+                                 "type": "WORK"
+                            }
+                        ]
+                    }
+                ]
+        }
+      }
+    StatusCallbackExample:
+      summary: Message status callback
+      value: {
+        "statuses": [
+          {
+            "message_id": "asd8gdf-asdqweq-89aasmn",
+            "recipient": "+46732001122",
+            "status": "success | failure",
+            "state": "queued | dispatched | sent | delivered | read | failed | no_opt_in | no_capability"
+          }
+        ]
+      } 
+    NotificationCallbackExample:
+      summary: Text notification message callback
+      value: {
+        "notifications": [
+          {
+            "from": "0732001122",
+            "message_id": "asd82fv-asd35eq-55bcyf",
+            "message": {
+              "type": "text",
+              "body": "Hey bot, how are you?"
+            },
+            "to": "sinchbot"
+          }
+        ]
+      } 
+
+    GroupSubjectExample:
+      summary: Group subject message
+      value: {
+        "subject": "Sinch WhatsApp Team Group"
+      }
+    NumberListExample:
+      summary: List of numbers
+      value: {
+        "numbers": [
+            "0732001122",
+            "0732002244",
+            "0732003366"
+        ]
+      }
+    UrlMessageExample:
+      summary: Url to a image resource
+      value: {
+        "url": "https://www.example.com/group_icon.jpg"
+      }
+
+    MissingSubjectExample:
+      value: {
+        "message": "Validation error",
+        "reason": "Field [subject] can not be empty"
+      }
+    MissingNumbersExample:
+      value: {
+        "message": "Validation error",
+        "reason": "Field [numbers] can not be empty"
+      }
+    MissingUrlExample:
+      value: {
+        "message": "Validation error",
+        "reason": "Field [url] can not be empty"
+      }
+  
+  securitySchemes:
+    BearerAuth:            # arbitrary name for the security scheme
+      type: http
+      scheme: bearer
+
