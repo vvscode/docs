@@ -5,10 +5,10 @@ excerpt: "Build an SMS Voting System With Chartist and Rails. An easy way to let
 or an app pitch night we were hosting, I wanted an easy way for attendees to vote on their favorite app. I settled on building an SMS voting system that displays a list of submissions with a corresponding “app number” which attendees can then text to a phone number to place their vote.
 
 Because attendees only had a few minutes to vote and everyone was physically present, using SMS prevented people from submitting multiple votes without forcing anyone to sign up for an account. As the presentations happened, I entered each app’s name into the system via a simple form. When it was time to vote, I put the list of submissions on the giant projector:
-![sms-submissions.png](https://files.readme.io/fd45985-sms-submissions.png)
+![sms-submissions.png](images/fd45985-sms-submissions.png)
 
 Once the voting period ended, I navigated to the results page, which shows how many votes each app received.
-![results.png](https://files.readme.io/366b254-results.png)
+![results.png](images/366b254-results.png)
 
 In the next two sections, I’ll dive into the details of handling the incoming SMS as a vote and displaying the results as a graph. The rest of the app is a basic Rails app. You can find the finished source code for my app on our GitHub at [github.com/sinch/rails-sms-voting](https://github.com/sinch/rails-sms-voting).
 
@@ -17,11 +17,11 @@ In the next two sections, I’ll dive into the details of handling the incoming 
 > 1.  [Sign up for a Sinch developer account](https://portal.sinch.com/#/signup).
 > 2.  When prompted, verify your mobile phone number to get $2 for free.
 > 3.  Use the $2 to rent an SMS phone number.
-![rent-number.png](https://files.readme.io/166a445-rent-number.png)
+![rent-number.png](images/166a445-rent-number.png)
 
 > 4.  [Create a new app in the developer portal](https://portal.sinch.com/#/login).
 > 5.  Edit the SMS callback URL for that app. (It can’t be a local server.) This URL should accept post requests.
-![callback-url.png](https://files.readme.io/c94ac4c-callback-url.png)
+![callback-url.png](images/c94ac4c-callback-url.png)
 
 > 6.  Add the phone number that you just rented as “inbound number.” At the time of writing this, you can’t copy and paste the number. Instead, start typing the area code of the number and click the number on the drop-down list. If it turned into a purple button like you see above, you did it right.
 > 7.  Click the save button **twice\!**

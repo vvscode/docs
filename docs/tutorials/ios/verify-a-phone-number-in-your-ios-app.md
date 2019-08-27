@@ -66,4 +66,4 @@ Here we set the verification object to the current verification. Next up, verify
 ```
 
 With a few lines of code, you can implement a solid solution to verify phone numbers of your users in iOS. Next up is implementing the callbacks on your server side.
-![sms-input.jpg](https://files.readme.io/83d24a7-sms-input.jpg)
+![sms-input.jpg](images/83d24a7-sms-input.jpg)

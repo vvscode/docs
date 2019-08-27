@@ -24,7 +24,7 @@ You will use the Sinch Android SDK for the voice stream in this app. First, down
 ## Build the pet’s app
 
 For the pet’s app, you only need a blank screen that automatically accepts incoming phone calls. I jazzed mine up a bit:
-![dog-app.png](https://files.readme.io/ff618df-dog-app.png)
+![dog-app.png](images/ff618df-dog-app.png)
 
 In your main activity, start an instance of the Sinch client, listen for incoming calls and automatically answer incoming calls. First, start the client using the app key and secret you generated earlier:
 
@@ -81,6 +81,6 @@ getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 Lucky you — you don’t need to build an app for yourself\! In the Sinch Android SDK, there is a sample calling app that you can use to call your pet. Open **sinch-rtc-sample-calling** and enter the same key and secret from above in **SinchClientService.java**.
 
 Now, run this app on your phone, and run the pet app on your tablet. The human app will prompt you for your name; you can enter anything here. To place the call, enter “dog” as the recipient name and press “call.” You’ll notice on your phone screen that the status of the call goes from “initiating” to “established” in one to two seconds without doing anything on the tablet.
-![human-app.png](https://files.readme.io/f87186e-human-app.png)
+![human-app.png](images/f87186e-human-app.png)
 
 Tomorrow, before you leave for work, open this app on your tablet and turn up the volume. Call throughout the day to say hi, check if your dog is barking at the neighbors or talk to your parrot\!

@@ -7,13 +7,13 @@ In this tutorial, we will be creating an app that lets you call a person using a
 >   - XCode
 >   - Objective-C
 >   - CocoaPods
-![Ringtone.png](https://files.readme.io/b555413-Ringtone.png)
+![Ringtone.png](images/b555413-Ringtone.png)
 
 
-![Call-Out.png](https://files.readme.io/9b8a04b-Call-Out.png)
+![Call-Out.png](images/9b8a04b-Call-Out.png)
 
 A starter project has been provided with the appropriate app layout. You can download it from [Github](https://github.com/sinch/ios-custom-ringtone-calling). The Storyboard should look something like this:
-![Storyboard.png](https://files.readme.io/42599ea-Storyboard.png)
+![Storyboard.png](images/42599ea-Storyboard.png)
 
 ## 1. Setup
 
@@ -231,10 +231,10 @@ Finally, go to **UserRingtoneViewController.m**. In the method `CallAction`, rep
 ```
 
 That’s it\! You should be able to test the app out. There’s also a completed version of this app on [Github](https://github.com/sinch/ios-custom-ringtone-calling).
-![Login.png](https://files.readme.io/1a9778d-Login.png)
+![Login.png](images/1a9778d-Login.png)
 
 
-![Call-In.png](https://files.readme.io/5ca6913-Call-In.png)
+![Call-In.png](images/5ca6913-Call-In.png)
 
 Custom ringtones is just one example of how you can send useful information over Sinch calls. By passing headers to a Sinch call, you can add to your app’s functionality.
 

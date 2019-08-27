@@ -14,7 +14,7 @@ I downloaded the framework [here](https://www.dropbox.com/s/462krss0k4ov8x3/Sinc
 
 First, I dropped the framework into my Xcode project as an embedded binary. (Don’t forget to check the **‘copy if needed’** box.)
 
-![embedded.png](https://files.readme.io/39e5912-embedded.png)
+![embedded.png](images/39e5912-embedded.png)
 
 Second, I added the **other linker flags** `-ObjC -Xlinker -lc++` in my targets build settings.
 
@@ -53,19 +53,19 @@ I removed that code and added the import to my controller and the following line
 ```
 
 Now I’m ready to show this to the product owner. And it’s good to submit to the App Store. We probably won’t do that because we want to have VoIP calling so we can send some extra headers with more meta information about the call. But in just a few minutes, we can try out the user flow and potential UI without having to plan a whole sprint.
-![irezqstart.PNG](https://files.readme.io/6745318-irezqstart.PNG)
+![irezqstart.PNG](images/6745318-irezqstart.PNG)
 
 
-![manual.PNG](https://files.readme.io/d0e3137-manual.PNG)
+![manual.PNG](images/d0e3137-manual.PNG)
 
 
-![calling.png](https://files.readme.io/9d1506c-calling.png)
+![calling.png](images/9d1506c-calling.png)
 
 
-![incomming.png](https://files.readme.io/7788079-incomming.png)
+![incomming.png](images/7788079-incomming.png)
 
 
-![incall.png](https://files.readme.io/0cb5f36-incall.png)
+![incall.png](images/0cb5f36-incall.png)
 
 We’re really interested to know how you feel about these kinds of libraries. Tweet me at [@cjsinch](https://twitter.com/cjsinch) or email me at `christian@sinch.com` to let me know.
 

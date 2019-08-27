@@ -23,7 +23,7 @@ formatter.onTextFieldTextDidChange = ^(UITextField *textField) {
 
 
 Example how *As-You-Type-Formatting* can look for the user:
-![aytf.gif](https://files.readme.io/0f34ef0-aytf.gif)
+![aytf.gif](images/0f34ef0-aytf.gif)
 
 ## Listing regions and country dialing codes
 

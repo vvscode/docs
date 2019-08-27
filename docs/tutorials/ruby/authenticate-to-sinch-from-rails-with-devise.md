@@ -26,7 +26,7 @@ $ rails generate controller sinch --no-test-framework
 ```
 
 To add the Sinch SDK to your project, add **sinch.min.js** to your JavaScript folder:
-![sinch-min.png](https://files.readme.io/c24c5c7-sinch-min.png)
+![sinch-min.png](images/c24c5c7-sinch-min.png)
 
 To set up devise, add the following to your Gemfile:
 
@@ -169,7 +169,7 @@ $ open http://0.0.0.0:3000
 ```
 
 Open the developer console in your browser to see real-time updates of the Sinch client:
-![dev-console.png](https://files.readme.io/73584f8-dev-console.png)
+![dev-console.png](images/73584f8-dev-console.png)
 
 Congratulations, you did it\! You can now use the Sinch client to add calling or messaging to your web app. Check out the following tutorials to continue with your app:
 

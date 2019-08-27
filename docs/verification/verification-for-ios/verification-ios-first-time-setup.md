@@ -19,7 +19,7 @@ The Sinch Verification SDK can be downloaded [here](doc:downloads). It contains:
 Drag the *SinchVerification.framework* folder from the SDK distribution package folder into the Frameworks section of the Project Navigator.
 
 The Sinch Verification SDK depends on the following libraries and frameworks: *libc++*, *libicucore*, *libz*, SystemConfiguration.framework\_ and *CoreTelephony.framework* , which must all be added to the project and linked with the application target.
-![link-binary-with-libraries-xcode.png](https://files.readme.io/de473b8-link-binary-with-libraries-xcode.png)
+![link-binary-with-libraries-xcode.png](images/de473b8-link-binary-with-libraries-xcode.png)
 
 ### Sinch Verification is available as a CocoaPod
 

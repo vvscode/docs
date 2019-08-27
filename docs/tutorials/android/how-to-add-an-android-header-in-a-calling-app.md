@@ -3,7 +3,7 @@ title: "How to Add an Android Header in a Calling App"
 excerpt: "This tutorial demonstrates how to make a Sinch app-to-app call with a header. In this app, I’ll send the location of the person calling so the recipient can see where the other user is calling from."
 ---
 This tutorial demonstrates how to make a Sinch app-to-app call with a header. In this app, I’ll send the location of the person calling so the recipient can see where the other user is calling from.
-![finished-app.png](https://files.readme.io/ea4c0c7-finished-app.png)
+![finished-app.png](images/ea4c0c7-finished-app.png)
 
 The app is built on top of the **sinch-rtc-sample-calling** sample included in the Android SDK, and the finished code can be found on [our GitHub](https://www.github.com/sinch/android-app-app-calling-headers).
 

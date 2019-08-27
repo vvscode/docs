@@ -13,14 +13,14 @@ Sinch offers 2 ways to secure your app, the first one is the [Callback/webhook](
 This is the recommended way of securing your verification. Using Sinch Verification we send two events to your back end (if configured), one when someone wants to create a verification and one when the client tried to authenticate.
 
 We chose this approach for a couple of reasons, the first was to enable developers to easy try it out with no backend, the second was that we did not want to have the key and secret in-app, and OAuth seemed over complicated for a process that will most likely only occur once.
-![diagram.png](https://files.readme.io/d51cc29-diagram.png)
+![diagram.png](images/d51cc29-diagram.png)
 
 You can verify that the request is from us by signing the request you receive and comparing the hash with [authorization](doc:verification-rest-verification-api#section-authorization), or if you prefer, ship a custom variable like your Token for your own api requests and validate that in the custom variables.
 
 ## Using node to respond to your callbacks
 
 Today I will set up a backend to allow or deny a verification attempt using Node.JS and [Express](http://expressjs.com/) . For testing and generating requests I will use our [api explorer](https://portal.sinch.com/#/apps) that you’ll find in the dashboard
-![apiexplorer.png](https://files.readme.io/7b820fb-apiexplorer.png)
+![apiexplorer.png](images/7b820fb-apiexplorer.png)
 
  - Create the app
 
@@ -184,19 +184,19 @@ Start up ngrok:
 ```shell
 >ngrok http 8080
 ```
-![ngrok.png](https://files.readme.io/2daa49d-ngrok.png)
+![ngrok.png](images/2daa49d-ngrok.png)
 
 I will head over to my app in the dashboard and change the url to the above url.
-![seturl.png](https://files.readme.io/5b49eb8-seturl.png)
+![seturl.png](images/5b49eb8-seturl.png)
 
 Using the dev tools in the portal to hit my number again, and what happens?
-![ngrockfail.png](https://files.readme.io/8c0d74d-ngrockfail.png)
+![ngrockfail.png](images/8c0d74d-ngrockfail.png)
 
 Looks like I forgot to add my number to the list of allowed numbers to verify, so with Postman (another awesome tool) I quickly add my number to the list.
-![postmanaddnumber.png](https://files.readme.io/93569c7-postmanaddnumber.png)
+![postmanaddnumber.png](images/93569c7-postmanaddnumber.png)
 
 Ok, hit the number again and this time I get the expected allow\!
-![ngrokallow.png](https://files.readme.io/600ddab-ngrokallow.png)
+![ngrokallow.png](images/600ddab-ngrokallow.png)
 
 ## What’s next?
 

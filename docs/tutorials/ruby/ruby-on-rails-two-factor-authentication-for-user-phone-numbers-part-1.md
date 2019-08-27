@@ -119,13 +119,13 @@ I like to use Postman to test out my REST APIs. You can get it [here](https://ww
 Use `$ rails s` to start a local Rails server and take note of the port. In my case it was 3000.
 
 In Postman, generate a code:
-![postman_generate.png](https://files.readme.io/4eb818f-postman_generate.png)
+![postman_generate.png](images/4eb818f-postman_generate.png)
 
 See the code arrive in an SMS:
-![sms_code.jpg](https://files.readme.io/29de93d-sms_code.jpg)
+![sms_code.jpg](images/29de93d-sms_code.jpg)
 
 Then verify the code:
-![postman_verify.png](https://files.readme.io/4105d3b-postman_verify.png)
+![postman_verify.png](images/4105d3b-postman_verify.png)
 
 ## Hosting
 

@@ -19,7 +19,7 @@ First, let’s set up the Slash command for users to use.
 >   - Create a [new Slash Command](https://sinch.slack.com/services/new)
 >   - Set the method to `POST` and fill in the autocomplete help text and descriptive label. This is just to help your end users
 >   - In this project we are not using the token for authentication, but if you are scaling this out, you might want to look into this for authentication
-![slack-command.png](https://files.readme.io/d544186-slack-command.png)
+![slack-command.png](images/d544186-slack-command.png)
 
 ## PHP Script
 
@@ -64,7 +64,7 @@ Then set the message body with the rest of the array with `$message = array("mes
 ## User feedback
 
 Finally, we will send a success message to the user in Slack using `echo "\n Your message was sent.";`.
-![messageid.png](https://files.readme.io/97b669f-messageid.png)
+![messageid.png](images/97b669f-messageid.png)
 
 In the end, we get this:
 
@@ -107,7 +107,7 @@ echo "\n Your message was sent.";
 ```
 
 There is also another message sent to the user on line 30 in the code which will send a Sinch message ID back to the user, or an error message. You can remove this if you want to deal with it yourself.
-![feedback.png](https://files.readme.io/c6fb1db-feedback.png)
+![feedback.png](images/c6fb1db-feedback.png)
 
 ## Testing
 

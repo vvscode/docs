@@ -3,7 +3,7 @@ title: "Callback API"
 excerpt: ""
 ---
 Controlling a call from your application backend is done by responding to callbacks from the Sinch dashboard and/or by calling REST APIs in the Sinch dashboard from your application’s backend. The figure that follows illustrates the lifecycle of a call and shows where both callbacks and REST API calls are located or can be made.
-![callbackevents.png](https://files.readme.io/3124073-callbackevents.png)
+![callbackevents.png](images/3124073-callbackevents.png)
 
 The **Incoming Call Event (ICE)**, is triggered when the Sinch dashboard receives an incoming call. The event can trigger a REST request to your application backend. Your reply instructs the Sinch dashboard how to act. The response can include an object written in the **Sinch Voice Application Markup Language (SVAML)** and it can, for instance, instruct Sinch to play a number of IVRs and then connect the call to the PSTN. The **Answered Call Event (ACE)** is triggered when the call is answered and can render an additional REST call to your platform. SVAML instructions can again be provided in the response to the ACE event. Finally, the **Disconnected Call Event (DiCE)** is triggered when the call is disconnected. Between ACE and DiCE, it is legal to call the **ManageCall** REST API which is part of the Calling API, to instruct the call to be hung up and/or to play an Interactive Voice Response (IVR) during the conversation.
 

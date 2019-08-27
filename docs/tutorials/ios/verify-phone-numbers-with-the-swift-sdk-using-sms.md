@@ -28,10 +28,10 @@ Let’s stop talking and do some coding\!
 
  1. [Create an account](https://portal.sinch.com/#/signup)
  1. Create an app and change enable verification (set it to public for now)
-    ![configureapp.png](https://files.readme.io/700bb7b-configureapp.png)
+    ![configureapp.png](images/700bb7b-configureapp.png)
 
  1. Head over to <https://github.com/sinch/ios-swift-verification> to download the repo.
-    ![screenshots2.jpg](https://files.readme.io/4729ddb-screenshots2.jpg)
+    ![screenshots2.jpg](images/4729ddb-screenshots2.jpg)
 
 There are some important bits to look at from a verification perspective in this app. One is the *EnterPhoneNumberViewController.swift* function:
 

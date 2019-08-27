@@ -14,7 +14,7 @@ In Part 3 of this tutorial series, we will create an SMS provider for Microsoft 
 
 > 1.  Create a new a project and name it **LoginSample**
 > 2.  Select MVC project with basic authentication
-![greateproject.png](https://files.readme.io/71e9132-greateproject.png)
+![greateproject.png](images/71e9132-greateproject.png)
 
 ## Enable SMS for two-factor authentication with Sinch
 
@@ -84,15 +84,15 @@ else
 
 Hit **F5** and run the app. If you haven’t already registered an account, click on the username in the top right corner. This will take you to the page where you can manage your profile.
 
-![profilepage.png](https://files.readme.io/712798b-profilepage.png)
+![profilepage.png](images/712798b-profilepage.png)
 
 > 1.  Click Add Phone Number; remember to enter it in the international format (i.e **1** 5612600684)
 > 2.  Enter the code you received in an SMS
 > 3.  Click enable two-factor authentication
 > 4.  Log off and log back in; you should now see it below:
-![entercode.png](https://files.readme.io/5acd775-entercode.png)
+![entercode.png](images/5acd775-entercode.png)
 
 > 5.  Click Next and enter the code in the following window.
-![verifycode.png](https://files.readme.io/e594c3a-verifycode.png)
+![verifycode.png](images/e594c3a-verifycode.png)
 
 Now you see how easy it is to enable two-factor authentication on an ASP.NET Identity application using Sinch.

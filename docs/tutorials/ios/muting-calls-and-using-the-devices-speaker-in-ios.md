@@ -3,7 +3,7 @@ title: "Muting Calls and Using the Device’s Speaker in iOS"
 excerpt: "In this tutorial, we will build an ordinary iOS app-to-phone calling app. However, we will be investigating some of the cool features Sinch has added to make muting calls and using the iOS device’s speaker really easy."
 ---
 In this tutorial, we will build an ordinary iOS app-to-phone calling app. However, we will be investigating some of the cool features Sinch has added to make muting calls and using the iOS device’s speaker really easy. Today’s app also has a nice UI.
-![overview.jpg](https://files.readme.io/cdc26e6-overview.jpg)
+![overview.jpg](images/cdc26e6-overview.jpg)
 
 ## Getting started
 
@@ -12,7 +12,7 @@ We’ve prepared a starter file, which can be downloaded [on our GitHub](https:/
 To get started, log into your Sinch dashboard, create a new app, and get your app keys. If you don’t have an account, [head to the Sinch website](https://portal.sinch.com/#/signup) to sign up for free. If you verify your mobile phone number now, you can get $2 worth of free calls, which is pretty helpful if you want to try out this tutorial.
 
 Once you’ve got your app keys, head over to terminal on your Mac. Today we’re going to use CocoaPods to install the Sinch framework. This is the easiest way, although you’ve also got the option to add the framework manually. Start by using the $ cd command to navigate to your project’s main directory and call $ pod init. This will create a file in your project main directory, open up the text file, and add the Sinch pod.
-![podfile.jpg](https://files.readme.io/f549e00-podfile.jpg)
+![podfile.jpg](images/f549e00-podfile.jpg)
 
 Save the podfile and head back over to the terminal and call $ pod install. This could take a little while, but you’ll notice a message in the terminal telling you to use the xcworkspace file instead of the traditional xcodeproj file from now on when working on the project.
 

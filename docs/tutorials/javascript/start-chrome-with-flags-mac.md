@@ -8,5 +8,5 @@ When using the [Sinch JavaScript SDK](doc:voice-for-js) locally in Chrome, it is
  1.  Quit Chrome\! Don’t just close your open tabs, but actually **quit\!** 
  1.  From your terminal, run `$ YOUR_EXECUTABLE_PATH --allow-file-access-from-files`
  1.  Chrome should launch now. Navigate back to [chrome://version](chrome://version/) to see that the flag has been added properly 
-   ![example.png](https://files.readme.io/9069eea-example.png)
+   ![example.png](images/9069eea-example.png)
  1.  To quit, press **Ctrl-C** in the terminal tab that is running Chrome.

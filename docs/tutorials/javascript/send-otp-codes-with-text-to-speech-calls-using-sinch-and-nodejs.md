@@ -2,7 +2,7 @@
 title: "Send OTP codes with text to speech calls using Sinch and Node.js"
 excerpt: "Send OTP codes with text to speech calls using Sinch and Node.js In this tutorial you will learn how to use node.js to build a text to speech call that reads out pin-codes."
 ---
-![pincodes-texttospeech.png](https://files.readme.io/a6712af-pincodes-texttospeech.png)
+![pincodes-texttospeech.png](images/a6712af-pincodes-texttospeech.png)
 
 In this tutorial I will show you how to use node.js to build a [text to speech](https://en.wikipedia.org/wiki/Speech_synthesis) call that reads out pin-codes. To read more about the Sinch callout API please see the [documentation](doc:voice-rest-api-calling-api#section-text-to-speech).
 

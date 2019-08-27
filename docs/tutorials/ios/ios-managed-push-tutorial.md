@@ -34,17 +34,17 @@ You can remove that line of code, as we’re now going to be implementing manage
 
 Before we get into coding, there’s some background work we need to take care of. On your Mac, find the application Keychain Access and then find Certificate Assistant \> Request a Certificate from a Certificate Authority.
 
-![1.png](https://files.readme.io/dcaed7c-1.png)
+![1.png](images/dcaed7c-1.png)
 
 Now, follow the steps and make sure to save your certificate to somewhere accessible on your Mac.
-![2.png](https://files.readme.io/7d08252-2.png)
+![2.png](images/7d08252-2.png)
 
 We’re all done with Keychain Access for the moment. Now, open up a web browser and visit [Apple’s developer portal](https://developer.apple.com/). Once you’ve logged in, find Certificates, Identifiers & Profiles; from here, you’re going to need to select ‘App IDs’ under the section ‘Identifiers’.
 
 Create a new app and under the ‘App services’ section, be sure to check the push notifications box. Once this has been done, you will see that besides push notifications, we’re given the “Configurable” status, which is exactly what we want.
 
 Hit done and you will be presented with a list of your App IDs. Select the one you just created and press edit. From here, find the push notifications section.
-![3.png](https://files.readme.io/fb67e96-3.png)
+![3.png](images/fb67e96-3.png)
 
 Today, we will only be working in the development environment, so go ahead and create a certificate under Development SSL certificate.
 
@@ -56,7 +56,7 @@ Find your certificate under the login section, right-click, and select export. Y
 
 If you haven’t already, make an account. Next, create a new app, select it, and, on the third tab, find the push settings.
 
-![sinch.png](https://files.readme.io/41ce289-sinch.png)
+![sinch.png](images/41ce289-sinch.png)
 
 You can drag and drop your .p12 file that we just created into Sinch.
 
