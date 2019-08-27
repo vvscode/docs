@@ -21,7 +21,7 @@ jobs:
           command: npm install
       - run:
           name: validate
-          command: "./readme.js validate --no-fail"
+          command: "./readme.js validate"
 
 workflows:
   version: 2
