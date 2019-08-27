@@ -157,6 +157,8 @@ program
     .option('-f, --file <file>', `Path to a single file to process, relative to the directory specified with -d/--dir option.`)
     .option('-w, --widgets <widgets>', `Comma-separated list of Readme widgets to replace to Markdown. Supported widgets: 'code', 'callout', 'image', 'html'`)
     .option('-v, --verbose', `Output more details about the replacements being made.`)
+    .option('--no-download', `[For 'image' widgets only] Do not download remote image files to the local repository and replace URLs with relative paths to those files.`)
+    .option('--download-from <hostname>', `[For 'image' widgets only] Download images from specified host only.`, 'files.readme.io')
     .option('--dry-run', `Will only output modifications that would be made, without actually saving them.`)
     .action(async (slug, cmd) => {
         const options = {
@@ -164,29 +166,27 @@ program
             dir: cmd.dir,
             file: cmd.file,
             categories: slug,
+            widgets: cmd.widgets ? cmd.widgets.split(',') : markdownize.widgetTypes,
             dryRun: cmd.dryRun,
             verbose: cmd.dryRun || cmd.verbose,
+            download: cmd.download,
+            downloadFrom: cmd.downloadFrom,
         };
-        let catalog = Catalog.build(cmd.dir);
 
+        let catalog = Catalog.build(cmd.dir);
         catalog = await selectPages(catalog, options);
         if (catalog.length === 0) {
             console.warn('No files to found to markdownize.');
             return;
         }
 
-        let widgets = markdownize.widgetTypes;
-        if (cmd.widgets) {
-            widgets = cmd.widgets.split(',');
-        }
-
         for (const page of catalog.pages) {
-            const updated = markdownize.markdownize(page, widgets, options);
+            const updated = await markdownize.markdownize(page, options.widgets, options);
             if (!options.dryRun) {
                 if (page.content !== updated) {
                     page.content = updated;
                     console.log(chalk.green(`Writing updated Markdown to [${page.path}]`));
-                    await page.writeTo(cmd.dir);
+                    page.writeTo(cmd.dir);
                 }
             }
         }
