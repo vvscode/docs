@@ -1,4 +1,7 @@
-# Group Management
+---
+title: "Group Management"
+excerpt: "Manage your WhatsApp groups and their admins. Learn how to add or remove members of the different groups. Read more..."
+---
 
 A collection of endpoints used to manage groups that are linked to a specific bot.
 
