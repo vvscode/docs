@@ -7,11 +7,6 @@ Call Detail Records (CDRs) can be downloaded from the Sinch portal. CDRs are in 
 <div class="magic-block-html">
     <div class="marked-table">
         <table>
-            <colgroup>
-                <col style="width: 14%" />
-                <col style="width: 6%" />
-                <col style="width: 78%" />
-            </colgroup>
             <thead>
             <tr class="header">
                 <th>Field</th>

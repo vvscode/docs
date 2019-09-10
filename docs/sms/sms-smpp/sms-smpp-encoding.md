@@ -6,11 +6,7 @@ excerpt: ""
 
 <div class="magic-block-html">
     <div class="marked-table">
-        <table class="docutils">
-            <colgroup>
-                <col width="7%" />
-                <col width="93%" />
-            </colgroup>
+        <table>
             <thead valign="bottom">
             <tr class="row-odd">
                 <th class="head" colspan="2">Data Coding</th>

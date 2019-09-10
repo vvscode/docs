@@ -21,17 +21,14 @@ Input for a Number Lookup query is always an MSISDN - the table below illustrate
 <div class="magic-block-html">
     <div class="marked-table">
         <table>
-            <colgroup>
-                <col style="width: 44%" />
-                <col style="width: 16%" />
-                <col style="width: 36%" />
-            </colgroup>
+        <thead>
+          <tr>
+          <th></th>
+            <th>ENUM</th>
+            <th>HTTP/HTTPS</th>
+          </tr>
+        </thead>
             <tbody>
-            <tr class="odd">
-                <td></td>
-                <td><strong>ENUM</strong></td>
-                <td><strong>HTTP/HTTPS</strong></td>
-            </tr>
             <tr class="even">
                 <td><strong>Number Portability Lookup</strong></td>
                 <td>MCC + MNC</td>
@@ -40,8 +37,8 @@ Input for a Number Lookup query is always an MSISDN - the table below illustrate
             <tr class="odd">
                 <td><strong>Real-Time Lookup</strong></td>
                 <td>MCC + MNC</td>
-                <td><div class="line-block">MCC + MNCCountry Code<br />
-                    Handset Status Code</div></td>
+                <td>MCC + MNCCountry Code
+                Handset Status Code</td>
             </tr>
             </tbody>
         </table>

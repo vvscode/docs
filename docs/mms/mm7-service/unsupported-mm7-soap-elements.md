@@ -45,35 +45,29 @@ excerpt: ""
 <div class="magic-block-html">
     <div class="marked-table">
         <table>
-            <colgroup>
-                <col style="width: 10%" />
-                <col style="width: 89%" />
-            </colgroup>
+        <thead>
+          <tr>
+            <th>Element</th>
+            <th>Description</th>
+          </tr>
+        </thead>
             <tbody>
-            <tr class="odd">
-                <td><strong>Element</strong></td>
-                <td><strong>Description</strong></td>
-            </tr>
             <tr class="even">
                 <td>ApplicID</td>
-                <td><div class="line-block">This information element indicates the identification of the application,that the delivery report is intended for. If a Reply-Applic-ID was,indicated in the<br />
-                    corresponding original MM, the recipient MMS,Relay/Server shall set its value to that Reply-Applic-ID value.,Otherwise,<br />
-                    the recipient MMS Relay/Server shall set its value to the,Applic-ID value that was indicated in the corresponding original MM</div></td>
+                <td>This information element indicates the identification of the application,that the delivery report is intended for. If a Reply-Applic-ID was,indicated in the corresponding original MM, the recipient MMS,Relay/Server shall set its value to that Reply-Applic-ID value. Otherwise, the recipient MMS Relay/Server shall set its value to the,Applic-ID value that was indicated in the corresponding original MM</td>
             </tr>
             <tr class="odd">
                 <td>AuxApplicInfo</td>
-                <td><div class="line-block">If present, this information element indicates additional,application/implementation specific control information. The recipient,MMS Relay/Server<br />
-                    shall insert it if Aux-Applic-Info was indicated in the,corresponding original MM, in which case its value shall equal that,Aux-Applic-Info value</div></td>
+                <td>If present, this information element indicates additional,application/implementation specific control information. The recipient,MMS Relay/Server shall insert it if Aux-Applic-Info was indicated in the,corresponding original MM, in which case its value shall equal that Aux-Applic-Info value</td>
             </tr>
             <tr class="even">
                 <td>MMSRelayServerID</td>
-                <td><div class="line-block">Identifier of the MMS Relay/Server</div></td>
+                <td>Identifier of the MMS Relay/Server</td>
             </tr>
             <tr class="odd">
                 <td>ReplyApplicID</td>
-                <td><div class="line-block">If present, this information element indicates a “reply path” to,this delivery report, i.e. the identification of an application to which,reply-MMs are addressed.<br />
-                    The recipient MMS Relay/Server shall insert it,into the MM1_DeliveryReport.REQ if the values of Applic-ID and,Reply-Applic-ID in the corresponding<br />
-                    original MM differ, in which case,its value shall equal the Applic-ID value that was indicated in the,corresponding original MM</div></td>
+                <td>If present, this information element indicates a “reply path” to,this delivery report, i.e. the identification of an application to which,reply-MMs are addressed.
+                    The recipient MMS Relay/Server shall insert it, into the MM1_DeliveryReport.REQ if the values of Applic-ID and,Reply-Applic-ID in the corresponding original MM differ, in which case,its value shall equal the Applic-ID value that was indicated in the,corresponding original MM</td>
             </tr>
             </tbody>
         </table>

@@ -39,14 +39,6 @@ To access Sinch SMPP server the client IP range must be announced and added to t
 <div class="magic-block-html">
     <div class="marked-table">
         <table class="docutils">
-            <colgroup>
-                <col width="18%" />
-                <col width="7%" />
-                <col width="17%" />
-                <col width="14%" />
-                <col width="17%" />
-                <col width="26%" />
-            </colgroup>
             <thead valign="bottom">
             <tr class="row-odd">
                 <th class="head" colspan="5">Source Address</th>
@@ -56,6 +48,7 @@ To access Sinch SMPP server the client IP range must be announced and added to t
                 <th class="head">Sent to Sinch</th>
                 <th class="head" colspan="2">Type Of Number(TON)</th>
                 <th class="head" colspan="2">Number Plan Indicator(NPI)</th>
+                <th colspan="1"></th>
             </tr>
             </thead>
             <tbody valign="top">
@@ -115,13 +108,6 @@ Type of source address is defined by the source address TON and NPI parameters.
 <div class="magic-block-html">
     <div class="marked-table">
         <table class="docutils">
-            <colgroup>
-                <col width="23%" />
-                <col width="9%" />
-                <col width="23%" />
-                <col width="20%" />
-                <col width="23%" />
-            </colgroup>
             <thead valign="bottom">
             <tr class="row-odd">
                 <th class="head" colspan="5">Destination Address</th>

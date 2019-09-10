@@ -17,17 +17,14 @@ SMIL is required in all the SubmitReq MM7 Requests. It's an XML based language t
 <div class="magic-block-html">
     <div class="marked-table">
         <table>
-            <colgroup>
-                <col style="width: 25%" />
-                <col style="width: 54%" />
-                <col style="width: 19%" />
-            </colgroup>
+        <thead>
+          <tr>
+            <th>Header Name</th>
+            <th>Description</th>
+            <th>Mandatory</th>
+          </tr>
+        </thead>
             <tbody>
-            <tr class="odd">
-                <td><strong>Header Name</strong></td>
-                <td><strong>Description</strong></td>
-                <td><strong>Mandatory</strong></td>
-            </tr>
             <tr class="even">
                 <td>X-Mblox-Carrier-Id</td>
                 <td><div class="line-block">Sinch Mobile Operator ID.<br />

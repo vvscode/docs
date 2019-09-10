@@ -2,7 +2,7 @@
 title: "Sinch Postbacks"
 excerpt: ""
 ---
-## MMS MT Delivery Report Postbacks Overview 
+## MMS MT Delivery Report Postbacks Overview
 The MMS MT postback API notifies you of the delivery status of each message you send. There are two methods for delivering content; Binary and HTML. Following are postback notification formats depending on which method is used.
 
 ## MMS MT Postback Types
@@ -10,7 +10,7 @@ The MMS MT postback API notifies you of the delivery status of each message you 
   - MMS Delivery status
   - saveMMS Encoding Status
 
-## MMS MT Delivery Status 
+## MMS MT Delivery Status
 A postback notification called N101 is immediately sent after we begin to process the MMS. Upon receiving Delivery Report (DLR) from the carrier, the system generates postback notification N102 with the handset information. The N101 and N102 notifications are linked by tracking-id.
 
 When the mobile network operator does not support MMS or the destination handset does not support the size of the content within the MMS, in case of Optimized MMS we fall back to SMS/HTML to deliver the message. In this method we deliver the MMS as an SMS containing a link to an HTML page with the content.
@@ -22,15 +22,13 @@ If you specified to send a Device Discovery Message then you may receive one of 
 <div class="magic-block-html">
     <div class="marked-table">
         <table>
-            <colgroup>
-                <col style="width: 9%" />
-                <col style="width: 90%" />
-            </colgroup>
+        <thead>
+          <tr>
+            <th>Variable</th>
+            <th>Description</th>
+          </tr>
+        </thead>
             <tbody>
-            <tr class="odd">
-                <td><strong>Variable</strong></td>
-                <td><strong>Description</strong></td>
-            </tr>
             <tr class="even">
                 <td>origin</td>
                 <td>The notification origin, for example, MMS_MT means an MMS terminated on a mobile.</td>
@@ -49,10 +47,10 @@ If you specified to send a Device Discovery Message then you may receive one of 
             </tr>
             <tr class="even">
                 <td>status</td>
-                <td><div class="line-block">For N101 and N501, notification status can be “Message Sent”.<br />
-                    For N102 and N502, notification status can be “Message Sent/Delivered”.<br />
-                    For E101 and E501, notification status can be “Message Failed”.<br />
-                    For E102 and E502, notification status can be “Message,Sent/Expired”, “Message Sent/Rejected”, “Message Sent/Failed” or,“Message Sent/Not Supported”.</div></td>
+                <td>For N101 and N501, notification status can be “Message Sent”.
+                    For N102 and N502, notification status can be “Message Sent/Delivered”.
+                    For E101 and E501, notification status can be “Message Failed”.
+                    For E102 and E502, notification status can be “Message,Sent/Expired”, “Message Sent/Rejected”, “Message Sent/Failed” or,“Message Sent/Not Supported”.</td>
             </tr>
             <tr class="odd">
                 <td>from</td>
