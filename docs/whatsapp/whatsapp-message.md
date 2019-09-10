@@ -23,16 +23,14 @@ The Sinch WhatsApp API supports several media types. In the table below you can 
 
 <div class="magic-block-html">
   <div class="marked-table">
-    <table class="colwidths-given docutils" border="1">
-      <colgroup>
-        <col style="width:20%">
-        <col style="width:80%">
-      </colgroup>
-      <tbody valign="top">
-        <tr class="row-odd">
-          <td><strong>Message type</strong></td>
-          <td><strong>Supported Content-Types</strong></td>
+    <table>
+    <thead>
+      <tr>
+        <th>Message type</th>
+        <th>Supported Content-Types</th>
         </tr>
+      </thead>
+      <tbody>
         <tr class="row-even">
           <td>Image</td>
           <td>image/jpeg, image/png</td>
@@ -62,36 +60,33 @@ The Sinch WhatsApp API supports several media types. In the table below you can 
 *Request Body Schema*  
 - application/json
 
-| Name    | Decription                        | JSON type       | Default | Constraints      | Required |
-| ------- | --------------------------------- | --------------- | :-----: | ---------------- | :------: |
-| numbers | Array of phone numbers (msisdns). | Array of string |    -    | Minimum 1 number |    Yes   |
-| message | One of | | - | - | Yes |
-
 <div class="magic-block-html">
   <div class="marked-table">
     <table class="last docutils" border="1">
-      <colgroup>
-        <col style="width:32%">
-        <col style="width:68%">
-      </colgroup>
-      <tbody valign="top">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
         <tr class="row-odd">
-          <td>to <br>
+          <td>to
             <span class="req-red">required</span></td>
-          <td><span class="type-grey">Array of string [1..20] items</span> <br>
+          <td><span class="type-grey">Array of string [1..20] items</span>
             Array of phone numbers (msisdns) or group ids.</td>
         </tr>
         <tr class="row-even">
-          <td>message* <br>
+          <td><a href="./whatsapp-message#section-message-types">message</a>
             <span class="req-red">required</span></td>
-          <td><span class="type-grey">TextMessage (object) or</span> <br>
-            <span class="type-grey">ImageMessage (object) or</span> <br>
-            <span class="type-grey">VideoMessage (object) or</span> <br>
-            <span class="type-grey">DocumentMessage (object) or</span> <br>
-            <span class="type-grey">AudioMessage (object) or</span> <br>
-            <span class="type-grey">TemplateMessage (object) or</span> <br>
-            <span class="type-grey">LocationMessage (object) or</span> <br>
-            <span class="type-grey">ContactsMessage (object)</span> <br></td>
+          <td><span class="type-grey">TextMessage (object) or</span>
+            <span class="type-grey">ImageMessage (object) or</span>
+            <span class="type-grey">VideoMessage (object) or</span>
+            <span class="type-grey">DocumentMessage (object) or</span>
+            <span class="type-grey">AudioMessage (object) or</span>
+            <span class="type-grey">TemplateMessage (object) or</span>
+            <span class="type-grey">LocationMessage (object) or</span>
+            <span class="type-grey">ContactsMessage (object)</span></td>
         </tr>
       </tbody>
     </table>
@@ -107,11 +102,13 @@ The types of messages that can be sent are one of the following:
 <div class="magic-block-html">
   <div class="marked-table">
     <table class="docutils" border="1">
-      <colgroup>
-        <col style="width:28%">
-        <col style="width:72%">
-      </colgroup>
-      <tbody valign="top">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
         <tr class="row-odd">
           <td>type <br> <span class="req-red">required</span></td>
           <td><span class="type-grey">string</span> <br> Value: <code class="docutils literal notranslate"><span class="pre">"text"</span></code></td>
@@ -136,11 +133,13 @@ The types of messages that can be sent are one of the following:
 <div class="magic-block-html">
   <div class="marked-table">
     <table class="docutils" border="1">
-      <colgroup>
-        <col style="width:26%">
-        <col style="width:74%">
-      </colgroup>
-      <tbody valign="top">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
         <tr class="row-odd">
           <td>type <br> <span class="req-red">required</span></td>
           <td><span class="type-grey">string</span> <br> Value: <code class="docutils literal notranslate"><span class="pre">"image"</span></code></td>
@@ -163,11 +162,13 @@ The types of messages that can be sent are one of the following:
 <div class="magic-block-html">
   <div class="marked-table">
     <table class="docutils" border="1">
-      <colgroup>
-        <col style="width:26%">
-        <col style="width:74%">
-      </colgroup>
-      <tbody valign="top">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
         <tr class="row-odd">
           <td>type <br> <span class="req-red">required</span></td>
           <td><span class="type-grey">string</span> <br> Value: <code class="docutils literal notranslate"><span class="pre">"video"</span></code></td>
@@ -190,11 +191,13 @@ The types of messages that can be sent are one of the following:
 <div class="magic-block-html">
   <div class="marked-table">
     <table class="docutils" border="1">
-      <colgroup>
-        <col style="width:26%">
-        <col style="width:74%">
-      </colgroup>
-      <tbody valign="top">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
         <tr class="row-odd">
           <td>type <br> <span class="req-red">required</span></td>
           <td><span class="type-grey">string</span> <br> Value: <code class="docutils literal notranslate"><span class="pre">"document"</span></code></td>
@@ -217,11 +220,13 @@ The types of messages that can be sent are one of the following:
 <div class="magic-block-html">
   <div class="marked-table">
     <table class="docutils" border="1">
-      <colgroup>
-        <col style="width:34%">
-        <col style="width:66%">
-      </colgroup>
-      <tbody valign="top">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
         <tr class="row-odd">
           <td>type <br> <span class="req-red">required</span></td>
           <td><span class="type-grey">string</span> <br> Value: <code class="docutils literal notranslate"><span class="pre">"audio"</span></code></td>
@@ -240,44 +245,35 @@ The types of messages that can be sent are one of the following:
 <div class="magic-block-html">
   <div class="marked-table">
     <table class="docutils" border="1">
-      <colgroup>
-        <col style="width:34%">
-        <col style="width:66%">
-      </colgroup>
-      <tbody valign="top">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
         <tr class="row-odd">
           <td>type <br> <span class="req-red">required</span></td>
           <td><span class="type-grey">string</span> <br> Value: <code class="docutils literal notranslate"><span class="pre">"template"</span></code></td>
         </tr>
         <tr class="row-even">
           <td>template_name <br> <span class="req-red">required</span></td>
-          <td><span class="type-grey">string</span> <br> Name of the template. This has
-            to be registered before hand.</td>
+          <td><span class="type-grey">string</span> <br> Name of the template. This has to be registered before hand.</td>
         </tr>
         <tr class="row-odd">
           <td>language</td>
-          <td>
-            <blockquote class="first">
-              <div>Fallback language if the template message is <br></div>
-            </blockquote>
-            <p class="last">not available in the user’s language/locale setting on the <br>
-              device. Accepts both language and language_locale formats <br>
-              (e.g., en and en_US)</p>
+          <td>Fallback language if the template message is not available in the user’s language/locale setting on the device. Accepts both language and language_locale formats (e.g., en and en_US)
           </td>
         </tr>
         <tr class="row-even">
           <td>params</td>
-          <td><span class="type-grey">Array of string</span> <br> An array holding each
-            string parameter that will be injected into the <br>
-            specified template. Required if the referred template contains variables.</td>
+          <td><span class="type-grey">Array of string</span>
+          An array holding each string parameter that will be injected into the specified template. Required if the referred template contains variables.</td>
         </tr>
         <tr class="row-odd">
           <td>ttl</td>
-          <td><span class="type-grey">string</span> <br> Time to live of the template message.
-            If the receiver has not opened the <br> template message before the time
-            to live expires, the message will be deleted <br> and a failed callback
-            will be sent. The time to live can be specified <br> in <a class="reference external" href="https://www.digi.com/resources/documentation/digidocs/90001437-13/reference/r_iso_8601_duration_format.htm">ISO-8601 Duration</a>
-            format or in seconds as a string.</td>
+          <td><span class="type-grey">string</span>
+          Time to live of the template message. If the receiver has not opened the <br> template message before the time to live expires, the message will be deleted <br> and a failed callback will be sent. The time to live can be specified <br> in <a class="reference external" href="https://www.digi.com/resources/documentation/digidocs/90001437-13/reference/r_iso_8601_duration_format.htm">ISO-8601 Duration</a> format or in seconds as a string.</td>
         </tr>
       </tbody>
     </table>
@@ -289,11 +285,13 @@ The types of messages that can be sent are one of the following:
 <div class="magic-block-html">
   <div class="marked-table">
     <table class="docutils" border="1">
-      <colgroup>
-        <col style="width:26%">
-        <col style="width:74%">
-      </colgroup>
-      <tbody valign="top">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
         <tr class="row-odd">
           <td>type <br> <span class="req-red">required</span></td>
           <td><span class="type-grey">string</span> <br> Value: <code class="docutils literal notranslate"><span class="pre">"location"</span></code></td>
@@ -324,17 +322,19 @@ The types of messages that can be sent are one of the following:
 <div class="magic-block-html">
   <div class="marked-table">
     <table class="docutils" border="1">
-      <colgroup>
-        <col style="width:42%">
-        <col style="width:58%">
-      </colgroup>
-      <tbody valign="top">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
         <tr class="row-odd">
           <td>type <br> <span class="req-red">required</span></td>
           <td><span class="type-grey">string</span> <br> Value: <code class="docutils literal notranslate"><span class="pre">"contacts"</span></code></td>
         </tr>
         <tr class="row-even">
-          <td>contacts* <br> <span class="req-red">required</span></td>
+          <td><a href="./whatsapp-message#section-contacts">contacts</a> <br> <span class="req-red">required</span></td>
           <td><span class="type-grey">Array of object (ContactCard)</span></td>
         </tr>
       </tbody>
@@ -348,14 +348,16 @@ Where the array of contacts contains ContactCard objects. They have the followin
 
 <div class="magic-block-html">
   <div class="marked-table">
-    <table class="colwidths-given docutils" border="1">
-      <colgroup>
-        <col style="width:40%">
-        <col style="width:60%">
-      </colgroup>
-      <tbody valign="top">
+    <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
         <tr class="row-odd">
-          <td>addresses*</td>
+          <td><a href="./whatsapp-message#section-addresses">addresses*</a></td>
           <td><span class="type-grey">Array of object (ContactCardAddress)</span></td>
         </tr>
         <tr class="row-even">
@@ -363,25 +365,25 @@ Where the array of contacts contains ContactCard objects. They have the followin
           <td><span class="type-grey">string</span></td>
         </tr>
         <tr class="row-odd">
-          <td>emails*</td>
+          <td><a href="./whatsapp-message#section-emails">emails*</a></td>
           <td><span class="type-grey">Array of object (ContactCardEmail)</span></td>
         </tr>
         <tr class="row-odd">
-          <td>name*
-            <p class="last"><br> <span class="req-red">required</span></p>
+          <td><a href="./whatsapp-message#section-name">name*</a>
+            <span class="req-red">required</span>
           </td>
           <td><span class="type-grey">object (ContactCardName)</span></td>
         </tr>
         <tr class="row-even">
-          <td>org*</td>
+          <td><a href="./whatsapp-message#section-org">org*</a></td>
           <td><span class="type-grey">object (ContactCardOrganization)</span></td>
         </tr>
         <tr class="row-even">
-          <td>phones*</td>
+          <td><a href="./whatsapp-message#section-phones">phones*</a></td>
           <td><span class="type-grey">Array of object (ContactCardPhone)</span></td>
         </tr>
         <tr class="row-even">
-          <td>urls*</td>
+          <td><a href="./whatsapp-message#section-urls">urls*</a></td>
           <td><span class="type-grey">Array of object (ContactCardUrl)</span></td>
         </tr>
       </tbody>
@@ -393,12 +395,14 @@ Where the array of contacts contains ContactCard objects. They have the followin
 
 <div class="magic-block-html">
   <div class="marked-table">
-    <table class="colwidths-given docutils" border="1">
-      <colgroup>
-        <col style="width:50%">
-        <col style="width:50%">
-      </colgroup>
-      <tbody valign="top">
+    <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
         <tr class="row-odd">
           <td>city <br> <span class="req-red">required</span></td>
           <td><span class="type-grey">string</span></td>
@@ -436,12 +440,14 @@ Where the array of contacts contains ContactCard objects. They have the followin
 
 <div class="magic-block-html">
   <div class="marked-table">
-    <table class="colwidths-given docutils" border="1">
-      <colgroup>
-        <col style="width:50%">
-        <col style="width:50%">
-      </colgroup>
-      <tbody valign="top">
+    <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
         <tr class="row-odd">
           <td>email <br> <span class="req-red">required</span></td>
           <td><span class="type-grey">string</span></td>
@@ -460,12 +466,14 @@ Where the array of contacts contains ContactCard objects. They have the followin
 
 <div class="magic-block-html">
   <div class="marked-table">
-    <table class="colwidths-given docutils" border="1">
-      <colgroup>
-        <col style="width:50%">
-        <col style="width:50%">
-      </colgroup>
-      <tbody valign="top">
+    <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
         <tr class="row-odd">
           <td>first_name</td>
           <td><span class="type-grey">string</span></td>
@@ -487,12 +495,14 @@ Where the array of contacts contains ContactCard objects. They have the followin
 
 <div class="magic-block-html">
   <div class="marked-table">
-    <table class="colwidths-given docutils" border="1">
-      <colgroup>
-        <col style="width:50%">
-        <col style="width:50%">
-      </colgroup>
-      <tbody valign="top">
+    <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
         <tr class="row-odd">
           <td>company <br> <span class="req-red">required</span></td>
           <td><span class="type-grey">string</span></td>
@@ -514,12 +524,14 @@ Where the array of contacts contains ContactCard objects. They have the followin
 
 <div class="magic-block-html">
   <div class="marked-table">
-    <table class="colwidths-given docutils" border="1">
-      <colgroup>
-        <col style="width:50%">
-        <col style="width:50%">
-      </colgroup>
-      <tbody valign="top">
+    <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
         <tr class="row-odd">
           <td>phone <br> <span class="req-red">required</span></td>
           <td><span class="type-grey">string</span></td>
@@ -541,12 +553,14 @@ Where the array of contacts contains ContactCard objects. They have the followin
 
 <div class="magic-block-html">
   <div class="marked-table">
-    <table class="colwidths-given docutils" border="1">
-      <colgroup>
-        <col style="width:50%">
-        <col style="width:50%">
-      </colgroup>
-      <tbody valign="top">
+    <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
         <tr class="row-odd">
           <td>url <br> <span class="req-red">required</span></td>
           <td><span class="type-grey">string</span></td>
@@ -567,22 +581,24 @@ Where the array of contacts contains ContactCard objects. They have the followin
 
 <div class="magic-block-html">
   <div class="marked-table">
-    <table class="colwidths-given docutils" border="1">
-      <colgroup>
-        <col style="width:30%">
-        <col style="width:70%">
-      </colgroup>
-      <tbody valign="top">
+    <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
         <tr class="row-odd">
           <td>type <br> <span class="req-red">required</span></td>
           <td><span class="type-grey">string</span> <br> Value: <code class="docutils literal notranslate"><span class="pre">"whatsapp"</span></code></td>
         </tr>
         <tr class="row-even">
-          <td>statuses*</td>
+          <td><a href="./whatsapp-message#section-statuses">statuses</a></td>
           <td><span class="type-grey">object (Status)</span></td>
         </tr>
         <tr class="row-odd">
-          <td>notifications*</td>
+          <td><a href="./whatsapp-message#section-notifications">notifications</a></td>
           <td><span class="type-grey">object (Notification)</span></td>
         </tr>
       </tbody>
@@ -594,12 +610,14 @@ Where the array of contacts contains ContactCard objects. They have the followin
 
 <div class="magic-block-html">
   <div class="marked-table">
-    <table class="colwidths-given docutils" border="1">
-      <colgroup>
-        <col style="width:20%">
-        <col style="width:80%">
-      </colgroup>
-      <tbody valign="top">
+    <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
         <tr class="row-odd">
           <td>message_id</td>
           <td><span class="type-grey">string</span></td>
@@ -616,7 +634,7 @@ Where the array of contacts contains ContactCard objects. They have the followin
           <td>state</td>
           <td><span class="type-grey">string</span> <br> Enum: <code class="docutils literal notranslate"><span class="pre">"queued"</span></code> <code class="docutils literal notranslate"><span class="pre">"dispatched"</span></code> <code
               class="docutils literal notranslate"><span class="pre">"sent"</span></code> <code class="docutils literal notranslate"><span class="pre">"delivered"</span></code> <code class="docutils literal notranslate"><span
-                class="pre">"read"</span></code> <br> <code class="docutils literal notranslate"><span class="pre">"deleted"</span></code> <code class="docutils literal notranslate"><span class="pre">"no_capability"</span></code> <code
+                class="pre">"read"</span></code> <code class="docutils literal notranslate"><span class="pre">"deleted"</span></code> <code class="docutils literal notranslate"><span class="pre">"no_capability"</span></code> <code
               class="docutils literal notranslate"><span class="pre">"no_opt_in"</span></code> <code class="docutils literal notranslate"><span class="pre">"failed"</span></code></td>
         </tr>
       </tbody>
@@ -628,12 +646,14 @@ Where the array of contacts contains ContactCard objects. They have the followin
 
 <div class="magic-block-html">
   <div class="marked-table">
-    <table class="colwidths-given docutils" border="1">
-      <colgroup>
-        <col style="width:30%">
-        <col style="width:70%">
-      </colgroup>
-      <tbody valign="top">
+    <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
         <tr class="row-odd">
           <td>from</td>
           <td><span class="type-grey">string</span> <br> The originator of this message</td>
@@ -643,7 +663,7 @@ Where the array of contacts contains ContactCard objects. They have the followin
           <td><span class="type-grey">string</span> <br> Generated message id for this notification</td>
         </tr>
         <tr class="row-odd">
-          <td>message*</td>
+          <td><a href="./whatsapp-message#section-notificationtextmessage">message</a></td>
           <td><span class="type-grey">NotificationTextMessage (object) or</span> <br>
             <span class="type-grey">NotificationLocationMessage (object) or</span> <br>
             <span class="type-grey">NotificationContactsMessage (object) or</span> <br>
@@ -660,12 +680,14 @@ The message key can be one of the following:
 
 <div class="magic-block-html">
   <div class="marked-table">
-    <table class="colwidths-given docutils" border="1">
-      <colgroup>
-        <col style="width:50%">
-        <col style="width:50%">
-      </colgroup>
-      <tbody valign="top">
+    <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
         <tr class="row-odd">
           <td>type</td>
           <td><span class="type-grey">string</span> <br> Value: <code class="docutils literal notranslate"><span class="pre">"text"</span></code></td>
@@ -683,12 +705,14 @@ The message key can be one of the following:
 
 <div class="magic-block-html">
   <div class="marked-table">
-    <table class="colwidths-given docutils" border="1">
-      <colgroup>
-        <col style="width:30%">
-        <col style="width:70%">
-      </colgroup>
-      <tbody valign="top">
+    <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
         <tr class="row-odd">
           <td>type</td>
           <td><span class="type-grey">string</span> <br> Value: <code class="docutils literal notranslate"><span class="pre">"location"</span></code></td>
@@ -722,18 +746,20 @@ The message key can be one of the following:
 
 <div class="magic-block-html">
   <div class="marked-table">
-    <table class="colwidths-given docutils" border="1">
-      <colgroup>
-        <col style="width:50%">
-        <col style="width:50%">
-      </colgroup>
-      <tbody valign="top">
+    <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
         <tr class="row-odd">
           <td>type <br> <span class="req-red">required</span></td>
           <td><span class="type-grey">string</span> <br> Value: <code class="docutils literal notranslate"><span class="pre">"contacts"</span></code></td>
         </tr>
         <tr class="row-even">
-          <td>contacts* <br> <span class="req-red">required</span></td>
+          <td><a href="./whatsapp-message#section-contacts">contacts</a> <br> <span class="req-red">required</span></td>
           <td><span class="type-grey">Array of object (ContactCard)</span></td>
         </tr>
       </tbody>
@@ -745,291 +771,36 @@ The message key can be one of the following:
 
 <div class="magic-block-html">
   <div class="marked-table">
-    <table class="colwidths-given docutils" border="1">
-      <colgroup>
-        <col style="width:30%">
-        <col style="width:70%">
-      </colgroup>
-      <tbody valign="top">
+    <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
         <tr class="row-odd">
           <td>type <br> <span class="req-red">required</span></td>
-          <td><span class="type-grey">string</span> <br>
+          <td><span class="type-grey">string</span>
             Enum: <code class="docutils literal notranslate"><span class="pre">"image"</span></code> <code class="docutils literal notranslate"><span class="pre">"document"</span></code> <code class="docutils literal notranslate"><span
-                class="pre">"audio"</span></code> <code class="docutils literal notranslate"><span class="pre">"video"</span></code> <code class="docutils literal notranslate"><span class="pre">"voice"</span></code> <br>
+                class="pre">"audio"</span></code> <code class="docutils literal notranslate"><span class="pre">"video"</span></code> <code class="docutils literal notranslate"><span class="pre">"voice"</span></code>
             What type of media this object is.</td>
         </tr>
         <tr class="row-even">
-          <td>url <br>
+          <td>url
             <span class="req-red">required</span></td>
-          <td><span class="type-grey">string</span> <br>
+          <td><span class="type-grey">string</span>
             The url where to download the media file from.</td>
         </tr>
         <tr class="row-odd">
-          <td>mime_type <br>
+          <td>mime_type
             <span class="req-red">required</span></td>
-          <td><span class="type-grey">string</span> <br>
+          <td><span class="type-grey">string</span>
             The mime type of this file.</td>
         </tr>
         <tr class="row-even">
           <td>caption</td>
-          <td><span class="type-grey">string</span> <br>
-            Optional description of this resource.</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-
-###### contacts
-
-Where the array of contacts contains ContactCard objects. They have the following parameters:
-
-<div class="magic-block-html">
-  <div class="marked-table">
-    <table class="colwidths-given docutils" border="1">
-      <colgroup>
-        <col style="width:40%">
-        <col style="width:60%">
-      </colgroup>
-      <tbody valign="top">
-        <tr class="row-odd">
-          <td>addresses*</td>
-          <td><span class="type-grey">Array of object (ContactCardAddress)</span></td>
-        </tr>
-        <tr class="row-even">
-          <td>birthday</td>
-          <td><span class="type-grey">string</span></td>
-        </tr>
-        <tr class="row-odd">
-          <td>emails*</td>
-          <td><span class="type-grey">Array of object (ContactCardEmail)</span></td>
-        </tr>
-        <tr class="row-odd">
-          <td>name*
-            <p class="last"><br> <span class="req-red">required</span></p>
-          </td>
-          <td><span class="type-grey">object (ContactCardName)</span></td>
-        </tr>
-        <tr class="row-even">
-          <td>org*</td>
-          <td><span class="type-grey">object (ContactCardOrganization)</span></td>
-        </tr>
-        <tr class="row-even">
-          <td>phones*</td>
-          <td><span class="type-grey">Array of object (ContactCardPhone)</span></td>
-        </tr>
-        <tr class="row-even">
-          <td>urls*</td>
-          <td><span class="type-grey">Array of object (ContactCardUrl)</span></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-
-###### addresses
-
-<div class="magic-block-html">
-  <div class="marked-table">
-    <table class="colwidths-given docutils" border="1">
-      <colgroup>
-        <col style="width:50%">
-        <col style="width:50%">
-      </colgroup>
-      <tbody valign="top">
-        <tr class="row-odd">
-          <td>city <br> <span class="req-red">required</span></td>
-          <td><span class="type-grey">string</span></td>
-        </tr>
-        <tr class="row-even">
-          <td>country</td>
-          <td><span class="type-grey">string</span></td>
-        </tr>
-        <tr class="row-odd">
-          <td>country_code</td>
-          <td><span class="type-grey">string</span></td>
-        </tr>
-        <tr class="row-even">
-          <td>state</td>
-          <td><span class="type-grey">string</span></td>
-        </tr>
-        <tr class="row-odd">
-          <td>street</td>
-          <td><span class="type-grey">string</span></td>
-        </tr>
-        <tr class="row-even">
-          <td>type</td>
-          <td><span class="type-grey">string</span></td>
-        </tr>
-        <tr class="row-odd">
-          <td>zip</td>
-          <td><span class="type-grey">string</span></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-
-###### emails
-
-<div class="magic-block-html">
-  <div class="marked-table">
-    <table class="colwidths-given docutils" border="1">
-      <colgroup>
-        <col style="width:50%">
-        <col style="width:50%">
-      </colgroup>
-      <tbody valign="top">
-        <tr class="row-odd">
-          <td>email <br> <span class="req-red">required</span></td>
-          <td><span class="type-grey">string</span></td>
-        </tr>
-        <tr class="row-even">
-          <td>type</td>
-          <td><span class="type-grey">string</span></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-
-
-###### name
-
-<div class="magic-block-html">
-  <div class="marked-table">
-    <table class="colwidths-given docutils" border="1">
-      <colgroup>
-        <col style="width:50%">
-        <col style="width:50%">
-      </colgroup>
-      <tbody valign="top">
-        <tr class="row-odd">
-          <td>first_name</td>
-          <td><span class="type-grey">string</span></td>
-        </tr>
-        <tr class="row-even">
-          <td>last_name</td>
-          <td><span class="type-grey">string</span></td>
-        </tr>
-        <tr class="row-odd">
-          <td>formatted_name <br> <span class="req-red">required</span></td>
-          <td><span class="type-grey">string</span></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-
-###### org
-
-<div class="magic-block-html">
-  <div class="marked-table">
-    <table class="colwidths-given docutils" border="1">
-      <colgroup>
-        <col style="width:50%">
-        <col style="width:50%">
-      </colgroup>
-      <tbody valign="top">
-        <tr class="row-odd">
-          <td>company <br> <span class="req-red">required</span></td>
-          <td><span class="type-grey">string</span></td>
-        </tr>
-        <tr class="row-even">
-          <td>department</td>
-          <td><span class="type-grey">string</span></td>
-        </tr>
-        <tr class="row-odd">
-          <td>title</td>
-          <td><span class="type-grey">string</span></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-
-###### phones
-
-<div class="magic-block-html">
-  <div class="marked-table">
-    <table class="colwidths-given docutils" border="1">
-      <colgroup>
-        <col style="width:50%">
-        <col style="width:50%">
-      </colgroup>
-      <tbody valign="top">
-        <tr class="row-odd">
-          <td>phone <br> <span class="req-red">required</span></td>
-          <td><span class="type-grey">string</span></td>
-        </tr>
-        <tr class="row-even">
-          <td>type</td>
-          <td><span class="type-grey">string</span></td>
-        </tr>
-        <tr class="row-odd">
-          <td>wa_id</td>
-          <td><span class="type-grey">string</span></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-
-###### urls
-
-<div class="magic-block-html">
-  <div class="marked-table">
-    <table class="colwidths-given docutils" border="1">
-      <colgroup>
-        <col style="width:50%">
-        <col style="width:50%">
-      </colgroup>
-      <tbody valign="top">
-        <tr class="row-odd">
-          <td>url <br> <span class="req-red">required</span></td>
-          <td><span class="type-grey">string</span></td>
-        </tr>
-        <tr class="row-even">
-          <td>type</td>
-          <td><span class="type-grey">string</span></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-
-#### NotificationMediaMessage
-
-<div class="magic-block-html">
-  <div class="marked-table">
-    <table class="colwidths-given docutils" border="1">
-      <colgroup>
-        <col style="width:30%">
-        <col style="width:70%">
-      </colgroup>
-      <tbody valign="top">
-        <tr class="row-odd">
-          <td>type <br> <span class="req-red">required</span></td>
-          <td><span class="type-grey">string</span> <br>
-            Enum: <code class="docutils literal notranslate"><span class="pre">"image"</span></code> <code class="docutils literal notranslate"><span class="pre">"document"</span></code> <code class="docutils literal notranslate"><span
-                class="pre">"audio"</span></code> <code class="docutils literal notranslate"><span class="pre">"video"</span></code> <code class="docutils literal notranslate"><span class="pre">"voice"</span></code> <br>
-            What type of media this object is.</td>
-        </tr>
-        <tr class="row-even">
-          <td>url <br>
-            <span class="req-red">required</span></td>
-          <td><span class="type-grey">string</span> <br>
-            The url where to download the media file from.</td>
-        </tr>
-        <tr class="row-odd">
-          <td>mime_type <br>
-            <span class="req-red">required</span></td>
-          <td><span class="type-grey">string</span> <br>
-            The mime type of this file.</td>
-        </tr>
-        <tr class="row-even">
-          <td>caption</td>
-          <td><span class="type-grey">string</span> <br>
+          <td><span class="type-grey">string</span>
             Optional description of this resource.</td>
         </tr>
       </tbody>
@@ -1062,11 +833,28 @@ Where the array of contacts contains ContactCard objects. They have the followin
 | reason |   string  |
 
 
-**Path Parameters**
+*Path Parameters*
 
-| Name   | Description                                             |  Type  | Required |
-| ------ | ------------------------------------------------------- | :----: | :------: |
-| bod-id | The identifier of the bot that wishes to send messages. | String |    Yes   |
+<div class="magic-block-html">
+  <div class="marked-table">
+    <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="row-odd">
+          <td>bot-id
+            <span class="req-red">required</span></td>
+          <td><span class="type-grey">string</span>
+            The identifier of the bot that wishes to send messages.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 
 ### Request samples
 
