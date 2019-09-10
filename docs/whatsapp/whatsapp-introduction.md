@@ -22,9 +22,11 @@ To be able to authenticate the access token needs to be passed. For all WhatsApp
 
 ## BearerAuth
 
-|---|---|
-|Security scheme type:|HTTP|
-|HTTP Authorization Scheme|bearer|
+|                           |        |
+| ------------------------- | ------ |
+| Security scheme type      | HTTP   |
+| HTTP Authorization Scheme | bearer |
+
 
 ## Base URL
 
