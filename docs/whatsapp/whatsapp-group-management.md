@@ -18,11 +18,13 @@ This endpoint allows for the creation of a group.
 
 <div class="magic-block-html">
   <div class="marked-table">
-    <table class="last docutils" border="1">
-      <colgroup>
-        <col style="width:41%">
-        <col style="width:59%">
-      </colgroup>
+    <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        </tr>
+      </thead>
       <tbody valign="top">
         <tr class="row-odd">
           <td>subject <br>
@@ -43,14 +45,16 @@ This endpoint allows for the creation of a group.
 
 <div class="magic-block-html">
   <div class="marked-table">
-    <table class="colwidths-given docutils" border="1">
-      <colgroup>
-        <col style="width:30%">
-        <col style="width:70%">
-      </colgroup>
+    <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        </tr>
+      </thead>
       <tbody valign="top">
         <tr class="row-odd">
-          <td><strong>group_id</strong> <br> <span class="req-red">required</span></td>
+          <td>group_id <br> <span class="req-red">required</span></td>
           <td><span class="type-grey">string</span> <br> The identifier of the group</td>
         </tr>
       </tbody>
@@ -87,17 +91,19 @@ This endpoint allows for the creation of a group.
 <div class="magic-block-html">
   <div class="marked-table">
     <table>
-      <colgroup>
-        <col style="width:30%" />
-        <col style="width:38%" />
-      </colgroup>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Description</th>
+        </tr>
+      </thead>
       <tbody>
         <tr class="odd">
-          <td align="left">bot-id <br>
+          <td align="left">bot-id
             <span class="req-red">required</span>
           </td>
           <td align="left"><span class="type-grey">string</span>
-            <br> The identifier of the bot that wishes to send messages.
+            The identifier of the bot that wishes to send messages.
           </td>
         </tr>
       </tbody>
@@ -173,14 +179,16 @@ With this endpoint you get a response with the groups that are associated with y
 
 <div class="magic-block-html">
   <div class="marked-table">
-    <table class="colwidths-given docutils" border="1">
-      <colgroup>
-        <col style="width:30%">
-        <col style="width:70%">
-      </colgroup>
+    <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        </tr>
+      </thead>
       <tbody valign="top">
         <tr class="row-odd">
-          <td><strong>groups</strong> <br> <span class="req-red">required</span></td>
+          <td>groups <br> <span class="req-red">required</span></td>
           <td><span class="type-grey">Array of strings</span> <br> Array of group ids that are associated to the given bot.</td>
         </tr>
       </tbody>
@@ -209,10 +217,12 @@ With this endpoint you get a response with the groups that are associated with y
 <div class="magic-block-html">
   <div class="marked-table">
     <table>
-      <colgroup>
-        <col style="width:30%" />
-        <col style="width:38%" />
-      </colgroup>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Description</th>
+        </tr>
+      </thead>
       <tbody>
         <tr class="odd">
           <td align="left">bot-id <br> <span class="req-red">required</span></td>
@@ -275,30 +285,32 @@ When you need more information about a specified group id, this endpoint returns
 
 <div class="magic-block-html">
   <div class="marked-table">
-    <table class="colwidths-given docutils" border="1">
-      <colgroup>
-        <col style="width:30%">
-        <col style="width:70%">
-      </colgroup>
+    <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        </tr>
+      </thead>
       <tbody valign="top">
         <tr class="row-odd">
-          <td><strong>admins</strong> <br> <span class="req-red">required</span></td>
+          <td>admins <br> <span class="req-red">required</span></td>
           <td><span class="type-grey">Array of string</span> <br> Array containing all admins of the group.</td>
         </tr>
         <tr class="row-even">
-          <td><strong>creation_time</strong> <br> <span class="req-red">required</span></td>
+          <td>creation_time <br> <span class="req-red">required</span></td>
           <td><span class="type-grey">string</span> <br> Creation time of the group.</td>
         </tr>
         <tr class="row-odd">
-          <td><strong>creator</strong> <br> <span class="req-red">required</span></td>
+          <td>creator <br> <span class="req-red">required</span></td>
           <td><span class="type-grey">string</span> <br> Number of the creator of the group</td>
         </tr>
         <tr class="row-even">
-          <td><strong>members</strong> <br> <span class="req-red">required</span></td>
+          <td>members <br> <span class="req-red">required</span></td>
           <td><span class="type-grey">Array of string</span> <br> Array containing all members of the group.</td>
         </tr>
         <tr class="row-odd">
-          <td><strong>subject</strong> <br> <span class="req-red">required</span></td>
+          <td>subject <br> <span class="req-red">required</span></td>
           <td><span class="type-grey">string</span> <br> Subject of the group</td>
         </tr>
       </tbody>
@@ -326,24 +338,24 @@ When you need more information about a specified group id, this endpoint returns
 
 <div class="magic-block-html">
   <div class="marked-table">
-    <table class="first last docutils" border="1">
-      <colgroup>
-        <col style="width:41%">
-        <col style="width:59%">
-      </colgroup>
+    <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Description</th>
+        </tr>
+      </thead>
       <tbody valign="top">
         <tr class="row-odd">
-          <td>bot-id <br>
+          <td>bot-id
             <span class="req-red">required</span></td>
-          <td><span class="type-grey">string</span> <br>
-            The identifier of the
-            bot that wishes to send
-            messages.</td>
+          <td><span class="type-grey">string</span>
+            The identifier of the bot that wishes to send messages.</td>
         </tr>
         <tr class="row-even">
-          <td>group-id <br>
+          <td>group-id
             <span class="req-red">required</span></td>
-          <td><span class="type-grey">string</span> <br>
+          <td><span class="type-grey">string</span>
             The identifier of the group.</td>
         </tr>
       </tbody>
@@ -410,16 +422,18 @@ By using this endpoint the group subject can be changed for a given bot id and g
 
 <div class="magic-block-html">
   <div class="marked-table">
-    <table class="last docutils" border="1">
-      <colgroup>
-        <col style="width:38%">
-        <col style="width:62%">
-      </colgroup>
+    <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        </tr>
+      </thead>
       <tbody valign="top">
         <tr class="row-odd">
-          <td>subject <br>
+          <td>subject
             <span class="req-red">required</span></td>
-          <td><span class="type-grey">string</span> <br>
+          <td><span class="type-grey">string</span>
             Group subject as a string.</td>
         </tr>
       </tbody>
@@ -460,24 +474,24 @@ By using this endpoint the group subject can be changed for a given bot id and g
 
 <div class="magic-block-html">
   <div class="marked-table">
-    <table class="first last docutils" border="1">
-      <colgroup>
-        <col style="width:41%">
-        <col style="width:59%">
-      </colgroup>
+    <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Description</th>
+        </tr>
+      </thead>
       <tbody valign="top">
         <tr class="row-odd">
-          <td>bot-id <br>
+          <td>bot-id
             <span class="req-red">required</span></td>
-          <td><span class="type-grey">string</span> <br>
-            The identifier of the
-            bot that wishes to send
-            messages.</td>
+          <td><span class="type-grey">string</span>
+            The identifier of the bot that wishes to send messages.</td>
         </tr>
         <tr class="row-even">
-          <td>group-id <br>
+          <td>group-id
             <span class="req-red">required</span></td>
-          <td><span class="type-grey">string</span> <br>
+          <td><span class="type-grey">string</span>
             The identifier of the group.</td>
         </tr>
       </tbody>
@@ -568,25 +582,25 @@ When you wish to leave a specified group this is the endpoint that should be use
 
 <div class="magic-block-html">
   <div class="marked-table">
-    <table class="first last docutils" border="1">
-      <colgroup>
-        <col style="width:41%">
-        <col style="width:59%">
-      </colgroup>
-      <tbody valign="top">
+    <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
         <tr class="row-odd">
-          <td>bot-id <br>
+          <td>bot-id
             <span class="req-red">required</span></td>
-          <td><span class="type-grey">string</span> <br>
-            The identifier of the
-            bot that wishes to send
-            messages.</td>
+          <td><span class="type-grey">string</span>
+            The identifier of the bot that wishes to send messages.</td>
         </tr>
         <tr class="row-even">
-          <td>group-id <br>
+          <td>group-id
             <span class="req-red">required</span></td>
-          <td><span class="type-grey">string</span> <br>
-            The identifier of the group.</td>
+          <td><span class="type-grey">string</span>
+          The identifier of the group.</td>
         </tr>
       </tbody>
     </table>
@@ -641,16 +655,18 @@ With this endpoint, one ore more members of a specified group can be removed fro
 
 <div class="magic-block-html">
   <div class="marked-table">
-    <table class="last docutils" border="1">
-      <colgroup>
-        <col style="width:38%">
-        <col style="width:62%">
-      </colgroup>
+    <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        </tr>
+      </thead>
       <tbody valign="top">
         <tr class="row-odd">
-          <td>numbers <br>
+          <td>numbers
             <span class="req-red">required</span></td>
-          <td><span class="type-grey">Array of strings</span> <br>
+          <td><span class="type-grey">Array of strings</span>
             Array of phone numbers (msisdns).</td>
         </tr>
       </tbody>
@@ -691,24 +707,24 @@ With this endpoint, one ore more members of a specified group can be removed fro
 
 <div class="magic-block-html">
   <div class="marked-table">
-    <table class="first last docutils" border="1">
-      <colgroup>
-        <col style="width:41%">
-        <col style="width:59%">
-      </colgroup>
+    <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Description</th>
+        </tr>
+      </thead>
       <tbody valign="top">
         <tr class="row-odd">
-          <td>bot-id <br>
+          <td>bot-id
             <span class="req-red">required</span></td>
-          <td><span class="type-grey">string</span> <br>
-            The identifier of the
-            bot that wishes to send
-            messages.</td>
+          <td><span class="type-grey">string</span>
+            The identifier of the bot that wishes to send messages.</td>
         </tr>
         <tr class="row-even">
-          <td>group-id <br>
+          <td>group-id
             <span class="req-red">required</span></td>
-          <td><span class="type-grey">string</span> <br>
+          <td><span class="type-grey">string</span>
             The identifier of the group.</td>
         </tr>
       </tbody>
@@ -785,16 +801,18 @@ For a given group id you can add one or more admins.
 
 <div class="magic-block-html">
   <div class="marked-table">
-    <table class="last docutils" border="1">
-      <colgroup>
-        <col style="width:38%">
-        <col style="width:62%">
-      </colgroup>
+    <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        </tr>
+      </thead>
       <tbody valign="top">
         <tr class="row-odd">
-          <td>numbers <br>
+          <td>numbers
             <span class="req-red">required</span></td>
-          <td><span class="type-grey">Array of strings</span> <br>
+          <td><span class="type-grey">Array of strings</span>
             Array of phone numbers (msisdns).</td>
         </tr>
       </tbody>
@@ -835,24 +853,24 @@ For a given group id you can add one or more admins.
 
 <div class="magic-block-html">
   <div class="marked-table">
-    <table class="first last docutils" border="1">
-      <colgroup>
-        <col style="width:41%">
-        <col style="width:59%">
-      </colgroup>
+    <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Description</th>
+        </tr>
+      </thead>
       <tbody valign="top">
         <tr class="row-odd">
-          <td>bot-id <br>
+          <td>bot-id
             <span class="req-red">required</span></td>
-          <td><span class="type-grey">string</span> <br>
-            The identifier of the
-            bot that wishes to send
-            messages.</td>
+          <td><span class="type-grey">string</span>
+            The identifier of the bot that wishes to send messages.</td>
         </tr>
         <tr class="row-even">
-          <td>group-id <br>
+          <td>group-id
             <span class="req-red">required</span></td>
-          <td><span class="type-grey">string</span> <br>
+          <td><span class="type-grey">string</span>
             The identifier of the group.</td>
         </tr>
       </tbody>
@@ -929,16 +947,18 @@ Use this endpoint to remove one or more admins of a specific group.
 
 <div class="magic-block-html">
   <div class="marked-table">
-    <table class="last docutils" border="1">
-      <colgroup>
-        <col style="width:38%">
-        <col style="width:62%">
-      </colgroup>
+    <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        </tr>
+      </thead>
       <tbody valign="top">
         <tr class="row-odd">
-          <td>numbers <br>
+          <td>numbers
             <span class="req-red">required</span></td>
-          <td><span class="type-grey">Array of strings</span> <br>
+          <td><span class="type-grey">Array of strings</span>
             Array of phone numbers (msisdns).</td>
         </tr>
       </tbody>
@@ -979,24 +999,24 @@ Use this endpoint to remove one or more admins of a specific group.
 
 <div class="magic-block-html">
   <div class="marked-table">
-    <table class="first last docutils" border="1">
-      <colgroup>
-        <col style="width:41%">
-        <col style="width:59%">
-      </colgroup>
+    <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Description</th>
+        </tr>
+      </thead>
       <tbody valign="top">
         <tr class="row-odd">
-          <td>bot-id <br>
+          <td>bot-id
             <span class="req-red">required</span></td>
-          <td><span class="type-grey">string</span> <br>
-            The identifier of the
-            bot that wishes to send
-            messages.</td>
+          <td><span class="type-grey">string</span>
+            The identifier of the bot that wishes to send messages.</td>
         </tr>
         <tr class="row-even">
-          <td>group-id <br>
+          <td>group-id
             <span class="req-red">required</span></td>
-          <td><span class="type-grey">string</span> <br>
+          <td><span class="type-grey">string</span>
             The identifier of the group.</td>
         </tr>
       </tbody>
@@ -1092,24 +1112,24 @@ Get a invitation link to the specific group. Use it to send invite members to th
 
 <div class="magic-block-html">
   <div class="marked-table">
-    <table class="first last docutils" border="1">
-      <colgroup>
-        <col style="width:41%">
-        <col style="width:59%">
-      </colgroup>
+    <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Description</th>
+        </tr>
+      </thead>
       <tbody valign="top">
         <tr class="row-odd">
-          <td>bot-id <br>
+          <td>bot-id
             <span class="req-red">required</span></td>
-          <td><span class="type-grey">string</span> <br>
-            The identifier of the
-            bot that wishes to send
-            messages.</td>
+          <td><span class="type-grey">string</span>
+            The identifier of the bot that wishes to send messages.</td>
         </tr>
         <tr class="row-even">
-          <td>group-id <br>
+          <td>group-id
             <span class="req-red">required</span></td>
-          <td><span class="type-grey">string</span> <br>
+          <td><span class="type-grey">string</span>
             The identifier of the group.</td>
         </tr>
       </tbody>
@@ -1183,24 +1203,24 @@ If you have created a invitation link, it can be revoked with this endpoint.
 
 <div class="magic-block-html">
   <div class="marked-table">
-    <table class="first last docutils" border="1">
-      <colgroup>
-        <col style="width:41%">
-        <col style="width:59%">
-      </colgroup>
+    <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Description</th>
+        </tr>
+      </thead>
       <tbody valign="top">
         <tr class="row-odd">
-          <td>bot-id <br>
+          <td>bot-id
             <span class="req-red">required</span></td>
-          <td><span class="type-grey">string</span> <br>
-            The identifier of the
-            bot that wishes to send
-            messages.</td>
+          <td><span class="type-grey">string</span>
+            The identifier of the bot that wishes to send messages.</td>
         </tr>
         <tr class="row-even">
-          <td>group-id <br>
+          <td>group-id
             <span class="req-red">required</span></td>
-          <td><span class="type-grey">string</span> <br>
+          <td><span class="type-grey">string</span>
             The identifier of the group.</td>
         </tr>
       </tbody>
