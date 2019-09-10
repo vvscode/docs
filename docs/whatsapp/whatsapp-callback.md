@@ -18,7 +18,7 @@ The message states below are status updates on sent messages.
           <th>Description</th>
         </tr>
       </thead>
-      <tbody valign="top">
+      <tbody>
         <tr class="row-odd">
           <td>QUEUED</td>
           <td>Message has been queued by Sinch WhatsApp API</td>
@@ -72,7 +72,7 @@ The message states below are status updates on sent messages.
     <th>Description</th>
     </tr>
     </thead>
-      <tbody valign="top">
+      <tbody>
         <tr class="row-odd">
           <td>type</td>
           <td><span class="type-grey">string</span> <br> Value: <code class="docutils literal notranslate"><span class="pre">"whatsapp"</span></code></td>
@@ -103,7 +103,7 @@ The message states below are status updates on sent messages.
         <th>Description</th>
       </tr>
     </thead>
-      <tbody valign="top">
+      <tbody>
         <tr class="row-odd">
           <td>from</td>
           <td><span class="type-grey">string</span> <br> The originator of this message</td>
@@ -139,7 +139,7 @@ The message key can be one of the following:
         <th>Description</th>
       </tr>
     </thead>
-      <tbody valign="top">
+      <tbody>
         <tr class="row-odd">
           <td>type</td>
           <td><span class="type-grey">string</span> <br> Value: <code class="docutils literal notranslate"><span class="pre">"text"</span></code></td>
@@ -164,7 +164,7 @@ The message key can be one of the following:
         <th>Description</th>
       </tr>
     </thead>
-      <tbody valign="top">
+      <tbody>
         <tr class="row-odd">
           <td>type</td>
           <td><span class="type-grey">string</span> <br> Value: <code class="docutils literal notranslate"><span class="pre">"location"</span></code></td>
@@ -205,7 +205,7 @@ The message key can be one of the following:
         <th>Description</th>
       </tr>
     </thead>
-      <tbody valign="top">
+      <tbody>
         <tr class="row-odd">
           <td>type <br> <span class="req-red">required</span></td>
           <td><span class="type-grey">string</span> <br> Value: <code class="docutils literal notranslate"><span class="pre">"contacts"</span></code></td>
@@ -230,7 +230,7 @@ The message key can be one of the following:
         <th>Description</th>
       </tr>
     </thead>
-      <tbody valign="top">
+      <tbody>
         <tr class="row-odd">
           <td>type <br> <span class="req-red">required</span></td>
           <td><span class="type-grey">string</span>
@@ -271,7 +271,7 @@ The message key can be one of the following:
         <th>Description</th>
       </tr>
     </thead>
-      <tbody valign="top">
+      <tbody>
         <tr class="row-odd">
           <td>message_id</td>
           <td><span class="type-grey">string</span></td>

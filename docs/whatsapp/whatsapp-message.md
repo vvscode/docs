@@ -62,7 +62,7 @@ The Sinch WhatsApp API supports several media types. In the table below you can 
 
 <div class="magic-block-html">
   <div class="marked-table">
-    <table class="last docutils" border="1">
+    <table>
     <thead>
       <tr>
         <th>Name</th>

@@ -25,7 +25,7 @@ This endpoint allows for the creation of a group.
         <th>Description</th>
         </tr>
       </thead>
-      <tbody valign="top">
+      <tbody>
         <tr class="row-odd">
           <td>subject <br>
             <span class="req-red">required</span></td>
@@ -52,7 +52,7 @@ This endpoint allows for the creation of a group.
         <th>Description</th>
         </tr>
       </thead>
-      <tbody valign="top">
+      <tbody>
         <tr class="row-odd">
           <td>group_id <br> <span class="req-red">required</span></td>
           <td><span class="type-grey">string</span> <br> The identifier of the group</td>
@@ -186,7 +186,7 @@ With this endpoint you get a response with the groups that are associated with y
         <th>Description</th>
         </tr>
       </thead>
-      <tbody valign="top">
+      <tbody>
         <tr class="row-odd">
           <td>groups <br> <span class="req-red">required</span></td>
           <td><span class="type-grey">Array of strings</span> <br> Array of group ids that are associated to the given bot.</td>
@@ -292,7 +292,7 @@ When you need more information about a specified group id, this endpoint returns
         <th>Description</th>
         </tr>
       </thead>
-      <tbody valign="top">
+      <tbody>
         <tr class="row-odd">
           <td>admins <br> <span class="req-red">required</span></td>
           <td><span class="type-grey">Array of string</span> <br> Array containing all admins of the group.</td>
@@ -345,7 +345,7 @@ When you need more information about a specified group id, this endpoint returns
         <th>Description</th>
         </tr>
       </thead>
-      <tbody valign="top">
+      <tbody>
         <tr class="row-odd">
           <td>bot-id
             <span class="req-red">required</span></td>
@@ -429,7 +429,7 @@ By using this endpoint the group subject can be changed for a given bot id and g
         <th>Description</th>
         </tr>
       </thead>
-      <tbody valign="top">
+      <tbody>
         <tr class="row-odd">
           <td>subject
             <span class="req-red">required</span></td>
@@ -481,7 +481,7 @@ By using this endpoint the group subject can be changed for a given bot id and g
         <th>Description</th>
         </tr>
       </thead>
-      <tbody valign="top">
+      <tbody>
         <tr class="row-odd">
           <td>bot-id
             <span class="req-red">required</span></td>
@@ -662,7 +662,7 @@ With this endpoint, one ore more members of a specified group can be removed fro
         <th>Description</th>
         </tr>
       </thead>
-      <tbody valign="top">
+      <tbody>
         <tr class="row-odd">
           <td>numbers
             <span class="req-red">required</span></td>
@@ -714,7 +714,7 @@ With this endpoint, one ore more members of a specified group can be removed fro
         <th>Description</th>
         </tr>
       </thead>
-      <tbody valign="top">
+      <tbody>
         <tr class="row-odd">
           <td>bot-id
             <span class="req-red">required</span></td>
@@ -808,7 +808,7 @@ For a given group id you can add one or more admins.
         <th>Description</th>
         </tr>
       </thead>
-      <tbody valign="top">
+      <tbody>
         <tr class="row-odd">
           <td>numbers
             <span class="req-red">required</span></td>
@@ -860,7 +860,7 @@ For a given group id you can add one or more admins.
         <th>Description</th>
         </tr>
       </thead>
-      <tbody valign="top">
+      <tbody>
         <tr class="row-odd">
           <td>bot-id
             <span class="req-red">required</span></td>
@@ -954,7 +954,7 @@ Use this endpoint to remove one or more admins of a specific group.
         <th>Description</th>
         </tr>
       </thead>
-      <tbody valign="top">
+      <tbody>
         <tr class="row-odd">
           <td>numbers
             <span class="req-red">required</span></td>
@@ -1006,7 +1006,7 @@ Use this endpoint to remove one or more admins of a specific group.
         <th>Description</th>
         </tr>
       </thead>
-      <tbody valign="top">
+      <tbody>
         <tr class="row-odd">
           <td>bot-id
             <span class="req-red">required</span></td>
@@ -1119,7 +1119,7 @@ Get a invitation link to the specific group. Use it to send invite members to th
         <th>Description</th>
         </tr>
       </thead>
-      <tbody valign="top">
+      <tbody>
         <tr class="row-odd">
           <td>bot-id
             <span class="req-red">required</span></td>
@@ -1210,7 +1210,7 @@ If you have created a invitation link, it can be revoked with this endpoint.
         <th>Description</th>
         </tr>
       </thead>
-      <tbody valign="top">
+      <tbody>
         <tr class="row-odd">
           <td>bot-id
             <span class="req-red">required</span></td>
