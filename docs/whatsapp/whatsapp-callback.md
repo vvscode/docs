@@ -11,11 +11,13 @@ The message states below are status updates on sent messages.
 
 <div class="magic-block-html">
   <div class="marked-table">
-    <table class="colwidths-given docutils" border="1">
-      <colgroup>
-        <col style="width:20%">
-        <col style="width:80%">
-      </colgroup>
+    <table>
+      <thead>
+        <tr>
+          <th>State</th>
+          <th>Description</th>
+        </tr>
+      </thead>
       <tbody valign="top">
         <tr class="row-odd">
           <td>QUEUED</td>
@@ -63,32 +65,27 @@ The message states below are status updates on sent messages.
 
 <div class="magic-block-html">
   <div class="marked-table">
-    <table class="last docutils" border="1">
-      <colgroup>
-        <col style="width:41%">
-        <col style="width:59%">
-      </colgroup>
+    <table>
+    <thead>
+    <tr>
+    <th>Name</th>
+    <th>Description</th>
+    </tr>
+    </thead>
       <tbody valign="top">
         <tr class="row-odd">
           <td>type</td>
-          <td><span class="type-grey">string</span> <br>
-            Value: <code class="docutils literal notranslate"><span class="pre">"whatsapp"</span></code></td>
+          <td><span class="type-grey">string</span> <br> Value: <code class="docutils literal notranslate"><span class="pre">"whatsapp"</span></code></td>
         </tr>
         <tr class="row-even">
           <td>notifications*</td>
-          <td><span class="type-grey">Array of object (Notification)</span> <br>
-            Array of notification
-            objects. These are
-            responses that <br> the users
-            send back which the bot
-            can act upon.</td>
+          <td><span class="type-grey">Array of object (Notification)</span>
+            Array of notification objects. These are responses that the users send back which the bot can act upon.</td>
         </tr>
         <tr class="row-odd">
           <td>statuses*</td>
-          <td><span class="type-grey">Array of object (Status)</span> <br>
-            Array of status updates.
-            Such as delivered/read
-            events.</td>
+          <td><span class="type-grey">Array of object (Status)</span>
+            Array of status updates. Such as delivered/read events.</td>
         </tr>
       </tbody>
     </table>
@@ -99,11 +96,13 @@ The message states below are status updates on sent messages.
 
 <div class="magic-block-html">
   <div class="marked-table">
-    <table class="colwidths-given docutils" border="1">
-      <colgroup>
-        <col style="width:30%">
-        <col style="width:70%">
-      </colgroup>
+    <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
       <tbody valign="top">
         <tr class="row-odd">
           <td>from</td>
@@ -115,9 +114,9 @@ The message states below are status updates on sent messages.
         </tr>
         <tr class="row-odd">
           <td>message*</td>
-          <td><span class="type-grey">NotificationTextMessage (object) or</span> <br>
-            <span class="type-grey">NotificationLocationMessage (object) or</span> <br>
-            <span class="type-grey">NotificationContactsMessage (object) or</span> <br>
+          <td><span class="type-grey">NotificationTextMessage (object) or</span>
+            <span class="type-grey">NotificationLocationMessage (object) or</span>
+            <span class="type-grey">NotificationContactsMessage (object) or</span>
             <span class="type-grey">NotificationMediaMessage (object)</span></td>
         </tr>
       </tbody>
@@ -133,11 +132,13 @@ The message key can be one of the following:
 
 <div class="magic-block-html">
   <div class="marked-table">
-    <table class="colwidths-given docutils" border="1">
-      <colgroup>
-        <col style="width:50%">
-        <col style="width:50%">
-      </colgroup>
+    <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
       <tbody valign="top">
         <tr class="row-odd">
           <td>type</td>
@@ -156,11 +157,13 @@ The message key can be one of the following:
 
 <div class="magic-block-html">
   <div class="marked-table">
-    <table class="colwidths-given docutils" border="1">
-      <colgroup>
-        <col style="width:30%">
-        <col style="width:70%">
-      </colgroup>
+    <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
       <tbody valign="top">
         <tr class="row-odd">
           <td>type</td>
@@ -195,11 +198,13 @@ The message key can be one of the following:
 
 <div class="magic-block-html">
   <div class="marked-table">
-    <table class="colwidths-given docutils" border="1">
-      <colgroup>
-        <col style="width:50%">
-        <col style="width:50%">
-      </colgroup>
+    <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
       <tbody valign="top">
         <tr class="row-odd">
           <td>type <br> <span class="req-red">required</span></td>
@@ -218,34 +223,36 @@ The message key can be one of the following:
 
 <div class="magic-block-html">
   <div class="marked-table">
-    <table class="colwidths-given docutils" border="1">
-      <colgroup>
-        <col style="width:30%">
-        <col style="width:70%">
-      </colgroup>
+    <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
       <tbody valign="top">
         <tr class="row-odd">
           <td>type <br> <span class="req-red">required</span></td>
-          <td><span class="type-grey">string</span> <br>
+          <td><span class="type-grey">string</span>
             Enum: <code class="docutils literal notranslate"><span class="pre">"image"</span></code> <code class="docutils literal notranslate"><span class="pre">"document"</span></code> <code class="docutils literal notranslate"><span
-                class="pre">"audio"</span></code> <code class="docutils literal notranslate"><span class="pre">"video"</span></code> <code class="docutils literal notranslate"><span class="pre">"voice"</span></code> <br>
+                class="pre">"audio"</span></code> <code class="docutils literal notranslate"><span class="pre">"video"</span></code> <code class="docutils literal notranslate"><span class="pre">"voice"</span></code>
             What type of media this object is.</td>
         </tr>
         <tr class="row-even">
           <td>url <br>
             <span class="req-red">required</span></td>
-          <td><span class="type-grey">string</span> <br>
+          <td><span class="type-grey">string</span>
             The url where to download the media file from.</td>
         </tr>
         <tr class="row-odd">
           <td>mime_type <br>
             <span class="req-red">required</span></td>
-          <td><span class="type-grey">string</span> <br>
+          <td><span class="type-grey">string</span>
             The mime type of this file.</td>
         </tr>
         <tr class="row-even">
           <td>caption</td>
-          <td><span class="type-grey">string</span> <br>
+          <td><span class="type-grey">string</span>
             Optional description of this resource.</td>
         </tr>
       </tbody>
@@ -257,11 +264,13 @@ The message key can be one of the following:
 
 <div class="magic-block-html">
   <div class="marked-table">
-    <table class="colwidths-given docutils" border="1">
-      <colgroup>
-        <col style="width:20%">
-        <col style="width:80%">
-      </colgroup>
+    <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
       <tbody valign="top">
         <tr class="row-odd">
           <td>message_id</td>
@@ -279,7 +288,7 @@ The message key can be one of the following:
           <td>state</td>
           <td><span class="type-grey">string</span> <br> Enum: <code class="docutils literal notranslate"><span class="pre">"queued"</span></code> <code class="docutils literal notranslate"><span class="pre">"dispatched"</span></code> <code
               class="docutils literal notranslate"><span class="pre">"sent"</span></code> <code class="docutils literal notranslate"><span class="pre">"delivered"</span></code> <code class="docutils literal notranslate"><span
-                class="pre">"read"</span></code> <br> <code class="docutils literal notranslate"><span class="pre">"deleted"</span></code> <code class="docutils literal notranslate"><span class="pre">"no_capability"</span></code> <code
+                class="pre">"read"</span></code> <code class="docutils literal notranslate"><span class="pre">"deleted"</span></code> <code class="docutils literal notranslate"><span class="pre">"no_capability"</span></code> <code
               class="docutils literal notranslate"><span class="pre">"no_opt_in"</span></code> <code class="docutils literal notranslate"><span class="pre">"failed"</span></code></td>
         </tr>
       </tbody>
