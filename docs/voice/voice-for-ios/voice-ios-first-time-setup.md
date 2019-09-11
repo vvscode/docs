@@ -1,5 +1,5 @@
 ---
-title: "First time setup"
+title: "First time setup with iOS (Voice)"
 excerpt: "Follow this step-by-step guide if you want to set up the Sinch Voice w/ Video SDK for the first time."
 ---
 ## Register an Application
@@ -40,12 +40,12 @@ If only the instant messaging functionality will be used, then no changes to the
 If voice calling functionality will be enabled and used, add the following to your *Info.plist*:
 
   - Required background modes (`UIBackgroundModes`):
-    
+
       - Application plays audio (`audio`)
       - Application provides Voice over IP services (`voip`)
 
   - Privacy - Microphone Usage Description (`NSMicrophoneUsageDescription`):
-    
+
     [NSMicrophoneUsageDescription](https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW25) describes the reason your app accesses the microphone. When the system prompts the user to allow access, this string is displayed as part of the alert, and it *cannot* be left empty.
 
 In addition to the keys above, if video calling functionality will be enabled and used, add the following to your *Info.plist*:

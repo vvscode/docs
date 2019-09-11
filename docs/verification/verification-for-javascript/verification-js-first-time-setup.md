@@ -1,5 +1,5 @@
 ---
-title: "First time setup"
+title: "First time setup with JavaScript (Verification)"
 excerpt: ""
 ---
 This is a step-by-step guide about setting up the Sinch SDK for the first time.

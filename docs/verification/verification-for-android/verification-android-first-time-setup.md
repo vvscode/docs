@@ -1,5 +1,5 @@
 ---
-title: "First time setup"
+title: "First time setup with Android (Verification)"
 excerpt: ""
 ---
 This is a step-by-step guide about setting up the Sinch Verification SDK for the first time.

@@ -1,5 +1,5 @@
 ---
-title: "First time setup"
+title: "First time setup with Android (Voice)"
 excerpt: ""
 ---
 ## Register an Application
