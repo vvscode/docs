@@ -1,5 +1,5 @@
 ---
-title: "Introduction"
+title: "Introduction to XML"
 excerpt: ""
 ---
 **Some of the key features of XML API are:**
@@ -40,7 +40,7 @@ excerpt: ""
     sendSavedMMS API to send stored content from a specified account.
     This allows user to send a burst of messages with avoids any latency
     and consumes less bandwidth.
-    
+
 **Sinch XML MMS API Methods:**
 
 |         Action         |                      Functionality                                                                                                                                                     |

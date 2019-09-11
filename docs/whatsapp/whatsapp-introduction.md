@@ -1,5 +1,5 @@
 ---
-title: "Introduction"
+title: "Introduction to WhatsApp"
 excerpt: "WhatsApp for Bussiness messaging"
 ---
 
