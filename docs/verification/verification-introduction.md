@@ -33,22 +33,22 @@ In most cases, Sinch can be used without needing a back-end or any configuration
     <div class="row">
       <a href="./verification-for-ios" class="col-md-3 ug-link">
         <div class="ug-title">
-          <i class="fab fa-apple"></i><span class="title">iOS</span>
+          <span class="title">iOS</span>
         </div>
       </a>
       <a href="./verification-for-android" class="col-md-3 ug-link">
         <div class="ug-title">
-          <i class="fab fa-android"></i><span class="title">Android</span>
+          <span class="title">Android</span>
         </div>
       </a>
       <a href="./verification-for-javascript" class="col-md-3 ug-link">
         <div class="ug-title">
-          <i class="fab fa-js"></i><span class="title">JavaScript</span>
+          <span class="title">JavaScript</span>
         </div>
       </a>
       <a href="./verification-rest-api" class="col-md-3 ug-link">
         <div class="ug-title">
-          <i class="fa fa-code"></i><span class="title">REST</span>
+          <span class="title">REST</span>
         </div>
       </a>
     </div>

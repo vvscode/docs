@@ -23,7 +23,7 @@ The Sinch SDK is currently available for [iOS](doc:voice-for-ios), [Android](doc
 Getting started with the Sinch Voice API and SDK is simple thanks to the extensive documentation for each platform and the different tutorials and sample application available together with the SDKs. In most cases, Sinch can be used without needing a back-end or any configuration just follow these steps.
 
 1.  [Create an account](https://portal.sinch.com/#/signup),
-2.  [Download the Sinch Voice SDK](doc:downloads) 
+2.  [Download the Sinch Voice SDK](doc:downloads)
 3.  And get started in minutes following one of the user guides below.
 
 <div class="magic-block-html">
@@ -31,22 +31,22 @@ Getting started with the Sinch Voice API and SDK is simple thanks to the extensi
     <div class="row">
       <a href="./voice-for-ios" class="col-md-3 ug-link">
         <div class="ug-title">
-          <i class="fab fa-apple"></i><span class="title">iOS</span>
+          <span class="title">iOS</span>
         </div>
       </a>
       <a href="./voice-for-android" class="col-md-3 ug-link">
         <div class="ug-title">
-          <i class="fab fa-android"></i><span class="title">Android</span>
+          <span class="title">Android</span>
         </div>
       </a>
       <a href="./voice-for-js" class="col-md-3 ug-link">
         <div class="ug-title">
-          <i class="fab fa-js"></i><span class="title">JavaScript</span>
+          <span class="title">JavaScript</span>
         </div>
       </a>
       <a href="./voice-rest-api" class="col-md-3 ug-link">
         <div class="ug-title">
-          <i class="fa fa-code"></i><span class="title">REST</span>
+          <span class="title">REST</span>
         </div>
       </a>
     </div>
