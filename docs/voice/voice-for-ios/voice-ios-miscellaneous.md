@@ -1,5 +1,5 @@
 ---
-title: "Miscellaneous"
+title: "Miscellaneous Voice iOS"
 excerpt: ""
 ---
 ## Minimum requirements
@@ -119,14 +119,14 @@ Start by enabling support for push notifications when initiating the *SINClient*
 ```objectivec
 #import <Sinch/Sinch.h>
 
-id<SINClient> client = [Sinch clientWithApplicationKey:@"<application key>" 
+id<SINClient> client = [Sinch clientWithApplicationKey:@"<application key>"
                                          applicationSecret:@"<application secret>"
-                                           environmentHost:@"sandbox.sinch.com" 
+                                           environmentHost:@"sandbox.sinch.com"
                                                     userId:@"<user id>"];
 
 [client setSupportPushNotifications:YES];
 
-client.delegate = ...; 
+client.delegate = ...;
 
 [client start];
 ```
@@ -211,7 +211,7 @@ When the application receives a push notification from the Apple Push Notificati
     if (remotePush) {
 
         // Extract the Sinch-specific payload from the Apple Remote Push Notification
-        NSString* payload = [remotePush objectForKey:@"SIN"]; 
+        NSString* payload = [remotePush objectForKey:@"SIN"];
 
         // Get previously initiated Sinch client
         id<SINClient> client = [self sinchClient];

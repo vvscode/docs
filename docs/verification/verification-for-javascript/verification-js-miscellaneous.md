@@ -1,5 +1,5 @@
 ---
-title: "Miscellaneous"
+title: "Miscellaneous Verification JavaScript"
 excerpt: ""
 ---
 ## Phone numbers

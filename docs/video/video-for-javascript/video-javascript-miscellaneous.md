@@ -1,5 +1,5 @@
 ---
-title: "Miscellaneous"
+title: "Miscellaneous Video JavaScript"
 excerpt: ""
 ---
 ## Restrictions on User IDs
