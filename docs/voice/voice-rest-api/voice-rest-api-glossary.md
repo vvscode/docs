@@ -1,5 +1,5 @@
 ---
-title: "Glossary"
+title: "Glossary for Sinch REST API"
 excerpt: ""
 ---
 | Term       | Explanation                                             |
