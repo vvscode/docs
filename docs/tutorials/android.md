@@ -2,7 +2,6 @@
 title: "Android"
 excerpt: "Tutorials for the Sinch Android SDK. Here you can see all Sinch Android tutorials."
 ---
-
 ## Getting Started
 
 Before you start with the Android tutorials, please make sure that the steps below has been taken:

@@ -99,9 +99,9 @@ To access Sinch SMPP server the client IP range must be announced and added to t
 
 Type of source address is defined by the source address TON and NPI parameters.
 
->   - Alphanumeric sender is limited to a maximum length of 11 characters
->   - MSISDN sender maximum length is 18
->   - To enable a handset to respond to a short code we recommend to use TON=0x00 and NPI=0x01
+> - Alphanumeric sender is limited to a maximum length of 11 characters
+> - MSISDN sender maximum length is 18
+> - To enable a handset to respond to a short code we recommend to use TON=0x00 and NPI=0x01
 
 ### Destination address
 
@@ -173,8 +173,8 @@ Example:
 
 Optional parameter: 0x1403 (0x1403):
 
->   - Tag: 0x1403
->   - Length: 6
->   - Value (hex): 32 33 34 33 30 00 (Text: 23430n)
+> - Tag: 0x1403
+> - Length: 6
+> - Value (hex): 32 33 34 33 30 00 (Text: 23430n)
 
 Result is MCC=234 and MNC=30

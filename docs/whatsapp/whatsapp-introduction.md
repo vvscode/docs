@@ -2,7 +2,6 @@
 title: "Introduction to WhatsApp"
 excerpt: "WhatsApp for Bussiness messaging"
 ---
-
 The Sinch WhatsApp Business Messaging API provides a rich, enterprise grade messaging solution for clients who wish to communicate with their customers via WhatsApp.
 
 With over 1.5bn users globally using WhatsApp regularly to communicate with friends and family, it really does represent the digital extension of the users living room. It’s the inner circle of your customer’s communication so bringing your trusted brand communications to that inner circle has huge potential.

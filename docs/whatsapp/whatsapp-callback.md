@@ -2,7 +2,6 @@
 title: "Callback"
 excerpt: "Get to know the callbacks that has been sent via WhatsApp."
 ---
-
 There are two different types of callbacks that are being sent back from the Sinch WhatsApp API. Namely statuses and notifications where statuses are updates on the message being sent, such as delivered, read or failed. Notifications are messages that the end users wants to send back to the bots which the bots can act upon. Please note that the callback section in this documentation is not an endpoint.
 
 **Message States**
