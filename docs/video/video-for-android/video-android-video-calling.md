@@ -1,5 +1,5 @@
 ---
-title: "Video Calling Video API Android"
+title: "Video Calling - Video API Android"
 excerpt: ""
 ---
 ## Setting up a video call
