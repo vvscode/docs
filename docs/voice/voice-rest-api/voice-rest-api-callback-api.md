@@ -14,13 +14,13 @@ SVAML is a call control markup language developed by Sinch. When your backend re
     [SVAML]
         Instruction[] - instructions
         Action - action
-    
+
     [Instruction]
     {
         string - name
         ... // instruction-specific properties
     }
-    
+
     [Action]
     {
         string - name
@@ -41,14 +41,15 @@ SVAML is a call control markup language developed by Sinch. When your backend re
 #### Actions
 
 | Action                                 | Functionality                                        | Allowed in          |
-| ----------------------------------     | ---------------------------------------------------- | ------------------- |
+| -------------------------------------- | ---------------------------------------------------- | ------------------- |
 | [Hangup](#section-hangup)              | Instructs to hangup the call                         | ICE or ACE response |
 | [Continue](#section-continue)          | Instructs to continue with the call                  | ACE response        |
 | [ConnectPSTN](#section-connectpstn)    | Instructs how the PSTN call will be connected        | ICE response        |
 | [ConnectMXP](#section-connectmxp)      | Instructs whether the app-app call will be connected | ICE response        |
 | [ConnectConf](#section-connectconf)    | Instructs to connect the call to a conference        | ICE response        |
 | [ConnectSIP](#section-connectsip-beta) | Instructs to connect the call to a SIP server        | ICE response        |
-| `RunMenu <runmenuaction`               | Instructs to play a menu to the user                 | ICE or ACE response |
+| [RunMenu](#section-runmenu)            | Instructs to play a menu to the user                 | ICE or ACE response |
+
 
 ### Instructions
 
@@ -326,7 +327,7 @@ With the *runMenu* action, the user will start listening to an IVR menu. This me
 > **WARNING: Important Notice**    
 >
 > Not all Actions are supported by all events. Each event lists the supported actions.
-> 
+>
 > URLs for the callbacks described in the section that follows are configured in the Sinch dashboard. If no URL is configured, the callback will not be invoked.
 
 ## Incoming Call Event Callback (ICE)
@@ -400,9 +401,9 @@ You can find more information on callback request signing [here](doc:authorizati
 > **Note**    
 >
 > There is currently a known issue, which prevents*domain\* to display “conference”, when the call is coming from a SDK client. It will display *pstn* instead. This will be fixed in a future release. You can still detect that this is a conference call originating a SDK client by looking into the “to” identity, which will look like this:
-> 
+>
 > *example of “to” field for a conference call*
-> 
+>
 > ```json
 > {
 >     "type":"conference",
@@ -419,13 +420,13 @@ You can find more information on callback request signing [here](doc:authorizati
 *Example app-phone call response*
 ```json
 {
-    "instructions": 
+    "instructions":
     [{
         "name" : "playFiles",
-        "ids" : [ "welcome" ], 
+        "ids" : [ "welcome" ],
         "locale" : "en-US"
     }],
-    "action": 
+    "action":
     {
         "name" : "connectPSTN",
         "maxDuration" : 600,
@@ -440,7 +441,7 @@ You can find more information on callback request signing [here](doc:authorizati
 *Example app-app call response*
 ```json
 {
-    "action": 
+    "action":
     {
         "name" : "connectMXP",
         "destination":
@@ -456,7 +457,7 @@ You can find more information on callback request signing [here](doc:authorizati
 *Example conference call response*
 ```text
 {
-    "action": 
+    "action":
     {
         "name" : "connectConf",
         "conferenceId" : "myConference123"
@@ -512,7 +513,7 @@ You can find more information on callback request signing [here](doc:authorizati
 *Example*
 ```json
 {
-    "action": 
+    "action":
     {
         "name" : "continue"
     }
@@ -537,7 +538,7 @@ You can find more information on callback request signing [here](doc:authorizati
 [RequestBody]
 {
     string - event
-    string - callid 
+    string - callid
     time - timestamp
     string - reason
     string - result
@@ -547,7 +548,7 @@ You can find more information on callback request signing [here](doc:authorizati
     money - debit
     money - userRate
     identity - to
-    int - duration 
+    int - duration
     string - from
 }
 ```
@@ -737,8 +738,8 @@ Response with tags
 
 CDR
 {
-... 
-    "Result": "ANSWERED", 
+...
+    "Result": "ANSWERED",
     "CallTags": { "tag1": "value1", "tag2": "value2" }
 ...
 }
