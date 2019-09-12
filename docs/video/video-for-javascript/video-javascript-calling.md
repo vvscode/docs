@@ -1,5 +1,5 @@
 ---
-title: "Calling"
+title: "Calling Video API JavaScript"
 excerpt: ""
 ---
 The Sinch SDK supports four types of calls: *web-to-web (or app)* calls, *web-to-phone* calls, *web-to-sip* and *conference* calls. The CallClient is the entry point for the calling functionality of the Sinch SDK. At the moment, calling is only supported in Chrome and Firefox, and we hope to add support in more browsers later on. The `CallClient` is the entry point for the calling functionality of the Sinch SDK.
@@ -18,7 +18,7 @@ Use the CallClient to start the call (the `callUser` method). Pass the user iden
 ```javascript
 var sinchClient = new SinchClient({applicationKey: '...', capabilities: {calling: true}});
 var call = sinchClient.callUser('<remote user id>');
-call.addEventListener(...); 
+call.addEventListener(...);
 ```
 
 
@@ -232,7 +232,7 @@ Video calling can be activated for data calling by adding the capability “vide
 ```javascript
 var sinchClient = new SinchClient({applicationKey: '...', capabilities: {calling: true, video: true}}); // Notice the video capability
 var call = sinchClient.callUser('<remote user id>');
-call.addEventListener(...); 
+call.addEventListener(...);
 ```
 
 

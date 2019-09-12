@@ -1,5 +1,5 @@
 ---
-title: "Calling"
+title: "Calling Video API iOS"
 excerpt: ""
 ---
 The Sinch SDK supports four types of calls: *app-to-app (audio or video)*, *app-to-phone*, *app-to-sip* and *conference* calls. The SINCallClient is the entry point for the calling functionality of the Sinch SDK.
@@ -68,7 +68,7 @@ When the delegate method is executed, the call can either be connected automatic
 ```objectivec
 - (void)client:(id<SINCallClient>)client didReceiveIncomingCall:(id<SINCall>)call {
     // Start playing ringing tone
-    ... 
+    ...
 
     // Assign delegate
     call.delegate = self;
@@ -79,7 +79,7 @@ To get events related to the call, set the call delegate. The call object contai
 
 If [VoIP push notifications](doc:video-ios-local-and-remote-push-notifications#section-enabling-voip-push-notifications) is enabled, add logic for presenting a local notification if the app is in the background when receiving the call:
 ```objectivec
-- (SINLocalNotification *)client:(id<SINClient>)client 
+- (SINLocalNotification *)client:(id<SINClient>)client
   localNotificationForIncomingCall:(id<SINCall>)call {
     SINLocalNotification *notification = [[SINLocalNotification alloc] init];
     notification.alertAction = @"Answer";
@@ -104,7 +104,7 @@ To answer a call, use the `answer` method on the call to accept it. If a rington
 
 User presses the answer button:
 ```objectivec
-// User answers the call 
+// User answers the call
 [call answer];
 
 // Stop playing ringing tone

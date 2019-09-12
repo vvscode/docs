@@ -1,10 +1,10 @@
 ---
-title: "Video Calling"
+title: "Video Calling Voice API Android"
 excerpt: ""
 ---
 ## Setting up a video call
 
-Just like audio calls, video calls are placed through the `CallClient` and events are received using the `CallClientListener`. The call client is owned by the SinchClient and accessed using `sinchClient.getCallClient()`. Calling is not enabled by default. 
+Just like audio calls, video calls are placed through the `CallClient` and events are received using the `CallClientListener`. The call client is owned by the SinchClient and accessed using `sinchClient.getCallClient()`. Calling is not enabled by default.
 For a more general introduction to calling with the SinchClient, see [here](doc:voice-android-calling).
 
 ## Showing the video streams
@@ -37,7 +37,7 @@ public void onCallEnded(Call call) {
 
 To pause the local video stream, use the `pauseVideo()` method on the call.
 ```java
-// User pause the video stream 
+// User pause the video stream
 call.pauseVideo();
 ```
 
@@ -46,7 +46,7 @@ call.pauseVideo();
 
 To resume the local video stream, use the `resumeVideo()` method on the call.
 ```java
-// User resumes the video stream 
+// User resumes the video stream
 call.resumeVideo();
 ```
 

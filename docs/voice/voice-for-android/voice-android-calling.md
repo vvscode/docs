@@ -1,5 +1,5 @@
 ---
-title: "Calling"
+title: "Calling Voice API Android"
 excerpt: ""
 ---
 The Sinch SDK supports four types of calls: *app-to-app (audio or video)*, *app-to-phone*, *app-to-sip* and *conference* calls. The CallClient is the entry point for the calling functionality of the Sinch SDK.
@@ -69,7 +69,7 @@ When the incoming call method is executed, the call can either be connected auto
 @Override
 public void onIncomingCall(CallClient callClient, Call call) {
     // Start playing ringing tone
-    ... 
+    ...
 
     // Add call listener
     call.addCallListener(...);          
