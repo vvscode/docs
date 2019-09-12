@@ -11,7 +11,7 @@ See how our platform is evolving. Keep track of new features, API versions and b
 -   Bug fixes for recent Chrome and Firefox versions
 
 <h3>2016-08-26 | Sinch SDK JavaScript 1.4.4 </h3>
-Bug fix: Resolved issue with newer browsers using ECDSA for key generation
+- Bug fix: Resolved issue with newer browsers using ECDSA for key generation
 
 <h3>2016-01-27 | Sinch SDK JavaScript 1.4.3</h3>
 -   Added support for SIP Calling with Error header support
