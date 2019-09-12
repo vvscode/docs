@@ -13,7 +13,7 @@ Common use cases for this type of call are weather- and fraud alerts, when you s
 ## What you need to get started
 
  - Node development environment
- - Application- key and secret. Get one here if you don’t have one already - [Sign up](https://portal.sinch.com/#/signup).
+ - Application - key and secret. Get one here if you don’t have one already - [Sign up](https://portal.sinch.com/#/signup).
  - Some credits on your account. Set up your phone on the dashboard and my boss will give you $2 to get you started\!
 
 ## Code

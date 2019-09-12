@@ -30,7 +30,7 @@ Then, save your **Podfile** and type:
 
 After this, you’ll see an XCode workspace file with the extension “**.xcworkspace**”. We’ll need to work out of that file from now on instead of our project file. That way, all of our app’s components will work together in harmony.
 
-In our app, we wil first have the user log into Facebook. After this, the user will see a list of friends with the app who they can call. This means that we’ll need a login screen.
+In our app, we will first have the user log into Facebook. After this, the user will see a list of friends with the app who they can call. This means that we’ll need a login screen.
 
 First create a new cocoa touch class with subclass UIViewController and call it **LoginViewController**. Then, open **Main.storyboard**, create a new view controller and assign it the LoginViewController custom class. Remove the segue between the navigation controller and master view controller and put you login view between them. Connect the three with appropriate segues to look like this:
 ![Storyboard-Segues.png](images/e452f04-Storyboard-Segues.png)
@@ -113,7 +113,7 @@ In order to get all of the user’s friends with the app, we need to populate th
         }
 
     }];
-} 
+}
 ```
 
 Then, call the method `getFriends` in `viewDidLoad`:

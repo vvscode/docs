@@ -3,7 +3,7 @@ title: "Building a C# Authentication System with .NET - Part 1"
 excerpt: "More and more websites and apps ask for your phone number and, in many cases, are using it for two-factor authentication. In this tutorial, you will learn how to build your own C# two factor authentication system"
 ---
 > **Update**
-> 
+>
 > To verify numbers even easier, check out our [Verification SDK](https://www.sinch.com/products/verification/sms/)
 
 More and more websites and apps ask for your phone number and, in many cases, are using it for two-factor authentication. ([Read more about 2FA here](https://www.sinch.com/opinion/what-is-two-factor-authentication/).) In this tutorial, you will learn how to build your own C# two factor authentication system in about 30 minutes, using a classic [SMS verification system](doc:verification-ios-sms-verification), using .NET for the backend. In [Part 2](doc:building-an-ios-client-for-number-verification-part-2), we will implement it in one of our clients.
@@ -52,7 +52,7 @@ public class OTPController : ApiController
     [HttpGet]
     public async Task<HttpResponseMessage> RequestOTP(string phoneNumber)
     {
-        // this method will issue new OTP codes 
+        // this method will issue new OTP codes
     }
 
     public HttpResponseMessage VerifyOTP(string phoneNumber, string code)
@@ -90,7 +90,7 @@ public async Task<HttpResponseMessage> RequestOTP(string phoneNumber)
     //4 send an SMS with the code
     try
     {
-        // SMS client will throw an error if something goes wrong 
+        // SMS client will throw an error if something goes wrong
         var message = string.Format("Your code:{0} for verifying your number with me", code);
         var number = phoneNumber.Trim();
         Client smsClient = new Client("key", "secret");
