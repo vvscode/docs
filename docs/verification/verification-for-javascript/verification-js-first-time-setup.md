@@ -11,7 +11,7 @@ This is a step-by-step guide about setting up the Sinch SDK for the first time.
 
 ## Download
 
-The Sinch SDK can be downloaded [here](/page/downloads) . It contains: the Sinch JS SDK, this user guide, reference documentation, and sample apps.
+The Sinch SDK can be downloaded [here](https://sinch.readme.io/page/downloads) . It contains: the Sinch JS SDK, this user guide, reference documentation, and sample apps.
 
 ## Running sample apps
 

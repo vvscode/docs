@@ -15,7 +15,7 @@ Video calling is supported on [iOS](doc:video-for-ios), [Android](doc:video-for-
 Getting started with the Sinch Video SDK is simple thanks to the extensive documentation, the different tutorials and sample applications available together with the SDKs. Sinch can be used without needing a back-end or any configuration just follow these steps.
 
 1.  [Create an account](https://portal.sinch.com/#/signup),
-2.  [Download the SDK](/page/downloads)
+2.  [Download the SDK](https://sinch.readme.io/page/downloads)
 3.  Get started in minutes following one of the user guide below.
 
 <div class="magic-block-html">

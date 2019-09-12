@@ -6,7 +6,7 @@ excerpt: "This tutorial will focus mostly on authentication; after that, the imp
 
  1.  [Sign up](https://portal.sinch.com/#/signup) for a Sinch account
  1.  In the [developer dashboard](https://portal.sinch.com/), create a new app and take note of the app key and secret
- 1.  [Download](/page/downloads) the Sinch JavaScript SDK
+ 1.  [Download](https://sinch.readme.io/page/downloads) the Sinch JavaScript SDK
 
 ## Create the user ticket
 

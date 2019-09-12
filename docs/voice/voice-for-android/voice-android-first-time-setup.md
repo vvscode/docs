@@ -9,7 +9,7 @@ excerpt: ""
 
 ## Download
 
-The Sinch SDK can be downloaded [here](/page/downloads). It contains: the library *aar*, this user guide, reference documentation, and sample apps for calling and instant messaging.
+The Sinch SDK can be downloaded [here](https://sinch.readme.io/page/downloads). It contains: the library *aar*, this user guide, reference documentation, and sample apps for calling and instant messaging.
 
 ## Add the Sinch library
 

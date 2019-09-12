@@ -22,7 +22,7 @@ To generate an API key and secret, create an app in the Sinch Dashboard. Name th
 
 Hold onto the key and secret from this app; you will use them in just a few minutes.
 
-Next, download the Sinch Android SDK from [here](/page/downloads). To add the Sinch SDK to your project:
+Next, download the Sinch Android SDK from [here](https://sinch.readme.io/page/downloads). To add the Sinch SDK to your project:
 
 1.  Copy the entire libs folder to your project’s app folder
 

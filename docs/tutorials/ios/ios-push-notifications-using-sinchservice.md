@@ -9,7 +9,7 @@ In this tutorial, we’ll take a look at the SinchService, discuss some best pra
 
 ## Getting started
 
-To get started with this tutorial, be sure to download the starter project [here](/page/downloads). The SDK comes packaged with a few sample projects, but the one we are interested in is called “SinchCallingPushWithService”. Note that if you already have a project using the Sinch SDK, you can use that as well.
+To get started with this tutorial, be sure to download the starter project [here](https://sinch.readme.io/page/downloads). The SDK comes packaged with a few sample projects, but the one we are interested in is called “SinchCallingPushWithService”. Note that if you already have a project using the Sinch SDK, you can use that as well.
 
 ### CocoaPods
 
