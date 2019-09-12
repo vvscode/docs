@@ -2,7 +2,7 @@
 title: "Authenticate to Sinch From Rails With Devise"
 excerpt: "This tutorial will walk through the steps to authenticate users to the Sinch JavaScript SDK with a Rails backend. You will use the devise gem to securely authenticate and store your users’ info."
 ---
-This tutorial will walk you through authenticating users to the [Sinch JavaScript SDK](https://www.sinch.com/web-sdk/) with a Rails backend. You will use the devise gem to securely authenticate and store your users’ info. Once users are authenticated with devise, you will generate a token and pass it to the Sinch JavaScript SDK. From there, you can follow our [calling or messaging tutorials](doc:tutorials) to build out the functionality of your app.
+This tutorial will walk you through authenticating users to the [Sinch JavaScript SDK](https://www.sinch.com/web-sdk/) with a Rails backend. You will use the devise gem to securely authenticate and store your users’ info. Once users are authenticated with devise, you will generate a token and pass it to the Sinch JavaScript SDK. From there, you can follow our [calling or messaging tutorials](doc:tutorials-introduction) to build out the functionality of your app.
 
 ## Sinch setup
 

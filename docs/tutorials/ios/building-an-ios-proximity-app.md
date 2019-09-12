@@ -35,7 +35,7 @@ There are two methods of adding Parse and Sinch to our project: We can either im
 
 After you’ve finished editing the Podfile, be sure to save it and use the cd command in terminal to navigate to your project. Use the command `pod install` to add the finishing touches. Installing the pods could take some time, so be patient. From now on, you will be required to use the .xcworkspaces file to finish your project instead of the .xcodeproj file; make sure to switch over now.
 
-If you do go down the road of adding the files by importing the frameworks, you will need to make some modifications to the linker tags when you add Sinch to the project. Check out the other guides on [Sinch](doc:tutorials) to get the full instructions on how to go about this.
+If you do go down the road of adding the files by importing the frameworks, you will need to make some modifications to the linker tags when you add Sinch to the project. Check out the other guides on [Sinch](doc:tutorials-introduction) to get the full instructions on how to go about this.
 
 ## Setting up Parse
 
