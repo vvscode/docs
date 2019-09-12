@@ -1,5 +1,5 @@
 ---
-title: "Sinch Client"
+title: "Sinch Client Video API Android"
 excerpt: ""
 ---
 The *SinchClient* is the Sinch SDK entry point. It is used to configure the user’s and device’s capabilities, as well as to provide access to feature classes such as the *CallClient*, *MessageClient* and *AudioController*.
@@ -27,7 +27,7 @@ The SinchClient can be configured to enable or disable certain functionality. Pl
 
 The following example shows how to setup the client with both voice calling and instant messaging enabled.
 ```java
-// Specify the client capabilities. 
+// Specify the client capabilities.
 // At least one of the messaging or calling capabilities should be enabled.
 sinchClient.setSupportMessaging(true);
 sinchClient.setSupportCalling(true);

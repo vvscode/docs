@@ -1,5 +1,5 @@
 ---
-title: "Sinch Client"
+title: "Sinch Client Video API iOS"
 excerpt: ""
 ---
 The *SINClient* is the Sinch SDK entry point. It is used to configure the user’s and device’s capabilities, as well as providing access to feature classes such as the *SINCallClient*, *SINMessageClient* and *SINAudioController*.
@@ -11,9 +11,9 @@ Set up the client and its delegate (*SINClientDelegate*, see [Reference](referen
 #import <Sinch/Sinch.h>
 
 // Instantiate a Sinch client object
-id<SINClient> sinchClient = [Sinch clientWithApplicationKey:@"<application key>" 
+id<SINClient> sinchClient = [Sinch clientWithApplicationKey:@"<application key>"
                                           applicationSecret:@"<application secret>"
-                                            environmentHost:@"sandbox.sinch.com" 
+                                            environmentHost:@"sandbox.sinch.com"
                                                      userId:@"<user id>"];
 ```
 
@@ -25,7 +25,7 @@ The *Application Key* and *Application Secret* are obtained from the Sinch Devel
 The SINClient can be configured to enable / disable certain functionality. Please see the [Reference](reference/html/Protocols/SINClient.html) for details.
  The following example shows how to setup the client with both voice calling and instant messaging enabled, and using [push notifications](doc:voice-ios-local-and-remote-push-notifications).
 ```objectivec
-// Specify the client capabilities. 
+// Specify the client capabilities.
 // (At least one of the messaging or calling capabilities should be enabled.)
 [sinchClient setSupportCalling:YES];
 [sinchClient setSupportMessaging:YES];

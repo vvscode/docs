@@ -1,5 +1,5 @@
 ---
-title: "Formats"
+title: "SMS REST Formats"
 excerpt: "This section will take a brief look at some of the formats used in the REST API."
 ---
 ### JSON
