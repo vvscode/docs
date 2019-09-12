@@ -8,7 +8,7 @@ This tutorial will walk you through authenticating users to the [Sinch JavaScrip
 
 > 1.  Sign up for a [Sinch account](https://www.sinch.com/signup)
 > 2.  In the developer dashboard, create a new app and take note of the app key and secret
-> 3.  Download the [Sinch JavaScript SDK](doc:downloads)
+> 3.  Download the [Sinch JavaScript SDK](/page/downloads)
 
 ## Project setup
 

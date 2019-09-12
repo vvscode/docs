@@ -25,7 +25,7 @@ Getting started with the Sinch Verification API and SDK is simple thanks to the 
 In most cases, Sinch can be used without needing a back-end or any configuration just follow these steps.
 
 1.  [create an account](https://portal.sinch.com/#/signup),
-2.  [download the SDK](doc:downloads)
+2.  [download the SDK](/page/downloads)
 3.  get started in minutes following one of the user guide below.
 
 <div class="magic-block-html">

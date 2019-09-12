@@ -7,7 +7,7 @@ Last week, we sponsored [The Next Web](https://thenextweb.com/conference/) Hacka
 ## Preparation
 
  1.  [Signup](https://portal.sinch.com/#/signup) for a Sinch account
- 1.  Download the JS SDK from [here](doc:downloads)
+ 1.  Download the JS SDK from [here](/page/downloads)
  1.  Click ‘Create new app’
  1.  Name your app and click ‘Create’
  1.  Take note of your app key and secret as you will need them in a few minutes

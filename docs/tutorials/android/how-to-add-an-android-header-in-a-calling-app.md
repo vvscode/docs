@@ -11,7 +11,7 @@ The app is built on top of the **sinch-rtc-sample-calling** sample included in t
 
 1.  Create a free [Sinch developer account](https://portal.sinch.com/#/signup)
 2.  Create an app in the [Developer Dashboard](https://portal.sinch.com/#/apps)
-3.  Download the [Sinch Android SDK](doc:downloads)
+3.  Download the [Sinch Android SDK](/page/downloads)
 4.  Add your app key and secret to the **sinch-rtc-sample-calling** app included in the SDK (in **SinchService.java**)
 
 ## Update SinchServiceInterface

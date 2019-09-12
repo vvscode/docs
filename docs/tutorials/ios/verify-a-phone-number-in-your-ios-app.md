@@ -8,7 +8,7 @@ In this tutorial, we are going to explore our Verification SDK for iOS. As of th
 
 I created a start project that contains the framework and a couple of screens you can download [here](https://github.com/sinch/ios-verification-tutorial). If you prefer to add it to your app directly, here is how you set it up:
 
-> 1.  Download the SDK [here](doc:downloads)
+> 1.  Download the SDK [here](/page/downloads)
 > 2.  Add the `SinchVerification.Framework` to your app, OR
 > 3.  Use [CocoaPods](http://cocoapods.org) -`pod 'SinchVerification', '0.9-beta1'`
 
