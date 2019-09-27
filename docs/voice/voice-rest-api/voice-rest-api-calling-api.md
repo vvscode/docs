@@ -846,10 +846,10 @@ If **enableDice** is set to true and the application has a callback URL specifie
 
 **locale** specifies the language for the Text-to-speech message. Supported languages: \* en-US: English, United States \* en-AU: English, Australia \* en-CA: English, Canada \* en-GB: English, United Kingdom \* en-IN: English, India \* es-ES: Spanish, Spain \* es-MX: Spanish, Mexico \* es-CA : Spanish, Catalunya \* fr-FR: French, France \* fr-CA: French, Canada \* ja-JP: Japanese \* ko-KR: Korean \* pt-BR: Portuguese, Brazil \* pt-PT: Portuguese \* zn-CN: Chinese, China \* zh-HK: Chinese, Hong Kong \* zh-TW: Chinese, Taiwan \* da-DK: Danish \* de-DE: German \* fi-FI: Finish \* it-IT: Italian \* nb-NO: Norwegian \* nl-NL: Dutch \* pl-PL: Polish \* ru-RU: Russian \* sv-SE: Swedish
 
-**text** is the text that will be spoken in the text-to-speech message. Every applications default maximum characters allowed in text-to-speech  is 600 characters, but it can be changed.
+**text** is the text that will be spoken in the text-to-speech message. Every applications default maximum characters allowed in text-to-speech  is 600 characters. Contact support if you wish this limit to be changed.
 
 
-**prompts** is an advanced alternative to using “text”. You can then supply a “;”-separated list of prompts. Either prompt can be the name of a pre-recorded file or a text-to-speech string specified as “\#tts\[my text\]”. To upload and use pre-recorded files, you need to contact Sinch for support. Every applications default maximum characters allowed per 'prompts'-command text-to-speech is 600 characters, but it can be changed.
+**prompts** is an advanced alternative to using “text”. You can then supply a “;”-separated list of prompts. Either prompt can be the name of a pre-recorded file or a text-to-speech string specified as “\#tts\[my text\]”. To upload and use pre-recorded files, you need to contact Sinch for support. Every applications default maximum characters allowed per 'prompts'-command text-to-speech is 600 characters. Contact support if you wish this limit to be changed.
 
 *Example of text-to-speech callout*
 ```text
