@@ -83,7 +83,7 @@ Instructions allow your application to play a message to participants given a pa
 
 **say** instruction is used to play a text-to-speech message to the end user. The message is provided in the *text* field.
 
-**text** is a string that contains the message to be played. Note that the text cannot be longer than 200 characters and that currently only English “en-US” is supported.
+**text** is a string that contains the message to be played. The default maximum length is 600 characters. To change this limit, please contact support.
 
 **locale** is specified with a language code according to ISO 639, a dash and a country code according to ISO 3166-1 alpha-2.
 
