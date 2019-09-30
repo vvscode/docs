@@ -40,7 +40,6 @@ In addition to these standard error codes, the REST API provides an additional s
 | 406               | Internal Expiry              | Aborted    | Message was expired before reaching SMSC. This may happen if the expiry time for the message was very short.               |
 | 407               | Canceled                     | Aborted    | Message was canceled by user before reaching SMSC.                                                                         |
 | 408               | Internal Reject              | Aborted    | SMSC rejected the message. Retrying is likely to cause the same error.                                                     |
-| 409               | Price threshold exceeded     | Aborted    | Message failed as the price of the message exceeds the defined threshold.                                                  |
 | 410               | Unmatched default originator | Aborted    | No default originator exists/configured for this recipient when sending message without originator.                        |
 | 411               | Exceeded parts limit         | Aborted    | Message failed as the number of message parts exceeds the defined max number of message parts.                             |
 

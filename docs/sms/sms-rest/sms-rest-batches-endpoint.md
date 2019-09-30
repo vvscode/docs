@@ -35,7 +35,6 @@ JSON body fields:
 |parameters.{parameter_key}.default |The fall back value for omitted recipient MSISDNs                                                                  |      String      |None                |                            Max 160 characters long                            |                      No                      |
 |client_reference                   |The client identifier of batch message. If set, it will be added in the delivery report/callback of this batch     |      String      |N/A                 |                            Max 128 characters long                            |                      No                      |
 |max_number_of_message_parts        |Message will be dispatched only if it is not split to more parts than Max Number of Message Parts                  |      String      |N/A                 |                           Must be higher or equal 1                           |                      No                      |
-|max_price_per_message              |Max Price Threshold per message, If pricing per country features are enabled.                                      |      String      |N/A                 |                           Must be greater than zero                           |                      No                      |
 
 **Send message to one recipient**
 ```shell
@@ -474,9 +473,6 @@ The response is a JSON object with the following fields:
 |statuses.count      |The number of messages that currently has this code. Will always be at least 1                                              |                                Integer                                |
 |statuses.recipients |Only for full report. A list of the MSISDN recipients which messages has this status code.                                  |                             String array                              |
 |client_reference    |The client identifier of the batch this delivery report belongs to, if set when submitting batch.                           |                                String                                 |
-|total_price         |Price object of the batch this delivery report belongs to, if Pricing Per Country enabled.                                  |                                Object                                 |
-|total_price.amount  |The price of all the messages in the batch.                                                                                 |                              Big Decimal                              |
-|total_price.currency|The currency ISO associated with the account in which price is measured such as USD, EUR, etc.                              |                                String                                 |
 
 `404 Not Found`
 
@@ -596,9 +592,6 @@ The response is a JSON object with the following fields:
 |operator_status_at  |A timestamp extracted from the Delivery Receipt from the originating SMSC                                                   |                            ISO-8601 String                            |
 |client_reference    |The client identifier of the batch this delivery report belongs to, if set when submitting batch.                           |                                String                                 |
 |applied_originator  |The default originator used for the recipient this delivery report belongs to, if default originator pool configured and no originator set when submitting batch.|                                String                                 |
-|price               |Price object of the recipient this delivery report belongs to, if Pricing Per Country enabled.                              |                                Object                                 |
-|price.amount        |The price of all the messages of this recipient.                                                                            |                              Big Decimal                              |
-|price.currency      |The currency ISO associated with the account in which price is measured such as USD, EUR, etc.                              |                                String                                 |
 |number_of_message_parts|The number of parts the message was split into. Present only if `max_number_of_message_parts` parameter was set.              |                                Integer                                |
 
 `404 Not Found`
