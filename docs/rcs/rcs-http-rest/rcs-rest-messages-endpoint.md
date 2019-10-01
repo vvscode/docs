@@ -829,7 +829,7 @@ JSON Representation
             <tr class="odd">
                 <td>postback</td>
                 <td>object(<code class="interpreted-text" data-role="ref">Postback</code>)</td>
-                <td>Optional data that will be sent back to the agent when the user taps the action</td>
+                <td>Data that will be sent back to the agent when the user taps the action</td>
                 <td>No</td>
                 <td>N/A</td>
                 <td>No</td>
