@@ -80,17 +80,11 @@ Depending on the type of callback the payload will be one of (as indicated by `t
 
 ### Status reports
 
-Message status reports are sent whenever a message performs a state transition in the diagram below:
-![status_states.png](images/7a614d0-status_states.png)
-Message state transitions and flow diagram. Rectangles represent states communicated using `StatusReport` callback payloads. The logic in the flow diagram is controlled by various options passed to the `FallbackInfo` when sending a message, combined with events such as message expiry (see `ExpireInfo`), supplier errors, etc.
-
 #### Status descriptions
 
 | Status                       | Description                                                                                                                                                         |
 | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | queued                       | Message has entered the RCS REST API system. This is the initial state for a message.                                                                               |
-| capability_lookup_dispatched | Message is awaiting capability lookup request dispatched with the RCS supplier.                                                                                     |
-| dispatched                   | Message was dispatched to the selected RCS supplier / operator platform.                                                                                            |
 | aborted                      | Message expired or was revoked, and no fallback SMS was requested.                                                                                                  |
 | failed                       | Message failed to be dispatched as RCS, and fallback SMS also failed.                                                                                               |
 | delivered                    | Message was successfully delivered to the handset.                                                                                                                  |
@@ -114,8 +108,6 @@ JSON Representation
   "status_report": {
     "type": enum(
       "queued",
-      "capability_lookup_dispatched",
-      "dispatched",
       "aborted",
       "failed",
       "delivered",
@@ -170,8 +162,6 @@ JSON Representation
                     <dt>oneOf:</dt>
                     <dd><ul>
                         <li>object(<code class="interpreted-text" data-role="ref">StatusReportQueued</code>)</li>
-                        <li>object(<code class="interpreted-text" data-role="ref">StatusReportCapabilityLookupDispatched</code>)</li>
-                        <li>object(<code class="interpreted-text" data-role="ref">StatusReportDispatched</code>)</li>
                         <li>object(<code class="interpreted-text" data-role="ref">StatusReportAborted</code>)</li>
                         <li>object(<code class="interpreted-text" data-role="ref">StatusReportFailed</code>)</li>
                         <li>object(<code class="interpreted-text" data-role="ref">StatusReportDelivered</code>)</li>
@@ -203,31 +193,6 @@ JSON Representation
 | ----- | ------ | ---------------------- | ------- | ----------- | -------- |
 | type  | string | Static string 'queued' | N/A     | N/A         | Yes      |
 
-##### StatusReportCapabilityLookupDispatched
-```json
-{
-  "type": "capability_lookup_dispatched"
-}
-```
-
-###### Fields
-
-| Field | Type   | Description                                    | Default | Constraints | Required |
-| ----- | ------ | ---------------------------------------------- | ------- | ----------- | -------- |
-| type  | string | Static string 'capability\_lookup\_dispatched' | N/A     | N/A         | Yes      |
-
-##### StatusReportDispatched
-```json
-{
-  "type": "dispatched"
-}
-```
-
-###### Fields
-
-| Field | Type   | Description                | Default | Constraints | Required |
-| ----- | ------ | -------------------------- | ------- | ----------- | -------- |
-| type  | string | Static string 'dispatched' | N/A     | N/A         | Yes      |
 
 ##### StatusReportAborted
 ```json
@@ -258,7 +223,6 @@ JSON Representation
 }
 ```
 
-
 ###### Fields
 
 | Field   | Type    | Description                                   | Default | Constraints | Required |
@@ -268,6 +232,25 @@ JSON Representation
 | expired | boolean | Has the RCS message been expired?             | No      | N/A         | Yes      |
 | code    | integer | Error code of agent error causing the failure | No      | N/A         | Yes      |
 | reason  | string  | Descriptive message of why the message failed | No      | N/A         | Yes      |
+
+###### Error code values
+
+| Code | Description                                                                                 |
+| :--: | ------------------------------------------------------------------------------------------- |
+|   1  | An internal error occurred in the gateway                                                   |
+|   2  | The mobile subscriber device was reported to have no RCS capabilities                       |
+|   3  | The mobile subscriber device does not support the capabilities required to send the message |
+|   4  | The operator has barred this chatbot from this mobile subscriber                            |
+|   5  | The operator has determined that this mobile subscriber number cannot be found              |
+|   6  | Uploading of media to supplier failed                                                       |
+|   7  | The operator reported a delivery failure asynchronously                                     |
+|   8  | The API request was not formatted correctly                                                 |
+|   9  | No provisioned supplier could be found to service request                                   |
+|  10  | The requested supplier has not been provisioned                                             |
+|  11  | The supplier reported a systems error                                                       |
+|  12  | The throttle limit has been reached                                                         |
+
+
 
 
 ##### StatusReportDelivered
