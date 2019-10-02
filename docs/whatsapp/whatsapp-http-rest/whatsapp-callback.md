@@ -24,6 +24,7 @@ The format of a delivery report is as follows:
 |message_id | The message id of the message to which this delivery report belong to | String    |
 |details    | Detailed message containing information.                              | String    |
 |recipient  | The recipient of the message that this delivery report belong to      | String    |
+|timestamp  | ISO-8601 datetime of the status update                                | Object    |
 
 Where the states means:
 
@@ -68,6 +69,7 @@ The format is as follows:
 |replying_to | A context object, present only if the user is replying to a specific thread | Object    |
 |message_id  | Generated message id for the inbound message                                | String    |
 |message     | Message object describing the inbound message                               | Object    |
+|timestamp   | ISO-8601 datetime of the status update                                      | Object    |
 
 **Context**
 
