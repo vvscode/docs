@@ -1,5 +1,5 @@
 ---
-title: "WhatsApp Capability"
+title: "Capability"
 excerpt: "Read how to discover if your users are capable of receiving messages via WhatsApp."
 ---
 
@@ -26,7 +26,7 @@ The response body is a JSON object with the following parameters:
 
 |Name        | Description                         | JSON Type    |
 |------------|------------------------------------ |--------------|
-|capabilities| List of capability statuses         | String array |
+|capabilities| List of capability statuses         | Object array |
 
 **Capability status**
 
