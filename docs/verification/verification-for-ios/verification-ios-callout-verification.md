@@ -51,5 +51,3 @@ id<SINVerification> verification = [SINVerification calloutVerificationWithAppli
 ### Re-attemping a callout
 
 The method `initiateWithCompletionHandler:` should not be invoked multiple times. If the application UI flow is structured so that a user can initiate retries for callout verification, it is recommended to create a new instance of `SINVerification` for each attempt.
-
-<a class="edit-on-github" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/verification/verification-for-ios/verification-ios-callout-verification.md">Edit on GitHub</a>

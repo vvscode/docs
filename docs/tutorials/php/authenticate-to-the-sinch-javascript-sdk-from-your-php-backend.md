@@ -70,5 +70,3 @@ Once you’ve successfully generated the ticket, you can use it to securely star
 
  - [Phone calling](doc:using-sinch-js-sdk-to-call-a-phone-number)
  - [App-to-app calling](doc:turn-your-browser-into-a-phone-with-the-sinch-js-sdk)
-
-<a class="edit-on-github" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/php/authenticate-to-the-sinch-javascript-sdk-from-your-php-backend.md">Edit on GitHub</a>

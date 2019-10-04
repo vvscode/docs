@@ -49,5 +49,3 @@ This postback notifies you when an MMS MO is received.
     </content>
 </postback>
 ```
-
-<a class="edit-on-github" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/mms/xml-service/xml-service-mms-mo-postbacks.md">Edit on GitHub</a>

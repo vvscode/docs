@@ -92,5 +92,3 @@ To complete the verification of the phone number, the user should be instructed 
 
 
 The method `verifyCode:completionHandler:` may be invoked multiple times (for a limited number of times within a short duration). So for example, if the completion handler is invoked with an `NSError` with domain `SINVerificationErrorDomain` and code `SINVerificationErrorInvalidInput` or `SINVerificationErrorIncorrectCode`, the application may hint to the user that the code was incorrect, let the user adjust it, and call `verifyCode:completionHandler:` once again on the same `SINVerification`-instance.
-
-<a class="edit-on-github" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/verification/verification-for-ios/verification-ios-sms-verification.md">Edit on GitHub</a>

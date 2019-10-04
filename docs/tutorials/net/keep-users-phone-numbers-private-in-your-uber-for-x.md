@@ -125,5 +125,3 @@ As you can see in the above code, it’s super simple to create some pretty nice
 This tutorial relies on Caller ID, which can be a little flaky since the user might not display it. In our experience, it still works well with Sinch, and many of our customers rely on Caller ID for their solutions. Alternatively, you could rent multiple numbers from us (you can determine how many with the maximum concurrent number of calls you need to support) and connect to the right number using destination only.
 
 None of this is magic, it’s just upping your Uber for X solution with real-time in-app communication. I mean who wouldn’t want to create company valued north of 50bn, right?
-
-<a class="edit-on-github" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/net/keep-users-phone-numbers-private-in-your-uber-for-x.md">Edit on GitHub</a>

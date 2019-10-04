@@ -11,5 +11,3 @@ MMS APIs are currently offered via an implementation of the MM7 protocol. MM7 is
 | `mm7_deliveryreport` | Receive a Delivery report for a previously submitted MT MMS Message. |
 
 The use of our MM7 API is only available for accounts with a paid plan. We support submitting MMS messages with MM7 version 5.3.0 to 6.8.0. Your VASPID will be your API Key. We will also issue you a VASID to submit with your message. The VASID will be unique on each short code. All traffic is encrypted in transit via SSL/TLS.
-
-<a class="edit-on-github" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/mms/mm7-service.md">Edit on GitHub</a>

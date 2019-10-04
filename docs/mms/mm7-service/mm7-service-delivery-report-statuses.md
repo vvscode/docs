@@ -15,5 +15,3 @@ The following table lists the responses returned with delivery reports.
 | Retrieved     | Success         | The message was successfully sent to the handset.                                                                                                                                                     |
 | Unreachable   | Unreachable     | Server/Endpoint is Unreachable                                                                                                                                                                        |
 | Unrecognized  | Unrecognized    | The end user’s handset cannot download the MMS.                                                                                                                                                       |
-
-<a class="edit-on-github" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/mms/mm7-service/mm7-service-delivery-report-statuses.md">Edit on GitHub</a>

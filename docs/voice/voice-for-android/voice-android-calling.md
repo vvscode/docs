@@ -150,6 +150,3 @@ public void onCallEnded(Call call) {
     setVolumeControlStream(AudioManager.USE_DEFAULT_STREAM_TYPE);
 }
 ```
-
-
-<a class="edit-on-github" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/voice/voice-for-android/voice-android-calling.md">Edit on GitHub</a>

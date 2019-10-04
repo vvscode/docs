@@ -901,6 +901,3 @@ If **enableDice** is set to true and the application has a callback URL specifie
 ### Authorization
 
 This is a protected resource and requires an [application signed request](doc:authorization#section-application-signed-request) or [basic auth](doc:authorization#section-basic-authorization).
-
-
-<a class="edit-on-github" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/voice/voice-rest-api/voice-rest-api-calling-api.md">Edit on GitHub</a>

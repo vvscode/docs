@@ -128,5 +128,3 @@ And there you have it. For a production app, your next steps will be to implemen
 Happy coding\!
 
 If you enjoyed this tutorial, read our other iOS and [app-calling tutorials](doc:tutorials-introduction).
-
-<a class="edit-on-github" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/ios/ios-app-to-phone-tutorial.md">Edit on GitHub</a>

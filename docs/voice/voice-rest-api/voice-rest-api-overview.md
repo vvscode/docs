@@ -160,5 +160,3 @@ RTP ports used: 10000 - 20000
 #### Codecs
 
 Sinch currently supports G.711u, G.711a, iLBC and G.729
-
-<a class="edit-on-github" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/voice/voice-rest-api/voice-rest-api-overview.md">Edit on GitHub</a>

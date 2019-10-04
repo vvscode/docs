@@ -55,5 +55,3 @@ In the coming months, we will start supporting incoming SMS and have a packaged 
 ### Happy SMSing\!
 
 >   - [pBouillon](https://github.com/pBouillon)
-
-<a class="edit-on-github" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/curl-python-sms/sending-sms-with-python.md">Edit on GitHub</a>

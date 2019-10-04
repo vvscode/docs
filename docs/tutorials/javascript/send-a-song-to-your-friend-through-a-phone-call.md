@@ -102,5 +102,3 @@ When running this, remember to fully quit Chrome and start with `--allow-file-ac
     open -a path/to/chrome yourfilename.html --args --allow-file-access-from-files
 
 There you have it\! You can now play a song to a friend over the phone.
-
-<a class="edit-on-github" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/javascript/send-a-song-to-your-friend-through-a-phone-call.md">Edit on GitHub</a>

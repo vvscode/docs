@@ -24,5 +24,3 @@ This document provides an overview for developers integrating with Sinch Verific
 
 
 ![permission-requests.png](images/9b057ba-permission-requests.png)
-
-<a class="edit-on-github" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/verification/verification-for-android.md">Edit on GitHub</a>

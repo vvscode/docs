@@ -14,6 +14,3 @@ There are some steps that you will need to do before starting with any of the tu
 > 4.  Give your app a name and click “Create”
 > 5.  Keep your app key and secret safe as you will need this in a minute
 > 6.  Open your terminal
-
-
-<a class="edit-on-github" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/curl-python-sms.md">Edit on GitHub</a>

@@ -75,5 +75,3 @@ The “capabilities” can either be “voice” or “sms”.
         InvalidScheme (40301)       - The authorization scheme 'instance' is required.
         ResourceNotFound (40400)    - Application with the key {KEY_HERE} was not found.
         TemporaryDown (50300)       - Service is temporarily unavailable, please try again later.
-
-<a class="edit-on-github" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/voice/number-administration/get-numbers-assigned-to-an-application.md">Edit on GitHub</a>

@@ -187,5 +187,3 @@ Now that we have a URL type defined, we can react to a clicked link instead of j
 Take a look at what the host passed to the app, and connect to the conference immediately.
 
 That’s it. Hanging out with friends and family is now literally one button press away!
-
-<a class="edit-on-github" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/ios/building-a-one-button-app-for-conference-calling.md">Edit on GitHub</a>

@@ -27,5 +27,3 @@ Note that the following error codes can be recovered from by asking the user for
 ## Network connectivity errors
 
 The Sinch Verification SDK will try to resend HTTP requests to the Sinch backend if such a request failed due to a network-related error. For example, if a request fails due to the user not having internet connectivity, or the request simply timed out, the SDK schedules a number of retries within 30 seconds. But unless it succeeds during those retries, it will eventually invoke the completion handler blocks with the underlying `NSError`. For example, it would use domain `NSURLErrorDomain` and error code `NSURLErrorNotConnectedToInternet`.
-
-<a class="edit-on-github" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/verification/verification-for-ios/verification-ios-guidelines-for-acting-on-completion-handler-outcome.md">Edit on GitHub</a>
