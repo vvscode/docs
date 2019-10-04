@@ -43,7 +43,7 @@ The response body is a JSON object with the following parameters:
 |--------------|--------------------------------|---------------|
 |group_id      | Group id of just created group | String        |
 
-Sample:
+**Sample**
 
 ```json
 {
@@ -74,7 +74,7 @@ The response body is a JSON object with the following parameters:
 |--------------|-----------------------------------|---------------|
 |groups        | Array of string group identifiers | String array  |
 
-Sample:
+**Sample**
 
 ```json
 {
@@ -110,6 +110,8 @@ The response body is a JSON object with the following parameters:
 | creator       | Msisdn of the creator of the group        | String       |
 | members       | Array of msisdns for members in the group | String array |
 | subject       | Subject of the group                      | String       |
+
+**Sample**
 
 ```json
 {
@@ -342,6 +344,14 @@ The response body is a JSON object with the following parameters:
 | Name          | Description                               | JSON Type    |
 | ------------- | ----------------------------------------- | ------------ |
 | invite_link   | Public url of link. Any WhatsApp user who clicks this link will join the group that this link relates to | String array |
+
+**Sample**
+
+```json
+{
+    "invite_link": "https://chat.whatsapp.com/<invite-link>"
+}
+```
 
 `400 Bad Request`
 
