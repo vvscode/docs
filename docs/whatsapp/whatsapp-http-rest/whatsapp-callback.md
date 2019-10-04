@@ -310,6 +310,3 @@ The format is as follows:
   ]
 }
 ```
-
-
-<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/whatsapp/whatsapp-http-rest/whatsapp-callback.md">Edit on GitHub</a>

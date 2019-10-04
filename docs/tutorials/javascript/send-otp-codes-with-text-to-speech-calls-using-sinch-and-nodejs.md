@@ -61,6 +61,3 @@ req.end(options.data);
 ## Next steps
 
 In the next tutorial I will show you how to make IVR menus that enable you to collect input from the user.
-
-
-<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/tutorials/javascript/send-otp-codes-with-text-to-speech-calls-using-sinch-and-nodejs.md">Edit on GitHub</a>

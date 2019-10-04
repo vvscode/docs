@@ -17,5 +17,3 @@ This document outlines how to administrate numbers through the same endpoints us
       - Unassigning from an application
 
 For general information on how to use the Sinch APIs including methods, types, errors and authorization, please check the [Using REST](doc:using-rest) page.
-
-<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/voice/number-administration.md">Edit on GitHub</a>

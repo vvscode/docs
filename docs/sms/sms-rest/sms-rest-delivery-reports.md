@@ -47,6 +47,3 @@ In addition to these standard error codes, the REST API provides an additional s
 > **Note**    
 >
 > New error codes may be added over time.
-
-
-<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/sms/sms-rest/sms-rest-delivery-reports.md">Edit on GitHub</a>

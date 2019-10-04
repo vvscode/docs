@@ -753,6 +753,3 @@ Size limits for keys and values are 32 characters.
 Only ASCII characters are allowed.
 
 Spaces before and after the key and values will be removed/trimmed.
-
-
-<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/voice/voice-rest-api/voice-rest-api-callback-api.md">Edit on GitHub</a>

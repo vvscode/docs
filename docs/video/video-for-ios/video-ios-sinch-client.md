@@ -71,6 +71,3 @@ The following example shows how to dispose the Sinch client:
 [sinchClient terminateGracefully]; // or invoke -[SINClient terminate]
 sinchClient = nil;
 ```
-
-
-<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/video/video-for-ios/video-ios-sinch-client.md">Edit on GitHub</a>

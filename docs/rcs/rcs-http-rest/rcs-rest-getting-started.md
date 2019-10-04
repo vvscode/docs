@@ -56,5 +56,3 @@ curl https://api.clxcommunications.com/rcs/v1/my-agent-id/messages \
 
 
 Sending messages is described in detail in [Messages Endpoint](doc:rcs-rest-messages-endpoint#section-send-a-message).
-
-<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/rcs/rcs-http-rest/rcs-rest-getting-started.md">Edit on GitHub</a>

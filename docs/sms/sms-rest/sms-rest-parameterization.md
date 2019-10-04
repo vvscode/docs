@@ -13,5 +13,3 @@ A default parameter value can be specified that will be used when an MSISDN is n
 If a target MSISDN is missing in the parameters object and no default value has been defined for that parameter the message will fail for that MSISDN but not for other recipients.
 
 Parameter keys are case sensitive.
-
-<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/sms/sms-rest/sms-rest-parameterization.md">Edit on GitHub</a>

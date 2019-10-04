@@ -99,5 +99,3 @@ verification.verify(code).then(function(successInfo) {
     // Act on error and inform the user / retry
 });
 ```
-
-<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/verification/verification-for-javascript/verification-js-verification.md">Edit on GitHub</a>

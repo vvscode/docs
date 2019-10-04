@@ -22,5 +22,3 @@ The callback URL can either be provided for each batch in the [Send a batch mess
 An inbound message or MO (*Mobile Originated*) is a message sent to one of your shortcodes or long numbers from a mobile phone. The format of an inbound callback is described in [Inbounds Endpoint](doc:sms-rest-inbounds-endpoint).
 
 To receive inbound message callbacks, a URL needs to be provisioned for your account. This URL can be specified in the Sinch Dashboard.
-
-<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/sms/sms-rest/sms-rest-callback.md">Edit on GitHub</a>

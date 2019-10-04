@@ -11,6 +11,3 @@ The WhatsApp REST API is designed to be a simple and powerful tool with features
    - Receiving all WhatsApp inbound message types
    - WhatsApp group creation and management
    - Checking the WhatsApp capability of numbers
-
-
-<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/whatsapp/whatsapp-http-rest.md">Edit on GitHub</a>

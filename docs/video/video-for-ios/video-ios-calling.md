@@ -157,6 +157,3 @@ Handling a call that ends:
 - (void)callDidEnd:(id<SINCall>) call {
   // update user interface, e.g. hide the call screen.
 ```
-
-
-<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/video/video-for-ios/video-ios-calling.md">Edit on GitHub</a>

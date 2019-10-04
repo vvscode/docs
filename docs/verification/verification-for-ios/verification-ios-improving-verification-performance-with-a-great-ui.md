@@ -52,5 +52,3 @@ override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath:
         return cell;
 }
 ```
-
-<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/verification/verification-for-ios/verification-ios-improving-verification-performance-with-a-great-ui.md">Edit on GitHub</a>

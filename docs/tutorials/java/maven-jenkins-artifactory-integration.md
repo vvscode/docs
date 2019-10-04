@@ -136,5 +136,3 @@ If you have any questions, please leave a comment and I will help you out.
 Thanks,
 
 Maryia Tuleika, Test Automation Developer at [Sinch](https://www.sinch.com/)
-
-<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/tutorials/java/maven-jenkins-artifactory-integration.md">Edit on GitHub</a>

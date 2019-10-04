@@ -43,5 +43,3 @@ An error code contains five digits. The first three digits are the same as the H
     
     [ServiceUnavailable - 503]
     50300 - Temporary Down
-
-<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/voice/using-rest/methods.md">Edit on GitHub</a>

@@ -95,5 +95,3 @@ public void onRegistrationCredentialsRequired(SinchClient client,
     });
 }
 ```
-
-<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/video/video-for-android/video-android-application-authentication.md">Edit on GitHub</a>

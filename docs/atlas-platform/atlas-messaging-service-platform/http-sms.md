@@ -639,5 +639,3 @@ The HTTP SMS library allows you to send upper case Greek characters. In order to
 If you are not sending a GSM encoded message then you will need to set the message data coding scheme appropriately (2 for a binary message, 4 for a Unicode (UCS2) message or 5 for a flash UCS2 message) and then just use the correct code in your message for the symbol you want.
 
 For example, if you are sending the Greek letter Π (Pi) in a GSM message you would set the DC option to 6 (or 7 for a flash message) and then include the GSM code for Π in your message: 16
-
-<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/atlas-platform/atlas-messaging-service-platform/http-sms.md">Edit on GitHub</a>

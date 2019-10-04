@@ -62,5 +62,3 @@ eg:
    "expiresIn":172800
 }
 ```
-
-<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/voice/number-administration/create-an-instance.md">Edit on GitHub</a>

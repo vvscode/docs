@@ -309,6 +309,3 @@ JSON object parameters:
   }
 }
 ```
-
-
-<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/whatsapp/whatsapp-http-rest/whatsapp-message.md">Edit on GitHub</a>

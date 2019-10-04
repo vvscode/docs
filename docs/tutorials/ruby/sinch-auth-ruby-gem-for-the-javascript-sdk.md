@@ -42,5 +42,3 @@ Once the client is started, you can use it to make browser-to-browser phone call
 
 >   - [Browser-to-Browser Calling](doc:using-sinch-js-sdk-to-call-a-phone-number)
 >   - [Browser-to-Phone Calling](doc:turn-your-browser-into-a-phone-with-the-sinch-js-sdk)
-
-<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/tutorials/ruby/sinch-auth-ruby-gem-for-the-javascript-sdk.md">Edit on GitHub</a>

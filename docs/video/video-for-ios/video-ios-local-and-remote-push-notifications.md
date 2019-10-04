@@ -272,5 +272,3 @@ When an iOS application is code signed, it is the embedded *Provisioning Profile
 to the APS *Production* environment.
 
 Typically a *Debug* build will be code signed with a *Development* provisioning profile and thus `SINAPSEnvironmentDevelopment` should be used. And typically a *Release* build will be code signed with a *Distribution* provisioning profile and thus `SINAPSEnvironmentProduction` should be used. Instead of changing this manually for each build, the macro `SINAPSEnvironmentAutomatic` is available which automatically expands to *Development* for *Debug* builds and *Production* for *Release* builds.
-
-<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/video/video-for-ios/video-ios-local-and-remote-push-notifications.md">Edit on GitHub</a>

@@ -269,7 +269,7 @@ All validations are performed unless --validations is specified.
                 fs.readFile(filePath, function(err, data){
                     if(err) console.log('There was an error reading the file!', err);
                     if(!data.includes(url)){
-                        let anchor = `\n\n<a class="edit-on-github" href="${url}">Edit on GitHub</a>`
+                        let anchor = `\n\n<a class="edit-on-github" target="_blank" href="${url}">Edit on GitHub</a>`
                         fs.appendFile(filePath, anchor, function(err) {
                             err ? console.log(err) : console.log(chalk.green(`The url ${url} has been appendended to the end of the file ${filePath}`))
                         })

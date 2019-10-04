@@ -131,5 +131,3 @@ if (strpos($ch,'errorCode') !== false) {
 Finally, this integration needs a better way of dealing with phone number formatting. Using an *unclean* number like 070-240 72 12 confuses the app and it won’t send.
 
 I hope that helps and please let us know in the comments section if you have any questions or issues.
-
-<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/tutorials/php/send-an-sms-from-slack.md">Edit on GitHub</a>

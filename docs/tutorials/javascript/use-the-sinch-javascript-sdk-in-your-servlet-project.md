@@ -128,5 +128,3 @@ When running this in your browser, after logging in, you will see the changes in
 ![app.png](images/a47b508-app.png)
 
 Congratulations, you did it\! You can now use the Sinch client to add calling or messaging to your web app.
-
-<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/tutorials/javascript/use-the-sinch-javascript-sdk-in-your-servlet-project.md">Edit on GitHub</a>

@@ -103,5 +103,3 @@ messageClient.send(message);
 ### Receiving recipient status updates for multi-recipient messages
 
 The recipient’s state transitions for the message are communicated back using the `MessageClientListener` listener the same as in the single recipient case. The listener’s callbacks are triggered for every recipient.
-
-<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/video/video-for-android/video-android-instant-messaging.md">Edit on GitHub</a>

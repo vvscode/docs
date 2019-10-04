@@ -76,6 +76,3 @@ See how our platform is evolving. Keep track of new features, API versions and b
 
 <h3>2015-05-20 | Verification SDK iOS 0.9.0 Beta</h3>
 -   First public release with support for SMS verification
-
-
-<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/release-notes/release-notes-verification-ios-sdk.md">Edit on GitHub</a>

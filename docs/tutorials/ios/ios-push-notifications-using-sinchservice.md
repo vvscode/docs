@@ -166,5 +166,3 @@ Now, you can interact with `SINManagedPush` easily since it lives as a property 
 Hopefully you’ll get some good use out of SinchService. It’s been tuned to make your experience with our API as seamless as possible. It abstracts a lot of what `SINClient` does and makes working with `SINManagedPush` easier as well. Whether it’s calling, messaging, or notifications you are looking to implement, SinchService can help with any of them.
 
 We hope you continue to build amazing apps with Sinch and feel free to reach out to us if you have any questions.
-
-<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/tutorials/ios/ios-push-notifications-using-sinchservice.md">Edit on GitHub</a>

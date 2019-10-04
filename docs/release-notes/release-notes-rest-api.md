@@ -137,6 +137,3 @@ Calling API documentation update:
 
 > -   Included the CANCEL reason code in the response of the DiCE event, the getCallResult API and in the CDRs. The CANCEL reason is returned when the caller initiated the call and cancelled it.
 > -   Added a custom field in Answered Call event and Disconnect Call event. It is used to pass custom headers in these events.
-
-
-<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/release-notes/release-notes-rest-api.md">Edit on GitHub</a>

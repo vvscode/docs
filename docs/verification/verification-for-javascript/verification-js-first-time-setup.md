@@ -86,5 +86,3 @@ Import the Sinch SDK in your website using
 > **Note**    
 >
 > The --save flag is optional for saving the dependency in bower.json
-
-<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/verification/verification-for-javascript/verification-js-first-time-setup.md">Edit on GitHub</a>

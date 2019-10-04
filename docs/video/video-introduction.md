@@ -43,5 +43,3 @@ Getting started with the Sinch Video SDK is simple thanks to the extensive docum
 ## Need help?
 
 If you have any questions, feel free to check out our help section or contact us.
-
-<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/video/video-introduction.md">Edit on GitHub</a>

@@ -26,5 +26,3 @@ A number that have been parsed into a `id<SINPhoneNumber>` can then be formatted
 ```objectivec
 NSString *phoneNumberInE164 = [SINPhoneNumberUtil() formatNumber:phoneNumber format:SINPhoneNumberFormatE164];
 ```
-
-<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/verification/verification-for-ios/verification-ios-phone-numbers.md">Edit on GitHub</a>

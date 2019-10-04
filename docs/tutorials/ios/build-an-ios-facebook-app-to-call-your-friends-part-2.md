@@ -89,5 +89,3 @@ Then, call the method in `viewDidLoad`, which will look something like this:
 ```
 
 That’s it\! Go ahead and test it out. You should be able to see profile pictures in the login screen as well as on the calling screen.
-
-<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/tutorials/ios/build-an-ios-facebook-app-to-call-your-friends-part-2.md">Edit on GitHub</a>

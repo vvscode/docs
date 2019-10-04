@@ -21,5 +21,3 @@ The statistics upload is done by the client in the background.
 ## Third party libraries and copyright notices
 
 All Third Party Libraries and Copyright notices can be found under this [link](http://www.sinch.com/legal/third-party-licenses/).
-
-<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/verification/verification-for-javascript/verification-js-miscellaneous.md">Edit on GitHub</a>

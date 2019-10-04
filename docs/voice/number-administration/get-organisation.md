@@ -49,5 +49,3 @@ eg:
      "countryId":"US"
   }
 ```
-
-<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/voice/number-administration/get-organisation.md">Edit on GitHub</a>

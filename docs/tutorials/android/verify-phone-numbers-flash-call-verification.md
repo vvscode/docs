@@ -168,5 +168,3 @@ private void hideProgressDialog() {
 ```
 
 Sinch Flash Call Verification has proven itself to be the fastest method to verify user phone number. Happy Verification\!
-
-<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/tutorials/android/verify-phone-numbers-flash-call-verification.md">Edit on GitHub</a>

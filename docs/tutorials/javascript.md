@@ -31,6 +31,3 @@ To be able to use the Sinch SDK a new application can be created by clicking **A
 Download the JavaScript SDK [here](https://sinch.readme.io/page/downloads).
 
 Now lets get started!
-
-
-<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/tutorials/javascript.md">Edit on GitHub</a>
