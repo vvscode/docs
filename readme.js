@@ -22,6 +22,7 @@ const DEFAULT_CONFIG_FILE = 'config.yml';
 const DEFAULT_DOCS_DIR = 'docs';
 const CONFIG_APIKEY = 'apikey';
 const CONFIG_DOCSVERSION = 'docsversion';
+const BASE_GITURL = 'https://github.com/sinch/docs/blob/master/';
 
 program.description(
     `Tools to sync content back and forth between this local Git repository and the remote readme.io API.
@@ -262,24 +263,44 @@ All validations are performed unless --validations is specified.
     .command('insertanchors', )
     .description(`Insert "Edit on GitHub" anchors at bottom of files`)
     .action( () => {
-        walkSync('docs', function(filePath, stat) {
-            console.log(filePath);
-            console.log('The url should be https://github.com/sinch/docs/blob/master/' + filePath );
+        walk('docs', function(filePath, stat) {
+            if(path.extname(filePath) == '.md'){
+                var url = BASE_GITURL + filePath;
+                fs.readFile(filePath, function(err, data){
+                    if(!data.includes(url)){
+                        let anchor = `\n<a class="edit-on-github" href="${url}>Edit on GitHub</a>`
+                        console.log('Anchor is: ' + anchor);
+/*                        fs.appendFile(filePath, anchor, function(err) {
+                            if(err){
+                                console.log(err);
+                            }
+                            console.log('Appended!')
+                        })*/
+                    }
+                })
+                console.log(filePath);
+                console.log('The url should be ' + url );
+            }
         });
     }
     );
 
 program.parse(process.argv);
 
-function walkSync(currentDirPath, callback) {
-    fs.readdirSync(currentDirPath).forEach(function (name) {
-        var filePath = path.join(currentDirPath, name);
-        var stat = fs.statSync(filePath);
-        if (stat.isFile()) {
-            callback(filePath, stat);
-        } else if (stat.isDirectory()) {
-            walkSync(filePath, callback);
+async function walk(currentDirPath, callback) {
+    fs.readdir(currentDirPath, function (err, files) {
+        if (err) {
+            throw new Error(err);
         }
+        files.forEach(function (name) {
+            var filePath = path.join(currentDirPath, name);
+            var stat = fs.statSync(filePath);
+            if (stat.isFile()) {
+                callback(filePath, stat);
+            } else if (stat.isDirectory()) {
+                walk(filePath, callback);
+            }
+        });
     });
 }
 
