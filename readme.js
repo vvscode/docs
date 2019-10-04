@@ -267,19 +267,14 @@ All validations are performed unless --validations is specified.
             if(path.extname(filePath) == '.md'){
                 var url = BASE_GITURL + filePath;
                 fs.readFile(filePath, function(err, data){
+                    if(err) console.log('There was an error reading the file!', err);
                     if(!data.includes(url)){
-                        let anchor = `\n<a class="edit-on-github" href="${url}>Edit on GitHub</a>`
-                        console.log('Anchor is: ' + anchor);
-/*                        fs.appendFile(filePath, anchor, function(err) {
-                            if(err){
-                                console.log(err);
-                            }
-                            console.log('Appended!')
-                        })*/
+                        let anchor = `\n\n<a class="edit-on-github" href="${url}>Edit on GitHub</a>`
+                        fs.appendFile(filePath, anchor, function(err) {
+                            err ? console.log(err) : console.log(chalk.green(`The url ${url} has been appendended to the end of the file ${filePath}`))
+                        })
                     }
                 })
-                console.log(filePath);
-                console.log('The url should be ' + url );
             }
         });
     }
