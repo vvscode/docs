@@ -258,8 +258,30 @@ All validations are performed unless --validations is specified.
         });
     });
 
+    program
+    .command('insertanchors', )
+    .description(`Insert "Edit on GitHub" anchors at bottom of files`)
+    .action( () => {
+        walkSync('docs', function(filePath, stat) {
+            console.log(filePath);
+            console.log('The url should be https://github.com/sinch/docs/blob/master/' + filePath );
+        });
+    }
+    );
+
 program.parse(process.argv);
 
+function walkSync(currentDirPath, callback) {
+    fs.readdirSync(currentDirPath).forEach(function (name) {
+        var filePath = path.join(currentDirPath, name);
+        var stat = fs.statSync(filePath);
+        if (stat.isFile()) {
+            callback(filePath, stat);
+        } else if (stat.isDirectory()) {
+            walkSync(filePath, callback);
+        }
+    });
+}
 
 function apiClient(catalog, options) {
     return new Api(globalOption(CONFIG_APIKEY), globalOption(CONFIG_DOCSVERSION), catalog, options);
@@ -326,6 +348,7 @@ function loadConfigYaml() {
 function listCategories(slugs, config) {
     return slugs ? slugs.split(',') : config.categories;
 }
+
 
 
 function createFilters(config) {
