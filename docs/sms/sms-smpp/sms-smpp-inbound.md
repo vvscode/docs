@@ -92,3 +92,5 @@ Inbound messages will be delivered to your platform as a "DELIVER\_SM". The tabl
 | sm\_default\_msg\_id       | 0           |
 | sm\_length                 | 4           |
 | short\_message             | Test        |
+
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/sms/sms-smpp/sms-smpp-inbound.md"><span class="fab fa-github"></span>Edit on GitHub!</a>

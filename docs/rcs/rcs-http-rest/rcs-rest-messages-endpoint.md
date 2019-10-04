@@ -1272,3 +1272,6 @@ curl https://api.clxcommunications.com/rcs/v1/my-agent-id/messages/2bf270e4-08a4
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer zIMEJGfwD4oJ4qObPPjwZxwiP5cKARXRJpt9Kf6GSv7uOesvRV" \
 ```
+
+
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/rcs/rcs-http-rest/rcs-rest-messages-endpoint.md"><span class="fab fa-github"></span>Edit on GitHub!</a>

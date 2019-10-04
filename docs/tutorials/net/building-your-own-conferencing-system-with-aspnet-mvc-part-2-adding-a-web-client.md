@@ -614,3 +614,5 @@ If you liked this tutorial, you might also like the following:
 
  - [Building Your Own Conference Calling System (Part 1)](doc:build-a-conference-calling-app-in-nodejs-express)
  - [Building a Conference Calling System in C# (a different version)](doc:build-your-own-conference-calling-system-in-c)
+
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/net/building-your-own-conferencing-system-with-aspnet-mvc-part-2-adding-a-web-client.md"><span class="fab fa-github"></span>Edit on GitHub!</a>

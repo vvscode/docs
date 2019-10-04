@@ -129,3 +129,5 @@ public class Sms {
 That’s all\! Run the project and you will see “Hello, world\!” appear as an SMS to the phone number you entered.
 
 In addition, you can find SMS prices by country [here](https://www.sinch.com/products/messaging/sms/).
+
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/java/sign-requests-in-java.md"><span class="fab fa-github"></span>Edit on GitHub!</a>

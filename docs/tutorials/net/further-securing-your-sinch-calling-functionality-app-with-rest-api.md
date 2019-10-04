@@ -107,3 +107,5 @@ return svaml;
 This event is a notification event, where you could adjust the balance of your users’ accounts, post duration to a CRM system, etc. No response is needed.
 
 You can find the finished code for this tutorial [here](https://github.com/sinch/net-backend-sample).
+
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/net/further-securing-your-sinch-calling-functionality-app-with-rest-api.md"><span class="fab fa-github"></span>Edit on GitHub!</a>

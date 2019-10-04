@@ -91,3 +91,6 @@ JSON Representation
 | ------ | --------------- | ------------------------------------------ | ------- | ----------- | -------- |
 | field  | string          | The field for which this error is relevant | No      | N/A         | Yes      |
 | errors | arrayOf(string) | List of errors for the field               | No      | N/A         | Yes      |
+
+
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/rcs/rcs-http-rest/rcs-rest-formats.md"><span class="fab fa-github"></span>Edit on GitHub!</a>

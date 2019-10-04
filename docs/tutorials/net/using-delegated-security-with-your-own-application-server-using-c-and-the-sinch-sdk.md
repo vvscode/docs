@@ -135,3 +135,5 @@ Download our demo backend [here](https://github.com/sinch/net-backend-sample).
 **Read more:**
 
 >   - [Using Sinch JS SDK to call a phone number](doc:using-sinch-js-sdk-to-call-a-phone-number)
+
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/net/using-delegated-security-with-your-own-application-server-using-c-and-the-sinch-sdk.md"><span class="fab fa-github"></span>Edit on GitHub!</a>

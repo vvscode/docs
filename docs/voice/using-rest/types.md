@@ -132,3 +132,6 @@ Represents a money object that is formatted based on the currency’s defined lo
         "formatted":"$10.25"
     }
 
+
+
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/voice/using-rest/types.md"><span class="fab fa-github"></span>Edit on GitHub!</a>

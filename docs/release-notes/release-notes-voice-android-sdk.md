@@ -169,3 +169,6 @@ First public beta version of the Sinch SDK for Android with support for:
 -   App to app calling
 -   App to phone calling
 -   Instant messaging to single and multiple recipient
+
+
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/release-notes/release-notes-voice-android-sdk.md"><span class="fab fa-github"></span>Edit on GitHub!</a>

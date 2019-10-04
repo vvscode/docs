@@ -289,3 +289,5 @@ In the emulator dial, B should now start ringing on your iPhone. Walk out of the
 ## Conclusion
 
 The biggest advantage of PushKit is the ability to execute code in the background. Despite Apple’s documentation, it actually doesn’t seem that the OS will wake your app if you terminate it, which is a bummer. Also, there is currently a bug where you only get a token for the clientapi environment and no production token, but Apple will probably address this pretty quickly. Overall, I think this is step in the right direction for Apple to let developers build more real-time applications. I expect that it will open up this kind of push not only for VoIP, but also for other types of applications.
+
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/ios/how-to-use-pushkit-for-ios-voip-push-notifications.md"><span class="fab fa-github"></span>Edit on GitHub!</a>

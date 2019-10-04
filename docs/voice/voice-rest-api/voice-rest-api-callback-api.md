@@ -754,3 +754,6 @@ Only ASCII characters are allowed.
 
 Spaces before and after the key and values will be removed/trimmed.
 
+
+
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/voice/voice-rest-api/voice-rest-api-callback-api.md"><span class="fab fa-github"></span>Edit on GitHub!</a>

@@ -47,3 +47,5 @@ This is a protected resource and requires an [instance signed request](doc:autho
         InvalidScheme (40301)           - The authorization scheme 'instance' is required.
         ResourceNotFound (40400)        - Unable to assign numbers to organization: reservation(s) not found or expired
         ApplicationConfiguration (42200)- Accounting not set up for this organization.
+
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/voice/number-administration/checkout-reserved-numbers.md"><span class="fab fa-github"></span>Edit on GitHub!</a>

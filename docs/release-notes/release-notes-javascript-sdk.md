@@ -101,3 +101,6 @@ This is the first public beta version, which includes:
 -   Partner user management
 -   Sinch user management
 
+
+
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/release-notes/release-notes-javascript-sdk.md"><span class="fab fa-github"></span>Edit on GitHub!</a>

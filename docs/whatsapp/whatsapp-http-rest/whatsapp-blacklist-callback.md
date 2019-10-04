@@ -41,3 +41,6 @@ There was an error with your request. The body is a JSON object described in the
 
 There was an authentication error with your request. Either you're using incorrect credentials or you're attempting to authenticate
 in a region where your bot does not reside. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors)
+
+
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/whatsapp/whatsapp-http-rest/whatsapp-blacklist-callback.md"><span class="fab fa-github"></span>Edit on GitHub!</a>

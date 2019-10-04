@@ -445,3 +445,6 @@ Try it out\! If you’re using the iOS Simulator, add a number that you can test
 
 You now have a fully functional [app-to-phone calling](https://www.sinch.com/products/voice/) app that uses the Sinch SDK. You can also add more features to your app; Sinch offers a number of other services, such as SMS and app-to-app calling, which are simple to implement in your app.
 
+
+
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/ios/build-an-ios-address-book-contact-picker.md"><span class="fab fa-github"></span>Edit on GitHub!</a>

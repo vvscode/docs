@@ -144,3 +144,6 @@ In Postman, generate an SMS:
 And to verify code:
 ![postman_verify.png](images/c045b11-postman_verify.png)
 Testing a C# authentication system
+
+
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/net/building-a-c-authentication-system-with-net-part-1.md"><span class="fab fa-github"></span>Edit on GitHub!</a>

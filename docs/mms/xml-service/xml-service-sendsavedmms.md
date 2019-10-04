@@ -88,3 +88,5 @@ Our API allows you to customize DDM by setting 3 parameters:
 
 **Postback Notifications For SendSavedMMS** When the MMS delivery is
 processed successfully the system will generate a Postback notification.
+
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/mms/xml-service/xml-service-sendsavedmms.md"><span class="fab fa-github"></span>Edit on GitHub!</a>

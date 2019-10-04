@@ -279,3 +279,6 @@ To get the *applicationKey* and *applicationSecret*, you should create an applic
 By convention, the username and password need to be base64 encoded before being added to the header:
 
     Authorization = “basic” + " " + Base64 ( usernameAndPassword )
+
+
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/voice/using-rest/authorization.md"><span class="fab fa-github"></span>Edit on GitHub!</a>

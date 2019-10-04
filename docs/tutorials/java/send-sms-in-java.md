@@ -82,3 +82,5 @@ message like **Jordan says “hi backslashes before the quotes that you want to 
 
 In addition, you can find SMS prices by country
  /products/messaging/sms/).
+
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/java/send-sms-in-java.md"><span class="fab fa-github"></span>Edit on GitHub!</a>

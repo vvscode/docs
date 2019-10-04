@@ -168,3 +168,5 @@ The error codes are provided in status reports according to the SMPP Protocol Sp
 | 362   | ESME EXTERNAL ERROR | Extenal error                                   | Report to Sinch                                                                    | Temporary  |
 | 370   | ESME EXTERNAL ERROR | Cannot find information                         |                                                                                    | Temporary  |
 | 399   | ESME EXTERNAL ERROR | Unknown                                         |                                                                                    | Temporary  |
+
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/sms/sms-smpp/sms-smpp-error-specification.md"><span class="fab fa-github"></span>Edit on GitHub!</a>

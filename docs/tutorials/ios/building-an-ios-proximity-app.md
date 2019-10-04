@@ -847,3 +847,5 @@ There’s an endless list of things that you can add to this project and I encou
 Sinch is an excellent framework and with its wide range of excellent SDKs and APIs, you can do anything. If you have any questions or would like to get in contact, reach out on Twitter to [me](https://www.twitter.com/brownzac1) or [Christian Jensen](https://www.twitter.com/cjsinch), Sinch’s Developer Evangelist. We look forward to hearing from you\!
 
 And as always, if you have any ideas for upcoming tutorials, give us a shout.
+
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/ios/building-an-ios-proximity-app.md"><span class="fab fa-github"></span>Edit on GitHub!</a>

@@ -568,3 +568,5 @@ The following are the error codes Sinch Networks will be sending:
 | 362   | ESME EXTERNAL ERROR | Extenal error                                                              | Report to Sinch                                                                    | Temporary  |
 | 370   | ESME EXTERNAL ERROR | Cannot find information                                                    |                                                                                    | Temporary  |
 | 399   | ESME EXTERNAL ERROR | Unknown                                                                    |                                                                                    | Temporary  |
+
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/sms/sms-other/sms-other-http-basic.md"><span class="fab fa-github"></span>Edit on GitHub!</a>

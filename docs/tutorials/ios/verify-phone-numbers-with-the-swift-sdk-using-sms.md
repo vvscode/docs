@@ -75,3 +75,5 @@ This function initiates an [SMS verification request](https://www.sinch.com/prod
 In this simple sample app, I just pop to the root view controller, but you get an idea of how simple it is to integrate.
 
 For more information about using our Swift SDK, read about our [verification product](doc:verification-for-ios).
+
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/ios/verify-phone-numbers-with-the-swift-sdk-using-sms.md"><span class="fab fa-github"></span>Edit on GitHub!</a>

@@ -70,3 +70,5 @@ Now I’m ready to show this to the product owner. And it’s good to submit to 
 We’re really interested to know how you feel about these kinds of libraries. Tweet me at [@cjsinch](https://twitter.com/cjsinch) or email me at `christian@sinch.com` to let me know.
 
 If there is interest, we could make this a supported product feature. For now, enjoy the open-source framework that lets you add calling in two minutes.
+
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/ios/add-calling-to-your-existing-app-in-2-minutes.md"><span class="fab fa-github"></span>Edit on GitHub!</a>

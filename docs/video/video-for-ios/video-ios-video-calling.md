@@ -158,3 +158,6 @@ The Sinch SDK provides helper functions to convert `id<SINVideoFrame>` to `UIIma
 id<SINVideoFrame> videoFrame = ... // Get SINVideoFrame from onFrame: callback
 UIImage *image = SINUIImageFromVideoFrame(videoFrame);
 ```
+
+
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/video/video-for-ios/video-ios-video-calling.md"><span class="fab fa-github"></span>Edit on GitHub!</a>

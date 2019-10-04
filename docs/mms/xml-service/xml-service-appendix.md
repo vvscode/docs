@@ -98,3 +98,6 @@ excerpt: ""
 | N501     | Notification that Device Discovery Message is sending.                  |
 | N502     | Notification that Device Discovery Message delivery status has changed. |
 
+
+
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/mms/xml-service/xml-service-appendix.md"><span class="fab fa-github"></span>Edit on GitHub!</a>

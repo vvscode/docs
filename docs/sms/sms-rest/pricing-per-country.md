@@ -15,3 +15,5 @@ When sending the batch, the pricing will be made using the configured price for 
 The Pricing details can be retrieved for the submitted batch as in `retrieve_delivery_report` and for the specific message as in `retrieve_recipient_delivery_report`.
 
 **NB: Note that the price in delivery report is subject to change until the messages reach final state.**
+
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/sms/sms-rest/pricing-per-country.md"><span class="fab fa-github"></span>Edit on GitHub!</a>

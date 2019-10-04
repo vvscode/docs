@@ -74,3 +74,6 @@ Terminating the client:
 sinchClient.stopListeningOnActiveConnection();
 sinchClient.terminate();
 ```
+
+
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/voice/voice-for-android/voice-android-sinch-client.md"><span class="fab fa-github"></span>Edit on GitHub!</a>

@@ -945,3 +945,5 @@ Hang in there; we’re almost done\! The last thing we need is a method in our V
 >   - Send an push to the phone when there is an authentication request from the website
 >   - Implement functionality to prompt both website and mobile that a wrong token was generated
 >   - Add Bluetooth low energy (BLE) support so it will log in automatically when the phone is close to the computer
+
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/net/number-verification-build-your-own-authenticator-app-with-sinch-and-otp-sharp-part-4.md"><span class="fab fa-github"></span>Edit on GitHub!</a>

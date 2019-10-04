@@ -170,3 +170,6 @@ This glossary defines some of the domain specific terms used throughout this doc
 ## Third party libraries and copyright notices
 
 All Third Party Libraries and Copyright notices can be found under this [link](http://www.sinch.com/legal/third-party-licenses/).tices can be found under this [link](http://www.sinch.com/legal/third-party-licenses/).
+
+
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/voice/voice-for-android/voice-android-miscellaneous.md"><span class="fab fa-github"></span>Edit on GitHub!</a>

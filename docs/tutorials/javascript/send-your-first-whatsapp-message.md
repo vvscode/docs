@@ -162,3 +162,5 @@ fetch(url, postReq)
 ```
 
 If you enjoyed this tutorial and would like to start sending messages to your customers, please email <sales@sinch.com> and we’ll help you set up a full business account where you’ll be able to specify more templates and receive replies.
+
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/javascript/send-your-first-whatsapp-message.md"><span class="fab fa-github"></span>Edit on GitHub!</a>

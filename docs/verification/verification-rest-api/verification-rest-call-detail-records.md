@@ -170,3 +170,5 @@ Call Detail Records (CDRs) can be downloaded from the Sinch portal. CDRs are in 
 The files are generated once daily and contain the previous days' CDRs. A day spans from 00:00:00 UTC to 23:59:59 UTC. CDRs are written when the call is ended, though there are some edge cases where an app-app call CDR may be delayed in being written, for example, if there is a network failure before the call is ended.
 
 CDR files can be downloaded from the developer portal. Upon request, the CDR files can also be uploaded to a S3 bucket that your company provides and to which Sinch has write access.
+
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/verification/verification-rest-api/verification-rest-call-detail-records.md"><span class="fab fa-github"></span>Edit on GitHub!</a>

@@ -20,3 +20,5 @@ The REST API is described [here](doc:rcs-http-rest).
 
 If you have any questions, feel free to check out our help section or
 contact us.
+
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/rcs/rcs-introduction.md"><span class="fab fa-github"></span>Edit on GitHub!</a>

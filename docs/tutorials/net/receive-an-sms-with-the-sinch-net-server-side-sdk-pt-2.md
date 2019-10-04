@@ -74,3 +74,5 @@ The final step is to register this method as the SMS callback URL on the Sinch d
 ## Chill
 
 And that’s it. Now any request to this Web API application will be validated by the Sinch CallbackMessageHandler to ensure that they are legitimate.
+
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/net/receive-an-sms-with-the-sinch-net-server-side-sdk-pt-2.md"><span class="fab fa-github"></span>Edit on GitHub!</a>

@@ -21,3 +21,5 @@ The pricing details can be retrieved for a submitted batch in `retrieve_delivery
 Max price threshold enables you to define a maximum allowed price per message in a batch, if pricing features are enabled.
 
 This is done by defining `max_price_per_message` in `send_batch_msg` which prevents from sending messages if the price per message is above the provided threshold. If the threshold is exceeded for one or more messages within a batch, then only those messages will be aborted with 409 status code.
+
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/sms/sms-rest/sms-rest-pricing.md"><span class="fab fa-github"></span>Edit on GitHub!</a>

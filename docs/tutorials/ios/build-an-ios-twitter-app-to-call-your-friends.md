@@ -427,3 +427,5 @@ Finally, let’s take advantage of some handy delegate methods to change some of
 Congrats\! You’ve created a basic app that lets users call people they follow on Twitter. As you can see, it’s simple to integrate Sinch into your app.
 
 One feature you might want to add to this app is Managed Push. ([Learn more about Managed Push with SinchService](doc:voice-ios-local-and-remote-push-notifications)) You can also find more Sinch tutorials on the <span class="title-ref">Sinch tutorial site \<tutorialsite\></span> or on [Sinch’s GitHub](https://github.com/sinch). Of course, you can also find us on Twitter [@SinchDev](https://twitter.com/sinchdev).
+
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/ios/build-an-ios-twitter-app-to-call-your-friends.md"><span class="fab fa-github"></span>Edit on GitHub!</a>

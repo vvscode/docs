@@ -8,3 +8,6 @@ A default `max_number_of_message_parts` can be configured at the account level b
 
 When `max_number_of_message_parts` parameter is set or the default value is configured, `number_of_message_parts` parameter will be included in recipient delivery report.
 
+
+
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/sms/sms-rest/sms-rest-limiting-message-parts.md"><span class="fab fa-github"></span>Edit on GitHub!</a>

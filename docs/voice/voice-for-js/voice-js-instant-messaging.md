@@ -232,3 +232,5 @@ This will send the same *“Hello World”* message to the users identified by t
 ## Receiving recipient status updates for multi-recipient messages
 
 The recipient’s state transition to delivered for the message is communicated back using the same listener as in the single recipient case. The listener’s callbacks are triggered for every recipient and only, at most, once per recipient.
+
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/voice/voice-for-js/voice-js-instant-messaging.md"><span class="fab fa-github"></span>Edit on GitHub!</a>

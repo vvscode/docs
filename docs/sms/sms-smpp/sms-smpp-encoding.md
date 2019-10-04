@@ -109,3 +109,5 @@ excerpt: ""
 |5x    |P  |Q  |R  |S  |T  |U  |V  |W  |X  |Y  |Z  |[  |\  |]  |^  |_  |
 |6x    |`  |a  |b  |c  |d  |e  |f  |g  |h  |i  |j  |k  |l  |m  |n  |o  |
 |7x    |p  |q  |r  |s  |t  |u  |v  |w  |x  |y  |z  |{  |&#124; |}  |~  |   |
+
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/sms/sms-smpp/sms-smpp-encoding.md"><span class="fab fa-github"></span>Edit on GitHub!</a>

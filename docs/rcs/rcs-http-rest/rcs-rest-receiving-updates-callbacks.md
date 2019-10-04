@@ -491,3 +491,6 @@ At least one of `postback_data` and `text` will be set.
 | longitude | number | Longitude of user location | No      | MinValue: -180 MaxValue: 180 | Yes      | string | Static string 'location'   | N/A     | N/A                          | Yes      |
 | latitude  | number | Latitude of user location  | No      | MinValue: -90 MaxValue: 90   | Yes      |
 | longitude | number | Longitude of user location | No      | MinValue: -180 MaxValue: 180 | Yes      |
+
+
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/rcs/rcs-http-rest/rcs-rest-receiving-updates-callbacks.md"><span class="fab fa-github"></span>Edit on GitHub!</a>

@@ -178,3 +178,5 @@ Optional parameter: 0x1403 (0x1403):
 > - Value (hex): 32 33 34 33 30 00 (Text: 23430n)
 
 Result is MCC=234 and MNC=30
+
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/sms/sms-smpp/sms-smpp-outbound.md"><span class="fab fa-github"></span>Edit on GitHub!</a>

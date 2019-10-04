@@ -76,3 +76,5 @@ When logging in, you should always pass in the header the “number administrati
    }
 }
 ```
+
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/voice/number-administration/log-in.md"><span class="fab fa-github"></span>Edit on GitHub!</a>
