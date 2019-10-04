@@ -56,3 +56,5 @@ Getting started with the Sinch Voice API and SDK is simple thanks to the extensi
 ## Need help?
 
 If you have any questions, feel free to check out our help section or contact us.
+
+<a class="edit-on-github" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/voice/voice-introduction.md">Edit on GitHub</a>

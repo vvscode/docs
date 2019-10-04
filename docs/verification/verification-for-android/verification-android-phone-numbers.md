@@ -21,3 +21,5 @@ A number can be formatted as *E.164* like this:
 ```java
 String phoneNumberInE164 = PhoneNumberUtils.formatNumberToE164(phoneNumberString, defaultRegion);
 ```
+
+<a class="edit-on-github" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/verification/verification-for-android/verification-android-phone-numbers.md">Edit on GitHub</a>

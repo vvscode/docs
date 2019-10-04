@@ -49,3 +49,5 @@ Checking the status of a message will return one of four values:
 >   - Faulted - The message has not been delivered, this can be due to an invalid number for instance.
 
 That’s all\! If you have any questions about our SMS API, feel free to comment below, email us at <dev@sinch.com>, or tweet us at [@SinchDev](http://www.twitter.com/sinchdev).
+
+<a class="edit-on-github" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/ruby/send-sms-in-ruby.md">Edit on GitHub</a>

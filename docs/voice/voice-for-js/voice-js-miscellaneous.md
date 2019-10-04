@@ -23,3 +23,5 @@ The Sinch SDK client uploads statistics to the Sinch servers at the end of a cal
 Some of the information is not anonymous and may be associated with the User ID call participants.
 
 The statistics upload is done by the client in the background.
+
+<a class="edit-on-github" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/voice/voice-for-js/voice-js-miscellaneous.md">Edit on GitHub</a>

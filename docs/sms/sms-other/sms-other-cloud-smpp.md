@@ -320,3 +320,5 @@ These are defined here:
 
   - Subscriber  
     The mobile user who has a SIM card.
+
+<a class="edit-on-github" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/sms/sms-other/sms-other-cloud-smpp.md">Edit on GitHub</a>

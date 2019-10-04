@@ -275,3 +275,6 @@ sinchClient.start({username: "<username>", password: "<password>"}).then(functio
 
 
 In this example, the group call is initiated after the client is started. A number of listeners was added in order to connect the incoming remote media streams (first callback), connect the local media stream and also manage lost participants. When the callGroup method is called, the callClient will immediatley start communication with other participants on the specified Channel in order to establish active video calls.
+
+
+<a class="edit-on-github" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/video/video-for-javascript/video-javascript-calling.md">Edit on GitHub</a>

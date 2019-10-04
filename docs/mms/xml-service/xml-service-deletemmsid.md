@@ -48,3 +48,5 @@ Deletes an MMS template whose mms-id is defined in the XML. All contents in the 
     <error-info>Invalid mms-id / MMS do not exist</error-info>
 </response>
 ```
+
+<a class="edit-on-github" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/mms/xml-service/xml-service-deletemmsid.md">Edit on GitHub</a>

@@ -147,3 +147,5 @@ This is a protected resource and requires an [instance signed request](doc:autho
         InvalidScheme (40301)       - The authorization scheme 'instance' is required.
         ResourceNotFound (40400)    - Application with the key {KEY_HERE} was not found.
         TemporaryDown (50300)       - Service is temporarily unavailable, please try again later.
+
+<a class="edit-on-github" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/voice/number-administration/add-numbers-to-an-application-overwrite.md">Edit on GitHub</a>

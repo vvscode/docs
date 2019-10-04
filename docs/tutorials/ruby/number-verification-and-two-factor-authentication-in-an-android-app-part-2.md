@@ -143,3 +143,5 @@ public void verifyCodeButtonClick(View v) {
 ```
 
 You’re ready to test your app\! Verify a correct code and then press the “Verify code” button a second time; you’ll notice that the code doesn’t work anymore since it’s a one-time use code.
+
+<a class="edit-on-github" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/ruby/number-verification-and-two-factor-authentication-in-an-android-app-part-2.md">Edit on GitHub</a>

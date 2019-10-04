@@ -269,3 +269,5 @@ When MMS is saved, we generate postback notification. When saving and encoding o
     <audio-name>http://www.yoursite.com/audio/1.mp3</audio-name>
 </postback>
 ```
+
+<a class="edit-on-github" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/mms/xml-service/xml-service-postbacks.md">Edit on GitHub</a>

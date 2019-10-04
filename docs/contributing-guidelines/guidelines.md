@@ -208,3 +208,5 @@ if possible. Be open about areas that will frustrate our developers
 [http://grammarly.com](http://grammarly.com/)
 
 <http://www.hemingwayapp.com/>
+
+<a class="edit-on-github" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/contributing-guidelines/guidelines.md">Edit on GitHub</a>

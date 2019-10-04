@@ -390,3 +390,5 @@ curl -X DELETE \
      -H "Authorization: Bearer {token}" \
      "https://api.clxcommunications.com/xms/v1/{service_plan_id}/groups/{group_id}"
 ```
+
+<a class="edit-on-github" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/sms/sms-rest/sms-rest-groups-endpoint.md">Edit on GitHub</a>

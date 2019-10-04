@@ -317,3 +317,5 @@ Lastly, in **dealoc**, unregister for the notifications:
 ## Conclusion
 
 In this tutorial, we learned how to build a Cocoa frameworks reusable library and how to make your stuff modularized in iOS. We also learned how to consume our service we created in [Part 1 of this series](doc:building-a-c-authentication-system-with-net-part-1). Next up in [Part 3](doc:number-verification-aspnet-identity-and-two-factor-authentication-part-3), we will build a small website and add two-factor authentication.
+
+<a class="edit-on-github" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/net/building-an-ios-client-for-number-verification-part-2.md">Edit on GitHub</a>

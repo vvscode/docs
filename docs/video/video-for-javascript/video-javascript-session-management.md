@@ -55,3 +55,5 @@ else {
 The session object can be stored in any secure way you see best fit, for example in the browser `localStorage` as shown above. The session object can be retrieved from sinchClient using the `sinchClient.getSession()` method after a successful call to `sinchClient.start()`.
 
 See the Sample IM app for an example on working with sessions.
+
+<a class="edit-on-github" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/video/video-for-javascript/video-javascript-session-management.md">Edit on GitHub</a>

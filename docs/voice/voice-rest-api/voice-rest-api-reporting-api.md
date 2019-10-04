@@ -168,3 +168,5 @@ ServiceStatus
   "status": "up"
 }
 ```
+
+<a class="edit-on-github" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/voice/voice-rest-api/voice-rest-api-reporting-api.md">Edit on GitHub</a>

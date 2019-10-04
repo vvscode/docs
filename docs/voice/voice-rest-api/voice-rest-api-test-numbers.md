@@ -19,3 +19,5 @@ The numbers shown in the table that follows can be used to test the calling func
 | 4600000000040 | 45s      | NO ANSWER  | No                       |
 | 4600000000050 | No       | CONGESTION | No                       |
 | 4600000000051 | 7.5 s    | CONGESTION | No                       |
+
+<a class="edit-on-github" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/voice/voice-rest-api/voice-rest-api-test-numbers.md">Edit on GitHub</a>

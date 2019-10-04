@@ -153,3 +153,5 @@ To keep things simple, I didn’t create a logout button. It’s very to simple 
 ![logout_delete_token.png](images/88380d3-logout_delete_token.png)
 
 Once deleted, refresh the page and you will be prompted to sign in.
+
+<a class="edit-on-github" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/ruby/web-two-factor-authentication-using-rails-devise-and-sinch-part-3.md">Edit on GitHub</a>

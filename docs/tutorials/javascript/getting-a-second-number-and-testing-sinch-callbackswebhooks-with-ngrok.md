@@ -103,3 +103,5 @@ To make this happen you must have an application in the Sinch platform and a pho
 Call the number and start seeing real live requests from the Sinch platform.
 
 Hope you found this helpful and if you have any questions dm me on @cjsinch
+
+<a class="edit-on-github" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/javascript/getting-a-second-number-and-testing-sinch-callbackswebhooks-with-ngrok.md">Edit on GitHub</a>

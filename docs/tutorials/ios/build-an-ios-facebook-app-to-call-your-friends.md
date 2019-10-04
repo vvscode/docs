@@ -403,3 +403,6 @@ Now, whenever the user’s call ends, we dismiss the call screen, taking the use
 ![Incoming-Call.png](images/03f4721-Incoming-Call.png)
 
 Congratulations, you have create an app to call your Facebook friends using SinchService\! There are even more features that you can add to this project. Managed Push, for example, can help you reach a user when their app is not open using push notificaitons. To learn more on how to use Managed Push with SinchService, check out this [tutorial](https://github.com/sinch/ios-managedpush-with-sinchservice).
+
+
+<a class="edit-on-github" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/ios/build-an-ios-facebook-app-to-call-your-friends.md">Edit on GitHub</a>

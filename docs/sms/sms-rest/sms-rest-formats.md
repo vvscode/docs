@@ -32,3 +32,6 @@ Timestamps are used for expressing a moment in time. They are represented using 
 A time offset can be specified in accordance with [ISO-8601 time offsets from UTC](http://en.wikipedia.org/wiki/ISO_8601#Time_offsets_from_UTC). If no time offset is specified (_local time_ in ISO-8601) then UTC will be used.
 
 All timestamps returned by the API will be represented in UTC time, with millisecond precision.
+
+
+<a class="edit-on-github" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/sms/sms-rest/sms-rest-formats.md">Edit on GitHub</a>

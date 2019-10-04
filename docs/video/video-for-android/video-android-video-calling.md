@@ -128,3 +128,6 @@ YuvImage image = new YuvImage(nv21Frame.yuvPlanes()[0].array(),
                               nv21Frame.height(),
                               nv21Frame.yuvStrides());
 ```
+
+
+<a class="edit-on-github" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/video/video-for-android/video-android-video-calling.md">Edit on GitHub</a>

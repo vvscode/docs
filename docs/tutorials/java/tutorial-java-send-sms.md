@@ -158,3 +158,5 @@ public class SendMessage {
     }                
 }
 ```
+
+<a class="edit-on-github" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/java/tutorial-java-send-sms.md">Edit on GitHub</a>

@@ -130,3 +130,5 @@ Then verify the code:
 ## Hosting
 
 If you’re going to follow part 2 of this tutorial, you will need to host this backend somewhere. I chose [Heroku](http://www.heroku.com), since it’s easy to host a Rails app there and it has a huge free tier. After you’ve created an account, [follow the steps on the site to deploy your app](https://devcenter.heroku.com/articles/getting-started-with-rails4#deploy-your-application-to-heroku). Make sure to follow through the section on migrating your database.
+
+<a class="edit-on-github" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/ruby/ruby-on-rails-two-factor-authentication-for-user-phone-numbers-part-1.md">Edit on GitHub</a>

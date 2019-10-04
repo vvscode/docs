@@ -139,3 +139,5 @@ public async Task<HttpResponseMessage> Index(SMSCallbackModel model) {
 Deploy and send an SMS to the number with the text *10 awesome*. That should show up in your portal now? You’ll also be able to filter by events.
 
 Now dear developer, go dunk\!
+
+<a class="edit-on-github" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/net/building-an-nps-sms-system-with-sinch-and-delighted.md">Edit on GitHub</a>

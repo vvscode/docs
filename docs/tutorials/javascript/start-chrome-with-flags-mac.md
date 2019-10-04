@@ -10,3 +10,5 @@ When using the [Sinch JavaScript SDK](doc:voice-for-js) locally in Chrome, it is
  1.  Chrome should launch now. Navigate back to [chrome://version](chrome://version/) to see that the flag has been added properly 
    ![example.png](images/9069eea-example.png)
  1.  To quit, press **Ctrl-C** in the terminal tab that is running Chrome.
+
+<a class="edit-on-github" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/javascript/start-chrome-with-flags-mac.md">Edit on GitHub</a>

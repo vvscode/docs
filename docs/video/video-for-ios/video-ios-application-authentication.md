@@ -101,3 +101,5 @@ requiresRegistrationCredentials:(id<SINClientRegistration>) registrationCallback
   }];
 }
 ```
+
+<a class="edit-on-github" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/video/video-for-ios/video-ios-application-authentication.md">Edit on GitHub</a>

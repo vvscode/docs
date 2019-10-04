@@ -73,3 +73,5 @@ excerpt: ""
         </table>
     </div>
 </div>
+
+<a class="edit-on-github" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/mms/mm7-service/unsupported-mm7-soap-elements.md">Edit on GitHub</a>
