@@ -251,3 +251,5 @@ Now we need to provide the missing link between the callScreenViewController and
 In each of the methods, we’ve just called `[self.delegate (delegateMethod)]`. That’s all for now\! You can contact me on [Twitter](http://www.twitter.com/brownzac1) with any questions or just to say hi\!
 
 You can also download the finished project from the [GitHub repo](https://github.com/sinch/ios-speaker-mute-functions).
+
+<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/tutorials/ios/muting-calls-and-using-the-devices-speaker-in-ios.md">Edit on GitHub</a>

@@ -90,3 +90,5 @@ The list below specifies the Response Codes that can be returned.
 | 2 (SERVFAIL)      | Improperly formatted query - no answer section is returned. |
 | 3 (NXDOMAIN)      | MSISDN not valid - no answer section is returned.           |
 | 5 (REFUSED)       | Source IP is unauthorized - no answer section is returned.  |
+
+<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/number-lookup/number-lookup-enum-interface.md">Edit on GitHub</a>

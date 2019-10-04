@@ -175,3 +175,5 @@ Congratulations, you did it\! You can now use the Sinch client to add calling or
 
 >   - [Web-web calling tutorial](doc:turn-your-browser-into-a-phone-with-the-sinch-js-sdk)
 >   - [Web-phone calling tutorial](doc:using-sinch-js-sdk-to-call-a-phone-number)
+
+<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/tutorials/ruby/authenticate-to-sinch-from-rails-with-devise.md">Edit on GitHub</a>

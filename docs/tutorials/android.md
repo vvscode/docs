@@ -26,3 +26,5 @@ To be able to use the Sinch SDK a new application can be created by clicking **A
 Download the Android SDK [here](https://sinch.readme.io/page/downloads).
 
 Now lets get started!
+
+<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/tutorials/android.md">Edit on GitHub</a>

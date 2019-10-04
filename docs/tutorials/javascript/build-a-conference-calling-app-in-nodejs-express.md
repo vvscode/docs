@@ -239,3 +239,5 @@ If you want to continue building a conference calling app, take a look at the ot
  - [Sinch REST Documentation](doc:voice-rest-api)
  - [Building a Conference Calling System in .NET](doc:build-a-conference-calling-app-in-nodejs-express)
  - [Hosting node on Azure](https://azure.microsoft.com/en-us/documentation/articles/web-sites-nodejs-develop-deploy-mac/)
+
+<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/tutorials/javascript/build-a-conference-calling-app-in-nodejs-express.md">Edit on GitHub</a>

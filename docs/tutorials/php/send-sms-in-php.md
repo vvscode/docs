@@ -51,3 +51,5 @@ php name_of_script_file.php
 ## Note about authentication
 
 Please note that using basic authentication (as shown above) is only supported in Sinch clientapi applications. For production apps, we require that you sign your requests. To sign your requests in PHP, take a look at [this tutorial](doc:authenticate-to-the-sinch-javascript-sdk-from-your-php-backend).
+
+<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/tutorials/php/send-sms-in-php.md">Edit on GitHub</a>

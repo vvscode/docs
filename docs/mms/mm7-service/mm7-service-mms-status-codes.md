@@ -49,3 +49,5 @@ excerpt: ""
 | 4004           | Validation error                            | Validation error                                                                                        |
 | 4006           | Service unavailable                         | Carrier capacity reached. Retry later                                                                   |
 | 4007           | Service denied                              | Carrier denies service for the recipient address                                                        |
+
+<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/mms/mm7-service/mm7-service-mms-status-codes.md">Edit on GitHub</a>

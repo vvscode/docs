@@ -52,3 +52,6 @@ You can find our other APIs below:
 
 - [HTTP Basic](doc:sms-other-http-basic)
 - [Cloud SMPP](doc:sms-other-cloud-smpp)
+
+
+<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/sms/sms.md">Edit on GitHub</a>

@@ -27,3 +27,6 @@ excerpt: ""
 | NAT        | Network Address Translation                             |
 | MXP        | Media eXchange Protocol                                 |
 | SVAML      | Sinch Voice Application Markup Language                 |
+
+
+<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/voice/voice-rest-api/voice-rest-api-glossary.md">Edit on GitHub</a>

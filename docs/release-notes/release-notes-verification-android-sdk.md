@@ -77,3 +77,6 @@ Fixed a possible crash when querying phone metadata on some devices and API leve
 
 <h3>2015-05-20 | Verification Android 0.9.0 Beta</h3>
 -   First public release with support for SMS and flash call verification
+
+
+<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/release-notes/release-notes-verification-android-sdk.md">Edit on GitHub</a>

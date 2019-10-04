@@ -31,3 +31,6 @@ Download the iOS SDK [here](https://sinch.readme.io/page/downloads).
 > More steps may be needed for a given tutorial.
 
 Now lets get started!
+
+
+<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/tutorials/ios.md">Edit on GitHub</a>

@@ -24,3 +24,5 @@ $ curl -H "Authorization: Bearer {token}" \
 Each service plan comes with a rate limit which sets the maximum number of messages that can be sent per second. The rate limit is calculated from all messages sent via the API, so a batch with 10 recipients will count as 10 messages for rate limiting purposes.
 
 Each service plan gets it's own message queue served in First-In-First-Out order. This means that new batches will be accepted immediately but might be delayed if earlier batches are still on queue.
+
+<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/sms/sms-rest/sms-rest-getting-started.md">Edit on GitHub</a>

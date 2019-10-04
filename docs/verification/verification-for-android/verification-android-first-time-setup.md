@@ -33,3 +33,5 @@ dependencies {
 
 
   - Or using Android Studio choose `File -> New -> New Module -> Import .JAR/.AAR Package` option
+
+<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/verification/verification-for-android/verification-android-first-time-setup.md">Edit on GitHub</a>

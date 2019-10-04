@@ -105,3 +105,5 @@ namespace Sinch.SendSms.Example
     }
 }
 ```
+
+<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/tutorials/net/send-an-sms-with-the-sinch-net-server-side-sdk.md">Edit on GitHub</a>

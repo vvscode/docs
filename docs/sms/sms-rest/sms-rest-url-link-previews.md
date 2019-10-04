@@ -19,3 +19,5 @@ iPhones will only display a link preview if the URL is at the beginning or the e
 ## Behaviour on Android
 
 Depending on the device but if the recipient has googles Messages app or Samsung you should be able to see previews if the phone has been updated after June 2018
+
+<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/sms/sms-rest/sms-rest-url-link-previews.md">Edit on GitHub</a>

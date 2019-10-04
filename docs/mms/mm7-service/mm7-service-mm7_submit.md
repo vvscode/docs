@@ -248,3 +248,5 @@ Connection: keep-alive
    </soap-env:Body>
 </soap-env:Envelope>
 ```
+
+<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/mms/mm7-service/mm7-service-mm7_submit.md">Edit on GitHub</a>

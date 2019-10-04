@@ -125,3 +125,5 @@ SINOutgoingMessage *message = [SINOutgoingMessage messageWithRecipients:recipien
 ### Receiving status updates for multi-recipient Messages
 
 When a message transitions to a new state it is communicated back using `SINMessageClientDelegate` as the single recipient case. The delegate’s callbacks are triggered once for every recipient.
+
+<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/voice/voice-for-ios/voice-ios-instant-messaging.md">Edit on GitHub</a>

@@ -11,3 +11,5 @@ Please see the [Reference Documentation](http://www.sinch.com/docs/javascript/re
 > **Note**    
 >
 > Should you encounter any bugs, glitches, lack of functionality or other problems using our SDK, please send us an email to <dev@sinch.com>. Your help in this regard is greatly appreciated.
+
+<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/video/video-for-javascript.md">Edit on GitHub</a>

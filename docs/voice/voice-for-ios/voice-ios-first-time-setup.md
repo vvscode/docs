@@ -54,3 +54,5 @@ In addition to the keys above, if video calling functionality will be enabled an
     (`NSCameraUsageDescription`):
 
     [NSCameraUsageDescription](https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW24) describes the reason that your app accesses the camera. When the system prompts the user to allow access, this string is displayed as part of the alert, and it *cannot* be left empty.
+
+<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/voice/voice-for-ios/voice-ios-first-time-setup.md">Edit on GitHub</a>

@@ -88,3 +88,5 @@ If some numbers are already assigned to your app, then the application key will 
     [Error Codes]
         InvalidScheme (40301)       - The authorization scheme 'instance' is required.
         ForbiddenRequest (40300)    - The current user is not the owner of the organisation: {ORGANISATION_ID}
+
+<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/voice/number-administration/list-all-rented-numbers.md">Edit on GitHub</a>

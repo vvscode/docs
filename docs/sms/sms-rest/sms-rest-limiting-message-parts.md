@@ -7,3 +7,5 @@ With max number of message parts you can specify whether the message should be d
 A default `max_number_of_message_parts` can be configured at the account level by your account manager. If the `max_number_of_message_parts` parameter is specified when creating a batch, it will override the default value configured by your account manager.
 
 When `max_number_of_message_parts` parameter is set or the default value is configured, `number_of_message_parts` parameter will be included in recipient delivery report.
+
+<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/sms/sms-rest/sms-rest-limiting-message-parts.md">Edit on GitHub</a>

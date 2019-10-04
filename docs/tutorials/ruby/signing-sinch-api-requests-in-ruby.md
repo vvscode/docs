@@ -63,3 +63,5 @@ If successful, you will see the message ID printed and you will receive the text
 
  - Use the example [in the documentation](doc:authorization) with the sample app key and secret to make sure that your signature matches the example at different points along the way.
  - Capitalization matters\! The headers that you send with the request need to be exactly the same as the ones in your canonicalized\_headers. Same goes for content-type.
+
+<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/tutorials/ruby/signing-sinch-api-requests-in-ruby.md">Edit on GitHub</a>

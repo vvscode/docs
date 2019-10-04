@@ -143,3 +143,5 @@ class normalizePhoneNumberTask extends AsyncTask<String, Void, String> {
 Now, you can run the app, choose a contact, and a toast message of the normalized number will pop up.
 
 I hope this gives a good example of how to use the Android Contact Picker. Next up, we will be using Sinch to make a phone call with that number. Head over to our [Android tutorial](doc:call-a-phone-number-from-your-android-app-with-sinch).
+
+<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/tutorials/android/phone-calls-with-android-contact-picker.md">Edit on GitHub</a>

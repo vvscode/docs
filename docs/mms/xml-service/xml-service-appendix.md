@@ -97,3 +97,5 @@ excerpt: ""
 | N401     | MMS MO received successfully.                                           |
 | N501     | Notification that Device Discovery Message is sending.                  |
 | N502     | Notification that Device Discovery Message delivery status has changed. |
+
+<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/mms/xml-service/xml-service-appendix.md">Edit on GitHub</a>

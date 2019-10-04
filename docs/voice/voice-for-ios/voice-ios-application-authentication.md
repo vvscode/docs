@@ -102,3 +102,5 @@ requiresRegistrationCredentials:(id<SINClientRegistration>) registrationCallback
   }];
 }
 ```
+
+<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/voice/voice-for-ios/voice-ios-application-authentication.md">Edit on GitHub</a>

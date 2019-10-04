@@ -29,3 +29,5 @@ target '<your xcode project>' do
     pod 'SinchVerification'
 end
 ```
+
+<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/verification/verification-for-ios/verification-ios-first-time-setup.md">Edit on GitHub</a>

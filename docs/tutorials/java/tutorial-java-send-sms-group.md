@@ -191,3 +191,5 @@ public class SendMessageToGroup {
     }
 }
 ```
+
+<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/tutorials/java/tutorial-java-send-sms-group.md">Edit on GitHub</a>

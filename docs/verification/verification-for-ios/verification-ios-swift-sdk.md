@@ -138,3 +138,5 @@ import SinchVerification
 > **Note**    
 >
 > This import method requires iOS Deployment Target iOS 8.0 or above
+
+<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/verification/verification-for-ios/verification-ios-swift-sdk.md">Edit on GitHub</a>

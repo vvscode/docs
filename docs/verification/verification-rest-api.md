@@ -71,3 +71,5 @@ If you are not using the mobile or web Verification SDKs, then you need to imple
 ![verification_without_sdk.png](images/82d9a08-verification_without_sdk.png)
 
 The verification requests will be triggered from your backend towards Sinch with the [Verification Request API](doc:verification-rest-verification-api#section-verification-request), by doing an [application signed request](doc:authorization#section-application-signed-request). Sinch dashboard will respond with the CLI filter (for flashcalls) or the template (in case of an SMS), or the polling intervals (in case of a callout). As soon as the flashcall or SMS is received by your app, your backend will need to report back to Sinch the CLI or PIN that was reported through the [Report Verification API](doc:verification-rest-verification-api#section-report-verification). Sinch will respond with the result of the verification.
+
+<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/verification/verification-rest-api.md">Edit on GitHub</a>

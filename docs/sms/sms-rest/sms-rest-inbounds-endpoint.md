@@ -105,3 +105,5 @@ The response is a JSON object described in `inbounds_endpoint` response.
 curl -H "Authorization: Bearer {token}" \
   "https://api.clxcommunications.com/xms/v1/{service_plan_id}/inbounds/{inbound_id}"
 ```
+
+<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/sms/sms-rest/sms-rest-inbounds-endpoint.md">Edit on GitHub</a>

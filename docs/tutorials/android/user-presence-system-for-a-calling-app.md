@@ -419,3 +419,5 @@ usersListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 And there you have it\! Try launching the app on two different devices or emulators, log in as two different users, and call each other. Try playing around with killing one app and restarting it as another user; it’s cool to see the “online” list update in real time on the other device.
 
 If you want to compare your code to our finished app, check the [GitHub repo](http://www.github.com/sinch/presence-calling-android). You can also reach us at <dev@sinch.com> with questions.
+
+<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/tutorials/android/user-presence-system-for-a-calling-app.md">Edit on GitHub</a>

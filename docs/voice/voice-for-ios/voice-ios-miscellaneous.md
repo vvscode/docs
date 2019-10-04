@@ -255,3 +255,5 @@ This glossary defines some of the domain specific terms used throughout this doc
 ### Active Connection in Background
 
 Apple has since iOS 10 discontinued support for maintaining a *VoIP* control connection alive via `-[UIApplication setKeepAliveTimeout:handler:]`. Attempting to use this method on an iOS device running iOS 10 results in the following warning log: `Legacy VoIP background mode is deprecated and no longer supported`. The Sinch feature *Active connection in background* was using the keep alive handler API and is as a consequence no longer supported on iOS. It is recommended to use [VoIP Push Notifications](doc:voice-ios-local-and-remote-push-notifications) to achieve the equivalent functionality.
+
+<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/voice/voice-for-ios/voice-ios-miscellaneous.md">Edit on GitHub</a>

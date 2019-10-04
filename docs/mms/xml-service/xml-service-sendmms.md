@@ -79,3 +79,5 @@ MMS "Link Expiration Date’ is used to expire the MMS Link (In the case when MM
     <error-info>Invalid shortcode</error-info>
 </response>
 ```
+
+<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/mms/xml-service/xml-service-sendmms.md">Edit on GitHub</a>

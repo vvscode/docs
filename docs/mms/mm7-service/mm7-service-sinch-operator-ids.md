@@ -9,3 +9,5 @@ excerpt: ""
 | Verizon Wireless US | 31003              |
 | T-Mobile US         | 31004              |
 | Sprint US           | 31005              |
+
+<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/mms/mm7-service/mm7-service-sinch-operator-ids.md">Edit on GitHub</a>

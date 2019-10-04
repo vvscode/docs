@@ -38,3 +38,5 @@ If you’re interested in digging into the node modules for authentication and s
  1.  [sinch-messaging](https://github.com/ChewTeaYeah/sinch-messaging)
 
 To get your own app key and secret, [sign up](https://portal.sinch.com/#/signup) for a Sinch account and create a new app. To start, you will have $2 on your account to send some test messages. See [SMS pricing by country here](https://www.sinch.com/products/messaging/sms/).
+
+<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/tutorials/javascript/sms-node-module.md">Edit on GitHub</a>

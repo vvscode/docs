@@ -42,3 +42,5 @@ The following error codes can be returned as values for the `code` field:
 | 403         | `unknown_group`                   | A referenced group ID is unknown. This could happen if the ID is invalid or if the group has been deleted.          |
 | 403         | `unknown_campaign`                | The campaign ID does not match the specified originator.                                                            |
 | 403         | `missing_callback_url`            | Callback has been requested but no URL is provided.                                                                 |
+
+<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/sms/sms-rest/sms-rest-http-status-codes.md">Edit on GitHub</a>

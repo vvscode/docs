@@ -100,3 +100,6 @@ This is the first public beta version, which includes:
 -   App to Phone Calling
 -   Partner user management
 -   Sinch user management
+
+
+<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/release-notes/release-notes-javascript-sdk.md">Edit on GitHub</a>

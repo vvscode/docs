@@ -627,3 +627,5 @@ The actual language that was selected is returned in the 'Content-Language' HTTP
         }
 }
 ```
+
+<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/verification/verification-rest-api/verification-rest-verification-api.md">Edit on GitHub</a>

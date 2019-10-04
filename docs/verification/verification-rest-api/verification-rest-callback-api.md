@@ -266,3 +266,5 @@ You can find more information on callback request signing `here
 ### Response
 
 *None*
+
+<a class="edit-on-github" href="https://github.com/sinch/docs/blob/master/docs/verification/verification-rest-api/verification-rest-callback-api.md">Edit on GitHub</a>
