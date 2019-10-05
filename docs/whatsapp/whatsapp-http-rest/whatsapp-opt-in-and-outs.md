@@ -10,9 +10,7 @@ Businesses must provide a method by which customers may opt-out of receiving fut
 
 > **Note**
 >
-> If a customer initiates contact with a WhatsApp Business, this will constitute as a temporary opt-in meaning that the
-> business is allowed to send messages to that customer for 24 hours since the last received message. After that period
-> has expired, a active opt-in is required before the business is allowed to send messages to that customer again.
+> If a customer initiates contact with a WhatsApp Business, this will constitute as a temporary opt-in meaning that the business is allowed to send messages to that customer for 24 hours since the last received message. After that period has expired, a active opt-in is required before the business is allowed to send messages to that customer again.
 
 ## Opt-In endpoint
 
