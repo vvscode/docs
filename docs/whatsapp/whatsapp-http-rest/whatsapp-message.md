@@ -123,6 +123,10 @@ JSON object parameters:
 
 #### Image message
 
+> **Note**
+>
+> Any media file sent through the Sinch WhatsApp API can be at most 10.0 mb
+
 JSON object parameters:
 
 | Name        | Description                                                          | JSON Type    | Default    | Constraints           | Required |
@@ -146,6 +150,10 @@ JSON object parameters:
 ```
 
 #### Video message
+
+> **Note**
+>
+> Any media file sent through the Sinch WhatsApp API can be at most 10.0 mb
 
 JSON object parameters:
 
@@ -171,6 +179,10 @@ JSON object parameters:
 
 #### Document message
 
+> **Note**
+>
+> Any media file sent through the Sinch WhatsApp API can be at most 10.0 mb
+
 JSON object parameters:
 
 | Name        | Description                                                          | JSON Type    | Default    | Constraints           | Required |
@@ -195,6 +207,10 @@ JSON object parameters:
 ```
 
 #### Audio message
+
+> **Note**
+>
+> Any media file sent through the Sinch WhatsApp API can be at most 10.0 mb
 
 JSON object parameters:
 
