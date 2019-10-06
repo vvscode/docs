@@ -13,11 +13,11 @@ This tutorial will show you how to setup an endpoint in your Spring Boot applica
 
 Before starting, please make sure that:
 
- - You have [created your Sinch account](doc:java#section-create-your-free-sinch-account)
+ - You have [created your Sinch account](doc:tutorials-java#section-create-your-free-sinch-account)
  - The right version of the JDK is installed on your computer
  - You have added the Sinch Java SDK JAR to your project
 
-All details of those steps are available on the [Java Getting Started page](doc:java).
+All details of those steps are available on the [Java Getting Started page](doc:tutorials-java).
 
 ## Create a Spring Boot Project
 
