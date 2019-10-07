@@ -24,7 +24,7 @@ To use callouts and the benefit of having them styled with CSS they should be wr
 > Here's some very informational text.
 ```
 
-You can use any of the following titles in the note:
+You can use any of the following keywords in the note-title:
 - note
 - info
 - information
