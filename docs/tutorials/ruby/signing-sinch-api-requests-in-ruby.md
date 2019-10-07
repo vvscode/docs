@@ -4,8 +4,8 @@ excerpt: "Why sign your requests instead of using basic authentication? It’s m
 ---
 Why sign your requests instead of using basic authentication? It’s much more secure and Sinch doesn’t support basic authentication for production applications.
 
-> **Note** 
-> 
+> **Note**
+>
 > This has the same functionality as our [Ruby gem for sending SMS](https://www.sinch.com/tutorials/send-sms-ruby/).
 
 To get started, I’ll show you how to sign a request to send an SMS. Create an empty ruby file—I’ll call mine **sms.rb**—and add the following:
@@ -61,7 +61,7 @@ If successful, you will see the message ID printed and you will receive the text
 
 ## Debugging tips
 
- - Use the example [in the documentation](doc:authorization) with the sample app key and secret to make sure that your signature matches the example at different points along the way.
+ - Use the example [in the documentation](doc:using-rest#section-authorization) with the sample app key and secret to make sure that your signature matches the example at different points along the way.
  - Capitalization matters\! The headers that you send with the request need to be exactly the same as the ones in your canonicalized\_headers. Same goes for content-type.
 
 <a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/ruby/signing-sinch-api-requests-in-ruby.md"><span class="fab fa-github"></span>Edit on GitHub!</a>

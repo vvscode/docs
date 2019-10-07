@@ -340,7 +340,7 @@ If there is no response to the callback within the timeout period, an error mess
 
 ### Authorization
 
-You can find more information on callback request signing [here](doc:authorization#section-callback-request-signing).
+You can find more information on callback request signing [here](doc:using-rest#section-callback-request-signing).
 
 ### Request
 ```json
@@ -476,7 +476,7 @@ Please note that the Answered Call Event is only triggered for app-phone calls, 
 
 ### Authorization
 
-You can find more information on callback request signing [here](doc:authorization#section-callback-request-signing).
+You can find more information on callback request signing [here](doc:using-rest#section-callback-request-signing).
 
 ### Request
 ```json
@@ -531,7 +531,7 @@ Please note that the Disconnect Call Event is only triggered for app-phone calls
 
 ### Authorization
 
-You can find more information on callback request signing [here](doc:authorization#section-callback-request-signing).
+You can find more information on callback request signing [here](doc:using-rest#section-callback-request-signing).
 
 ### Request
 ```json
@@ -608,7 +608,7 @@ It is a POST request to the specified calling callback URL. Your application can
 
 ### Authorization
 
-You can find more information on callback request signing [here](doc:authorization#section-callback-request-signing).
+You can find more information on callback request signing [here](doc:using-rest#section-callback-request-signing).
 
 ### Request
 ```json
@@ -670,7 +670,7 @@ If there is no response to the callback within the timeout period, the notificat
 
 ### Authorization
 
-You can find more information on callback request signing [here](doc:authorization#section-callback-request-signing).
+You can find more information on callback request signing [here](doc:using-rest#section-callback-request-signing).
 
 ### Request
 ```json

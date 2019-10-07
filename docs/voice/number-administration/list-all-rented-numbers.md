@@ -6,7 +6,7 @@ This endpoint lists all the numbers that are assigned to your account.
 
 ## Headers
 
-This is a protected resource and requires an [instance signed request](doc:authorization#section-instance-signed-request).
+This is a protected resource and requires an [instance signed request](doc:using-rest#section-instance-signed-request).
 
     Authorization: Instance {instance ID}:{instance signature}
     X-Timestamp: {now}

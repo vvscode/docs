@@ -25,15 +25,15 @@ The Sinch service uses three different verification methods:
 
 **\[POST\] /verifications/** - Start a verification
 
-This method is used by the mobile and web Verification SDKs to start a verification. It can also be used to request a verification from your backend, by making an [Application signed request](doc:authorization#section-application-signed-request). It is a POST request which specifies the phone number that should be verified and the verification method.
+This method is used by the mobile and web Verification SDKs to start a verification. It can also be used to request a verification from your backend, by making an [Application signed request](doc:using-rest#section-application-signed-request). It is a POST request which specifies the phone number that should be verified and the verification method.
 
 ### Authorization
 
 Authorization level can be specified in the Sinch dashboard, under your app settings. By default it is set to "Deny". These schemes are allowed:
 
-  - [Public authorization](doc:authorization#section-public-resources)
-  - [Application signed request](doc:authorization#section-application-signed-request)
-  - [Instance signed requests](doc:authorization#section-instance-signed-request)
+  - [Public authorization](doc:using-rest#section-public-resources)
+  - [Application signed request](doc:using-rest#section-application-signed-request)
+  - [Instance signed requests](doc:using-rest#section-instance-signed-request)
 
 ### Request
 
@@ -63,7 +63,7 @@ Authorization level can be specified in the Sinch dashboard, under your app sett
 
 **custom** can be used to pass custom data in the request.
 
-**FlashCallOptions** is an optional object for flashCall verifications. It allows you to specify Cli and dial time out parameters for flashCall. Cli is a particular number to be used as caller Id in the flashCall. The number that you specify needs to be a number that you have rented from the Sinch portal. DialTimeout should be specified in seconds and must be between 5 and 120. FlashCallOptions object can be specified optionally, and only if the verification request was triggered from your backend (no SDK client) through an [Application signed request](doc:authorization#section-application-signed-request).
+**FlashCallOptions** is an optional object for flashCall verifications. It allows you to specify Cli and dial time out parameters for flashCall. Cli is a particular number to be used as caller Id in the flashCall. The number that you specify needs to be a number that you have rented from the Sinch portal. DialTimeout should be specified in seconds and must be between 5 and 120. FlashCallOptions object can be specified optionally, and only if the verification request was triggered from your backend (no SDK client) through an [Application signed request](doc:using-rest#section-application-signed-request).
 
 By default you do not need to specify what CLI and dial time out to use. Sinch will pick a random CLI and optimize dial time out for your flashCall.
 
@@ -195,7 +195,7 @@ After the SMS or flashcall is received (and intercepted, in case of Android), th
 
 ### Authorization
 
-Authorization level can be specified in the Sinch dashboard, under your app settings. By default it is set to "Deny". If you are using this API to report a verification from your backend, you should use an [Application signed request](doc:authorization#section-application-signed-request).
+Authorization level can be specified in the Sinch dashboard, under your app settings. By default it is set to "Deny". If you are using this API to report a verification from your backend, you should use an [Application signed request](doc:using-rest#section-application-signed-request).
 
 ### Request
 
@@ -324,7 +324,7 @@ With this query you can get the result of a verification.
 
 ### Authorization
 
-This is a protected resource and requires an [Application signed request](doc:authorization#section-application-signed-request).
+This is a protected resource and requires an [Application signed request](doc:using-rest#section-application-signed-request).
 
 ### Request
 
@@ -409,7 +409,7 @@ With this query you can get the result of a verification by sending the referenc
 
 ### Authorization
 
-This is a protected resource and requires an [application signed request](doc:authorization#section-application-signed-request).
+This is a protected resource and requires an [application signed request](doc:using-rest#section-application-signed-request).
 
 ### Request
 
@@ -491,7 +491,7 @@ This is a protected resource and requires an [application signed request](doc:au
 
 ### Authorization
 
-The following endpoint is [public authorized](doc:authorization#section-public-resources), so there is no need to use any signing for this request. This is so that the client can poll for the status of their callout verification without first being authorized.
+The following endpoint is [public authorized](doc:using-rest#section-public-resources), so there is no need to use any signing for this request. This is so that the client can poll for the status of their callout verification without first being authorized.
 
 ### Request
 
