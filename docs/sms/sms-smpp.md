@@ -4,10 +4,9 @@ excerpt: "For our customers that require low level control of SMS messaging and 
 ---
 > **Note**    
 >
-> You need to reach out to our Sales team to get your credentials to use
-> this service. You can contact them [here](https://www.sinch.com/contact-us/).
+> You need to reach out to our Sales team to get your credentials to use this service. You can contact them [here](https://www.sinch.com/contact-us/).
 
-
+<br>
 
 > **Note**    
 >
