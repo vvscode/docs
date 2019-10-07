@@ -105,4 +105,4 @@ remoteUserLocation.setText("Calling from " + mCallLocation);
 
 That’s all\! Rinse and repeat for any data you want to send along with an app-to-app call.
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/android/how-to-add-an-android-header-in-a-calling-app.md"><span class="fab fa-github"></span>Edit on GitHub!</a>
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/android/how-to-add-an-android-header-in-a-calling-app.md"><span class="fab fa-github"></span>Edit on GitHub</a>

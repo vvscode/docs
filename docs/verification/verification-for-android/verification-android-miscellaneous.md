@@ -14,4 +14,4 @@ If [ProGuard](https://developer.android.com/studio/build/shrink-code.html) is us
 
 Please check the Summary of U.S. Export Controls Applicable to Commercial Encryption Products and ensure that the application is registered for the Encryption Regulations, if applicable. It can be found under this [link](http://www.sinch.com/export).
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/verification/verification-for-android/verification-android-miscellaneous.md"><span class="fab fa-github"></span>Edit on GitHub!</a>
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/verification/verification-for-android/verification-android-miscellaneous.md"><span class="fab fa-github"></span>Edit on GitHub</a>

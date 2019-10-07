@@ -8,4 +8,4 @@ To get started choose one of the below tutorials, they might need different setu
 Enjoy!
 
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/php.md"><span class="fab fa-github"></span>Edit on GitHub!</a>
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/php.md"><span class="fab fa-github"></span>Edit on GitHub</a>

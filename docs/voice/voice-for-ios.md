@@ -8,4 +8,4 @@ This document provides an overview for developers integrating with Sinch SDK for
 
 Please see the [Reference Documentation](http://www.sinch.com/docs/ios/reference/) for a comprehensive description of all the classes.
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/voice/voice-for-ios.md"><span class="fab fa-github"></span>Edit on GitHub!</a>
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/voice/voice-for-ios.md"><span class="fab fa-github"></span>Edit on GitHub</a>

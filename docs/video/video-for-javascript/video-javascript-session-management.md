@@ -56,4 +56,4 @@ The session object can be stored in any secure way you see best fit, for example
 
 See the Sample IM app for an example on working with sessions.
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/video/video-for-javascript/video-javascript-session-management.md"><span class="fab fa-github"></span>Edit on GitHub!</a>
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/video/video-for-javascript/video-javascript-session-management.md"><span class="fab fa-github"></span>Edit on GitHub</a>

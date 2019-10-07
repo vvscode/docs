@@ -12,4 +12,4 @@ The Sinch SDK provides a `PhoneNumberFormattingTextWatcher` class that behaves e
 
 The `isPossibleNumber` method in `PhoneNumberUtils` can be used to give the user a hint whether the entered phone number is a viable one in the specified region by for example highlighting the text field with a different color.
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/verification/verification-for-android/verification-android-improving-verification-performance-with-a-great-ui.md"><span class="fab fa-github"></span>Edit on GitHub!</a>
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/verification/verification-for-android/verification-android-improving-verification-performance-with-a-great-ui.md"><span class="fab fa-github"></span>Edit on GitHub</a>

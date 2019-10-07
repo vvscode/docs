@@ -154,4 +154,4 @@ $ curl -v -u user:password http://93.158.78.4:3700/lookup?msisdn=46708100200
 result=OK;imsi=24004
 ```
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/number-lookup/number-lookup-http-interface.md"><span class="fab fa-github"></span>Edit on GitHub!</a>
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/number-lookup/number-lookup-http-interface.md"><span class="fab fa-github"></span>Edit on GitHub</a>

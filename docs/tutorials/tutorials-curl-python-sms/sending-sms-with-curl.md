@@ -31,4 +31,4 @@ Copy and paste this into your terminal, wait a few seconds, and you should recei
 
 This is just a basic demo of our [SMS API](https://www.sinch.com/products/messaging/sms/), but read [our documentation <sms-classic-sinch>` and other `tutorials](doc:tutorials-introduction) to see how you can integrate this with your own backend. Have questions? Just email the team [here](mailto:hello@sinch.com).
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/curl-python-sms/sending-sms-with-curl.md"><span class="fab fa-github"></span>Edit on GitHub!</a>
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/curl-python-sms/sending-sms-with-curl.md"><span class="fab fa-github"></span>Edit on GitHub</a>

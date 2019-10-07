@@ -22,4 +22,4 @@ The statistics upload is done by the client in the background.
 
 All Third Party Libraries and Copyright notices can be found under this [link](http://www.sinch.com/legal/third-party-licenses/).
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/verification/verification-for-javascript/verification-js-miscellaneous.md"><span class="fab fa-github"></span>Edit on GitHub!</a>
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/verification/verification-for-javascript/verification-js-miscellaneous.md"><span class="fab fa-github"></span>Edit on GitHub</a>

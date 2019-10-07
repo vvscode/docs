@@ -28,4 +28,4 @@ NSString *phoneNumberInE164 = [SINPhoneNumberUtil() formatNumber:phoneNumber for
 ```
 
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/verification/verification-for-ios/verification-ios-phone-numbers.md"><span class="fab fa-github"></span>Edit on GitHub!</a>
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/verification/verification-for-ios/verification-ios-phone-numbers.md"><span class="fab fa-github"></span>Edit on GitHub</a>

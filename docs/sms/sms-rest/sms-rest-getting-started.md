@@ -25,4 +25,4 @@ Each service plan comes with a rate limit which sets the maximum number of messa
 
 Each service plan gets it's own message queue served in First-In-First-Out order. This means that new batches will be accepted immediately but might be delayed if earlier batches are still on queue.
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/sms/sms-rest/sms-rest-getting-started.md"><span class="fab fa-github"></span>Edit on GitHub!</a>
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/sms/sms-rest/sms-rest-getting-started.md"><span class="fab fa-github"></span>Edit on GitHub</a>

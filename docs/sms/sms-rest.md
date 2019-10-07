@@ -17,4 +17,4 @@ The REST Messaging API is designed to be a simple and powerful tool for large sc
  - Receive inbound messages and delivery notifications via HTTP or AWS SNS.
 
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/sms/sms-rest.md"><span class="fab fa-github"></span>Edit on GitHub!</a>
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/sms/sms-rest.md"><span class="fab fa-github"></span>Edit on GitHub</a>

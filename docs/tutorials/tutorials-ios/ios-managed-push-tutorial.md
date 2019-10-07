@@ -156,4 +156,4 @@ There are two types of push notifications: VoIP and traditional. VoIP notificati
 
 It’s good to have these methods implemented, as in versions prior to iOS 8, we aren’t able to use VoIP push notifications.
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/ios/ios-managed-push-tutorial.md"><span class="fab fa-github"></span>Edit on GitHub!</a>
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/ios/ios-managed-push-tutorial.md"><span class="fab fa-github"></span>Edit on GitHub</a>

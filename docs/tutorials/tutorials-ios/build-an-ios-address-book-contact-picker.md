@@ -447,4 +447,4 @@ You now have a fully functional [app-to-phone calling](https://www.sinch.com/pro
 
 
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/ios/build-an-ios-address-book-contact-picker.md"><span class="fab fa-github"></span>Edit on GitHub!</a>
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/ios/build-an-ios-address-book-contact-picker.md"><span class="fab fa-github"></span>Edit on GitHub</a>

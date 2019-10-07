@@ -88,4 +88,4 @@ Import the Sinch SDK in your website using
 > The --save flag is optional for saving the dependency in bower.json
 
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/video/video-for-javascript/video-javascript-first-time-setup.md"><span class="fab fa-github"></span>Edit on GitHub!</a>
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/video/video-for-javascript/video-javascript-first-time-setup.md"><span class="fab fa-github"></span>Edit on GitHub</a>

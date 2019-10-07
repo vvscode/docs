@@ -106,4 +106,4 @@ curl -H "Authorization: Bearer {token}" \
   "https://api.clxcommunications.com/xms/v1/{service_plan_id}/inbounds/{inbound_id}"
 ```
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/sms/sms-rest/sms-rest-inbounds-endpoint.md"><span class="fab fa-github"></span>Edit on GitHub!</a>
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/sms/sms-rest/sms-rest-inbounds-endpoint.md"><span class="fab fa-github"></span>Edit on GitHub</a>

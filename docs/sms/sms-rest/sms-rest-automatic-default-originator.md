@@ -8,4 +8,4 @@ For each MSISDN the originator will be auto selected from its default originator
 
 If no default originator exists for the target MSISDN, then the message will be failed only for that MSISDN and not for the rest of the batch.
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/sms/sms-rest/sms-rest-automatic-default-originator.md"><span class="fab fa-github"></span>Edit on GitHub!</a>
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/sms/sms-rest/sms-rest-automatic-default-originator.md"><span class="fab fa-github"></span>Edit on GitHub</a>

@@ -52,4 +52,4 @@ The benefit of using promises is that it's easy to make a *chain of method calls
 
 
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/verification/verification-for-javascript/verification-js-sinch-client.md"><span class="fab fa-github"></span>Edit on GitHub!</a>
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/verification/verification-for-javascript/verification-js-sinch-client.md"><span class="fab fa-github"></span>Edit on GitHub</a>

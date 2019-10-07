@@ -285,4 +285,4 @@ Now we actually have real life conference calling system with some security usin
 In the next tutorial, we will add a web client to call in to a conference.
 
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/net/building-your-own-conferencing-system-with-aspnet-mvc-part-1-getting-started.md"><span class="fab fa-github"></span>Edit on GitHub!</a>
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/net/building-your-own-conferencing-system-with-aspnet-mvc-part-1-getting-started.md"><span class="fab fa-github"></span>Edit on GitHub</a>

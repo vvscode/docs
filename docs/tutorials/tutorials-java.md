@@ -45,4 +45,4 @@ You can also manually download the JAR file from [Maven Central](https://repo1.m
 
 The SDK is published on the [Maven Central](https://mvnrepository.com/artifact/com.clxcommunications/sdk-xms/1.0.2) repository.
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/java.md"><span class="fab fa-github"></span>Edit on GitHub!</a>
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/java.md"><span class="fab fa-github"></span>Edit on GitHub</a>

@@ -81,4 +81,4 @@ MMS "Link Expiration Date’ is used to expire the MMS Link (In the case when MM
 ```
 
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/mms/xml-service/xml-service-sendmms.md"><span class="fab fa-github"></span>Edit on GitHub!</a>
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/mms/xml-service/xml-service-sendmms.md"><span class="fab fa-github"></span>Edit on GitHub</a>

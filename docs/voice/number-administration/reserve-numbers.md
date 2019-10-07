@@ -61,4 +61,4 @@ This is a protected resource and requires an [instance signed request](doc:using
         InvalidScheme (40301)       - The authorization scheme 'instance' is required.
 
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/voice/number-administration/reserve-numbers.md"><span class="fab fa-github"></span>Edit on GitHub!</a>
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/voice/number-administration/reserve-numbers.md"><span class="fab fa-github"></span>Edit on GitHub</a>

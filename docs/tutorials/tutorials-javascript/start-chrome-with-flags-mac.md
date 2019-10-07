@@ -11,4 +11,4 @@ When using the [Sinch JavaScript SDK](doc:voice-for-js) locally in Chrome, it is
    ![example.png](images/9069eea-example.png)
  1.  To quit, press **Ctrl-C** in the terminal tab that is running Chrome.
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/javascript/start-chrome-with-flags-mac.md"><span class="fab fa-github"></span>Edit on GitHub!</a>
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/javascript/start-chrome-with-flags-mac.md"><span class="fab fa-github"></span>Edit on GitHub</a>

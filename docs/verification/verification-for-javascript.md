@@ -13,4 +13,4 @@ Please see the [Reference Documentation](http://www.sinch.com/docs/javascript/re
 > Should you encounter any bugs, glitches, lack of functionality or other problems using our SDK, please send us an email to <dev@sinch.com>. Your help in this regard is greatly appreciated.
 
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/verification/verification-for-javascript.md"><span class="fab fa-github"></span>Edit on GitHub!</a>
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/verification/verification-for-javascript.md"><span class="fab fa-github"></span>Edit on GitHub</a>

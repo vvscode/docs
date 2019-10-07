@@ -54,4 +54,4 @@ You can find our other APIs below:
 - [Cloud SMPP](doc:sms-other-cloud-smpp)
 
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/sms/sms.md"><span class="fab fa-github"></span>Edit on GitHub!</a>
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/sms/sms.md"><span class="fab fa-github"></span>Edit on GitHub</a>

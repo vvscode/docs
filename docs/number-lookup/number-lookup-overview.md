@@ -46,4 +46,4 @@ Input for a Number Lookup query is always an MSISDN - the table below illustrate
 </div>
 
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/number-lookup/number-lookup-overview.md"><span class="fab fa-github"></span>Edit on GitHub!</a>
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/number-lookup/number-lookup-overview.md"><span class="fab fa-github"></span>Edit on GitHub</a>

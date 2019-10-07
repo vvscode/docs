@@ -19,4 +19,4 @@ The MMS capabilities are offered over an XML API, and via an implementation of t
 
 If you have any questions, feel free to check out our help section or contact us.
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/mms/mms-introduction.md"><span class="fab fa-github"></span>Edit on GitHub!</a>
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/mms/mms-introduction.md"><span class="fab fa-github"></span>Edit on GitHub</a>

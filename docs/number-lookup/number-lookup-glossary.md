@@ -18,4 +18,4 @@ excerpt: ""
 | e164.arpa | The domain used for DNS mapping                                          |
 
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/number-lookup/number-lookup-glossary.md"><span class="fab fa-github"></span>Edit on GitHub!</a>
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/number-lookup/number-lookup-glossary.md"><span class="fab fa-github"></span>Edit on GitHub</a>

@@ -132,4 +132,4 @@ Finally, this integration needs a better way of dealing with phone number format
 
 I hope that helps and please let us know in the comments section if you have any questions or issues.
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/php/send-an-sms-from-slack.md"><span class="fab fa-github"></span>Edit on GitHub!</a>
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/php/send-an-sms-from-slack.md"><span class="fab fa-github"></span>Edit on GitHub</a>

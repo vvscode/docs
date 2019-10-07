@@ -4,4 +4,4 @@ excerpt: "Find out more about the APIs that Sinch has to offer and learn how to 
 ---
 
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/tutorials-introduction.md"><span class="fab fa-github"></span>Edit on GitHub!</a>
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/tutorials-introduction.md"><span class="fab fa-github"></span>Edit on GitHub</a>

@@ -51,4 +51,4 @@ The benefit of using promises is that it's easy to make a *chain of method calls
 > If both callbacks and promises are used, the execution order is for callbacks to be executed first followed by the methods in the promise-chain, specified using \`\`.then()\`\`
 
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/voice/voice-for-js/voice-js-sinch-client.md"><span class="fab fa-github"></span>Edit on GitHub!</a>
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/voice/voice-for-js/voice-js-sinch-client.md"><span class="fab fa-github"></span>Edit on GitHub</a>

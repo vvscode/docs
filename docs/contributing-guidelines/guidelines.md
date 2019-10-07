@@ -209,4 +209,4 @@ if possible. Be open about areas that will frustrate our developers
 
 <http://www.hemingwayapp.com/>
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/contributing-guidelines/guidelines.md"><span class="fab fa-github"></span>Edit on GitHub!</a>
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/contributing-guidelines/guidelines.md"><span class="fab fa-github"></span>Edit on GitHub</a>

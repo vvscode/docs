@@ -104,4 +104,4 @@ messageClient.send(message);
 
 The recipient’s state transitions for the message are communicated back using the `MessageClientListener` listener the same as in the single recipient case. The listener’s callbacks are triggered for every recipient.
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/video/video-for-android/video-android-instant-messaging.md"><span class="fab fa-github"></span>Edit on GitHub!</a>
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/video/video-for-android/video-android-instant-messaging.md"><span class="fab fa-github"></span>Edit on GitHub</a>

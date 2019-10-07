@@ -73,4 +73,4 @@ sinchClient.start({username: 'alice', password: 'somethingSecure'})
 
 This code will instantiate SinchClient, and will start the client using the username *‘Alice’*.
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/voice/voice-for-js/voice-js-authentication.md"><span class="fab fa-github"></span>Edit on GitHub!</a>
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/voice/voice-for-js/voice-js-authentication.md"><span class="fab fa-github"></span>Edit on GitHub</a>

@@ -346,4 +346,4 @@ I wanted to make it super easy for officials to send a quick message. Getting dr
 That’s pretty much it when it comes to the SMS and Sinch functionality, in the solution you will see some user handling and a few pages to deal with messages that is standard aspnet stuff. Clone this and let me know if you have any questions.
 
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/net/building-a-simple-sms-notification-system-with-sinch.md"><span class="fab fa-github"></span>Edit on GitHub!</a>
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/net/building-a-simple-sms-notification-system-with-sinch.md"><span class="fab fa-github"></span>Edit on GitHub</a>

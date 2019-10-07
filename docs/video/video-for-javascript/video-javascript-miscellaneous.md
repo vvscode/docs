@@ -24,4 +24,4 @@ Some of the information is not anonymous and may be associated with the User ID 
 
 The statistics upload is done by the client in the background.
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/video/video-for-javascript/video-javascript-miscellaneous.md"><span class="fab fa-github"></span>Edit on GitHub!</a>
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/video/video-for-javascript/video-javascript-miscellaneous.md"><span class="fab fa-github"></span>Edit on GitHub</a>

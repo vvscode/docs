@@ -171,4 +171,4 @@ First public beta version of the Sinch SDK for Android with support for:
 -   Instant messaging to single and multiple recipient
 
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/release-notes/release-notes-voice-android-sdk.md"><span class="fab fa-github"></span>Edit on GitHub!</a>
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/release-notes/release-notes-voice-android-sdk.md"><span class="fab fa-github"></span>Edit on GitHub</a>

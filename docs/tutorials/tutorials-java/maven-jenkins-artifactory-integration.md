@@ -137,4 +137,4 @@ Thanks,
 
 Maryia Tuleika, Test Automation Developer at [Sinch](https://www.sinch.com/)
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/java/maven-jenkins-artifactory-integration.md"><span class="fab fa-github"></span>Edit on GitHub!</a>
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/java/maven-jenkins-artifactory-integration.md"><span class="fab fa-github"></span>Edit on GitHub</a>

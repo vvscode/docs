@@ -126,4 +126,4 @@ This tutorial relies on Caller ID, which can be a little flaky since the user mi
 
 None of this is magic, it’s just upping your Uber for X solution with real-time in-app communication. I mean who wouldn’t want to create company valued north of 50bn, right?
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/net/keep-users-phone-numbers-private-in-your-uber-for-x.md"><span class="fab fa-github"></span>Edit on GitHub!</a>
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/net/keep-users-phone-numbers-private-in-your-uber-for-x.md"><span class="fab fa-github"></span>Edit on GitHub</a>

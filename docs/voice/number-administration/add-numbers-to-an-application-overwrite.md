@@ -150,4 +150,4 @@ This is a protected resource and requires an [instance signed request](doc:using
 
 
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/voice/number-administration/add-numbers-to-an-application-overwrite.md"><span class="fab fa-github"></span>Edit on GitHub!</a>
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/voice/number-administration/add-numbers-to-an-application-overwrite.md"><span class="fab fa-github"></span>Edit on GitHub</a>

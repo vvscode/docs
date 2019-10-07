@@ -14,4 +14,4 @@ If a target MSISDN is missing in the parameters object and no default value has 
 
 Parameter keys are case sensitive.
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/sms/sms-rest/sms-rest-parameterization.md"><span class="fab fa-github"></span>Edit on GitHub!</a>
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/sms/sms-rest/sms-rest-parameterization.md"><span class="fab fa-github"></span>Edit on GitHub</a>
