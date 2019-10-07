@@ -1,6 +1,6 @@
 # Publication and deployment
 
-We have chosen to go with an solution provided by www.readme.io to host our documentation.
+We have chosen to go with an solution provided by [readme](https://www.readme.io) to host our documentation.
 
 There's not many steps needed to get your content up.
 
@@ -24,7 +24,7 @@ To use callouts and the benefit of having them styled with CSS they should be wr
 > Here's some very informational text.
 ```
 
-You can use any of the following keywords in the note title:
+You can use any of the following keywords in the notetitle:
 - note
 - info
 - information
