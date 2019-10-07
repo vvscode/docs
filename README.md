@@ -19,7 +19,7 @@ If you're new to Markdown or need to update your knowledge check out this [cheat
 To use callouts and the benefit of having them styled with CSS they should be written as follows:
 
 ```text
-> \*\*Note\*\*
+> **Note**
 >
 > Here's some very informational text.
 ```
@@ -33,12 +33,12 @@ You can use any of the following titles in the note:
 - important
 - update
 
-[callout examples](images/callouts.png)
+[](images/callouts.png)
 
 ### Filenames
 
 The structure is important and so are the filenames.
 
-[Project structure](images/structure.png)
+[](images/structure.png)
 
 A folder in `docs/...` level will be the *category name*. In the example above the folder `whatsapp` will the category name on the hosted site. To add a new category to the documentation, it is needed to edit the file `config.yml` in the root folder.
