@@ -46,7 +46,7 @@ program
 Fetches up-to-date Markdown content files from readme.io, overwriting local files.
 When called with a comma-delimited list of category slugs, only pages from those categories will be fetched.
 
-After crawling remote pages, the contents of the local catalog will be analyzed to find stale pages (pages present 
+After crawling remote pages, the contents of the local catalog will be analyzed to find stale pages (pages present
 locally but not present on Readme). If any are found, the program will offer to prune them.
 `)
     .option('-d, --dir <dir>', 'Destination directory where docs Markdown files will be written', DEFAULT_DOCS_DIR)
@@ -195,8 +195,8 @@ program
 
 program
     .command('validate [category_slugs]', )
-    .description(`Validates Markdown content files. 
-    
+    .description(`Validates Markdown content files.
+
 The following validators are available:
 
  - 'urls':         Verifies that URLs do resolve to an existing target. An HTTP HEAD request is performed for each URL.
@@ -204,7 +204,7 @@ The following validators are available:
  - 'mailtos':      Verifies that mailto: links (links to email addresses) are correctly formed.
  - 'headings':     Verifies that section headings are at minimum 2 levels deep
  - 'images':       Verifies that images (either specified with a relative path or with a remote URL) do exist.
- 
+
 All validations are performed unless --validations is specified.
     `)
     .option('-d, --dir <dir>', `Directory where the Markdown content files will be loaded from.`, DEFAULT_DOCS_DIR)
@@ -269,7 +269,7 @@ All validations are performed unless --validations is specified.
                 fs.readFile(filePath, function(err, data){
                     if(err) console.log('There was an error reading the file!', err);
                     if(!data.includes(url)){
-                        let anchor = `\n\n<a class="gitbutton pill" target="_blank" href="${url}"><span class="fab fa-github"></span>Edit on GitHub!</a>`
+                        let anchor = `\n\n<a class="gitbutton pill" target="_blank" href="${url}"><span class="fab fa-github"></span>Edit on GitHub</a>`
                         fs.appendFile(filePath, anchor, function(err) {
                             err ? console.log(err) : console.log(chalk.green(`The url ${url} has been appendended to the end of the file ${filePath}`))
                         })
