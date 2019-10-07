@@ -4,6 +4,8 @@ We have chosen to go with an solution provided by [readme](https://www.readme.io
 
 There's not many steps needed to get your content up.
 
+Anyone can fork and submit pull requests!
+
 ## 1. Clone the repo
 
 ```text
@@ -24,7 +26,7 @@ To use callouts and the benefit of having them styled with CSS they should be wr
 > Here's some very informational text.
 ```
 
-You can use any of the following keywords in the notetitle:
+You can use any of the following keywords in the note title:
 - note
 - info
 - information
@@ -54,6 +56,16 @@ You can cross reference to a document or to a section within an document.
 To reference to the Introduction in the WhatsApp category just use the page slug (file name), like this `[readable text](doc:whatsapp-introduction)`. This reference can be used on any page. If you want to reference to a section in the introduction  `[readable text](doc:whatsapp-introduction#section-[heading title])`. `#section-` should be prepended to the heading title that you want to reference.
 
 All headings will be referenceable.
+
+### URLs
+
+When you want to create an link such as `[sinch](https://wwww.sinch.com)` make sure to use the full URL, with `https://`. Otherwise the URL will not work.
+
+### Images
+
+Images are referenced relative to the document that shows the image. 
+
+![Image reference](/images/image-ref.png)
 
 ## 3. Deploy
 
