@@ -33,12 +33,12 @@ You can use any of the following titles in the note:
 - important
 - update
 
-[](/images/callouts.png)
+![Callout examples](/images/callouts.png)
 
 ### Filenames
 
 The structure is important and so are the filenames.
 
-[](/images/structure.png)
+![Project structure](/images/structure.png)
 
 A folder in `docs/...` level will be the *category name*. In the example above the folder `whatsapp` will the category name on the hosted site. To add a new category to the documentation, it is needed to edit the file `config.yml` in the root folder.
