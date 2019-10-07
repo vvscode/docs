@@ -1,6 +1,6 @@
 # Publication and deployment
 
-We have chosen to go with an solution provided by [readme](www.readme.io) to host our documentation.
+We have chosen to go with an solution provided by www.readme.io to host our documentation.
 
 There's not many steps needed to get your content up.
 
