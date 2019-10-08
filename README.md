@@ -16,6 +16,8 @@ https://github.com/sinch/docs.git
 
 If you're new to Markdown or need to update your knowledge check out this [cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
 
+Tips on how to write useful and easy to read [docs](CONTRIBUTING.md)
+
 ### Callouts
 
 To use callouts and the benefit of having them styled with CSS they should be written as follows:
