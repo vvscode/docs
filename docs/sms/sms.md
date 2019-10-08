@@ -6,17 +6,17 @@ excerpt: "This document provides a detailed user guide and reference documentati
 
 We offer a number of different APIs and libraries that make it easy for you to use our SMS services globally, to send and receive messages.
 
+## The different SMS APIs
+
+### REST
+The easiest and most feature-rich API we offer. It allows for single messages, scheduled batch sending, message templates and more. You can also use our server-side libraries if you like to work natively in your programming language of choice.
+
+### SMPP
+SMPP interfaces for full control and low latency.
+
 > **Note**    
 >
 > If you are a local customer of Sinch Germany GmbH, using our domestic German platform, please contact our [German support team](mailto:support-de@sinch.com) for further assistance.
-
-## The different SMS APIs
-
-### [REST](doc:sms-rest)
-The easiest and most feature-rich API we offer. It allows for single messages, scheduled batch sending, message templates and more. You can also use our server-side libraries if you like to work natively in your programming language of choice.
-
-### [SMPP](doc:sms-smpp)
-SMPP interfaces for full control and low latency.
 
 ## Getting started
 Getting started with the Sinch SMS API is simple.
