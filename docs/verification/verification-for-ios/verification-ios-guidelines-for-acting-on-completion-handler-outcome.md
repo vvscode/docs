@@ -20,7 +20,7 @@ Note that the following error codes can be recovered from by asking the user for
 - `SINVerificationErrorInvalidInput`
 - `SINVerificationErrorIncorrectCode`
 
-> **WARNING: Important**    
+> **Important**    
 >
 > If a verification is cancelled, the error code `SINVerificationErrorCancelled` will be given. It is important that the application handle this error code in a way that is not annoying the user. E.g. a cancellation is often a consequence of the user's actions so it is in a sense an expected outcome and should in most cases not be shown as an error in a `UIAlert` (or similar).
 
