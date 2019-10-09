@@ -125,7 +125,7 @@ active voice.
 These active writing tips will help you make your work easy to understand and
 coherent.
 
--   • Put the subject first. To change passive a sentence to active, flip the
+-   Put the subject first. To change passive a sentence to active, flip the
     sentence around. That makes it clear who is performing the action. This also
     reduces the number of words in the sentence .
 
