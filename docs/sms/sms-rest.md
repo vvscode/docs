@@ -16,5 +16,8 @@ The REST Messaging API is designed to be a simple and powerful tool for large sc
  - Automatic default originator selection support for messages without originator.
  - Receive inbound messages and delivery notifications via HTTP or AWS SNS.
 
+> **Note**
+>
+> We have updated the endpoints used by the SMS REST API. [Read more](doc:sms-rest-getting-started#section-base-url)
 
 <a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/sms/sms-rest.md"><span class="fab fa-github"></span>Edit on GitHub</a>

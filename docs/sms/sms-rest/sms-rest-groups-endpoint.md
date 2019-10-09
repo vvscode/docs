@@ -60,7 +60,7 @@ curl -X POST \
           ],
           "name": "My group"
 }' \
-  "https://api.clxcommunications.com/xms/v1/{service_plan_id}/groups"
+  "https://eu.api.sinch.com/xms/v1/{service_plan_id}/groups"
 ```
 
 
@@ -83,7 +83,7 @@ curl -X POST \
                     }
                 }
 }' \
-  "https://api.clxcommunications.com/xms/v1/{service_plan_id}/groups"
+  "https://eu.api.sinch.com/xms/v1/{service_plan_id}/groups"
 ```
 
 
@@ -108,7 +108,7 @@ curl -X POST \
                     }
                 }
 }' \
-  "https://api.clxcommunications.com/xms/v1/{service_plan_id}/groups"
+  "https://eu.api.sinch.com/xms/v1/{service_plan_id}/groups"
 ```
 
 
@@ -126,7 +126,7 @@ curl -X POST \
                 "yiinTKVNAEAu"
           ]
 }' \
-  "https://api.clxcommunications.com/xms/v1/{service_plan_id}/groups"
+  "https://eu.api.sinch.com/xms/v1/{service_plan_id}/groups"
 ```
 
 
@@ -161,7 +161,7 @@ Query parameters:
 **Retrieve the first 30 groups**
 ```shell
 curl -H "Authorization: Bearer {token}" \
-  "https://api.clxcommunications.com/xms/v1/{service_plan_id}/groups"
+  "https://eu.api.sinch.com/xms/v1/{service_plan_id}/groups"
 ```
 
 
@@ -170,7 +170,7 @@ curl -H "Authorization: Bearer {token}" \
 **Retrieve the third page of groups with a page size of 50**
 ```shell
 curl -H "Authorization: Bearer {token}" \
-  "https://api.clxcommunications.com/xms/v1/{service_plan_id}/groups?page=3&page_size=50"
+  "https://eu.api.sinch.com/xms/v1/{service_plan_id}/groups?page=3&page_size=50"
 ```
 
 
@@ -195,7 +195,7 @@ If the group ID is unknown to the system.
 **Retrieve a group**
 ```shell
 curl -H "Authorization: Bearer {token}" \
-  "https://api.clxcommunications.com/xms/v1/{service_plan_id}/groups/{group_id}"
+  "https://eu.api.sinch.com/xms/v1/{service_plan_id}/groups/{group_id}"
 ```
 
 
@@ -220,7 +220,7 @@ If the group ID is unknown to the system.
 **Retrieve group members**
 ```shell
 curl -H "Authorization: Bearer {token}" \
-  "https://api.clxcommunications.com/xms/v1/{service_plan_id}/groups/{group_id}/members"
+  "https://eu.api.sinch.com/xms/v1/{service_plan_id}/groups/{group_id}/members"
 ```
 
 
@@ -282,7 +282,7 @@ curl -X POST \
               "432156789"
           ]
 }' \
-  "https://api.clxcommunications.com/xms/v1/{service_plan_id}/groups/{group_id}"
+  "https://eu.api.sinch.com/xms/v1/{service_plan_id}/groups/{group_id}"
 ```
 
 
@@ -296,7 +296,7 @@ curl -X POST \
       {
           "name": "New group name"
 }' \
-  "https://api.clxcommunications.com/xms/v1/{service_plan_id}/groups/{group_id}"
+  "https://eu.api.sinch.com/xms/v1/{service_plan_id}/groups/{group_id}"
 ```
 
 
@@ -310,7 +310,7 @@ curl -X POST \
       {
           "name": null
 }' \
-  "https://api.clxcommunications.com/xms/v1/{service_plan_id}/groups/{group_id}"
+  "https://eu.api.sinch.com/xms/v1/{service_plan_id}/groups/{group_id}"
 ```
 
 
@@ -362,7 +362,7 @@ curl -X PUT \
           ],
       "name": "New name"
 }' \
-  "https://api.clxcommunications.com/xms/v1/{service_plan_id}/groups/{group_id}"
+  "https://eu.api.sinch.com/xms/v1/{service_plan_id}/groups/{group_id}"
 ```
 
 
@@ -388,7 +388,7 @@ If the group ID is unknown to the system.
 ```shell
 curl -X DELETE \
      -H "Authorization: Bearer {token}" \
-     "https://api.clxcommunications.com/xms/v1/{service_plan_id}/groups/{group_id}"
+     "https://eu.api.sinch.com/xms/v1/{service_plan_id}/groups/{group_id}"
 ```
 
 

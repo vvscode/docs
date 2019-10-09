@@ -2,13 +2,13 @@
 title: "Getting Started"
 excerpt: "The most feature-rich API Sinch offers. It allows for single messages, scheduled batch send-outs using message templates and more."
 ---
-### Service plan
+## Service plan
 
-To use the REST API you first need to create an HTTP REST Service using the [web dashboard](https://dashboard.sinch.com/#/signup). You can have multiple service plans and each one will see their messages, groups or other resources isolated from each other. 
+To use the REST API you first need to create an HTTP REST Service using the [web dashboard](https://dashboard.sinch.com/#/signup). You can have multiple service plans and each one will see their messages, groups or other resources isolated from each other.
 
-### Authentication
+## Authentication
 
-You will be provided with an authentication token for each service plan. 
+You will be provided with an authentication token for each service plan.
 
 The token is sent in the `Authorization` header preceded by `Bearer`. It is required for all requests made to the REST API.
 
@@ -16,10 +16,20 @@ The token is sent in the `Authorization` header preceded by `Bearer`. It is requ
 
 ``` shell
 $ curl -H "Authorization: Bearer {token}" \
-"https://api.clxcommunications.com/xms/v1/{service_plan_id}/batches
+"https://eu.api.sinch.com/xms/v1/{service_plan_id}/batches"
 ```
 
-### Rate Limits
+## Base URL
+
+The following URLs can be used by the REST API. We have servers in the US and EU.
+
+
+| Server        |  URL                                   |
+|---------------|----------------------------------------|
+| US Production | https://us.api.sinch.com     |
+| EU Production | https://eu.api.sinch.com     |
+
+## Rate Limits
 
 Each service plan comes with a rate limit which sets the maximum number of messages that can be sent per second. The rate limit is calculated from all messages sent via the API, so a batch with 10 recipients will count as 10 messages for rate limiting purposes.
 
