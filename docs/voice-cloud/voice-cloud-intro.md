@@ -46,9 +46,8 @@ For more information please check the [Callback API](doc:voice-cloud-callback-ap
 
 > **Note**
 >
-> You may need to be configured specifically for this  
-> functionality - please contact [Sinch Support](support@sinch.com) if you have any questions!
->
+> You may need to be configured specifically for this functionality - please contact [Sinch Support](mailto:support@sinch.com) if you have any questions!
+
 
 ## Phone to phone calls
 
