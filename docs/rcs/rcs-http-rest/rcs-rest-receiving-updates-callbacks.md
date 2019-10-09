@@ -488,7 +488,7 @@ At least one of `postback_data` and `text` will be set.
 | --------- | ------ | -------------------------- | ------- | ---------------------------- | -------- |
 | type      | string | Static string 'location'   | N/A     | N/A                          | Yes      |
 | latitude  | number | Latitude of user location  | No      | MinValue: -90 MaxValue: 90   | Yes      |
-| longitude | number | Longitude of user location | No      | MinValue: -180 MaxValue: 180 | Yes      | string | Static string 'location'   | N/A     | N/A                          | Yes      |
+| longitude | number | Longitude of user location | No      | MinValue: -180 MaxValue: 180 | Yes      |
 | latitude  | number | Latitude of user location  | No      | MinValue: -90 MaxValue: 90   | Yes      |
 | longitude | number | Longitude of user location | No      | MinValue: -180 MaxValue: 180 | Yes      |
 
