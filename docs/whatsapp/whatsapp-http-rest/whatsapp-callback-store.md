@@ -30,7 +30,7 @@ The response body is a JSON object with the following parameters:
         {
           "status":"success",
           "state":"delivered",
-          "message_id":"asdbas-7sdf78sd-16237smh",
+          "message_id":"01DPNXZ0WCF9XD19MH84XD0P62",
           "recipient": "+46732001122",
         }
       ]
@@ -94,7 +94,7 @@ The response body is a JSON object with the following parameters:
         {
           "from":"46732001122",
           "to":"sinchbot",
-          "message_id":"asd89-sdfsdfsdjsd-7as8da9",
+          "message_id":"01DPNXZ0WCF9XD19MH84XD0P62",
           "message":{
             "type":"text",
             "body":"Hello bot I want to know something!"

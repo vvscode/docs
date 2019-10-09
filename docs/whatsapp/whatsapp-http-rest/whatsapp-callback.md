@@ -49,7 +49,7 @@ Where the states means:
     {
       "status":"success",
       "state":"delivered",
-      "message_id":"asdbas-7sdf78sd-16237smh",
+      "message_id":"01DPNXZ0WCF9XD19MH84XD0P62",
       "recipient": "+46732001122",
     }
   ]
@@ -94,7 +94,7 @@ The format is as follows:
     {
       "from":"0732001122",
       "to":"sinchbot",
-      "message_id":"asd89-sdfsdfsdjsd-7as8da9",
+      "message_id":"01DPNXZ0WCF9XD19MH84XD0P62",
       "message":{
         "type":"text",
         "body":"Hello bot I want to know something!"
@@ -124,7 +124,7 @@ The format is as follows:
     {
       "from":"0732001122",
       "to":"sinchbot",
-      "message_id":"asd89-sdfsdfsdjsd-7as8da9",
+      "message_id":"01DPNXZ0WCF9XD19MH84XD0P62",
       "message":{
         "type":"location",
         "lat":55.7047,
@@ -225,7 +225,7 @@ The format is as follows:
     {
       "from":"0732001122",
       "to":"sinchbot",
-      "message_id":"asd89-sdfsdfsdjsd-7as8fr9",
+      "message_id":"01DPNXZ0WCF9XD19MH84XD0P62",
       "message":{
         "type":"contacts",
         "contacts":[
@@ -299,7 +299,7 @@ The format is as follows:
     {
       "from":"0732001122",
       "to":"sinchbot",
-      "message_id":"a0189-7df8df4d129-7as8da9",
+      "message_id":"01DPNXZ0WCF9XD19MH84XD0P62",
       "message":{
         "type":"image",
         "url":"http://www.example.com/img.jpg",

@@ -41,7 +41,7 @@ The response body is a JSON object with the same format as a [delivery report ca
   "type": "whatsapp",
   "statuses":[
     {
-      "message_id":"f1690238-9c72-49c3-b1c6-b701f8765732",
+      "message_id":"01DPNXZ0WCF9XD19MH84XD0P62",
       "recipient":"+46732001122",
       "status":"success",
       "state":"queued"
@@ -74,10 +74,7 @@ JSON object parameters:
 | template_name | Name of the template                                                 | String       | N/A        | N/A                   | Yes      |
 | language      | Language to send the template in                                     | String       | `en`       | Language codes and locales (e.g `en`, `en_us`) | No       |
 | params        | Parameters to inject into the template.                              | String       | N/A        |                       | Yes      |
-| ttl           | Time to live of the template message. If the receiver has not opened the
-template message before the time to live expires, the message will be deleted
-and a failed callback will be sent. The time to live can be specified
-in ISO-8601 Duration format or in seconds as a string. | String       | 30 Days    | Valid URL             | No      |
+| ttl           | Time to live of the template message. If the receiver has not opened the template message before the time to live expires, the message will be deleted and a failed callback will be sent. The time to live can be specified in ISO-8601 Duration format or in seconds as a string. | String       | 30 Days    | Valid URL             | No      |
 
 ```json
 {
