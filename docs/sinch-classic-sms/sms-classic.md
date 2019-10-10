@@ -219,16 +219,16 @@ For high-capacity SMS traffic or marketing campaigns, you will need to order a S
 
 ---
 
-# Messaging API
+## Messaging API
 
 
     URI: https://messagingapi.sinch.com/v1
 
-## Overview
+### Overview
 
 The SMS messaging API allows you to send SMS messages and check their status using the Sinch dashboard.
 
-## ErrorCodes
+### ErrorCodes
 
     [Error Codes]
        40001 - Parameter validation
@@ -242,7 +242,7 @@ The SMS messaging API allows you to send SMS messages and check their status usi
        40303 - Full Sms access not enabled for App. Can only send Sms to verified numbers.
        50000 - Internal error
 
-## Send SMS
+### Send SMS
 
 **[POST] /Sms/{number}**
 
@@ -250,11 +250,11 @@ Send an SMS message to the number supplied in the URL, with the contents defined
 
 **Important:** To use the Sinch SMS API, you will need to have a verified phone number in the Sinch dashboard. To verify your phone number, sign in to the [Sinch dashboard](https://portal.sinch.com/#/login) click Quickstart and follow the instructions. Also check the [recipient number restrictions](doc:#section-recipient-number-restrictions).
 
-### Authorization
+#### Authorization
 
 This is a protected resource and requires an [application signed request](doc:using-rest#section-application-signed-request) or [basic auth](doc:using-rest#section-basic-authorization).
 
-### Request
+#### Request
 
     [Body]
         string? - from
@@ -281,13 +281,13 @@ This is a protected resource and requires an [application signed request](doc:us
         "message":"Hello there"
     }
 
-#### Recipient number restrictions
+##### Recipient number restrictions
 
 With a Sandbox app you will only be able to send SMS to your verified phone number.
 
 To send SMS to any phone number, you will need a Production app with “Full SMS access” enabled. To request “Full SMS access” for your Production app, go to the SMS settings of your Production app and request full SMS access.
 
-### “From” field restrictions
+#### “From” field restrictions
 
 The “From” field indicates the phone number or alphanumeric string that will be displayed to the recipient of the SMS message. There are a number of restrictions that should be considered when setting the “From” field:
 
@@ -308,7 +308,7 @@ Alternatively, you can rent and configure numbers with REST APIs. For more infor
 
 If you want to be able to set a custom alphanumeric in the “From” as sender, please contact [our sales team](mailto:sales@sinch.com). Remember that there are country-specific restrictions when setting an alphanumeric senders, so it may not be allowed in specific countries.
 
-### Response
+#### Response
 
     int - messageId
 
@@ -320,21 +320,21 @@ If you want to be able to set a custom alphanumeric in the “From” as sender,
         "messageId": 123
     }
 
-## Check message status
+### Check message status
 
 **[GET] /Sms/{messageId}** - Checks the status of a SMS message.
 
-### Authorization
+#### Authorization
 
 This is a protected resource and requires an [application signed request](doc:using-rest#section-application-signed-request) or [basic auth](doc:using-rest#section-basic-authorization).
 
-### Request
+#### Request
 
 *Example*
 
     URL: [GET] https://messagingapi.sinch.com/v1/message/status/1234
 
-### Response
+#### Response
 
     string - status
 
@@ -351,7 +351,7 @@ This is a protected resource and requires an [application signed request](doc:us
 > -   Successful - The message has been delivered to the recipient
 > -   Faulted - The message has not been delivered. This status can be due to an invalid number for example.
 
-## Message size
+### Message size
 
 Max number of characters per SMS depends on which alphabet is used. Default is the [GCM 7-bit alphabet](https://en.wikipedia.org/wiki/GSM_03.38), but characters in languages such as Arabic, Chinese, Korean, Japanese, or Cyrillic alphabet languages (e.g., Ukrainian, Serbian, Bulgarian, etc) must be encoded using the 16-bit UCS-2 character encoding.
 
@@ -362,9 +362,9 @@ When sending concatenated SMS 6 bytes are allocated for segmentation and reassem
 
 ---
 
-# Callback API
+## Callback API
 
-## Overview
+### Overview
 
 The Sinch dashboard supports notifying your backend application about incoming (MO) SMS through the messaging callback APIs.
 
@@ -372,13 +372,13 @@ To receive MO SMS messages you must have rented and configured an SMS-enabled nu
 
 For more information see [SMS-enabled numbers: Long Numbers and Short Codes](doc:#section-sms-enabled-numbers).
 
-## Incoming SMS Event Callback
+### Incoming SMS Event Callback
 
 When a MO SMS is received by the Sinch dashboard from a specific SMS-enabled number, the system sends a notification through a callback request to your backend application. The callback is a post request to a specified URL. URLs for callbacks need to be configured in the Sinch portal when creating or configuring an application.
 
 The callback request is signed using the application key and secret. The application should be the one to which the SMS number is configured. You can find more information on callback request signing [here](doc:using-rest#callback-request-signing).
 
-### Request
+#### Request
 
     [RequestBody]
     {
@@ -423,7 +423,7 @@ The callback request is signed using the application key and secret. The applica
 
 ---
 
-# Call Detail Records
+## Call Detail Records
 
 CDRs can be downloaded from the Sinch portal. CDRs are in a semicolon-delimited file that contains the following fields
 
