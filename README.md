@@ -65,9 +65,13 @@ When you want to create an link such as `[sinch](https://wwww.sinch.com)` make s
 
 ### Images
 
-Images are referenced relative to the document that shows the image. 
+Images are referenced relative to the document that shows the image.
 
 ![Image reference](/images/image-ref.png)
+
+### Add a New Category
+
+To be able to add a new category you have to have access to [readme dashboard](https://dash.readme.io). There you can add an category, i.e. you want to create a new SMS category called "SMS SMPP", in `/docs` the corresponding folder name would be `sms-smpp` and the path `/docs/sms-smpp`. If you do not have access do the dashboard you can ask [Amar V](mailto:amar.vrbanjac@sinch.com) to give you access, or to create the desired category.
 
 ## 3. Deploy
 
