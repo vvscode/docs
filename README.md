@@ -47,7 +47,13 @@ The structure is important and so are the filenames. The filename will be the pa
 
 A folder in `docs/...` level will be the *category name*. In the example above, `docs/whatsapp`, where *Whatsapp* will be the category name on the hosted site. To add a new category to the documentation, it is needed to edit the file `config.yml` in the root folder.
 
+#### Add a New Category
+
+To be able to add a new category you have to have access to [readme dashboard](https://dash.readme.io). There you can add an category, i.e. you want to create a new SMS category called "SMS SMPP", in `/docs` the corresponding folder name would be `sms-smpp` and the path `/docs/sms-smpp`. If you do not have access do the dashboard you can ask [Amar V](mailto:amar.vrbanjac@sinch.com) to give you access, or to create the desired category.
+
 An `.md` file in `whatsapp`-directory will also be on the first level in the side navigation. Examples in the above picture are `whatsapp-introduction.md` and `whatsapp-http-rest.md`.
+
+#### Sub-navigation
 
 If you wish to have sub-navigation in the side-navigation in the hosted site - create a folder with the same name as the file that you wish to have sub-navigation. There are only two navigation levels possible in the side navigation. In the picture above: we want `WhatsApp REST API` to have sub-levels and therefore need to add a folder that has the same name as the file that has the title of `WhatsApp REST API`, in this case `whatsapp-http-rest.md`. Any files placed in the created folder `whatsapp-http-rest` will be in the sub-navigation.
 
@@ -68,10 +74,6 @@ When you want to create an link such as `[sinch](https://wwww.sinch.com)` make s
 Images are referenced relative to the document that shows the image.
 
 ![Image reference](/images/image-ref.png)
-
-### Add a New Category
-
-To be able to add a new category you have to have access to [readme dashboard](https://dash.readme.io). There you can add an category, i.e. you want to create a new SMS category called "SMS SMPP", in `/docs` the corresponding folder name would be `sms-smpp` and the path `/docs/sms-smpp`. If you do not have access do the dashboard you can ask [Amar V](mailto:amar.vrbanjac@sinch.com) to give you access, or to create the desired category.
 
 ## 3. Deploy
 
