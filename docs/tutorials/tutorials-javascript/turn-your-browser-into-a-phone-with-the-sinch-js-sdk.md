@@ -203,4 +203,3 @@ To test your app, open two browser windows, log in as two different users and ma
 
 Happy coding\! If you have any questions, feel free to reach out to us on [Twitter](https://twitter.com/sinchdev) or via our [help page](https://www.sinch.com/customer-service/).
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/javascript/turn-your-browser-into-a-phone-with-the-sinch-js-sdk.md"><span class="fab fa-github"></span>Edit on GitHub</a>

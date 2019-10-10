@@ -140,4 +140,3 @@ Deploy and send an SMS to the number with the text *10 awesome*. That should sho
 
 Now dear developer, go dunk\!
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/net/building-an-nps-sms-system-with-sinch-and-delighted.md"><span class="fab fa-github"></span>Edit on GitHub</a>

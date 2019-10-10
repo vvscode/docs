@@ -71,4 +71,3 @@ We’re really interested to know how you feel about these kinds of libraries. T
 
 If there is interest, we could make this a supported product feature. For now, enjoy the open-source framework that lets you add calling in two minutes.
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/ios/add-calling-to-your-existing-app-in-2-minutes.md"><span class="fab fa-github"></span>Edit on GitHub</a>

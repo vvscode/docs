@@ -91,4 +91,3 @@ If some numbers are already assigned to your app, then the application key will 
 
 
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/voice/number-administration/list-all-rented-numbers.md"><span class="fab fa-github"></span>Edit on GitHub</a>

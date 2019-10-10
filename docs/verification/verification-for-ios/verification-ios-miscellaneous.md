@@ -15,4 +15,3 @@ By default the `SINSMSVerification` invokes the completion handler blocks on the
 The *SinchVerification.framework* bundle includes a fat library containing the architectures *armv7*, *arm64*, *i386* and *x86\_64*. When linking an application target against the *SinchVerification.framework* targeting an iOS device, it will add approximately 3Mb per architecture slice.
 
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/verification/verification-for-ios/verification-ios-miscellaneous.md"><span class="fab fa-github"></span>Edit on GitHub</a>

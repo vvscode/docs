@@ -155,4 +155,3 @@ This tutorial has shown you how to create a POST endpoint that can parse deliver
 
 A fully functional Ngrok + Spring Boot project has been [published to GitHub](https://github.com/sinch/tutorial-java-sms-delivery-reports) to quickly get up and running testing Sinch delivery reports with your REST API account. You're free to try it out!
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/java/tutorial-java-spring-boot-delivery-reports.md"><span class="fab fa-github"></span>Edit on GitHub</a>

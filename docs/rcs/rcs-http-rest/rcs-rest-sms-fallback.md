@@ -22,4 +22,3 @@ Fallback and condition configuration is controlled in detail by providing [`Fall
 | agent_error            | *disabled* | Fallback to SMS if a fatal agent error occurs with a RCS supplier or within the RCS REST API platform.<br><br>  Enabling SMS fallback on agent error guarantees that an SMS is sent instead of potentially delaying a message because of unexpected issues in the RCS delivery pipeline.<br><br>  Agent errors should not occur as RCS matures, but is useful if delivery using any channel is the priority. |
 
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/rcs/rcs-http-rest/rcs-rest-sms-fallback.md"><span class="fab fa-github"></span>Edit on GitHub</a>

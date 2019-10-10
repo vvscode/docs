@@ -241,4 +241,3 @@ If you want to continue building a conference calling app, take a look at the ot
  - [Hosting node on Azure](https://azure.microsoft.com/en-us/documentation/articles/web-sites-nodejs-develop-deploy-mac/)
 
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/javascript/build-a-conference-calling-app-in-nodejs-express.md"><span class="fab fa-github"></span>Edit on GitHub</a>

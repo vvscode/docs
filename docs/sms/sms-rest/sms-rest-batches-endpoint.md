@@ -615,4 +615,3 @@ The format for summary and full reports is the same as the retrieve\_delivery\_r
 If a batch was created with a request for *per\_recipient* *delivery\_report* then a callback will be made for each status change of a message. This could result in a lot of callbacks and should be **used with caution for larger batches**. These delivery reports also include a timestamp of when the Delivery Report originated from the SMSC.
 
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/sms/sms-rest/sms-rest-batches-endpoint.md"><span class="fab fa-github"></span>Edit on GitHub</a>

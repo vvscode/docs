@@ -144,4 +144,3 @@ Now, you can run the app, choose a contact, and a toast message of the normalize
 
 I hope this gives a good example of how to use the Android Contact Picker. Next up, we will be using Sinch to make a phone call with that number. Head over to our [Android tutorial](doc:call-a-phone-number-from-your-android-app-with-sinch).
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/android/phone-calls-with-android-contact-picker.md"><span class="fab fa-github"></span>Edit on GitHub</a>

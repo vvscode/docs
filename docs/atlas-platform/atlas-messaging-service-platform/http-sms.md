@@ -640,4 +640,3 @@ If you are not sending a GSM encoded message then you will need to set the messa
 
 For example, if you are sending the Greek letter Π (Pi) in a GSM message you would set the DC option to 6 (or 7 for a flash message) and then include the GSM code for Π in your message: 16
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/atlas-platform/atlas-messaging-service-platform/http-sms.md"><span class="fab fa-github"></span>Edit on GitHub</a>

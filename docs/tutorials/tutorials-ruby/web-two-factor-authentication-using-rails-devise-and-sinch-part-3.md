@@ -154,4 +154,3 @@ To keep things simple, I didn’t create a logout button. It’s very to simple 
 
 Once deleted, refresh the page and you will be prompted to sign in.
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/ruby/web-two-factor-authentication-using-rails-devise-and-sinch-part-3.md"><span class="fab fa-github"></span>Edit on GitHub</a>

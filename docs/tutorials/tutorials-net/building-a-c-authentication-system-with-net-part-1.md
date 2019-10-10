@@ -146,4 +146,3 @@ And to verify code:
 Testing a C# authentication system
 
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/net/building-a-c-authentication-system-with-net-part-1.md"><span class="fab fa-github"></span>Edit on GitHub</a>

@@ -192,4 +192,3 @@ public class SendMessageToGroup {
 }
 ```
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/java/tutorial-java-send-sms-group.md"><span class="fab fa-github"></span>Edit on GitHub</a>

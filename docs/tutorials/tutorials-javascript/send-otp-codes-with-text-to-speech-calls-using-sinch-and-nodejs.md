@@ -64,4 +64,3 @@ In the next tutorial I will show you how to make IVR menus that enable you to co
 
 
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/javascript/send-otp-codes-with-text-to-speech-calls-using-sinch-and-nodejs.md"><span class="fab fa-github"></span>Edit on GitHub</a>

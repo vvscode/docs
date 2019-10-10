@@ -183,4 +183,3 @@ JSON Representation
 | message\_id | string | The message id that the agent has read. This is the message id the agent received in object(`UserAgentMessage`)            | N/A     | N/A         | Yes      |
 
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/rcs/rcs-http-rest/rcs-rest-agent-event-endpoint.md"><span class="fab fa-github"></span>Edit on GitHub</a>

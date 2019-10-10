@@ -129,4 +129,3 @@ Happy coding\!
 
 If you enjoyed this tutorial, read our other iOS and [app-calling tutorials](doc:tutorials-introduction).
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/ios/ios-app-to-phone-tutorial.md"><span class="fab fa-github"></span>Edit on GitHub</a>

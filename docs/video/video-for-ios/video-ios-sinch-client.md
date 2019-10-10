@@ -73,4 +73,3 @@ sinchClient = nil;
 ```
 
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/video/video-for-ios/video-ios-sinch-client.md"><span class="fab fa-github"></span>Edit on GitHub</a>

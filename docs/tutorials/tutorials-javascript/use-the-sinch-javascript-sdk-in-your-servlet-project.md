@@ -129,4 +129,3 @@ When running this in your browser, after logging in, you will see the changes in
 
 Congratulations, you did it\! You can now use the Sinch client to add calling or messaging to your web app.
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/javascript/use-the-sinch-javascript-sdk-in-your-servlet-project.md"><span class="fab fa-github"></span>Edit on GitHub</a>

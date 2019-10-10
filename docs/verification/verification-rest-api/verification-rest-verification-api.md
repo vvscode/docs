@@ -628,4 +628,3 @@ The actual language that was selected is returned in the 'Content-Language' HTTP
 }
 ```
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/verification/verification-rest-api/verification-rest-verification-api.md"><span class="fab fa-github"></span>Edit on GitHub</a>

@@ -100,4 +100,3 @@ Each SMS in a multi-part Unicode encoded message, has a maximum length of 66
 characters.
 
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/sms/sms-rest/sms-rest-message-body.md"><span class="fab fa-github"></span>Edit on GitHub</a>

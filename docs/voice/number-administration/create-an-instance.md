@@ -63,4 +63,3 @@ eg:
 }
 ```
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/voice/number-administration/create-an-instance.md"><span class="fab fa-github"></span>Edit on GitHub</a>

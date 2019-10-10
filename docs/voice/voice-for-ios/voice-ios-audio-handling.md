@@ -39,4 +39,3 @@ The sound file must be a mono (1 channel), 16-bit, uncompressed (PCM) `.wav` fil
 Applications that prefer to use their own code for playing sounds are free to do so, but they should follow the guidelines for [Audio Sessions](#section-audio-sessions) and [Audio Session Categories](#section-audio-session-categories) above.
 
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/voice/voice-for-ios/voice-ios-audio-handling.md"><span class="fab fa-github"></span>Edit on GitHub</a>

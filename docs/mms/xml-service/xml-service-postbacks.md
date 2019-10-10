@@ -270,4 +270,3 @@ When MMS is saved, we generate postback notification. When saving and encoding o
 </postback>
 ```
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/mms/xml-service/xml-service-postbacks.md"><span class="fab fa-github"></span>Edit on GitHub</a>

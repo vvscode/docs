@@ -268,4 +268,3 @@ You can find more information on callback request signing `here
 *None*
 
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/verification/verification-rest-api/verification-rest-callback-api.md"><span class="fab fa-github"></span>Edit on GitHub</a>

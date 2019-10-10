@@ -31,4 +31,3 @@ You must use international format when submitting an MM7 message to Sinch. Inter
 
 *For example the US number (774)-319-9144 in international number format would be 17743199144 because the USA country code is 1.*
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/mms/mm7-service/mm7-service-introduction.md"><span class="fab fa-github"></span>Edit on GitHub</a>

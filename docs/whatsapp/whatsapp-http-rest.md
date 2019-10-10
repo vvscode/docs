@@ -13,4 +13,3 @@ The WhatsApp REST API is designed to be a simple and powerful tool with features
    - Checking the WhatsApp capability of numbers
 
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/whatsapp/whatsapp-http-rest.md"><span class="fab fa-github"></span>Edit on GitHub</a>

@@ -43,4 +43,3 @@ The following error codes can be returned as values for the `code` field:
 | 403         | `unknown_campaign`                | The campaign ID does not match the specified originator.                                                            |
 | 403         | `missing_callback_url`            | Callback has been requested but no URL is provided.                                                                 |
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/sms/sms-rest/sms-rest-http-status-codes.md"><span class="fab fa-github"></span>Edit on GitHub</a>

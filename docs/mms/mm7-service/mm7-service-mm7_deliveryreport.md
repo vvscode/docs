@@ -152,4 +152,3 @@ Date: Mon, 16 Mar 2015 14:03:32 GMT
 </soap-env:Envelope>
 ```
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/mms/mm7-service/mm7-service-mm7_deliveryreport.md"><span class="fab fa-github"></span>Edit on GitHub</a>

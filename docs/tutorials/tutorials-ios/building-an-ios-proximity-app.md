@@ -848,4 +848,3 @@ Sinch is an excellent framework and with its wide range of excellent SDKs and AP
 
 And as always, if you have any ideas for upcoming tutorials, give us a shout.
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/ios/building-an-ios-proximity-app.md"><span class="fab fa-github"></span>Edit on GitHub</a>

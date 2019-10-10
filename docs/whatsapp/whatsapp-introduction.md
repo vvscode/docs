@@ -52,4 +52,3 @@ The following WhatsApp URLs can be used by the WhatsApp API. We have servers in 
 | EU Production | https://eu1.whatsapp.api.sinch.com     |
 
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/whatsapp/whatsapp-introduction.md"><span class="fab fa-github"></span>Edit on GitHub</a>

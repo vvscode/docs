@@ -16,4 +16,3 @@ The Pricing details can be retrieved for the submitted batch as in `retrieve_del
 
 **NB: Note that the price in delivery report is subject to change until the messages reach final state.**
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/sms/sms-rest/pricing-per-country.md"><span class="fab fa-github"></span>Edit on GitHub</a>

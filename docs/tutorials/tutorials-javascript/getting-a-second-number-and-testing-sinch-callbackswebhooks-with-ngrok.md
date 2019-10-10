@@ -104,4 +104,3 @@ Call the number and start seeing real live requests from the Sinch platform.
 
 Hope you found this helpful and if you have any questions dm me on @cjsinch
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/javascript/getting-a-second-number-and-testing-sinch-callbackswebhooks-with-ngrok.md"><span class="fab fa-github"></span>Edit on GitHub</a>

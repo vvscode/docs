@@ -116,4 +116,3 @@ When an MMS is saved, the system will generate a Postback notification and unloc
   - You can find out what the current maximum is by visiting your API settings.
   - MMS messages are delivered in B64 encoding To estimate the final size of Base64-encoded binary data multiply the filesize by 1.37 times the original data size + 814 bytes (for headers).
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/mms/xml-service/xml-service-savemms.md"><span class="fab fa-github"></span>Edit on GitHub</a>

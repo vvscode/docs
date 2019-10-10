@@ -195,4 +195,3 @@ Last but not least, add an instance of the SinchCallListener to the call right a
 
 Congratulations on completing this tutorial\! You can now call any phone number from your Android app using Sinch.
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/android/call-a-phone-number-from-your-android-app-with-sinch.md"><span class="fab fa-github"></span>Edit on GitHub</a>

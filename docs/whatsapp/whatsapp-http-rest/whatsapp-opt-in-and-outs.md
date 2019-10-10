@@ -97,4 +97,4 @@ There was an authentication error with your request. Either you're using incorre
 in a region where your bot does not reside. The body is a JSON object described [here](doc:whatsapp-introduction#section-http-errors)
 
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/whatsapp/whatsapp-http-rest/whatsapp-opt-in-and-outs.md"><span class="fab fa-github"></span>Edit on GitHub</a>
+

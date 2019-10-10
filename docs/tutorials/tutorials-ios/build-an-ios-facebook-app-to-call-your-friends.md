@@ -407,4 +407,3 @@ Congratulations, you have create an app to call your Facebook friends using Sinc
 
 
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/ios/build-an-ios-facebook-app-to-call-your-friends.md"><span class="fab fa-github"></span>Edit on GitHub</a>

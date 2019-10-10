@@ -85,4 +85,3 @@ Now, run this app on your phone, and run the pet app on your tablet. The human a
 
 Tomorrow, before you leave for work, open this app on your tablet and turn up the volume. Call throughout the day to say hi, check if your dog is barking at the neighbors or talk to your parrot\!
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/android/build-a-pet-monitor.md"><span class="fab fa-github"></span>Edit on GitHub</a>

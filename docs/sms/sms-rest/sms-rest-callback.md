@@ -23,4 +23,3 @@ An inbound message or MO (*Mobile Originated*) is a message sent to one of your 
 
 To receive inbound message callbacks, a URL needs to be provisioned for your account. This URL can be specified in the Sinch Dashboard.
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/sms/sms-rest/sms-rest-callback.md"><span class="fab fa-github"></span>Edit on GitHub</a>

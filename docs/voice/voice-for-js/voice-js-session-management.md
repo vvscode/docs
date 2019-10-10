@@ -56,4 +56,3 @@ The session object can be stored in any secure way you see best fit, for example
 
 See the Sample IM app for an example on working with sessions.
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/voice/voice-for-js/voice-js-session-management.md"><span class="fab fa-github"></span>Edit on GitHub</a>

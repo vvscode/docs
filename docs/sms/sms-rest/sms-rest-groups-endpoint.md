@@ -392,4 +392,3 @@ curl -X DELETE \
 ```
 
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/sms/sms-rest/sms-rest-groups-endpoint.md"><span class="fab fa-github"></span>Edit on GitHub</a>

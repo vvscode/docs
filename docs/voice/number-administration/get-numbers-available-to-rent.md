@@ -106,4 +106,3 @@ This is a protected resource and requires an [instance signed request](doc:using
         ForbiddenRequest (40300)    - The current user is not the owner of the organisation: {ORGANISATION_ID}
         InvalidScheme (40301)       - The authorization scheme 'instance' is required.
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/voice/number-administration/get-numbers-available-to-rent.md"><span class="fab fa-github"></span>Edit on GitHub</a>

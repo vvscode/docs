@@ -10,4 +10,3 @@ When `max_number_of_message_parts` parameter is set or the default value is conf
 
 
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/sms/sms-rest/sms-rest-limiting-message-parts.md"><span class="fab fa-github"></span>Edit on GitHub</a>

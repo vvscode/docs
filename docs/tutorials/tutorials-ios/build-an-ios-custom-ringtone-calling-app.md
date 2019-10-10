@@ -241,4 +241,3 @@ Custom ringtones is just one example of how you can send useful information over
 For more tutorials, head over to the [Sinch Tutorial Site](doc:tutorials-introduction) or the [Sinch Github](https://github.com/sinch).
 
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/ios/build-an-ios-custom-ringtone-calling-app.md"><span class="fab fa-github"></span>Edit on GitHub</a>

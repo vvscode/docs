@@ -261,4 +261,3 @@ Now you have a good understanding of how the Sinch client works and how to make 
  - [Custom authentication with .net](doc:using-delegated-security-with-your-own-application-server-using-c-and-the-sinch-sdk)
 
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/javascript/using-sinch-js-sdk-to-call-a-phone-number.md"><span class="fab fa-github"></span>Edit on GitHub</a>

@@ -100,4 +100,3 @@ verification.verify(code).then(function(successInfo) {
 });
 ```
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/verification/verification-for-javascript/verification-js-verification.md"><span class="fab fa-github"></span>Edit on GitHub</a>

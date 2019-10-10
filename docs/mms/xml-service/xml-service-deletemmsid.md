@@ -49,4 +49,3 @@ Deletes an MMS template whose mms-id is defined in the XML. All contents in the 
 </response>
 ```
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/mms/xml-service/xml-service-deletemmsid.md"><span class="fab fa-github"></span>Edit on GitHub</a>

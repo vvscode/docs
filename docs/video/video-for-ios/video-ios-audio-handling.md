@@ -40,4 +40,3 @@ Applications that prefer to use their own code for playing sounds are free to do
 
 
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/video/video-for-ios/video-ios-audio-handling.md"><span class="fab fa-github"></span>Edit on GitHub</a>

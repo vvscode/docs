@@ -179,4 +179,3 @@ Optional parameter: 0x1403 (0x1403):
 
 Result is MCC=234 and MNC=30
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/sms/sms-smpp/sms-smpp-outbound.md"><span class="fab fa-github"></span>Edit on GitHub</a>

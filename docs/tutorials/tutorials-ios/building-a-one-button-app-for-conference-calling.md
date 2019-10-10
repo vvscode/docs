@@ -189,4 +189,3 @@ Take a look at what the host passed to the app, and connect to the conference im
 That’s it. Hanging out with friends and family is now literally one button press away!
 
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/ios/building-a-one-button-app-for-conference-calling.md"><span class="fab fa-github"></span>Edit on GitHub</a>

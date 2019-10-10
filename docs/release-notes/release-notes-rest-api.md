@@ -139,4 +139,3 @@ Calling API documentation update:
 > -   Added a custom field in Answered Call event and Disconnect Call event. It is used to pass custom headers in these events.
 
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/release-notes/release-notes-rest-api.md"><span class="fab fa-github"></span>Edit on GitHub</a>

@@ -60,4 +60,3 @@ To verify that the manifest has the necessary permissions the `sinchClient.check
 *Note:* This method takes into consideration which features the app supports (for example, calling, instant messaging, respecting native calls, and so on). Call `sinchClient.checkManifest()` after the setup but before the start of the SinchClient.
 
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/voice/voice-for-android/voice-android-first-time-setup.md"><span class="fab fa-github"></span>Edit on GitHub</a>

@@ -207,4 +207,3 @@ You now have a verified number for your user. With this implementation you only 
 
 For more details, check out our [verification documentation](doc:verification-rest-callback-api).
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/ios/verifying-a-phone-number-in-ios-using-swift-3.md"><span class="fab fa-github"></span>Edit on GitHub</a>

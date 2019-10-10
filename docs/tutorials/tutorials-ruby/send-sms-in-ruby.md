@@ -51,4 +51,3 @@ Checking the status of a message will return one of four values:
 That’s all\! If you have any questions about our SMS API, feel free to comment below, email us at <dev@sinch.com>, or tweet us at [@SinchDev](http://www.twitter.com/sinchdev).
 
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/ruby/send-sms-in-ruby.md"><span class="fab fa-github"></span>Edit on GitHub</a>

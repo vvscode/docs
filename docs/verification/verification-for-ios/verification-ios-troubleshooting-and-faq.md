@@ -68,4 +68,3 @@ If you have the error concerning `.bcsymbolmap` files, try unchecking the *Inclu
 
 Make sure you have added the [strip-frameworks.sh` as part of a Xcode *"Run Script Phase"*, see the `Swift section](doc:verification-ios-swift-sdk) for details.
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/verification/verification-for-ios/verification-ios-troubleshooting-and-faq.md"><span class="fab fa-github"></span>Edit on GitHub</a>

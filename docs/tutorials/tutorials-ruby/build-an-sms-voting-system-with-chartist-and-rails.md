@@ -112,4 +112,3 @@ $(function() {
 
 So there you go. How to build your own SMS voting system using Rails and Chartist. For more customization options, check out [Chartist.js docs](http://gionkunz.github.io/chartist-js/api-documentation.html).
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/ruby/build-an-sms-voting-system-with-chartist-and-rails.md"><span class="fab fa-github"></span>Edit on GitHub</a>

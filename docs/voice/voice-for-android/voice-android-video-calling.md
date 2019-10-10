@@ -130,4 +130,3 @@ YuvImage image = new YuvImage(nv21Frame.yuvPlanes()[0].array(),
 ```
 
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/voice/voice-for-android/voice-android-video-calling.md"><span class="fab fa-github"></span>Edit on GitHub</a>

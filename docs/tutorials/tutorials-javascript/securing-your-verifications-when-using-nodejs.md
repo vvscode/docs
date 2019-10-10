@@ -204,4 +204,3 @@ In order to use our verificaiton SDK, next steps for a real app would be to add 
 
 Would you be interested in a complete backend or are you more interested in snippets like today or perhaps even shorter? Let me know in the comments or tweet me at [@cjsinch](https://twitter.com/cjsinch)\!
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/javascript/securing-your-verifications-when-using-nodejs.md"><span class="fab fa-github"></span>Edit on GitHub</a>

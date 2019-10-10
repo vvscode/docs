@@ -171,4 +171,3 @@ The files are generated once daily and contain the previous days' CDRs. A day sp
 
 CDR files can be downloaded from the developer portal. Upon request, the CDR files can also be uploaded to a S3 bucket that your company provides and to which Sinch has write access.
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/verification/verification-rest-api/verification-rest-call-detail-records.md"><span class="fab fa-github"></span>Edit on GitHub</a>

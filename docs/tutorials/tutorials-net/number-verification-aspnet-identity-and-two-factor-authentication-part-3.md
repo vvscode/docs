@@ -97,4 +97,3 @@ Hit **F5** and run the app. If you haven’t already registered an account, clic
 
 Now you see how easy it is to enable two-factor authentication on an ASP.NET Identity application using Sinch.
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/net/number-verification-aspnet-identity-and-two-factor-authentication-part-3.md"><span class="fab fa-github"></span>Edit on GitHub</a>

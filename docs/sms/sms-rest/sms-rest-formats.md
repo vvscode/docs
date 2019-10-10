@@ -34,4 +34,3 @@ A time offset can be specified in accordance with [ISO-8601 time offsets from UT
 All timestamps returned by the API will be represented in UTC time, with millisecond precision.
 
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/sms/sms-rest/sms-rest-formats.md"><span class="fab fa-github"></span>Edit on GitHub</a>

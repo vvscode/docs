@@ -217,4 +217,3 @@ If the user of the application logs out or performs a similar action, the push n
 
 
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/video/video-for-android/video-android-push-notifications.md"><span class="fab fa-github"></span>Edit on GitHub</a>

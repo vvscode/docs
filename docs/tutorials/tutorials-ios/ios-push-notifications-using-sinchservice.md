@@ -167,4 +167,3 @@ Hopefully you’ll get some good use out of SinchService. It’s been tuned to m
 
 We hope you continue to build amazing apps with Sinch and feel free to reach out to us if you have any questions.
 
-<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/ios/ios-push-notifications-using-sinchservice.md"><span class="fab fa-github"></span>Edit on GitHub</a>
