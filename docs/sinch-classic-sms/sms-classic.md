@@ -35,13 +35,6 @@ You can use the Sinch platform to connect with the following countries:
 <div class="magic-block-html">
   <div class="marked-table">
     <table>
-      <colgroup>
-        <col width="16%" />
-        <col width="17%" />
-        <col width="16%" />
-        <col width="30%" />
-        <col width="18%" />
-      </colgroup>
       <tbody>
         <tr class="odd">
           <td align="left">
@@ -430,11 +423,6 @@ CDRs can be downloaded from the Sinch portal. CDRs are in a semicolon-delimited 
 <div class="magic-block-html">
   <div class="marked-table">
     <table>
-      <colgroup>
-        <col width="13%" />
-        <col width="8%" />
-        <col width="77%" />
-      </colgroup>
       <thead>
         <tr class="header">
           <th align="left">Field</th>

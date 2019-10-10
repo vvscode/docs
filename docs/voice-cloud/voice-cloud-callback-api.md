@@ -39,10 +39,6 @@ SVAML Quick Reference
 <div class="magic-block-html">
   <div class="marked-table">
     <table>
-      <colgroup>
-        <col width="16%" />
-        <col width="83%" />
-      </colgroup>
       <thead>
         <tr class="header">
           <th align="left">Instruction</th>
@@ -84,11 +80,6 @@ SVAML Quick Reference
 <div class="magic-block-html">
   <div class="marked-table">
     <table>
-      <colgroup>
-        <col width="16%" />
-        <col width="57%" />
-        <col width="26%" />
-      </colgroup>
       <thead>
         <tr class="header">
           <th align="left">Action</th>
@@ -169,10 +160,6 @@ Supported languages / locales:
 <div class="magic-block-html">
   <div class="marked-table">
     <table>
-      <colgroup>
-        <col width="16%" />
-        <col width="37%" />
-      </colgroup>
       <thead>
         <tr class="header">
           <th align="left">Locale</th>
@@ -395,10 +382,6 @@ Actions allow your Sinch application to control individual calls. The following 
 <div class="magic-block-html">
   <div class="marked-table">
     <table>
-      <colgroup>
-        <col width="19%" />
-        <col width="23%" />
-      </colgroup>
       <thead>
         <tr class="header">
           <th align="left">Indication</th>

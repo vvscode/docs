@@ -10,11 +10,6 @@ CDRs can be downloaded from the Sinch portal. CDRs are in a semicolon separated 
 <div class="magic-block-html">
   <div class="marked-table">
     <table>
-      <colgroup>
-        <col width="8%" />
-        <col width="4%" />
-        <col width="86%" />
-      </colgroup>
       <thead>
         <tr class="header">
           <th align="left">Field</th>
@@ -109,11 +104,6 @@ CDRs can be downloaded from the Sinch portal. CDRs are in a semicolon separated 
 <div class="magic-block-html">
   <div class="marked-table">
     <table>
-      <colgroup>
-        <col width="10%" />
-        <col width="6%" />
-        <col width="83%" />
-      </colgroup>
       <thead>
         <tr class="header">
           <th align="left">Field</th>
@@ -192,11 +182,6 @@ CDRs can be downloaded from the Sinch portal. CDRs are in a semicolon separated 
 <div class="magic-block-html">
   <div class="marked-table">
     <table>
-      <colgroup>
-        <col width="14%" />
-        <col width="7%" />
-        <col width="77%" />
-      </colgroup>
       <thead>
         <tr class="header">
           <th align="left">Field</th>
@@ -265,11 +250,6 @@ CDRs can be downloaded from the Sinch portal. CDRs are in a semicolon separated 
 <div class="magic-block-html">
   <div class="marked-table">
     <table>
-      <colgroup>
-        <col width="14%" />
-        <col width="7%" />
-        <col width="77%" />
-      </colgroup>
       <thead>
         <tr class="header">
           <th align="left">Field</th>
