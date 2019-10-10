@@ -7,7 +7,7 @@ This document provides a detailed user guide and reference documentation on the 
 
 ## Overview
 
-The SMS Messaging API allows you to send SMS messages to mobile phones and check their status using the Sinch platform. You can also rent SMS-enabled numbers from Sinch to receive inbound SMS messages from your users that are sent to the backend of your app. For more information see [SMS-enabled numbers](doc:#section-sms-enabled-numbers).
+The SMS Messaging API allows you to send SMS messages to mobile phones and check their status using the Sinch platform. You can also rent SMS-enabled numbers from Sinch to receive inbound SMS messages from your users that are sent to the backend of your app. For more information see [SMS-enabled numbers](doc:sinch-classic#section-sms-enabled-numbers).
 
 ![image0](images/sms.png)
 
@@ -19,14 +19,14 @@ The SMS Messaging API allows you to send SMS messages to mobile phones and check
 
 |URL|HTTP Verb|Functionality|
 |---|---------|-------------|
-|/Sms/{number}|POST|[Incoming SMS Event Callback](doc:#section-incoming-sms-event-callback)|
-|/Sms/{messageId}|GET|[Get status of SMS message](doc:#section-check-message-status)|
+|/Sms/{number}|POST|[Incoming SMS Event Callback](doc:sinch-classic#section-incoming-sms-event-callback)|
+|/Sms/{messageId}|GET|[Get status of SMS message](doc:sinch-classic#section-check-message-status)|
 
 ### SMS Messaging Callback API
 
 |Event|HTTP Verb|Functionality|
 |-----|---------|-------------|
-|incomingSms|POST|[Incoming SMS Event](doc:#section-incoming-sms-event-callback)|
+|incomingSms|POST|[Incoming SMS Event](doc:sinch-classic#section-incoming-sms-event-callback)|
 
 ## Supported countries
 
@@ -201,13 +201,13 @@ You can use the Sinch platform to connect with the following countries:
 
 ## Two-way SMS
 
-The Sinch platform supports the provisioning of SMS-enabled numbers that can be used for two-way SMS. Through these numbers, you can send SMS messages to users and receive replies when a user replies to the particular SMS number. Messages that originate from a user’s mobile phone to the Sinch platform are called Mobile Originated (MO) SMS. To receive MO SMS messages, you need to rent a dedicated Long Number or Short Code which allows this type of messages. For more information see [SMS-enabled numbers](doc:#section-sms-enabled-numbers).
+The Sinch platform supports the provisioning of SMS-enabled numbers that can be used for two-way SMS. Through these numbers, you can send SMS messages to users and receive replies when a user replies to the particular SMS number. Messages that originate from a user’s mobile phone to the Sinch platform are called Mobile Originated (MO) SMS. To receive MO SMS messages, you need to rent a dedicated Long Number or Short Code which allows this type of messages. For more information see [SMS-enabled numbers](doc:sinch-classic#section-sms-enabled-numbers).
 
-To receive an MO SMS message, you need to configure a callback URL and develop a backend application that can receive the SMS callback event. For more information, see [SMS Messaging Callback API](doc:#section-callback-api).
+To receive an MO SMS message, you need to configure a callback URL and develop a backend application that can receive the SMS callback event. For more information, see [SMS Messaging Callback API](doc:sinch-classic#section-callback-api).
 
 ## SMS to US numbers
 
-To send SMS messages to US phone numbers in a production app, you need to rent an SMS-enabled number. SMS-enabled numbers can also be used to receive inbound SMS messages originating from mobile phones (MO). For more information see [SMS-enabled numbers](doc:#section-sms-enabled-numbers).
+To send SMS messages to US phone numbers in a production app, you need to rent an SMS-enabled number. SMS-enabled numbers can also be used to receive inbound SMS messages originating from mobile phones (MO). For more information see [SMS-enabled numbers](doc:sinch-classic#section-sms-enabled-numbers).
 
 ## SMS-enabled numbers
 
@@ -248,7 +248,7 @@ The SMS messaging API allows you to send SMS messages and check their status usi
 
 Send an SMS message to the number supplied in the URL, with the contents defined in the body as described below.
 
-**Important:** To use the Sinch SMS API, you will need to have a verified phone number in the Sinch dashboard. To verify your phone number, sign in to the [Sinch dashboard](https://portal.sinch.com/#/login) click Quickstart and follow the instructions. Also check the [recipient number restrictions](doc:#section-recipient-number-restrictions).
+**Important:** To use the Sinch SMS API, you will need to have a verified phone number in the Sinch dashboard. To verify your phone number, sign in to the [Sinch dashboard](https://portal.sinch.com/#/login) click Quickstart and follow the instructions. Also check the [recipient number restrictions](doc:sinch-classic#section-recipient-number-restrictions).
 
 #### Authorization
 
@@ -260,7 +260,7 @@ This is a protected resource and requires an [application signed request](doc:us
         string? - from
         string - message
 
-**from** shows the number or alphanumeric that will be shown as sender in the SMS. Check also the [“From” field restrictions](doc:#section-"from"-field-restrictions).
+**from** shows the number or alphanumeric that will be shown as sender in the SMS. Check also the [“From” field restrictions](doc:sinch-classic#section-"from"-field-restrictions).
 
 **message** is the actual message that will be sent in the SMS.
 
@@ -302,7 +302,7 @@ To rent an SMS number and use it as the “From” number, please follow these s
 > 1.  Rent an SMS number from the [Sinch dashboard](https://portal.sinch.com/#/login/), under the tab “Numbers”.
 > 2.  Assign the number to your application. Under the “Apps” tab, select your app and assign the number under the app SMS settings.
 > 3.  When calling the SMS API, set the number that you assigned to your app as “From”.
-> 4.  If you want to allow your end users to reply to this number, follow the instructions in the section [SMS Messaging Callback API](doc:#section-callback-api) to implement the logic to receive the replies in your backend.
+> 4.  If you want to allow your end users to reply to this number, follow the instructions in the section [SMS Messaging Callback API](doc:sinch-classic#section-callback-api) to implement the logic to receive the replies in your backend.
 
 Alternatively, you can rent and configure numbers with REST APIs. For more information please check the [Number Administration documentation](doc:number-administration).
 
@@ -370,13 +370,13 @@ The Sinch dashboard supports notifying your backend application about incoming (
 
 To receive MO SMS messages you must have rented and configured an SMS-enabled number. To rent a Long Number, log in to the Sinch portal with your Sinch account and go to the “Numbers” tab. After renting the needed numbers, you should go to your app SMS settings and assign the numbers to your app configuration.
 
-For more information see [SMS-enabled numbers: Long Numbers and Short Codes](doc:#section-sms-enabled-numbers).
+For more information see [SMS-enabled numbers: Long Numbers and Short Codes](doc:sinch-classic#section-sms-enabled-numbers).
 
 ### Incoming SMS Event Callback
 
 When a MO SMS is received by the Sinch dashboard from a specific SMS-enabled number, the system sends a notification through a callback request to your backend application. The callback is a post request to a specified URL. URLs for callbacks need to be configured in the Sinch portal when creating or configuring an application.
 
-The callback request is signed using the application key and secret. The application should be the one to which the SMS number is configured. You can find more information on callback request signing [here](doc:using-rest#callback-request-signing).
+The callback request is signed using the application key and secret. The application should be the one to which the SMS number is configured. You can find more information on callback request signing [here](doc:using-rest#section-callback-request-signing).
 
 #### Request
 
