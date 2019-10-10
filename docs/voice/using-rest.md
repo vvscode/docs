@@ -116,8 +116,7 @@ the signature should be formed like this:
 
 #### Instance signed request
 
-In order to increase security and minimize the risk of app secrets to be compromised requests can be signed. The signature is used to validate that the client and check if the client is authorized to perform the operation. Security is increased since the secret is not actually part on the message sent over the
-   wire.
+In order to increase security and minimize the risk of app secrets to be compromised requests can be signed. The signature is used to validate that the client and check if the client is authorized to perform the operation. Security is increased since the secret is not actually part on the message sent over the wire.
 
     Authorization = “Instance” + " " + INSTANCE_ID + “:” + INSTANCE_SIGNATURE
 
