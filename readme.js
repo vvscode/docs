@@ -259,27 +259,6 @@ All validations are performed unless --validations is specified.
         });
     });
 
-    program
-    .command('insertanchors', )
-    .description(`Insert "Edit on GitHub" anchors at bottom of files`)
-    .action( () => {
-        walk('docs', function(filePath, stat) {
-            if(path.extname(filePath) == '.md'){
-                var url = BASE_GITURL + filePath;
-                fs.readFile(filePath, function(err, data){
-                    if(err) console.log('There was an error reading the file!', err);
-                    if(!data.includes(url)){
-                        let anchor = `\n\n<a class="gitbutton pill" target="_blank" href="${url}"><span class="fab fa-github"></span>Edit on GitHub</a>`
-                        fs.appendFile(filePath, anchor, function(err) {
-                            err ? console.log(err) : console.log(chalk.green(`The url ${url} has been appendended to the end of the file ${filePath}`))
-                        })
-                    }
-                })
-            }
-        });
-    }
-    );
-
 program.parse(process.argv);
 
 async function walk(currentDirPath, callback) {
