@@ -76,13 +76,53 @@ Paths are assumed to be specified as relative to the page in which the files are
 | `baseUrl` | The base URL where the files are publicly available |
 
 
-**Example YAML configuration**
+**Example `config.yml` configuration**
 
 ```yaml
 filters:
   - hostedFiles:
       baseUrl: https://GITHUB_USERNAME.github.io/REPO/
 ```
+
+#### `footer`
+
+Renders a Mustache template as the footer of all content files.
+
+The Mustache template is rendered with a [view]() object that includes the following attributes:
+
+| Attribute | Description                                                                               |
+| ---       | ---                                                                                       |
+| `page`    | The page object being rendered. See the `Page` class for details of available attributes. |
+
+Additionally, all of the filter's configuration attributes are passed to the template so they can be used directly.
+
+**Configuration attributes**:
+
+| Field      | Description                                                                                                            |
+| ---        | ---                                                                                                                    |
+| `template` | Path to the Mustache template that will be rendered as the footer for every page, relative to the project's directory. |
+
+**Example `config.yml` configuration**
+
+```yaml
+filters:
+  - footer:
+      template: templates/footer.mustache
+      someAttribute: Hello there!
+```
+
+Given the above configuration and the following Mustache template:
+
+```html
+<span id="footer">{{someAttribute}}</span>
+``` 
+
+The following footer would be rendered on each content page:
+
+```html
+<span id="footer">Hello there!</span>
+```
+
 
 ### Get help
 

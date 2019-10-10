@@ -76,7 +76,7 @@ locally but not present on Readme). If any are found, the program will offer to 
 
         let fetchedPages = await readme.fetchPages(listCategories(slug, options.config), async page => {
             for (const filter of createFilters(options.config)) {
-                page = filter.rollback(page);
+                page = await filter.rollback(page);
             }
 
             const outputFile = await page.writeTo(cmd.dir);
@@ -130,7 +130,7 @@ program
         const readme = apiClient(catalog, options);
         for (let page of catalog.pages) {
             for (const filter of createFilters(options.config)) {
-                page = filter.apply(page);
+                page = await filter.apply(page);
             }
 
             readme.pushPage(page);
