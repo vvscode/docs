@@ -14,3 +14,6 @@ categories:
 filters:
   hostedFiles:
     baseUrl: https://sinch.github.io/docs/
+  footer:
+    template: templates/footer.mustache
+    baseUrl: https://github.com/sinch/docs/blob/master/docs/

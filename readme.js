@@ -76,7 +76,7 @@ locally but not present on Readme). If any are found, the program will offer to 
 
         let fetchedPages = await readme.fetchPages(listCategories(slug, options.config), async page => {
             for (const filter of createFilters(options.config)) {
-                page = filter.rollback(page);
+                page = await filter.rollback(page);
             }
 
             const outputFile = await page.writeTo(cmd.dir);
@@ -130,7 +130,7 @@ program
         const readme = apiClient(catalog, options);
         for (let page of catalog.pages) {
             for (const filter of createFilters(options.config)) {
-                page = filter.apply(page);
+                page = await filter.apply(page);
             }
 
             readme.pushPage(page);
@@ -258,27 +258,6 @@ All validations are performed unless --validations is specified.
             }
         });
     });
-
-    program
-    .command('insertanchors', )
-    .description(`Insert "Edit on GitHub" anchors at bottom of files`)
-    .action( () => {
-        walk('docs', function(filePath, stat) {
-            if(path.extname(filePath) == '.md'){
-                var url = BASE_GITURL + filePath;
-                fs.readFile(filePath, function(err, data){
-                    if(err) console.log('There was an error reading the file!', err);
-                    if(!data.includes(url)){
-                        let anchor = `\n\n<a class="gitbutton pill" target="_blank" href="${url}"><span class="fab fa-github"></span>Edit on GitHub</a>`
-                        fs.appendFile(filePath, anchor, function(err) {
-                            err ? console.log(err) : console.log(chalk.green(`The url ${url} has been appendended to the end of the file ${filePath}`))
-                        })
-                    }
-                })
-            }
-        });
-    }
-    );
 
 program.parse(process.argv);
 
