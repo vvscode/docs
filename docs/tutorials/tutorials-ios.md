@@ -2,7 +2,6 @@
 title: "iOS"
 excerpt: "Tutorials for the Sinch iOS SDK. Here you can see all Sinch iOS tutorials."
 ---
-
 ## Getting Started
 
 Before you start with the iOS tutorials, please make sure that the steps below has been taken:

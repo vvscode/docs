@@ -2,7 +2,6 @@
 title: "Blacklisting numbers from callbacks"
 excerpt: "Get to know how to blacklist numbers from generating callbacks."
 ---
-
 ## Blacklist endpoint
 
 Blacklist numbers, preventing them from generating inbound message callbacks.

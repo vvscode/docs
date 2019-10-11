@@ -1,6 +1,7 @@
 ---
 title: "Building an NPS SMS system with Sinch and Delighted"
 excerpt: "This tutorial helps you build an NPS SMS system with Sinch and Delighted. By using a system called Net Promoter Score (NPS), https://delighted.com helps you keep track of how likely your users are to recommend you."
+hidden: "true"
 ---
 As you probably already know, every time we resolve a support request we ask you if you would share Sinch with a friend. Soon, we’ll even ask you about tutorials like the one you’re checking out now. Why?
 

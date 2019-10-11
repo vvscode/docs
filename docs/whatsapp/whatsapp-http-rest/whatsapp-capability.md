@@ -2,7 +2,6 @@
 title: "WhatsApp Capability"
 excerpt: "Read how to discover if your users are capable of receiving messages via WhatsApp."
 ---
-
 ## Capability endpoint
 
 The Sinch WhatsApp API offers an endpoint where you can request the WhatsApp capability status for a

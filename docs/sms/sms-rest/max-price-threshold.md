@@ -1,6 +1,7 @@
 ---
 title: "Max Price Threshold"
 excerpt: ""
+hidden: "true"
 ---
 ## Max Price Threshold
 

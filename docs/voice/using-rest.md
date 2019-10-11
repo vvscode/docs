@@ -2,7 +2,6 @@
 title: "Using REST"
 excerpt: ""
 ---
-
 ## Authorization
 
 The API uses the standard HTTP *Authorization* header to pass authentication information.

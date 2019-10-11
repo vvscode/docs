@@ -1,6 +1,7 @@
 ---
 title: "Send SMS in Java"
 excerpt: "This tutorial will walk you through building a simple Java SMS project that uses Sinch to send an SMS."
+hidden: "true"
 ---
 You can find the finished project [here](http://www.github.com/sinch/java-sms-tutorial).
 

@@ -1,6 +1,7 @@
 ---
 title: "Pricing Per Country"
 excerpt: ""
+hidden: "true"
 ---
 ## Pricing Per Country
 
