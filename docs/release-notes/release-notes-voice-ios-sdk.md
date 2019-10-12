@@ -4,6 +4,35 @@ excerpt: "See how the Sinch JavaScript SDK is evolving and find out about new fe
 ---
 See how our platform is evolving. Keep track of new features, API versions and bug fixes.
 
+<h3>2019/08/22 | SINCH SDK IOS 3.12.10</h3>
+  - Assign non-main GCD queue for PKPushRegistry
+  - Ensure SINManagedPush is safe (thread-safe) to invoke from non-main thread (i.e. from any background GCD queue).
+
+<h3>2019/03/22 | SINCH SDK IOS 3.12.9</h3>
+ - Updated Sinch iOS SDK to handle missing audio and video on calls originated by Sinch JS SDK. Issue introduced by the latest Chrome and Firefox browsers update.
+
+<h3>2019/02/30 | SINCH SDK IOS 3.12.8</h3>
+ - Improved audio session management, and push notifications for missed call.
+ - Improved sample Apps.
+
+<h3>2018/12/03 | SINCH SDK IOS 3.12.7</h3>
+ - Included custom headers in call cancellation push notifications.
+
+<h3>2018/09/05 | SINCH SDK IOS 3.12.6</h3>
+ - Fixed default orientation of local preview in landscape mode for video chat.
+ - Improved CallKit Sample App.
+ 
+<h3>2018/05/23 | SINCH SDK IOS 3.12.5</h3>
+ - Packaged Sinch Framework as modular framework, made it easier to be integrated into Swift projects.
+ - Improved Sample Apps.
+
+<h3>2018/03/08 | SINCH SDK IOS 3.12.4</h3>
+ - Added support for cancellation of a call via VoIP push notifications.
+ - Added API to set and retrieve custom headers from Sinch managed push notifications.
+ - Added NSNotification for the state change of a call.
+ - Added API to set data protection type of Sinch created files.
+ - Improved Sample Apps.
+
 <h3>2017/12/20 | SINCH SDK IOS 3.12.3</h3>
 -   Improved sample apps
 
