@@ -1,7 +1,6 @@
 ---
 title: "Send SMS in Ruby"
 excerpt: "Learn how to use the sinch_sms gem to send an SMS with Sinch."
-hidden: "true"
 ---
 In this tutorial, you will use the sinch\_sms gem to send an sms with Sinch. For pricing information about our [SMS API](https://www.sinch.com/sms-api/) by destination, visit [sms-prices](http://www.sinch.com/pricing/sms-prices/).
 
@@ -50,5 +49,3 @@ Checking the status of a message will return one of four values:
 >   - Faulted - The message has not been delivered, this can be due to an invalid number for instance.
 
 That’s all\! If you have any questions about our SMS API, feel free to comment below, email us at <dev@sinch.com>, or tweet us at [@SinchDev](http://www.twitter.com/sinchdev).
-
-

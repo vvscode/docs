@@ -1,7 +1,6 @@
 ---
 title: "Building a simple SMS notification system with Sinch"
 excerpt: "This tutorial will show you how to build a simple notification system by using Sinch. This will be a system I built for the Western Grands. Every year there are three main events in Quarter Midget racing, one for each region and one dirt event."
-hidden: "true"
 ---
 A few months back, my son and I started to race [quarter midgets](https://en.wikipedia.org/wiki/Quarter_Midget_racing). It’s been a lot of fun, and a steep learning curve. Believe me, getting perfectly aligned cells without using tables in HTML is pretty easy compared to tuning a racing chassis\! It’s also amazing to meet the people that put in the hard work and their heart to make racing (somewhat) affordable for kids. Anyway, everyone is encouraged to contribute to the club with their skills - in my case, coding is a skill I am at least somewhat competent in. In this article I’ll show you a simple notification system I built for the Western Grands. Every year there are three main events in Quarter Midget racing, one for each region and one dirt event. Our club [Tri Valley Quarter Midget Association](https://www.tvqma.org/) has the honor of hosting the events this time around.
 ![qmcar.jpg](images/34030b1-qmcar.jpg)
@@ -345,5 +344,3 @@ I wanted to make it super easy for officials to send a quick message. Getting dr
 ```
 
 That’s pretty much it when it comes to the SMS and Sinch functionality, in the solution you will see some user handling and a few pages to deal with messages that is standard aspnet stuff. Clone this and let me know if you have any questions.
-
-

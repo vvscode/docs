@@ -1,7 +1,6 @@
 ---
 title: "SMS Node Module"
 excerpt: "This is an open source Node module to send SMS with the Sinch SMS API."
-hidden: "true"
 ---
 One of the teams at TheNextWeb hackathon this past weekend was kind enough to open source a node module to send SMS with the [Sinch SMS API](https://www.sinch.com/sms-api/). (Shoutout to Mihir and Mikhail\!) Here’s an example of how to use it:
 
@@ -39,4 +38,3 @@ If you’re interested in digging into the node modules for authentication and s
  1.  [sinch-messaging](https://github.com/ChewTeaYeah/sinch-messaging)
 
 To get your own app key and secret, [sign up](https://portal.sinch.com/#/signup) for a Sinch account and create a new app. To start, you will have $2 on your account to send some test messages. See [SMS pricing by country here](https://www.sinch.com/products/messaging/sms/).
-

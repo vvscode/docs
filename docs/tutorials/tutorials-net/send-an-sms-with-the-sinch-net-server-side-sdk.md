@@ -1,7 +1,6 @@
 ---
 title: "Send an SMS with the Sinch .Net server-side SDK"
 excerpt: "In this tutorial we’ll be creating an application to send an SMS. We’ll be using a clientapi environment, and in the clientapi, you can only send messages to verified numbers on your account."
-hidden: "true"
 ---
 If you thought SMS was old fashioned, think again. 96% of smartphone users still use SMS. It has a 90% read rate in minutes and higher engagement rates than emails and OTT apps, which makes it very reach effective in terms of timeliness. SMS is the one solution, not requiring app installations or friend requests, not relying on tech heavy solutions or the operator at hand.
 
@@ -34,7 +33,7 @@ If you’re using an older version of Visual Studio and don’t see this, you’
 Search for `Sinch.ServerSdk` and click **“Install”** for **“Sinch.ServerSdk”**.
 ![nugget.png](images/80117cf-nugget.png)
 
-## MainAsync( ) 
+## MainAsync( )
 Because of the limitations of the compiler, having an asynchronous `Main()` method is not allowed. To overcome this obstacle, and to make for a more straightforward tutorial, we’ll create this method:
 
 ```csharp
@@ -60,13 +59,13 @@ var sendSmsResponse = await smsApi.Sms("+61491570156", "Hello world.  Sinch SMS 
 
 Remember to replace the application key and secret with your own, and change the phone number and message accordingly. It might be worth setting up a unique long number or an [SMS short code](https://www.sinch.com/products/messaging/numbers/short-codes/).
 
-## Check status 
+## Check status
 Next, we want to check the status of an SMS. Add these couple of lines:
 
 ```csharp
 var smsMessageStatusResponse = await smsApi.GetSmsStatus(sendSmsResponse.MessageId);
 Console.WriteLine(smsMessageStatusResponse.Status);
-Console.ReadLine(); 
+Console.ReadLine();
 ```
 
 It might be worthwhile putting a `Task.Delay()` before checking the status, as it could take a second or two for the SMS to be delivered. Checking immediately will most likely lead to a status of **“Pending”**.
@@ -106,4 +105,3 @@ namespace Sinch.SendSms.Example
     }
 }
 ```
-

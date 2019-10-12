@@ -1,7 +1,6 @@
 ---
 title: "Building a C# Authentication System with .NET - Part 1"
 excerpt: "More and more websites and apps ask for your phone number and, in many cases, are using it for two-factor authentication. In this tutorial, you will learn how to build your own C# two factor authentication system"
-hidden: "true"
 ---
 > **Update**
 >
@@ -145,5 +144,3 @@ In Postman, generate an SMS:
 And to verify code:
 ![postman_verify.png](images/c045b11-postman_verify.png)
 Testing a C# authentication system
-
-

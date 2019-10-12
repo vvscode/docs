@@ -1,7 +1,6 @@
 ---
 title: "Receive an SMS with the Sinch .NET server-side SDK - Pt. 2"
 excerpt: "Use Sinch .NET server-side SDK to receive SMS to your Web API application."
-hidden: "true"
 ---
 In this second part of the tutorial, we’ll be using the Sinch .Net server-side SDK to receive SMS to your Web API application. If you haven’t already, [check out the first part here](doc:send-an-sms-with-the-sinch-net-server-side-sdk).
 
@@ -27,7 +26,7 @@ Right click on References in Solution Explorer and select **“Manage NuGet Pack
 
 If you’re using an older version of Visual Studio and don’t see this, you’ll need to add it to your Visual Studio from here: <http://docs.nuget.org/consume/installing-nuget>
 
-##Code 
+##Code
 Now, we want to install the Sinch Callback.WebApi package, as well as the Sinch Server SDK NuGet package. Search for `Sinch.ServerSdk.Callback.WebApi` and click **“Install”** for `Sinch.ServerSdk.Callback.WebApi`.
 ![nugget2.png](images/afb68f7-nugget2.png)
 
@@ -75,4 +74,3 @@ The final step is to register this method as the SMS callback URL on the Sinch d
 ## Chill
 
 And that’s it. Now any request to this Web API application will be validated by the Sinch CallbackMessageHandler to ensure that they are legitimate.
-

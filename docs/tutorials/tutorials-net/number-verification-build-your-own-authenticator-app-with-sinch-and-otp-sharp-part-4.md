@@ -52,7 +52,7 @@ In package manager console, run `update-database`.
 Create a new class and name it SinchAuthTokenProvider:
 
 ```csharp
-public class SinchAuthTokenProvider 
+public class SinchAuthTokenProvider
 : IUserTokenProvider<ApplicationUser, string>
 {
     public Task<string> GenerateAsync(string purpose, UserManager<ApplicationUser, string> manager, ApplicationUser user)
@@ -160,7 +160,7 @@ public async Task<ActionResult> EnableTwoFactorAuthentication()
     if (user != null)
     {
         user.IsSinchAuthEnabled = true;
-        byte[] secretKey = 
+        byte[] secretKey =
             KeyGeneration.GenerateRandomKey(OtpHashMode.Sha512);
         user.SinchAuthSecretKey = Base32Encoder.Encode(secretKey);
         await UserManager.UpdateAsync(user);
@@ -233,7 +233,7 @@ public class VerifyController : ApiController {
     }
 
     /// <summary>
-    /// Method to start a phonenumber verification process. 
+    /// Method to start a phonenumber verification process.
     /// </summary>
     /// <param name="phoneNumber">Phonenumber in international format 15555551231</param>
     /// <returns>200 ok and delivers an sms to the handset</returns>
@@ -455,7 +455,7 @@ Open AccountController and add the VerifyOTP action:
 public async Task<ActionResult> VerifyTOTP(string guid, string returnUrl)
 {
    var userId = await SignInManager.GetVerifiedUserIdAsync();
-   
+
    if (string.IsNullOrEmpty(userId))
    {
        return View("Error");
@@ -474,7 +474,7 @@ public async Task<ActionResult> VerifyTOTP(string guid, string returnUrl)
 
 Congratulations on making it this far\! Now you have a pretty solid solution to help you continue to build your website.
 
-##What’s next on server-side? 
+##What’s next on server-side?
 If you would like to use this in production, enable oath on WebAPI because you will most likely use this as your backend for mobile as well. You can read about how to do that [here](http://www.asp.net/web-api/overview/security/individual-accounts-in-web-api).
 
 **Ready for more?** Okay, let’s build the iOS client that you can use to to log in to your service.
@@ -492,13 +492,13 @@ To get up to speed, create a new project as we did in [Part 2](doc:building-an-i
 If you renamed your project, you need to change startValidation method and load the correct bundle. Change the name of the line:
 
 ```objectivec
-NSBundle* bundle = [NSBundle  bundleWithIdentifier:@"com.sinch.NumberValidator"]; 
+NSBundle* bundle = [NSBundle  bundleWithIdentifier:@"com.sinch.NumberValidator"];
 ```
 
 to:
 
 ```objectivec
-NSBundle* bundle = [NSBundle  bundleWithIdentifier:@"com.sinch.NumberValidatorWithOTP"]; 
+NSBundle* bundle = [NSBundle  bundleWithIdentifier:@"com.sinch.NumberValidatorWithOTP"];
 ```
 
 Next, you need to change the methods in httpClient to reflect your requestCode *("/api/requestcode/{phone number})* and verifyCode *(/api/verifycode/{phoneNumber}/{code})* endpoints from above.
@@ -682,16 +682,16 @@ Next, we are going to save the PIN code and shared secret securely. We also want
         return;
     }
     ///store both pin and secret securely
-    NSDictionary* instanceData = 
-        @{pinCodeKey:pinCode.text, 
-        sharedSecretKey:sharedSecret, 
+    NSDictionary* instanceData =
+        @{pinCodeKey:pinCode.text,
+        sharedSecretKey:sharedSecret,
         PhoneNumberKey: phoneNumber};
     [SimpleKeychain save:instanceDataKey
-                        account:instanceDataKey 
+                        account:instanceDataKey
                         data:instanceData];
-    [[NSNotificationCenter defaultCenter] 
-        postNotificationName:NumberValidationDidCancelNotification 
-        object:self 
+    [[NSNotificationCenter defaultCenter]
+        postNotificationName:NumberValidationDidCancelNotification
+        object:self
         userInfo:@{PhoneNumberKey: self.phoneNumber}];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -829,7 +829,7 @@ MF_Base32Additions.h
 MF_Base32Additions.m
 OTPGenerator.h  
 OTPGenerator.m  
-TOTPGenerator.h 
+TOTPGenerator.h
 TOTPGenerator.m
 ```
 
@@ -863,7 +863,7 @@ In the next action, generate the token and send it to the server for verificatio
     if ([storedPin isEqualToString:pinCode.text]) {
     //pincode ok
        //generate a totptoken and send to server
-        NSString* token = [self 
+        NSString* token = [self
             generatePin:[data objectForKey:sharedSecretKey]];
         [[HttpClient sharedHttpClient] verifyToken:token
                                    withPhonenumber:[data objectForKey:PhoneNumberKey]
@@ -945,4 +945,3 @@ Hang in there; we’re almost done\! The last thing we need is a method in our V
 >   - Send an push to the phone when there is an authentication request from the website
 >   - Implement functionality to prompt both website and mobile that a wrong token was generated
 >   - Add Bluetooth low energy (BLE) support so it will log in automatically when the phone is close to the computer
-

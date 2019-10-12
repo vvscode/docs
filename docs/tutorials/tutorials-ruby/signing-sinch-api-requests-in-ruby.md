@@ -1,7 +1,6 @@
 ---
 title: "Signing Sinch API Requests in Ruby"
 excerpt: "Why sign your requests instead of using basic authentication? It’s much more secure and Sinch doesn’t support basic authentication for production applications."
-hidden: "true"
 ---
 Why sign your requests instead of using basic authentication? It’s much more secure and Sinch doesn’t support basic authentication for production applications.
 
@@ -64,5 +63,3 @@ If successful, you will see the message ID printed and you will receive the text
 
  - Use the example [in the documentation](doc:using-rest#section-authorization) with the sample app key and secret to make sure that your signature matches the example at different points along the way.
  - Capitalization matters\! The headers that you send with the request need to be exactly the same as the ones in your canonicalized\_headers. Same goes for content-type.
-
-

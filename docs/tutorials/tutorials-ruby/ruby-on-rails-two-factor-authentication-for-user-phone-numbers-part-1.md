@@ -1,10 +1,9 @@
 ---
 title: "Ruby on Rails Two-Factor Authentication for User Phone Numbers - Part 1"
 excerpt: "This tutorial shows you how to build your own Ruby on Rails two-factor authentication system. More and more websites and apps rely on knowing your phone number and, in many cases, using that number for two-factor authentication (2FA)."
-hidden: "true"
 ---
 > **Update**
-> 
+>
 > To verify numbers even easier, check out our [Verification SDK](https://www.sinch.com/products/verification/sms/)
 
 More and more websites and apps rely on knowing your phone number and, in many cases, using that number for two-factor authentication (2FA). (More info about [2FA here](https://www.sinch.com/opinion/what-is-two-factor-authentication/)).
@@ -23,7 +22,7 @@ The full sample code can be downloaded [here](https://github.com/sinch/ruby-two-
 Create a new Rails project and a verification controller:
 
 ```shell
-$ rails new YourProjectName --database=postgresql 
+$ rails new YourProjectName --database=postgresql
 $ cd YourProjectName    
 $ rails generate controller Verifications
 ```
@@ -131,4 +130,3 @@ Then verify the code:
 ## Hosting
 
 If you’re going to follow part 2 of this tutorial, you will need to host this backend somewhere. I chose [Heroku](http://www.heroku.com), since it’s easy to host a Rails app there and it has a huge free tier. After you’ve created an account, [follow the steps on the site to deploy your app](https://devcenter.heroku.com/articles/getting-started-with-rails4#deploy-your-application-to-heroku). Make sure to follow through the section on migrating your database.
-

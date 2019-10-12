@@ -1,7 +1,6 @@
 ---
 title: "Sending SMS With cURL"
 excerpt: "In this tutorial, you will use cURL to send an SMS message to a mobile phone. We’ve also made a video tutorial to guide you through the process. Find out more."
-hidden: "true"
 ---
 In this tutorial, you will use cURL to send an SMS message to a mobile phone.
 
@@ -31,4 +30,3 @@ Copy and paste this into your terminal, wait a few seconds, and you should recei
 ## What’s next?
 
 This is just a basic demo of our [SMS API](https://www.sinch.com/products/messaging/sms/), but read [our documentation <sms-classic-sinch>` and other `tutorials](doc:tutorials-introduction) to see how you can integrate this with your own backend. Have questions? Just email the team [here](mailto:hello@sinch.com).
-

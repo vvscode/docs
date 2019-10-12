@@ -1,7 +1,6 @@
 ---
 title: "Sinch SMS node module"
 excerpt: "Node module to send SMS world-wide from within a Node or web application (using Browserify)."
-hidden: "true"
 ---
 Node module to send SMS world-wide from within a Node or web application (using Browserify).
 
@@ -16,7 +15,7 @@ npm install sinch-sms --save
 ```
 
 > **Note**
-> 
+>
 > Module is compatible with browserify
 
 ## Include in your project
@@ -35,7 +34,7 @@ To send an SMS, simply call the `send()` method, as in this simple example:
             key: 'YOUR_APPLICATION_KEY',
             secret: 'YOUR_APPLICATION_SECRET'
         });
-    
+
     sinchSms.send('+1555123456', 'Hello World!').then(function(response) {
         //All good, response contains messageId
         console.log(response);
@@ -62,8 +61,8 @@ New to Sinch? In order to get started, please visit [our website](https://portal
 
 See the `samples/` folder, for some basic usage examples. Samples work fine both in Node.js and in the browser by using browserify.
 
-> **Note** 
-> 
+> **Note**
+>
 > If you’re using your clientapi application key, SMS can only be sent to numbers you have verified in the [Sinch dashboard](https://portal.sinch.com/#/login).
 
 First edit the relevant sample to ensure it got your credentials or user information. Then you can run the sample in Node using:
@@ -95,5 +94,3 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-

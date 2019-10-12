@@ -1,10 +1,9 @@
 ---
 title: "Sign requests in Java"
 excerpt: "This tutorial will walk you through building a simple Java project that uses Sinch to sign a request to send an SMS. Why sign your requests instead of using basic authentication?"
-hidden: "true"
 ---
-> **Update** 
-> 
+> **Update**
+>
 > To verify numbers even easier, check out our [Verification SDK](https://www.sinch.com/products/verification/sms/)
 
 This tutorial will walk you through building a simple Java project that uses Sinch to sign a request to [send an SMS](https://www.sinch.com/products/messaging/sms/). Why sign your requests instead of using basic authentication? It’s much more secure and Sinch doesn’t support basic authentication for production applications.
@@ -130,4 +129,3 @@ public class Sms {
 That’s all\! Run the project and you will see “Hello, world\!” appear as an SMS to the phone number you entered.
 
 In addition, you can find SMS prices by country [here](https://www.sinch.com/products/messaging/sms/).
-

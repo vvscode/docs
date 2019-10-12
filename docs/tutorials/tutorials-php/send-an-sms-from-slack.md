@@ -1,7 +1,6 @@
 ---
 title: "Send an SMS from Slack"
 excerpt: "At our latest innovation day here at Sinch, I finally got the chance to re-live my PHP days and build a Slack SMS slash command. Find out more information."
-hidden: "true"
 ---
 I’ve been wanting to make this integration for months, and at our latest innovation day here at Sinch, I finally got the chance to re-live my PHP days and build a Slack SMS slash command. This slash command will take the following structure `/sms +12784210884 Your Message`, letting users send a text message to anyone such as teammates or friends and family.
 
@@ -132,4 +131,3 @@ if (strpos($ch,'errorCode') !== false) {
 Finally, this integration needs a better way of dealing with phone number formatting. Using an *unclean* number like 070-240 72 12 confuses the app and it won’t send.
 
 I hope that helps and please let us know in the comments section if you have any questions or issues.
-

@@ -1,7 +1,6 @@
 ---
 title: "Send SMS in PHP"
 excerpt: "Sending SMS from applications is more popular than ever, and this small script will enable you to send SMS in PHP. Find out more and sign up with Sinch today."
-hidden: "true"
 ---
 Sending SMS from applications is more popular than ever, and this small script will enable you to send SMS in PHP.
 
@@ -52,4 +51,3 @@ php name_of_script_file.php
 ## Note about authentication
 
 Please note that using basic authentication (as shown above) is only supported in Sinch clientapi applications. For production apps, we require that you sign your requests. To sign your requests in PHP, take a look at [this tutorial](doc:authenticate-to-the-sinch-javascript-sdk-from-your-php-backend).
-

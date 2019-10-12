@@ -1,7 +1,6 @@
 ---
 title: "Building an NPS SMS system with Sinch and Delighted"
 excerpt: "This tutorial helps you build an NPS SMS system with Sinch and Delighted. By using a system called Net Promoter Score (NPS), https://delighted.com helps you keep track of how likely your users are to recommend you."
-hidden: "true"
 ---
 As you probably already know, every time we resolve a support request we ask you if you would share Sinch with a friend. Soon, we’ll even ask you about tutorials like the one you’re checking out now. Why?
 
@@ -112,7 +111,7 @@ public async Task<HttpResponseMessage> Index(SMSCallbackModel model) {
     });
     if (person != null) {
         int score;
-        //just check if the score is 10, else take the firs character 
+        //just check if the score is 10, else take the firs character
         if (model.Message.Substring(0, 2) == "10") {
             score = 10;
             } else {
@@ -140,4 +139,3 @@ public async Task<HttpResponseMessage> Index(SMSCallbackModel model) {
 Deploy and send an SMS to the number with the text *10 awesome*. That should show up in your portal now? You’ll also be able to filter by events.
 
 Now dear developer, go dunk\!
-

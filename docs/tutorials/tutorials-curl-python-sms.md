@@ -1,7 +1,6 @@
 ---
 title: "cURL & Python (SMS)"
 excerpt: "Learn how to send SMS with cURL or Python. Read more..."
-hidden: "true"
 ---
 ## Getting Started
 
@@ -13,6 +12,3 @@ There are some steps that you will need to do before starting with any of the tu
 > 4.  Give your app a name and click “Create”
 > 5.  Keep your app key and secret safe as you will need this in a minute
 > 6.  Open your terminal
-
-
-
