@@ -1,6 +1,7 @@
 ---
 title: "Create an instance"
 excerpt: ""
+hidden: "true"
 ---
 As a second step, you need to create an instance with the ‘authorization’ string received from the authentication response (above).
 
@@ -10,7 +11,7 @@ This is a protected resource and requires a [user signed request](doc:using-rest
 
     Authorization: User {authorization}
     X-Timestamp: {now}
-    
+
     eg:
     Authorization: User eyJhcHBsaWNhdGlvbktleSI6IllPVVJfQVBQTElDQVRJT05fS0VZIiwiaWRlbnRpdHkiOnsidHlwZSI6ImVtYWlsIiwiZW5kcG9pbnQiOiJhZGRyZXNzQGV4YW1wbGUuY29tIn0sImNyZWF0ZWQiOiIyMDE1LTA2LTI0VDA4OjMyOjMyLjk0MTc2MDVaIn0=:Uc3UQ6tnextCCXiuieizBGNf16SDKFGFWMpu6LKbOwA=
     X-Timestamp: 2015-06-20T11:43:10.944Z
@@ -18,7 +19,7 @@ This is a protected resource and requires a [user signed request](doc:using-rest
 ## Request
 
     [POST]
-    
+
     URL:
     https://api.sinch.com/v1/instance
 
@@ -42,8 +43,8 @@ eg:
 }  
 ```
 
-> **Note** 
-> 
+> **Note**
+>
 > ‘version’ data is mandatory, but is up to the client to decide how to populate it. Choose values that best represent your OS and platform combination.
 
 ## Response
@@ -52,7 +53,7 @@ eg:
         string   - id
         byte[]   - secret
         integer? - expiresIn
-    
+
     eg:
 
 ```json
@@ -62,4 +63,3 @@ eg:
    "expiresIn":172800
 }
 ```
-

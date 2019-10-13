@@ -1,6 +1,7 @@
 ---
 title: "List all rented numbers"
 excerpt: ""
+hidden: "true"
 ---
 This endpoint lists all the numbers that are assigned to your account.
 
@@ -10,7 +11,7 @@ This is a protected resource and requires an [instance signed request](doc:using
 
     Authorization: Instance {instance ID}:{instance signature}
     X-Timestamp: {now}
-    
+
     eg:
     Authorization: Instance 00a3ffb1-0808-4dd4-9c7d-e4383d82e445:PToDaAs7AiJDqGKZHCl3mayEigGWodVfg4fSlkAYLHg=
     X-Timestamp: 2015-06-20T11:43:10.944Z
@@ -18,23 +19,23 @@ This is a protected resource and requires an [instance signed request](doc:using
 ## Request
 
     [GET]
-    
+
     URL:
     https://portalapi.sinch.com/v1/organisations/id/{organisationId}/numbers
-    
+
     eg:
     https://portalapi.sinch.com/v1/organisations/id/8888123/numbers
 
     [body]
         empty
-    
+
     eg:
     {}
 
 ## Response
 
     Number[]
-    
+
     [Number]
         long     - number
         integer  - groupId
@@ -46,7 +47,7 @@ This is a protected resource and requires an [instance signed request](doc:using
         string   - areaCode
         string?  - expires
         Money    - cost
-    
+
     eg:
 ```json
 [
@@ -88,6 +89,3 @@ If some numbers are already assigned to your app, then the application key will 
     [Error Codes]
         InvalidScheme (40301)       - The authorization scheme 'instance' is required.
         ForbiddenRequest (40300)    - The current user is not the owner of the organisation: {ORGANISATION_ID}
-
-
-

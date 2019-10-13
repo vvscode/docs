@@ -1,6 +1,7 @@
 ---
 title: "Get numbers assigned to an application"
 excerpt: ""
+hidden: "true"
 ---
 This endpoint lists all numbers that are assigned to a particular app.
 
@@ -10,7 +11,7 @@ This is a protected resource and requires an [instance signed request](doc:using
 
     Authorization: Instance {instance ID}:{instance signature}
     X-Timestamp: {now}
-    
+
     eg:
     Authorization: Instance 00a3ffb1-0808-4dd4-9c7d-e4383d82e445:VE1UwyOa8r9DscyBWGVZ43qEDn+SGJGoNe2aN8WrR+8=
     X-Timestamp: 2015-06-20T11:43:10.944Z
@@ -18,23 +19,23 @@ This is a protected resource and requires an [instance signed request](doc:using
 ## Request
 
     [GET]
-    
+
     URL:
     https://portalapi.sinch.com/v1/applications/key/{applicationKey}/numbers
-    
+
     eg:
     https://portalapi.sinch.com/v1/applications/key/bb7b4e39-4227-4913-8c81-2db4abb54fb3/numbers
 
     [body]
         empty
-    
+
     eg:
     {}
 
 ## Response
 
     Number[]
-    
+
     [Number]
         long - number
         integer - groupId
@@ -46,7 +47,7 @@ This is a protected resource and requires an [instance signed request](doc:using
         string - areaCode
         string? - expires
         Money    - cost
-    
+
     eg:
 ```json
 [
@@ -75,4 +76,3 @@ The “capabilities” can either be “voice” or “sms”.
         InvalidScheme (40301)       - The authorization scheme 'instance' is required.
         ResourceNotFound (40400)    - Application with the key {KEY_HERE} was not found.
         TemporaryDown (50300)       - Service is temporarily unavailable, please try again later.
-

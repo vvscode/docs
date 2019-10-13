@@ -1,6 +1,7 @@
 ---
-title: "Get organisation"
+title: "Get organization"
 excerpt: ""
+hidden: "true"
 ---
 With the instance that you created you can now perform instance signed requests, which are needed for the number administration endpoints. First you should retrieve your organisation Id.
 
@@ -10,7 +11,7 @@ This is a protected resource and requires an [instance signed request](doc:using
 
     Authorization: Instance {instance ID}:{instance signature}
     X-Timestamp: {now}
-    
+
     eg:
     Authorization: Instance 00a3ffb1-0808-4dd4-9c7d-e4383d82e445:bb9i9SGuw8mPspPF6WHzIZxw4yQxdOwGaDliMi+IhCU=
     X-Timestamp: 2015-06-20T11:43:10.944Z
@@ -18,13 +19,13 @@ This is a protected resource and requires an [instance signed request](doc:using
 ## Request
 
     [GET]
-    
+
     URL:
     https://api.sinch.com/v1/organisations
 
     [body]
         empty
-    
+
     eg:
     {}
 
@@ -37,7 +38,7 @@ This is a protected resource and requires an [instance signed request](doc:using
         string? - countryId
         string? - phone
         string? - vatnumber
-    
+
 eg:
 
 ```json
@@ -49,5 +50,3 @@ eg:
      "countryId":"US"
   }
 ```
-
-

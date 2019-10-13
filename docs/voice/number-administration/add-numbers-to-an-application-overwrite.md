@@ -1,11 +1,15 @@
 ---
 title: "Add numbers to an application (Overwrite)"
 excerpt: ""
+hidden: "true"
 ---
+
+## Add numbers to an application (Overwrite)
+
 This API overwrites all numbers assigned to your app with the new set of numbers that you specify.
 
 > **Attention**
-> 
+>
 > When using this API method, any numbers that may already be configured for the particular application will be overwritten by the new list of numbers that you specify in this API call.
 
 A new endpoint to only add a specific number to an application without overwriting the existing numbers will be available very soon.
@@ -16,7 +20,7 @@ This is a protected resource and requires an [instance signed request](doc:using
 
     Authorization: Instance {instance ID}:{instance signature}
     X-Timestamp: {now}
-    
+
     eg:
     Authorization: Instance 00a3ffb1-0808-4dd4-9c7d-e4383d82e445:6mLYthlkatoYKkq15oI/RuwtC8sIwfJsPrSHkOLDmUM=
     X-Timestamp: 2015-06-20T11:43:10.944Z
@@ -24,29 +28,29 @@ This is a protected resource and requires an [instance signed request](doc:using
 ## Request
 
     [PUT]
-    
+
     URL:
     https://portalapi.sinch.com/v1/applications/key/{applicationKey}/numbers/{numberCapability}
-    
+
     eg:
     https://portalapi.sinch.com/v1/applications/key/bb7b4e39-4227-4913-8c81-2db4abb54fb3/numbers/voice
 
     [body]
         long[] - numbers
-    
+
     eg:
     {
         "numbers":[14150005550]
     }
 
 > **Note**
-> 
+>
 > Accepted values for ‘numberCapability’ are **sms** or **voice**.
 
 ## Response
 
     Number[]
-    
+
     [Number]
         long - number
         integer - groupId
@@ -58,7 +62,7 @@ This is a protected resource and requires an [instance signed request](doc:using
         string - areaCode
         string? - expires
         Money    - cost
-    
+
     eg:
 ```json
 [
@@ -115,7 +119,7 @@ This is a protected resource and requires an [instance signed request](doc:using
 
     Authorization: Instance {instance ID}:{instance signature}
     X-Timestamp: {now}
-    
+
     eg:
     Authorization: Instance 00a3ffb1-0808-4dd4-9c7d-e4383d82e445:EA85F4qGFB0+tYZUh68g22R8DgtzxpsCXttLq1NKPgM=
     X-Timestamp: 2015-06-20T11:43:10.944Z
@@ -123,16 +127,16 @@ This is a protected resource and requires an [instance signed request](doc:using
 ## Request
 
     [DELETE]
-    
+
     URL:
     https://portalapi.sinch.com/v1/applications/key/{applicationKey}/numbers/{number}
-    
+
     eg:
     https://portalapi.sinch.com/v1/applications/key/bb7b4e39-4227-4913-8c81-2db4abb54fb3/numbers/14150005551
 
     [body]
         empty
-    
+
     eg:
     {}
 
@@ -147,6 +151,3 @@ This is a protected resource and requires an [instance signed request](doc:using
         InvalidScheme (40301)       - The authorization scheme 'instance' is required.
         ResourceNotFound (40400)    - Application with the key {KEY_HERE} was not found.
         TemporaryDown (50300)       - Service is temporarily unavailable, please try again later.
-
-
-

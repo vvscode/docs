@@ -1,7 +1,11 @@
 ---
 title: "Log in"
 excerpt: ""
+hidden: "true"
 ---
+
+## Log in
+
 First you need to login to retrieve a token that will be used to create an instance.
 
 ## Headers
@@ -12,13 +16,13 @@ When logging in, you should always pass in the header the “number administrati
 
     669762D5-2B10-44E0-8418-BC9EE4457555
 
-> **Note** 
-> 
+> **Note**
+>
 > Always use this exact key in the log in step. Do not use any of your app keys.
 
     Authorization: Application 669762D5-2B10-44E0-8418-BC9EE4457555
     X-Timestamp: {now}
-    
+
     eg:
     Authorization: Application 669762D5-2B10-44E0-8418-BC9EE4457555
     X-Timestamp: 2015-06-20T11:43:10.944Z
@@ -26,16 +30,16 @@ When logging in, you should always pass in the header the “number administrati
 ## Request
 
     [POST]
-    
+
     URL:
     https://userapi.sinch.com/v1/users/{type}/{identity}/authentication
-    
+
     eg:
     https://userapi.sinch.com/v1/users/email/address@example.com/authentication
 
     [body]
         string - password
-    
+
     eg:
 ```json
 {
@@ -46,7 +50,7 @@ When logging in, you should always pass in the header the “number administrati
 
     string - authorization
     User   - user
-    
+
     eg:
 ```json
 {
@@ -76,4 +80,3 @@ When logging in, you should always pass in the header the “number administrati
    }
 }
 ```
-

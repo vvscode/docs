@@ -1,6 +1,7 @@
 ---
 title: "Reserve number(s)"
 excerpt: ""
+hidden: "true"
 ---
 To rent numbers, you must first reserve them and then check out. This endpoint allows reserving the numbers that you would like to rent.
 
@@ -10,7 +11,7 @@ This is a protected resource and requires an [instance signed request](doc:using
 
     Authorization: Instance {instance ID}:{instance signature}
     X-Timestamp: {now}
-    
+
     eg:
     Authorization: Instance 00a3ffb1-0808-4dd4-9c7d-e4383d82e445:a6p7RYw8bMr3JuZh1LArvWTLJjIgCeQj5nsRZaXW7VQ=
     X-Timestamp: 2015-06-20T11:43:10.944Z
@@ -18,18 +19,18 @@ This is a protected resource and requires an [instance signed request](doc:using
 ## Request
 
     [PUT]
-    
+
     URL:
     https://portalapi.sinch.com/v1/organisations/id/{organisationId}/numbers/shop
-    
+
     eg:
     https://portalapi.sinch.com/v1/organisations/id/8888123/numbers/shop
 
     [body]
         integer  - groupId
         integer  - quantity
-        string[] - capabilities 
-    
+        string[] - capabilities
+
     eg:
 
 ```json
@@ -42,7 +43,7 @@ This is a protected resource and requires an [instance signed request](doc:using
 ## Response
 
     string - referenceId
-    
+
     eg:
 
 ```json
@@ -59,5 +60,3 @@ This is a protected resource and requires an [instance signed request](doc:using
                                     - Invalid number group: {GROUP_ID}
         ForbiddenRequest (40300)    - The current user is not the owner of the organisation: {ORGANISATION_ID}
         InvalidScheme (40301)       - The authorization scheme 'instance' is required.
-
-

@@ -1,6 +1,7 @@
 ---
 title: "Checkout reserved numbers"
 excerpt: ""
+hidden: "true"
 ---
 This endpoints allows you to check out the numbers that you have reserved, so that they are assigned to your account. Please make sure ou have enough credit to rent the numbers.
 
@@ -10,7 +11,7 @@ This is a protected resource and requires an [instance signed request](doc:using
 
     Authorization: Instance {instance ID}:{instance signature}
     X-Timestamp: {now}
-    
+
     eg:
     Authorization: Instance 00a3ffb1-0808-4dd4-9c7d-e4383d82e445:FN0oGGh6UAzdP8WVVwgbhXqUM2KJpHoWgjcgUKpS3bU=
     X-Timestamp: 2015-06-20T11:43:10.944Z
@@ -18,16 +19,16 @@ This is a protected resource and requires an [instance signed request](doc:using
 ## Request
 
     [POST]
-    
+
     URL:
     https://portalapi.sinch.com/v1/organisations/id/{organisationId}/numbers/shop
-    
+
     eg:
     https://portalapi.sinch.com/v1/organisations/id/8888123/numbers/shop
 
     [body]
         string[] - referenceIds
-    
+
     eg:
 ```json
 {
@@ -47,4 +48,3 @@ This is a protected resource and requires an [instance signed request](doc:using
         InvalidScheme (40301)           - The authorization scheme 'instance' is required.
         ResourceNotFound (40400)        - Unable to assign numbers to organization: reservation(s) not found or expired
         ApplicationConfiguration (42200)- Accounting not set up for this organization.
-
