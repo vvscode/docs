@@ -9,7 +9,7 @@ Anyone can fork and submit pull requests!
 ## 1. Clone the repo
 
 ```text
-https://github.com/sinch/docs.git
+git@github.com:sinch/docs.git
 ```
 
 ## 2. Write
