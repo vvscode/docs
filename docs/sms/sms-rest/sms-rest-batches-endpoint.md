@@ -48,7 +48,7 @@ curl -X POST \
           ],
           "body": "Hi there! How are you?"
       }' \
-  "https://eu.api.sinch.com/xms/v1/{service_plan_id}/batches"
+  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/batches"
 ```
 
 
@@ -65,7 +65,7 @@ curl -X POST \
           ],
           "body": "Hi there! How are you?"
       }' \
-  "https://eu.api.sinch.com/xms/v1/{service_plan_id}/batches"
+  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/batches"
 ```
 
 
@@ -126,7 +126,7 @@ curl -X POST \
           "send_at": "2014-10-02T09:30Z",
           "expire_at": "2014-10-02T12:30Z"
       }' \
-  "https://eu.api.sinch.com/xms/v1/{service_plan_id}/batches"
+  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/batches"
 ```
 
 
@@ -145,7 +145,7 @@ curl -X POST \
           "delivery_report": "summary",
           "callback_url": "http://www.example.com"
       }' \
-  "https://eu.api.sinch.com/xms/v1/{service_plan_id}/batches"
+  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/batches"
 ```
 
 
@@ -168,7 +168,7 @@ curl -X POST \
            }
       }
   }' \
-  "https://eu.api.sinch.com/xms/v1/{service_plan_id}/batches"
+  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/batches"
 ```
 
 
@@ -192,7 +192,7 @@ The response is a JSON object described in send\_batch\_msg.
 ```shell
 curl-X DELETE \
    -H "Authorization: Bearer {token}" \
-  "https://eu.api.sinch.com/xms/v1/{service_plan_id}/batches/{batch_id}"
+  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/batches/{batch_id}"
 ```
 
 
@@ -280,7 +280,7 @@ curl -X POST \
            }
       }
   }' \
-  "https://eu.api.sinch.com/xms/v1/{service_plan_id}/batches/dry_run"
+  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/batches/dry_run"
 ```
 
 
@@ -307,35 +307,35 @@ If the batch ID is unknown to the system.
 **Retrieve a batch**
 ```shell
 curl -H "Authorization: Bearer {token}" \
-  "https://eu.api.sinch.com/xms/v1/{service_plan_id}/batches/{batch_id}"
+  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/batches/{batch_id}"
 ```
 
 
 **Retrieve the first 30 batches from the last 24 hours**
 ```shell
 curl -H "Authorization: Bearer {token}" \
-  "https://eu.api.sinch.com/xms/v1/{service_plan_id}/batches"
+  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/batches"
 ```
 
 
 **Retrieve the third page of batches with a page size of 50 from the last 24 hours**
 ```shell
 curl -H "Authorization: Bearer {token}" \
-  "https://eu.api.sinch.com/xms/v1/{service_plan_id}/batches?page=2&page_size=50"
+  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/batches?page=2&page_size=50"
 ```
 
 
 **Retrieve batches created on June 23rd, 2014 UTC**
 ```shell
 curl -H "Authorization: Bearer {token}" \
-  "https://eu.api.sinch.com/xms/v1/{service_plan_id}/batches?start_date=2014-06-23&end_date=2014-06-24"
+  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/batches?start_date=2014-06-23&end_date=2014-06-24"
 ```
 
 
 **Retrieve the batches sent from 12345 or 54321**
 ```shell
 curl -H "Authorization: Bearer {token}" \
-  "https://eu.api.sinch.com/xms/v1/{service_plan_id}/batches?from=12345,54321"
+  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/batches?from=12345,54321"
 ```
 
 
@@ -393,7 +393,7 @@ curl -X POST \
       "body": "Hi ${name}! How are you?"
 
   }' \
-  "https://eu.api.sinch.com/xms/v1/{service_plan_id}/batches/{id}"
+  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/batches/{id}"
 ```
 
 
@@ -436,7 +436,7 @@ curl -X PUT \
            }
       }
   }' \
-  "https://eu.api.sinch.com/xms/v1/{service_plan_id}/batches/{id}"
+  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/batches/{id}"
 ```
 
 
@@ -481,7 +481,7 @@ The batch ID is not known to the system or the delivery report type is not recog
 **Request summary report**
 ```shell
 curl -H "Authorization: Bearer {token}" \
-  "https://eu.api.sinch.com/xms/v1/{service_plan_id}/batches/{batch_id}/delivery_report"
+  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/batches/{batch_id}/delivery_report"
 ```
 
 
@@ -512,7 +512,7 @@ curl -H "Authorization: Bearer {token}" \
 **Request full report**
 ```shell
 curl -H "Authorization: Bearer {token}" \
-  "https://eu.api.sinch.com/xms/v1/{service_plan_id}/batches/{batch_id}/delivery_report?type=full"
+  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/batches/{batch_id}/delivery_report?type=full"
 ```
 
 
@@ -556,7 +556,7 @@ A recipient delivery report contains the message status for a single recipient M
 **Request report for 123456789**
 ```shell
 curl -H "Authorization: Bearer {token}" \
-  "https://eu.api.sinch.com/xms/v1/{service_plan_id}/batches/{batch_id}/delivery_report/123456789"
+  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/batches/{batch_id}/delivery_report/123456789"
 ```
 
 

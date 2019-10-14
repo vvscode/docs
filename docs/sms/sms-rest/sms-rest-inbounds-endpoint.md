@@ -22,7 +22,7 @@ NB: The operator is only available for MOs sent to short codes.
 **Retrieve the first 30 inbound messages from the last 24 hours.**
 ```shell
 curl -H "Authorization: Bearer {token}" \
-  "https://eu.api.sinch.com/xms/v1/{service_plan_id}/inbounds"
+  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/inbounds"
 ```
 
 
@@ -31,7 +31,7 @@ curl -H "Authorization: Bearer {token}" \
 **Retrieve the third page of inbound messages with a page size of 50 from the last 24 hours**
 ```shell
 curl -H "Authorization: Bearer {token}" \
-  "https://eu.api.sinch.com/xms/v1/{service_plan_id}/inbounds?page=2&page_size=50"
+  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/inbounds?page=2&page_size=50"
 ```
 
 
@@ -40,7 +40,7 @@ curl -H "Authorization: Bearer {token}" \
 **Retrieve inbound messages received on June 23rd, 2014 UTC**
 ```shell
 curl -H "Authorization: Bearer {token}" \
-  "https://eu.api.sinch.com/xms/v1/{service_plan_id}/inbounds?start_date=20140623TZ&end_date=20140624TZ"
+  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/inbounds?start_date=20140623TZ&end_date=20140624TZ"
 ```
 
 
@@ -49,7 +49,7 @@ curl -H "Authorization: Bearer {token}" \
 **Retrieve the batches sent to 12345 or 54321**
 ```shell
 curl -H "Authorization: Bearer {token}" \
-  "https://eu.api.sinch.com/xms/v1/{service_plan_id}/inbounds?to=12345,54321"
+  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/inbounds?to=12345,54321"
 ```
 
 
@@ -103,6 +103,6 @@ The response is a JSON object described in `inbounds_endpoint` response.
 **If the inbound ID is unknown to the system**
 ```shell
 curl -H "Authorization: Bearer {token}" \
-  "https://eu.api.sinch.com/xms/v1/{service_plan_id}/inbounds/{inbound_id}"
+  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/inbounds/{inbound_id}"
 ```
 

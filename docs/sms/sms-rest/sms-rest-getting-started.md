@@ -16,7 +16,7 @@ The token is sent in the `Authorization` header preceded by `Bearer`. It is requ
 
 ``` shell
 $ curl -H "Authorization: Bearer {token}" \
-"https://eu.api.sinch.com/xms/v1/{service_plan_id}/batches"
+"https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/batches"
 ```
 
 ## Base URL
@@ -26,12 +26,11 @@ The following URLs can be used by the REST API. We have servers in the US and EU
 
 | Server        |  URL                                   |
 |---------------|----------------------------------------|
-| US Production | https://us.api.sinch.com     |
-| EU Production | https://eu.api.sinch.com     |
+| US Production | https://us.sms.api.sinch.com     |
+| EU Production | https://eu.sms.api.sinch.com     |
 
 ## Rate Limits
 
 Each service plan comes with a rate limit which sets the maximum number of messages that can be sent per second. The rate limit is calculated from all messages sent via the API, so a batch with 10 recipients will count as 10 messages for rate limiting purposes.
 
 Each service plan gets it's own message queue served in First-In-First-Out order. This means that new batches will be accepted immediately but might be delayed if earlier batches are still on queue.
-
