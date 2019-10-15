@@ -326,6 +326,7 @@ The format is as follows:
 |in_group   | Identifier of the group involved in the notification                   | String    |
 
 The event types can be one of the following:
+
 | Event type                          |
 | ----------------------------------- |
 | `group_created`                     |
