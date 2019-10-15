@@ -12,6 +12,10 @@ A callback from the Sinch WhatsApp API will always have the following structure:
 |statuses      | Array of delivery reports      | Array[Object] |
 |notifications | Array of inbound messages      | Array[Object] |
 
+> **Note**
+>
+> A callback from the Sinch WhatsApp API can contain both delivery reports and inbound messages
+
 ### Delivery report callback
 
 A delivery report contains the status and state of each message sent through the Sinch WhatsApp API.
