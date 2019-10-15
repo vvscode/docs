@@ -325,6 +325,28 @@ The format is as follows:
 |event_type | Event type                                                             | String    |
 |in_group   | Identifier of the group involved in the notification                   | String    |
 
+The event types can be one of the following:
+| Event type                          |
+| ----------------------------------- |
+| `group_created`                     |
+| `group_user_promoted`               |
+| `group_user_demoted`                |
+| `group_user_joined`                 |
+| `group_user_left`                   |
+| `group_subject_changed`             |
+| `group_description_changed`         |
+| `group_icon_changed`                |
+| `group_icon_deleted`                |
+| `group_invite_link_revoked`         |
+| `group_user_changed_number`         |
+| `group_error_fetching_photo`        |
+| `group_error_adding_users`          |
+| `group_error_adding_user`           |
+| `group_error_full_adding_users`     |
+| `group_error_removing_user`         |
+| `group_ended`                       |
+| `group_error_blocked_adding_user`   |
+
 ##### Sample user joined a group
 
 ```json
