@@ -22,7 +22,6 @@ const DEFAULT_CONFIG_FILE = 'config.yml';
 const DEFAULT_DOCS_DIR = 'docs';
 const CONFIG_APIKEY = 'apikey';
 const CONFIG_DOCSVERSION = 'docsversion';
-const BASE_GITURL = 'https://github.com/sinch/docs/blob/master/';
 
 program.description(
     `Tools to sync content back and forth between this local Git repository and the remote readme.io API.
@@ -261,22 +260,6 @@ All validations are performed unless --validations is specified.
 
 program.parse(process.argv);
 
-async function walk(currentDirPath, callback) {
-    fs.readdir(currentDirPath, function (err, files) {
-        if (err) {
-            throw new Error(err);
-        }
-        files.forEach(function (name) {
-            var filePath = path.join(currentDirPath, name);
-            var stat = fs.statSync(filePath);
-            if (stat.isFile()) {
-                callback(filePath, stat);
-            } else if (stat.isDirectory()) {
-                walk(filePath, callback);
-            }
-        });
-    });
-}
 
 function apiClient(catalog, options) {
     return new Api(globalOption(CONFIG_APIKEY), globalOption(CONFIG_DOCSVERSION), catalog, options);
