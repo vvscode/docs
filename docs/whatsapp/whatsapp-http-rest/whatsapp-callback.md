@@ -1,5 +1,5 @@
 ---
-title: "Callback"
+title: "Callbacks"
 excerpt: "Get to know the callbacks that has been sent via WhatsApp."
 ---
 A callback is a HTTP POST request with a notification made by the Sinch WhatsApp API to a URI of your choosing. The Sinch WhatsApp API expects the receiving server to respond with a response code within the `2xx Success` range. If no successful response is received then the API will either schedule a retry if the error is expected to be temporary or discard the callback if the error seems permanent. The first initial retry will happen 5 seconds after the first try. The next attempt is after 10 seconds, then after 20 seconds, after 40 seconds, after 80 seconds and so on, doubling on every attempt. The last retry will be at 81920 seconds (or 22 hours 45 minutes) after the initial failed attempt.
@@ -311,5 +311,38 @@ The format is as follows:
 }
 ```
 
+**Group event notifications**
 
+|Name       | Description                                                            | JSON Type |
+|-----------|------------------------------------------------------------------------|-----------|
+|type       | Fixed value `group_event`                                              | String    |
+|body       | Message describing the event                                           | String    |
+|members    | MSISDNs of the users involved in the event                             | String    |
+|event_type | Event type                                                             | String    |
+|in_group   | Identifier of the group involved in the notification                   | String    |
 
+##### Sample user joined a group
+
+```json
+{
+  "type": "whatsapp",
+  "notifications": [
+    {
+      "from": "46732619989",
+      "message_id": "ACELGAWCUJAqFWkiU4IDM3N5cy0xODA1ODI1MDkwMi0xNTY5MjI1MzgyQGcudXMtMTU3MTE0NzMxMjY3Ni1hZGQtMBGGRnMmGZif",
+      "message": {
+        "type": "group_event",
+        "body": "\u200e\u200e+46 73 200 11 22 was added\u200e",
+        "members": [
+          "46732001122"
+        ],
+        "event_type": "group_user_joined",
+        "in_group": "group:18058333222-1569225382"
+      },
+      "timestamp": "2019-10-15T13:48:32Z",
+      "in_group": "group:18058333222-1569225382",
+      "to": "demo1"
+    }
+  ]
+}
+```
