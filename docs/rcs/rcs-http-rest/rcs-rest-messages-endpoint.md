@@ -226,7 +226,6 @@ curl https://api.clxcommunications.com/rcs/v1/my-agent-id/messages \
       "message": {
           "type": "standalone_rich_card",
           "orientation": "VERTICAL",
-          "thumbnail_alignment": "RIGHT",
           "content": {
               "title": "Hello1",
               "description": "Hello There",
@@ -528,7 +527,7 @@ JSON Representation
                 <td>thumbnail_alignment</td>
                 <td>string</td>
                 <td>Image preview alignment for cards with horizontal layout</td>
-                <td>No</td>
+                <td>LEFT</td>
                 <td><dl>
                     <dt>Valid values:</dt>
                     <dd><ul>
@@ -537,7 +536,7 @@ JSON Representation
                     </ul>
                     </dd>
                 </dl></td>
-                <td>Yes</td>
+                <td>No</td>
             </tr>
             <tr class="even">
                 <td>content</td>
