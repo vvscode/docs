@@ -30,16 +30,16 @@ To use callouts and to benefit from having them styled with CSS they should be w
 
 You can use any of the following keywords in the note title (the first line marked in bold):
 
-| Keyword       | Callout type | Color |
-| ---           | --           | --    |
-| `note`        | info         | Blue  |
-| `info`        | info         | Blue  |
-| `information` | info         | Blue  |
-| `update`      | info         | Blue  |
-| `success`     | success      | Green |
-| `warning`     | warning      | Red   |
-| `danger`      | warning      | Red   |
-| `important`   | important    | Green |
+| Keyword       | Callout type | Color  |
+| ---           | --           | --     |
+| `note`        | info         | Blue   |
+| `info`        | info         | Blue   |
+| `information` | info         | Blue   |
+| `update`      | info         | Blue   |
+| `success`     | success      | Green  |
+| `important`   | important    | Yellow |
+| `warning`     | warning      | Red    |
+| `danger`      | warning      | Red    |
 
 ![Callout examples](images/callouts.png)
 
