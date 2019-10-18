@@ -1,6 +1,7 @@
 ---
 name: Top Level Category Creation Request
-about: Describe this issue template's purpose here.
+about: Use this template to ask the project team for a new category to be added to
+  the Sinch Developers site.
 title: Please add new category called [NAME]
 labels: ''
 assignees: amavrb
