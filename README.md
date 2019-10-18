@@ -63,8 +63,6 @@ Adding a new Category to the documentation site is not supported on a "self-serv
 
 In order to get a new category added to the site, please [create a GitHub issue](https://github.com/sinch/docs/issues/new/choose) to ask the project team to create the desired category and add it to the repository.
 
-An `.md` file directly in `whatsapp` directory will also be on the first level in the side navigation. Examples in the above picture are `whatsapp-introduction.md` and `whatsapp-http-rest.md`.
-
 #### Children pages
 
 A content page directly at the category level can optionally have one level of children pages. Children pages will be displayed in the site navigation tree as leafs under their parent pages. Pages with children can have content of their own.
@@ -88,15 +86,15 @@ You can link to pages or to specific sections within a page on the site. This is
 
 #### To a page
 
-Use the following Markdown syntax to link to any page within the site:
+Use the following Markdown syntax to link to any page within the site (notice the `doc:` prefix before the link URL):
 
 ```markdown
 [readable text](doc:PAGE-SLUG)
 ```
 
-Where PAGE-SLUG is the slug - its file name - of the page you want referenced. 
+Where PAGE-SLUG is the page slug (it's file name) you want to link to. 
 
-For example, to reference to the *WhatsApp Introduction* page, use this:
+For example, to link to the *WhatsApp Introduction* page, use this:
 
 ```markdown
 [WhatsApp Intro](doc:whatsapp-introduction)
@@ -125,7 +123,11 @@ Is going to have an anchor named `section-hows-it-going` which can then be linke
 [WhatsApp Intro](doc:whatsapp-introduction#section-hows-it-going)
 ```
 
-### URLs
+If you're unsure of the ID for a specific section on an already published page, you can use the small anchor icon that appear when you hover your cursor over any heading:
+
+![Anchor icon for headings](images/anchor-link.png)
+
+### External URLs
 
 When you want to create a link to an external site such as `[sinch](https://wwww.sinch.com)` make sure to use the full URL, with `https://`. Otherwise the URL will not work.
 
@@ -134,6 +136,10 @@ When you want to create a link to an external site such as `[sinch](https://wwww
 Images are referenced relative to the document where the image is present.
 
 ![Image reference](images/image-ref.png)
+
+As a best practices and to ensure consistency across the site, images should always be located in a folder named `images` right beside the content page where the image is present.
+
+For images that are shared between pages, they can be put in a folder higher in the folder hierarchy but no higher than inside each category folders.
 
 ## 3. Deploy
 
