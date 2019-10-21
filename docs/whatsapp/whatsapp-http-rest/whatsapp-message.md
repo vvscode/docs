@@ -184,7 +184,7 @@ JSON object parameters:
 
 | Name        | Description                                                          | JSON Type    | Default    | Constraints           | Required |
 | ----------- | -------------------------------------------------------------------- | ------------ | ---------- | --------------------- | :------: |
-| type        | Constant value `video`                                               | String       | N/A        | N/A                   | Yes      |
+| type        | Constant value `document`                                            | String       | N/A        | N/A                   | Yes      |
 | url         | Public url of the document file                                      | String       | N/A        | `pdf`, `doc` or `docx`| Yes      |
 | caption     | Optional caption that will be displayed as the document title.       | String       | None       | N/A                   | No       |
 
@@ -213,7 +213,7 @@ JSON object parameters:
 
 | Name        | Description                                                          | JSON Type    | Default    | Constraints           | Required |
 | ----------- | -------------------------------------------------------------------- | ------------ | ---------- | --------------------- | :------: |
-| type        | Constant value `video`                                               | String       | N/A        | N/A                   | Yes      |
+| type        | Constant value `audio`                                               | String       | N/A        | N/A                   | Yes      |
 | url         | Public url of the document file                                      | String       | N/A        | `mp3`                 | Yes      |
 
 ```json
@@ -322,6 +322,3 @@ JSON object parameters:
   }
 }
 ```
-
-
-
