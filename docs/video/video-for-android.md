@@ -1,6 +1,9 @@
 ---
 title: Video for Android
 excerpt: ''
+next:
+  pages:
+    - video-android-first-time-setup
 ---
 The Sinch SDK is a product that makes adding voice calling and/or instant messaging to mobile apps easy. It handles all the complexity of signaling and audio management while providing you the freedom to create a stunning user interface.
 

@@ -1,6 +1,9 @@
 ---
 title: Callout Verification
 excerpt: ''
+next:
+  pages:
+    - verification-ios-guidelines-for-acting-on-completion-handler-outcome
 ---
 Verification of a phone number is performed in one step: a PSTN call to the end-user phone is placed and a text-to-speech or recorded voice will instruct the end-user to press a digit.
 

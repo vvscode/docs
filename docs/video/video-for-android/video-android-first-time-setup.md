@@ -1,6 +1,9 @@
 ---
 title: First time setup with Android (Video)
 excerpt: ''
+next:
+  pages:
+    - video-android-sinch-client
 ---
 ## Register an Application
 

@@ -1,6 +1,9 @@
 ---
 title: Improving verification performance with a great UI
 excerpt: ''
+next:
+  pages:
+    - verification-ios-swift-sdk
 ---
 For better verification performance, it should be straightforward and easy for users to enter their phone numbers. To simplify this step and build a UI that accurately captures the correct input from the users, the Sinch SDK provides some utility APIs.
 

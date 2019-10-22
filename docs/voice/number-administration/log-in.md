@@ -2,6 +2,9 @@
 title: Log in
 excerpt: ''
 hidden: 'true'
+next:
+  pages:
+    - create-an-instance
 ---
 ## Log in
 

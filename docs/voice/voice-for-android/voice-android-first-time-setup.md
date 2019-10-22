@@ -1,6 +1,9 @@
 ---
 title: First time setup with Android (Voice)
 excerpt: ''
+next:
+  pages:
+    - voice-android-sinch-client
 ---
 ## Register an Application
 

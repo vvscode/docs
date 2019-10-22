@@ -1,6 +1,9 @@
 ---
 title: sendSavedMMS
 excerpt: ''
+next:
+  pages:
+    - xml-service-sendmms
 ---
 ## Overview 
 This API sends stored content from a specified account using an MMSID to a single mobile number. FROM must be one of the shortcodes allowed for your account. In case the number is from a different country than the FROM shortcode is assigned to the default shortcode for those countries will be used.

@@ -1,6 +1,10 @@
 ---
 title: HTTP Interface
 excerpt: ''
+next:
+  pages:
+    - number-lookup-enum-interface
+    - number-lookup-glossary
 ---
 ## How To Connect
 

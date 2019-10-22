@@ -1,6 +1,9 @@
 ---
 title: SMS Verification
 excerpt: ''
+next:
+  pages:
+    - verification-ios-callout-verification
 ---
 Verification of a phone number is performed in two steps, a verification SMS is requested and a verification code for that particular verification session is sent to the recipient. It's the responsibility of the developer to ask the end-user to provide the verification code from the SMS.
 

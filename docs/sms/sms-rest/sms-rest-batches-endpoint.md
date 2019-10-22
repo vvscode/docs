@@ -3,6 +3,13 @@ title: Batches Endpoint
 excerpt: >-
   The most feature rich API Sinch offers. It allows for single messages,
   scheduled batch send-outs using message templates and more.
+next:
+  pages:
+    - sms-rest-inbounds-endpoint
+    - sms-rest-groups-endpoint
+    - sms-rest-automatic-default-originator
+    - sms-rest-limiting-message-parts
+    - sms-rest-url-link-previews
 ---
 ### Send a batch message
 

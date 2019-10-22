@@ -1,6 +1,9 @@
 ---
 title: Local and Remote Push Notifications
 excerpt: ''
+next:
+  pages:
+    - voice-ios-audio-handling
 ---
 When an application is no longer in the foreground, the user must be notified of an incoming call or instant message by means of either a local notification or a remote push notification.
 

@@ -5,6 +5,10 @@ excerpt: >-
   Verification REST APIs. For general information on how to use the Sinch APIs
   including methods, types, errors and authorization, please check the [Using
   REST](doc:using-rest) page.
+next:
+  pages:
+    - verification-rest-verification-api
+    - verification-rest-callback-api
 ---
 ## Overview
 

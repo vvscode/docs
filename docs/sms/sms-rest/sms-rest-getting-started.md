@@ -3,6 +3,10 @@ title: Getting Started
 excerpt: >-
   The most feature-rich API Sinch offers. It allows for single messages,
   scheduled batch send-outs using message templates and more.
+next:
+  pages:
+    - sms-rest-formats
+  description: Learn about the formats used in the REST API
 ---
 ## Service plan
 

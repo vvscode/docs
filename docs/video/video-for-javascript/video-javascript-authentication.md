@@ -1,6 +1,9 @@
 ---
 title: Authentication
 excerpt: ''
+next:
+  pages:
+    - video-javascript-session-management
 ---
 ## Authentication by your backend
 

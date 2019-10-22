@@ -1,6 +1,9 @@
 ---
 title: Video for JavaScript
 excerpt: ''
+next:
+  pages:
+    - video-javascript-first-time-setup
 ---
 The Sinch SDK is a product that makes adding voice calling, instant messaging or phone verification to web apps easy. It handles the complexity of signaling and audio management while providing you the freedom to create a stunning user interface. The current release supports instant messaging, web/phone (PSTN) calling as well as verification.
 

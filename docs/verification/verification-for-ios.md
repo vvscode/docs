@@ -1,6 +1,9 @@
 ---
 title: Verification for iOS
 excerpt: ''
+next:
+  pages:
+    - verification-ios-first-time-setup
 ---
 The Sinch Verification SDK makes verifying phone numbers easy. The Sinch Verification SDK for iOS supports verification of phone numbers via SMS and callout.
 

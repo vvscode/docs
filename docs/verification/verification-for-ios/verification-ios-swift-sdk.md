@@ -1,6 +1,9 @@
 ---
 title: Swift SDK
 excerpt: ''
+next:
+  pages:
+    - verification-ios-troubleshooting-and-faq
 ---
 The Sinch Verification iOS SDK is also available for [Swift](https://developer.apple.com/).
 

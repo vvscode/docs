@@ -1,6 +1,10 @@
 ---
 title: HTTP Status Codes
 excerpt: The REST API returns an HTTP status and code each time a request is made.
+next:
+  pages:
+    - sms-rest-callback
+  description: Learn about the REST API callbacks
 ---
 ### HTTP Statuses
 

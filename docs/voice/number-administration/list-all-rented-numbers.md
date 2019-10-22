@@ -2,6 +2,9 @@
 title: List all rented numbers
 excerpt: ''
 hidden: 'true'
+next:
+  pages:
+    - get-numbers-assigned-to-an-application
 ---
 This endpoint lists all the numbers that are assigned to your account.
 

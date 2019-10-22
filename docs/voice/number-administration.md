@@ -1,6 +1,9 @@
 ---
 title: Number Administration
 excerpt: ''
+next:
+  pages:
+    - log-in
 ---
 This document outlines how to administrate numbers through the same endpoints used by the Sinch dashboard. It has two logical steps:
 

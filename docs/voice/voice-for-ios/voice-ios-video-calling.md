@@ -1,6 +1,9 @@
 ---
 title: Video Calling - Voice API iOS
 excerpt: ''
+next:
+  pages:
+    - voice-ios-local-and-remote-push-notifications
 ---
 ## Setting up a video call
 

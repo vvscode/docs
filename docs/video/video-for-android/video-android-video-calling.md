@@ -1,6 +1,9 @@
 ---
 title: Video Calling - Video API Android
 excerpt: ''
+next:
+  pages:
+    - video-android-push-notifications
 ---
 ## Setting up a video call
 

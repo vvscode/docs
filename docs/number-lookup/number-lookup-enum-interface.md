@@ -1,6 +1,10 @@
 ---
 title: ENUM Interface
 excerpt: ''
+next:
+  pages:
+    - number-lookup-http-interface
+    - number-lookup-glossary
 ---
 ## ENUM Protocol
 

@@ -1,6 +1,9 @@
 ---
 title: Sinch Operator IDs
 excerpt: ''
+next:
+  pages:
+    - unsupported-mm7-soap-elements
 ---
 | Operator            | X-Mblox-Carrier-Id |
 | ------------------- | ------------------ |

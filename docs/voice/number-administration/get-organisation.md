@@ -2,6 +2,9 @@
 title: Get organization
 excerpt: ''
 hidden: 'true'
+next:
+  pages:
+    - get-numbers-available-to-rent
 ---
 With the instance that you created you can now perform instance signed requests, which are needed for the number administration endpoints. First you should retrieve your organisation Id.
 

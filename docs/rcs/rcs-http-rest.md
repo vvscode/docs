@@ -1,6 +1,9 @@
 ---
 title: RCS REST API
 excerpt: ''
+next:
+  pages:
+    - rcs-rest-getting-started
 ---
 The Sinch RCS REST API provides [Universal Profile 2.0](https://www.gsma.com/futurenetworks/rcs/resources-rcs-events/universal-profile/) RCS messaging with granular controls to allow fallback to SMS when a handset is not RCS enabled.
 

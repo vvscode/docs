@@ -1,6 +1,9 @@
 ---
 title: getMMSTemplates
 excerpt: ''
+next:
+  pages:
+    - xml-service-postbacks
 ---
 ## Overview
 

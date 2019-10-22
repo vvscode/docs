@@ -1,6 +1,9 @@
 ---
 title: First time setup with JavaScript (Video)
 excerpt: ''
+next:
+  pages:
+    - video-javascript-sinch-client
 ---
 This is a step-by-step guide about setting up the Sinch SDK for the first time.
 

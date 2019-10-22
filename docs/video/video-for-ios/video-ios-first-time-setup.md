@@ -3,6 +3,9 @@ title: First time setup with iOS (Video)
 excerpt: >-
   Follow this step-by-step guide if you want to set up the Sinch Voice w/ Video
   SDK for the first time.
+next:
+  pages:
+    - video-ios-sinch-client
 ---
 ## Register an Application
 > 1.  Register a Sinch Developer account [here](https://portal.sinch.com/#/signup).

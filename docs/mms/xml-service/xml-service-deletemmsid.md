@@ -1,6 +1,9 @@
 ---
 title: deleteMMSID
 excerpt: ''
+next:
+  pages:
+    - xml-service-getmmstemplates
 ---
 ## Overview
 Deletes an MMS template whose mms-id is defined in the XML. All contents in the MMS template will be deleted immediately. In the case of Optimized MMS, the transcoded files will be also deleted.
