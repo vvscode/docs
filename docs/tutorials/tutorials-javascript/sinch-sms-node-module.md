@@ -1,6 +1,7 @@
 ---
 title: "Sinch SMS node module"
 excerpt: "Node module to send SMS world-wide from within a Node or web application (using Browserify)."
+hidden: "true"
 ---
 Node module to send SMS world-wide from within a Node or web application (using Browserify).
 

@@ -3,7 +3,6 @@ title: "Log in"
 excerpt: ""
 hidden: "true"
 ---
-
 ## Log in
 
 First you need to login to retrieve a token that will be used to create an instance.
