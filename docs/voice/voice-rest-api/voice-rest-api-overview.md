@@ -1,6 +1,6 @@
 ---
-title: "Overview"
-excerpt: ""
+title: Overview
+excerpt: ''
 ---
 When using Sinch for voice calling, the Sinch dashboard can be seen as a big telephony switch. It receives incoming phone calls (also known as *incoming call “legs”*), sets up outgoing phone calls (also known as *outgoing call “legs”*), and bridges the two. The incoming call leg may come in over a data connection (from a smartphone or web application using the Sinch SDKs) or through a local phone number (from the PSTN network). Similarly, the outgoing call leg can be over data (to another smartphone or web application using the Sinch SDKs) or the PSTN network.
 

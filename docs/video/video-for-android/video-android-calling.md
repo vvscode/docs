@@ -1,6 +1,6 @@
 ---
-title: "Calling Video API Android"
-excerpt: ""
+title: Calling Video API Android
+excerpt: ''
 ---
 The Sinch SDK supports four types of calls: *app-to-app (audio or video)*, *app-to-phone*, *app-to-sip* and *conference* calls. The CallClient is the entry point for the calling functionality of the Sinch SDK.
 

@@ -1,6 +1,8 @@
 ---
-title: "Getting Started"
-excerpt: "The most feature-rich API Sinch offers. It allows for single messages, scheduled batch send-outs using message templates and more."
+title: Getting Started
+excerpt: >-
+  The most feature-rich API Sinch offers. It allows for single messages,
+  scheduled batch send-outs using message templates and more.
 ---
 ## Service plan
 

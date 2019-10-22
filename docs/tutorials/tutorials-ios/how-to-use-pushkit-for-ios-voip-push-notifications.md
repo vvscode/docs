@@ -1,6 +1,8 @@
 ---
-title: "How to use Pushkit for iOS VoIP push notifications"
-excerpt: "In this tutorial we will investigate the PushKit framework and make it run with the Sinch Voice API."
+title: How to use Pushkit for iOS VoIP push notifications
+excerpt: >-
+  In this tutorial we will investigate the PushKit framework and make it run
+  with the Sinch Voice API.
 ---
 The biggest challenge when writing communications apps is providing a quick experience that won’t drain your users’ battery. We are going to investigate the new PushKit framework and make it run with our [Voice API](https://www.sinch.com/products/voice/). It will require some beta installs and server-side code, so expect to spend around 45 to 60 minutes here. This tutorial assumes that you are familiar with the old push system and how to create certificates.
 

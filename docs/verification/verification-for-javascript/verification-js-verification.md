@@ -1,6 +1,6 @@
 ---
-title: "Verification"
-excerpt: ""
+title: Verification
+excerpt: ''
 ---
 The Sinch JavaScript SDK supports verification of phone numbers via SMS and Callout. Flash calling verification will be supported in a later release.
 

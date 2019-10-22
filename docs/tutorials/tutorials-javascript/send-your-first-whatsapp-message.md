@@ -1,6 +1,8 @@
 ---
-title: "Send your first WhatsApp message in node.js"
-excerpt: "By following this step-by-step tutorial you will learn how to send your first WhatsApp Business Message. Read more."
+title: Send your first WhatsApp message in node.js
+excerpt: >-
+  By following this step-by-step tutorial you will learn how to send your first
+  WhatsApp Business Message. Read more.
 ---
 To help take some of the burden away when sending messages, Sinch provisions and manages the required cloud compute, storage and database environments of WhatsApp Business, while offering high availability and throughput. This API is the first of many planned channels in our Multichannel Messaging API suite, so watch this space\!
 

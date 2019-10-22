@@ -1,6 +1,9 @@
 ---
-title: "Cloud SMPP"
-excerpt: "Our Cloud SMPP service is available to you immediately after creating an account on our [web site](https://dashboard.sinch.com/#/signup). It uses the same core platform and backend connections as our Enterprise SMPP service."
+title: Cloud SMPP
+excerpt: >-
+  Our Cloud SMPP service is available to you immediately after creating an
+  account on our [web site](https://dashboard.sinch.com/#/signup). It uses the
+  same core platform and backend connections as our Enterprise SMPP service.
 ---
 ## Connection Configuration
 

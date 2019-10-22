@@ -1,6 +1,6 @@
 ---
-title: "Call Detail Records"
-excerpt: ""
+title: Call Detail Records
+excerpt: ''
 ---
 Call Detail Records (CDRs) can be downloaded from the Sinch portal. CDRs are in a semicolon-delimited file that contains the following fields
 

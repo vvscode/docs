@@ -1,6 +1,8 @@
 ---
-title: "Authenticate to the Sinch JavaScript SDK From Your PHP Backend"
-excerpt: "In this tutorial you will learn how to authenticate to Sinch JS SDK from a PHP backend. Use it to securely start the Sinch Client."
+title: Authenticate to the Sinch JavaScript SDK From Your PHP Backend
+excerpt: >-
+  In this tutorial you will learn how to authenticate to Sinch JS SDK from a PHP
+  backend. Use it to securely start the Sinch Client.
 ---
 *Shoutout to* [Rob Holmes](https://twitter.com/robholmes) *from* [i6systems.com](http://i6systems.com) *for putting together this sample code for us\!*
 

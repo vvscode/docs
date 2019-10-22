@@ -1,6 +1,8 @@
 ---
-title: "Verifying a Phone Number in iOS using Swift 3"
-excerpt: "In this tutorial you’ll learn how to verify a user’s phone number using our Swift framework."
+title: Verifying a Phone Number in iOS using Swift 3
+excerpt: >-
+  In this tutorial you’ll learn how to verify a user’s phone number using our
+  Swift framework.
 ---
 In this tutorial you’ll learn how to verify a user’s phone number using our Swift framework. We support two methods of verifying on iOS:
 

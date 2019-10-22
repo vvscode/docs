@@ -1,6 +1,6 @@
 ---
-title: "Push notifications Video API Android"
-excerpt: ""
+title: Push notifications Video API Android
+excerpt: ''
 ---
 When an application is not running, or the `Active Connection` feature is not enabled, the user must be notified of an incoming call or instant message by a push notification.
 

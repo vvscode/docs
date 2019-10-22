@@ -1,6 +1,6 @@
 ---
-title: "Getting Started"
-excerpt: ""
+title: Getting Started
+excerpt: ''
 ---
 RCS is the logical evolution of SMS enabling enterprises and individuals to exchange rich media, deep linking features and interactive content with the same ease as SMS.
 

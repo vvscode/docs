@@ -1,6 +1,6 @@
 ---
-title: "Miscellaneous Verification iOS"
-excerpt: ""
+title: Miscellaneous Verification iOS
+excerpt: ''
 ---
 ## Minimum requirements
 

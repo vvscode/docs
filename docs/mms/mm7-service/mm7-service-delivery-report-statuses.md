@@ -1,6 +1,6 @@
 ---
-title: "Delivery Report Statuses"
-excerpt: ""
+title: Delivery Report Statuses
+excerpt: ''
 ---
 The following table lists the responses returned with delivery reports.
 

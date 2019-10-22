@@ -1,6 +1,10 @@
 ---
-title: "Building Your Own Conferencing System With ASP.NET MVC - Part 2: Adding A Web Client"
-excerpt: "If you followed the first tutorial we continue on that one and we will look at building a web based client to connect users to a conference."
+title: >-
+  Building Your Own Conferencing System With ASP.NET MVC - Part 2: Adding A Web
+  Client
+excerpt: >-
+  If you followed the first tutorial we continue on that one and we will look at
+  building a web based client to connect users to a conference.
 ---
 In [part 1](doc:build-a-conference-calling-app-in-nodejs-express), we built the foundation for our conference calling system, and in this part of the tutorial, we will look at building a web based client to connect users to a conference.
 

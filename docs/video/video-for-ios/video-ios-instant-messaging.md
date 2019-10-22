@@ -1,6 +1,6 @@
 ---
-title: "Instant Messaging"
-excerpt: ""
+title: Instant Messaging
+excerpt: ''
 ---
 The `SINMessageClient` is the entry point to Instant Messaging functionality in the Sinch SDK.
 

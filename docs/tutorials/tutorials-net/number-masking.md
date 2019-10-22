@@ -1,6 +1,6 @@
 ---
-title: "Number masking"
-excerpt: ""
+title: Number masking
+excerpt: ''
 ---
 The Ubers for X have two very interesting common denominators: A decentralized workforce, and a need for real-time communication. With <a href="http://ben-evans.com/benedictevans/2015/6/19/presentation-mobile-is-eating-the-world" target="_blank">the world turning mobile</a>, our phone numbers are the most precious thing we own, and like with all precious things, we want to keep it safe and sound - and away from strangers.
 

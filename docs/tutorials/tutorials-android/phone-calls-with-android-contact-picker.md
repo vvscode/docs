@@ -1,6 +1,9 @@
 ---
-title: "Phone Calls with Android Contact Picker"
-excerpt: "This tutorial shows you how to use the Android Contact Picker to let users choose a phone number from their contact book. Later we go trough how you can make a call with Sinch."
+title: Phone Calls with Android Contact Picker
+excerpt: >-
+  This tutorial shows you how to use the Android Contact Picker to let users
+  choose a phone number from their contact book. Later we go trough how you can
+  make a call with Sinch.
 ---
 In this tutorial, I will walk you through using the Android Contact Picker to let your users choose a phone number from their contact book. Upon finishing this tutorial, you can follow our [Android calling tutorials](doc:call-a-phone-number-from-your-android-app-with-sinch) to make a call with Sinch.
 

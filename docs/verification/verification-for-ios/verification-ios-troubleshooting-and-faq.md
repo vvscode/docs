@@ -1,6 +1,6 @@
 ---
-title: "Troubleshooting and FAQ"
-excerpt: ""
+title: Troubleshooting and FAQ
+excerpt: ''
 ---
 **Q**: Does the Sinch SDK handle network connectivity errors?
 

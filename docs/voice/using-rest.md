@@ -1,6 +1,6 @@
 ---
-title: "Using REST"
-excerpt: ""
+title: Using REST
+excerpt: ''
 ---
 ## Authorization
 

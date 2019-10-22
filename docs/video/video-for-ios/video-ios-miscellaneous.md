@@ -1,6 +1,6 @@
 ---
-title: "Miscellaneous Video iOS"
-excerpt: ""
+title: Miscellaneous Video iOS
+excerpt: ''
 ---
 ## Minimum requirements
 

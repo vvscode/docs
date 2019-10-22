@@ -1,6 +1,6 @@
 ---
-title: "Verification for Android"
-excerpt: ""
+title: Verification for Android
+excerpt: ''
 ---
 The Sinch Verification SDK makes verifying phone numbers easy. This SDK supports the verification of phone numbers via SMS or flash calls.
 

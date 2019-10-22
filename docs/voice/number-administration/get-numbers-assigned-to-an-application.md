@@ -1,7 +1,7 @@
 ---
-title: "Get numbers assigned to an application"
-excerpt: ""
-hidden: "true"
+title: Get numbers assigned to an application
+excerpt: ''
+hidden: 'true'
 ---
 This endpoint lists all numbers that are assigned to a particular app.
 

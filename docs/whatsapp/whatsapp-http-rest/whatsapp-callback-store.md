@@ -1,6 +1,6 @@
 ---
-title: "Callback Store"
-excerpt: "Get to know how to poll the API for callbacks."
+title: Callback Store
+excerpt: Get to know how to poll the API for callbacks.
 ---
 Sinch offers the ability to store your callbacks instead of sending them to a specified callback URL.
 

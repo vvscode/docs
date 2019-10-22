@@ -1,6 +1,8 @@
 ---
-title: "Securing your Verifications when using Node.JS"
-excerpt: "In this tutorial learn how the different ways you can ensure that your app is secure and nobody is using your account for fraudulent verifications."
+title: Securing your Verifications when using Node.JS
+excerpt: >-
+  In this tutorial learn how the different ways you can ensure that your app is
+  secure and nobody is using your account for fraudulent verifications.
 ---
 In this tutorial, we’ll show you the different ways you can ensure that your app is secure and nobody is using your account for fraudulent verifications.
 

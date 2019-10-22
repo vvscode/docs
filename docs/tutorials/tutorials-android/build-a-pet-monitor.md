@@ -1,6 +1,10 @@
 ---
-title: "Build a Pet Monitor"
-excerpt: "Want to check in on your pet while you’re at work, but not willing to shell out the big bucks for custom hardware devices? If you have an Android tablet and phone, you can build a voice communication system to chat with your pet in no time at all."
+title: Build a Pet Monitor
+excerpt: >-
+  Want to check in on your pet while you’re at work, but not willing to shell
+  out the big bucks for custom hardware devices? If you have an Android tablet
+  and phone, you can build a voice communication system to chat with your pet in
+  no time at all.
 ---
 Want to check in on your pet while you’re at work, but not willing to shell out the big bucks for custom hardware devices such as [PetChatz](http://www.petchatz.com/) or [PetCube](https://www.petcube.com/) ? If you have an Android tablet and phone, you can build a voice communication system to chat with your pet in no time at all.
 

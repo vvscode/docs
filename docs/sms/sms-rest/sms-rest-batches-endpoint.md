@@ -1,6 +1,8 @@
 ---
-title: "Batches Endpoint"
-excerpt: "The most feature rich API Sinch offers. It allows for single messages, scheduled batch send-outs using message templates and more."
+title: Batches Endpoint
+excerpt: >-
+  The most feature rich API Sinch offers. It allows for single messages,
+  scheduled batch send-outs using message templates and more.
 ---
 ### Send a batch message
 

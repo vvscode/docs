@@ -1,6 +1,6 @@
 ---
-title: "MM7_DeliveryReport"
-excerpt: ""
+title: MM7_DeliveryReport
+excerpt: ''
 ---
 **Receive Delivery Reports for previously submitted MT**
 

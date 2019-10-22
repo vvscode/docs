@@ -1,6 +1,6 @@
 ---
-title: "Parameterization"
-excerpt: "Provide content that varies depending on recipient with message parameters."
+title: Parameterization
+excerpt: Provide content that varies depending on recipient with message parameters.
 ---
 Parameterization enables you to customize parts of a message for each recipient.
 

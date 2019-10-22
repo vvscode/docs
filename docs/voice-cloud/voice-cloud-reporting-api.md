@@ -1,7 +1,7 @@
 ---
-title: "Call Report"
-excerpt: ""
-hidden: "true"
+title: Call Report
+excerpt: ''
+hidden: 'true'
 ---
 [URL]
         https://reportingapi.sinch.com/[version]

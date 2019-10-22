@@ -1,6 +1,6 @@
 ---
-title: "Inbounds Endpoint"
-excerpt: ""
+title: Inbounds Endpoint
+excerpt: ''
 ---
 Inbounds, or Mobile Originated messages, are incoming messages. Inbound messages can be listed and retrieved like batch messages and they can also be delivered by callback requests like delivery reports.
 

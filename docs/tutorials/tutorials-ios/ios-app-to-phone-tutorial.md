@@ -1,6 +1,8 @@
 ---
-title: "iOS App to Phone Tutorial"
-excerpt: "In this tutorial you will learn how to use the Sinch SDK to make a voice call from an iOS app from to a regular phone number."
+title: iOS App to Phone Tutorial
+excerpt: >-
+  In this tutorial you will learn how to use the Sinch SDK to make a voice call
+  from an iOS app from to a regular phone number.
 ---
 In this tutorial, you’ll learn how to use the Sinch SDK to make a voice call from an iOS app to a regular phone number. This will take about 20 minutes to build and will require:
 

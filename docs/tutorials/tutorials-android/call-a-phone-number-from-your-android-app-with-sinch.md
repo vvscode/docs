@@ -1,6 +1,8 @@
 ---
-title: "Call a Phone Number From Your Android App With Sinch"
-excerpt: "In this tutorial, you will build an Android app that uses Sinch to call phone numbers all over the world. It will take about 15 minutes."
+title: Call a Phone Number From Your Android App With Sinch
+excerpt: >-
+  In this tutorial, you will build an Android app that uses Sinch to call phone
+  numbers all over the world. It will take about 15 minutes.
 ---
 In this tutorial, you will build an Android app that uses Sinch to call phone numbers all over the world. It will take about 15 minutes.
 

@@ -1,6 +1,9 @@
 ---
-title: "Build a Tennis App to Call Your Tennis Friends From Global Tennis Network"
-excerpt: "In this tutorial, you will learn how to create an app that calls friends from your Global Tennis Network profile. While keeping your phone number private, this feature will allow you to call up other tennis players."
+title: Build a Tennis App to Call Your Tennis Friends From Global Tennis Network
+excerpt: >-
+  In this tutorial, you will learn how to create an app that calls friends from
+  your Global Tennis Network profile. While keeping your phone number private,
+  this feature will allow you to call up other tennis players.
 ---
 When I started studying at U.C. Davis, I often wanted to connect with tennis players at my skill level. I was used to playing for my high school team every day, so I needed to find a way to get my tennis fix. An app with this feature would have made things so much simpler for me—those awkward two-hour gaps between lectures could have been used to play tennis\!
 

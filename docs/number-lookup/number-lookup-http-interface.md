@@ -1,6 +1,6 @@
 ---
-title: "HTTP Interface"
-excerpt: ""
+title: HTTP Interface
+excerpt: ''
 ---
 ## How To Connect
 

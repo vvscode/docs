@@ -1,6 +1,9 @@
 ---
-title: "Introduction to RCS"
-excerpt: "This API provides Universal Profile 2.0 RCS messaging with granular controls to allow fallback to SMS when a handset is not RCS enabled. Find out more today."
+title: Introduction to RCS
+excerpt: >-
+  This API provides Universal Profile 2.0 RCS messaging with granular controls
+  to allow fallback to SMS when a handset is not RCS enabled. Find out more
+  today.
 ---
 ## Overview
 

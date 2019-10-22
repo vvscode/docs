@@ -1,6 +1,8 @@
 ---
-title: "SMPP"
-excerpt: "For our customers that require low level control of SMS messaging and lowest possible latency we offer our Enhanced SMPP service."
+title: SMPP
+excerpt: >-
+  For our customers that require low level control of SMS messaging and lowest
+  possible latency we offer our Enhanced SMPP service.
 ---
 > **Note**    
 >

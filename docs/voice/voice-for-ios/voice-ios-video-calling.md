@@ -1,6 +1,6 @@
 ---
-title: "Video Calling - Voice API iOS"
-excerpt: ""
+title: Video Calling - Voice API iOS
+excerpt: ''
 ---
 ## Setting up a video call
 

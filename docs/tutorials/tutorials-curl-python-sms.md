@@ -1,6 +1,6 @@
 ---
-title: "cURL & Python (SMS)"
-excerpt: "Learn how to send SMS with cURL or Python. Read more..."
+title: cURL & Python (SMS)
+excerpt: Learn how to send SMS with cURL or Python. Read more...
 ---
 ## Getting Started
 

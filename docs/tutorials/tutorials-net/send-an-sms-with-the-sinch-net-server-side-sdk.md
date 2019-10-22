@@ -1,6 +1,9 @@
 ---
-title: "Send an SMS with the Sinch .Net server-side SDK"
-excerpt: "In this tutorial we’ll be creating an application to send an SMS. We’ll be using a clientapi environment, and in the clientapi, you can only send messages to verified numbers on your account."
+title: Send an SMS with the Sinch .Net server-side SDK
+excerpt: >-
+  In this tutorial we’ll be creating an application to send an SMS. We’ll be
+  using a clientapi environment, and in the clientapi, you can only send
+  messages to verified numbers on your account.
 ---
 If you thought SMS was old fashioned, think again. 96% of smartphone users still use SMS. It has a 90% read rate in minutes and higher engagement rates than emails and OTT apps, which makes it very reach effective in terms of timeliness. SMS is the one solution, not requiring app installations or friend requests, not relying on tech heavy solutions or the operator at hand.
 

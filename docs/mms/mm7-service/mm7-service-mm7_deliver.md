@@ -1,6 +1,6 @@
 ---
-title: "MM7_Deliver"
-excerpt: ""
+title: MM7_Deliver
+excerpt: ''
 ---
 **Receive MMS MO submitted by end users to your platform**
 

@@ -1,6 +1,6 @@
 ---
-title: "Verification Callback API"
-excerpt: ""
+title: Verification Callback API
+excerpt: ''
 ---
 ## Verification Request Event
 

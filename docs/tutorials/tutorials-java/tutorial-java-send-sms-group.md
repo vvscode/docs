@@ -1,6 +1,8 @@
 ---
-title: "Send an SMS to a pre-defined group of recipients"
-excerpt: "This tutorial will show you how to use Groups, a more advanced feature of the Sinch REST API, to send a single message to a pre-defined list of recipients."
+title: Send an SMS to a pre-defined group of recipients
+excerpt: >-
+  This tutorial will show you how to use Groups, a more advanced feature of the
+  Sinch REST API, to send a single message to a pre-defined list of recipients.
 ---
 Now that you've successfully [sent a message to ad-hoc recipients using the Sinch REST API](doc:tutorial-java-send-sms), you're ready to take on the next step: creating a group of recipients that will be stored on Sinch servers, and sending a message to this group.
 

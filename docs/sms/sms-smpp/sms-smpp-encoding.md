@@ -1,6 +1,6 @@
 ---
-title: "Encoding"
-excerpt: ""
+title: Encoding
+excerpt: ''
 ---
 ### Default SMSC encoding
 

@@ -1,6 +1,9 @@
 ---
-title: "Build an iOS Twitter App to Call Your Friends"
-excerpt: "In this tutorial, you will learn how to make an app that lets users call people who they follow on Twitter. We’ll do this using Sinch app-to-app calling to privately place calls with the user’s Twitter handle."
+title: Build an iOS Twitter App to Call Your Friends
+excerpt: >-
+  In this tutorial, you will learn how to make an app that lets users call
+  people who they follow on Twitter. We’ll do this using Sinch app-to-app
+  calling to privately place calls with the user’s Twitter handle.
 ---
 Twitter is a great way for people to connect, but it’s a shame that they can’t connect with voice calling. Sure, you can tag each other or direct message (DM) back and forth, but that can get a bit impersonal at times. In this tutorial, we’ll be making an app that lets users call people who they follow on Twitter. We’ll do this using Sinch [app-to-app calling](https://www.sinch.com/products/voice/data-calling/) to privately place calls with the user’s Twitter handle.
 

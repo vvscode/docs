@@ -1,6 +1,6 @@
 ---
-title: "Sinch Campaign Manager User Guide"
-excerpt: ""
+title: Sinch Campaign Manager User Guide
+excerpt: ''
 ---
 The purpose of this Guide is to briefly describe usage of the Campaign Manager Portal.
 

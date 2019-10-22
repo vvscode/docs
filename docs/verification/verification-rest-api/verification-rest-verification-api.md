@@ -1,6 +1,6 @@
 ---
-title: "Verification API"
-excerpt: ""
+title: Verification API
+excerpt: ''
 ---
 ```text
 URI:  https://verificationapi-v1.sinch.com/verification/[version]

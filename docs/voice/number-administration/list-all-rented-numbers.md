@@ -1,7 +1,7 @@
 ---
-title: "List all rented numbers"
-excerpt: ""
-hidden: "true"
+title: List all rented numbers
+excerpt: ''
+hidden: 'true'
 ---
 This endpoint lists all the numbers that are assigned to your account.
 

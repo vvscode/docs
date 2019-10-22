@@ -1,6 +1,6 @@
 ---
-title: "Reporting API"
-excerpt: ""
+title: Reporting API
+excerpt: ''
 ---
 ```text
 [URL] https://reportingapi.sinch.com/[version]

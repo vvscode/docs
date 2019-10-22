@@ -1,6 +1,9 @@
 ---
-title: "Start Chrome With Flags (Mac)"
-excerpt: "When using the Sinch JavaScript SDK locally in Chrome, it is necessary to start Chrome with the flag. Learn how to do it with our simple step-by-step guide."
+title: Start Chrome With Flags (Mac)
+excerpt: >-
+  When using the Sinch JavaScript SDK locally in Chrome, it is necessary to
+  start Chrome with the flag. Learn how to do it with our simple step-by-step
+  guide.
 ---
 When using the [Sinch JavaScript SDK](doc:voice-for-js) locally in Chrome, it is necessary to start Chrome with the flag `--allow-file-access-from-files`.
 

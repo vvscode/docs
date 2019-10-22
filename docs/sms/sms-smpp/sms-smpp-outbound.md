@@ -1,6 +1,6 @@
 ---
-title: "Outbound SMS SMPP"
-excerpt: ""
+title: Outbound SMS SMPP
+excerpt: ''
 ---
 ### SMPP account details
 

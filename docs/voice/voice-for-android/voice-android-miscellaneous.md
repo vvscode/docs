@@ -1,6 +1,6 @@
 ---
-title: "Miscellaneous Voice Android"
-excerpt: ""
+title: Miscellaneous Voice Android
+excerpt: ''
 ---
 ## Minimum requirements
 

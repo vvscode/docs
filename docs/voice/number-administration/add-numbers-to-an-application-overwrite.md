@@ -1,7 +1,7 @@
 ---
-title: "Add numbers to an application (Overwrite)"
-excerpt: ""
-hidden: "true"
+title: Add numbers to an application (Overwrite)
+excerpt: ''
+hidden: 'true'
 ---
 ## Add numbers to an application (Overwrite)
 

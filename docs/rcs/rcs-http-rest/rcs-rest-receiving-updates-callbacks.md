@@ -1,6 +1,6 @@
 ---
-title: "Receiving Updates & Callbacks"
-excerpt: ""
+title: Receiving Updates & Callbacks
+excerpt: ''
 ---
 Message status updates, events and messages from the RCS REST API and user agents, are delivered to the API client using webhook callbacks.
 

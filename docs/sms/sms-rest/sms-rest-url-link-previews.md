@@ -1,6 +1,6 @@
 ---
-title: "URL Link Previews"
-excerpt: ""
+title: URL Link Previews
+excerpt: ''
 ---
 Some mobile devices are capable of displaying previews for links contained in SMS or MMS messages. When messages that contain a URL are received on these devices, they may be rendered in the messaging application with a preview of the linked page. This behaviour is controlled from the phone or its software, and can not be affected by Sinch or the carrier.
 

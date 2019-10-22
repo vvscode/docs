@@ -1,6 +1,8 @@
 ---
-title: "Building an iOS Client for Number Verification - Part 2"
-excerpt: "We implement the number verification system for a mobile device in this tutorial."
+title: Building an iOS Client for Number Verification - Part 2
+excerpt: >-
+  We implement the number verification system for a mobile device in this
+  tutorial.
 ---
 > **Update**
 > 

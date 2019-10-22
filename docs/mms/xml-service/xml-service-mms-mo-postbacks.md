@@ -1,6 +1,6 @@
 ---
-title: "Sinch MMS MO Postbacks"
-excerpt: ""
+title: Sinch MMS MO Postbacks
+excerpt: ''
 ---
 > **Note**    
 >

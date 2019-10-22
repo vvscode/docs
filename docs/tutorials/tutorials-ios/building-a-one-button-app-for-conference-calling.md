@@ -1,6 +1,8 @@
 ---
-title: "Building a One-Button App for Conference Calling"
-excerpt: "In this tutorial you will learn how to make a one-button application for conference calling."
+title: Building a One-Button App for Conference Calling
+excerpt: >-
+  In this tutorial you will learn how to make a one-button application for
+  conference calling.
 ---
 Remember telephone [hotlines back in the 80s](http://guff.com/15-bizarre-1-900-numbers-from-the-80s-and-90s) ? I’ve been thinking about building a one-button app that does something stupid just like [Yo](https://www.justyo.co/). When we released [Conference Calling](https://www.sinch.com/products/voice/) ), I thought of the awesome video conferencing sites that are nothing more than a URL, and I wanted to make that kind of app, but for Conference Calling on mobile.
 

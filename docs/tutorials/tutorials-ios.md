@@ -1,6 +1,6 @@
 ---
-title: "iOS"
-excerpt: "Tutorials for the Sinch iOS SDK. Here you can see all Sinch iOS tutorials."
+title: iOS
+excerpt: Tutorials for the Sinch iOS SDK. Here you can see all Sinch iOS tutorials.
 ---
 ## Getting Started
 

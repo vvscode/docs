@@ -1,6 +1,10 @@
 ---
-title: "Verification REST API"
-excerpt: "This document serves as a user guide and documentation on how to use the Sinch Verification REST APIs. For general information on how to use the Sinch APIs including methods, types, errors and authorization, please check the [Using REST](doc:using-rest) page."
+title: Verification REST API
+excerpt: >-
+  This document serves as a user guide and documentation on how to use the Sinch
+  Verification REST APIs. For general information on how to use the Sinch APIs
+  including methods, types, errors and authorization, please check the [Using
+  REST](doc:using-rest) page.
 ---
 ## Overview
 

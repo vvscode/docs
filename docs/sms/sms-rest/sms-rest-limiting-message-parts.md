@@ -1,6 +1,8 @@
 ---
-title: "Limiting Message Parts"
-excerpt: "Learn how to control the number of messages parts that can be sent for a single outbound message from your account"
+title: Limiting Message Parts
+excerpt: >-
+  Learn how to control the number of messages parts that can be sent for a
+  single outbound message from your account
 ---
 With max number of message parts you can specify whether the message should be dispatched. If a message is split into more parts than `max_number_of_message_parts` then it will not be delivered and status code will be `411`.
 

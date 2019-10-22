@@ -1,6 +1,6 @@
 ---
-title: "Miscellaneous Verification JavaScript"
-excerpt: ""
+title: Miscellaneous Verification JavaScript
+excerpt: ''
 ---
 ## Phone numbers
 

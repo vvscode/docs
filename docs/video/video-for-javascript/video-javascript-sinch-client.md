@@ -1,6 +1,6 @@
 ---
-title: "Sinch Client Video API JavaScript"
-excerpt: ""
+title: Sinch Client Video API JavaScript
+excerpt: ''
 ---
 The `SinchClient` class is the SDK entry point. It is used to configure the user's and device's capabilities, as well as providing access to feature classes such as the MessageClient, CallClient, and VerificationClient.
 

@@ -1,6 +1,6 @@
 ---
-title: "Miscellaneous Voice iOS"
-excerpt: ""
+title: Miscellaneous Voice iOS
+excerpt: ''
 ---
 ## Minimum requirements
 

@@ -1,6 +1,6 @@
 ---
-title: "Miscellaneous Verification Android"
-excerpt: ""
+title: Miscellaneous Verification Android
+excerpt: ''
 ---
 ## Minimum requirements
 

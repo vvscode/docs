@@ -1,7 +1,7 @@
 ---
-title: "Log in"
-excerpt: ""
-hidden: "true"
+title: Log in
+excerpt: ''
+hidden: 'true'
 ---
 ## Log in
 

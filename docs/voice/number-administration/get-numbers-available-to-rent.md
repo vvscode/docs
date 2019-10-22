@@ -1,7 +1,7 @@
 ---
-title: "Get numbers available to rent"
-excerpt: ""
-hidden: "true"
+title: Get numbers available to rent
+excerpt: ''
+hidden: 'true'
 ---
 This API returns all available numbers, so that you can pick which ones you want to rent.
 

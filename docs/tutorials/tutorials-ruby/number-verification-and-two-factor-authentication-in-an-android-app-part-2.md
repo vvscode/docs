@@ -1,6 +1,6 @@
 ---
-title: "Number Verification and Two-Factor Authentication in an Android App - Part 2"
-excerpt: "Learn how to build an Android Client App that uses verification API."
+title: Number Verification and Two-Factor Authentication in an Android App - Part 2
+excerpt: Learn how to build an Android Client App that uses verification API.
 ---
 > **Update**
 >

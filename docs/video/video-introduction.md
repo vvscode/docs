@@ -1,6 +1,6 @@
 ---
-title: "Introduction to Video"
-excerpt: ""
+title: Introduction to Video
+excerpt: ''
 ---
 ## Overview
 

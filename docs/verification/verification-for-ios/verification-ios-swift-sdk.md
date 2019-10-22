@@ -1,6 +1,6 @@
 ---
-title: "Swift SDK"
-excerpt: ""
+title: Swift SDK
+excerpt: ''
 ---
 The Sinch Verification iOS SDK is also available for [Swift](https://developer.apple.com/).
 

@@ -1,6 +1,8 @@
 ---
-title: "Turn Your Browser Into a Phone With the Sinch JS SDK"
-excerpt: "A step-by-step walk through on how to build a web app to make VoIP calls between browsers using JavaScript. Read more."
+title: Turn Your Browser Into a Phone With the Sinch JS SDK
+excerpt: >-
+  A step-by-step walk through on how to build a web app to make VoIP calls
+  between browsers using JavaScript. Read more.
 ---
 The UI isn’t anything to write home about, but the finished web app will looking something like this:
 ![overview.png](images/350da25-overview.png)

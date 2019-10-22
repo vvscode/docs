@@ -1,6 +1,6 @@
 ---
-title: "Session Management"
-excerpt: ""
+title: Session Management
+excerpt: ''
 ---
 Between each page view, page reload or visit to the website, the current session is lost. Often there is an interest in re-using the same session and not forcing the end-user to re-authenticate. This can be solved by passing a session object into `sinchClient.start()`, and if the session is valid it will resume and you don’t have to prompt the user for any sign in. If it fails, you should fall back to whatever authentication method you’d like to use.
 

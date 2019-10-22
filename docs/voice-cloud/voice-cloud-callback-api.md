@@ -1,7 +1,7 @@
 ---
-title: "Callback API"
-excerpt: ""
-hidden: "true"
+title: Callback API
+excerpt: ''
+hidden: 'true'
 ---
 ## Overview
 

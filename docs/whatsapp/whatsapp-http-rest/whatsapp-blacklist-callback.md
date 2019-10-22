@@ -1,6 +1,6 @@
 ---
-title: "Blacklisting numbers from callbacks"
-excerpt: "Get to know how to blacklist numbers from generating callbacks."
+title: Blacklisting numbers from callbacks
+excerpt: Get to know how to blacklist numbers from generating callbacks.
 ---
 ## Blacklist endpoint
 

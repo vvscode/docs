@@ -1,7 +1,7 @@
 ---
-title: "Create an instance"
-excerpt: ""
-hidden: "true"
+title: Create an instance
+excerpt: ''
+hidden: 'true'
 ---
 As a second step, you need to create an instance with the ‘authorization’ string received from the authentication response (above).
 

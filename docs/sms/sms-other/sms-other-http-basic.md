@@ -1,6 +1,10 @@
 ---
-title: "HTTP Basic"
-excerpt: "Our basic HTTP API offers a simple way to send and receive single SMS messages. For more features such as bulk send, group send, scheduling, parameterization and higher security you may want to consider our `http_rest_sms_api` api."
+title: HTTP Basic
+excerpt: >-
+  Our basic HTTP API offers a simple way to send and receive single SMS
+  messages. For more features such as bulk send, group send, scheduling,
+  parameterization and higher security you may want to consider our
+  `http_rest_sms_api` api.
 ---
 > **Note**    
 >

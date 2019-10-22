@@ -1,6 +1,6 @@
 ---
-title: "Introduction to Number Lookup"
-excerpt: ""
+title: Introduction to Number Lookup
+excerpt: ''
 ---
 The core functionality of the Number Lookup Service is to provide information about the MSISDNs queried. MSISDN in - information about the MSISDN out.
 

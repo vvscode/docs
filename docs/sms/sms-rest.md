@@ -1,6 +1,8 @@
 ---
-title: "SMS REST API"
-excerpt: "The most feature rich API Sinch offers. It allows for single messages, scheduled batch send-outs using message templates and more."
+title: SMS REST API
+excerpt: >-
+  The most feature rich API Sinch offers. It allows for single messages,
+  scheduled batch send-outs using message templates and more.
 ---
 ## Introduction
 

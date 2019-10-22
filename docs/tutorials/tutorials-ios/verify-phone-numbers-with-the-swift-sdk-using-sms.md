@@ -1,6 +1,9 @@
 ---
-title: "Verify Phone Numbers with the Swift SDK using SMS"
-excerpt: "We recently made our first Swift SDK available for the Sinch Verification product range. Before we dig into the Swift parts, let’s talk about verification and why you would want it."
+title: Verify Phone Numbers with the Swift SDK using SMS
+excerpt: >-
+  We recently made our first Swift SDK available for the Sinch Verification
+  product range. Before we dig into the Swift parts, let’s talk about
+  verification and why you would want it.
 ---
 We recently made our first Swift SDK available for the [Sinch Verification product range](https://www.sinch.com/products/verification/). Before we dig into the Swift parts, let’s talk about verification and why you would want it.
 

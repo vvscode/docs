@@ -1,6 +1,6 @@
 ---
-title: "Agent Event Endpoint"
-excerpt: ""
+title: Agent Event Endpoint
+excerpt: ''
 ---
 The agent event endpoint provides operations for sending events from the agent to the user.
 

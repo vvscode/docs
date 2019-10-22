@@ -1,6 +1,9 @@
 ---
-title: "Using Sinch JS SDK to Call a Phone Number"
-excerpt: "In this tutorial, you will build an app to call a regular phone number from your browser. This is a pretty sweet feature that can, for example, enable your users to call hotels in a different country cheaply and conveniently."
+title: Using Sinch JS SDK to Call a Phone Number
+excerpt: >-
+  In this tutorial, you will build an app to call a regular phone number from
+  your browser. This is a pretty sweet feature that can, for example, enable
+  your users to call hotels in a different country cheaply and conveniently.
 ---
 In this tutorial, you will build an app to call a regular phone number from your browser. This is a pretty sweet feature that can, for example, enable your users to call hotels in a different country cheaply and conveniently.
 

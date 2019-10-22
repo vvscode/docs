@@ -1,6 +1,6 @@
 ---
-title: "Inbound SMS SMPP"
-excerpt: ""
+title: Inbound SMS SMPP
+excerpt: ''
 ---
 ### How To Connect
 

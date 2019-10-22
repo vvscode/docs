@@ -1,6 +1,6 @@
 ---
-title: "Glossary for Sinch Number Lookup"
-excerpt: ""
+title: Glossary for Sinch Number Lookup
+excerpt: ''
 ---
 |           |                                                                          |
 | --------- | ------------------------------------------------------------------------ |

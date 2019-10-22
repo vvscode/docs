@@ -1,6 +1,8 @@
 ---
-title: "Opt-In-and-Outs"
-excerpt: "Read how to enable or disable users to receive business messages via WhatsApp via Sinch WhatsApp API."
+title: Opt-In-and-Outs
+excerpt: >-
+  Read how to enable or disable users to receive business messages via WhatsApp
+  via Sinch WhatsApp API.
 ---
 All Business initiated conversations via the Sinch WhatsApp Business API must start with an “Opt-In” by the user. This can be collected through any third party channel. For example in an SMS message, In-Line with a Web Form, in an Email, or even via a deep-link in print media.
 

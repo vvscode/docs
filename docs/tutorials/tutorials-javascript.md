@@ -1,6 +1,8 @@
 ---
-title: "JavaScript"
-excerpt: "Tutorials for the Sinch JavaScript SDK. Here you can see all Sinch JavaScript tutorials."
+title: JavaScript
+excerpt: >-
+  Tutorials for the Sinch JavaScript SDK. Here you can see all Sinch JavaScript
+  tutorials.
 ---
 ## Getting Started
 

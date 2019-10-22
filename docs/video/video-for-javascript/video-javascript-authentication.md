@@ -1,6 +1,6 @@
 ---
-title: "Authentication"
-excerpt: ""
+title: Authentication
+excerpt: ''
 ---
 ## Authentication by your backend
 

@@ -1,6 +1,6 @@
 ---
-title: "First time setup with iOS (Verification)"
-excerpt: ""
+title: First time setup with iOS (Verification)
+excerpt: ''
 ---
 This is a step-by-step guide about setting up the Sinch Verification SDK for the first time.
 

@@ -1,6 +1,6 @@
 ---
-title: "Test Numbers"
-excerpt: ""
+title: Test Numbers
+excerpt: ''
 ---
 The numbers shown in the table that follows can be used to test the calling functionality to phone numbers. Calls to test numbers are not charged.
 

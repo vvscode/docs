@@ -1,6 +1,6 @@
 ---
-title: "Sinch Operator IDs"
-excerpt: ""
+title: Sinch Operator IDs
+excerpt: ''
 ---
 | Operator            | X-Mblox-Carrier-Id |
 | ------------------- | ------------------ |

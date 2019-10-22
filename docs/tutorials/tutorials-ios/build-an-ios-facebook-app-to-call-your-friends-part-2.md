@@ -1,6 +1,8 @@
 ---
-title: "Build an iOS Facebook App to Call Your Friends: Part 2"
-excerpt: "This tutorial will add feature to the previous tutorial where you learned how to call Facebook friends."
+title: 'Build an iOS Facebook App to Call Your Friends: Part 2'
+excerpt: >-
+  This tutorial will add feature to the previous tutorial where you learned how
+  to call Facebook friends.
 ---
 In this tutorial, we will be adding a feature to a previous project, the Facebook friend calling app. If you haven’t already, you can check that tutorial out [here](https://github.com/sinch/ios-call-your-facebookfriends).
 

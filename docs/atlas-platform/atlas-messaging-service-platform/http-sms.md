@@ -1,7 +1,7 @@
 ---
-title: "HTTP SMS"
-excerpt: ""
-hidden: "true"
+title: HTTP SMS
+excerpt: ''
+hidden: 'true'
 ---
 ## Introduction
 

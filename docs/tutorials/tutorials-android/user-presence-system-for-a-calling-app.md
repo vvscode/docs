@@ -1,6 +1,10 @@
 ---
-title: "User Presence System For a Calling App"
-excerpt: "This tutorial will show how to build a calling app that displays a real-time list of online users, and only allows calls to and from those online users. We use Sinch app-to-app calling to make the calls, and PubNub presence detection to create a real-time list of online users."
+title: User Presence System For a Calling App
+excerpt: >-
+  This tutorial will show how to build a calling app that displays a real-time
+  list of online users, and only allows calls to and from those online users. We
+  use Sinch app-to-app calling to make the calls, and PubNub presence detection
+  to create a real-time list of online users.
 ---
 In this tutorial, you will build a calling app that displays a real-time list of online users, and only allows calls to and from those online users. You will use Sinch app-to-app calling to make the calls, and PubNub presence detection to create a real-time list of online users. Your finished product will look similar to this:
 ![app-flow.png](images/c8d6524-app-flow.png)

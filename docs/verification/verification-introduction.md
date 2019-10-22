@@ -1,6 +1,6 @@
 ---
-title: "Introduction to Verification"
-excerpt: ""
+title: Introduction to Verification
+excerpt: ''
 ---
 ## Overview
 

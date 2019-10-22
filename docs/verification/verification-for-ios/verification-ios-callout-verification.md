@@ -1,6 +1,6 @@
 ---
-title: "Callout Verification"
-excerpt: ""
+title: Callout Verification
+excerpt: ''
 ---
 Verification of a phone number is performed in one step: a PSTN call to the end-user phone is placed and a text-to-speech or recorded voice will instruct the end-user to press a digit.
 

@@ -1,6 +1,10 @@
 ---
-title: "Keep users phone numbers private in your Uber for X"
-excerpt: "The Ubers for X have two very interesting common denominators: A decentralized workforce, and a need for real-time communication. With the world turning mobile, our phone numbers are the most precious thing we own, something we want to keep safe and sound - and away from strangers."
+title: Keep users phone numbers private in your Uber for X
+excerpt: >-
+  The Ubers for X have two very interesting common denominators: A decentralized
+  workforce, and a need for real-time communication. With the world turning
+  mobile, our phone numbers are the most precious thing we own, something we
+  want to keep safe and sound - and away from strangers.
 ---
 The Ubers for X have two very interesting common denominators: A decentralized workforce, and a need for real-time communication. With the world turning mobile, our phone numbers are the most precious thing we own, and like with all precious things, we want to keep it safe and sound - and away from strangers.
 

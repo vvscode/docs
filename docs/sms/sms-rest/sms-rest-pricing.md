@@ -1,7 +1,7 @@
 ---
-title: "Pricing & Price Threshold"
-excerpt: ""
-hidden: "true"
+title: Pricing & Price Threshold
+excerpt: ''
+hidden: 'true'
 ---
 ## Pricing Per Country
 

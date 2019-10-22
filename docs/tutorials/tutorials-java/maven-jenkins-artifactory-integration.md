@@ -1,6 +1,9 @@
 ---
-title: "Maven + Jenkins + Artifactory Integration"
-excerpt: "In this quick tutorial, you will learn how to get started using Artifactory, Maven, and Jenkins in sync. Continue reading our simple step-by-step guide now."
+title: Maven + Jenkins + Artifactory Integration
+excerpt: >-
+  In this quick tutorial, you will learn how to get started using Artifactory,
+  Maven, and Jenkins in sync. Continue reading our simple step-by-step guide
+  now.
 ---
 Working at [Sinch](https://www.sinch.com/), I was recently set with the task of separating our application code from our sister company, as well as the test framework we use, so they can run separately. This is great, but for a tech company that has been running for eight years, this is quite an undertaking!
 

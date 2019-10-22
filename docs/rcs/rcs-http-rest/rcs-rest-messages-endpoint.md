@@ -1,6 +1,6 @@
 ---
-title: "Messages Endpoint"
-excerpt: ""
+title: Messages Endpoint
+excerpt: ''
 ---
 The messages endpoint provides operations for sending and revoking messages.
 

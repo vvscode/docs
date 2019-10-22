@@ -1,6 +1,9 @@
 ---
-title: "iOS Managed Push Tutorial"
-excerpt: "Since iOS 3, Apple has given developers the ability to send push notifications to users, and by doing so, applications have become a far bigger part of our lives. In this tutorial we are going to build a Sinch push notifications app."
+title: iOS Managed Push Tutorial
+excerpt: >-
+  Since iOS 3, Apple has given developers the ability to send push notifications
+  to users, and by doing so, applications have become a far bigger part of our
+  lives. In this tutorial we are going to build a Sinch push notifications app.
 ---
 Since iOS 3, Apple has given developers the ability to send push notifications to users, and by doing so, applications have become a far bigger part of our lives.
 

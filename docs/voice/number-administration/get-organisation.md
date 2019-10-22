@@ -1,7 +1,7 @@
 ---
-title: "Get organization"
-excerpt: ""
-hidden: "true"
+title: Get organization
+excerpt: ''
+hidden: 'true'
 ---
 With the instance that you created you can now perform instance signed requests, which are needed for the number administration endpoints. First you should retrieve your organisation Id.
 

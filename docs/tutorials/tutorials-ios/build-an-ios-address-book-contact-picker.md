@@ -1,6 +1,8 @@
 ---
-title: "Build an iOS Address Book Contact Picker"
-excerpt: "In this tutorial you will learn how to create a contacts app for iOS that uses the Sinch SDK to make app-to-phone calls."
+title: Build an iOS Address Book Contact Picker
+excerpt: >-
+  In this tutorial you will learn how to create a contacts app for iOS that uses
+  the Sinch SDK to make app-to-phone calls.
 ---
 In this tutorial, we will be creating a contacts app for iOS that uses the Sinch SDK to make [app-to-phone calls](https://www.sinch.com/products/voice/). To get the most out of this tutorial, you will need a basic understanding of the following areas:
 

@@ -1,7 +1,7 @@
 ---
-title: "Glossary"
-excerpt: ""
-hidden: "true"
+title: Glossary
+excerpt: ''
+hidden: 'true'
 ---
 | Term       | Explanation                                             |
 | ---------- | ------------------------------------------------------- |

@@ -1,6 +1,6 @@
 ---
-title: "getMMSTemplates"
-excerpt: ""
+title: getMMSTemplates
+excerpt: ''
 ---
 ## Overview
 

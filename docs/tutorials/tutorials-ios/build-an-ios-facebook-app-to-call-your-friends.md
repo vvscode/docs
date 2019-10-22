@@ -1,6 +1,8 @@
 ---
-title: "Build an iOS Facebook App to Call Your Friends"
-excerpt: "This tutorial shows you how to create an iOS app that lets you call your Facebook friends using app-to-app calls."
+title: Build an iOS Facebook App to Call Your Friends
+excerpt: >-
+  This tutorial shows you how to create an iOS app that lets you call your
+  Facebook friends using app-to-app calls.
 ---
 In this tutorial, you will learn how to create an iOS app that lets you call your Facebook friends using [app-to-app calls](https://www.sinch.com/products/voice/data-calling/). First, you will need a basic understanding of the following areas:
 

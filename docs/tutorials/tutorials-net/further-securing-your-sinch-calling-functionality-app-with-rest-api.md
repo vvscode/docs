@@ -1,6 +1,9 @@
 ---
-title: "Further Securing Your Sinch Calling Functionality App With REST API"
-excerpt: "The callback APIs are a really powerful way to get information about your calls and further secure them. This is the final step before you allow calls to be connected."
+title: Further Securing Your Sinch Calling Functionality App With REST API
+excerpt: >-
+  The callback APIs are a really powerful way to get information about your
+  calls and further secure them. This is the final step before you allow calls
+  to be connected.
 ---
 The callback APIs are a really powerful way to get information about your calls and further secure them. This is the final step before you allow calls to be connected. If you have followed our other tutorials, you are likely familiar with the different states of a call: progressing, established, and ended. With the callback API, you get the same events, enabling you to make decisions just before you connect the call to the server.
 

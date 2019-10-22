@@ -1,6 +1,9 @@
 ---
-title: "Build your own Conference Calling System in C#"
-excerpt: "In this tutorial, we’ll show how easy it is to build a regular conference calling solution with both Dial in & Dial out functionality.  Continue reading."
+title: 'Build your own Conference Calling System in C#'
+excerpt: >-
+  In this tutorial, we’ll show how easy it is to build a regular conference
+  calling solution with both Dial in & Dial out functionality.  Continue
+  reading.
 ---
 Tight budgets, busy schedules, better technology and the urge for immediacy has made virtual interaction a common communications and collaborations strategy for businesses today. Accordingly, virtual teams are naturally increasing.
 

@@ -1,6 +1,6 @@
 ---
-title: "Java"
-excerpt: "Tutorials for our Java SDK"
+title: Java
+excerpt: Tutorials for our Java SDK
 ---
 ## Sinch ❤ Java
 

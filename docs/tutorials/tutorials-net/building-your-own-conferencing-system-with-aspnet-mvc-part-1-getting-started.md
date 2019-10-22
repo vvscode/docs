@@ -1,6 +1,10 @@
 ---
-title: "Building Your Own Conferencing System With ASP.NET MVC - Part 1: Getting Started"
-excerpt: "We look at the conferencing system that we built to use with our customers. This is part 1 of a new 2-part series"
+title: >-
+  Building Your Own Conferencing System With ASP.NET MVC - Part 1: Getting
+  Started
+excerpt: >-
+  We look at the conferencing system that we built to use with our customers.
+  This is part 1 of a new 2-part series
 ---
 In today’s post, I am going to look at the conferencing system that we built to use with our customers.
 

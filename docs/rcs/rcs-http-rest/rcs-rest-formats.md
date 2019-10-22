@@ -1,6 +1,6 @@
 ---
-title: "RCS Formats"
-excerpt: ""
+title: RCS Formats
+excerpt: ''
 ---
 This section will take a brief look at some of the formats used in the REST API.
 

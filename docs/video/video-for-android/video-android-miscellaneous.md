@@ -1,6 +1,6 @@
 ---
-title: "Miscellaneous Video Android"
-excerpt: ""
+title: Miscellaneous Video Android
+excerpt: ''
 ---
 ## Minimum requirements
 

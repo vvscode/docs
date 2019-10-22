@@ -1,6 +1,6 @@
 ---
-title: "sendMMS"
-excerpt: ""
+title: sendMMS
+excerpt: ''
 ---
 ## Overview
 Sends an MMS defined in the XML containing slides of embedded with video, audio, images and/or text to a single or list of mobile numbers in international number format. The sendMMS is a minor extension of the saveMMS function. Note, while elements may be given in any order, the slides are created in the order given in the API call.

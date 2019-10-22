@@ -1,6 +1,9 @@
 ---
-title: "Receive SMS delivery reports in a Spring Boot application"
-excerpt: "In this more advanced installment of our Java tutorial series, you'll learn how you can keep track of the delivery of SMS messages you send via the Sinch REST API."
+title: Receive SMS delivery reports in a Spring Boot application
+excerpt: >-
+  In this more advanced installment of our Java tutorial series, you'll learn
+  how you can keep track of the delivery of SMS messages you send via the Sinch
+  REST API.
 ---
 The Sinch REST API keeps track of the delivery status of each message you send and makes that status available to your application in 2 ways:
 

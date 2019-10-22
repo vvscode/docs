@@ -1,7 +1,7 @@
 ---
-title: "Reserve number(s)"
-excerpt: ""
-hidden: "true"
+title: Reserve number(s)
+excerpt: ''
+hidden: 'true'
 ---
 To rent numbers, you must first reserve them and then check out. This endpoint allows reserving the numbers that you would like to rent.
 

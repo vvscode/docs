@@ -1,6 +1,6 @@
 ---
-title: "MM7_Submit"
-excerpt: ""
+title: MM7_Submit
+excerpt: ''
 ---
 **Send MMS MT to end users**
 

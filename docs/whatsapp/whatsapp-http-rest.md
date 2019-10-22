@@ -1,6 +1,6 @@
 ---
-title: "WhatsApp REST API"
-excerpt: "WhatsApp for Business messaging"
+title: WhatsApp REST API
+excerpt: WhatsApp for Business messaging
 ---
 The WhatsApp REST API is designed to be a simple and powerful tool with features as:
    - Batch sending
