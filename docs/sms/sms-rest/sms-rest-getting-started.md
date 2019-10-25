@@ -23,7 +23,7 @@ $ curl -H "Authorization: Bearer {token}" \
 
 ## Base URL
 
-The following URLs can be used by the REST API. We have servers in the US and EU.
+The following URLs can be used by the REST API. We have servers in the US and EU. By default your account will be created in the US environment. If you'd like access to the European environment, please contact our support team.  
 
 
 | Server        |  URL                                   |
