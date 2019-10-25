@@ -1,6 +1,9 @@
 ---
 title: Send WhatsApp Messages
 excerpt: Send messages via WhatsApp with Sinch WhatsApp API.
+next:
+  pages:
+    - whatsapp-group-management
 ---
 The message endpoint is used as the primary endpoint of the API and this is where all the messages are sent through.
 

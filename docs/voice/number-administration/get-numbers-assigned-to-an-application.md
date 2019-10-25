@@ -2,6 +2,9 @@
 title: Get numbers assigned to an application
 excerpt: ''
 hidden: 'true'
+next:
+  pages:
+    - add-numbers-to-an-application-overwrite
 ---
 This endpoint lists all numbers that are assigned to a particular app.
 

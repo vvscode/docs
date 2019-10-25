@@ -1,6 +1,15 @@
 ---
 title: WhatsApp REST API
 excerpt: WhatsApp for Business messaging
+next:
+  pages:
+    - whatsapp-opt-in-and-outs
+    - sms-rest-callback
+    - whatsapp-capability
+    - whatsapp-blacklist-callback
+    - whatsapp-callback-store
+    - whatsapp-message
+    - whatsapp-group-management
 ---
 The WhatsApp REST API is designed to be a simple and powerful tool with features as:
    - Batch sending

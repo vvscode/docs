@@ -1,6 +1,11 @@
 ---
 title: Inbound SMS SMPP
 excerpt: ''
+next:
+  pages:
+    - sms-smpp-outbound
+    - sms-smpp-error-specification
+    - sms-smpp-encoding
 ---
 ### How To Connect
 

@@ -1,6 +1,9 @@
 ---
 title: Introduction to XML
 excerpt: ''
+next:
+  pages:
+    - xml-service-savemms
 ---
 **Some of the key features of XML API are:**
 

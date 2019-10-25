@@ -1,6 +1,9 @@
 ---
 title: Error Specification
 excerpt: ''
+next:
+  pages:
+    - sms-smpp-encoding
 ---
 ### Overview
 

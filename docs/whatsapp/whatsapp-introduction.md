@@ -1,6 +1,10 @@
 ---
 title: Introduction to WhatsApp
 excerpt: WhatsApp for Business messaging
+next:
+  pages:
+    - whatsapp-http-rest
+  description: Get started today
 ---
 The Sinch WhatsApp Business Messaging API provides a rich, enterprise grade messaging solution for clients who wish to communicate with their customers via WhatsApp.
 

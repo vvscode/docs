@@ -1,6 +1,9 @@
 ---
 title: SMS Fallback
 excerpt: ''
+next:
+  pages:
+    - rcs-rest-receiving-updates-callbacks
 ---
 The RCS REST API enables robust support for SMS fallback based on a range of configurable conditions.
 

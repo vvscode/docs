@@ -1,6 +1,9 @@
 ---
 title: Authentication
 excerpt: ''
+next:
+  pages:
+    - voice-js-session-management
 ---
 ## Authentication by your backend
 

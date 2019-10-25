@@ -1,6 +1,10 @@
 ---
 title: Introduction to MMS
 excerpt: ''
+next:
+  pages:
+    - mm7-service
+    - xml-service
 ---
 ## Overview
 

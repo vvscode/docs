@@ -1,6 +1,9 @@
 ---
 title: Automatic Default Originator
 excerpt: ''
+next:
+  pages:
+    - sms-rest-limiting-message-parts
 ---
 Default originator pool of an account is the set of originators for different countries configured by the account manager, if requested it will be used when batch message has no originator specified (missing "from" parameter).
 

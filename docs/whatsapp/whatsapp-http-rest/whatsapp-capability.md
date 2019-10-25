@@ -3,6 +3,9 @@ title: WhatsApp Capability
 excerpt: >-
   Read how to discover if your users are capable of receiving messages via
   WhatsApp.
+next:
+  pages:
+    - whatsapp-message
 ---
 ## Capability endpoint
 

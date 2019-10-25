@@ -2,6 +2,9 @@
 title: Get numbers available to rent
 excerpt: ''
 hidden: 'true'
+next:
+  pages:
+    - reserve-numbers
 ---
 This API returns all available numbers, so that you can pick which ones you want to rent.
 

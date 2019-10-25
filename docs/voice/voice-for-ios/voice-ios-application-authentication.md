@@ -1,6 +1,9 @@
 ---
 title: Application authentication
 excerpt: ''
+next:
+  pages:
+    - voice-ios-miscellaneous
 ---
 A user identity must be provided when initiating a Sinch client. The first time the application instance and the Sinch client are running on behalf of a particular user, they are required to register against the Sinch service. This is mostly handled transparently by the Sinch SDK, but it works slightly differently depending on which authentication scheme you choose to use.
 

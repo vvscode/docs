@@ -1,6 +1,9 @@
 ---
 title: MM7_Submit
 excerpt: ''
+next:
+  pages:
+    - mm7-service-mm7_deliver
 ---
 **Send MMS MT to end users**
 

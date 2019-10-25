@@ -1,6 +1,9 @@
 ---
 title: Sinch Client Video API Android
 excerpt: ''
+next:
+  pages:
+    - video-android-calling
 ---
 The *SinchClient* is the Sinch SDK entry point. It is used to configure the user’s and device’s capabilities, as well as to provide access to feature classes such as the *CallClient*, *MessageClient* and *AudioController*.
 

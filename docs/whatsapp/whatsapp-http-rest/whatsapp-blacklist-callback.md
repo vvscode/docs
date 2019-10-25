@@ -1,6 +1,9 @@
 ---
 title: Blacklisting numbers from callbacks
 excerpt: Get to know how to blacklist numbers from generating callbacks.
+next:
+  pages:
+    - whatsapp-callback-store
 ---
 ## Blacklist endpoint
 

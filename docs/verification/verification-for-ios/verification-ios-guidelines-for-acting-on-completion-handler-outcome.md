@@ -1,6 +1,9 @@
 ---
 title: Guidelines for acting on completion handler outcome
 excerpt: ''
+next:
+  pages:
+    - verification-ios-pass-data-to-your-backend
 ---
 As shown in the earlier examples, the completion handler blocks can indicate a successful or a failed outcome for both the *initiate* and the *verify* steps. Here are some general guidelines on how to use the completion handler in your application's flow:
 

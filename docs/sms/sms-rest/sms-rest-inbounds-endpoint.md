@@ -1,6 +1,13 @@
 ---
 title: Inbounds Endpoint
 excerpt: ''
+next:
+  pages:
+    - sms-rest-groups-endpoint
+    - sms-rest-batches-endpoint
+    - sms-rest-automatic-default-originator
+    - sms-rest-limiting-message-parts
+    - sms-rest-url-link-previews
 ---
 Inbounds, or Mobile Originated messages, are incoming messages. Inbound messages can be listed and retrieved like batch messages and they can also be delivered by callback requests like delivery reports.
 

@@ -1,6 +1,9 @@
 ---
 title: Troubleshooting and FAQ
 excerpt: ''
+next:
+  pages:
+    - verification-ios-miscellaneous
 ---
 **Q**: Does the Sinch SDK handle network connectivity errors?
 

@@ -1,6 +1,9 @@
 ---
 title: RCS Formats
 excerpt: ''
+next:
+  pages:
+    - rcs-rest-sms-fallback
 ---
 This section will take a brief look at some of the formats used in the REST API.
 

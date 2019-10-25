@@ -1,6 +1,9 @@
 ---
 title: Sinch MMS MO Postbacks
 excerpt: ''
+next:
+  pages:
+    - xml-service-appendix
 ---
 > **Note**    
 >

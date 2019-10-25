@@ -1,6 +1,10 @@
 ---
 title: Verification API
 excerpt: ''
+next:
+  pages:
+    - verification-rest-callback-api
+    - verification-rest-call-detail-records
 ---
 ```text
 URI:  https://verificationapi-v1.sinch.com/verification/[version]

@@ -1,6 +1,9 @@
 ---
 title: Audio handling - Voice iOS
 excerpt: ''
+next:
+  pages:
+    - voice-ios-application-authentication
 ---
 If the application plays audio that does not originate from the Sinch SDK, certain guidelines should be followed. Additional information on audio session-related topics is available in the [Audio Session Programming Guide](http://developer.apple.com/library/ios/#documentation/Audio/Conceptual/AudioSessionProgrammingGuide/Introduction Introduction.html).
 

@@ -1,6 +1,9 @@
 ---
 title: Sinch Client Video API iOS
 excerpt: ''
+next:
+  pages:
+    - video-ios-calling
 ---
 The *SINClient* is the Sinch SDK entry point. It is used to configure the user’s and device’s capabilities, as well as providing access to feature classes such as the *SINCallClient*, *SINMessageClient* and *SINAudioController*.
 

@@ -1,6 +1,9 @@
 ---
 title: Messages Endpoint
 excerpt: ''
+next:
+  pages:
+    - rcs-rest-agent-event-endpoint
 ---
 The messages endpoint provides operations for sending and revoking messages.
 

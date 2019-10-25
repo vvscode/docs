@@ -3,6 +3,10 @@ title: SMS REST Formats
 excerpt: >-
   This section will take a brief look at some of the formats used in the REST
   API.
+next:
+  pages:
+    - sms-rest-http-status-codes
+  description: Learn about the HTTP statuses and codes that the REST API returns
 ---
 ### JSON
 

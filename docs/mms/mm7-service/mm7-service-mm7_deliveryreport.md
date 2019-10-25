@@ -1,6 +1,9 @@
 ---
 title: MM7_DeliveryReport
 excerpt: ''
+next:
+  pages:
+    - mm7-service-sinch-operator-ids
 ---
 **Receive Delivery Reports for previously submitted MT**
 

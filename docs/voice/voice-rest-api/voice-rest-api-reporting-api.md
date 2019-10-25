@@ -1,6 +1,9 @@
 ---
 title: Reporting API
 excerpt: ''
+next:
+  pages:
+    - voice-rest-api-call-detail-records
 ---
 ```text
 [URL] https://reportingapi.sinch.com/[version]

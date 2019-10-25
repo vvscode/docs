@@ -1,6 +1,9 @@
 ---
 title: Unsupported MM7 SOAP Elements
 excerpt: ''
+next:
+  pages:
+    - mm7-service-mms-status-codes
 ---
 ## MM7\_Submit.REQ
 

@@ -1,6 +1,9 @@
 ---
 title: Calling Video API JavaScript
 excerpt: ''
+next:
+  pages:
+    - video-javascript-push-notifications
 ---
 The Sinch SDK supports four types of calls: *web-to-web (or app)* calls, *web-to-phone* calls, *web-to-sip* and *conference* calls. The CallClient is the entry point for the calling functionality of the Sinch SDK. At the moment, calling is only supported in Chrome and Firefox, and we hope to add support in more browsers later on. The `CallClient` is the entry point for the calling functionality of the Sinch SDK.
 

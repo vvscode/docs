@@ -1,6 +1,10 @@
 ---
 title: Verification Callback API
 excerpt: ''
+next:
+  pages:
+    - verification-rest-verification-api
+    - verification-rest-call-detail-records
 ---
 ## Verification Request Event
 

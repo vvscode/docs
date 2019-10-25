@@ -1,6 +1,9 @@
 ---
 title: MM7_Deliver
 excerpt: ''
+next:
+  pages:
+    - mm7-service-mm7_deliveryreport
 ---
 **Receive MMS MO submitted by end users to your platform**
 

@@ -1,6 +1,9 @@
 ---
 title: Introduction to MMS7 Service
 excerpt: ''
+next:
+  pages:
+    - mm7-service-mm7_submit
 ---
 **Finding your VASPID (API Key)**
 

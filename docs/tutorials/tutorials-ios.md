@@ -1,6 +1,26 @@
 ---
 title: iOS
 excerpt: Tutorials for the Sinch iOS SDK. Here you can see all Sinch iOS tutorials.
+next:
+  pages:
+    - ios-app-to-phone-tutorial
+    - build-an-ios-facebook-app-to-call-your-friends
+    - build-an-ios-facebook-app-to-call-your-friends-part-2
+    - build-a-tennis-app-to-call-your-tennis-friends-from-global-tennis-network
+    - build-an-ios-twitter-app-to-call-your-friends
+    - building-a-one-button-app-for-conference-calling
+    - build-an-ios-address-book-contact-picker
+    - build-an-ios-custom-ringtone-calling-app
+    - ios-managed-push-tutorial
+    - ios-push-notifications-using-sinchservice
+    - building-an-ios-proximity-app
+    - how-to-use-pushkit-for-ios-voip-push-notifications
+    - muting-calls-and-using-the-devices-speaker-in-ios
+    - verify-phone-numbers-with-the-swift-sdk-using-sms
+    - verifying-a-phone-number-in-ios-using-swift-3
+    - verify-a-phone-number-in-your-ios-app
+    - add-calling-to-your-existing-app-in-2-minutes
+  description: Check out our iOS tutorials here
 ---
 ## Getting Started
 

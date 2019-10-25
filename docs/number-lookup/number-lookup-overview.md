@@ -1,6 +1,10 @@
 ---
 title: Introduction to Number Lookup
 excerpt: ''
+next:
+  pages:
+    - number-lookup-enum-interface
+    - number-lookup-http-interface
 ---
 The core functionality of the Number Lookup Service is to provide information about the MSISDNs queried. MSISDN in - information about the MSISDN out.
 

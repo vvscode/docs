@@ -1,6 +1,9 @@
 ---
 title: Video for iOS
 excerpt: ''
+next:
+  pages:
+    - video-ios-first-time-setup
 ---
 The Sinch SDK is a product that makes adding voice/video calling and/or instant messaging to mobile apps easy. It handles the complexity of signaling and audio & video management while providing you the freedom to create a stunning user interface.
 

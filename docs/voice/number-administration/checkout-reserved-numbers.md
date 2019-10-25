@@ -2,6 +2,9 @@
 title: Checkout reserved numbers
 excerpt: ''
 hidden: 'true'
+next:
+  pages:
+    - list-all-rented-numbers
 ---
 This endpoints allows you to check out the numbers that you have reserved, so that they are assigned to your account. Please make sure ou have enough credit to rent the numbers.
 

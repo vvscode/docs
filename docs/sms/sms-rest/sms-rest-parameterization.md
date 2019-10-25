@@ -1,6 +1,9 @@
 ---
 title: Parameterization
 excerpt: Provide content that varies depending on recipient with message parameters.
+next:
+  pages:
+    - sms-rest-delivery-reports
 ---
 Parameterization enables you to customize parts of a message for each recipient.
 

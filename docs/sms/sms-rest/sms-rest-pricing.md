@@ -2,6 +2,9 @@
 title: Pricing & Price Threshold
 excerpt: ''
 hidden: 'true'
+next:
+  pages:
+    - sms-rest-automatic-default-originator
 ---
 ## Pricing Per Country
 

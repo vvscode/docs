@@ -1,6 +1,9 @@
 ---
 title: Callbacks
 excerpt: Get to know the callbacks that has been sent via WhatsApp.
+next:
+  pages:
+    - whatsapp-blacklist-callback
 ---
 A callback is a HTTP POST request with a notification made by the Sinch WhatsApp API to a URI of your choosing. The Sinch WhatsApp API expects the receiving server to respond with a response code within the `2xx Success` range. If no successful response is received then the API will either schedule a retry if the error is expected to be temporary or discard the callback if the error seems permanent. The first initial retry will happen 5 seconds after the first try. The next attempt is after 10 seconds, then after 20 seconds, after 40 seconds, after 80 seconds and so on, doubling on every attempt. The last retry will be at 81920 seconds (or 22 hours 45 minutes) after the initial failed attempt.
 

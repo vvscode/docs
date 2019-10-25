@@ -1,6 +1,9 @@
 ---
 title: Call Detail Records
 excerpt: ''
+next:
+  pages:
+    - voice-rest-api-test-numbers
 ---
 CDRs can be downloaded from the Sinch portal. CDRs are in a semicolon separated file that contains the following fields:
 

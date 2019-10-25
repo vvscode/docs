@@ -1,6 +1,9 @@
 ---
 title: saveMMS
 excerpt: ''
+next:
+  pages:
+    - xml-service-sendsavedmms
 ---
 ## Overview
 

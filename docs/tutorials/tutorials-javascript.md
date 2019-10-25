@@ -3,6 +3,21 @@ title: JavaScript
 excerpt: >-
   Tutorials for the Sinch JavaScript SDK. Here you can see all Sinch JavaScript
   tutorials.
+next:
+  pages:
+    - send-your-first-whatsapp-message
+    - using-sinch-js-sdk-to-call-a-phone-number
+    - build-a-conference-calling-app-in-nodejs-express
+    - turn-your-browser-into-a-phone-with-the-sinch-js-sdk
+    - sinch-sms-node-module
+    - getting-a-second-number-and-testing-sinch-callbackswebhooks-with-ngrok
+    - send-otp-codes-with-text-to-speech-calls-using-sinch-and-nodejs
+    - securing-your-verifications-when-using-nodejs
+    - send-a-song-to-your-friend-through-a-phone-call
+    - use-the-sinch-javascript-sdk-in-your-servlet-project
+    - sms-node-module
+    - start-chrome-with-flags-mac
+  description: Check out our JavaScript tutorials here
 ---
 ## Getting Started
 

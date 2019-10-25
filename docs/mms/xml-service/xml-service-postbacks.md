@@ -1,6 +1,9 @@
 ---
 title: Sinch Postbacks
 excerpt: ''
+next:
+  pages:
+    - xml-service-mms-mo-postbacks
 ---
 ## MMS MT Delivery Report Postbacks Overview
 The MMS MT postback API notifies you of the delivery status of each message you send. There are two methods for delivering content; Binary and HTML. Following are postback notification formats depending on which method is used.

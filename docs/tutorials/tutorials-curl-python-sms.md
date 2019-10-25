@@ -1,6 +1,10 @@
 ---
 title: cURL & Python (SMS)
 excerpt: Learn how to send SMS with cURL or Python. Read more...
+next:
+  pages:
+    - sending-sms-with-python
+    - sending-sms-with-curl
 ---
 ## Getting Started
 
