@@ -2,7 +2,7 @@
 title: Release Notes for the Sinch REST API
 excerpt: >-
   See how the Sinch JavaScript SDK is evolving and find out about new features
-  and bug fixes.
+  and bug fixes..
 ---
 <h3>Specify language for SMS verification</h3>
 Multiple languages are supported for SMS verification.
