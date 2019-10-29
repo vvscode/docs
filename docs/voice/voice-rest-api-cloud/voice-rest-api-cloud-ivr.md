@@ -4,7 +4,7 @@ excerpt: ''
 hidden: 'false'
 next:
   pages:
-    - voice-cloud-recording
+    - voice-rest-api-cloud-recording
 ---
 The Sinch platform supports playing audio recordings during a call.
 

@@ -1,10 +1,10 @@
 ---
 title: Glossary
 excerpt: ''
-hidden: 'true'
+hidden: 'false'
 ---
 | Term       | Explanation                                             |
-| ---------- | ------------------------------------------------------- |
+|------------|---------------------------------------------------------|
 | RTC        | Real Time Communication                                 |
 | SDK        | Software Development Kit                                |
 | PSTN       | Public Switched Telephone Network (plain old telephony) |

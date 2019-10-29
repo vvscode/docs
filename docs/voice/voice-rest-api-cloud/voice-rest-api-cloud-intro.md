@@ -4,7 +4,7 @@ excerpt: ''
 hidden: 'false'
 next:
   pages:
-    - voice-cloud-calling-api
+    - voice-rest-api-cloud-calling-api
 ---
 This document provides a detailed user guide and reference documentation on the Sinch Voice REST API. 
 

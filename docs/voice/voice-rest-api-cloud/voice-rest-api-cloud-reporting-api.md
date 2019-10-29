@@ -4,7 +4,7 @@ excerpt: ''
 hidden: 'false'
 next:
   pages:
-    - voice-cloud-cdr
+    - voice-rest-api-cloud-cdr
 ---
 [URL]
         https://reportingapi.sinch.com/[version]
