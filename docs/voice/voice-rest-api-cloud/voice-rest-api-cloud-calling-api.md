@@ -419,11 +419,11 @@ This method can be used to manage ongoing, connected calls or to unpark parked c
 
 For ongoing, connected calls, you can use this endpoint to play messages and/or optionally hang up the call. There are two instructions available to play messages. The *PlayFiles* instruction can be used to play an IVR message, while the *Say* instruction can be used to play a text-to-speech message. The message, if specified, is played only on the caller side. A caller can, for example, hear a message saying the total minutes have expired and that the call will be disconnected.
 
-For more information on playing messages and performing actions on calls see the [Callback API](doc:voice-cloud-callback-api).
+For more information on playing messages and performing actions on calls see the [Callback API](doc:voice-rest-api-cloud-callback-api).
 
 ### Managing Parked calls
 
-For a parked call (see [Callback API](doc:voice-cloud-callback-api) on how to park a call), this endpoint can be used to “unpark” the call. Parked calls can be considered calls where the ICE response has been “postponed”. When unparking a parked call, you simply provide the SVML you normally would have responded with in the ICE response if you had not “postponed” it -see the [Callback API](doc:voice-cloud-callback-api).
+For a parked call (see [Callback API](doc:voice-rest-api-cloud-callback-api) on how to park a call), this endpoint can be used to “unpark” the call. Parked calls can be considered calls where the ICE response has been “postponed”. When unparking a parked call, you simply provide the SVML you normally would have responded with in the ICE response if you had not “postponed” it -see the [Callback API](doc:voice-rest-api-cloud-callback-api).
 
 *Example IVR*
 
