@@ -3,17 +3,17 @@ title: Call Detail Records
 excerpt: ''
 next:
   pages:
-    - voice-rest-api-test-numbers
+    - voice-rest-api-onprem-test-numbers
 ---
 CDRs can be downloaded from the Sinch portal. CDRs are in a semicolon separated file that contains the following fields:
 
 ## Phone-Terminated Calls
 
-| Field          | Type    | Description                                                                                                                                                                   |
-| -------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| CallId         | string  | A unique identifier for a call                                                                                                                                                |
-| UserSpaceId    | int     | Internal identifier                                                                                                                                                           |
-| CallTime       | time    | Time when call was made                                                                                                                                                       |
+| Field       | Type   | Description                    |
+|-------------|--------|--------------------------------|
+| CallId      | string | A unique identifier for a call |
+| UserSpaceId | int    | Internal identifier            |
+| CallTime    | time   | Time when call was made        |
 | Result         | string  | Result may have one of the following values "ANSWERED" | "BUSY" | "NOANSWER" | "FAILED"                                                                                       |
 | Reason         | string  | Reason may have one of the following values "N/A" | "TIMEOUT" | "CALLERHANGUP" | "CALLEEHANGUP" | "BLOCKED" | "MANAGERHANGUP" | "NOCREDITPARTNER" | "GENERALERROR" | "CANCEL" |
 | Duration       | int     | Call time in seconds                                                                                                                                                          |
@@ -29,11 +29,11 @@ CDRs can be downloaded from the Sinch portal. CDRs are in a semicolon separated 
 
 ## Phone-Originated Calls
 
-| Field          | Type    | Description                                                                                                                         |
-| -------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| CallId         | string  | A unique identifier for a call                                                                                                      |
-| UserSpaceId    | int     | Internal identifier                                                                                                                 |
-| CallTime       | time    | Time when call was made                                                                                                             |
+| Field       | Type   | Description                    |
+|-------------|--------|--------------------------------|
+| CallId      | string | A unique identifier for a call |
+| UserSpaceId | int    | Internal identifier            |
+| CallTime    | time   | Time when call was made        |
 | Result         | string  | Result may have one of the following values "ANSWERED" | "NOANSWER" | "FAILED"                                                      |
 | Reason         | string  | Reason may have one of the following values "N/A" | "CANCEL" | "CALLERHANGUP" | "CALLEEHANGUP" | "NOCREDITPARTNER" | "GENERALERROR" |
 | Duration       | int     | Call time in seconds                                                                                                                |
@@ -46,11 +46,11 @@ CDRs can be downloaded from the Sinch portal. CDRs are in a semicolon separated 
 
 ## App-App Calls
 
-| Field          | Type   | Description                                                                           |
-| -------------- | ------ | ------------------------------------------------------------------------------------- |
-| CallId         | string | A unique identifier for a call                                                        |
-| UserSpaceId    | int    | Internal identifier                                                                   |
-| CallTime       | time   | Time when the call was made                                                           |
+| Field       | Type   | Description                    |
+|-------------|--------|--------------------------------|
+| CallId      | string | A unique identifier for a call |
+| UserSpaceId | int    | Internal identifier            |
+| CallTime    | time   | Time when the call was made    |
 | Result         | string | Result may be one of the following values "ANSWERED" | "BUSY" | "NOANSWER" | "FAILED" |
 | Reason         | string | Reason may be one of the following values "N/A" | "TIMEOUT" | "HANGUP" | "CANCEL"     |
 | Duration       | int    | Call duration in seconds                                                              |
@@ -61,11 +61,11 @@ CDRs can be downloaded from the Sinch portal. CDRs are in a semicolon separated 
 
 ## SIP-Terminated Calls
 
-| Field          | Type   | Description                                                                           |
-| -------------- | ------ | ------------------------------------------------------------------------------------- |
-| CallId         | string | A unique identifier for a call                                                        |
-| UserSpaceId    | int    | Internal identifier                                                                   |
-| CallTime       | time   | Time when the call was made                                                           |
+| Field       | Type   | Description                    |
+|-------------|--------|--------------------------------|
+| CallId      | string | A unique identifier for a call |
+| UserSpaceId | int    | Internal identifier            |
+| CallTime    | time   | Time when the call was made    |
 | Result         | string | Result may be one of the following values "ANSWERED" | "BUSY" | "NOANSWER" | "FAILED" |
 | Reason         | string | Reason why the call ended                                                             |
 | Duration       | int    | Call duration in seconds                                                              |

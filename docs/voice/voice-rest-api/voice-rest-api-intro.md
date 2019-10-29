@@ -4,7 +4,7 @@ excerpt: ''
 hidden: 'false'
 next:
   pages:
-    - voice-rest-api-cloud-calling-api
+    - voice-rest-api-calling-api
 ---
 This document provides a detailed user guide and reference documentation on the Sinch Voice REST API. 
 
@@ -14,9 +14,9 @@ When using Sinch for voice calling, the Sinch platform can be seen as a big tele
 
 For most call scenarios, you can use the Sinch SDKs on a smartphone or on web client to establish calls without the need of backend integration. For additional control or flexibility of the calls, you can use the Sinch REST APIs to manage the calls.
 
-Controlling a call from your application backend is done by responding to callbacks from the Sinch platform and/or by calling REST APIs in the Sinch platform from your application backend. For more details on the callbacks triggered from the Sinch platform see the [Callback API](doc:voice-rest-api-cloud-callback-api).
+Controlling a call from your application backend is done by responding to callbacks from the Sinch platform and/or by calling REST APIs in the Sinch platform from your application backend. For more details on the callbacks triggered from the Sinch platform see the [Callback API](doc:voice-rest-api-callback-api).
 
-For more details on the REST APIs to that can be used to manage calls see the [Calling API](doc:voice-rest-api-cloud-calling-api).
+For more details on the REST APIs to that can be used to manage calls see the [Calling API](doc:voice-rest-api-calling-api).
 
 These are the typical call scenarios that you can control with the Sinch Callback and Calling APIs:
 
@@ -45,7 +45,7 @@ URL to access a region-specific API is provided by the ICE callback, in the `cal
 
 In this scenario, calls are originated from an app using the iOS, Android or Javascript SDK and are terminated to the fixed or mobile phone network\*. For additional call control, you can configure a callback URL under your app’s voice settings in the Sinch dashboard, where Sinch will send call-related events. By capturing and responding to these events from your backend, you can allow or deny calls to go through. Events will also be triggered when the calls will be answered or disconnected.
 
-For more information please check the [Callback API](doc:voice-rest-api-cloud-callback-api). The callback events that are used in app to phone calls are the Incoming Call Event callback, the Answer Call Event callback and the Disconnect Call Event callback. You can also manage an ongoing call from your backend with the Manage Call API, which is part of the [Calling API](doc:voice-rest-api-cloud-calling-api).
+For more information please check the [Callback API](doc:voice-rest-api-callback-api). The callback events that are used in app to phone calls are the Incoming Call Event callback, the Answer Call Event callback and the Disconnect Call Event callback. You can also manage an ongoing call from your backend with the Manage Call API, which is part of the [Calling API](doc:voice-rest-api-calling-api).
 
 > **Note**
 >
@@ -62,7 +62,7 @@ In this scenario, calls are originated from a voice number and are terminated to
 
 When a user calls your configured voice number, the Sinch platform will trigger an Incoming Call Event callback towards your callback URL. The destination number - where the call will be connected to - has to be specified in your response to the Incoming Call Event callback. Similarly to app to phone calls, the Sinch platform will trigger additional events for call control.
 
-For more information please check the [Callback API](doc:voice-rest-api-cloud-callback-api). The callback events that are used in phone to phone calls are the Incoming Call Event callback, the Answer Call Event callback and the Disconnect Call Event callback. You can also manage an ongoing call from your backend with the Manage Call API, which is part of the [Calling API](doc:voice-rest-api-cloud-calling-api).
+For more information please check the [Callback API](doc:voice-rest-api-callback-api). The callback events that are used in phone to phone calls are the Incoming Call Event callback, the Answer Call Event callback and the Disconnect Call Event callback. You can also manage an ongoing call from your backend with the Manage Call API, which is part of the [Calling API](doc:voice-rest-api-calling-api).
 
 ## Conference calls
 

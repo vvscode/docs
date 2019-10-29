@@ -3,12 +3,12 @@ title: Test Numbers
 excerpt: ''
 next:
   pages:
-    - voice-rest-api-glossary
+    - voice-rest-api-onprem-glossary
 ---
 The numbers shown in the table that follows can be used to test the calling functionality to phone numbers. Calls to test numbers are not charged.
 
 | Number        | Progress | Result     | Test Prompt Played       |
-| ------------- | -------- | ---------- | ------------------------ |
+|---------------|----------|------------|--------------------------|
 | 46000000000   | 7.5 s    | ANSWER     | 1 time                   |
 | 460000000001  |          |            |                          |
 | 460000000002  | 7.5 s    | ANSWER     | 2 times                  |
