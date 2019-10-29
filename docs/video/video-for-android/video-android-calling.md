@@ -54,7 +54,7 @@ call.addCallListener(...);
 ```
 
 
-It is also possible to connect users to a conference call via the [Sinch REST API](doc:voice-rest-api-calling-api).
+It is also possible to connect users to a conference call via the [Sinch REST API](doc:voice-rest-api-onprem-calling-api).
 
 ## Handle incoming calls
 

@@ -4,7 +4,7 @@ excerpt: ''
 hidden: 'false'
 next:
   pages:
-    - voice-rest-api-cloud-reporting-api
+    - voice-rest-api-reporting-api
 ---
 ## Overview
 
