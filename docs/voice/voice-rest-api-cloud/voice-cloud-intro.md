@@ -1,9 +1,12 @@
 ---
 title: Introduction
-excerpt: Send messages via WhatsApp with Sinch WhatsApp API.
-hidden: 'true'
+excerpt: ''
+hidden: 'false'
+next:
+  pages:
+    - voice-cloud-calling-api
 ---
-This document provides a detailed user guide and reference documentation on the Sinch Voice REST API. For general information on how to use the Sinch APIs including methods, types, errors and authorization, please check the [Using REST](doc:using-rest) page.
+This document provides a detailed user guide and reference documentation on the Sinch Voice REST API. 
 
 ## Overview
 

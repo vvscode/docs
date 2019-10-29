@@ -1,7 +1,10 @@
 ---
 title: Interactive Voice Response
 excerpt: ''
-hidden: 'true'
+hidden: 'false'
+next:
+  pages:
+    - voice-cloud-recording
 ---
 The Sinch platform supports playing audio recordings during a call.
 

@@ -1,7 +1,10 @@
 ---
 title: Call Report
 excerpt: ''
-hidden: 'true'
+hidden: 'false'
+next:
+  pages:
+    - voice-cloud-cdr
 ---
 [URL]
         https://reportingapi.sinch.com/[version]
