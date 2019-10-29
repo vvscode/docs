@@ -6,7 +6,7 @@ next:
     - xml-service-deletemmsid
 ---
 ## Overview
-Sends an MMS defined in the XML containing slides of embedded with video, audio, images and/or text to a single or list of mobile numbers in international number format. The sendMMS is a minor extension of the saveMMS function. Note, while elements may be given in any order, the slides are created in the order given in the API call.
+Sends an MMS defined in the XML containing slides of embedded with video, audio, images and/or text to a single number in international number format. The sendMMS is a minor extension of the saveMMS function. Note, while elements may be given in any order, the slides are created in the order given in the API call.
 
 While the sendMMS API method allows sending slides containing video elements, it is not recommended as it introduces latency during the call. Therefore, Sinch suggests strongly that you use the saveMMS API call to submit video content and then Sinch MMS service can transcode the contents in advance before you request the sendSavedMMS API call.
 
