@@ -1,13 +1,10 @@
 ---
 title: Introduction
-excerpt: ""
+excerpt: This document provides a detailed user guide and reference documentation on the Sinch Voice REST API.
 next:
   pages:
     - voice-rest-api-calling-api
 ---
-
-This document provides a detailed user guide and reference documentation on the Sinch Voice REST API.
-
 ## Overview
 
 When using Sinch for voice calling, the Sinch platform can be seen as a big telephony switch. It receives incoming phone calls (also known as _incoming call “legs”_), sets up outgoing phone calls (also known as _outgoing call “legs”_), and bridges the two. The incoming call leg may come in over a data connection (from a smartphone or web application using the Sinch SDKs) or through a local phone number (from the PSTN network).

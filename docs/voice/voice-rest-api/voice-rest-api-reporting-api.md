@@ -1,7 +1,6 @@
 ---
 title: Call Report
 excerpt: ''
-hidden: 'false'
 next:
   pages:
     - voice-rest-api-cdr

@@ -1,7 +1,6 @@
 ---
 title: Recording calls
 excerpt: ''
-hidden: 'false'
 next:
   pages:
     - voice-rest-api-misc
