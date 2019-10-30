@@ -1,6 +1,7 @@
 ---
 title: Glossary for Sinch REST API
 excerpt: ''
+hidden: "true"
 ---
 | Term       | Explanation                                             |
 | ---------- | ------------------------------------------------------- |

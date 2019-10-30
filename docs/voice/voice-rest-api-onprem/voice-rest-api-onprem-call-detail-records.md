@@ -1,6 +1,7 @@
 ---
 title: Call Detail Records
 excerpt: ''
+hidden: "true"
 next:
   pages:
     - voice-rest-api-onprem-test-numbers

@@ -1,7 +1,6 @@
 ---
 title: Introduction
 excerpt: ""
-hidden: "false"
 next:
   pages:
     - voice-rest-api-calling-api
@@ -33,6 +32,7 @@ These are the typical call scenarios that you can control with the Sinch Callbac
 ### Callback API
 
 To use callback events you need to assign a callback URL in the Sinch portal under your app settings.
+
 | Event | HTTP Verb | Functionality |
 |--------|-----------|-----------------------------------------------------------------------------------------------------------------------|
 | ICE | POST | [Incoming Call Event callback]() |
@@ -46,6 +46,7 @@ To use callback events you need to assign a callback URL in the Sinch portal und
     https://callingapi.sinch.com/v1
 
 URL to access a region-specific API is provided by the ICE callback, in the `callResourceUrl` property. Use that as a base URL to access the following region-specific resources:
+
 | URL | HTTP Verb | Functionality |
 |--------------------------------------------------------|-----------|------------------------------------------------------------------------------------------------------------------------|
 | /configuration/numbers/ | GET | [Get a list of your numbers]() |

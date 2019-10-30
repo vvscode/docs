@@ -1,6 +1,7 @@
 ---
 title: Reporting API
 excerpt: ''
+hidden:'true'
 next:
   pages:
     - voice-rest-api-onprem-call-detail-records
