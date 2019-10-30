@@ -9,14 +9,14 @@ next:
 
     Global Endpoint:
     https://calling.api.sinch.com/[version]
-
+    
     Regional Endpoints:
     https://calling-euc1.api.sinch.com/[version]  - Europe
     https://calling-use1.api.sinch.com/[version]  - United States
     https://calling-sae1.api.sinch.com/[version]  - South America
     https://calling-apse1.api.sinch.com/[version] - South East Asia 1
     https://calling-apse2.api.sinch.com/[version] - South East Asia 2
-
+    
     Current  version is "v1"
 
 ## Overview
