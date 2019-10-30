@@ -217,6 +217,12 @@ Tools
 -   [Code Spell
     Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker),
     an offline spell checker by Street Side Software.
+    
+### IntelliJ platform (WebStorm, PhpStorm, PyCharm, etc.)
+
+-   Jetbrains provides a Markdown plugin for editing with preview
+
+-   [Markdown Navigator](https://plugins.jetbrains.com/plugin/7896-markdown-navigator) Much more powerful plugin with improved syntax highlighting and YAML frontmatter support (recommended!)
 
 ### Markdown Office integration
 
@@ -248,6 +254,6 @@ Tools
 
 ### General tools for writing
 
-[http://grammarly.com](http://grammarly.com/)
+-   [http://grammarly.com](http://grammarly.com/)
 
-<http://www.hemingwayapp.com/>
+-   <http://www.hemingwayapp.com/>
