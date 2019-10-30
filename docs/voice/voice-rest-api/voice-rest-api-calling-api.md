@@ -1,7 +1,6 @@
 ---
 title: Calling API
 excerpt: ""
-hidden: "false"
 next:
   pages:
     - voice-rest-api-callback-api

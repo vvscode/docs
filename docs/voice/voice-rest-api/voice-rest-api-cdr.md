@@ -1,7 +1,6 @@
 ---
 title: Call Detail Records
 excerpt: ''
-hidden: 'false'
 next:
   pages:
     - voice-rest-api-ivr
