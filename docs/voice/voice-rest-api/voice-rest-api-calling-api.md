@@ -1,28 +1,42 @@
 ---
 title: Calling API
-excerpt: ''
-hidden: 'false'
+excerpt: ""
+hidden: "false"
 next:
   pages:
     - voice-rest-api-callback-api
 ---
+
+    Global Endpoint:
+    https://calling.api.sinch.com/[version]
+
+    Regional Endpoints:
+    https://calling-euc1.api.sinch.com/[version]  - Europe
+    https://calling-use1.api.sinch.com/[version]  - United States
+    https://calling-sae1.api.sinch.com/[version]  - South America
+    https://calling-apse1.api.sinch.com/[version] - South East Asia 1
+    https://calling-apse2.api.sinch.com/[version] - South East Asia 2
+
+    Current  version is "v1"
+
 ## Overview
 
 ### Methods
 
 This API exposes calling-related functionality in the Sinch platform. The following APIs resources are available through the following URLs:
 
-    https://callingapi.sinch.com/[version]
-    or
-    https://api.sinch.com/calling/[version]
-
-    Current  version is "v1"
-
     [GET]       /configuration/numbers/
     [POST]      /configuration/numbers/
     [GET]       /configuration/callbacks/applications/{applicationkey}
     [POST]      /configuration/callbacks/applications/{applicationkey}
     [GET]       /calling/query/number/{number}
+    [PATCH]     /calls/id/{callId}
+    [GET]       /calls/id/{callId}
+    [GET]       /conferences/id/{conferenceId}
+    [PATCH]     /conferences/id/{conferenceId}/{callId}
+    [DELETE]    /conferences/id/{conferenceId}
+    [DELETE]    /conferences/id/{conferenceId}/{callId}
+    [POST]      /callouts
 
 Other set of APIs provide information and/or control of the calls handled locally in a region. Therefore, the URL to access these APIs is provided as part of the ICE callback, in the `callResourceUrl` property.
 
@@ -49,9 +63,9 @@ Other set of APIs provide information and/or control of the calls handled locall
 
 Get information about your numbers. It returns a list of numbers that you own, as well as their capability (voice or SMS). For the ones that are assigned to an app, it returns the application key of the app.
 
-*Example*
+_Example_
 
-    [GET] https://callingapi.sinch.com/v1/configuration/numbers/
+    [GET] https://calling.api.sinch.com/v1/configuration/numbers/
 
 ### Authorization
 
@@ -73,10 +87,10 @@ This is a protected resource and requires an application signed request \<applic
 
 **capability** the capability of the number. It can take these values:
 
-> -   voice
-> -   sms
+> - voice
+> - sms
 
-*Example*
+_Example_
 
     {
       "numbers": [
@@ -107,7 +121,7 @@ Assign a number or a list of numbers to an application.
     [RequestBody]
         string[] - numbers
         string - applicationkey
-        string - capability        
+        string - capability
 
 **number** The phone number or list of numbers in E.164 format.
 
@@ -115,9 +129,9 @@ Assign a number or a list of numbers to an application.
 
 **capability** indicates the DID capability that needs to be assigned to the chosen application. Valid values are “voice” and “sms”. Please note that the DID needs to support the selected capability.
 
-*Example*
+_Example_
 
-    [POST] https://callingapi.sinch.com/v1/configuration/numbers/
+    [POST] https://calling.api.sinch.com/v1/configuration/numbers/
 
     {
         "numbers":["+14151112223333"],
@@ -158,9 +172,9 @@ Un-assign a number from an application.
 
 **capability** indicates the DID capability. Valid values are “voice” and “sms”. Please note that the DID needs to support the selected capability.
 
-*Example*
+_Example_
 
-    [DELETE] https://callingapi.sinch.com/v1/configuration/numbers/
+    [DELETE] https://calling.api.sinch.com/v1/configuration/numbers/
 
     {
         "number":"+14151112223333",
@@ -191,9 +205,9 @@ Get callback URLs.
 
 ### Request
 
-*Example*
+_Example_
 
-    [GET] https://callingapi.sinch.com/v1/configuration/callbacks/applications/94983f76-1161-6655-9515-4785c7b67ca8
+    [GET] https://calling.api.sinch.com/v1/configuration/callbacks/applications/94983f76-1161-6655-9515-4785c7b67ca8
 
 ### Authorization
 
@@ -212,7 +226,7 @@ This is a protected resource and requires an application signed request \<applic
 
 **fallback** is your fallback callback URL. It is used only if Sinch platform gets a timeout or error from your primary callback URL.
 
-*Example*
+_Example_
 
     {
         "url" : {
@@ -247,9 +261,9 @@ Update callback URLs.
 
 **fallback** is your fallback callback URL. It is used only if Sinch platform gets a timeout or error from your primary callback URL.
 
-*Example*
+_Example_
 
-    [POST] https://callingapi.sinch.com/v1/configuration/callbacks/applications/94983f76-1161-6655-9515-4785c7b67ca8
+    [POST] https://calling.api.sinch.com/v1/configuration/callbacks/applications/94983f76-1161-6655-9515-4785c7b67ca8
 
     {
         "url" : {
@@ -280,9 +294,9 @@ Get information about the requested number.
 
 **number** The phone number you want to query.
 
-*Example*
+_Example_
 
-    [GET] https://callingapi.sinch.com/v1/calling/query/number/+46(0)73-017-0101
+    [GET] https://calling.api.sinch.com/v1/calling/query/number/+46(0)73-017-0101
 
 ### Authorization
 
@@ -307,16 +321,16 @@ This is a protected resource and requires an application signed request \<applic
 
 **numberType** can be one of the following values:
 
-> -   Unknown
-> -   Fixed
-> -   Mobile
-> -   Other
+> - Unknown
+> - Fixed
+> - Mobile
+> - Other
 
 **normalizedNumber** E.164 normalized number.
 
 **rate** is the cost per minute to call the destination number.
 
-*Example*
+_Example_
 
     {
         "numberItem": {
@@ -342,9 +356,9 @@ This is a protected resource and requires an application signed request \<applic
 
 Gets information about a specific call.
 
-*Example*
+_Example_
 
-    [GET] https://callingapi.sinch.com/calling/v1/calls/id/4398599d1ba84ef3bde0a82dfb61abed
+    [GET] https://calling.api.sinch.com/calling/v1/calls/id/4398599d1ba84ef3bde0a82dfb61abed
 
 ### Authorization
 
@@ -398,6 +412,347 @@ This is a protected resource and requires an application signed request \<applic
     40400 - Call not found
     50000 - Internal error
 
+## Get Conference Info
+
+**\[GET\] /conferences/id/{conferenceId}**
+
+Gets information about an ongoing conference
+
+_Example_
+
+```text
+[GET] https://calling.api.sinch.com/v1/conferences/id/myConference
+```
+
+### Authorization
+
+This is a protected resource and requires an [application signed request](doc:using-rest#section-application-signed-request) or [basic auth](doc:using-rest#section-basic-authorization).
+
+### Response
+
+```json
+[ResponseBody]
+    GetConfrenceInfoResponse
+
+[GetConferenceInfoResponse]
+    Participant[] - participants
+
+[Participant]
+    string - cli
+    string - id
+    int - duration
+    bool - muted
+```
+
+**cli** shows the phone number of the PSTN participant that was connected in the conference, or whatever was passed as CLI for data originated/terminated calls.
+
+**callId** is the callId of the call leg that the participant joined the conference.
+
+**duration** shows the number of seconds that this participant was connected in the conference.
+
+**muted** shows if the participant is muted currently.
+
+_Example_
+
+```json
+{
+  "participants": [
+    {
+      "cli": "+46708168731",
+      "id": "abcabcabcabca",
+      "duration": 14,
+      "muted": false
+    },
+    {
+      "cli": "+46708425201",
+      "id": "cdecdecdecde",
+      "duration": 12,
+      "muted": false
+    }
+  ]
+}
+```
+
+### Errors
+
+    ``40400`` - Conference not found
+
+## Mute/Unmute Conference Participant
+
+**\[PATCH\] /conferences/id/{conferenceId}/{callId}**
+
+Mutes or unmutes a participant in an ongoing conference
+
+_Example_
+
+```text
+[PATCH] https://calling.api.sinch.com/v1/conferences/id/myConference/abcdef01234
+```
+
+### Request
+
+```text
+[RequestBody]
+    ConferenceCommand
+
+[ConferenceCommand]
+    string - command
+```
+
+**command** can be either “mute” or “unmute”
+
+_Example_
+
+```json
+{
+  "command": "mute"
+}
+```
+
+### Authorization
+
+This is a protected resource and requires an [application signed request](doc:using-rest#section-application-signed-request) or [basic auth](doc:using-rest#section-basic-authorization).
+
+### Errors
+
+    ``40400`` - Conference not found
+
+## Kick Conference Participant
+
+**\[DELETE\] /conferences/id/{conferenceId}/{callId}**
+
+Kicks a participant from an ongoing conference
+
+### Authorization
+
+This is a protected resource and requires an [application signed request](doc:using-rest#section-application-signed-request) or [basic auth](doc:using-rest#section-basic-authorization).
+
+## Kick All Conference Participants
+
+**\[DELETE\] /conferences/id/{conferenceId}** - Kicks all participants from an ongoing conference
+
+### Authorization
+
+This is a protected resource and requires an [application signed request](doc:using-rest#section-application-signed-request) or [basic auth](doc:using-rest#section-basic-authorization).
+
+## Conference and Text-To-Speech Callouts
+
+**\[POST\] /callouts**
+
+Requests a call to be initiated from the server
+
+### Request
+
+```text
+[RequestBody]
+    CalloutRequest
+
+[CalloutRequest]
+    string - method
+    TtsCalloutRequest? - ttsCallout
+    ConferenceCalloutRequest? - conferenceCallout
+```
+
+There are currently two types of callouts that are supported: conference callouts and text-to-speech callouts.
+
+### Conference callout
+
+With conference callout, the server initiates call to a phone number and when the call is answered, it is connected to a conference room. The same API can be used multiple times to connect multiple phone numbers in the same conference room.
+
+### Request
+
+```json
+[ConferenceCalloutRequest]
+    string - cli
+    Identity - destination
+    int - maxDuration
+    bool - enableAce
+    bool - enableDice
+    bool - enablePie
+    string - custom
+    string - locale
+    string - conferenceId
+    string - greeting
+    string - mohClass
+```
+
+**cli** is the number that will be displayed as caller
+
+**destination** identifies the endpoint that should be called.
+
+**type** can be “number” for PSTN endpoints, or “username” for data endpoints (app or web clients).
+
+**endpoint** is either the number of a PSTN endpoint, or the username for a data endpoint.
+
+**domain** can be either “pstn” for PSTN endpoint or “mxp” for data (app or web) clients.
+
+**custom** can be used to input custom data.
+
+**locale** specifies the language for the Text-to-speech message. Supported languages: \* en-US: English, United States \* en-AU: English, Australia \* en-CA: English, Canada \* en-GB: English, United Kingdom \* en-IN: English, India \* es-ES: Spanish, Spain \* es-MX: Spanish, Mexico \* es-CA : Spanish, Catalunya \* fr-FR: French, France \* fr-CA: French, Canada \* ja-JP: Japanese \* ko-KR: Korean \* pt-BR: Portuguese, Brazil \* pt-PT: Portuguese \* zn-CN: Chinese, China \* zh-HK: Chinese, Hong
+Kong \* zh-TW: Chinese, Taiwan \* da-DK: Danish \* de-DE: German \* fi-FI: Finish \* it-IT: Italian \* nb-NO: Norwegian \* nl-NL: Dutch \* pl-PL: Polish \* ru-RU: Russian \* sv-SE: Swedish
+
+**greeting** is the text that will be spoken as a greeting.
+
+**conferenceId** shows the Id of the conference to which the participant will be connected.
+
+If **enableAce** is set to true and the application has a callback URL specified, you will receive an ACE callback when the call is answered. When the callback is received, your platform must respond with a svamlet, containing the “connectconf” action in order to add the call to a conference or create the conference if it’s the first call. If it is set to false, no ACE event will be sent to your backend.
+
+_Example ACE response when_ `enableAce` _set to true_
+
+```json
+{
+  "instructions": [],
+  "action": {
+    "name": "connectConf",
+    "conferenceId": "myConference"
+  }
+}
+```
+
+If **enableDice** is set to true and the application has a callback URL specified, you will receive a DiCE callback when the call is disconnected. If it is set to false, no DiCE event will be sent to your backend.
+
+If **enablePie** is set to true and the application has a callback URL specified, you will receive a PIE callback after a runMenu action, with the information of the action that the user took. If it is set to false, no PIE event will be sent to your backend.
+
+_Example of conference callout_
+
+```text
+[POST] https://calling.api.sinch.com/v1/callouts
+```
+
+```json
+{
+  "method": "conferenceCallout",
+  "conferenceCallout": {
+    "cli": "46000000000",
+    "destination": { "type": "number", "endpoint": "46000000001" },
+    "domain": "pstn",
+    "custom": "customData",
+    "locale": "en-US",
+    "greeting": "Welcome to my conference",
+    "conferenceId": "my_conference_room_id",
+    "enableAce": false,
+    "enableDice": false
+  }
+}
+```
+
+### Text-to-speech
+
+With the text-to-speech callout, the server initiates a call to a phone number and plays a synthesized text messages or pre-recorded sound files.
+
+### Authorization
+
+This is a protected resource and requires an [application signed request](doc:using-rest#section-application-signed-request) or [basic auth](doc:using-rest#section-basic-authorization).
+
+### Request
+
+```json
+[TtsCalloutRequest]
+    string - cli
+    Identity - destination
+    string - domain
+    string - custom
+    string - locale
+    string - text
+    string - prompts
+    bool - enableAce
+    bool - enableDice
+```
+
+**cli** is the number that will be displayed as caller
+
+**destination** identifies the endpoint that should be called.
+
+**type** is a parameter inside the “destination” object. It can be “number” for PSTN endpoints, or “username” for data endpoints (app or web clients).
+
+**endpoint** is a parameter inside the “destination” object. It is either the number of a PSTN endpoint, or the username for a data endpoint.
+
+**domain** can be either “pstn” for PSTN endpoint or “mxp” for data (app or web) clients.
+
+**custom** can be used to input custom data.
+
+If **enableAce** is set to true and the application has a callback URL specified, you will receive an ACE callback when the call is answered. When the callback is received, your platform must respond with a svamlet, typically containing a “playFiles” instruction and a “hangup” action. If it is set to false, no ACE event will be sent to your backend.
+
+_Example ACE response when \`\`enableAce\`\` set to true_
+
+```json
+{
+  "instructions": [
+    {
+      "name": "playFiles",
+      "ids": ["#tts[hello world]"]
+    }
+  ],
+  "action": {
+    "name": "hangup"
+  }
+}
+```
+
+_Example ACE response when \`\`enableAce\`\` set to true_. In this example, the result will be the same as it would with the enableAce set to false - the message specified in the `TtsCalloutRequest` will be played
+
+```json
+{
+  "instructions": [],
+  "action": {
+    "name": "continue"
+  }
+}
+```
+
+If **enableDice** is set to true and the application has a callback URL specified, you will receive a DiCE callback when the call is disconnected. If it is set to false, no DiCE event will be sent to your backend.
+
+**locale** specifies the language for the Text-to-speech message. Supported languages: \* en-US: English, United States \* en-AU: English, Australia \* en-CA: English, Canada \* en-GB: English, United Kingdom \* en-IN: English, India \* es-ES: Spanish, Spain \* es-MX: Spanish, Mexico \* es-CA : Spanish, Catalunya \* fr-FR: French, France \* fr-CA: French, Canada \* ja-JP: Japanese \* ko-KR: Korean \* pt-BR: Portuguese, Brazil \* pt-PT: Portuguese \* zn-CN: Chinese, China \* zh-HK: Chinese, Hong Kong \* zh-TW: Chinese, Taiwan \* da-DK: Danish \* de-DE: German \* fi-FI: Finish \* it-IT: Italian \* nb-NO: Norwegian \* nl-NL: Dutch \* pl-PL: Polish \* ru-RU: Russian \* sv-SE: Swedish
+
+**text** is the text that will be spoken in the text-to-speech message. Every applications default maximum characters allowed in text-to-speech is 600 characters. Contact support if you wish this limit to be changed.
+
+**prompts** is an advanced alternative to using “text”. You can then supply a “;”-separated list of prompts. Either prompt can be the name of a pre-recorded file or a text-to-speech string specified as “\#tts\[my text\]”. To upload and use pre-recorded files, you need to contact Sinch for support. Every applications default maximum characters allowed per 'prompts'-command text-to-speech is 600 characters. Contact support if you wish this limit to be changed.
+
+_Example of text-to-speech callout_
+
+```text
+[POST] https://calling.api.sinch.com/v1/callouts
+```
+
+```json
+{
+  "method": "ttsCallout",
+  "ttsCallout": {
+    "cli": "46000000000",
+    "destination": { "type": "number", "endpoint": "46000000001" },
+    "domain": "pstn",
+    "custom": "customData",
+    "locale": "en-US",
+    "text": "Hello, this is a synthesized message."
+  }
+}
+```
+
+_Example of text-to-speech callout_
+
+```text
+[POST] https://calling.api.sinch.com/v1/callouts
+```
+
+```json
+{
+  "method": "ttsCallout",
+  "ttsCallout": {
+    "cli": "46000000000",
+    "destination": { "type": "number", "endpoint": "46000000001" },
+    "domain": "pstn",
+    "custom": "customData",
+    "locale": "en-US",
+    "prompts": "#tts[Hello, we will now play a pre-recorded file.];myprerecordedfile;#tts[We hope you liked listening to the file.]",
+    "enabledice": true
+  }
+}
+```
+
+### Authorization
+
+This is a protected resource and requires an [application signed request](doc:using-rest#section-application-signed-request) or [basic auth](doc:using-rest#section-basic-authorization).
+
 ## Manage Call
 
 **[Patch] calling/v1/calls/id/{callId}**
@@ -417,7 +772,7 @@ This method can be used to manage ongoing, connected calls or to unpark parked c
 
 ### Managing Ongoing, Connected Calls
 
-For ongoing, connected calls, you can use this endpoint to play messages and/or optionally hang up the call. There are two instructions available to play messages. The *PlayFiles* instruction can be used to play an IVR message, while the *Say* instruction can be used to play a text-to-speech message. The message, if specified, is played only on the caller side. A caller can, for example, hear a message saying the total minutes have expired and that the call will be disconnected.
+For ongoing, connected calls, you can use this endpoint to play messages and/or optionally hang up the call. There are two instructions available to play messages. The _PlayFiles_ instruction can be used to play an IVR message, while the _Say_ instruction can be used to play a text-to-speech message. The message, if specified, is played only on the caller side. A caller can, for example, hear a message saying the total minutes have expired and that the call will be disconnected.
 
 For more information on playing messages and performing actions on calls see the [Callback API](doc:voice-rest-api-callback-api).
 
@@ -425,9 +780,9 @@ For more information on playing messages and performing actions on calls see the
 
 For a parked call (see [Callback API](doc:voice-rest-api-callback-api) on how to park a call), this endpoint can be used to “unpark” the call. Parked calls can be considered calls where the ICE response has been “postponed”. When unparking a parked call, you simply provide the SVML you normally would have responded with in the ICE response if you had not “postponed” it -see the [Callback API](doc:voice-rest-api-callback-api).
 
-*Example IVR*
+_Example IVR_
 
-    [PATCH] https://callingapi.sinch.com/calling/v1/call/id/4398599d1ba84ef3bde0a82dfb61abed
+    [PATCH] https://calling.api.sinch.com/calling/v1/call/id/4398599d1ba84ef3bde0a82dfb61abed
     {
       "instructions": [
         {
@@ -443,9 +798,9 @@ For a parked call (see [Callback API](doc:voice-rest-api-callback-api) on how to
       }
     }
 
-*Example text-to-speech*
+_Example text-to-speech_
 
-    [PATCH] https://callingapi.sinch.com/calling/v1/call/id/4398599d1ba84ef3bde0a82dfb61abed
+    [PATCH] https://calling.api.sinch.com/calling/v1/call/id/4398599d1ba84ef3bde0a82dfb61abed
     {
       "instructions": [
         {
@@ -459,9 +814,9 @@ For a parked call (see [Callback API](doc:voice-rest-api-callback-api) on how to
       }
     }
 
-*Example Start Recording*
+_Example Start Recording_
 
-    [PATCH] https://callingapi.sinch.com/calling/v1/call/id/4398599d1ba84ef3bde0a82dfb61abed
+    [PATCH] https://calling.api.sinch.com/calling/v1/call/id/4398599d1ba84ef3bde0a82dfb61abed
     {
       "action": {
         "name": "startRecording",
@@ -474,9 +829,9 @@ For a parked call (see [Callback API](doc:voice-rest-api-callback-api) on how to
       }
     }
 
-*Example Stop Recording*
+_Example Stop Recording_
 
-    [PATCH] https://callingapi.sinch.com/calling/v1/call/id/4398599d1ba84ef3bde0a82dfb61abed
+    [PATCH] https://calling.api.sinch.com/calling/v1/call/id/4398599d1ba84ef3bde0a82dfb61abed
     {
       "action": {
         "name": "stopRecording"

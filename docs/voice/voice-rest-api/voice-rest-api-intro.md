@@ -1,16 +1,17 @@
 ---
 title: Introduction
-excerpt: ''
-hidden: 'false'
+excerpt: ""
+hidden: "false"
 next:
   pages:
     - voice-rest-api-calling-api
 ---
-This document provides a detailed user guide and reference documentation on the Sinch Voice REST API. 
+
+This document provides a detailed user guide and reference documentation on the Sinch Voice REST API.
 
 ## Overview
 
-When using Sinch for voice calling, the Sinch platform can be seen as a big telephony switch. It receives incoming phone calls (also known as *incoming call “legs”*), sets up outgoing phone calls (also known as *outgoing call “legs”*), and bridges the two. The incoming call leg may come in over a data connection (from a smartphone or web application using the Sinch SDKs) or through a local phone number (from the PSTN network).
+When using Sinch for voice calling, the Sinch platform can be seen as a big telephony switch. It receives incoming phone calls (also known as _incoming call “legs”_), sets up outgoing phone calls (also known as _outgoing call “legs”_), and bridges the two. The incoming call leg may come in over a data connection (from a smartphone or web application using the Sinch SDKs) or through a local phone number (from the PSTN network).
 
 For most call scenarios, you can use the Sinch SDKs on a smartphone or on web client to establish calls without the need of backend integration. For additional control or flexibility of the calls, you can use the Sinch REST APIs to manage the calls.
 
@@ -20,26 +21,55 @@ For more details on the REST APIs to that can be used to manage calls see the [C
 
 These are the typical call scenarios that you can control with the Sinch Callback and Calling APIs:
 
-> -   App to phone calls
-> -   Phone to phone calls
-> -   Text-to-speech calls
-> -   Conference calls
+> - App to phone calls
+> - App to app calls
+> - Phone to phone calls
+> - Text-to-speech calls
+> - Conference calls
+> - SIP trunking calls
 
 ## API Quick Reference
 
 ### Callback API
 
 To use callback events you need to assign a callback URL in the Sinch portal under your app settings.
+| Event | HTTP Verb | Functionality |
+|--------|-----------|-----------------------------------------------------------------------------------------------------------------------|
+| ICE | POST | [Incoming Call Event callback]() |
+| ACE | POST | [Answered Call Event callback]() |
+| DiCE | POST | [Disconnect Call Event callback]() |
+| PIE | POST | [Prompt Input Event callback]() |
+| Notify | POST | [Notify Event callback]() |
 
 ### Calling API
 
     https://callingapi.sinch.com/v1
 
 URL to access a region-specific API is provided by the ICE callback, in the `callResourceUrl` property. Use that as a base URL to access the following region-specific resources:
+| URL | HTTP Verb | Functionality |
+|--------------------------------------------------------|-----------|------------------------------------------------------------------------------------------------------------------------|
+| /configuration/numbers/ | GET | [Get a list of your numbers]() |
+| /configuration/numbers/ | POST | [Assign numbers to an app]() |
+| /configuration/callbacks/applications/{applicationkey} | GET | [Get callback URLs of your app]() |
+| /configuration/callbacks/applications/{applicationkey} | POST | [Update the callback URLs of your app]() |
+| /calling/query/number/{number} | GET | [Query a number]() |
+| /calls/id/{callId} | PATCH | [Manage Call]() |
+| /calls/id/{callId} | GET | [Get call result]() |
+| /conferences/id/{conferenceId} | GET | [Get conference info]() |
+| /conferences/id/{conferenceId}/{callId} | PATCH | [Mute/Unmute conference participant]() |
+| /conferences/id/{conferenceId}/{callId} | DELETE | [Kick conference participant]() |
+| /conferences/id/{conferenceId} | DELETE | [Kick all conference participants]() |
+| /callouts | POST | [Place text-to-speech or conference call]() |
 
 ### Reporting API
 
     https://reportingapi.sinch.com/v1
+
+| URL                                     | HTTP Verb | Functionality          |
+| --------------------------------------- | --------- | ---------------------- |
+| /users/{type}/{endpoint}/calls/{domain} | GET       | [User call report]()   |
+| /counters/{id}                          | GET       | [Get counter]()        |
+| /services/{id}                          | GET       | [Get service status]() |
 
 ## App to phone calls
 
@@ -50,7 +80,6 @@ For more information please check the [Callback API](doc:voice-rest-api-callback
 > **Note**
 >
 > You may need to be configured specifically for this functionality - please contact [Sinch Support](mailto:support@sinch.com) if you have any questions!
-
 
 ## Phone to phone calls
 

@@ -1,11 +1,12 @@
 ---
 title: Callback API
-excerpt: ''
-hidden: 'false'
+excerpt: ""
+hidden: "false"
 next:
   pages:
     - voice-rest-api-reporting-api
 ---
+
 ## Overview
 
 Controlling a call from your application backend is done by responding to callbacks from the Sinch platform and/or by calling REST APIs in the Sinch platform from your application’s backend. The figure that follows illustrates the lifecycle of a call and shows where both callbacks and REST API calls are located or can be made.
@@ -16,7 +17,7 @@ The **Incoming Call Event (ICE)**, is triggered when the Sinch platform receives
 
 ## Sinch Voice Application Markup Language (SVAML)
 
-SVAML is a call control markup language developed by Sinch. When your backend receives callback event from the Sinch platform, it can respond with a *SVAML object* to control the voice call. The SVAML object type is defined like this:
+SVAML is a call control markup language developed by Sinch. When your backend receives callback event from the Sinch platform, it can respond with a _SVAML object_ to control the voice call. The SVAML object type is defined like this:
 
     [SVAML]
         Instruction[] - instructions
@@ -34,8 +35,7 @@ SVAML is a call control markup language developed by Sinch. When your backend re
         ... // action-specific properties
     }
 
-SVAML Quick Reference
----------------------
+## SVAML Quick Reference
 
 ### Instructions
 
@@ -112,6 +112,11 @@ SVAML Quick Reference
           <td align="left">ICE response</td>
         </tr>
         <tr class="odd">
+          <td align="left">ConnectSIP</td>
+          <td align="left">Instructs to connect the call to a SIP server</td>
+          <td align="left">ICE response</td>
+        </tr>
+        <tr class="odd">
           <td align="left">RunMenu</td>
           <td align="left">Instructs to play a menu to the user</td>
           <td align="left">ICE or ACE response</td>
@@ -152,7 +157,7 @@ Instructions allow your application to play a message to participants given a pa
         "locale" : "en-US"
     }
 
-**say** instruction is used to play a text-to-speech message to the end user. The message is provided in the *text* field.
+**say** instruction is used to play a text-to-speech message to the end user. The message is provided in the _text_ field.
 
 **text** is a string that contains the message to be played. Note that the text cannot be longer than 200 characters and that currently only English “en-US” is supported.
 
@@ -324,8 +329,7 @@ Stops an ogoing recording for the current call.
         "name": "StopRecording"
     }
 
-Actions
--------
+## Actions
 
 Actions allow your Sinch application to control individual calls. The following actions are currently available:
 
@@ -553,7 +557,7 @@ Actions allow your Sinch application to control individual calls. The following 
   </div>
 </div>
 
-**Notice**: You do not need to set *cli* or *number* if the values supplied by the client suffice.
+**Notice**: You do not need to set _cli_ or _number_ if the values supplied by the client suffice.
 
 ### ConnectConf
 
@@ -570,10 +574,10 @@ Actions allow your Sinch application to control individual calls. The following 
 
 **moh** stands for “music-on-hold”. It is an optional parameter that specifies what the first participant should listen to while he/she is alone in the conference, waiting for other participants to join. It can take one of these pre-defined values:
 
-> -   “ring” (progress tone)
-> -   “music1” (music file)
-> -   “music2” (music file)
-> -   “music3” (music file)
+> - “ring” (progress tone)
+> - “music1” (music file)
+> - “music2” (music file)
+> - “music3” (music file)
 
 If no “music-on-hold” is specified, the user will only hear silence.
 
@@ -581,11 +585,48 @@ If no “music-on-hold” is specified, the user will only hear silence.
 
 **recordingOptions** is sent when record is set to true and specifies the details about the recording. See RecordingOptions for more details.
 
+#### ConnectSIP
+
+```json
+{
+  "name": "connectSIP",
+  "destination": { "endpoint": "46708000000@sip.foo.com" },
+  "maxDuration": 3000,
+  "cli": "private",
+  "record": true,
+  "suppressCallbacks": false
+}
+```
+
+**connectSIP** is the action of an incoming call event. It instructs to route a call to your SIP server.
+
+**destination** specifies where to route the SIP call to.
+
+**maxDuration** is the max duration for the call in seconds (max 14400 seconds). If the call is still connected at that time, it will be automatically disconnected.
+
+**cli** is used to override the CLI of the client - if “private”, the CLI will be hidden. If not specified, the CLI that the client has set is used. In case of a PSTN-originated call, the phone number of the person that initiated the call will be shown as the CLI. To use CLI, your Sinch account must have CLI capabilities enabled.
+
+**record** is an optional parameter that allows call recording. Recording files are stored in your own Amazon S3 bucket. The file name generated has this format:
+
+[\[callid\]]()\[applicationkey\].wav
+
+Example:
+
+```text
+9ab69740-c024-4e35-8428-712009467480_ff67123-c024-4e35-8428-712009467480.wav
+```
+
+**suppressCallbacks** if set to true, you are opting out of the callbacks for ACE and DiCE for this call
+
+The SIP traffic will be routed to your SIP server from the IP address, so make sure it is registered in your SIP server:
+
+> 213.242.88.200
+
 ### RunMenu
 
-With the *runMenu* action, the user will start listening to an IVR menu. This menu can play pre-recorded or text-to-speech messages, collect DTMF tones and trigger the PIE Callback Event \<voice-cloud-PIE\> towards your backend, notifying of the actions that the user took.
+With the _runMenu_ action, the user will start listening to an IVR menu. This menu can play pre-recorded or text-to-speech messages, collect DTMF tones and trigger the PIE Callback Event \<voice-cloud-PIE\> towards your backend, notifying of the actions that the user took.
 
-*Example of runMenu action*
+_Example of runMenu action_
 
     {
         "name"   :"RunMenu",
@@ -638,9 +679,9 @@ With the *runMenu* action, the user will start listening to an IVR menu. This me
 
 ### Park
 
-With the *park* action, the caller will be “parked” - put into a loop, listening to an IVR (pre-recorded or generated by text to speech).
+With the _park_ action, the caller will be “parked” - put into a loop, listening to an IVR (pre-recorded or generated by text to speech).
 
-*Example of park action*
+_Example of park action_
 
     {
         "name"   :"Park",
@@ -712,24 +753,24 @@ You can find more information on callback request signing here \<callbackrequest
 
 **domain** shows where the call is supposed to be terminated. It can have the following values:
 
-> -   “pstn”: If the call should be terminated in the PSTN network
-> -   “conference”: If the call should be connected to a conference\*\*.
+> - “pstn”: If the call should be terminated in the PSTN network
+> - “conference”: If the call should be connected to a conference\*\*.
 
 **applicationKey** is the unique application key. You can find it in the Sinch dashboard, under your app credentials.
 
 **originationType** may have one of the following values:
 
-> -   “pstn”: If the incoming call comes from the PSTN network (a local phone number mapped to your application
-> -   “mxp”: If the incoming call comes from one of the Sinch SDKs (iOS, Android, Javascript) though the data connection.
+> - “pstn”: If the incoming call comes from the PSTN network (a local phone number mapped to your application
+> - “mxp”: If the incoming call comes from one of the Sinch SDKs (iOS, Android, Javascript) though the data connection.
 
 **duration** shows the duration of the current call.
 
 > **Note**
 >
 > There is currently a known issue, which prevents\*domain\*  
-> to display “conference”, when the call is coming from a SDK client. It will display *pstn* instead. This will be fixed in a future release. You can still detect that this is a conference call originating a SDK client by looking into the “to” identity, which will look like this:
+> to display “conference”, when the call is coming from a SDK client. It will display _pstn_ instead. This will be fixed in a future release. You can still detect that this is a conference call originating a SDK client by looking into the “to” identity, which will look like this:
 >
-> *example of “to” field for a conference call*
+> _example of “to” field for a conference call_
 >
 >     {
 >         "type":"conference",
@@ -740,7 +781,7 @@ You can find more information on callback request signing here \<callbackrequest
 
     [Svaml]
 
-*Example app-phone call response*
+_Example app-phone call response_
 
     {
         "instructions":
@@ -759,7 +800,7 @@ You can find more information on callback request signing here \<callbackrequest
         }
     }
 
-*Example conference call response*
+_Example conference call response_
 
     {
         "action":
@@ -807,7 +848,7 @@ You can find more information on callback request signing here \<callbackrequest
 
     [Svaml]
 
-*Example*
+_Example_
 
     {
         "action":
@@ -853,22 +894,22 @@ You can find more information on callback request signing here \<callbackrequest
 
 **reason** may have one of the following values:
 
-> -   “N/A”
-> -   “TIMEOUT”
-> -   “CALLERHANGUP”
-> -   “CALLEEHANGUP”
-> -   “BLOCKED”
-> -   “MANAGERHANGUP”
-> -   “NOCREDITPARTNER”
-> -   “GENERALERROR”
-> -   “CANCEL”
+> - “N/A”
+> - “TIMEOUT”
+> - “CALLERHANGUP”
+> - “CALLEEHANGUP”
+> - “BLOCKED”
+> - “MANAGERHANGUP”
+> - “NOCREDITPARTNER”
+> - “GENERALERROR”
+> - “CANCEL”
 
 **result** may have one of the following values:
 
-> -   “ANSWERED”
-> -   “BUSY”
-> -   “NOANSWER”
-> -   “FAILED”
+> - “ANSWERED”
+> - “BUSY”
+> - “NOANSWER”
+> - “FAILED”
 
 **version** shows the current API version.
 
@@ -930,12 +971,12 @@ You can find more information on callback request signing here \<callbackrequest
 
 **type** is the type of information that is returned. It can take the values:
 
-> -   Error
-> -   Return
-> -   Sequence
-> -   Timeout
-> -   Hangup
-> -   InvalidInput
+> - Error
+> - Return
+> - Sequence
+> - Timeout
+> - Hangup
+> - InvalidInput
 
 When the PIE event has been triggered from a “return” command, then the type will be “Return”.
 
