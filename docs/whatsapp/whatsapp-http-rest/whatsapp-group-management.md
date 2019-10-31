@@ -107,10 +107,10 @@ The response body is a JSON object with the following parameters:
 
 | Name          | Description                               | JSON Type    |
 | ------------- | ----------------------------------------- | ------------ |
-| admins        | Array of msisdns of all admins            | String array |
+| admins        | Array of the WhatsApp identity of all admins | String array |
 | creation_time | ISO-8601 creation datetime of the group   | String       |
-| creator       | Msisdn of the creator of the group        | String       |
-| members       | Array of msisdns for members in the group | String array |
+| creator       | WhatsApp identity of the creator of the group        | String       |
+| members       | Array of WhatsApp identities for members in the group | String array |
 | subject       | Subject of the group                      | String       |
 
 **Sample**
@@ -227,13 +227,13 @@ in a region where your bot does not reside. The body is a JSON object described 
 
 ## Remove members endpoint
 
-`POST whatsapp/v1/{bot-id}/groups/{group-id}/member`
+`DELETE whatsapp/v1/{bot-id}/groups/{group-id}/member`
 
 JSON object parameters:
 
 | Name    | Description                      | JSON Type    | Default    | Constraints           | Required |
 | ------- | -------------------------------- | ------------ | ---------- | --------------------- | :------: |
-| numbers | List of MSISDNs                  | String array | N/A        | 1 to 20 elements      | Yes      |
+| numbers | List of international phone numbers | String array | N/A        | 1 to 20 elements      | Yes      |
 
 ### Remove members sample
 
@@ -269,7 +269,7 @@ JSON object parameters:
 
 | Name    | Description                      | JSON Type    | Default    | Constraints           | Required |
 | ------- | -------------------------------- | ------------ | ---------- | --------------------- | :------: |
-| numbers | List of MSISDNs                  | String array | N/A        | 1 to 20 elements      | Yes      |
+| numbers | List of international phone numbers | String array | N/A        | 1 to 20 elements      | Yes      |
 
 ### Add admins sample
 
@@ -305,7 +305,7 @@ JSON object parameters:
 
 | Name    | Description                      | JSON Type    | Default    | Constraints           | Required |
 | ------- | -------------------------------- | ------------ | ---------- | --------------------- | :------: |
-| numbers | List of MSISDNs                  | String array | N/A        | 1 to 20 elements      | Yes      |
+| numbers | List of international phone numbers | String array | N/A        | 1 to 20 elements      | Yes      |
 
 ### Remove admins sample
 
@@ -382,5 +382,3 @@ There was an error with your request. The body is a JSON object described in the
 
 There was an authentication error with your request. Either you're using incorrect credentials or you're attempting to authenticate
 in a region where your bot does not reside. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
-
-
