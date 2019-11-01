@@ -1,0 +1,26 @@
+# Validates changes in `docs` directory whenever changes are pushed or a pull request is submitted
+# This runs for all branches except master, since pushing on master is meant to trigger a publication to ReadMe.
+
+name: Validate
+
+on: 
+  push:
+    branches: 
+      - "!master"
+    paths:
+      - "docs/**"
+  pull_request:
+    
+
+jobs:
+
+  check:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+        registry-url: 'https://registry.npmjs.org'
+    - run: npm install
+    - run: npx readme-sync validate
