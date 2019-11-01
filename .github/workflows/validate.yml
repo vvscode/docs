@@ -1,4 +1,4 @@
-# Validates changes in `docs` directory whenever changes are pushed to a branch other than master.
+# Validates changes in `docs` directory whenever changes are pushed to a branch or a pull request is submitted.
 # This runs for all branches except master, since pushing on master is meant to trigger a publication to ReadMe, which is a different workflow.
 
 name: Validate
@@ -8,6 +8,9 @@ on:
     branches-ignore: 
     - "master"
     paths:
+    - "docs/**"
+  pull_request:
+    paths: 
     - "docs/**"
 
 jobs:
