@@ -22,5 +22,7 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: '10.x'
-    - run: npm install
-    - run: npx readme-sync validate
+    - name: Install dependencies
+      run: npm install
+    - name: Validate documentation contents
+      run: npx readme-sync validate

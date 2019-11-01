@@ -1,0 +1,25 @@
+# Triggers a publication to ReadMe
+
+name: Publish to ReadMe
+
+on: 
+  push:
+    branches:
+    - "master"
+
+jobs:
+
+  check:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+    - name: Install dependencies
+      run: npm install
+    - name: Push changes to ReadMe
+      run: npx readme-sync push
+      env:
+        DOCSVERSION: "1.0"
+        APIKEY: ${{ secrets.README_API_KEY }}
