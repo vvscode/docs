@@ -18,6 +18,8 @@ jobs:
         node-version: '10.x'
     - name: Install dependencies
       run: npm install
+    - name: Validate documentation contents
+      run: npx readme-sync validate
     - name: Push changes to ReadMe
       run: npx readme-sync push
       env:
