@@ -6,9 +6,9 @@ name: Validate
 on: 
   push:
     branches-ignore: 
-      - "master"
+    - "master"
     paths:
-      - "docs/**"
+    - "docs/**"
 
 jobs:
 
