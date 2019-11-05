@@ -76,7 +76,7 @@ For more information please check the [Callback API](doc:voice-rest-api-callback
 
 ## App to App calls
 
-In this scenario, calls are originated from and terminated to an app using the iOS, Android or Javascript SDK. Both call legs are established over the data connection of the smartphone or computer (VoIP). For additional call control, you can specify a callback URL where Sinch will send call-related events. By capturing and responding to these events from your backend, you can allow, deny and control the calls. You can configure the call back URL under your app’s voice settings in the Sinch [dashboard](doc:https://portal.sinch.com/#/login).
+In this scenario, calls are originated from and terminated to an app using the iOS, Android or Javascript SDK. Both call legs are established over the data connection of the smartphone or computer (VoIP). For additional call control, you can specify a callback URL where Sinch will send call-related events. By capturing and responding to these events from your backend, you can allow, deny and control the calls. You can configure the call back URL under your app’s voice settings in the Sinch [dashboard](https://portal.sinch.com/#/login).
 
 For more information please check the [Callback API](doc:voice-rest-api-callback-api). The callback event that is used in app to app calls is the Incoming Call Event callback.
 
@@ -103,13 +103,13 @@ If you have specified a callback URL under your app settings for voice, an Incom
 
 For more information check the Incoming Call Event callback and the ConnectConf action.
 
-You can also allow users to dial in a conference by calling a fixed phone number. To do this, first follow the steps mentioned in [Phone to phone calls](##-Phone-to-phone-calls) to configure a number in your app and set a callback URL. Every time a user calls your configured number, an Incoming Call Event callback will be triggered towards your URL. By responding to this event with the ConnectConf action, you can connect the call to a conference.
+You can also allow users to dial in a conference by calling a fixed phone number. To do this, first follow the steps mentioned in [Phone to phone calls](#section-phone-to-phone-calls) to configure a number in your app and set a callback URL. Every time a user calls your configured number, an Incoming Call Event callback will be triggered towards your URL. By responding to this event with the ConnectConf action, you can connect the call to a conference.
 
 For more information check the Incoming Call Event callback and the ConnectConf action.
 
 By using the conference callout API, you can trigger calls to fixed or mobile phones and connect them all to the same conference room.
 
-For more information please check the [Callouts API](doc:voice-rest-api-calling-api##-Conference-and-Text-To-Speech-Callouts) .
+For more information please check the [Callouts API](doc:voice-rest-api-calling-api#section-conference-and-text-to-speech-callouts) .
 
 The Sinch dashboard allows you to control an ongoing conference through REST APIs. There are several conference-control options available, such as muting/unmuting participants or kicking out a participant or all participants from the conference when the conference ends.
 
@@ -123,7 +123,7 @@ Conference recording is disabled by default. To enable conference recording for 
 
 With the text-to-speech REST API, you can trigger a call to be placed to a fixed or mobile phone number and play a synthesized text message.
 
-For more information please check the [Callouts API](doc:voice-rest-api-calling-api##-Conference-and-Text-To-Speech-Callouts).
+For more information please check the [Callouts API](doc:voice-rest-api-calling-api#section-conference-and-text-to-speech-callouts).
 
 ## SIP Trunking
 
@@ -141,7 +141,7 @@ If you prefer a other way of authenticate, please contact [Sinch support].
 
 Once the call arrives in the Sinch dashboard, your backend will get an Incoming Call Event callback, notifying of the incoming call. You can control how you would like the call to be connected by responding to this event.
 
-You can route any type of call from the Sinch dashboard to your SIP server. If your calls are originated from an Android, iOS or Javascript client, you can route calls to your SIP server simply by calling the respective method that initiates calls towards SIP. If your calls are originated towards a PSTN inbound number, you can automatically forward calls to your SIP server using the SIP forwarding option in the Sinch Portal (setting available under Apps >> Voice and Video >> Connect Calls). For any other origination method or if you need more control, you can instruct a call to be connected to your SIP server by responding to the Incoming Call Event callback with the [ConnectSIP](##SIP-Trunking) action.
+You can route any type of call from the Sinch dashboard to your SIP server. If your calls are originated from an Android, iOS or Javascript client, you can route calls to your SIP server simply by calling the respective method that initiates calls towards SIP. If your calls are originated towards a PSTN inbound number, you can automatically forward calls to your SIP server using the SIP forwarding option in the Sinch Portal (setting available under Apps >> Voice and Video >> Connect Calls). For any other origination method or if you need more control, you can instruct a call to be connected to your SIP server by responding to the Incoming Call Event callback with the [ConnectSIP](#section-sip-trunking) action.
 
 You need to allow your SIP server to receive traffic from this IP:
 
