@@ -300,7 +300,7 @@ Limitations: The total size of cookie data (keys and values) may not exceed 1024
         "name" : "Answer"
     }
 
-Normally, an call is “answered” when a callee picks up a call from a caller (for instance, when the callee picks up when doing a “connectPstn” action for an incoming call, see connectPstn \<voice-cloud-connectPstn\>). This normally means that the call duration starts “ticking” on the caller’s phone and that sound can flow in both directions.
+Normally, an call is “answered” when a callee picks up a call from a caller (for instance, when the callee picks up when doing a “connectPstn” action for an incoming call, see connectPstn [connectPstn]. This normally means that the call duration starts “ticking” on the caller’s phone and that sound can flow in both directions.
 
 This is normally handled automatically, but by adding the “answer” instruction, you can force the incoming call to be answered before the call is connected and a callee picks up. For instance, if you add the “answer” instruction in an ICE response with the “connectPstn” action, the caller’s phone will pick up and its call duration will start ticking immediately (and not wait until the callee answers the call).
 
@@ -622,7 +622,7 @@ The SIP traffic will be routed to your SIP server from the IP address, so make s
 
 ### RunMenu
 
-With the _runMenu_ action, the user will start listening to an IVR menu. This menu can play pre-recorded or text-to-speech messages, collect DTMF tones and trigger the PIE Callback Event \<voice-cloud-PIE\> towards your backend, notifying of the actions that the user took.
+With the _runMenu_ action, the user will start listening to an IVR menu. This menu can play pre-recorded or text-to-speech messages, collect DTMF tones and trigger the PIE Callback Event [PIE] towards your backend, notifying of the actions that the user took.
 
 _Example of runMenu action_
 
@@ -655,7 +655,7 @@ _Example of runMenu action_
         ]
     }
 
-**runMenu** is a valid response action to an incoming call event (ICE) \<voice-cloud-ICE\> or answered call event (ACE) \<voice-cloud-ACE\>. It instructs what menu to play to the user and what actions to take based on the user’s input. It can also be used in combination with the manageCall API \<voice-cloud-managecall\>, for conference calls.
+**runMenu** is a valid response action to an incoming call event ([ICE]) or answered call event (ACE) [ACE]. It instructs what menu to play to the user and what actions to take based on the user’s input. It can also be used in combination with the [ManageCall] API, for conference calls.
 
 **menus** is a list of menus that are available. The menu with “id” : “main” will always play first, otherwise an error will be returned.
 
@@ -667,13 +667,13 @@ _Example of runMenu action_
 
 **dtmf** indicates a DTMF digit that a user can press.
 
-**action** indicates the action that will be taken if the user presses the pre-defined “dtmf” digit. It can either trigger a PIE Event \<voice-cloud-PIE\> with the “return” action, or it can navigate to another menu with the “menu” action.
+**action** indicates the action that will be taken if the user presses the pre-defined “dtmf” digit. It can either trigger a [PIE] Event with the “return” action, or it can navigate to another menu with the “menu” action.
 
 **repeatPrompt** is the prompt that will be repeatedly play to the user if the correct DTMF digit is not pressed. The same rules as the mainPrompt apply.
 
 **repeats** is the number of times that the repeatPrompt will be played.
 
-**maxDigits** is the maximum number of digits that is expected from a user to press. Once these digits are collected, a PIE Event \<voice-cloud-PIE\> will be triggered containing these digits. The digits are collected when either the maximum number of digits are entered, the user presses “\#” or the user waits 5 seconds after the last entered digit.
+**maxDigits** is the maximum number of digits that is expected from a user to press. Once these digits are collected, a [PIE] Event will be triggered containing these digits. The digits are collected when either the maximum number of digits are entered, the user presses “\#” or the user waits 5 seconds after the last entered digit.
 
 ### Park
 
@@ -690,7 +690,7 @@ _Example of park action_
 
 **introPrompt** specifies the prompt that will be played as the first prompt. After that, the **holdPrompt** will be played repeatably until the call is unparked or until **maxDuration** seconds have passed. If the call is unparked, prompts will stop playing immediately. However, if the max duration is reached, the last prompt will be fully played until the call is hung up.
 
-Unparking a call is done by using the manageCall API \<voice-cloud-managecall\>.
+Unparking a call is done by using the [ManageCall API](doc:voice-rest-api-calling-api##-Manage-Call).
 
 Limitation: The maxDuration value can be set to maximum 600 seconds (10 minutes).
 
@@ -704,13 +704,13 @@ URLs for the callbacks described in the section that follows are configured in t
 
 When a call reaches the Sinch platform, the system makes a POST request to the specified calling callback URL.
 
-This event, called the “ICE” event, can be triggered by either an incoming data call or an incoming PSTN call. It supports the instruction PlayFiles \<voice-cloud-playfiles\> to play a prompt and Say \<voice-cloud-say\> to play a text-to-speech message and the connectPstn \<voice-cloud-connectPstn\>, ConnectConf \<voice-cloud-ConnectConfAction\>, and Hangup \<voice-cloud-HangupAction\> actions.
+This event, called the “ICE” event, can be triggered by either an incoming data call or an incoming PSTN call. It supports the instruction [PlayFiles] to play a prompt and [Say] to play a text-to-speech message and the [connectPstn], [ConnectConf], and [Hangup] actions.
 
 If there is no response to the callback within the timeout period, an error message is played, and the call is disconnected.
 
 ### Authorization
 
-You can find more information on callback request signing here \<callbackrequestsigning\>.
+You can find more information on callback request signing [here].
 
 ### Request
 
@@ -810,13 +810,13 @@ _Example conference call response_
 
 ## Answered Call Event Callback (ACE)
 
-This callback is made when the call is picked up by the callee (person receiving the call). It is a POST request to the specified calling callback URL. This event does not support instructions and ignores any instructions passed. It only supports the actions Continue \<voice-cloud-ContinueAction\> and Hangup \<voice-cloud-HangupAction\>.
+This callback is made when the call is picked up by the callee (person receiving the call). It is a POST request to the specified calling callback URL. This event does not support instructions and ignores any instructions passed. It only supports the actions [Continue] and [Hangup].
 
 If there is no response to the callback within the timeout period, the call is connected.
 
 ### Authorization
 
-You can find more information on callback request signing here \<callbackrequestsigning\>.
+You can find more information on callback request signing [here].
 
 ### Request
 
@@ -857,13 +857,13 @@ _Example_
 
 ## Disconnect Call Event Callback (DiCE)
 
-This callback is made when the call is disconnected. It is a POST request to the specified calling callback URL. This event does not support instructions and only supports the hangup \<voice-cloud-HangupAction\> action.
+This callback is made when the call is disconnected. It is a POST request to the specified calling callback URL. This event does not support instructions and only supports the [hangup] action.
 
 This callback is a notification. No response is needed.
 
 ### Authorization
 
-You can find more information on callback request signing here \<callbackrequestsigning\>.
+You can find more information on callback request signing [here].
 
 ### Request
 
@@ -931,13 +931,13 @@ You can find more information on callback request signing here \<callbackrequest
 
 ## Prompt Input Event Callback (PIE)
 
-This callback is triggered as a result of a runMenu \<voice-cloud-runmenuaction\> action. It can be triggered from either a user pressing a number of DTMF digits, or by the “return” command.
+This callback is triggered as a result of a [runMenu] action. It can be triggered from either a user pressing a number of DTMF digits, or by the “return” command.
 
 It is a POST request to the specified calling callback URL. Your application can respond with SVAML logic.
 
 ### Authorization
 
-You can find more information on callback request signing here \<callbackrequestsigning\>.
+You can find more information on callback request signing [here].
 
 ### Request
 
@@ -994,7 +994,7 @@ If there is no response to the callback within the timeout period, the notificat
 
 ### Authorization
 
-You can find more information on callback request signing here \<callbackrequestsigning\>.
+You can find more information on callback request signing [here].
 
 ### Request
 

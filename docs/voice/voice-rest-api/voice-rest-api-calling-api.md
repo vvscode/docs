@@ -7,8 +7,7 @@ next:
 ---
 
     Global Endpoint:
-    https://calling.api.sinch.com/[version]
-    
+    https://calling.api.sinch.com/[version]     
     Regional Endpoints:
     https://calling-euc1.api.sinch.com/[version]  - Europe
     https://calling-use1.api.sinch.com/[version]  - United States
@@ -587,8 +586,8 @@ With conference callout, the server initiates call to a phone number and when th
 
 **custom** can be used to input custom data.
 
-**locale** specifies the language for the Text-to-speech message. Supported languages: \* en-US: English, United States \* en-AU: English, Australia \* en-CA: English, Canada \* en-GB: English, United Kingdom \* en-IN: English, India \* es-ES: Spanish, Spain \* es-MX: Spanish, Mexico \* es-CA : Spanish, Catalunya \* fr-FR: French, France \* fr-CA: French, Canada \* ja-JP: Japanese \* ko-KR: Korean \* pt-BR: Portuguese, Brazil \* pt-PT: Portuguese \* zn-CN: Chinese, China \* zh-HK: Chinese, Hong
-Kong \* zh-TW: Chinese, Taiwan \* da-DK: Danish \* de-DE: German \* fi-FI: Finish \* it-IT: Italian \* nb-NO: Norwegian \* nl-NL: Dutch \* pl-PL: Polish \* ru-RU: Russian \* sv-SE: Swedish
+**locale** specifies the language for the Text-to-speech message. Supported languages: >\* en-US: English, United States >\* en-AU: English, Australia >\* en-CA: English, Canada >\* en-GB: English, United Kingdom >\* en-IN: English, India >\* es-ES: Spanish, Spain >\* es-MX: Spanish, Mexico >\* es-CA : Spanish, Catalunya >\* fr-FR: French, France >\* fr-CA: French, Canada >\* ja-JP: Japanese >\* ko-KR: Korean >\* pt-BR: Portuguese, Brazil >\* pt-PT: Portuguese >\* zn-CN: Chinese, China >\* zh-HK: Chinese, Hong
+Kong >\* zh-TW: Chinese, Taiwan >\* da-DK: Danish >\* de-DE: German >\* fi-FI: Finish >\* it-IT: Italian >\* nb-NO: Norwegian >\* nl-NL: Dutch >\* pl-PL: Polish >\* ru-RU: Russian >\* sv-SE: Swedish
 
 **greeting** is the text that will be spoken as a greeting.
 
@@ -701,7 +700,36 @@ _Example ACE response when \`\`enableAce\`\` set to true_. In this example, the 
 
 If **enableDice** is set to true and the application has a callback URL specified, you will receive a DiCE callback when the call is disconnected. If it is set to false, no DiCE event will be sent to your backend.
 
-**locale** specifies the language for the Text-to-speech message. Supported languages: \* en-US: English, United States \* en-AU: English, Australia \* en-CA: English, Canada \* en-GB: English, United Kingdom \* en-IN: English, India \* es-ES: Spanish, Spain \* es-MX: Spanish, Mexico \* es-CA : Spanish, Catalunya \* fr-FR: French, France \* fr-CA: French, Canada \* ja-JP: Japanese \* ko-KR: Korean \* pt-BR: Portuguese, Brazil \* pt-PT: Portuguese \* zn-CN: Chinese, China \* zh-HK: Chinese, Hong Kong \* zh-TW: Chinese, Taiwan \* da-DK: Danish \* de-DE: German \* fi-FI: Finish \* it-IT: Italian \* nb-NO: Norwegian \* nl-NL: Dutch \* pl-PL: Polish \* ru-RU: Russian \* sv-SE: Swedish
+**locale** specifies the language for the Text-to-speech message. Supported languages: 
+
+>\*cmn-CN:		Chinese, Mandarin  
+>\* da-DK:		Danish  
+>\* nl-NL:		Dutch  
+>\* en-AU:		English, Australian  
+>\* en-GB:		English, British  
+>\* en-IN:		English, Indian  
+>\* en-US:		English, US  
+>\* en-GB-WLS:	English, Welsh  
+>\* fr-FR:		French  
+>\* fr-CA:		French, Canadian  
+>\* hi-IN:		Hindi  
+>\* de-DE:		German  
+>\* is-IS:		Icelandic  
+>\* it-IT:		Italian  
+>\* ja-JP:		Japanese  
+>\* ko-KR:		Korean  
+>\* nb-NO:		Norwegian  
+>\* pl-PL:		Polish  
+>\* pt-BR:		Portuguese, Brazilian  
+>\* pt-PT:		Portuguese, European  
+>\* ro-RO:		Romanian  
+>\* ru-RU:		Russian  
+>\* es-ES:		Spanish, European  
+>\* es-MX:		Spanish, Mexican  
+>\* es-US:		Spanish, US  
+>\* sv-SE:		Swedish  
+>\* tr-TR:		Turkish  
+>\* cy-GB:		Welsh  
 
 **text** is the text that will be spoken in the text-to-speech message. Every applications default maximum characters allowed in text-to-speech is 600 characters. Contact support if you wish this limit to be changed.
 
