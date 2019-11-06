@@ -1,5 +1,5 @@
 ---
-title: Sinch Client Video API iOS
+title: Sinch Client
 excerpt: ''
 next:
   pages:
@@ -74,5 +74,3 @@ The following example shows how to dispose the Sinch client:
 [sinchClient terminateGracefully]; // or invoke -[SINClient terminate]
 sinchClient = nil;
 ```
-
-

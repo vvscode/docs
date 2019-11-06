@@ -1,5 +1,5 @@
 ---
-title: Sinch Client Video API JavaScript
+title: Sinch Client
 excerpt: ''
 next:
   pages:
@@ -52,5 +52,3 @@ The benefit of using promises is that it's easy to make a *chain of method calls
 > **Note**    
 >
 > If both callbacks and promises are used, the execution order is for callbacks to be executed first followed by the methods in the promise-chain, specified using \`\`.then()\`\`
-
-

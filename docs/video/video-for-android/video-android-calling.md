@@ -1,5 +1,5 @@
 ---
-title: Calling Video API Android
+title: Voice Calling
 excerpt: ''
 next:
   pages:
@@ -153,5 +153,3 @@ public void onCallEnded(Call call) {
     setVolumeControlStream(AudioManager.USE_DEFAULT_STREAM_TYPE);
 }
 ```
-
-

@@ -1,5 +1,5 @@
 ---
-title: Introduction to Verification
+title: Introduction
 excerpt: ''
 ---
 ## Overview
@@ -82,5 +82,3 @@ Verification pricing is calculated on a per request basis. A fixed price is char
 ## Need help?
 
 If you have any questions, feel free to check out our help section or contact us.
-
-

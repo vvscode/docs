@@ -1,5 +1,5 @@
 ---
-title: Introduction to Voice
+title: Introduction
 excerpt: >-
   Sinch offers a platform for real time communication over the Internet. It
   consists of different software development kits – the Sinch SDKs. Find out
@@ -59,4 +59,3 @@ Getting started with the Sinch Voice API and SDK is simple thanks to the extensi
 ## Need help?
 
 If you have any questions, feel free to check out our help section or contact us.
-

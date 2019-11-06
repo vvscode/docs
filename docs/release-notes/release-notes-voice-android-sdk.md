@@ -1,5 +1,5 @@
 ---
-title: Release Notes for the Sinch Voice Android SDK
+title: Sinch Voice Android SDK
 excerpt: >-
   See how the Sinch JavaScript SDK is evolving and find out about new features
   and bug fixes.
@@ -170,5 +170,3 @@ First public beta version of the Sinch SDK for Android with support for:
 -   App to app calling
 -   App to phone calling
 -   Instant messaging to single and multiple recipient
-
-

@@ -1,5 +1,5 @@
 ---
-title: First time setup with iOS (Verification)
+title: First time setup
 excerpt: ''
 next:
   pages:
@@ -32,6 +32,3 @@ target '<your xcode project>' do
     pod 'SinchVerification'
 end
 ```
-
-
-

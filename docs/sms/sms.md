@@ -1,5 +1,5 @@
 ---
-title: Introduction to SMS
+title: Introduction
 excerpt: >-
   This document provides a detailed user guide and reference documentation on
   the Sinch SMS REST API. Find out more information about our SMS REST API now.
@@ -54,4 +54,3 @@ You can find our other APIs below:
 
 - [HTTP Basic](doc:sms-other-http-basic)
 - [Cloud SMPP](doc:sms-other-cloud-smpp)
-

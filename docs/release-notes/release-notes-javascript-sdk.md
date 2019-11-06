@@ -1,5 +1,5 @@
 ---
-title: Release Notes for the Sinch JavaScript SDK
+title: Sinch JavaScript SDK
 excerpt: >-
   See how the Sinch JavaScript SDK is evolving and find out about new features
   and bug fixes.
@@ -101,6 +101,3 @@ This is the first public beta version, which includes:
 -   App to Phone Calling
 -   Partner user management
 -   Sinch user management
-
-
-

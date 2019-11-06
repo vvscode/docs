@@ -1,5 +1,5 @@
 ---
-title: Video Calling - Video API iOS
+title: Video Calling
 excerpt: ''
 next:
   pages:
@@ -161,5 +161,3 @@ The Sinch SDK provides helper functions to convert `id<SINVideoFrame>` to `UIIma
 id<SINVideoFrame> videoFrame = ... // Get SINVideoFrame from onFrame: callback
 UIImage *image = SINUIImageFromVideoFrame(videoFrame);
 ```
-
-

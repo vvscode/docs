@@ -1,5 +1,5 @@
 ---
-title: First time setup with Android (Verification)
+title: First time setup
 excerpt: ''
 next:
   pages:

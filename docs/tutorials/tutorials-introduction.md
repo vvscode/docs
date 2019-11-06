@@ -1,5 +1,5 @@
 ---
-title: Introduction to Sinch Tutorials
+title: Introduction
 excerpt: >-
   Find out more about the APIs that Sinch has to offer and learn how to use
   them.

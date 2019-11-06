@@ -1,5 +1,5 @@
 ---
-title: Introduction to WhatsApp
+title: Introduction
 excerpt: WhatsApp for Business messaging
 next:
   pages:
@@ -54,5 +54,3 @@ The following WhatsApp URLs can be used by the WhatsApp API. We have servers in 
 |---------------|----------------------------------------|
 | US Production | https://us1.whatsapp.api.sinch.com     |
 | EU Production | https://eu1.whatsapp.api.sinch.com     |
-
-

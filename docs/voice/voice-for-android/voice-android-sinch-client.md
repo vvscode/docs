@@ -1,5 +1,5 @@
 ---
-title: Sinch Client Voice API Android
+title: Sinch Client
 excerpt: ''
 next:
   pages:
@@ -77,5 +77,3 @@ Terminating the client:
 sinchClient.stopListeningOnActiveConnection();
 sinchClient.terminate();
 ```
-
-

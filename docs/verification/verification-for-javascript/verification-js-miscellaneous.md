@@ -1,5 +1,5 @@
 ---
-title: Miscellaneous Verification JavaScript
+title: Miscellaneous
 excerpt: ''
 ---
 ## Phone numbers
@@ -21,4 +21,3 @@ The statistics upload is done by the client in the background.
 ## Third party libraries and copyright notices
 
 All Third Party Libraries and Copyright notices can be found under this [link](http://www.sinch.com/legal/third-party-licenses/).
-

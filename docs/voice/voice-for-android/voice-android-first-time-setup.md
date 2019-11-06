@@ -1,5 +1,5 @@
 ---
-title: First time setup with Android (Voice)
+title: First time setup
 excerpt: ''
 next:
   pages:
@@ -61,5 +61,3 @@ A minimum set of permissions are needed for the app to use the Sinch SDK. These 
 To verify that the manifest has the necessary permissions the `sinchClient.checkManifest()` method can be used. This method should be called before starting the client and will throw an exception if the manifest isn’t setup correctly. `sinchClient.checkManifest()` should only be called during development. When the application is ready for release the method call can safely be removed.
 
 *Note:* This method takes into consideration which features the app supports (for example, calling, instant messaging, respecting native calls, and so on). Call `sinchClient.checkManifest()` after the setup but before the start of the SinchClient.
-
-

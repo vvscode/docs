@@ -1,5 +1,5 @@
 ---
-title: First time setup with iOS (Video)
+title: First time setup
 excerpt: >-
   Follow this step-by-step guide if you want to set up the Sinch Voice w/ Video
   SDK for the first time.
@@ -59,4 +59,3 @@ In addition to the keys above, if video calling functionality will be enabled an
     (`NSCameraUsageDescription`):
 
     [NSCameraUsageDescription](https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW24) describes the reason that your app accesses the camera. When the system prompts the user to allow access, this string is displayed as part of the alert, and it *cannot* be left empty.
-

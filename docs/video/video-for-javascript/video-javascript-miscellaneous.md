@@ -1,5 +1,5 @@
 ---
-title: Miscellaneous Video JavaScript
+title: Miscellaneous
 excerpt: ''
 ---
 ## Restrictions on User IDs
@@ -23,4 +23,3 @@ The Sinch SDK client uploads statistics to the Sinch servers at the end of a cal
 Some of the information is not anonymous and may be associated with the User ID call participants.
 
 The statistics upload is done by the client in the background.
-

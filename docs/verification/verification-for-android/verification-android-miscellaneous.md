@@ -1,5 +1,5 @@
 ---
-title: Miscellaneous Verification Android
+title: Miscellaneous
 excerpt: ''
 ---
 ## Minimum requirements
@@ -13,4 +13,3 @@ If [ProGuard](https://developer.android.com/studio/build/shrink-code.html) is us
 ## Encryption export regulations
 
 Please check the Summary of U.S. Export Controls Applicable to Commercial Encryption Products and ensure that the application is registered for the Encryption Regulations, if applicable. It can be found under this [link](http://www.sinch.com/export).
-

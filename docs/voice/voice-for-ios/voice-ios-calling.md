@@ -1,5 +1,5 @@
 ---
-title: Calling Voice API iOS
+title: Voice Calling
 excerpt: ''
 next:
   pages:
@@ -160,6 +160,3 @@ Handling a call that ends:
 - (void)callDidEnd:(id<SINCall>) call {
   // update user interface, e.g. hide the call screen.
 ```
-
-
-

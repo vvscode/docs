@@ -1,5 +1,5 @@
 ---
-title: Glossary for Sinch Number Lookup
+title: Glossary
 excerpt: ''
 ---
 |           |                                                                          |
@@ -16,5 +16,3 @@ excerpt: ''
 | NAPTR     | Name Authority Pointer - resource record type in the DNS of the internet |
 | MSISDN    | Telephone number to the SIM card in a mobile phone (i.e. 467012345)      |
 | e164.arpa | The domain used for DNS mapping                                          |
-
-

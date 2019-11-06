@@ -1,5 +1,5 @@
 ---
-title: Release Notes for the Sinch Voice iOS SDK
+title: Sinch Voice iOS SDK
 excerpt: >-
   See how the Sinch IOS SDK is evolving and find out about new features
   and bug fixes.
@@ -23,7 +23,7 @@ See how our platform is evolving. Keep track of new features, API versions and b
 <h3>2018/09/05 | SINCH SDK IOS 3.12.6</h3>
  - Fixed default orientation of local preview in landscape mode for video chat.
  - Improved CallKit Sample App.
- 
+
 <h3>2018/05/23 | SINCH SDK IOS 3.12.5</h3>
  - Packaged Sinch Framework as modular framework, made it easier to be integrated into Swift projects.
  - Improved Sample Apps.
@@ -189,5 +189,3 @@ First public beta version of the Sinch SDK for iOS with support for:
 -   App to app calling
 -   App to phone calling
 -   Instant messaging to single and multiple recipient
-
-

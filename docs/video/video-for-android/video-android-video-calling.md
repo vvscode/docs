@@ -1,5 +1,5 @@
 ---
-title: Video Calling - Video API Android
+title: Video Calling
 excerpt: ''
 next:
   pages:
@@ -131,6 +131,3 @@ YuvImage image = new YuvImage(nv21Frame.yuvPlanes()[0].array(),
                               nv21Frame.height(),
                               nv21Frame.yuvStrides());
 ```
-
-
-

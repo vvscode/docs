@@ -1,5 +1,5 @@
 ---
-title: Release Notes for the Sinch Verification Android SDK
+title: Sinch Verification Android SDK
 excerpt: >-
   See how the Sinch JavaScript SDK is evolving and find out about new features
   and bug fixes.
@@ -78,6 +78,3 @@ Fixed a possible crash when querying phone metadata on some devices and API leve
 
 <h3>2015-05-20 | Verification Android 0.9.0 Beta</h3>
 -   First public release with support for SMS and flash call verification
-
-
-

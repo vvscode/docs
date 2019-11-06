@@ -1,5 +1,5 @@
 ---
-title: Release Notes for the Sinch REST API
+title: Sinch REST API
 excerpt: >-
   See how the Sinch JavaScript SDK is evolving and find out about new features
   and bug fixes.
@@ -138,5 +138,3 @@ Calling API documentation update:
 
 > -   Included the CANCEL reason code in the response of the DiCE event, the getCallResult API and in the CDRs. The CANCEL reason is returned when the caller initiated the call and cancelled it.
 > -   Added a custom field in Answered Call event and Disconnect Call event. It is used to pass custom headers in these events.
-
-

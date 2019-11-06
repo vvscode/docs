@@ -1,5 +1,5 @@
 ---
-title: First time setup with JavaScript (Video)
+title: First time setup
 excerpt: ''
 next:
   pages:
@@ -89,5 +89,3 @@ Import the Sinch SDK in your website using
 > **Note**    
 >
 > The --save flag is optional for saving the dependency in bower.json
-
-

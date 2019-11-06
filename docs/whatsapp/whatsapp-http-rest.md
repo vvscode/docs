@@ -1,5 +1,5 @@
 ---
-title: WhatsApp REST API
+title: REST API
 excerpt: WhatsApp for Business messaging
 next:
   pages:
@@ -19,5 +19,3 @@ The WhatsApp REST API is designed to be a simple and powerful tool with features
    - Receiving all WhatsApp inbound message types
    - WhatsApp group creation and management
    - Checking the WhatsApp capability of numbers
-
-

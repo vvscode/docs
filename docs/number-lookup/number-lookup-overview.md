@@ -1,5 +1,5 @@
 ---
-title: Introduction to Number Lookup
+title: Introduction
 excerpt: ''
 next:
   pages:
@@ -48,5 +48,3 @@ Input for a Number Lookup query is always an MSISDN - the table below illustrate
         </table>
     </div>
 </div>
-
-

@@ -1,5 +1,5 @@
 ---
-title: Introduction to MMS
+title: Introduction
 excerpt: ''
 next:
   pages:
@@ -22,4 +22,3 @@ The MMS capabilities are offered over an XML API, and via an implementation of t
 ## Need help?
 
 If you have any questions, feel free to check out our help section or contact us.
-

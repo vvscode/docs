@@ -1,5 +1,5 @@
 ---
-title: Miscellaneous Voice Android
+title: Miscellaneous
 excerpt: ''
 ---
 ## Minimum requirements
@@ -170,5 +170,3 @@ This glossary defines some of the domain specific terms used throughout this doc
 ## Third party libraries and copyright notices
 
 All Third Party Libraries and Copyright notices can be found under this [link](http://www.sinch.com/legal/third-party-licenses/).tices can be found under this [link](http://www.sinch.com/legal/third-party-licenses/).
-
-

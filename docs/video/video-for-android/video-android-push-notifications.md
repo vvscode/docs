@@ -1,5 +1,5 @@
 ---
-title: Push notifications Video API Android
+title: Push notifications
 excerpt: ''
 next:
   pages:
@@ -216,7 +216,3 @@ if (result.isValid() && result.isCall()) {
 ## Unregister a device
 
 If the user of the application logs out or performs a similar action, the push notification device token can be unregistered via `SinchClient.unregisterManagedPush()` to prevent further notifications to be sent to the device. Starting a client with `setSupportManagedPush(true)` will register the device again.
-
-
-
-

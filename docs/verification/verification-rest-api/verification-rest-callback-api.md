@@ -1,5 +1,5 @@
 ---
-title: Verification Callback API
+title: Callback API
 excerpt: ''
 next:
   pages:
@@ -270,5 +270,3 @@ You can find more information on callback request signing `here
 ### Response
 
 *None*
-
-
