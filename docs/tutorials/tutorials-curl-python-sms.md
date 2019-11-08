@@ -1,5 +1,6 @@
 ---
 title: cURL & Python (SMS)
+hidden: 'true'
 excerpt: Learn how to send SMS with cURL or Python. Read more...
 next:
   pages:

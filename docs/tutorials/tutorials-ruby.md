@@ -1,5 +1,6 @@
 ---
 title: Ruby
+hidden: 'true'
 excerpt: >-
   Learn how to use Sinch with Ruby. Authentication, verification and SMS
   tutorials. Here you can see all Sinch Ruby tutorials.

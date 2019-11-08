@@ -1,5 +1,6 @@
 ---
 title: Sending SMS With Python
+hidden: 'true'
 excerpt: >-
   In this tutorial, you will use the Python module SinchSMS to send an SMS
   message. Learn how our API allows you to send simple notifications,

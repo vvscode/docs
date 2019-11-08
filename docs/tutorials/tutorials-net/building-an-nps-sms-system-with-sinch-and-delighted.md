@@ -1,5 +1,6 @@
 ---
 title: Building an NPS SMS system with Sinch and Delighted
+hidden: 'true'
 excerpt: >-
   This tutorial helps you build an NPS SMS system with Sinch and Delighted. By
   using a system called Net Promoter Score (NPS), https://delighted.com helps

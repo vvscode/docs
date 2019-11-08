@@ -1,5 +1,6 @@
 ---
 title: Building a simple SMS notification system with Sinch
+hidden: 'true'
 excerpt: >-
   This tutorial will show you how to build a simple notification system by using
   Sinch. This will be a system I built for the Western Grands. Every year there

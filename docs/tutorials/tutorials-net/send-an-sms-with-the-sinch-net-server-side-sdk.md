@@ -1,5 +1,6 @@
 ---
 title: Send an SMS with the Sinch .Net server-side SDK
+hidden: 'true'
 excerpt: >-
   In this tutorial we’ll be creating an application to send an SMS. We’ll be
   using a clientapi environment, and in the clientapi, you can only send

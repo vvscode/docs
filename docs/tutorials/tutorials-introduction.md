@@ -12,6 +12,5 @@ next:
     - tutorials-javascript
     - tutorials-php
     - tutorials-ruby
-    - tutorials-curl-python-sms
 ---
 Check out some of the tutorials that Sinch provides here.

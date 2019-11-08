@@ -1,5 +1,6 @@
 ---
 title: 'Web Two-Factor Authentication Using Rails, Devise and Sinch - Part 3'
+hidden: 'true'
 excerpt: >-
   Web Two-Factor Authentication Using Rails, Devise and Sinch. When users sign
   up for your app, they will be prompted to enter their phone number. Every time

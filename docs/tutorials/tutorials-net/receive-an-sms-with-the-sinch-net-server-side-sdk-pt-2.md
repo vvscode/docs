@@ -1,5 +1,6 @@
 ---
 title: Receive an SMS with the Sinch .NET server-side SDK - Pt. 2
+hidden: 'true'
 excerpt: Use Sinch .NET server-side SDK to receive SMS to your Web API application.
 ---
 In this second part of the tutorial, we’ll be using the Sinch .Net server-side SDK to receive SMS to your Web API application. If you haven’t already, [check out the first part here](doc:send-an-sms-with-the-sinch-net-server-side-sdk).

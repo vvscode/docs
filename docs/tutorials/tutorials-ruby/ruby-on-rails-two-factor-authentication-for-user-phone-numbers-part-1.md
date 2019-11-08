@@ -1,5 +1,6 @@
 ---
 title: Ruby on Rails Two-Factor Authentication for User Phone Numbers - Part 1
+hidden: 'true'
 excerpt: >-
   This tutorial shows you how to build your own Ruby on Rails two-factor
   authentication system. More and more websites and apps rely on knowing your

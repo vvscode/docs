@@ -1,5 +1,6 @@
 ---
 title: Send SMS in Ruby
+hidden: 'true'
 excerpt: Learn how to use the sinch_sms gem to send an SMS with Sinch.
 ---
 In this tutorial, you will use the sinch\_sms gem to send an sms with Sinch. For pricing information about our [SMS API](https://www.sinch.com/sms-api/) by destination, visit [sms-prices](http://www.sinch.com/pricing/sms-prices/).

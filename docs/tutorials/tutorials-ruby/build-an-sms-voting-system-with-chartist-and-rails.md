@@ -1,5 +1,6 @@
 ---
 title: Build an SMS Voting System With Chartist and Rails
+hidden: 'true'
 excerpt: >-
   Build an SMS Voting System With Chartist and Rails. An easy way to let users
   vote. This tutorial we will be building an SMS voting system that displays a
