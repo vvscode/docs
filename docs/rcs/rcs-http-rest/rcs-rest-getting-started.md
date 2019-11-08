@@ -1,6 +1,6 @@
 ---
 title: Getting Started
-excerpt: ''
+excerpt: 'Get started using the RCS REST API and read about the features available in the RCS chatbot (A2P agent)'
 next:
   pages:
     - rcs-rest-formats
@@ -59,4 +59,3 @@ curl https://api.clxcommunications.com/rcs/v1/my-agent-id/messages \
 
 
 Sending messages is described in detail in [Messages Endpoint](doc:rcs-rest-messages-endpoint#section-send-a-message).
-

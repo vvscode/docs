@@ -1,6 +1,6 @@
 ---
 title: Introduction
-excerpt: ''
+excerpt: 'Sinch offers two different MMS APIs, XML API and MM7 API. XML is the industry standard for sending and receiving rich multimedia content. While MMS7 is the standard protocol used by carriers. Read more.'
 next:
   pages:
     - mm7-service

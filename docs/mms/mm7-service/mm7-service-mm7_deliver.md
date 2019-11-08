@@ -1,6 +1,6 @@
 ---
 title: MM7_Deliver
-excerpt: ''
+excerpt: 'Recieve MMS MO submitted by end users to your platform. The message from an end user is delivered by supplying the MMS as payload of the request message. Read more.'
 next:
   pages:
     - mm7-service-mm7_deliveryreport
@@ -213,4 +213,3 @@ Date: Mon, 16 Mar 2015 17:46:59 GMT
 </soap-env:Body>
 </soap-env:Envelope>
 ```
-

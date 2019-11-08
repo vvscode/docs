@@ -1,6 +1,6 @@
 ---
 title: ENUM Interface
-excerpt: ''
+excerpt: 'Electronic Numbering Mapping - translate telephone numbers (E.164) into a format that can be used in Internet communications. '
 next:
   pages:
     - number-lookup-http-interface
@@ -94,4 +94,3 @@ The list below specifies the Response Codes that can be returned.
 | 2 (SERVFAIL)      | Improperly formatted query - no answer section is returned. |
 | 3 (NXDOMAIN)      | MSISDN not valid - no answer section is returned.           |
 | 5 (REFUSED)       | Source IP is unauthorized - no answer section is returned.  |
-

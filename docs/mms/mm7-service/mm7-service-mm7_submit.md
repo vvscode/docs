@@ -1,6 +1,6 @@
 ---
 title: MM7_Submit
-excerpt: ''
+excerpt: 'Send a MMS message to end users trough the Sinch MM7 API. Read more.'
 next:
   pages:
     - mm7-service-mm7_deliver
@@ -98,12 +98,12 @@ See unsupported elements for MM7\_Submit:
 |               |                                                                                                                                                                                                   |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Element**   | **Description**                                                                                                                                                                                   |
-| TransactionID | The identification of the MM7 SubmitReq/SubmitRsp pair. It is,located in the SOAP header. You supply this in the MM7 SubmitReq and, Sinch returns it in the corresponding SubmitRsp.              |
+| TransactionID | The identification of the MM7 SubmitReq/SubmitRsp pair. It is located in the SOAP header. You supply this in the MM7 SubmitReq and, Sinch returns it in the corresponding SubmitRsp.              |
 | SubmitRsp     | Identifies the message as a MM7 Submit Response. This is the message type for an MT response.                                                                                                     |
 | MM7Version    | Identifies the MM7 Version.(Supported versions are ver-5.3.0 and ver-6.8.0)                                                                                                                       |
-| StatusCode    | MT message submit acception/rejection is based on Success/Failure status,code. “Success” response does not mean the message was delivered to the,handset.See all Status Codes: `mms_status_codes` |
+| StatusCode    | MT message submit accepted/rejected is based on Success/Failure status code. “Success” response does not mean the message was delivered to the handset. See all Status Codes: `mms_status_codes` |
 | StatusText    | Description of the status code.                                                                                                                                                                   |
-| MessageId     | If the MT message submit is successful then this contains the Sinch,generated ID of the submitted message. This ID is expected in the,delivery reports relating to this message.                  |
+| MessageId     | If the MT message submit is successful then this contains the Sinch generated ID of the submitted message. This ID is expected in the delivery reports relating to this message.                  |
 
 **Example: Success**
 ```xml
@@ -251,4 +251,3 @@ Connection: keep-alive
    </soap-env:Body>
 </soap-env:Envelope>
 ```
-

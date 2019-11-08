@@ -1,6 +1,6 @@
 ---
 title: sendMMS
-excerpt: ''
+excerpt: 'Send an MMS that has been defined in XML. Read more.'
 next:
   pages:
     - xml-service-deletemmsid
@@ -18,7 +18,7 @@ MMS "Link Expiration Date’ is used to expire the MMS Link (In the case when MM
 
 **Request Parameters:**  
 > Mandatory: action, api\_key, to, from, name, slide, fallback-sms-text, service-id
-    
+
 >    Optional: operatorid, campaignRef, subject, image, audio, video, url, text, duration, vcard, ical, pdf, passbook, message-text
 
 **Response Parameters:**  
@@ -82,5 +82,3 @@ MMS "Link Expiration Date’ is used to expire the MMS Link (In the case when MM
     <error-info>Invalid shortcode</error-info>
 </response>
 ```
-
-

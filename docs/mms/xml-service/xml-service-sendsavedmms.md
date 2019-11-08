@@ -1,11 +1,11 @@
 ---
 title: sendSavedMMS
-excerpt: ''
+excerpt: 'Send stored (MMS) content from a specified account to a mobile number. Read more.'
 next:
   pages:
     - xml-service-sendmms
 ---
-## Overview 
+## Overview
 This API sends stored content from a specified account using an MMSID to a single mobile number. FROM must be one of the shortcodes allowed for your account. In case the number is from a different country than the FROM shortcode is assigned to the default shortcode for those countries will be used.
 
 ### Content Transcoding
@@ -25,7 +25,7 @@ Our API allows you to customize DDM by setting 3 parameters:
 
 **Request Parameters:**
 
-- Mandatory: action, api-key, fallback-sms-text, from, mms-id, service-id, to 
+- Mandatory: action, api-key, fallback-sms-text, from, mms-id, service-id, to
 - Optional: custom-subject, custom-text, data, ddm-force, ddm-message-text, ddm-message-subject, ddm-message-timeout, operator-id
 
 **Response Parameters:**  
@@ -91,4 +91,3 @@ Our API allows you to customize DDM by setting 3 parameters:
 
 **Postback Notifications For SendSavedMMS** When the MMS delivery is
 processed successfully the system will generate a Postback notification.
-

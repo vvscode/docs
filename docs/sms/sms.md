@@ -1,8 +1,8 @@
 ---
 title: Introduction
 excerpt: >-
-  This document provides a detailed user guide and reference documentation on
-  the Sinch SMS REST API. Find out more information about our SMS REST API now.
+  Introduction to the SMS APIs that is offered by Sinch. The SMS REST API is the
+  easiest and most feature rich SMS API. Read more about our SMS APIs here.
 ---
 ## Overview
 

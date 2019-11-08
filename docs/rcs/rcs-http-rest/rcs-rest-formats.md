@@ -1,6 +1,6 @@
 ---
 title: RCS Formats
-excerpt: ''
+excerpt: 'A look at the formats that is supported for RCS Messaging in the RCS REST API.'
 next:
   pages:
     - rcs-rest-sms-fallback
@@ -94,5 +94,3 @@ JSON Representation
 | ------ | --------------- | ------------------------------------------ | ------- | ----------- | -------- |
 | field  | string          | The field for which this error is relevant | No      | N/A         | Yes      |
 | errors | arrayOf(string) | List of errors for the field               | No      | N/A         | Yes      |
-
-

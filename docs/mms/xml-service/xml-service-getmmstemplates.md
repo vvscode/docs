@@ -1,6 +1,6 @@
 ---
 title: getMMSTemplates
-excerpt: ''
+excerpt: 'List previously created MMS templates where the saveMMS API has been used. Read more.'
 next:
   pages:
     - xml-service-postbacks
@@ -12,7 +12,7 @@ List all the previously created MMS templates (mms-ids) created using the saveMM
 **Request Parameters:**
 
 > Mandatory: action, api\_key
-> 
+>
 > Optional: start-date, page-number, items-per-page
 
 **Related Error Codes:**
@@ -79,4 +79,3 @@ List all the previously created MMS templates (mms-ids) created using the saveMM
     <error-info>start-date is invalid</error-info>
 </response>
 ```
-

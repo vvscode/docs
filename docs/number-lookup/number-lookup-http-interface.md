@@ -1,6 +1,6 @@
 ---
 title: HTTP Interface
-excerpt: ''
+excerpt: 'HTTP Interface for the Sinch Number Lookup service. Read more.'
 next:
   pages:
     - number-lookup-enum-interface
@@ -157,4 +157,3 @@ $ curl -v -u user:password http://93.158.78.4:3700/lookup?msisdn=46708100200
 
 result=OK;imsi=24004
 ```
-

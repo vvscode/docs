@@ -1,6 +1,6 @@
 ---
 title: Receiving Updates & Callbacks
-excerpt: ''
+excerpt: 'RCS message status updates, events and messages from the RCS REST API and user chatbots (agents) through webhook callbacks.'
 next:
   pages:
     - rcs-rest-messages-endpoint
@@ -494,5 +494,3 @@ At least one of `postback_data` and `text` will be set.
 | longitude | number | Longitude of user location | No      | MinValue: -180 MaxValue: 180 | Yes      |
 | latitude  | number | Latitude of user location  | No      | MinValue: -90 MaxValue: 90   | Yes      |
 | longitude | number | Longitude of user location | No      | MinValue: -180 MaxValue: 180 | Yes      |
-
-

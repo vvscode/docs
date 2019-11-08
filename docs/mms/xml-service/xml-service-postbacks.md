@@ -1,6 +1,6 @@
 ---
 title: Sinch Postbacks
-excerpt: ''
+excerpt: 'Get delivery status reports for each message that is sent through the XML API.'
 next:
   pages:
     - xml-service-mms-mo-postbacks
@@ -272,4 +272,3 @@ When MMS is saved, we generate postback notification. When saving and encoding o
     <audio-name>http://www.yoursite.com/audio/1.mp3</audio-name>
 </postback>
 ```
-

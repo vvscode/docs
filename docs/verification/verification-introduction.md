@@ -1,6 +1,6 @@
 ---
 title: Introduction
-excerpt: ''
+excerpt: 'Verify phone numbers with the Sinch Verification SDKs. These are available for iOS, Android and JavaScript. We also offer a Verification REST API that can be combined with the SDKs for full control of the verification process.'
 ---
 ## Overview
 
