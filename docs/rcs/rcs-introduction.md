@@ -24,5 +24,4 @@ The REST API is described [here](doc:rcs-http-rest).
 
 ## Need help?
 
-If you have any questions, feel free to check out our help section or
-contact us.
+If you have any questions, feel free to check out our help section or contact us.

@@ -1,6 +1,6 @@
 ---
 title: First time setup
-excerpt: ''
+excerpt: 'Set up the Sinch iOS Verification SDK for the first time.'
 next:
   pages:
     - verification-ios-sms-verification

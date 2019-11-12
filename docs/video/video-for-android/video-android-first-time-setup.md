@@ -1,6 +1,6 @@
 ---
 title: First time setup
-excerpt: ''
+excerpt: 'Set up the Sinch Voice with Video SDK for the first time. Find out more information.'
 next:
   pages:
     - video-android-sinch-client

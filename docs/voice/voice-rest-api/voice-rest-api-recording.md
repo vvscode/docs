@@ -1,6 +1,6 @@
 ---
 title: Recording calls
-excerpt: ''
+excerpt: 'Control recording of calls with the Sinch platform, with callbacks or the Manage Call API.'
 next:
   pages:
     - voice-rest-api-misc

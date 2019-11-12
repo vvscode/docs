@@ -1,8 +1,8 @@
 ---
 title: SMPP
 excerpt: >-
-  For our customers that require low level control of SMS messaging and lowest
-  possible latency we offer our Enhanced SMPP service.
+  Low level control of SMS messaging and low latency can be achieved with the Sinch
+  Enhanced SMPP service. Read more.
 next:
   pages:
     - sms-smpp-outbound
@@ -17,4 +17,3 @@ next:
 > **Note**    
 >
 > If you are a local customer of Sinch Germany GmbH, using our domestic German platform, please contact our [German support team](mailto:support-de@sinch.com) for further assistance.
-

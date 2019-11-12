@@ -1,6 +1,6 @@
 ---
 title: Troubleshooting and FAQ
-excerpt: ''
+excerpt: 'Here you can find the iOS Verification SDK FAQ and common troubleshooting issues. Read more.'
 next:
   pages:
     - verification-ios-miscellaneous
@@ -48,9 +48,9 @@ dyld: Library not loaded: @rpath/SinchVerification.framework/SinchVerification
 Possible errors:
 ```text
 The executable for YourApp.app/Frameworks/SinchVerification.framework contains unsupported architectures '[x86_64, i386]'.
-    
+
 Invalid Segment Alignment. The app binary at 'YourApp.app/Frameworks/SinchVerification.framework/SinchVerification' does not have proper segment alignment. Try rebuilding the app with the latest Xcode version
-    
+
 The binary is invalid. The encryption info in the LC_ENCRYPTION_INFO load command is either missing or invalid, or the binary is already encrypted. This binary does not seem to have been built with Apple's linker.
 ```
 
@@ -70,4 +70,3 @@ If you have the error concerning `.bcsymbolmap` files, try unchecking the *Inclu
 **A** (If you have manually added the *SinchVerification.framework* to *Embedded Binaries*):
 
 Make sure you have added the [strip-frameworks.sh` as part of a Xcode *"Run Script Phase"*, see the `Swift section](doc:verification-ios-swift-sdk) for details.
-

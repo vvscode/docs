@@ -1,6 +1,6 @@
 ---
 title: Swift SDK
-excerpt: ''
+excerpt: 'Verify users with Swift. The Sinch iOS Verification SDK is available for Swift.'
 next:
   pages:
     - verification-ios-troubleshooting-and-faq
@@ -141,4 +141,3 @@ import SinchVerification
 > **Note**    
 >
 > This import method requires iOS Deployment Target iOS 8.0 or above
-

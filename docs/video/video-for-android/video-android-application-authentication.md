@@ -1,6 +1,6 @@
 ---
 title: Application authentication
-excerpt: ''
+excerpt: 'Application authentication with the Sinch SDK. This can be done in several ways. Find out more.'
 next:
   pages:
     - video-android-miscellaneous
@@ -45,7 +45,7 @@ uint64 sequence = previous_sequence + 1; // E.g. previous_sequence = 0
 
 string stringToSign = userId + applicationKey + sequence + applicationSecret;
 
-// Use a Base64-encoder that don't introduce line-breaks, 
+// Use a Base64-encoder that don't introduce line-breaks,
 // or trim the output signature afterwards.
 string signature = Base64.encode(SHA1.digest(stringToSign));
 ```
@@ -57,7 +57,7 @@ For example, in Java:
 // import java.security.MessageDigest;
 // import org.apache.commons.codec.binary.Base64;
 
-String userId; 
+String userId;
 String applicationKey; // E.g. "196087a1-e815-4bc4-8984-60d8d8a43f1d";
 String applicationSecret; // E.g. "oYdgGRXoxEuJhGDY2KQ/HQ==";
 long sequence; // fetch and increment last used sequence
@@ -85,7 +85,7 @@ SinchClient sinchClient = Sinch.getSinchClientBuilder().context(context)
 sinchClient.addSinchClientListener(...);
 
 // SinchClientListener implementation
-public void onRegistrationCredentialsRequired(SinchClient client, 
+public void onRegistrationCredentialsRequired(SinchClient client,
                                               ClientRegistration registrationCallback) {
     // This will on the first run for this user call onRegistrationCredentialsRequired on the client listener.
     // Perform API request to server which keeps the Application Secret.
@@ -98,4 +98,3 @@ public void onRegistrationCredentialsRequired(SinchClient client,
     });
 }
 ```
-

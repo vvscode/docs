@@ -1,6 +1,6 @@
 ---
 title: Callout Verification
-excerpt: ''
+excerpt: 'Verify a phone number with a (PSTN) call to the user. The user will get instructions that they need to press a digit. '
 next:
   pages:
     - verification-ios-guidelines-for-acting-on-completion-handler-outcome
@@ -54,4 +54,3 @@ id<SINVerification> verification = [SINVerification calloutVerificationWithAppli
 ### Re-attemping a callout
 
 The method `initiateWithCompletionHandler:` should not be invoked multiple times. If the application UI flow is structured so that a user can initiate retries for callout verification, it is recommended to create a new instance of `SINVerification` for each attempt.
-

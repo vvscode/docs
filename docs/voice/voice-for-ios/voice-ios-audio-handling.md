@@ -1,6 +1,6 @@
 ---
 title: Audio handling
-excerpt: ''
+excerpt: 'The details on how the Sinch Voice /w Video SDK manages audio during calls. Read more.'
 next:
   pages:
     - voice-ios-application-authentication

@@ -1,6 +1,6 @@
 ---
 title: Glossary
-excerpt: ''
+excerpt: 'Voice REST API Glossary'
 ---
 
 | Term       | Explanation                                             |

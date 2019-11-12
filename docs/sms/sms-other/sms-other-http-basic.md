@@ -4,22 +4,19 @@ excerpt: >-
   Our basic HTTP API offers a simple way to send and receive single SMS
   messages. For more features such as bulk send, group send, scheduling,
   parameterization and higher security you may want to consider our
-  `http_rest_sms_api` api.
+  REST SMS API.
 ---
 > **Note**    
 >
-> You need to reach out to our Sales team to get your credentials to use
-> this service. You can contact them [here](https://www.sinch.com/contact-us/).
+> You need to reach out to our Sales team to get your credentials to use this service. You can contact them [here](https://www.sinch.com/contact-us/).
 
 ## Outbound SMS HTTP
 
 ### Account details
 
-Your account details are found in the Customer Account Details document
-received by your account manager and are used according to below table.
+Your account details are found in the Customer Account Details document received by your account manager and are used according to below table.
 
-Your available host options will be visible in the Customer Account
-Details document.
+Your available host options will be visible in the Customer Account Details document.
 
 |          |                                     |
 | -------- | ----------------------------------- |
@@ -572,4 +569,3 @@ The following are the error codes Sinch Networks will be sending:
 | 362   | ESME EXTERNAL ERROR | Extenal error                                                              | Report to Sinch                                                                    | Temporary  |
 | 370   | ESME EXTERNAL ERROR | Cannot find information                                                    |                                                                                    | Temporary  |
 | 399   | ESME EXTERNAL ERROR | Unknown                                                                    |                                                                                    | Temporary  |
-

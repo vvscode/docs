@@ -1,6 +1,6 @@
 ---
 title: MM7_DeliveryReport
-excerpt: ''
+excerpt: 'Receive delivery reports for sent MT. Get delivery report for previously sent MMS messages. Read more.'
 next:
   pages:
     - mm7-service-sinch-operator-ids
@@ -16,13 +16,13 @@ Sinch sends delivery reports using the MM7 Delivery Report message type i.e., "D
 |    **Element**    |                **Description**                                                                                                                                                                |      **Returned**                     |
 | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- |
 | TransactionID     | This identifies the DeliveryReportReq/DeliveryReportRsp pair. It is Sinch generated ID.                                                                                                       | Always                                |
-| DeliveryReportReq | Identifiesthe message as an MM7 Delivery Report.                                                                                                                                              | the                                   |
+| DeliveryReportReq | Identifies the message as an MM7 Delivery Report.                                                                                                                                              | the                                   |
 | MM7Version        | Identifies the MM7 Version. (Supported versions are ver-5.3.0 and ver-6.8.0)                                                                                                                  | Always                                |
-| Recipient         | The mobile phone number of the end user. This must be a valid mobile,number in international format without a leading + symbol; for <example:,12515550123> (US) and 447700900750 (UK).        | Always                                |
-| Sender            | Your shortcode. This should match the same information that is,linked in the MT configuration, and generally to the service you are,providing.                                                | Always                                |
-| MessageID         | Sinch generated ID linked to the submitted message. This ID was returned,to your system in the initial response (SubmitRsp) to your MT MMS,request.                                           | Always                                |
+| Recipient         | The mobile phone number of the end user. This must be a valid mobile number in international format without a leading + symbol; for <example:,12515550123> (US) and 447700900750 (UK).        | Always                                |
+| Sender            | Your shortcode. This should match the same information that is linked in the MT configuration, and generally to the service you are providing.                                                | Always                                |
+| MessageID         | Sinch generated ID linked to the submitted message. This ID was returned to your system in the initial response (SubmitRsp) to your MT MMS request.                                           | Always                                |
 | Date              | The date and time of the submission of the multimedia message (timestamp). Value is in UTC.                                                                                                   | Always                                |
-| MMStatus          | A code that indicates whether the MT message was delivered successful or,failed. For information about the status codes returned for Delivery,Reports, please see `delivery_report_statuses`. | Always                                |
+| MMStatus          | A code that indicates whether the MT message was delivered successful or failed. For information about the status codes returned for Delivery,Reports, please see `delivery_report_statuses`. | Always                                |
 | UACapabilities    | Also known as MMS User Agent capabilities. This describes the capabilities of the MMS User agent of the mobile handset.                                                                       | Only when provided by mobile operator |
 
 See `unsupported_mm7_soap_elements_DeliveryReport`.
@@ -63,10 +63,10 @@ Your system should respond to the delivery report request with a delivery report
 
 |      **Element**  |                  **Description**                                                                                                                                         |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| TransactionID     | Identifies the DeliveryReportReq/DeliveryReportRsp pair. It is part,of the SOAP header. The value that was provided with the,deliveryReportReq is returned.              |
+| TransactionID     | Identifies the DeliveryReportReq/DeliveryReportRsp pair. It is part of the SOAP header. The value that was provided with the deliveryReportReq is returned.              |
 | DeliveryReportRsp | Identifies the message as an MM7 Delivery Report Response.                                                                                                               |
 | MM7Version        | Identifies the MM7 Version.(Supported versions are ver-5.3.0 and ver-6.8.0)                                                                                              |
-| StatusCode        | A code that indicates whether you recieved the MO message request successfully. The status code for successful deliver is 1000. See all Status Codes: `mms_status_codes` |
+| StatusCode        | A code that indicates whether you received the MO message request successfully. The status code for successful deliver is 1000. See all Status Codes: `mms_status_codes` |
 | StatusText        | Description of the status code.                                                                                                                                          |
 
 **Example Response**
@@ -154,4 +154,3 @@ Date: Mon, 16 Mar 2015 14:03:32 GMT
 </soap-env:Body>
 </soap-env:Envelope>
 ```
-

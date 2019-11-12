@@ -1,6 +1,8 @@
 ---
 title: First time setup
-excerpt: ''
+excerpt: >-
+  Follow this step-by-step guide if you want to set up the Sinch Voice and Video
+  SDK for the first time.
 next:
   pages:
     - voice-js-sinch-client

@@ -1,6 +1,6 @@
 ---
 title: Messages Endpoint
-excerpt: ''
+excerpt: 'Send and revoke RCS messages with the messages endpoint in the RCS REST API. Read more.'
 next:
   pages:
     - rcs-rest-agent-event-endpoint
@@ -1274,5 +1274,3 @@ curl https://api.clxcommunications.com/rcs/v1/my-agent-id/messages/2bf270e4-08a4
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer zIMEJGfwD4oJ4qObPPjwZxwiP5cKARXRJpt9Kf6GSv7uOesvRV" \
 ```
-
-

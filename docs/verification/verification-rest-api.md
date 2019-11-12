@@ -1,16 +1,15 @@
 ---
 title: REST API
 excerpt: >-
-  This document serves as a user guide and documentation on how to use the Sinch
-  Verification REST APIs. For general information on how to use the Sinch APIs
-  including methods, types, errors and authorization, please check the [Using
-  REST](doc:using-rest) page.
+  Verification REST API for verifying phone numbers and users. Support of FlashCall verification, PIN SMS verification and Callout verification.
 next:
   pages:
     - verification-rest-verification-api
     - verification-rest-callback-api
 ---
 ## Overview
+
+For general information on how to use the Sinch APIs including methods, types, errors and authorization, please check the [Using REST](doc:using-rest) page.
 
 Use the Sinch Verification Service to verify end-user's mobile phone numbers. The Sinch Verification APIs should be used in combination with the Verification SDKs for a complete end-to-end solution, though it is possible to only use the APIs. Currently, there are three verification methods supported:
 

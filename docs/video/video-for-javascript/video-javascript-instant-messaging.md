@@ -1,6 +1,6 @@
 ---
 title: Instant Messaging
-excerpt: ''
+excerpt: 'The Sinch JavaScript SDK provides Instant messaging functionality. Get more information here.'
 ---
 The `MessageClient` is the entry point to Instant Messaging functionality in the Sinch SDK.
 
@@ -39,7 +39,7 @@ messageClient.addEventListener(myListenerObj);
 Sending a message with the Sinch SDK is easy. First, get hold of a `MessageClient` instance for a particular `SinchClient` instance. This can be done by calling the method `getMessageClient()`. Then use this instance to create a new `Message` object. This object can then be sent using `send()` in your `MessageClient` instance.
 ```javascript
 // Get the messageClient
-var messageClient = sinchClient.getMessageClient(); 
+var messageClient = sinchClient.getMessageClient();
 
 // Create a new Message
 var message = messageClient.newMessage('Alice', 'Hello World!');
@@ -68,7 +68,7 @@ messageClient.send(message, handleSuccess, handleFail)
 // Alt 2: Send it and append handlers using the promise returned
 messageClient.send(message)
     .then(handleSuccess)
-    .then(some_other_success) 
+    .then(some_other_success)
     .fail(handleFail);
 ```
 
@@ -137,7 +137,7 @@ var myEventListener = {...};
 messageClient.addEventlistener(myEventListener);
 
 // Remove listener object
-messageClient.removeEventListener(myEventListener); 
+messageClient.removeEventListener(myEventListener);
 ```
 
 
@@ -187,7 +187,7 @@ var myEventListener = {...};
 messageClient.addEventlistener(myEventListener);
 
 // Remove this listener object
-messageClient.removeEventListener(myEventListener); 
+messageClient.removeEventListener(myEventListener);
 ```
 
 
@@ -208,7 +208,7 @@ var messageClient = sinchClient.getMessageClient();
 var message = messageClient.newMessage(['Alice', 'Bob'], 'Hello Alice and Bob');
 
 // Send message
-messageClient.send(message); 
+messageClient.send(message);
 ```
 
 
@@ -223,7 +223,7 @@ var messageClient = sinchClient.getMessageClient();
 var message = messageClient.newMessage([{number: 123456}, {number: 654321}], 'Hello Alice and Bob');
 
 // Send message
-messageClient.send(message); 
+messageClient.send(message);
 ```
 
 
@@ -232,4 +232,3 @@ This will send the same *“Hello World”* message to the users identified by t
 ## Receiving recipient status updates for multi-recipient messages
 
 The recipient’s state transition to delivered for the message is communicated back using the same listener as in the single recipient case. The listener’s callbacks are triggered for every recipient and only, at most, once per recipient.
-

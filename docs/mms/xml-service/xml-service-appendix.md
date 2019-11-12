@@ -1,6 +1,6 @@
 ---
 title: Appendix
-excerpt: ''
+excerpt: 'XML API error code reference and postback notification codes and descriptions can be found here.'
 ---
 ## Error Code Reference
 
@@ -97,6 +97,3 @@ excerpt: ''
 | N401     | MMS MO received successfully.                                           |
 | N501     | Notification that Device Discovery Message is sending.                  |
 | N502     | Notification that Device Discovery Message delivery status has changed. |
-
-
-

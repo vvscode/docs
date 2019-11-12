@@ -1,6 +1,6 @@
 ---
 title: Instant Messaging
-excerpt: ''
+excerpt: 'The Sinch SDK provides Instant messaging functionality. Get more information here.'
 ---
 The `MessageClient` is the entry point to Instant Messaging functionality in the Sinch SDK.
 
@@ -23,7 +23,7 @@ Sending a message with the Sinch SDK is easy. Get hold of a `MessageClient` as d
 // Create a WritableMessage
 WritableMessage message = new WritableMessage(
         "someRecipientUserId",
-        "Hello someRecipientUserId! How are you?"); 
+        "Hello someRecipientUserId! How are you?");
 
 // Send it
 messageClient.send(message);
@@ -103,4 +103,3 @@ messageClient.send(message);
 ### Receiving recipient status updates for multi-recipient messages
 
 The recipient’s state transitions for the message are communicated back using the `MessageClientListener` listener the same as in the single recipient case. The listener’s callbacks are triggered for every recipient.
-

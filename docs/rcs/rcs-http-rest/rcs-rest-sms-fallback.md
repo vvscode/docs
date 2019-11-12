@@ -1,6 +1,6 @@
 ---
 title: SMS Fallback
-excerpt: ''
+excerpt: 'When a RCS message does not send properly a SMS fallback can be used instead. Read more.'
 next:
   pages:
     - rcs-rest-receiving-updates-callbacks
@@ -23,5 +23,3 @@ Fallback and condition configuration is controlled in detail by providing [`Fall
 | capability_unsupported | *disabled* | NOTE: Not currently enabled. Fallback to SMS if the specific capability needed to deliver the provided message payload is not supported by the receiving MSISDN, e.g., the device does not support media messages.                                                                                                                                                                                           |
 | expire                 | *enabled*  | Fallback to SMS if the per message provided (See ExpireInfo) or RCS REST API system wide(48h) message expiry happens.<br><br>  This means that a delivered notification was not received before the message expired. The RCS message will be revoked before sending the fallback SMS. Revocation is also configurable in the FallbackInfo object.                                                            |
 | agent_error            | *disabled* | Fallback to SMS if a fatal agent error occurs with a RCS supplier or within the RCS REST API platform.<br><br>  Enabling SMS fallback on agent error guarantees that an SMS is sent instead of potentially delaying a message because of unexpected issues in the RCS delivery pipeline.<br><br>  Agent errors should not occur as RCS matures, but is useful if delivery using any channel is the priority. |
-
-

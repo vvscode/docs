@@ -1,6 +1,6 @@
 ---
 title: Number Administration
-excerpt: ''
+excerpt: 'Administrate numbers through the same endpoints that is used by the Sinch Dashboard. Read more here.'
 next:
   pages:
     - log-in

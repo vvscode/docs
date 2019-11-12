@@ -1,6 +1,6 @@
 ---
 title: Instant Messaging
-excerpt: ''
+excerpt: 'The Sinch SDK provides Instant messaging functionality. Get more information here.'
 ---
 The `SINMessageClient` is the entry point to Instant Messaging functionality in the Sinch SDK.
 
@@ -55,7 +55,7 @@ Delivering a message can fail for various reasons: there might not be a network 
 ```objectivec
 - (void) messageDeliveryFailed:(id<SINMessage>) message info:(NSArray *)messageFailureInfo {
     for (id<SINMessageFailureInfo> reason in messageFailureInfo) {
-        NSLog(@"Delivering message with id %@ failed to user %@. Reason %@", 
+        NSLog(@"Delivering message with id %@ failed to user %@. Reason %@",
         reason.messageId, reason.recipientId, [reason.error localizedDescription]);
     }
 }
@@ -84,7 +84,7 @@ Delivering a message can fail for various reasons: there might not be a network 
 
 Incoming messages are delivered to the delegate:
 ```objectivec
-- (void) messageClient:(id<SINMessageClient>) messageClient 
+- (void) messageClient:(id<SINMessageClient>) messageClient
           didReceiveIncomingMessage:(id<SINMessage>)message {             
 
   // Present a Local Notification if app is in background
@@ -125,4 +125,3 @@ SINOutgoingMessage *message = [SINOutgoingMessage messageWithRecipients:recipien
 ### Receiving status updates for multi-recipient Messages
 
 When a message transitions to a new state it is communicated back using `SINMessageClientDelegate` as the single recipient case. The delegate’s callbacks are triggered once for every recipient.
-

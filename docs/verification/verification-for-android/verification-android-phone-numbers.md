@@ -1,6 +1,6 @@
 ---
 title: Phone numbers
-excerpt: ''
+excerpt: 'How should a phone number (MSISDN) be formatted in E.164? Sinch provides utility tools that help with correct formatting. Read more.'
 next:
   pages:
     - verification-android-improving-verification-performance-with-a-great-ui
@@ -24,4 +24,3 @@ A number can be formatted as *E.164* like this:
 ```java
 String phoneNumberInE164 = PhoneNumberUtils.formatNumberToE164(phoneNumberString, defaultRegion);
 ```
-

@@ -1,6 +1,6 @@
 ---
 title: deleteMMSID
-excerpt: ''
+excerpt: 'Delete an MMS template that has been defined in the XML.'
 next:
   pages:
     - xml-service-getmmstemplates
@@ -51,4 +51,3 @@ Deletes an MMS template whose mms-id is defined in the XML. All contents in the 
     <error-info>Invalid mms-id / MMS do not exist</error-info>
 </response>
 ```
-

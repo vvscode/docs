@@ -1,6 +1,6 @@
 ---
 title: Verification for Android
-excerpt: ''
+excerpt: 'Verify phone numbers and users in Android. The Verification SDK supports the verification of phone numbers via SMS or flash calls. The SDK is also available for iOS.' 
 next:
   pages:
     - verification-android-first-time-setup
@@ -12,7 +12,7 @@ This document provides an overview for developers integrating with Sinch Verific
 > **WARNING: Important notice #1 - migration to 1.6.x and using using Flash Calls on Android 9**    
 >
 > Due to newly introduced [restrictions for accessing SMS and call logs](https://support.google.com/googleplay/android-developer/answer/9047303?hl=en), users of older versions of this SDK (`1.5.3` and older) need to remove following permissions from their app manifests, when migration to new version of this SDK (`1.6.0` and newer):
-> 
+>
 > ```xml
 > <uses-permission android:name="android.permission.READ_SMS" />
 > <uses-permission android:name="android.permission.RECEIVE_SMS" />
@@ -27,4 +27,3 @@ This document provides an overview for developers integrating with Sinch Verific
 
 
 ![permission-requests.png](images/9b057ba-permission-requests.png)
-

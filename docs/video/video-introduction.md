@@ -1,6 +1,6 @@
 ---
 title: Introduction
-excerpt: ''
+excerpt: 'Sinch offers software development kits for Video Calling – the Sinch SDKs – that you integrate with your mobile or web application. Find out more information.'
 ---
 ## Overview
 

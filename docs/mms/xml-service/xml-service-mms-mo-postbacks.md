@@ -1,6 +1,6 @@
 ---
 title: Sinch MMS MO Postbacks
-excerpt: ''
+excerpt: 'An API that notifies when a customer have replied to an MMS message trough the XML API. Read more.'
 next:
   pages:
     - xml-service-appendix
@@ -29,7 +29,7 @@ This postback notifies you when an MMS MO is received.
 | timestamp       | The timestamp that our system received the MMS MO                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | message-subject | The subject sent in the MMS MO                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | content         | Contains the file nodes sent in the MMS MO                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| file            | A series of sub-nodes that contains a single URL to a picture,,video, audio or text file sent in the MMS MO within each node. The URL,points to the location of the content on our servers. For those,developing the back-end handling of the postback URL, you may choose to,download/store these content files for whatever purpose you see fit. You,may also choose to store the URLs for download at a future time. The,file will be removed based on the terms of your contract |
+| file            | A series of sub-nodes that contains a single URL to a picture,,video, audio or text file sent in the MMS MO within each node. The URL points to the location of the content on our servers. For those developing the back-end handling of the postback URL, you may choose to download/store these content files for whatever purpose you see fit. You may also choose to store the URLs for download at a future time. The file will be removed based on the terms of your contract |
 
 ### MMS MO Example
 
@@ -52,4 +52,3 @@ This postback notifies you when an MMS MO is received.
     </content>
 </postback>
 ```
-

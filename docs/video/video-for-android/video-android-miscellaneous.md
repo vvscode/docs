@@ -1,6 +1,6 @@
 ---
 title: Miscellaneous
-excerpt: ''
+excerpt: 'Android Video SDK Miscellaneous information. Read more.'
 ---
 ## Minimum requirements
 
@@ -45,7 +45,7 @@ The statistics upload is done by the client in the background.
 
 ## Push Notifications sent via your application server
 
-In general we strongly recommend using *“managed push notifications”*, that is, when push notifications are sent directly from the Sinch cloud, which is described in the section \[Push notifications\]\[\]. The following section on the describes integrating support for push notifications but given that your application server maintain the connection with Google Cloud Messaging.
+In general we strongly recommend using *“managed push notifications”*, that is, when push notifications are sent directly from the Sinch cloud, which is described in the section [Push notifications](doc:video-android-push-notifications). The following section on the describes integrating support for push notifications but given that your application server maintain the connection with Google Cloud Messaging.
 
 An application is considered offline in the following scenarios:
 

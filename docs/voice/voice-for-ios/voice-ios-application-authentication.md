@@ -1,6 +1,6 @@
 ---
 title: Application authentication
-excerpt: ''
+excerpt: 'Application authentication with the Sinch SDK. This can be done in several ways. Find out more.'
 next:
   pages:
     - voice-ios-miscellaneous
@@ -45,7 +45,7 @@ uint64 sequence = previous_sequence + 1; // E.g. previous_sequence = 0
 
 string stringToSign = userId + applicationKey + sequence + applicationSecret;
 
-// Use a Base64-encoder that don't introduce line-breaks, 
+// Use a Base64-encoder that don't introduce line-breaks,
 // or trim the output signature afterwards.
 string signature = Base64.encode(SHA1.digest(stringToSign));
 ```
@@ -57,7 +57,7 @@ For example, in Java:
 // import java.security.MessageDigest;
 // import org.apache.commons.codec.binary.Base64;
 
-String userId; 
+String userId;
 String applicationKey; // E.g. "196087a1-e815-4bc4-8984-60d8d8a43f1d";
 String applicationSecret; // E.g. "oYdgGRXoxEuJhGDY2KQ/HQ==";
 long sequence; // fetch and increment last used sequence
@@ -75,19 +75,19 @@ String signature = Base64.encodeBase64String(hash).trim();
 
 ```objectivec
 // Instantiate a client object using the client factory method.
-id<SINClient> client = [Sinch clientWithApplicationKey:@"<application key>" 
-                                           environmentHost:@"sandbox.sinch.com" 
+id<SINClient> client = [Sinch clientWithApplicationKey:@"<application key>"
+                                           environmentHost:@"sandbox.sinch.com"
                                                     userId:@"<user id>"];
 
 client.delegate = ...;
 
 [client start];
 
-// This will on the first run for this user, call 
-// -[SINClientDelegate client:requiresRegistrationCredentials:], 
+// This will on the first run for this user, call
+// -[SINClientDelegate client:requiresRegistrationCredentials:],
 // which implementations could look something like this:
 
-- (void)client:(id<SINClient>)client 
+- (void)client:(id<SINClient>)client
 requiresRegistrationCredentials:(id<SINClientRegistration>) registrationCallback {
 
   // Perform API request to server which keeps the Application Secret
@@ -99,10 +99,9 @@ requiresRegistrationCredentials:(id<SINClientRegistration>) registrationCallback
   }
   onFailure:^(NSError* error) {
 
-    // Forward potential network request error to Sinch SDK, 
+    // Forward potential network request error to Sinch SDK,
     // e.g. failure due to no internet connection.
     [registrationCallback registerDidFail:error];
   }];
 }
 ```
-

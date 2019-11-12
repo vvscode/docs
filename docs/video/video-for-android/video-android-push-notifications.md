@@ -1,15 +1,15 @@
 ---
 title: Push notifications
-excerpt: ''
+excerpt: 'Notify users of incoming calls or instant messages by using push notifications in Android.'
 next:
   pages:
-    - video-android-active-connection
+    - video-android-application-authentication
 ---
 When an application is not running, or the `Active Connection` feature is not enabled, the user must be notified of an incoming call or instant message by a push notification.
 
 By invoking `setSupportManagedPush(true)` the Sinch SDK will automatically register to *Firebase Cloud Messaging* and the Sinch backend will initiate push messages to your application when needed. This feature requires Google Play Services on the device. If you distribute your application through other channels than Google Play, push notifications will not be available on devices that do not have Google Play Services.
 
-If using the Sinch backend and Google Cloud Messaging is not viable in the application, please see \[Push Notifications sent via your application server\]\[\] and \[Active connection\]\[\].
+If using the Sinch backend and Google Cloud Messaging is not viable in the application, please see [Push Notifications sent via your application server](doc:video-android-miscellaneous#section-Push-Notifications-sent-via-your-application-server) and [Active connection](#section-active-connection).
 
 As a developer, you will be responsible for implementing the code that receives the FCM push message. For an example implementation, please see the sample app “Sinch Push” which is bundled with the SDK.
 
@@ -60,7 +60,7 @@ public void onMessageReceived(RemoteMessage remoteMessage){
 There are certain situations where it is either desirable to explicitly register push token and/or get assurance that the push token is indeed registered, e.g.:
 
 - The application is designed to receive calls only, and thus must register push token with the Sinch backend on the very first start, while it's desireable to terminate SinchClient as soon as the registration concludes (e.g. to free resources). In this situation, the application should be notified by a specific callback on the registration result.
-- The application detects that FCM push token is invalidated abd should be refreshed and re-registered with Sinch backend. Here, if SinchClient is in the running state, it would take care of re-registering of the push token iteself, otherwise, the application is responsible for re-registering.
+- The application detects that FCM push token is invalidated abd should be refreshed and re-registered with Sinch backend. Here, if SinchClient is in the running state, it would take care of re-registering of the push token itself, otherwise, the application is responsible for re-registering.
 
 Both situation should be handled with using new **ManagedPush API** available via *Beta* interface:
 
@@ -117,7 +117,7 @@ public void onNewToken(String newToken) {
 }
 ```
 
-Where `instanceOfMyPushTokenRegistrationClass.registerPushToken()` behavior is defined by the same pattern as in the previous situation - call the `ManagedPush.registerPushToken(final PushTokenRegistrationCallback callback)` and wait for callback to decide how to proceed depending on result.
+Where `instanceOfMyPushTokenRegistrationClass.registerPushToken()` behaviour is defined by the same pattern as in the previous situation - call the `ManagedPush.registerPushToken(final PushTokenRegistrationCallback callback)` and wait for callback to decide how to proceed depending on result.
 
 
 ## Receive and forward push notifications to a Sinch client
@@ -216,3 +216,7 @@ if (result.isValid() && result.isCall()) {
 ## Unregister a device
 
 If the user of the application logs out or performs a similar action, the push notification device token can be unregistered via `SinchClient.unregisterManagedPush()` to prevent further notifications to be sent to the device. Starting a client with `setSupportManagedPush(true)` will register the device again.
+
+## Active Connection
+
+If push notifications are not desired, the alternative is to use `setSupportActiveConnectionInBackground(true)` and then calling `startListeningOnActiveConnection()` to enable incoming calls and instant messages. Don’t forget to call `stopListeningOnActiveConnection()` when the user is no longer available for calls (for example if the application is no longer active).

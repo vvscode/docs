@@ -1,6 +1,6 @@
 ---
 title: SMS Verification
-excerpt: ''
+excerpt: 'Verify a user through SMS. Verification of a phone number is performed in two steps, a verification SMS is requested and a verification code for that particular verification session is sent to the recipient. Read more.'
 next:
   pages:
     - verification-ios-callout-verification
@@ -95,4 +95,3 @@ To complete the verification of the phone number, the user should be instructed 
 
 
 The method `verifyCode:completionHandler:` may be invoked multiple times (for a limited number of times within a short duration). So for example, if the completion handler is invoked with an `NSError` with domain `SINVerificationErrorDomain` and code `SINVerificationErrorInvalidInput` or `SINVerificationErrorIncorrectCode`, the application may hint to the user that the code was incorrect, let the user adjust it, and call `verifyCode:completionHandler:` once again on the same `SINVerification`-instance.
-

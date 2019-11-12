@@ -1,6 +1,6 @@
 ---
 title: Using REST
-excerpt: ''
+excerpt: 'This document outlines how to use the Sinch Voice REST API as well as the Sinch Verification REST API. Get more information here.'
 ---
 ## Authorization
 
@@ -456,6 +456,3 @@ Represents a money object that is formatted based on the currency’s defined lo
         "amount":10.25,
         "formatted":"$10.25"
     }
-
-
-

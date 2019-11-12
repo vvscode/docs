@@ -1,6 +1,6 @@
 ---
 title: Guidelines for acting on completion handler outcome
-excerpt: ''
+excerpt: 'Guidelines for acting on completion handler outcome. The completion handler blocks can indicate a successful or a failed outcome for both the initiate and the verify steps'
 next:
   pages:
     - verification-ios-pass-data-to-your-backend
@@ -30,5 +30,3 @@ Note that the following error codes can be recovered from by asking the user for
 ## Network connectivity errors
 
 The Sinch Verification SDK will try to resend HTTP requests to the Sinch backend if such a request failed due to a network-related error. For example, if a request fails due to the user not having internet connectivity, or the request simply timed out, the SDK schedules a number of retries within 30 seconds. But unless it succeeds during those retries, it will eventually invoke the completion handler blocks with the underlying `NSError`. For example, it would use domain `NSURLErrorDomain` and error code `NSURLErrorNotConnectedToInternet`.
-
-

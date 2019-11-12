@@ -1,6 +1,6 @@
 ---
 title: Callbacks
-excerpt: Get to know the callbacks that has been sent via WhatsApp.
+excerpt: Get to know the callbacks that has been sent via WhatsApp. Find out more information here.
 next:
   pages:
     - whatsapp-blacklist-callback

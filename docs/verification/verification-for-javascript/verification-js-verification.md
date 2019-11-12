@@ -1,6 +1,6 @@
 ---
 title: Verification
-excerpt: ''
+excerpt: 'Verify phone numbers and users with JavaScript. How to request SMS Verification and how to verify a user phone number. Read more.'
 next:
   pages:
     - verification-js-miscellaneous
@@ -102,4 +102,3 @@ verification.verify(code).then(function(successInfo) {
     // Act on error and inform the user / retry
 });
 ```
-

@@ -1,6 +1,6 @@
 ---
 title: Sinch Operator IDs
-excerpt: ''
+excerpt: 'A list of available operators IDs for the MM7 Service.'
 next:
   pages:
     - unsupported-mm7-soap-elements
@@ -12,4 +12,3 @@ next:
 | Verizon Wireless US | 31003              |
 | T-Mobile US         | 31004              |
 | Sprint US           | 31005              |
-

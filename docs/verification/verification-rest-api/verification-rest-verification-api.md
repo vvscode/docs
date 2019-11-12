@@ -1,6 +1,6 @@
 ---
 title: Verification API
-excerpt: ''
+excerpt: 'Verify users with SMS, flash calls (missed calls) or a regular call. hThis document serves as a user guide and documentation on how to use the Sinch Verification REST APIs. Find out more information about our API today.'
 next:
   pages:
     - verification-rest-callback-api
@@ -12,7 +12,7 @@ URI:  https://verificationapi-v1.sinch.com/verification/[version]
     Version - v1
 ```
 
-The Sinch Verification API is used for verify mobile phone numbers. It is consumed by the Sinch Verification SDK, but it can also be used by any backend or client directly. yin
+The Sinch Verification API is used for verify mobile phone numbers. It is consumed by the Sinch Verification SDK, but it can also be used by any backend or client directly.
 
 ```text
     [POST] /verifications
@@ -43,7 +43,7 @@ Authorization level can be specified in the Sinch dashboard, under your app sett
 
     [RequestBody]
         VerificationRequest
-    
+
     [VerificationRequest]
         identity - identity
         string - method
@@ -129,20 +129,20 @@ Request
 
     [RequestBody]
         VerificationResponse
-    
+
     [VerificationResponse]
         string - id
         SmsVerificationData? - sms
         FlashCallVerificationData? - flashCall
         CalloutVerificationData? - callout
-    
+
     [SmsVerificationData]
         string - template
-    
+
     [FlashCallVerificationData]
         string - cliFilter
         int - interceptionTimeout
-    
+
     [CalloutVerificationData]
         int - startPollingAfter
         int - stopPollingAfter
@@ -205,16 +205,16 @@ Authorization level can be specified in the Sinch dashboard, under your app sett
 
     [RequestBody]
         VerficationReportRequest
-    
+
     [VerficationReportRequest]
         string - method
         SmsVerificationReportData? - sms
         FlashCallVerificationReportData? - flashCall
-    
+
     [SmsVerificationReportData]
         string - code
         string? - cli
-    
+
     [FlashCallVerificationReportData]
         string - cli
 
@@ -259,7 +259,7 @@ The Sinch Verification backend will then validate the reported PIN or CLI and re
 
     [ResponseBody]
         VerificationResult
-    
+
     [VerificationResult]
         string - id
         string - method
@@ -338,7 +338,7 @@ This is a protected resource and requires an [Application signed request](doc:us
 
     [ResponseBody]
         VerificationResult
-    
+
     [VerificationResult]
         string - id
         string - method
@@ -423,7 +423,7 @@ This is a protected resource and requires an [application signed request](doc:us
 
     [ResponseBody]
         VerificationResult
-    
+
     [VerificationResult]
         string - id
         string - method
@@ -505,7 +505,7 @@ The following endpoint is [public authorized](doc:using-rest#section-public-reso
 
     [ResponseBody]
         VerificationResult
-    
+
     [VerificationResult]
         string - id
         string - method
@@ -573,7 +573,7 @@ The following endpoint is [public authorized](doc:using-rest#section-public-reso
 ```
 
 ---
-**Important** 
+**Important**
 
 This endpoint can only be used for a limited time after the verification request.
 
@@ -585,7 +585,7 @@ It is possible to specify the content language for SMS verification. The desired
  More information on the 'Accept-Language' header can be found from [IETF](https://tools.ietf.org/html/rfc3282) and the [HTTP/1.1 documentation](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.4).
 
 ---
-**Note** 
+**Note**
 
 The content language specified in the API request or in the callback can be overridden by carrier provider specific templates, due to complience and legal requirements, such as [US shortcode requirements (pdf)](https://www.wmcglobal.com/storage/us_resources/ctia-short-code-monitoring-handbook-current-Short-Code-Monitoring-Handbook-v1.7.pdf).
 
@@ -597,7 +597,7 @@ The content language specified in the API request or in the callback can be over
     ...
     Accept-Language: es-ES
     ...
-    
+
     [POST] https://verificationapi-v1.sinch.com/verification/v1/verifications
 
 ```json    
@@ -631,4 +631,3 @@ The actual language that was selected is returned in the 'Content-Language' HTTP
         }
 }
 ```
-

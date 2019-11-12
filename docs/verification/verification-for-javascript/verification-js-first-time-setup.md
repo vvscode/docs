@@ -1,6 +1,6 @@
 ---
 title: First time setup
-excerpt: ''
+excerpt: 'Setting up the JavaScript Verificaiton SDK for the first time. Add phone verification to web apps easy. Read more.'
 next:
   pages:
     - verification-js-sinch-client

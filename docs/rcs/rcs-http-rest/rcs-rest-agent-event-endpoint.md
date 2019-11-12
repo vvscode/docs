@@ -1,12 +1,12 @@
 ---
 title: Agent Event Endpoint
-excerpt: ''
+excerpt: 'Send events from a RCS chatbot (A2P Agent) to a end user. Emulate real user behaviour by sending displayed notifications and composing events with the RCS chatbot. '
 ---
 The agent event endpoint provides operations for sending events from the agent to the user.
 
 ### Sending agent events to user
 
-Send events to a user from the agent. This enables the agent to emulate real user behavior by sending displayed notifications and composing events.
+Send events to a user from the agent. This enables the agent to emulate real user behaviour by sending displayed notifications and composing events.
 
 #### HTTP Request
 
@@ -181,5 +181,3 @@ JSON Representation
 | ----------- | ------ | -------------------------------------------------------------------------------------------------------------------------- | ------- | ----------- | -------- |
 | type        | string | Static string 'agent\_read'. This type notifies the recipient that the message sent by the user has been read by the agent | N/A     | N/A         | Yes      |
 | message\_id | string | The message id that the agent has read. This is the message id the agent received in object(`UserAgentMessage`)            | N/A     | N/A         | Yes      |
-
-
