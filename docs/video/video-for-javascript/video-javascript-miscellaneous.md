@@ -1,6 +1,6 @@
 ---
 title: Miscellaneous
-excerpt: ''
+excerpt: 'JavaScript Video SDK Miscellaneous information. Read more.'
 ---
 ## Restrictions on User IDs
 

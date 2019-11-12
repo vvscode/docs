@@ -1,6 +1,6 @@
 ---
 title: Send WhatsApp Messages
-excerpt: Send messages via WhatsApp with Sinch WhatsApp API.
+excerpt: Send messages via WhatsApp with Sinch WhatsApp API. Get more information here.
 next:
   pages:
     - whatsapp-group-management

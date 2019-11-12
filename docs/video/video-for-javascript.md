@@ -1,6 +1,10 @@
 ---
 title: Video for JavaScript
-excerpt: ''
+excerpt: >-
+  The Sinch JavaScript Video SDK is a product that makes adding video and voice calling,
+  instant messaging or phone verification to web apps easy.
+  It handles the complexity of signaling and audio management
+  while providing you the freedom to create a stunning user interface.
 next:
   pages:
     - video-javascript-first-time-setup
@@ -14,5 +18,3 @@ Please see the [Reference Documentation](http://www.sinch.com/docs/javascript/re
 > **Note**    
 >
 > Should you encounter any bugs, glitches, lack of functionality or other problems using our SDK, please send us an email to <dev@sinch.com>. Your help in this regard is greatly appreciated.
-
-

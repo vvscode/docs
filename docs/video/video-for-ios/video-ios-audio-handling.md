@@ -1,6 +1,6 @@
 ---
 title: Audio handling
-excerpt: ''
+excerpt: 'The details on how the Sinch Voice /w Video SDK manages audio during calls. Read more.'
 next:
   pages:
     - video-ios-application-authentication
@@ -8,9 +8,9 @@ next:
 If the application plays audio that does not originate from the Sinch SDK, certain guidelines should be followed. Additional information on audio session-related topics is available in the [Audio Session Programming Guide](http://developer.apple.com/library/ios/#documentation/Audio/Conceptual/AudioSessionProgrammingGuide/Introduction Introduction.html).
 
 ## Audio sessions
- When a call is established, the Sinch client activates the shared audio session. When the call is disconnected, the Sinch client deactivates the shared audio session. If the application wants to play audio in any other context, it needs to reactivate the shared audio session. This applies after each finished call.
+When a call is established, the Sinch client activates the shared audio session. When the call is disconnected, the Sinch client deactivates the shared audio session. If the application wants to play audio in any other context, it needs to reactivate the shared audio session. This applies after each finished call.
 
-When started, the Sinch SDK client sets itself as the audio session delegate. If the application wishes to override this behavior, the application needs to reset the delegate after the client has started but before any call has been started. (Doing this is not recommended.)
+When started, the Sinch SDK client sets itself as the audio session delegate. If the application wishes to override this behaviour, the application needs to reset the delegate after the client has started but before any call has been started. (Doing this is not recommended.)
 
 ## Audio session categories
 

@@ -1,6 +1,6 @@
 ---
 title: Video Calling
-excerpt: ''
+excerpt: 'Set up video calls with the Sinch Android Voice with Video SDK. Get more information here.'
 next:
   pages:
     - video-android-push-notifications

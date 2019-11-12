@@ -1,6 +1,7 @@
 ---
 title: Introduction
-excerpt: This document provides a detailed user guide and reference documentation on the Sinch Voice REST API. For general information on how to use the Sinch APIs including methods, types, errors and authorization, please check the Using REST page.
+excerpt: >-
+  This document provides a detailed user guide and reference documentation on the Sinch Voice REST API. For general information on how to use the Sinch APIs including methods, types, errors and authorization, please check the Using REST page.
 next:
   pages:
     - voice-rest-api-calling-api
@@ -131,7 +132,7 @@ The Sinch dashboard allows you to connect calls from and to your SIP infrastruct
 
 SIP-originated calls can be routed from your SIP server to the Sinch platform through a SIP trunk. You need to authentivate your SIP infrastructure to making outbound calls via Sinch SIP trunk you use:
 
->Host: sip.sinch.com 
+>Host: sip.sinch.com
 >
 >Username/Authenticationname: Your Sinch Application Key
 >

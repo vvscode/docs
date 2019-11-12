@@ -1,6 +1,6 @@
 ---
 title: Authentication
-excerpt: ''
+excerpt: 'Authenticate users by your backend or by Sinch. This allows for full control of the user database and uses can be authenticated the way you see fit.'
 next:
   pages:
     - voice-js-session-management
@@ -40,7 +40,7 @@ $.post('https://example.com/auth',
             .fail(function(error) {
                 // Handle Sinch error
             });
-    }, 
+    },
     function(error) {
         // Handle application server error
     });
@@ -75,4 +75,3 @@ sinchClient.start({username: 'alice', password: 'somethingSecure'})
 
 
 This code will instantiate SinchClient, and will start the client using the username *‘Alice’*.
-

@@ -3,7 +3,7 @@ title: Push notifications
 excerpt: ''
 next:
   pages:
-    - voice-android-active-connection
+    - voice-android-application-authentication
 ---
 When an application is not running, or the `Active Connection` feature is not enabled, the user must be notified of an incoming call or instant message by a push notification.
 
@@ -218,3 +218,7 @@ if (result.isValid() && result.isCall()) {
 ## Unregister a device
 
 If the user of the application logs out or performs a similar action, the push notification device token can be unregistered via `SinchClient.unregisterManagedPush()` to prevent further notifications to be sent to the device. Starting a client with `setSupportManagedPush(true)` will register the device again.
+
+## Active Connection
+
+If push notifications are not desired, the alternative is to use `setSupportActiveConnectionInBackground(true)` and then calling `startListeningOnActiveConnection()` to enable incoming calls and instant messages. Don’t forget to call `stopListeningOnActiveConnection()` when the user is no longer available for calls (for example if the application is no longer active).

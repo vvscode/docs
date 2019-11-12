@@ -1,6 +1,6 @@
 ---
 title: Local and Remote Push Notifications
-excerpt: ''
+excerpt: 'Notify users of incoming calls or instant messages by using local notifications or a remote push notification in iOS.'
 next:
   pages:
     - video-ios-audio-handling
@@ -51,9 +51,9 @@ For these scenarios, push notifications can be used to receive incoming calls an
 
 When creating a Sinch client, managed push notifications must be enabled:
 ```objectivec
-id<SINClient> client = [Sinch clientWithApplicationKey:@"<application key>" 
+id<SINClient> client = [Sinch clientWithApplicationKey:@"<application key>"
                                      applicationSecret:@"<application secret>"
-                                       environmentHost:@"sandbox.sinch.com" 
+                                       environmentHost:@"sandbox.sinch.com"
                                                 userId:@"<user id>"];
 
 [client enableManagedPushNotifications];
@@ -89,7 +89,7 @@ Because of differences in the iOS SDK API with respect to regular and VoIP push 
         [self.push application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
 }
 
-- (void)application:(UIApplication *)application 
+- (void)application:(UIApplication *)application
     didReceiveRemoteNotification:(NSDictionary *)userInfo {
         [self.push application:application didReceiveRemoteNotification:userInfo];
 }
@@ -120,12 +120,12 @@ Please see [Apple’s Local and Remote Notification Programming Guide](https://d
 ## Presenting local notifications for incoming calls
 
 If the application is not in foreground when receiving an incoming call, the `SINCallClient` will ask it’s delegate `SINCallClientDelegate` to specify how a local notification should be presented. The delegate is responsible for composing a `SINLocalNotification` with content that is to be shown to the user when the local notification is presented to the user by iOS. The delegate can specify all things as available for a regular `UILocalNotification`, e.g. alert body, actions, a badge number, and the path to a sound file that is played when the notification is
-presented. 
+presented.
 
-Example: 
+Example:
 ```objectivec
 // implementation of SINCallClientDelegate
-- (SINLocalNotification *)client:(id<SINClient>)client 
+- (SINLocalNotification *)client:(id<SINClient>)client
   localNotificationForIncomingCall:(id<SINCall>)call {
     SINLocalNotification *notification = [[SINLocalNotification alloc] init];
     notification.alertAction = @"Answer";
@@ -275,4 +275,3 @@ When an iOS application is code signed, it is the embedded *Provisioning Profile
 to the APS *Production* environment.
 
 Typically a *Debug* build will be code signed with a *Development* provisioning profile and thus `SINAPSEnvironmentDevelopment` should be used. And typically a *Release* build will be code signed with a *Distribution* provisioning profile and thus `SINAPSEnvironmentProduction` should be used. Instead of changing this manually for each build, the macro `SINAPSEnvironmentAutomatic` is available which automatically expands to *Development* for *Debug* builds and *Production* for *Release* builds.
-

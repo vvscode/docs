@@ -1,6 +1,6 @@
 ---
 title: Callback API
-excerpt: ""
+excerpt: "Control calls from your application backend or by calling the REST API in the Sinch platform... Read more."
 next:
   pages:
     - voice-rest-api-reporting-api

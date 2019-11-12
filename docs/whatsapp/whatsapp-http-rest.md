@@ -1,6 +1,6 @@
 ---
 title: REST API
-excerpt: WhatsApp for Business messaging
+excerpt: WhatsApp REST API. This documentation outlines how to use the WhatsApp REST API for communication between businesses and customers.  
 next:
   pages:
     - whatsapp-opt-in-and-outs

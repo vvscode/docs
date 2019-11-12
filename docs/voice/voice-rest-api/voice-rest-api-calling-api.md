@@ -1,6 +1,6 @@
 ---
 title: Calling API
-excerpt: ""
+excerpt: "The calling API exposes calling-related functionality in the Sinch Platform. Read more."
 next:
   pages:
     - voice-rest-api-callback-api
@@ -14,7 +14,7 @@ next:
     https://calling-sae1.api.sinch.com/[version]  - South America
     https://calling-apse1.api.sinch.com/[version] - South East Asia 1
     https://calling-apse2.api.sinch.com/[version] - South East Asia 2
-    
+
     Current  version is "v1"
 
 ## Overview
@@ -700,7 +700,7 @@ _Example ACE response when \`\`enableAce\`\` set to true_. In this example, the 
 
 If **enableDice** is set to true and the application has a callback URL specified, you will receive a DiCE callback when the call is disconnected. If it is set to false, no DiCE event will be sent to your backend.
 
-**locale** specifies the language for the Text-to-speech message. Supported languages: 
+**locale** specifies the language for the Text-to-speech message. Supported languages:
 
 >\*cmn-CN:		Chinese, Mandarin  
 >\* da-DK:		Danish  

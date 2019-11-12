@@ -1,6 +1,7 @@
 ---
 title: Call Report
-excerpt: ''
+excerpt: >-
+  Get call reports from the Sinch platform. Get call data for a specific user in the last 30 days, number of calls and more... Get more information about the API here.
 next:
   pages:
     - voice-rest-api-cdr

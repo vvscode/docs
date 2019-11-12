@@ -1,6 +1,6 @@
 ---
 title: Miscellaneous
-excerpt: ''
+excerpt: 'iOS Video SDK Miscellaneous information. Read more.'
 ---
 ## Minimum requirements
 

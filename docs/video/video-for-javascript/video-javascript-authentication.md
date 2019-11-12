@@ -1,6 +1,6 @@
 ---
 title: Authentication
-excerpt: ''
+excerpt: 'Authenticate users by your backend or by Sinch. This allows for full control of the user database and uses can be authenticated the way you see fit.'
 next:
   pages:
     - video-javascript-session-management
@@ -19,8 +19,7 @@ The authentication ticket is then sent to Sinch, using the `.start()` method in 
 
 
 ![authentication_papi_partner.png](images/d4a29ad-authentication_papi_partner.png)
-Authentication Supported by Partner
-Backend
+Authentication Supported by Partner Backend
 
 This method, where you authenticate users with your backend, may look like this:
 ```javascript
@@ -40,7 +39,7 @@ $.post('https://example.com/auth',
             .fail(function(error) {
                 // Handle Sinch error
             });
-    }, 
+    },
     function(error) {
         // Handle application server error
     });
@@ -75,5 +74,3 @@ sinchClient.start({username: 'alice', password: 'somethingSecure'})
 
 
 This code will instantiate SinchClient, and will start the client using the username *‘Alice’*.
-
-
