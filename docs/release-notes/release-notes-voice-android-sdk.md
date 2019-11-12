@@ -5,6 +5,79 @@ excerpt: >-
   and bug fixes.
 ---
 See how our platform is evolving. Keep track of new features, API versions and bug fixes.
+<h3>2019-11-12 | SINCH SDK ANDROID 3.17.0</h3>
+  - WebRTC updated
+  - Java source code requires JAVA 8 (1.8)
+
+<h3>2019-11-10 | SINCH SDK ANDROID 3.16.0</h3>
+  - Introduced UserController, an independent component that registers user w/o starting of SinchClient.
+  - Instant Messaging functionality removed. Public API interfaces are still present, but will throw exceptions.
+
+<h3>2019-09-06 | SINCH SDK ANDROID 3.15.0</h3>
+  - Added ManagedPush API which provides callbacks on FCM token registration success/failure.
+  - Internal improvements related to API request timeouts and resending.
+
+<h3>2019-05-30 | SINCH SDK ANDROID 3.14.4</h3>
+  - Fixed crash that happen on certain condition during un-graceful termination of SinchClient.
+  
+<h3>2019-05-25 | SINCH SDK ANDROID 3.14.3</h3>
+  - Fixed bug that caused premature ICE Restart (e.g. re-connection when there is no available network connection).
+
+<h3>2019-05-24 | SINCH SDK ANDROID 3.14.2</h3>
+  - Fixed bug in media handover logic that triggered reconnection attempt while no network is available thus hindering proper reconnection later.
+
+<h3>2019-05-23 | SINCH SDK ANDROID 3.14.1</h3>
+  - Google Services dependencies are updated to revision 4.2.0 which contains the fix of rare 'Firebase not init' bug.
+  - Sample-push and Sample-video-push application are amended to provide 'display name' via push notification.
+  - Fixed bug in handling of network change during the call if MediaHandoverConfig was not set via Beta.setMediaHandoverConfig() API.
+
+<h3>2019-05-22 | SINCH SDK ANDROID 3.14.0</h3>
+  - Source code is Java 8 desugared. Requirement to use Java 8 dropped (use Java 7 or Java 8 as you please).
+
+<h3>2019-05-15 | SINCH SDK ANDROID 3.13.2</h3>
+  - Fix HTTP requests being cancelled too early during SinchClient graceful shutdown.
+  - New API: Beta.canEnableManagedPush(Context)
+  - Internally remapping UnsatisfiedLinkError due to OOM to java.lang.OutOfMemoryError
+  - Extend internal signaling timeout values
+
+<h3>2019-03-27 | SINCH SDK ANDROID 3.13.1</h3>
+  - Added Beta Auto Audio Routing functionality.
+  - Added Beta Torch Mode control.
+  - "Call Cancelled" push notification are sent also when call is finished due to timeout or no answer.
+  - Fixed ringtone going to earpiece form speaker.
+  - Fixed connectivity listener bug.
+  - STUN server is read from config.
+  - added setTorchMode() API to VideoController to control torchlight during video call.
+  - added enable/disable automatic audio routing APIs to AudioController to control audio routing.
+
+<h3>2018-12-10 | SINCH SDK ANDROID 3.13.0</h3>
+  - Improved audio processing (AGC).
+  - Added API to select camera before starting a videocall.
+  - PubNub subscriber uses HTTPS by default.
+  - PubNub and Sinch APIs now working via Sinch HttpClient.
+  - WebRTC updated.
+  - Bug fixes and improvements.
+
+<h3>2018-12-03 | SINCH SDK ANDROID 3.12.8</h3>
+  - Ready for use with application with targetSdk=28, meeting Google Play's target API level requirement
+  for November 2018.
+  - Sample Applications are updated to target API 28 and be Android P compliant.
+
+<h3>2018-09-05 | SINCH SDK ANDROID 3.12.7</h3>
+  - Fixed a bug in HttpRequester, which led to crash.
+
+<h3>2018-08-10 | SINCH SDK ANDROID 3.12.6</h3>
+  - Fixed a bug in HttpRequester which made PubNub re-tries not reliable.
+  - Sample Applications shows how to check and request necessary permissions.
+  - Push Sample Applications demonstrate how to receive call from locked screen.
+
+<h3>2018-05-23 | SINCH SDK ANDROID 3.12.5</h3>
+   - Removed the use of android instanceId in phone meta data gathering.
+
+<h3>2018-01-13 | SINCH SDK ANDROID 3.12.4</h3>
+   - Added support for cancellation of a call via VoIP push notifications.
+   - Added API for retrieving custom public headers from push notifications.
+   - Fixed a crash occurring while receiving incoming call push notification while in native call with "respectNativeCalls" enabled.
 
 <h3>2017-11-23 | SINCH SDK ANDROID 3.12.3</h3>
 -   Improved Wifi/Cellular handover for App calling
