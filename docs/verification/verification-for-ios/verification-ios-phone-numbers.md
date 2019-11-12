@@ -1,6 +1,6 @@
 ---
 title: Phone numbers
-excerpt: ''
+excerpt: 'How should a phone number (MSISDN) be formatted in E.164? Sinch provides utility tools that help with correct formatting. Read more.'
 next:
   pages:
     - verification-ios-improving-verification-performance-with-a-great-ui
@@ -29,5 +29,3 @@ A number that have been parsed into a `id<SINPhoneNumber>` can then be formatted
 ```objectivec
 NSString *phoneNumberInE164 = [SINPhoneNumberUtil() formatNumber:phoneNumber format:SINPhoneNumberFormatE164];
 ```
-
-

@@ -1,6 +1,6 @@
 ---
 title: Improving verification performance with a great UI
-excerpt: ''
+excerpt: 'Improve verification performance with great UI. Here is a UI that will capture correct input from the user.'
 next:
   pages:
     - verification-android-miscellaneous
@@ -14,4 +14,3 @@ The Sinch SDK provides a `PhoneNumberFormattingTextWatcher` class that behaves e
 ## Viable phone number check
 
 The `isPossibleNumber` method in `PhoneNumberUtils` can be used to give the user a hint whether the entered phone number is a viable one in the specified region by for example highlighting the text field with a different color.
-

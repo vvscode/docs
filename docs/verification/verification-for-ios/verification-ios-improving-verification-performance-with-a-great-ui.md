@@ -1,6 +1,6 @@
 ---
 title: Improving verification performance with a great UI
-excerpt: ''
+excerpt: 'Improve verification performance with great UI. Here is a UI that will capture correct input from the user.'
 next:
   pages:
     - verification-ios-swift-sdk
@@ -55,4 +55,3 @@ override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath:
         return cell;
 }
 ```
-

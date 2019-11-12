@@ -1,6 +1,6 @@
 ---
 title: Callback API
-excerpt: ''
+excerpt: 'How to use the callbacks in the Sinch Verification REST SDK. Read more.'
 next:
   pages:
     - verification-rest-verification-api
@@ -67,8 +67,7 @@ You can find more information on callback request signing [here](doc:using-rest#
         string? - wavFile
         string? - pin
 
-**action** allows or denies the verification to be executed. It can take
-these values:
+**action** allows or denies the verification to be executed. It can take these values:
 
   - allow
   - deny

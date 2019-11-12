@@ -1,6 +1,6 @@
 ---
 title: Verification for Android
-excerpt: 'Verify phone numbers and users in Android. The Verification SDK supports the verification of phone numbers via SMS or flash calls. The SDK is also available as an iOS SDK.' 
+excerpt: 'Verify phone numbers and users in Android. The Verification SDK supports the verification of phone numbers via SMS or flash calls. The SDK is also available for iOS.' 
 next:
   pages:
     - verification-android-first-time-setup

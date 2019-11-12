@@ -1,6 +1,6 @@
 ---
 title: Sinch Client
-excerpt: ''
+excerpt: 'Example on how to set up the Sinch Client for verification of a user. Read more.'
 next:
   pages:
     - verification-js-verification
@@ -17,7 +17,7 @@ var sinchClient = new SinchClient({
 ```
 
 
-The \*\* is obtained from the Sinch Developer Dashboard. In this example, the SinchClient is set up for Verification.
+The *<application_key>* is obtained from the Sinch Developer Dashboard. In this example, the SinchClient is set up for Verification.
 
 ## Asynchronous Sinch Calls
 

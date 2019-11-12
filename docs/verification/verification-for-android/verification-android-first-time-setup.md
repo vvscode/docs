@@ -1,6 +1,6 @@
 ---
 title: First time setup
-excerpt: ''
+excerpt: 'Setup phone number verification in Android for the first time with the Sinch Verification SDK. Verify through SMS and/or flash calls.'
 next:
   pages:
     - verification-android-the-verification-process
@@ -36,4 +36,3 @@ dependencies {
 
 
   - Or using Android Studio choose `File -> New -> New Module -> Import .JAR/.AAR Package` option
-
