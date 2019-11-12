@@ -6,6 +6,60 @@ excerpt: >-
 ---
 See how our platform is evolving. Keep track of new features, API versions and bug fixes.
 
+<h3>2019/11/12 | SINCH SDK IOS 4.1.0</h3>
+
+  - iOS 13 VoIP push and CallKit compatibility. When linking against
+    the iOS 13 SDK or later, your application must report VoIP push
+    notifications as an incoming call to
+    CallKit. -[SINManagedPushDelegate
+    managedPush:didReceiveIncomingPushWithPayload:forType:] will now
+    be invoked synchronously on Sinch-internal GCD queue as assigned
+    to PKPushRegistry so that an application can report to CallKit
+    within the same runloop as mandated by the iOS 13 changes.
+
+  - Fix video functionality on iOS 13 (H.264 codec, video rotation)
+
+  - Removed support for local notifications
+    (UILocalNotification). Since CallKit is effectively mandatory to
+    use with PushKit, using local notifications in conjunction with
+    VoIP push is no longer applicable since iOS SDK 13. An application
+    using the Sinch SDK should use PushKit and CallKit going forward.
+
+  - Removed support for canceled call notifications (also known as
+    "missed call" notifications). iOS 13 requirements on how a (new)
+    call must be reported for each received VoIP push notification has
+    severe implications on the previous support for canceled call
+    notifications, so severe that it is no longer possible to support.
+    (-[SINCallNotificationResult isCallCanceled] is no longer available)
+
+  - Removed support for -[SINCallDetails
+    applicationStateWhenReceived]. This is no longer supported due to
+    that a -[UIApplication applicationState] can only safely be used
+    on main UI thread (Main Thread Checker would catch this as
+    incorrect usage under certain circumstances).
+
+  - IMPORTANT: A VoIP push payload MUST be relayed to -[SINManagedPush
+    didCompleteProcessingPushPayload:] unless it is relayed to an
+    instance of SINClient. Note that the sample app SinchCallKit
+    implements it so that it always invokes this method, which is also
+    OK.
+
+  - Remove logging callback from SINClientDelegate.
+    Logging callback should now be set via [Sinch setLogCallback:].
+    Logging callback will be invoked on a background GCD queue (assume
+    that it's invoked on a concurrent GCD queue).
+
+  - Removed -[SINManagedPush registerUserNotificationSettings] and
+    -[SINManagedPush setUserNotificationTypes:] (these APIs were tied
+    to iOS APIs deprecated since iOS 10).
+    Managing authorization for remote (non-VoIP) or local
+    notifications is now outside the scope of the Sinch APIs and an
+    application should use UserNotifications.framework directly.
+
+  - iOS Deployment Target raised to iOS 10.0.
+
+  - Removed support for Instant Messaging.
+
 <h3>2019/08/22 | SINCH SDK IOS 3.12.10</h3>
   - Assign non-main GCD queue for PKPushRegistry
   - Ensure SINManagedPush is safe (thread-safe) to invoke from non-main thread (i.e. from any background GCD queue).
