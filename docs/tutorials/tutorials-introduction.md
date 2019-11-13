@@ -11,6 +11,6 @@ next:
     - tutorials-net
     - tutorials-javascript
     - tutorials-php
-    - tutorials-ruby
+    
 ---
-Check out some of the tutorials that Sinch provides here.
+

@@ -18,11 +18,20 @@ You will be provided with an authentication token for each service plan.
 
 The token is sent in the `Authorization` header preceded by `Bearer`. It is required for all requests made to the REST API.
 
-**Example request with token**
+**Example request with token to send a SMS**
 
 ``` shell
-$ curl -H "Authorization: Bearer {token}" \
-"https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/batches"
+curl -X POST \
+     -H "Authorization: Bearer {token}" \
+     -H "Content-Type: application/json"  -d '
+      {
+          "from": "12345",
+          "to": [
+              "123456789"
+          ],
+          "body": "Hi there! How are you?"
+      }' \
+  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/batches"
 ```
 
 ## Base URL
@@ -32,6 +41,8 @@ The following URLs can be used by the REST API. We have servers in the US and EU
 
 | Server        |  URL                                   |
 |---------------|----------------------------------------|
+| General API | https://us.sms.api.sinch.com     |
+| Geographical APIs | If you want to set one up, contact your account manager     |
 | US Production | https://us.sms.api.sinch.com     |
 | EU Production | https://eu.sms.api.sinch.com     |
 
