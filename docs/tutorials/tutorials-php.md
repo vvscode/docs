@@ -10,6 +10,5 @@ next:
 ---
 To get started choose one of the below tutorials, they might need different setups so just follow the steps.
 
-Enjoy!
 
 
