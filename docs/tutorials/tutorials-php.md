@@ -6,8 +6,6 @@ excerpt: >-
 next:
   pages:
     - authenticate-to-the-sinch-javascript-sdk-from-your-php-backend
-    - send-sms-in-php
-    - send-an-sms-from-slack
   description: Check out our PHP tutorials here
 ---
 To get started choose one of the below tutorials, they might need different setups so just follow the steps.
