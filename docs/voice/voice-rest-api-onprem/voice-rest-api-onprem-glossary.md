@@ -1,8 +1,9 @@
 ---
 title: Glossary for Sinch REST API
 excerpt: ''
-hidden: "true"
+hidden: 'true'
 ---
+
 | Term       | Explanation                                             |
 | ---------- | ------------------------------------------------------- |
 | RTC        | Real Time Communication                                 |
@@ -14,7 +15,6 @@ hidden: "true"
 | ICE        | Incoming Call Event                                     |
 | DiCE       | Disconnected Call Event                                 |
 | CDR        | Call Detail Record                                      |
-| IM         | Instant Messages                                        |
 | User Space | Universe of unique user names                           |
 | Data Call  | Phone call over the Internet, also known as "VoIP"      |
 | VoIP       | Voice over IP                                           |
@@ -28,5 +28,3 @@ hidden: "true"
 | NAT        | Network Address Translation                             |
 | MXP        | Media eXchange Protocol                                 |
 | SVAML      | Sinch Voice Application Markup Language                 |
-
-

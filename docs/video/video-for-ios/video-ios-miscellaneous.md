@@ -2,28 +2,29 @@
 title: Miscellaneous
 excerpt: 'iOS Video SDK Miscellaneous information. Read more.'
 ---
+
 ## Minimum requirements
 
-iOS 6.0 is the minimum iOS version required for using the Sinch SDK (*iOS Deployment Target*).
+iOS 6.0 is the minimum iOS version required for using the Sinch SDK (_iOS Deployment Target_).
 
-*Note:* The Sinch SDK library uses Automatic Reference Counting (ARC). However, it can still be used in non-ARC projects.
+_Note:_ The Sinch SDK library uses Automatic Reference Counting (ARC). However, it can still be used in non-ARC projects.
 
 ## Note on Sinch.framework file size vs. linked size
 
-The *Sinch.framework* file includes a FAT-binary containing the architectures *armv7*, *armv7s*, *arm64*, *i386* and *x86\_64*. When linking an application target against the *Sinch.framework* targeting an iOS device, it will add a approximately 6.1Mb per *armv7* slice, and 6.3Mb for the *arm64* slice.
+The _Sinch.framework_ file includes a FAT-binary containing the architectures _armv7_, _armv7s_, _arm64_, _i386_ and _x86_64_. When linking an application target against the _Sinch.framework_ targeting an iOS device, it will add a approximately 6.1Mb per _armv7_ slice, and 6.3Mb for the _arm64_ slice.
 
-**Example**: Assuming linking *armv7* and *arm64* into the final application, it would add approximately 12.4Mb to the application.
+**Example**: Assuming linking _armv7_ and _arm64_ into the final application, it would add approximately 12.4Mb to the application.
 
-(Even though *armv7s* is supported and included, we recommend to not build your application for armv7s to reduce the final application binary size)
+(Even though _armv7s_ is supported and included, we recommend to not build your application for armv7s to reduce the final application binary size)
 
 ## Production and Sandbox environments
 
 Sinch provides two environments:
 
->   - Production - Used for applications deployed in production.
->   - Sandbox - Used during development and testing.
+> - Production - Used for applications deployed in production.
+> - Sandbox - Used during development and testing.
 
-The environment is passed as the parameter *environmentHost* when instantiating the Sinch client.
+The environment is passed as the parameter _environmentHost_ when instantiating the Sinch client.
 
 | Environment | EnvironmentHost parameter |
 | ----------- | ------------------------- |
@@ -32,12 +33,11 @@ The environment is passed as the parameter *environmentHost* when instantiating 
 
 ## Restrictions on User IDs
 
-User IDs can only contain characters in the *printable ASCII character set*. That is:
+User IDs can only contain characters in the _printable ASCII character set_. That is:
+
 ```text
 !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
 ```
-
-
 
 User IDs **must not** be longer than **40** characters.
 
@@ -55,15 +55,15 @@ The statistics upload is done by the client in the background.
 
 ## Linking against the C++ standard library
 
-Since Sinch SDK version 3.4.0, it is required to link against *libc++*. Though if your application is also dependent on *libstdc++* (which is now considered deprecated by Apple for use on iOS), you can actually link against both *libc++* and *libstdc++* by passing the following linker flags:
+Since Sinch SDK version 3.4.0, it is required to link against _libc++_. Though if your application is also dependent on _libstdc++_ (which is now considered deprecated by Apple for use on iOS), you can actually link against both _libc++_ and _libstdc++_ by passing the following linker flags:
 
-  - Other Linker Flags -\> `-ObjC -Xlinker -lc++ -Xlinker -lstdc++`
+- Other Linker Flags -\> `-ObjC -Xlinker -lc++ -Xlinker -lstdc++`
 
 ## Request user permission for using the microphone
 
 Since iOS 7, additional user privacy constraints are enforced which requires the application to be granted permission to use the device microphone. Unless the application has explicitly requested permission to use the microphone, the user is shown a dialog the first time the microphone is activated.
 
-In the context of the Sinch SDK, this occurs once the first call is established *unless* the application has been granted permission earlier. We **strongly recommend** you explicitly request permission to use the microphone in your application at an appropriate time such as when the user first sets up Sinch. You should not rely on the permission dialog shown when the first Sinch call is established as this will create an awkward user experience.
+In the context of the Sinch SDK, this occurs once the first call is established _unless_ the application has been granted permission earlier. We **strongly recommend** you explicitly request permission to use the microphone in your application at an appropriate time such as when the user first sets up Sinch. You should not rely on the permission dialog shown when the first Sinch call is established as this will create an awkward user experience.
 
 By explicitly requesting permission using the methods available in the iOS SDK, the application has more control over when the dialog is shown to the user. This results in a better user experience.
 
@@ -79,7 +79,7 @@ Please see the [Apple iOS SDK documentation on the class AVCaptureDevice](https:
 
 ## App Extensions
 
-*App Extensions* is a feature introduced in iOS 8. App extensions are compiled into executables that are separate from the main application executable. The Sinch SDK are using parts of the iOS SDK APIs that are unavailable to app extensions, thus it’s not supported to use the Sinch SDK in an app extension.
+_App Extensions_ is a feature introduced in iOS 8. App extensions are compiled into executables that are separate from the main application executable. The Sinch SDK are using parts of the iOS SDK APIs that are unavailable to app extensions, thus it’s not supported to use the Sinch SDK in an app extension.
 
 ## Xcode and Bitcode intermediate representation
 
@@ -87,15 +87,15 @@ The Sinch SDK supports Bitcode intermediate representation.
 
 ## Push Notifications sent via your application server
 
-In general we strongly recommend using *“managed push notifications”*, i.e. when push notifications are sent directly from the Sinch cloud, which is described in the section \[Local and Remote Push Notifications\]\[\]. The following section on the contrary describes integrating support for push notifications but given that your application server maintain the connection with Apple Push Notification Service.
+In general we strongly recommend using _“managed push notifications”_, i.e. when push notifications are sent directly from the Sinch cloud, which is described in the section \[Local and Remote Push Notifications\]\[\]. The following section on the contrary describes integrating support for push notifications but given that your application server maintain the connection with Apple Push Notification Service.
 
 An application is considered offline in the following scenarios:
 
->   - When the application is not running
->   - When background mode has been disabled for the Sinch client, and
->     the application is not in the foreground
+> - When the application is not running
+> - When background mode has been disabled for the Sinch client, and
+>   the application is not in the foreground
 
-For these scenarios, push notifications can be used to be able to receive incoming calls and instant messages. The following sections cover how to support receiving calls and messages using push notifications.
+For these scenarios, push notifications can be used to be able to receive incoming calls. The following sections cover how to support receiving calls and messages using push notifications.
 
 When offline, the recipient of a call or message receives a push notification containing a Sinch-specific payload which enables the Sinch client to connect the incoming call or message. Acting on the push notification brings the application to the foreground which allows the user to answer the call or view the message.
 ![push-sequence-diagram_apple.png](images/44701e4-push-sequence-diagram_apple.png)
@@ -105,7 +105,7 @@ When the Sinch client on the caller’s (or sender’s) side observes that the d
 
 ### Push notification data
 
-On startup, each instance of the application is expected to register a device identifier. The identifier is referred to as *push notification data* and should be provided to the Sinch client by the method `registerPushNotificationData:`.
+On startup, each instance of the application is expected to register a device identifier. The identifier is referred to as _push notification data_ and should be provided to the Sinch client by the method `registerPushNotificationData:`.
 
 Push notifications can be addressed to that identifier in the event that the application goes offline.
 
@@ -115,7 +115,8 @@ The push notification data can be unregistered by calling the `unregisterPushNot
 
 ### Enable push notifications
 
-Start by enabling support for push notifications when initiating the *SINClient*:
+Start by enabling support for push notifications when initiating the _SINClient_:
+
 ```objectivec
 #import <Sinch/Sinch.h>
 
@@ -131,8 +132,8 @@ client.delegate = ...;
 [client start];
 ```
 
+Supporting offline calls and/or messages requires that the application registers for remote push notifications, which in the example that follows is done in the method _-\[UIApplicationDelegate application:didFinishLaunchingWithOptions:\]_.
 
-Supporting offline calls and/or messages requires that the application registers for remote push notifications, which in the example that follows is done in the method *-\[UIApplicationDelegate application:didFinishLaunchingWithOptions:\]*.
 ```objectivec
 - (BOOL)application:(UIApplication *)app didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     UIRemoteNotificationType types = UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound;
@@ -140,8 +141,8 @@ Supporting offline calls and/or messages requires that the application registers
 }
 ```
 
+The next step is to register the _push notification data_ with the _SINClient_, which in the example below is done by using the _APNS_ device token as _push notification data_. Upon receiving the the device token from Apple Push Notification Service using the _UIApplicationDelegate_-method, it is registered with the _SINClient_.
 
-The next step is to register the *push notification data* with the *SINClient*, which in the example below is done by using the *APNS* device token as *push notification data*. Upon receiving the the device token from Apple Push Notification Service using the *UIApplicationDelegate*-method, it is registered with the *SINClient*.
 ```objectivec
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     // get previously initiated Sinch client
@@ -150,7 +151,6 @@ The next step is to register the *push notification data* with the *SINClient*, 
     [client registerPushNotificationData:deviceToken];
 }
 ```
-
 
 Please refer to Apple’s [Local and Push Notification Programming Guide](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/) for more information on how to obtain the Apple Push Notification Device Token.
 
@@ -165,6 +165,7 @@ Please also refer to Apple’s [Local and Push Notification Programming Guide](h
 When the recipient’s application is offline and the app needs to notify the user using a push notification, the caller’s or sender’s application is notified using the delegate method `call:shouldSendPushNotifications:`.
 
 Because there might be multiple registered devices for the recipient user (for example, the same user is using the application on both an iPhone and an iPad) the callback is passed an array of `SINPushPair`s. The pairs contain a payload that is Sinch- and call-specific. Moreover, the pairs contain a push data byte array. The Sinch-specific payload should be embedded in the push notification sent to the recipient’s device(s). The push data is the same push data that the recipient’s application registered earlier.
+
 ```objectivec
 - (void)call:(id<SINCall>)call shouldSendPushNotifications:(NSArray *) pushPairs {
     // Send payload and push data to application server
@@ -173,16 +174,14 @@ Because there might be multiple registered devices for the recipient user (for e
 }
 ```
 
-
-
-
-> **Note**    
+> **Note**
 >
 > This example shows the calling case. Messaging works the same way.
 
 A push notification should be sent to each device, where each `pushPair.pushData` entry in the array corresponds to one device. The push notification should include the Sinch-specific payload so it can be forwarded to the Sinch client running on the destination device.
 
 The Sinch-specific payload should be embedded as custom payload data in the Apple Push Notification Payload, see JSON example below.
+
 ```objectivec
 {
     "aps" : {
@@ -193,7 +192,6 @@ The Sinch-specific payload should be embedded as custom payload data in the Appl
 }
 ```
 
-
 The Sinch-specific payload will not exceed 100 bytes, meaning that there should be 156 bytes available in the push notification payload for application-specific purposes.
 
 Please refer to Apple’s [Local and Push Notification Programming Guide](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/) for further details.
@@ -203,6 +201,7 @@ Please refer to Apple’s [Local and Push Notification Programming Guide](https:
 As a prerequisite, offline calling and messaging must have been enabled on the receiver’s side (see \[Push Notifications\]\[\]).
 
 When the application receives a push notification from the Apple Push Notification Service, the application launches and extracts the Sinch-specific payload from the push notification. Once extracted the payload is forwarded to the Sinch client using the method `relayRemotePushNotificationPayload:`.
+
 ```objectivec
 - (BOOL)application:(UIApplication *)app didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
@@ -221,18 +220,15 @@ When the application receives a push notification from the Apple Push Notificati
         if (result.isCall && result.callResult.isTimedOut) {
             // Present alert notifying about missed call
         } else if (!result.isValid) {
-            // Handle error                
+            // Handle error
         }
     }
 }
 ```
 
-
-
-
-> **Note**    
+> **Note**
 >
-> You should have similar logic of relaying the push notification payload to the *SINClient*-instance in your implementation of `-[UIApplicationDelegate application: didReceiveRemoteNotification:]`.
+> You should have similar logic of relaying the push notification payload to the _SINClient_-instance in your implementation of `-[UIApplicationDelegate application: didReceiveRemoteNotification:]`.
 
 ## Glossary
 
@@ -254,4 +250,4 @@ This glossary defines some of the domain specific terms used throughout this doc
 
 ### Active Connection in Background
 
-Apple has since iOS 10 discontinued support for maintaining a *VoIP* control connection alive via `-[UIApplication setKeepAliveTimeout:handler:]`. Attempting to use this method on an iOS device running iOS 10 results in the following warning log: `Legacy VoIP background mode is deprecated and no longer supported`. The Sinch feature *Active connection in background* was using the keep alive handler API and is as a consequence no longer supported on iOS. It is recommended to use [VoIP Push Notifications](doc:video-ios-local-and-remote-push-notifications) to achieve the equivalent functionality.ications) to achieve the equivalent functionality.
+Apple has since iOS 10 discontinued support for maintaining a _VoIP_ control connection alive via `-[UIApplication setKeepAliveTimeout:handler:]`. Attempting to use this method on an iOS device running iOS 10 results in the following warning log: `Legacy VoIP background mode is deprecated and no longer supported`. The Sinch feature _Active connection in background_ was using the keep alive handler API and is as a consequence no longer supported on iOS. It is recommended to use [VoIP Push Notifications](doc:video-ios-local-and-remote-push-notifications) to achieve the equivalent functionality.ications) to achieve the equivalent functionality.

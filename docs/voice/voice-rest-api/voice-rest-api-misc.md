@@ -4,7 +4,7 @@ excerpt: 'Voice REST API Glossary'
 ---
 
 | Term       | Explanation                                             |
-|------------|---------------------------------------------------------|
+| ---------- | ------------------------------------------------------- |
 | RTC        | Real Time Communication                                 |
 | SDK        | Software Development Kit                                |
 | PSTN       | Public Switched Telephone Network (plain old telephony) |
@@ -14,7 +14,6 @@ excerpt: 'Voice REST API Glossary'
 | ICE        | Incoming Call Event                                     |
 | DiCE       | Disconnected Call Event                                 |
 | CDR        | Call Detail Record                                      |
-| IM         | Instant Messages                                        |
 | User Space | Universe of unique user names                           |
 | Data Call  | Phone call over the Internet, also known as "VoIP"      |
 | VoIP       | Voice over IP                                           |

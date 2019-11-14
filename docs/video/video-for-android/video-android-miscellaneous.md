@@ -2,6 +2,7 @@
 title: Miscellaneous
 excerpt: 'Android Video SDK Miscellaneous information. Read more.'
 ---
+
 ## Minimum requirements
 
 You must have Android version 2.3 (Gingerbread) or later to use the Sinch SDK.
@@ -10,24 +11,22 @@ You must have Android version 2.3 (Gingerbread) or later to use the Sinch SDK.
 
 Sinch provides two environments:
 
->   - Production - Used for applications deployed in production.
->   - Sandbox - Used during development and testing.
+> - Production - Used for applications deployed in production.
+> - Sandbox - Used during development and testing.
 
-The environment is passed as the parameter *environmentHost* when instantiating the Sinch client.
+The environment is passed as the parameter _environmentHost_ when instantiating the Sinch client.
 
 | Environment | EnvironmentHost parameter |
 | ----------- | ------------------------- |
 | Production  | clientapi.sinch.com       |
-| Sandbox     | sandbox.sinch.com         |
 
 ## Restrictions on User IDs
 
-User IDs can only contain characters in the *printable ASCII character set*. That is:
+User IDs can only contain characters in the _printable ASCII character set_. That is:
 
 ```text
     !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
 ```
-
 
 User IDs **must not** be longer than **40** characters.
 
@@ -45,14 +44,14 @@ The statistics upload is done by the client in the background.
 
 ## Push Notifications sent via your application server
 
-In general we strongly recommend using *“managed push notifications”*, that is, when push notifications are sent directly from the Sinch cloud, which is described in the section [Push notifications](doc:video-android-push-notifications). The following section on the describes integrating support for push notifications but given that your application server maintain the connection with Google Cloud Messaging.
+In general we strongly recommend using _“managed push notifications”_, that is, when push notifications are sent directly from the Sinch cloud, which is described in the section [Push notifications](doc:video-android-push-notifications). The following section on the describes integrating support for push notifications but given that your application server maintain the connection with Google Cloud Messaging.
 
 An application is considered offline in the following scenarios:
 
->   - When the application is not running
->   - When background mode has been disabled for the Sinch client, and the application is not in the foreground
+> - When the application is not running
+> - When background mode has been disabled for the Sinch client, and the application is not in the foreground
 
-For these two scenarios, push notifications must be implemented in the application to be able to receive incoming calls and instant messages. The following sections cover how to support receiving calls and messages via push notifications.
+For these two scenarios, push notifications must be implemented in the application to be able to receive incoming calls. The following sections cover how to support receiving calls and messages via push notifications.
 
 The Sinch client relies on a push service to launch the application if it is not currently listening for incoming calls or messages due to the application being offline. Which push service to use is up to the developer, but for Android applications, the typical choice is to use Google Cloud Messaging (GCM). The examples that follow assume that Google Cloud Messaging is used to deliver push messages.
 
@@ -65,7 +64,7 @@ When the Sinch client on the caller’s (or sender’s) side observes that the d
 
 ### Push notification data
 
-On startup, each instance of the application is expected to register a device identifier. The identifier is referred to as *push notification data* and should be provided to the Sinch client using the method `registerPushNotificationData`.
+On startup, each instance of the application is expected to register a device identifier. The identifier is referred to as _push notification data_ and should be provided to the Sinch client using the method `registerPushNotificationData`.
 
 Push notifications can be addressed to that identifier in the event that the application goes offline.
 
@@ -82,6 +81,7 @@ The push notification data can also be unregistered by calling the `SinchClient.
 The following sections assumes that GCM is used, but the use pattern for other push services is similar.
 
 The easiest way to enable offline calls or messages using GCM is to first call `SinchClient.setSupportPushNotifications(true)` and then register the device specific push notification data with `SinchClient.registerPushNotificationData`. In a simple example we can use the registration id received from Google when registering to GCM.
+
 ```java
 // Register with the GCM service to get a device specific registrationId
 // Should be done in a background job
@@ -95,10 +95,9 @@ sinchClient.start();
 sinchClient.registerPushNotificationData(regId);
 ```
 
-
 Please refer to Google’s [Google Cloud Messaging for Android](http://developer.android.com/google/gcm/index.html) for more information on how to use the GCM service.
 
-> **Note**    
+> **Note**
 >
 > As described in the [Push Data Notification](#section-push-notification-data) section, the data that you register with the `registerPushNotificationData` method is defined by you. If using GCM, it must at a minimum include the registrationId from Google (so a GCM server can push to a particular device).
 
@@ -113,6 +112,7 @@ Also refer to Google’s [Google Cloud Messaging for Android](http://developer.a
 When the recipient’s application is offline and the app needs to notify the user using a push notification, the caller’s or sender’s application is notified using the callback method `CallListener.onShouldSendPushNotification`.
 
 The callback includes a List of `PushPair`s. The pairs contain a payload that is Sinch- and call-specific. Moreover the pairs contain a push data byte array. The Sinch specific payload should be embedded in the push notification sent to the recipient’s device(s). The push data is the same push data that the recipient’s application registered earlier. There might be multiple registered devices for the recipient user (for example, the same user is using the application on both a phone and a tablet), which is why the callback includes a List of Push Pairs.
+
 ```java
 public void onShouldSendPushNotification(Call call, List<PushPair> pushPairs) {
     // Send payload and push data to application server
@@ -120,10 +120,10 @@ public void onShouldSendPushNotification(Call call, List<PushPair> pushPairs) {
 }
 ```
 
-
 A push notification should be sent to each device, where each entry in the parameter `pushPairs` list corresponds to one device. Each push notification should include the Sinch-specific payload so it can be forwarded to the Sinch client running on the destination device.
 
 The Sinch-specific payload should be embedded as custom payload data in the GCM Payload.
+
 ```java
 {
   "registration_ids" : ["APA91bHun4MxP5egoKMwt2KZFBaFUH-1RYqx...", ...],
@@ -133,7 +133,6 @@ The Sinch-specific payload should be embedded as custom payload data in the GCM 
 }
 ```
 
-
 Please refer to Google’s [Google Cloud Messaging for Android](http://developer.android.com/google/gcm/index.html) for more information.
 
 #### On the callee side
@@ -141,6 +140,7 @@ Please refer to Google’s [Google Cloud Messaging for Android](http://developer
 As a prerequisite, offline calling and messaging must be enabled on the receiver’s side (see [Push Notifications sent via your application server](#section-push-notifications-sent-via-your-application-server).
 
 When the application receives a push notification from the Google Cloud Messaging Service, the application should extract the Sinch-specific payload from the push notification, and forwarding it to the Sinch client using the method `relayRemotePushNotificationPayload`.
+
 ```java
 protected void onMessage(final Context context, final Intent intent) {
     String sinchPayload = intent.getStringExtra("Sinch");
@@ -148,7 +148,6 @@ protected void onMessage(final Context context, final Intent intent) {
     sinchClient.relayRemotePushNotificationPayload(sinchPayload);
 }
 ```
-
 
 ## Glossary
 
@@ -165,7 +164,6 @@ This glossary defines some of the domain specific terms used throughout this doc
 | User                 | A user of the mobile application. The actual person holding the mobile device.                                                                                    |
 | User Identity        | Identity of a user in the application domain. Can be any string, for instance a user name, user id, phone number or email address.                                |
 | Active Connection    | A socket connection for signaling purposes where incoming calls are received.                                                                                     |
-
 
 ## Third party libraries and copyright notices
 
