@@ -17,3 +17,4 @@ The Pricing details can be retrieved for the submitted batch as in `retrieve_del
 
 **NB: Note that the price in delivery report is subject to change until the messages reach final state.**
 
+.
