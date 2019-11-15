@@ -4,7 +4,7 @@ excerpt: 'This document outlines how to use the Sinch Voice REST API as well as 
 ---
 ## Authorization
 
-The API uses the standard HTTP *Authorization* header to pass authentication information.
+The API uses the standard HTTP `Authorization` header to pass authentication information.
 
 ### Timestamp
 
