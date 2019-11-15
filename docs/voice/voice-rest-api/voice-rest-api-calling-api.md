@@ -549,20 +549,27 @@ Requests a call to be initiated from the server
     string - method
     TtsCalloutRequest? - ttsCallout
     ConferenceCalloutRequest? - conferenceCallout
+    CustomCalloutRequest? - customCallout
 ```
 
-There are currently two types of callouts that are supported: conference callouts and text-to-speech callouts.
+### Authorization
+
+This is a protected resource and requires an [application signed request](doc:using-rest#section-application-signed-request) or [basic auth](doc:using-rest#section-basic-authorization).
+
+
+There are currently three types of callouts that are supported: conference callouts, text-to-speech callouts and custom callouts. The custom callout is the most flexible, but text-to-speech and conferece callouts whereas conference and text-to-speech callouts are more convinient.
 
 ### Conference callout
 
 With conference callout, the server initiates call to a phone number and when the call is answered, it is connected to a conference room. The same API can be used multiple times to connect multiple phone numbers in the same conference room.
 
-### Request
+#### Request
 
 ```json
 [ConferenceCalloutRequest]
     string - cli
     Identity - destination
+    string - dtmf
     int - maxDuration
     bool - enableAce
     bool - enableDice
@@ -572,13 +579,17 @@ With conference callout, the server initiates call to a phone number and when th
     string - conferenceId
     string - greeting
     string - mohClass
+    string - dtmf
 ```
 
 **cli** is the number that will be displayed as caller
 
 **destination** identifies the endpoint that should be called.
 
-**type** can be “number” for PSTN endpoints, or “username” for data endpoints (app or web clients).
+<table>
+    <tr><td><b>type</b></td><td>is a parameter inside the “destination” object. It can be “number” for PSTN endpoints, or “username” for data endpoints (app or web clients).<td></tr>
+    <tr><td><b>endpoint</b></td><td>is a parameter inside the “destination” object. It is either the number of a PSTN endpoint, or the username for a data endpoint.</td></tr>
+</table>
 
 **endpoint** is either the number of a PSTN endpoint, or the username for a data endpoint.
 
@@ -638,16 +649,13 @@ _Example of conference callout_
 
 With the text-to-speech callout, the server initiates a call to a phone number and plays a synthesized text messages or pre-recorded sound files.
 
-### Authorization
-
-This is a protected resource and requires an [application signed request](doc:using-rest#section-application-signed-request) or [basic auth](doc:using-rest#section-basic-authorization).
-
-### Request
+#### Request
 
 ```json
 [TtsCalloutRequest]
     string - cli
     Identity - destination
+    string - dtmf
     string - domain
     string - custom
     string - locale
@@ -661,9 +669,12 @@ This is a protected resource and requires an [application signed request](doc:us
 
 **destination** identifies the endpoint that should be called.
 
-**type** is a parameter inside the “destination” object. It can be “number” for PSTN endpoints, or “username” for data endpoints (app or web clients).
+<table>
+    <tr><td><b>type</b></td><td>is a parameter inside the “destination” object. It can be “number” for PSTN endpoints, or “username” for data endpoints (app or web clients).<td></tr>
+    <tr><td><b>endpoint</b></td><td>is a parameter inside the “destination” object. It is either the number of a PSTN endpoint, or the username for a data endpoint.</td></tr>
+</table>
 
-**endpoint** is a parameter inside the “destination” object. It is either the number of a PSTN endpoint, or the username for a data endpoint.
+**dtmf** when the destination picks up, this DTMF tones will be played to the callee. Valid characters in the string are "0"-"9", "#" and "w". A "w" will render a 500 ms pause. Example: "ww1234#w#" will render a 1s pause, the DTMF tones "1", "2", "3", "4" and "#" followed by a 500 pause and finally the DTMF tone for "#". This can be used if the callout destination for instance require a conference PIN code or an extension to be entered.
 
 **domain** can be either “pstn” for PSTN endpoint or “mxp” for data (app or web) clients.
 
@@ -776,9 +787,48 @@ _Example of text-to-speech callout_
 }
 ```
 
-### Authorization
+### Custom
 
-This is a protected resource and requires an [application signed request](doc:using-rest#section-application-signed-request) or [basic auth](doc:using-rest#section-basic-authorization).
+With the custom callout, the server initiates a call from the servers that can be controlled by specifying how the call should progress at each call event.
+
+#### Request
+
+```json
+[CustomCalloutRequest]
+    string - cli
+    Identity - destination
+    string - dtmf
+    int - maxDuration
+    string - ice
+    string - ace
+    string - pie
+    string - dice
+```
+A server callout generates a number of events. It all starts with the server placing the call which generates an "Incoming Call Event" - **"ICE"**. As a response to the ICE event, the server expects SVML to instruct it to a connect PSTN destination. When (if) the destination picks up, the "Answered Call Event", **ACE**,  is generated. As a response to this, the server expects SVML to instruct it how to service the answered callout - this can be reading a message, connecting to a conference or running an IVR menu.
+
+If a menu is played as a response to the ACE event, the result of the menu input generates a "Prompt Input Event", **PIE**. The reponse to this event can be the same as to an ACE event.
+
+When the call is finally disconnected, the server generates a "Disconnected Call Event", **DiCE**. 
+
+*****ICE*****
+
+Here, you have a few alternatives
+* If you use the parameters like in text-to-speech and conference callouts (see below), you do not need to populate the "ice" field
+ ```json
+    string - cli
+    Identity - destination
+    string - dtmf
+    int - maxDuration
+```
+* Specify a URL in the "ice" field. Sinch will generate a callback event an expects SVML that instructs on how to connect the call. As of now, only the action "connectPstn" is allowed in the reply
+* Leave the "ice" field empty (and do not specify destination). If you have a callback URL configured for your application, you will generate a callback event to that URL
+* The final option is to specify your SVML inline as a (JSON escaped) string.
+
+*****ACE, PIE, DiCE*****
+
+For each of these parameters, if you populate them with a URL. The server will generate the corresponding event and send it to that URL. If you leave them blank, the service will instead use the callback URL configured for your application.
+Again, the final option is to specify your SVML inline as a (JSON escaped) string.
+
 
 ## Manage Call
 
@@ -796,6 +846,10 @@ This method can be used to manage ongoing, connected calls or to unpark parked c
         Action - action
 
 **Important**: This method can only be used for calls that are originating from or terminating to PSTN or SIP networks.
+
+### Authorization
+
+This is a protected resource and requires an [application signed request](doc:using-rest#section-application-signed-request) or [basic auth](doc:using-rest#section-basic-authorization).
 
 ### Managing Ongoing, Connected Calls
 

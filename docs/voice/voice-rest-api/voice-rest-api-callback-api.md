@@ -364,7 +364,7 @@ Actions allow your Sinch application to control individual calls. The following 
         "suppressCallbacks" : false,
         "record": false,
         "indications": "se"
-    }
+   }
 
 **ConnectPstn** is the action of an incoming call event. It instructs how the PSTN call will be connected.
 
@@ -381,6 +381,8 @@ Actions allow your Sinch application to control individual calls. The following 
 **record** is an optional parameter that instructs the system to record the call. Check the recording section for more information.
 
 **recordingOptions** is sent when record is set to true and specifies the details about the recording. See RecordingOptions for more details.
+
+**dtmf** when the destination picks up, this DTMF tones will be played to the callee. Valid characters in the string are "0"-"9", "#" and "w". A "w" will render a 500 ms pause. Example: "ww1234#w#" will render a 1s pause, the DTMF tones "1", "2", "3", "4" and "#" followed by a 500 pause and finally the DTMF tone for "#". This can be used if the callout destination for instance require a conference PIN code or an extension to be entered. If there is a calling party, it will hear progress while the DTMF is sent.
 
 **indications** the tone to play while ringing. Available values:
 
