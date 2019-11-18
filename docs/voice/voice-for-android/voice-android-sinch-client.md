@@ -16,7 +16,7 @@ android.content.Context context = this.getApplicationContext();
 SinchClient sinchClient = Sinch.getSinchClientBuilder().context(context)
                                                   .applicationKey("<application key>")
                                                   .applicationSecret("<application secret>")
-                                                  .environmentHost("sandbox.sinch.com")
+                                                  .environmentHost("clientapi.sinch.com")
                                                   .userId("<user id>")
                                                   .build();
 ```

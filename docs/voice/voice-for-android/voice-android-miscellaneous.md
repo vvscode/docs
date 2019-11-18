@@ -19,7 +19,7 @@ The environment is passed as the parameter _environmentHost_ when instantiating 
 | Environment | EnvironmentHost parameter |
 | ----------- | ------------------------- |
 | Production  | clientapi.sinch.com       |
-| Sandbox     | sandbox.sinch.com         |
+| Sandbox     | clientapi.sinch.com         |
 
 ## Restrictions on User IDs
 

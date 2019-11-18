@@ -78,7 +78,7 @@ String signature = Base64.encodeBase64String(hash).trim();
 android.content.Context context = this.getApplicationContext();
 SinchClient sinchClient = Sinch.getSinchClientBuilder().context(context)
                                                   .applicationKey("<application key>")
-                                                  .environmentHost("sandbox.sinch.com")
+                                                  .environmentHost("clientapi.sinch.com")
                                                   .userId("<user id>")
                                                   .build();
 

@@ -29,7 +29,7 @@ The environment is passed as the parameter _environmentHost_ when instantiating 
 | Environment | EnvironmentHost parameter |
 | ----------- | ------------------------- |
 | Production  | clientapi.sinch.com       |
-| Sandbox     | sandbox.sinch.com         |
+| Sandbox     | clientapi.sinch.com         |
 
 ## Restrictions on User IDs
 
@@ -122,7 +122,7 @@ Start by enabling support for push notifications when initiating the _SINClient_
 
 id<SINClient> client = [Sinch clientWithApplicationKey:@"<application key>"
                                          applicationSecret:@"<application secret>"
-                                           environmentHost:@"sandbox.sinch.com"
+                                           environmentHost:@"clientapi.sinch.com"
                                                     userId:@"<user id>"];
 
 [client setSupportPushNotifications:YES];

@@ -18,7 +18,7 @@ Set up the client and its delegate (_SINClientDelegate_, see [Reference](http://
 // Instantiate a Sinch client object
 id<SINClient> sinchClient = [Sinch clientWithApplicationKey:@"<application key>"
                                           applicationSecret:@"<application secret>"
-                                            environmentHost:@"sandbox.sinch.com"
+                                            environmentHost:@"clientapi.sinch.com"
                                                      userId:@"<user id>"];
 ```
 
