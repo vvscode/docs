@@ -5,6 +5,7 @@ next:
   pages:
     - voice-rest-api-misc
 ---
+
 ## Overview
 
 With the Sinch platform, you’re able to control the recording of the calls using either the callbacks or the Manage Call API.
@@ -12,9 +13,10 @@ With the Sinch platform, you’re able to control the recording of the calls usi
 ## Call recording
 
 There are multiple ways to start call recording:
-* Using the Manage Call API
-* Sending the StartRecording instruction as part of a callback response
-* Setting the recording flag to true in the Action of the SVAML, during a callback response
+
+- Using the Manage Call API
+- Sending the StartRecording instruction as part of a callback response
+- Setting the recording flag to true in the Action of the SVAML, during a callback response
 
 In every case, the Recording Options are required to specify the details about the recording.
 
@@ -28,8 +30,8 @@ Also note that using the StartRecording instruction will start a call recording,
 
 ## Recording instructions
 
--   StartRecording
--   StopRecording
+- StartRecording
+- StopRecording
 
 Format:
 
@@ -74,7 +76,7 @@ The recording options are sent as part of the callback response when you want to
     string - format
     bool - notificationEvents
 
-*example ACE response*
+_example ACE response_
 
     {
         "action": {
@@ -101,10 +103,10 @@ The recording options are sent as part of the callback response when you want to
 
 This property is a URI and specifies where the recording file should be stored. Sinch supports multiple platforms for storage and will continue to enable new in the future:
 
--   Amazon S3
--   Sinch Drive
+- Amazon S3
+- Sinch Drive
 
-**Note** use can, but you don’t have to specify the filename in the destination. If there is no filename specified in the URI, Sinch will generate a unique name with the following format: (UTCDate\_yyyyMMddHHmmss)\_(applicationKey)\_(callId).(format)
+**Note** use can, but you don’t have to specify the filename in the destination. If there is no filename specified in the URI, Sinch will generate a unique name with the following format: (UTCDate_yyyyMMddHHmmss)\_(applicationKey)\_(callId).(format)
 
 **Note** Sinch does not check if a filename exists in the specified path and will overwrite any existing file with the same filename.
 
@@ -112,13 +114,13 @@ This property is a URI and specifies where the recording file should be stored. 
 
 Using the “recordingOptions” property, you can direct the Sinch platform to store the recording file to an Amazon S3 bucket. The “destinationUrl” property should be specified with a “s3” schema, followed by the bucket name and optionally destination folder and file:
 
-s3://bucket\_name/[[folder]/[file]]
+s3://bucket_name/[[folder]/[file]]
 
 Using the Amazon S3 as a destination requires that the credentials be specified. The format of the credentials is defined with:
 
 (AwsAccessKey):(AwsSecretKey):(AwsRegion)
 
-*Example*
+_Example_
 
     {
         "recordingOptions": {
@@ -130,7 +132,7 @@ Using the Amazon S3 as a destination requires that the credentials be specified.
 
 **Note** it is recommended that the credentials you specify authorize the Sinch platform to only write to the destination bucket. Sinch will never request read permissions.
 
-## DestinationURL: Sinch Drive
+## DestinationURL: Sinch Drive - Coming soon
 
 You can store the recording files to our storage - Sinch Drive, by using the “sdrive” schema identifier. Check the Sinch Drive API documentation for managing the stored files.
 
@@ -138,7 +140,7 @@ Specifying folders in the destination is not supported by this type of storage, 
 
 sdrive://[file]
 
-*Example*
+_Example_
 
     {
         "recordingOptions": {
@@ -151,10 +153,10 @@ sdrive://[file]
 
 Two notification events are sent to the partner’s backend if **notificationEvents** are enabled:
 
--   recording\_finished - indicating that the recording for the specified call has been stopped either by a Manage Call request or because the call has ended
--   recording\_available - indicating that the recording file is available in the specified **destinationUrl** and can be picked up
+- recording_finished - indicating that the recording for the specified call has been stopped either by a Manage Call request or because the call has ended
+- recording_available - indicating that the recording file is available in the specified **destinationUrl** and can be picked up
 
-*Example*
+_Example_
 
     {
         "event": "notify",
