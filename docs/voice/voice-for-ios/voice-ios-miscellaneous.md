@@ -17,19 +17,17 @@ The _Sinch.framework_ file includes a FAT-binary containing the architectures _a
 
 (Even though _armv7s_ is supported and included, we recommend to not build your application for armv7s to reduce the final application binary size)
 
-## Production and Sandbox environments
+## Production environments
 
 Sinch provides two environments:
 
 > - Production - Used for applications deployed in production.
-> - Sandbox - Used during development and testing.
 
 The environment is passed as the parameter _environmentHost_ when instantiating the Sinch client.
 
 | Environment | EnvironmentHost parameter |
 | ----------- | ------------------------- |
 | Production  | clientapi.sinch.com       |
-| Sandbox     | clientapi.sinch.com         |
 
 ## Restrictions on User IDs
 

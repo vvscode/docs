@@ -7,19 +7,17 @@ excerpt: ''
 
 You must have Android version 2.3 (Gingerbread) or later to use the Sinch SDK.
 
-## Production and Sandbox environments
+## Production environments
 
 Sinch provides two environments:
 
 > - Production - Used for applications deployed in production.
-> - Sandbox - Used during development and testing.
 
 The environment is passed as the parameter _environmentHost_ when instantiating the Sinch client.
 
 | Environment | EnvironmentHost parameter |
 | ----------- | ------------------------- |
 | Production  | clientapi.sinch.com       |
-| Sandbox     | clientapi.sinch.com         |
 
 ## Restrictions on User IDs
 
