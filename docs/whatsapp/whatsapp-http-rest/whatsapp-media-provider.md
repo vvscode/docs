@@ -40,13 +40,13 @@ in a region where your bot does not reside. The body is a JSON object described 
 
 ### Config object types
 
-#### Basic authorization
+#### Basic authentication
 *config* JSON object parameters:
 
 | Name    | Description                      | JSON Type    | Default    | Constraints           | Required |
 | ------- | -------------------------------- | ------------ | ---------- | --------------------- | :------: |
-| username| Basic authorization username     | String       | N/A        | N/A                   | Yes      |
-| password| Basic authorization password     | String       | N/A        | N/A                   | Yes      |
+| username| Username                         | String       | N/A        | N/A                   | Yes      |
+| password| Password                         | String       | N/A        | N/A                   | Yes      |
 
 ```json
 {
@@ -60,12 +60,12 @@ in a region where your bot does not reside. The body is a JSON object described 
     }
  }
 ```
-#### Bearer authorization
+#### Bearer authentication
 *config* JSON object parameters:
 
 | Name    | Description                      | JSON Type    | Default    | Constraints           | Required |
 | ------- | -------------------------------- | ------------ | ---------- | --------------------- | :------: |
-| bearer  | Bearer authorization token       | String       | N/A        | N/A                   | Yes      |
+| bearer  | Bearer authentication token      | String       | N/A        | N/A                   | Yes      |
 
 ```json
 {
@@ -92,18 +92,18 @@ The response body is a JSON object with the following parameters:
 | type    | The type the provider            | String       |
 | config  | The config object                | Object       |
 
-**Basic Authorization Media Provider**
+**Basic Authentication Media Provider**
 
 | Name    | Description                      | JSON Type    | 
 | ------- | -------------------------------- | ------------ | 
-| username| Username for Basic authorization | String       |
-| password| Password for Basic authorization | String       | 
+| username| Username                         | String       |
+| password| Password                         | String       | 
 
-**Bearer Authorization Media Provider**
+**Bearer Authentication Media Provider**
 
 | Name    | Description                      | JSON Type    | 
 | ------- | -------------------------------- | ------------ | 
-| bearer  | Bearer authorization token       | String       |
+| bearer  | Bearer authentication token      | String       |
 
 
 **Sample**
