@@ -1,11 +1,10 @@
 ---
 title: Media provider
 excerpt: >-
-  Get to know how to use your own file storage service for sending media links.
+  Get to know how to use your own file storage service for sending secured media links.
 ---
-
-A providers list allows you to have different media providers for the same provider type 
-while being able to pick a provider to use on a per request basis.
+You can send media files that are downloadable from URLs secured by Basic or Bearer Authentication to WhatsApp users.
+WhatsApp API allows you to have different media providers for the same type of authentication and decide which one to use on a per request basis.
 
 ### Adding/Updating a provider
 > **Note**
