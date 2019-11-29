@@ -138,10 +138,6 @@ The response body is a JSON object with the following parameters:
 
 ```
 
-`400 Bad Request`
-
-There was an error with your request. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
-
 `401 Unauthorized`
 
 There was an authentication error with your request. Either you're using incorrect credentials or you're attempting to authenticate
@@ -157,10 +153,6 @@ in a region where your bot does not reside. The body is a JSON object described 
 `200 OK`
 
 Empty response body
-
-`400 Bad Request`
-
-There was an error with your request. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
 
 `401 Unauthorized`
 
