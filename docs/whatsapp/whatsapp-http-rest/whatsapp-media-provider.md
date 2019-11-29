@@ -145,7 +145,7 @@ in a region where your bot does not reside. The body is a JSON object described 
 
 ### Deleting the Providers List
 
-`DELETE whatsapp/v1/{bot-id}/provision/provider`
+`DELETE whatsapp/v1/{bot-id}/provision/provider/{provider-name}`
 
 #### Responses
 
