@@ -132,7 +132,7 @@ JSON object parameters:
 | Name        | Description                                                               | JSON Type    | Default    | Constraints           | Required |
 | ----------- | ------------------------------------------------------------------------- | ------------ | ---------- | --------------------- | :------: |
 | type        | Constant value `image`                                                    | String       | N/A        | N/A                   | Yes      |
-| url         | Public url of the image file                                              | String       | N/A        | `jpg` or `png`        | Yes      |
+| url         | Public url of the image file. Should be either HTTP or HTTPS link.        | String       | N/A        | `jpg` or `png`        | Yes      |
 | caption     | Optional caption that will be displayed underneath the image.             | String       | None       | N/A                   | No       |
 | provider    | Optional name of a provider to be used when trying to download the file.  | String       | None       | N/A                   | No       |
 
@@ -161,7 +161,7 @@ JSON object parameters:
 | Name        | Description                                                               | JSON Type    | Default    | Constraints           | Required |
 | ----------- | ------------------------------------------------------------------------- | ------------ | ---------- | --------------------- | :------: |
 | type        | Constant value `video`                                                    | String       | N/A        | N/A                   | Yes      |
-| url         | Public url of the video file (mp4)                                        | String       | N/A        | `mp4`                 | Yes      |
+| url         | Public url of the video file (mp4). Should be either HTTP or HTTPS link.  | String       | N/A        | `mp4`                 | Yes      |
 | caption     | Optional caption that will be displayed underneath the video.             | String       | None       | N/A                   | No       |
 | provider    | Optional name of a provider to be used when trying to download the file.  | String       | None       | N/A                   | No       |
 
@@ -191,7 +191,7 @@ JSON object parameters:
 | Name        | Description                                                               | JSON Type    | Default    | Constraints           | Required |
 | ----------- | ------------------------------------------------------------------------- | ------------ | ---------- | --------------------- | :------: |
 | type        | Constant value `document`                                                 | String       | N/A        | N/A                   | Yes      |
-| url         | Public url of the document file                                           | String       | N/A        | `pdf`, `doc` or `docx`| Yes      |
+| url         | Public url of the document file. Should be either HTTP or HTTPS link.     | String       | N/A        | `pdf`, `doc` or `docx`| Yes      |
 | caption     | Optional caption that will be displayed as the document title.            | String       | None       | N/A                   | No       |
 | provider    | Optional name of a provider to be used when trying to download the file.  | String       | None       | N/A                   | No       |
 
@@ -221,7 +221,7 @@ JSON object parameters:
 | Name        | Description                                                               | JSON Type    | Default    | Constraints           | Required |
 | ----------- | ------------------------------------------------------------------------- | ------------ | ---------- | --------------------- | :------: |
 | type        | Constant value `audio`                                                    | String       | N/A        | N/A                   | Yes      |
-| url         | Public url of the document file                                           | String       | N/A        | `mp3`                 | Yes      |
+| url         | Public url of the audio file. Should be either HTTP or HTTPS link.        | String       | N/A        | `mp3`                 | Yes      |
 | provider    | Optional name of a provider to be used when trying to download the file.  | String       | None       | N/A                   | No       |
 
 ```json
