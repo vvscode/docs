@@ -19,8 +19,8 @@ JSON object parameters:
 
 | Name    | Description                      | JSON Type    | Default    | Constraints           | Required |
 | ------- | -------------------------------- | ------------ | ---------- | --------------------- | :------: |
-| name    | Name of Your provider            | String       | N/A        | N/A                   | Yes      |
-| type    | The type Your provider           | String       | N/A        | `www`                 | Yes      |
+| name    | Name of the provider             | String       | N/A        | N/A                   | Yes      |
+| type    | The type the provider            | String       | N/A        | `www`                 | Yes      |
 | config  | The config object                | Object       | N/A        | N/A                   | Yes      |
 
 #### Response
@@ -45,8 +45,8 @@ in a region where your bot does not reside. The body is a JSON object described 
 
 | Name    | Description                      | JSON Type    | Default    | Constraints           | Required |
 | ------- | -------------------------------- | ------------ | ---------- | --------------------- | :------: |
-| username| Username for Basic authorization | String       | N/A        | N/A                   | Yes      |
-| password| Password for Basic authorization | String       | N/A        | N/A                   | Yes      |
+| username| Basic authorization username     | String       | N/A        | N/A                   | Yes      |
+| password| Basic authorization password     | String       | N/A        | N/A                   | Yes      |
 
 ```json
 {
@@ -88,8 +88,8 @@ The response body is a JSON object with the following parameters:
 
 | Name    | Description                      | JSON Type    |
 | ------- | -------------------------------- | ------------ |
-| name    | Name of Your provider            | String       |
-| type    | The type Your provider           | String       |
+| name    | Name of the provider             | String       |
+| type    | The type the provider            | String       |
 | config  | The config object                | Object       |
 
 **Basic Authorization Media Provider**
