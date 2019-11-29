@@ -7,7 +7,7 @@ excerpt: >-
 A providers list allows you to have different media providers for the same provider type 
 while being able to pick a provider to use on a per request basis.
 
-### Adding/Updating a Provider
+### Adding/Updating a provider
 > **Note**
 >
 > Be sure to give each provider a unique name as reusing a name will overwrite the previous entry.
@@ -77,7 +77,7 @@ in a region where your bot does not reside. The body is a JSON object described 
  }
 ```
 
-### Deleting a provider from the Providers List
+### Deleting a provider from the providers list
 
 `DELETE whatsapp/v1/{bot-id}/provision/provider/{provider-name}`
 
@@ -92,7 +92,7 @@ Empty response body
 There was an authentication error with your request. Either you're using incorrect credentials or you're attempting to authenticate
 in a region where your bot does not reside. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
 
-### Retrieving the Providers List
+### Retrieving the providers list
 `GET whatsapp/v1/{bot-id}/provision/provider`
 
 #### Responses
@@ -107,14 +107,14 @@ The response body is a JSON object with the following parameters:
 | type    | The type the provider            | String       |
 | config  | The config object                | Object       |
 
-**Basic Authentication Media Provider**
+**Basic authentication media provider**
 
 | Name    | Description                      | JSON Type    | 
 | ------- | -------------------------------- | ------------ | 
 | username| Username                         | String       |
 | password| Password                         | String       | 
 
-**Bearer Authentication Media Provider**
+**Bearer authentication media provider**
 
 | Name    | Description                      | JSON Type    | 
 | ------- | -------------------------------- | ------------ | 
