@@ -42,7 +42,7 @@ Allowed caller ID number (CLI) for terminating calls. You must specify a caller 
 
 In order to use a trunk for termination it must have a Termination SIP URI and at least one authentication scheme, see bellow. 
 
-## Authentication
+### Authentication
 You need to authenticate your SIP infrastructure to making outbound calls via Sinch SIP trunk you use:
 
 >Host:  \{region\}.sip.sinch.com
@@ -52,7 +52,7 @@ You need to authenticate your SIP infrastructure to making outbound calls via Si
 >Password: Your Sinch Application Secret
 
 
-## SIP termination example
+### SIP termination example
 Example SIP INVITE sent to Sinch with SIP termination
 
 >Request-Line: INVITE sip:+12345678900@sip-euc1.sinch.com SIP/2.0
@@ -67,8 +67,8 @@ Example SIP INVITE sent to Sinch with SIP termination
 
 Make sure that any phone numbers sent via SIP to Sinch are always E.164-formatted (e.g _+12345678900_). 
 
-## Receiving  calls from Sinch platform to your SIP infrastructure
-You can route any type of call from the Sinch platform to your SIP server. You can automatically forward calls to your SIP server using the SIP forwarding option in the Sinch Portal (setting available under Apps >> Voice and Video >> Connect Calls). If you need more control, you can instruct a call to be connected to your SIP server by responding to the Incoming Call Event callback with the [ConnectSIP](#section-sip-trunking) action.
+## Receiving calls from Sinch platform to your SIP infrastructure
+You can route any type of call from the Sinch platform to your SIP server. You can automatically forward calls to your SIP server using the SIP forwarding option in the Sinch Portal (setting available under Apps >> Voice and Video >> Connect Calls). If you need more control, you can instruct a call to be connected to your SIP server by responding to the Incoming Call Event callback with the [ConnectSIP](doc:voice-rest-api-callback-api#section-connectsip) action.
 
 PICTURE? (SPIDER, foucous in this callleg?)
 
@@ -83,7 +83,7 @@ If you want a private header in incoming calls to your SIP infrastructre use [Se
 
 
 
-## SIP origination example
+### SIP origination example
 Example SIP INVITE sent to your SIP infrastructure.
 
 >Request-Line: INVITE sip:+123456789@company.com SIP/2.0
@@ -105,7 +105,7 @@ Example SIP INVITE sent to your SIP infrastructure.
 ## IP whitelisting
 You must whitelist _ALL_ of Sinch IP address and ports on your firewall for SIP signaling  and RTP media traffic. 
 
-## SIP
+### SIP
 You need to allow your SIP server to receive traffic from this IP. Sinch recommend that you whitelist all this IP addresses.
 
 <div class="magic-block-html">
@@ -144,12 +144,12 @@ You need to allow your SIP server to receive traffic from this IP. Sinch recomme
 </div>
 
 
-## RTP
+### RTP
 Sinch scale our media resources on demand and we there for have no fix set of IP addresses where we send media from. Media always come from same port range though
 
 >RTP ports used: 10000 - 20000
 
-## Codecs
+### Codecs
 Sinch currently supports the following codecs
 
 > G.711u
