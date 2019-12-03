@@ -3,6 +3,9 @@ title: Group Management
 excerpt: >-
   Manage your WhatsApp groups and their admins. Learn how to add or remove
   members of the different groups.
+next:
+  pages:
+    - whatsapp-media-provider
 ---
 A collection of endpoints used to manage groups that are linked to a specific bot.
   - [Creating a new group](doc:whatsapp-group-management#section-create-group-endpoint)

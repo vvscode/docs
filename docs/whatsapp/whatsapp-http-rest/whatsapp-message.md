@@ -125,15 +125,16 @@ JSON object parameters:
 
 > **Note**
 >
-> Any media file sent through the Sinch WhatsApp API can be at most 10.0 mb
+> Any media file sent through the Sinch WhatsApp API can be at most 100.0 mb
 
 JSON object parameters:
 
-| Name        | Description                                                          | JSON Type    | Default    | Constraints           | Required |
-| ----------- | -------------------------------------------------------------------- | ------------ | ---------- | --------------------- | :------: |
-| type        | Constant value `image`                                               | String       | N/A        | N/A                   | Yes      |
-| url         | Public url of the image file                                         | String       | N/A        | `jpg` or `png`        | Yes      |
-| caption     | Optional caption that will be displayed underneath the image.        | String       | None       | N/A                   | No       |
+| Name        | Description                                                               | JSON Type    | Default    | Constraints           | Required |
+| ----------- | ------------------------------------------------------------------------- | ------------ | ---------- | --------------------- | :------: |
+| type        | Constant value `image`                                                    | String       | N/A        | N/A                   | Yes      |
+| url         | Public url of the image file. Should be either HTTP or HTTPS link.        | String       | N/A        | `jpg` or `png`        | Yes      |
+| caption     | Optional caption that will be displayed underneath the image.             | String       | None       | N/A                   | No       |
+| provider    | Optional name of a provider to be used when trying to download the file.  | String       | None       | N/A                   | No       |
 
 ```json
 {
@@ -153,15 +154,16 @@ JSON object parameters:
 
 > **Note**
 >
-> Any media file sent through the Sinch WhatsApp API can be at most 10.0 mb
+> Any media file sent through the Sinch WhatsApp API can be at most 100.0 mb
 
 JSON object parameters:
 
-| Name        | Description                                                          | JSON Type    | Default    | Constraints           | Required |
-| ----------- | -------------------------------------------------------------------- | ------------ | ---------- | --------------------- | :------: |
-| type        | Constant value `video`                                               | String       | N/A        | N/A                   | Yes      |
-| url         | Public url of the video file (mp4)                                   | String       | N/A        | `mp4`                 | Yes      |
-| caption     | Optional caption that will be displayed underneath the video.        | String       | None       | N/A                   | No       |
+| Name        | Description                                                               | JSON Type    | Default    | Constraints           | Required |
+| ----------- | ------------------------------------------------------------------------- | ------------ | ---------- | --------------------- | :------: |
+| type        | Constant value `video`                                                    | String       | N/A        | N/A                   | Yes      |
+| url         | Public url of the video file (mp4). Should be either HTTP or HTTPS link.  | String       | N/A        | `mp4`                 | Yes      |
+| caption     | Optional caption that will be displayed underneath the video.             | String       | None       | N/A                   | No       |
+| provider    | Optional name of a provider to be used when trying to download the file.  | String       | None       | N/A                   | No       |
 
 ```json
 {
@@ -172,7 +174,8 @@ JSON object parameters:
   "message":{
     "type": "video",
     "url": "https://example.com/video.mp4",
-    "caption": "Example Video"
+    "caption": "Example Video",
+    "provider": "your-bearer-provider"
   }
 }
 ```
@@ -181,15 +184,16 @@ JSON object parameters:
 
 > **Note**
 >
-> Any media file sent through the Sinch WhatsApp API can be at most 10.0 mb
+> Any media file sent through the Sinch WhatsApp API can be at most 100.0 mb
 
 JSON object parameters:
 
-| Name        | Description                                                          | JSON Type    | Default    | Constraints           | Required |
-| ----------- | -------------------------------------------------------------------- | ------------ | ---------- | --------------------- | :------: |
-| type        | Constant value `document`                                            | String       | N/A        | N/A                   | Yes      |
-| url         | Public url of the document file                                      | String       | N/A        | `pdf`, `doc` or `docx`| Yes      |
-| caption     | Optional caption that will be displayed as the document title.       | String       | None       | N/A                   | No       |
+| Name        | Description                                                               | JSON Type    | Default    | Constraints           | Required |
+| ----------- | ------------------------------------------------------------------------- | ------------ | ---------- | --------------------- | :------: |
+| type        | Constant value `document`                                                 | String       | N/A        | N/A                   | Yes      |
+| url         | Public url of the document file. Should be either HTTP or HTTPS link.     | String       | N/A        | `pdf`, `doc` or `docx`| Yes      |
+| caption     | Optional caption that will be displayed as the document title.            | String       | None       | N/A                   | No       |
+| provider    | Optional name of a provider to be used when trying to download the file.  | String       | None       | N/A                   | No       |
 
 ```json
 {
@@ -210,14 +214,15 @@ JSON object parameters:
 
 > **Note**
 >
-> Any media file sent through the Sinch WhatsApp API can be at most 10.0 mb
+> Any media file sent through the Sinch WhatsApp API can be at most 100.0 mb
 
 JSON object parameters:
 
-| Name        | Description                                                          | JSON Type    | Default    | Constraints           | Required |
-| ----------- | -------------------------------------------------------------------- | ------------ | ---------- | --------------------- | :------: |
-| type        | Constant value `audio`                                               | String       | N/A        | N/A                   | Yes      |
-| url         | Public url of the document file                                      | String       | N/A        | `mp3`                 | Yes      |
+| Name        | Description                                                               | JSON Type    | Default    | Constraints           | Required |
+| ----------- | ------------------------------------------------------------------------- | ------------ | ---------- | --------------------- | :------: |
+| type        | Constant value `audio`                                                    | String       | N/A        | N/A                   | Yes      |
+| url         | Public url of the audio file. Should be either HTTP or HTTPS link.        | String       | N/A        | `mp3`                 | Yes      |
+| provider    | Optional name of a provider to be used when trying to download the file.  | String       | None       | N/A                   | No       |
 
 ```json
 {

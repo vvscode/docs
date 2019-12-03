@@ -10,6 +10,7 @@ next:
     - whatsapp-callback-store
     - whatsapp-message
     - whatsapp-group-management
+    - whatsapp-media-provider
 ---
 The WhatsApp REST API is designed to be a simple and powerful tool with features as:
    - Batch sending
