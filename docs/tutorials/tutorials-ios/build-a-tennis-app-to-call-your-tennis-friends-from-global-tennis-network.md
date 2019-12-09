@@ -5,17 +5,17 @@ excerpt: >-
   your Global Tennis Network profile. While keeping your phone number private,
   this feature will allow you to call up other tennis players.
 ---
+
 When I started studying at U.C. Davis, I often wanted to connect with tennis players at my skill level. I was used to playing for my high school team every day, so I needed to find a way to get my tennis fix. An app with this feature would have made things so much simpler for me—those awkward two-hour gaps between lectures could have been used to play tennis\!
 
 In this tutorial, you will learn how to create an app that calls friends from your [Global Tennis Network](https://www.globaltennisnetwork.com) profile. While keeping your phone number private, this feature will allow you to call up other tennis players whom you know through Global Tennis Network and schedule a time and place to play. There’s no need for users to exchange phone numbers as we’ll be using Sinch [app-to-app calling](https://www.sinch.com/products/voice/data-calling/).
 
 To get the most out of this tutorial, you will need to be familiar with the following topics:
 
->   - XCode
->   - Objective-C
->   - CocoaPods
-![Login.png](images/d69f696-Login.png)
-
+> - XCode
+> - Objective-C
+> - CocoaPods
+>   ![Login.png](images/d69f696-Login.png)
 
 ![Call-Out.png](images/60b716c-Call-Out.png)
 
@@ -23,7 +23,7 @@ To get the most out of this tutorial, you will need to be familiar with the foll
 
 First, you will want to create an app on your [Sinch Dashboard](https://portal.sinch.com/#/login). Take note of the application key and secret, as we will need them later.
 
-Next, go to the [GTN Developer Site](https://www.globaltennisnetwork.com/home/developers) and opt to become a developer. You will be provided with a developer key. Save that for later.
+Next, go to the [GTN Developer Site](https://www.globaltennisnetwork.com/developers) and opt to become a developer. You will be provided with a developer key. Save that for later.
 
 We will be working with a starter project that you can download from [GitHub](https://github.com/sinch/ios-call-your-tennis-friends). Once you have the starter project downloaded, use the included **Podfile** to install the necessary CocoaPods through Terminal with the command `pod install`. Am XCode workspace should now be available for us to use.
 
@@ -48,7 +48,7 @@ To start, we will want to log in the user in when his or her credentials are ent
 
         [self performSegueWithIdentifier:@"showMaster" sender:self.username];
     }
-} 
+}
 ```
 
 Be sure to fill in your GTN developer key.
@@ -88,6 +88,7 @@ Now we can call the method in `viewDidLoad`:
     [self requestFriends];
 }
 ```
+
 ![Friends.png](images/6b85228-Friends.png)
 
 Let’s work on displaying a friend’s info once he or she is selected. First, go to **DetailViewController.m**. Add the following method that will display the contact’s picture:
@@ -101,11 +102,11 @@ Let’s work on displaying a friend’s info once he or she is selected. First, 
     CGRect rectFrame = CGRectMake(size.width/2, size.width/2 + 50, size.width, size.height);
     UIImageView* imgv = [[UIImageView alloc] initWithImage:img];
     imgv.frame = rectFrame;
-    
+
     // make picture into circle
     imgv.layer.cornerRadius = size.width/2;
     imgv.layer.masksToBounds = YES;
-    
+
     [self.view addSubview:imgv];
 }
 ```
@@ -316,10 +317,9 @@ When using Sinch calling, you can immediately tell when a call has established o
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 ```
-![Friend-Info-1.png](images/c7eb8ba-Friend-Info-1.png)
 
+![Friend-Info-1.png](images/c7eb8ba-Friend-Info-1.png)
 
 ![Call-Out.png](images/21285e0-Call-Out.png)
 
 That’s it! You’ve created a fully functional app that lets you call your tennis friends using Sinch calling. There are even more features that you can add to this project such as Managed Push to help receive calls when the app is not open. [Learn more about Managed Push with Sinch service here](doc:voice-ios-local-and-remote-push-notifications). To find more tutorials, be sure to check out the `Sinch Tutorial Site](doc:tutorials-introduction) or the [Sinch GitHub](https://github.com/sinch).
-
