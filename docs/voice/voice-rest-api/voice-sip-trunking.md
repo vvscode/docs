@@ -76,8 +76,6 @@ Make sure that any phone number sent via SIP to Sinch are always E.164-formatted
 
 You can route any type of call from the Sinch platform to your SIP server. You can automatically forward calls to your SIP server using the SIP forwarding option in the Sinch Portal (setting available under Apps >> Voice and Video >> Connect Calls). If you need more control, you can instruct a call to be connected to your SIP server by responding to the Incoming Call Event callback with the [ConnectSIP](doc:voice-rest-api-callback-api#section-connectsip) action.
 
-PICTURE? (SPIDER, foucous in this callleg?)
-
 If you want a private header in incoming calls to your SIP infrastructre use [SetCookie](doc:voice-rest-api-callback-api#section-setcookie) instruction in your callback response X-headers.
 
     {
@@ -161,3 +159,17 @@ Sinch currently supports the following codecs:
 > G.711a
 > Opus
 > G.729
+
+# Secure SIP interconnect
+
+Encryption ensures that the call media and associated signaling remains private during transmission. Transport Layer Security (TLS) provides encryption for SIP signaling and Secure Real-time Transport Protocol (SRTP) provides encryption for call content/media packets.
+
+> Note: SRTP or secure termination trunking is not currently supported over Sinch interconnect
+
+Specifications:
+
+> Secure origination trunking supports TLSv1 (or higher) with this crypto suites _ECDHE-RSA-AES256-GCM-SHA384_, _ECDHE-RSA-AES256-SHA_, _DHE-RSA-AES256-GCM-SHA384_, _DHE-RSA-AES128-SHA256_
+
+### Sinch Root CA certificate
+
+TLS is used to encrypt SIP signaling between SIP endpoints. In order for this to function properly it is required that certain devices in the network import an SSL certificate. Sinch uses certificates from a CA (Certificate Authority). Our CA for this is Let’s encrypt, make sure to install their Root certificate. For more information about Let’s encrypts root certificates, see https://letsencrypt.org/certificates/

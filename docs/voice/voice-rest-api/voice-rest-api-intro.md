@@ -6,7 +6,9 @@ next:
   pages:
     - voice-rest-api-calling-api
 ---
+
 ## Overview
+
 When using Sinch for voice calling, the Sinch dashboard can be seen as a big telephony switch. It receives incoming phone calls (also known as _incoming call “legs”_), sets up outgoing phone calls (also known as _outgoing call “legs”_), and bridges the two. The incoming call leg may come in over a data connection (from a smartphone or web application using the Sinch SDKs) or through a local phone number (from the PSTN network). Similarly, the outgoing call leg can be over data (to another smartphone or web application using the Sinch SDKs) or the PSTN network.
 
 For most call scenarios, you can use the Sinch SDKs on a smartphone or on web client to establish calls without the need of backend integration. For additional control or flexibility of the calls, you can use the Sinch REST APIs to manage the calls.
@@ -22,7 +24,7 @@ These are the typical call scenarios that you can control with the Sinch Callbac
 > - Phone to phone calls
 > - Text-to-speech calls
 > - Conference calls
-> - SIP trunking calls
+> - [SIP trunking calls](doc:voice-sip-trunking)
 
 ## API Quick Reference
 
@@ -31,7 +33,7 @@ These are the typical call scenarios that you can control with the Sinch Callbac
 To use callback events you need to assign a callback URL in the Sinch portal under your app settings.
 
 | Event  | HTTP Verb | Functionality                      |
-|--------|-----------|------------------------------------|
+| ------ | --------- | ---------------------------------- |
 | ICE    | POST      | [Incoming Call Event callback]()   |
 | ACE    | POST      | [Answered Call Event callback]()   |
 | DiCE   | POST      | [Disconnect Call Event callback]() |
@@ -45,7 +47,7 @@ To use callback events you need to assign a callback URL in the Sinch portal und
 URL to access a region-specific API is provided by the ICE callback, in the `callResourceUrl` property. Use that as a base URL to access the following region-specific resources:
 
 | URL                                                    | HTTP Verb | Functionality                               |
-|--------------------------------------------------------|-----------|---------------------------------------------|
+| ------------------------------------------------------ | --------- | ------------------------------------------- |
 | /configuration/numbers/                                | GET       | [Get a list of your numbers]()              |
 | /configuration/numbers/                                | POST      | [Assign numbers to an app]()                |
 | /configuration/callbacks/applications/{applicationkey} | GET       | [Get callback URLs of your app]()           |
@@ -64,7 +66,7 @@ URL to access a region-specific API is provided by the ICE callback, in the `cal
     https://reportingapi.sinch.com/v1
 
 | URL                                     | HTTP Verb | Functionality          |
-|-----------------------------------------|-----------|------------------------|
+| --------------------------------------- | --------- | ---------------------- |
 | /users/{type}/{endpoint}/calls/{domain} | GET       | [User call report]()   |
 | /counters/{id}                          | GET       | [Get counter]()        |
 | /services/{id}                          | GET       | [Get service status]() |
@@ -94,6 +96,7 @@ When a user calls your configured voice number, the Sinch platform will trigger 
 For more information please check the [Callback API](doc:voice-rest-api-callback-api). The callback events that are used in phone to phone calls are the Incoming Call Event callback, the Answer Call Event callback and the Disconnect Call Event callback. You can also manage an ongoing call from your backend with the Manage Call API, which is part of the [Calling API](doc:voice-rest-api-calling-api).
 
 ## Conference calls
+
 The Sinch dashboard supports a variety of different ways of initiating a conference call and connecting participants.
 
 By using the Sinch Voice SDKs, you can allow your users to call in a conference from a mobile or web app. For more information please check the Voice SDKs documentation.
@@ -125,33 +128,3 @@ Conference recording is disabled by default. To enable conference recording for 
 With the text-to-speech REST API, you can trigger a call to be placed to a fixed or mobile phone number and play a synthesized text message.
 
 For more information please check the [Callouts API](doc:voice-rest-api-calling-api#section-conference-and-text-to-speech-callouts).
-
-## SIP Trunking
-
-The Sinch dashboard allows you to connect calls from and to your SIP infrastructure (IP-PBX,SBC,etc).
-
-SIP-originated calls can be routed from your SIP server to the Sinch platform through a SIP trunk. You need to authentivate your SIP infrastructure to making outbound calls via Sinch SIP trunk you use:
-
->Host: sip.sinch.com
->
->Username/Authenticationname: Your Sinch Application Key
->
->Password: Your Sinch Application Secret
-
-If you prefer a other way of authenticate, please contact [Sinch support].
-
-Once the call arrives in the Sinch dashboard, your backend will get an Incoming Call Event callback, notifying of the incoming call. You can control how you would like the call to be connected by responding to this event.
-
-You can route any type of call from the Sinch dashboard to your SIP server. If your calls are originated from an Android, iOS or Javascript client, you can route calls to your SIP server simply by calling the respective method that initiates calls towards SIP. If your calls are originated towards a PSTN inbound number, you can automatically forward calls to your SIP server using the SIP forwarding option in the Sinch Portal (setting available under Apps >> Voice and Video >> Connect Calls). For any other origination method or if you need more control, you can instruct a call to be connected to your SIP server by responding to the Incoming Call Event callback with the [ConnectSIP](#section-sip-trunking) action.
-
-You need to allow your SIP server to receive traffic from this IP:
-
->213.242.88.200
-
-## RTP
-
->RTP ports used: 10000 - 20000
-
-## Codecs
-
-Sinch currently supports G.711u, G.711a, iLBC and G.729
