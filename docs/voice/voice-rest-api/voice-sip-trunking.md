@@ -14,7 +14,7 @@ When using Sinch for voice calling, the Sinch platform can be seen as a big tele
 
 SIP-terminated calls are calls that are being routed from your SIP infrastructure to the Sinch platform through a SIP interconnection/trunk.
 
-<img src="images/spider_SIP.png"
+<img src="https://sinch.github.io/docs/voice/voice-rest-api/images/spider_SIP.png"
      alt="SIP Calls"
      style="margin-left: 20%; width:500px;height:306;"/>
 
