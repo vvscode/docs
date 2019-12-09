@@ -8,7 +8,7 @@ excerpt: >-
 
 When using Sinch for voice calling, the Sinch platform can be seen as a big telephony switch. It receives incoming phone calls (also known as _incoming call “legs”_), sets up outgoing phone calls (also known as _outgoing call “legs”_), and bridges the two. In Sinch SIP trunking service the _incoming call legs_ and _outgoing call legs_ is to your own SIP infrastructure such as a SIP IP-PBX, SBC or similar equipment. Using SIP trunking together with [Callback API](doc:voice-rest-api-callback-api) you can combine all different types of _incoming calls_ and _outgoing calls_ the Sinch platform supports, including for example Call recording and conference rooms.
 
-![image1](images/spider.png)
+![spider](images/spider.png)
 
 ## Sending calls to Sinch platform from your SIP infrastructure (SIP-terminated calls)
 
@@ -18,7 +18,7 @@ SIP-terminated calls are calls that are being routed from your SIP infrastructur
      alt="SIP Calls"
      style="margin-left: 20%; width:500px;height:306;"/>
 
-Sinch have multiple geographical region. You can configure your SIP infrastructure to use any of Sinch geographical locations.
+Sinch has multiple geographical regions. You can configure your SIP infrastructure to use any of Sinch geographical locations.
 
 > Europe:
 > euc1.sip.sinch.com
@@ -35,19 +35,19 @@ Sinch have multiple geographical region. You can configure your SIP infrastructu
 > Australia:
 > apse2.sip.sinch.com
 
-For redundancy, Sinch uses the above FQDN. This will return to you at least one active and working SIP endppoint to send your traffic to. When using this FQDN's as a Termination URI that is used by your communications infrastructure to direct SIP traffic towards Sinch. For each region we have 2 IP addresses that are used for reliability purposes (see IP address in whitelists section). Each of these IP addresses represents a unique public edge for our SIP Trunking services, distributed across multiple Availability Zones for reliability purposes. Sinch strongly recommend you to use this FQDN names for sending traffic towards Sinch. If you anyway can't use FQDN, make sure you are not restricted to use only one single IP addresses. Make sure to utilize all IP addresses and failover in case one IP is not responding.
+For redundancy, Sinch uses the above FQDNs. This will return to you at least one active and working SIP endpoint to send your traffic to. When using these FQDNs as a Termination URI that is used by your communications infrastructure to direct SIP traffic towards Sinch. For each region we have 2 IP addresses that are used for reliability purposes (see IP address in whitelists section). Each of these IP addresses represents a unique public edge for our SIP Trunking services, distributed across multiple Availability Zones for reliability purposes. Sinch strongly recommends to use this FQDN names for sending traffic towards Sinch. If using an FQDN is not possible, make sure you are not restricted to use only one single IP address. Make sure to utilize all IP addresses and failover in case one IP is not responding.
 
-Once the call arrives in the Sinch platform, your backend will get an Incoming Call Event callback, notifying of the incoming call. You can control how you would like the call to be connected by responding to this event, for details in how and what you can respond check out [Callback API](doc:voice-rest-api-callback-api). If no callback is specified in Sinch dashboard Sinch will try to terminate your call to PSTN using _To address_ in your incomming SIP message as destination phone number.
+Once the call arrives in the Sinch platform, your backend will get an Incoming Call Event callback, notifying of the incoming call. You can control how you would like the call to be connected by responding to this event, for details in how and what you can respond check out [Callback API](doc:voice-rest-api-callback-api). If no callback is specified in Sinch dashboard, Sinch will try to terminate your call to PSTN using _To address_ in your incoming SIP message as destination phone number.
 
-Sinch currently support you to use UDP or TCP for calls terminating to Sinch.
+Both UDP or TCP are supported for calls terminating to Sinch.
 
-Allowed caller ID number (CLI) for terminating calls. You must specify a caller ID number that correspond to a Sinch DID on your account or a phone number verified in your Sinch dashboard. If this is not meet Sinch will set _private_ as your caller ID number going out to PSTN network.
+Allowed caller ID number (CLI) for terminating calls. You must specify a caller ID number that corresponds to a Sinch DID on your account or a phone number verified in your Sinch dashboard. If this isn't set, Sinch will set _private_ as your caller ID number going out to PSTN network.
 
-In order to use a trunk for termination it must have a Termination SIP URI and at least one authentication scheme, see bellow.
+In order to use a trunk for termination it must have a Termination SIP URI and at least one authentication scheme, see below.
 
 ### Authentication
 
-You need to authenticate your SIP infrastructure to making outbound calls via Sinch SIP trunk you use:
+You need to authenticate your SIP infrastructure to make outbound calls via the Sinch SIP trunk:
 
 > Host: \{region\}.sip.sinch.com
 >
@@ -57,7 +57,7 @@ You need to authenticate your SIP infrastructure to making outbound calls via Si
 
 ### SIP termination example
 
-Example SIP INVITE sent to Sinch with SIP termination
+Example SIP INVITE sent to Sinch with SIP termination:
 
 > Request-Line: INVITE sip:+12345678900@sip-euc1.sinch.com SIP/2.0
 >
@@ -67,7 +67,7 @@ Example SIP INVITE sent to Sinch with SIP termination
 >
 > Contact: <sip:+19876543210@52.214.25.57:5060>
 
-Make sure that any phone numbers sent via SIP to Sinch are always E.164-formatted (e.g _+12345678900_).
+Make sure that any phone number sent via SIP to Sinch are always E.164-formatted (e.g _+12345678900_).
 
 ## Receiving calls from Sinch platform to your SIP infrastructure
 
@@ -85,7 +85,7 @@ If you want a private header in incoming calls to your SIP infrastructre use [Se
 
 ### SIP origination example
 
-Example SIP INVITE sent to your SIP infrastructure.
+Example SIP INVITE sent to your SIP infrastructure:
 
 > Request-Line: INVITE sip:+123456789@company.com SIP/2.0
 >
@@ -103,11 +103,11 @@ Example SIP INVITE sent to your SIP infrastructure.
 
 ## IP whitelisting
 
-You must whitelist _ALL_ of Sinch IP address and ports on your firewall for SIP signaling and RTP media traffic.
+You must whitelist _ALL_ of Sinch IP addresses and ports on your firewall for SIP signalling and RTP media traffic.
 
 ### SIP
 
-You need to allow your SIP server to receive traffic from this IP. Sinch recommend that you whitelist all this IP addresses.
+You need to allow your SIP server to receive traffic from this IP. Sinch recommends that you whitelist all of its IP addresses.
 
 <div class="magic-block-html">
   <div class="marked-table">
@@ -146,13 +146,13 @@ You need to allow your SIP server to receive traffic from this IP. Sinch recomme
 
 ### RTP
 
-Sinch scale our media resources on demand and we there for have no fix set of IP addresses where we send media from. Media always come from same port range though
+Sinch scales its media resources on demand and therefore has no fixed set of IP addresses where it sends media from. Media always comes from the same port range though.
 
 > RTP ports used: 10000 - 20000
 
 ### Codecs
 
-Sinch currently supports the following codecs
+Sinch currently supports the following codecs:
 
 > G.711u
 > G.711a
