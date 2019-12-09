@@ -1,7 +1,10 @@
 ---
-title: Introduction
+title: SIP Trunking
 excerpt: >-
-  This document provides a overview of Sinch SIP trunking service.
+  his document provides a overview of Sinch SIP trunking service.
+next:
+  pages:
+    - voice-rest-api-misc
 ---
 
 ## Overview

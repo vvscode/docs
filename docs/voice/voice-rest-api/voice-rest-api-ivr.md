@@ -3,7 +3,7 @@ title: Interactive Voice Response
 excerpt: 'The Sinch platform supports playing audio recordings during a call.'
 next:
   pages:
-    - voice-rest-api-recording
+    - voice-sip-trunking
 ---
 
 ## External media support

@@ -4,10 +4,11 @@ excerpt: >-
   Get call reports from the Sinch platform. Get call data for a specific user in the last 30 days, number of calls and more... Get more information about the API here.
 next:
   pages:
-    - voice-rest-api-cdr
+    - voice-rest-api-recording
 ---
+
 [URL]
-        https://reportingapi.sinch.com/[version]
+https://reportingapi.sinch.com/[version]
 
     Current version is "v1"
 
@@ -42,7 +43,7 @@ This is a protected resource and requires an application signed request \<applic
         time - \_start
         time - \_stop
 
-*Example*
+_Example_
 
     [GET] https://reportingapi.sinch.com/v1/users/username/abc123def/calls/pstn?_start=2014-04-28&_stop=2014-04-29
 
@@ -60,7 +61,7 @@ This is a protected resource and requires an application signed request \<applic
 
 **failed** shows the number of failed calls.
 
-*Example*
+_Example_
 
     {
         "success": 2,
@@ -83,7 +84,7 @@ This is a protected resource and requires an application signed request \<applic
 
 **id** is a predefined counter id string - this needs to be set up in cooperation with Sinch support team
 
-*Example*
+_Example_
 
     [GET] https://reportingapi.sinch.com/v1/counters/currentcalls
 
@@ -95,7 +96,7 @@ This is a protected resource and requires an application signed request \<applic
 
 **value** is the current value of the counter **modified** shows the date and time value of the last update to the counter
 
-*Example*
+_Example_
 
     {
         "value": 12384955,
@@ -110,7 +111,7 @@ Number of ongoing calls
 
 **Note:** The system updates the value of the counter every two minutes. The result value depends on how many calls were ongoing when the system updated the counter, and not when the request to the API was made.
 
-*Example*
+_Example_
 
     [GET] https://reportingapi.sinch.com/v1/counters/currentcalls
 
@@ -124,7 +125,7 @@ Gets the current status of a predefined service
 
 **id** is a predefined service id - this needs to be set up in cooperation with Sinch Noc - please contact Sinch to be able to get the status of a particular service in the platform
 
-*Example*
+_Example_
 
     [GET] https://reportingapi.sinch.com/v1/services/rtpproxy
 
@@ -135,10 +136,10 @@ Gets the current status of a predefined service
 
 **status** shows current status of service. It can take these values:
 
-> -   “up” = service is available
-> -   “down” = service is unavailable
+> - “up” = service is available
+> - “down” = service is unavailable
 
-*Example*
+_Example_
 
     {
         "status": "up"
