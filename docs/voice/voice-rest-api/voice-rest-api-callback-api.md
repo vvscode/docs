@@ -618,9 +618,7 @@ Example:
 
 **suppressCallbacks** if set to true, you are opting out of the callbacks for ACE and DiCE for this call
 
-The SIP traffic will be routed to your SIP server from the IP address, so make sure it is registered in your SIP server:
-
-> 213.242.88.200
+Make sure you allow our IP adresses in your SIP server for reciving this traffic. For more information on whitelisting see our [SIP-trunking documentation](doc:voice-sip-trunking)
 
 ### RunMenu
 
