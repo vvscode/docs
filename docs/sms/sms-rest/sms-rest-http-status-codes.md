@@ -5,7 +5,7 @@ next:
   pages:
     - sms-rest-callback
   description: Learn about the REST API callbacks
-hidden: true
+hidden: 'true'
 ---
 ### HTTP Statuses
 

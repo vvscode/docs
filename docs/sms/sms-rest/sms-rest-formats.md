@@ -7,7 +7,7 @@ next:
   pages:
     - sms-rest-http-status-codes
   description: Learn about the HTTP statuses and codes that the REST API returns
-hidden: true
+hidden: 'true'
 ---
 ### JSON
 

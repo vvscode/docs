@@ -1,6 +1,7 @@
 ---
 title: URL Link Previews
 excerpt: ''
+hidden: 'true'
 ---
 Some mobile devices are capable of displaying previews for links contained in SMS or MMS messages. When messages that contain a URL are received on these devices, they may be rendered in the messaging application with a preview of the linked page. This behaviour is controlled from the phone or its software, and can not be affected by Sinch or the carrier.
 
@@ -19,4 +20,3 @@ iPhones will only display a link preview if the URL is at the beginning or the e
 ## Behaviour on Android
 
 Depending on the device but if the recipient has googles Messages app or Samsung you should be able to see previews if the phone has been updated after June 2018
-

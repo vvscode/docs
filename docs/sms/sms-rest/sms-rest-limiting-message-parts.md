@@ -3,7 +3,7 @@ title: Limiting Message Parts
 excerpt: >-
   Learn how to control the number of messages parts that can be sent for a
   single outbound message from your account
-hidden: true
+hidden: 'true'
 next:
   pages:
     - sms-rest-url-link-previews

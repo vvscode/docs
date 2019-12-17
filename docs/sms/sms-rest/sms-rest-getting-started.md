@@ -7,7 +7,7 @@ next:
   pages:
     - sms-rest-formats
   description: Learn about the formats used in the REST API
-hidden: true
+hidden: 'true'
 ---
 ## Service plan
 

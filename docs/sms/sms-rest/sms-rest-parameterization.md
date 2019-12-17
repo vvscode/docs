@@ -4,7 +4,7 @@ excerpt: Provide content that varies depending on recipient with message paramet
 next:
   pages:
     - sms-rest-delivery-reports
-hidden: true
+hidden: 'true'
 ---
 Parameterization enables you to customize parts of a message for each recipient.
 

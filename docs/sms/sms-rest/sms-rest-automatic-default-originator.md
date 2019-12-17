@@ -1,7 +1,7 @@
 ---
 title: Automatic Default Originator
 excerpt: ''
-hidden: true
+hidden: 'true'
 next:
   pages:
     - sms-rest-limiting-message-parts

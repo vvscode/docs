@@ -3,7 +3,7 @@ title: Groups Endpoint
 excerpt: >-
   The most feaure rich API Sinch offers. It allows for single messages,
   scheduled batch send-outs using message templates and more.
-hidden: true
+hidden: 'true'
 next:
   pages:
     - sms-rest-batches-endpoint

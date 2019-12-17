@@ -10,7 +10,7 @@ next:
     - sms-rest-automatic-default-originator
     - sms-rest-limiting-message-parts
     - sms-rest-url-link-previews
-hidden: true
+hidden: 'true'
 ---
 ### Send a batch message
 

@@ -1,7 +1,7 @@
 ---
 title: Inbounds Endpoint
 excerpt: ''
-hidden: true
+hidden: 'true'
 next:
   pages:
     - sms-rest-groups-endpoint

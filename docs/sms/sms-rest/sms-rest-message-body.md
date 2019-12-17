@@ -5,7 +5,7 @@ next:
   pages:
     - sms-rest-parameterization
   description: Learn about the statuses and codes that tells the state of an SMS batch
-hidden: true
+hidden: 'true'
 ---
 When specifying the message body in the request, the characters used as well as the length of the message affect how many actual SMS messages are sent out. When using [parameterization](doc:sms-rest-parameterization), the length of each message may also vary depending on the recipient-specific data.
 
