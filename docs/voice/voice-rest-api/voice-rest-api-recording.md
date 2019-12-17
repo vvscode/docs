@@ -162,13 +162,13 @@ _Example_
         "event": "notify",
         "callid": "01234567-89ab-cdef-fedc-ba9876543210",
         "version": 1,
-        "type": "recording\_finished"
+        "type": "recording_finished"
     }
 
     {
         "event": "notify",
         "callid": "01234567-89ab-cdef-fedc-ba9876543210",
         "version": 1,
-        "type": "recording\_available",
+        "type": "recording_available",
         "destination":"https://www.sinch.com/calling/v1/recording/201801010000_01234567-89ab-cdef-fedc-ba9876543210_01234567-89ab-cdef-fedc-ba9876543210.mp3"
     }
