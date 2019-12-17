@@ -3,6 +3,7 @@ title: Groups Endpoint
 excerpt: >-
   The most feaure rich API Sinch offers. It allows for single messages,
   scheduled batch send-outs using message templates and more.
+hidden: true
 next:
   pages:
     - sms-rest-batches-endpoint
@@ -399,5 +400,3 @@ curl -X DELETE \
      -H "Authorization: Bearer {token}" \
      "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/groups/{group_id}"
 ```
-
-

@@ -7,6 +7,7 @@ next:
     - sms-rest-inbounds-endpoint
     - sms-rest-groups-endpoint
   description: Learn about the REST API endpoints
+hidden: true
 ---
 The REST API uses message statuses and error codes in delivery reports, which refer to the state of the SMS batch and can be present in either [Retrieve a delivery report](doc:sms-rest-batches-endpoint#section-retrieve-a-delivery-report) or sent to a [callback](doc:sms-rest-callback).
 
@@ -53,5 +54,3 @@ In addition to these standard error codes, the REST API provides an additional s
 > **Note**    
 >
 > New error codes may be added over time.
-
-

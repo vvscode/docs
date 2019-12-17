@@ -1,6 +1,7 @@
 ---
 title: Inbounds Endpoint
 excerpt: ''
+hidden: true
 next:
   pages:
     - sms-rest-groups-endpoint
@@ -112,4 +113,3 @@ The response is a JSON object described in `inbounds_endpoint` response.
 curl -H "Authorization: Bearer {token}" \
   "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/inbounds/{inbound_id}"
 ```
-

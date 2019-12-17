@@ -5,6 +5,7 @@ next:
   pages:
     - sms-rest-message-body
   description: 'Learn about supported characters, message length and parameterization'
+hidden: true
 ---
 A callback is a HTTP POST request with a notification made by the Sinch SMS REST API to a URI of your choosing. The REST API expects the receiving server to respond with a response code within the `2xx` Success range. If no successful response is received then the REST API will either schedule a retry if the error is expected to be temporary or discard the callback if the error seems permanent. The first initial retry will happen 5 seconds after the first try. The next attempt is after 10 seconds, then after 20 seconds, after 40 seconds, after 80 seconds and so on, doubling on every attempt. The last retry will be at 81920 seconds (or 22 hours 45 minutes) after the initial failed attempt.
 
@@ -26,4 +27,3 @@ The callback URL can either be provided for each batch in the [Send a batch mess
 An inbound message or MO (*Mobile Originated*) is a message sent to one of your shortcodes or long numbers from a mobile phone. The format of an inbound callback is described in [Inbounds Endpoint](doc:sms-rest-inbounds-endpoint).
 
 To receive inbound message callbacks, a URL needs to be provisioned for your account. This URL can be specified in the Sinch Dashboard.
-

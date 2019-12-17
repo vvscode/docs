@@ -7,6 +7,7 @@ next:
   pages:
     - sms-rest-http-status-codes
   description: Learn about the HTTP statuses and codes that the REST API returns
+hidden: true
 ---
 ### JSON
 
@@ -38,5 +39,3 @@ Timestamps are used for expressing a moment in time. They are represented using 
 A time offset can be specified in accordance with [ISO-8601 time offsets from UTC](http://en.wikipedia.org/wiki/ISO_8601#Time_offsets_from_UTC). If no time offset is specified (_local time_ in ISO-8601) then UTC will be used.
 
 All timestamps returned by the API will be represented in UTC time, with millisecond precision.
-
-
