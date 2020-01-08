@@ -76,7 +76,7 @@ JSON object parameters:
 | type          | Constant value `template`                                            | String       | N/A        | N/A                   | Yes      |
 | template_name | Name of the template                                                 | String       | N/A        | N/A                   | Yes      |
 | language      | Language to send the template in                                     | String       | `en`       | Language codes and locales (e.g `en`, `en_us`) | No       |
-| params        | Parameters to inject into the template.                              | String       | N/A        |                       | Yes      |
+| params        | Parameters to inject into the template.                              | String array | N/A        |                       | Yes      |
 | ttl           | Time to live of the template message. If the receiver has not opened the template message before the time to live expires, the message will be deleted and a failed callback will be sent. The time to live can be specified in ISO-8601 Duration format or in seconds as a string. | String       | 30 Days    | Valid URL             | No      |
 
 ```json
