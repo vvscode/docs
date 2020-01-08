@@ -5,29 +5,42 @@ next:
   pages:
     - voice-rest-api-callback-api
 ---
+## Overview
 
-    Global Endpoint:
-    https://calling.api.sinch.com/[version]     
-    Regional Endpoints:
+The calling-related API is divided in two categories - **"traffic management"** and **"configuration management"**. "Traffic management" encompasses management of individual calls. Since a call always belongs to a region, the corresponding regional endpoints must be used. Configuration management is agnostic to individual calls and hence a global endpoint is used.
+
+### Regional Endpoints - Traffic Management
+
     https://calling-euc1.api.sinch.com/[version]  - Europe
     https://calling-use1.api.sinch.com/[version]  - United States
     https://calling-sae1.api.sinch.com/[version]  - South America
     https://calling-apse1.api.sinch.com/[version] - South East Asia 1
     https://calling-apse2.api.sinch.com/[version] - South East Asia 2
 
+    It is also possible to use the endpoint:
+    https://calling.api.sinch.com/[version] - redirected by Sinch to an appropriate region 
+
     Current  version is "v1"
 
-## Overview
+For cases where the call is the result of an incoming PSTN, SIP or data call, the endpoint to use for managing that call is supplied in the ICE event.
+
+### Global Endpoint - Configuration Management
+
+    https://callingapi.sinch.com/[version]     
+
+    Current  version is "v1"
 
 ### Methods
 
-This API exposes calling-related functionality in the Sinch platform. The following APIs resources are available through the following URLs:
 
+#### Configuration Management Methods
     [GET]       /configuration/numbers/
     [POST]      /configuration/numbers/
     [GET]       /configuration/callbacks/applications/{applicationkey}
     [POST]      /configuration/callbacks/applications/{applicationkey}
     [GET]       /calling/query/number/{number}
+
+#### Traffic Management Methods
     [PATCH]     /calls/id/{callId}
     [GET]       /calls/id/{callId}
     [GET]       /conferences/id/{conferenceId}
@@ -35,9 +48,6 @@ This API exposes calling-related functionality in the Sinch platform. The follow
     [DELETE]    /conferences/id/{conferenceId}
     [DELETE]    /conferences/id/{conferenceId}/{callId}
     [POST]      /callouts
-
-Other set of APIs provide information and/or control of the calls handled locally in a region. Therefore, the URL to access these APIs is provided as part of the ICE callback, in the `callResourceUrl` property.
-
     [GET]       /calls/id/{callId}
     [PATCH]     /calls/id/{callId}
     [GET]       /recording?from=timestamp&to=timestamp&page=int&pageSize=int
