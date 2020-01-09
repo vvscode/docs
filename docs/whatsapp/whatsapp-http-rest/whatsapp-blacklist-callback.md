@@ -50,7 +50,7 @@ There was an error with your request. The body is a JSON object described in the
 
 ## Remove from blacklist endpoint
 
-Remove numbers from Blacklist.
+Remove numbers from blacklist.
 
 #### Request
 
