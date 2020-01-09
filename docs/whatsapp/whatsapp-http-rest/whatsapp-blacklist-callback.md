@@ -43,3 +43,7 @@ There was an error with your request. The body is a JSON object described in the
 
 There was an authentication error with your request. Either you're using incorrect credentials or you're attempting to authenticate
 in a region where your bot does not reside. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors)
+
+`503 Service Unavailable`
+
+There was an error with your request. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors)
