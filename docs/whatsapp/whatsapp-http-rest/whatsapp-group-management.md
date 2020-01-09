@@ -65,6 +65,10 @@ There was an error with your request. The body is a JSON object described in the
 There was an authentication error with your request. Either you're using incorrect credentials or you're attempting to authenticate
 in a region where your bot does not reside. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
 
+`503 Service Unavailable`
+
+There was an error with your request. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+
 ## List groups endpoint
 
 `GET whatsapp/v1/{bot-id}/groups`
@@ -97,6 +101,10 @@ There was an error with your request. The body is a JSON object described in the
 
 There was an authentication error with your request. Either you're using incorrect credentials or you're attempting to authenticate
 in a region where your bot does not reside. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+
+`503 Service Unavailable`
+
+There was an error with your request. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
 
 ## List group information endpoint
 
@@ -142,6 +150,14 @@ There was an error with your request. The body is a JSON object described in the
 There was an authentication error with your request. Either you're using incorrect credentials or you're attempting to authenticate
 in a region where your bot does not reside. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
 
+`503 Service Unavailable`
+
+There was an error with your request. Try again later. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+
+`406 Not Acceptable`
+
+There was an error with your request. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+
 ## Update group subject endpoint
 
 `PATCH whatsapp/v1/{bot-id}/groups/{group-id}`
@@ -174,6 +190,14 @@ There was an error with your request. The body is a JSON object described in the
 
 There was an authentication error with your request. Either you're using incorrect credentials or you're attempting to authenticate
 in a region where your bot does not reside. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+
+`503 Service Unavailable`
+
+There was an error with your request. Try again later. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+
+`406 Not Acceptable`
+
+There was an error with your request. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
 
 ## Update group icon endpoint
 
@@ -209,6 +233,14 @@ There was an error with your request. The body is a JSON object described in the
 There was an authentication error with your request. Either you're using incorrect credentials or you're attempting to authenticate
 in a region where your bot does not reside. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
 
+`503 Service Unavailable`
+
+There was an error with your request. Try again later. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+
+`406 Not Acceptable`
+
+There was an error with your request. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+
 ## Leave group endpoint
 
 `DELETE whatsapp/v1/{bot-id}/groups/{group-id}`
@@ -227,6 +259,14 @@ There was an error with your request. The body is a JSON object described in the
 
 There was an authentication error with your request. Either you're using incorrect credentials or you're attempting to authenticate
 in a region where your bot does not reside. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+
+`503 Service Unavailable`
+
+There was an error with your request. Try again later. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+
+`406 Not Acceptable`
+
+There was an error with your request. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
 
 ## Remove members endpoint
 
@@ -264,6 +304,14 @@ There was an error with your request. The body is a JSON object described in the
 There was an authentication error with your request. Either you're using incorrect credentials or you're attempting to authenticate
 in a region where your bot does not reside. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
 
+`503 Service Unavailable`
+
+There was an error with your request. Try again later. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+
+`406 Not Acceptable`
+
+There was an error with your request. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+
 ## Add admins endpoint
 
 `POST whatsapp/v1/{bot-id}/groups/{group-id}/admin`
@@ -299,6 +347,14 @@ There was an error with your request. The body is a JSON object described in the
 
 There was an authentication error with your request. Either you're using incorrect credentials or you're attempting to authenticate
 in a region where your bot does not reside. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+
+`503 Service Unavailable`
+
+There was an error with your request. Try again later. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+
+`406 Not Acceptable`
+
+There was an error with your request. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
 
 ## Remove admins endpoint
 
@@ -336,6 +392,14 @@ There was an error with your request. The body is a JSON object described in the
 There was an authentication error with your request. Either you're using incorrect credentials or you're attempting to authenticate
 in a region where your bot does not reside. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
 
+`503 Service Unavailable`
+
+There was an error with your request. Try again later. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+
+`406 Not Acceptable`
+
+There was an error with your request. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+
 ## Get invite link endpoint
 
 `GET whatsapp/v1/{bot-id}/groups/{group-id}/invite`
@@ -367,6 +431,14 @@ There was an error with your request. The body is a JSON object described in the
 There was an authentication error with your request. Either you're using incorrect credentials or you're attempting to authenticate
 in a region where your bot does not reside. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
 
+`503 Service Unavailable`
+
+There was an error with your request. Try again later. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+
+`406 Not Acceptable`
+
+There was an error with your request. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+
 ## Remove invite link endpoint
 
 `DELETE whatsapp/v1/{bot-id}/groups/{group-id}/invite`
@@ -385,3 +457,11 @@ There was an error with your request. The body is a JSON object described in the
 
 There was an authentication error with your request. Either you're using incorrect credentials or you're attempting to authenticate
 in a region where your bot does not reside. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+
+`503 Service Unavailable`
+
+There was an error with your request. Try again later. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+
+`406 Not Acceptable`
+
+There was an error with your request. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
