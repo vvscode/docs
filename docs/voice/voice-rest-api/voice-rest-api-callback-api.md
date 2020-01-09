@@ -593,7 +593,7 @@ If no “music-on-hold” is specified, the user will only hear silence.
   "destination": { "endpoint": "46708000000@sip.foo.com" },
   "maxDuration": 3000,
   "cli": "private",
-  "record": true,
+  "record": false,
   "suppressCallbacks": false
 }
 ```
@@ -606,15 +606,9 @@ If no “music-on-hold” is specified, the user will only hear silence.
 
 **cli** is used to override the CLI of the client - if “private”, the CLI will be hidden. If not specified, the CLI that the client has set is used. In case of a PSTN-originated call, the phone number of the person that initiated the call will be shown as the CLI. To use CLI, your Sinch account must have CLI capabilities enabled.
 
-**record** is an optional parameter that allows call recording. Recording files are stored in your own Amazon S3 bucket. The file name generated has this format:
+**record** is an optional parameter that instructs the system to record the conference. Check the [recording](doc:voice-rest-api-recording) section for more information.
 
-[\[callid\]]()\[applicationkey\].wav
-
-Example:
-
-```text
-9ab69740-c024-4e35-8428-712009467480_ff67123-c024-4e35-8428-712009467480.wav
-```
+**recordingOptions** is sent when record is set to true and specifies the details about the recording. See [RecordingOptions](doc:voice-rest-api-recording#section-recording-options) for more details.
 
 **suppressCallbacks** if set to true, you are opting out of the callbacks for ACE and DiCE for this call
 
