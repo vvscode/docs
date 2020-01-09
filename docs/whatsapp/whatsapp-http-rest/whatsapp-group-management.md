@@ -152,7 +152,7 @@ in a region where your bot does not reside. The body is a JSON object described 
 
 `503 Service Unavailable`
 
-There was an error with your request. Try again later. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+There was an error with your request. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors). Try again later.
 
 `406 Not Acceptable`
 
@@ -193,7 +193,7 @@ in a region where your bot does not reside. The body is a JSON object described 
 
 `503 Service Unavailable`
 
-There was an error with your request. Try again later. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+There was an error with your request. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors). Try again later.
 
 `406 Not Acceptable`
 
@@ -235,7 +235,7 @@ in a region where your bot does not reside. The body is a JSON object described 
 
 `503 Service Unavailable`
 
-There was an error with your request. Try again later. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+There was an error with your request. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors). Try again later.
 
 `406 Not Acceptable`
 
@@ -262,7 +262,7 @@ in a region where your bot does not reside. The body is a JSON object described 
 
 `503 Service Unavailable`
 
-There was an error with your request. Try again later. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+There was an error with your request. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors). Try again later.
 
 `406 Not Acceptable`
 
@@ -306,7 +306,7 @@ in a region where your bot does not reside. The body is a JSON object described 
 
 `503 Service Unavailable`
 
-There was an error with your request. Try again later. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+There was an error with your request. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors). Try again later.
 
 `406 Not Acceptable`
 
@@ -350,7 +350,7 @@ in a region where your bot does not reside. The body is a JSON object described 
 
 `503 Service Unavailable`
 
-There was an error with your request. Try again later. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+There was an error with your request. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors). Try again later.
 
 `406 Not Acceptable`
 
@@ -394,7 +394,7 @@ in a region where your bot does not reside. The body is a JSON object described 
 
 `503 Service Unavailable`
 
-There was an error with your request. Try again later. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+There was an error with your request. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors). Try again later.
 
 `406 Not Acceptable`
 
@@ -433,7 +433,7 @@ in a region where your bot does not reside. The body is a JSON object described 
 
 `503 Service Unavailable`
 
-There was an error with your request. Try again later. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+There was an error with your request. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors). Try again later.
 
 `406 Not Acceptable`
 
@@ -460,7 +460,7 @@ in a region where your bot does not reside. The body is a JSON object described 
 
 `503 Service Unavailable`
 
-There was an error with your request. Try again later. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+There was an error with your request. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors). Try again later.
 
 `406 Not Acceptable`
 
