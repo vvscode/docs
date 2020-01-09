@@ -63,4 +63,8 @@ There was an error with your request. The body is a JSON object described in the
 There was an authentication error with your request. Either you're using incorrect credentials or you're attempting to authenticate
 in a region where your bot does not reside. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors)
 
+`500 Internal Server Error`
 
+There was an error with your request. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors)
+
+*Request could not be processed* means that the Request rate limit has been breached which is 20 requests sent per second.
