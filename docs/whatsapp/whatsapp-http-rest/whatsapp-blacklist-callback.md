@@ -5,7 +5,7 @@ next:
   pages:
     - whatsapp-callback-store
 ---
-## Add to Blacklist endpoint
+## Add to blacklist endpoint
 
 Blacklist numbers, preventing them from generating inbound message callbacks.
 
@@ -48,9 +48,9 @@ in a region where your bot does not reside. The body is a JSON object described 
 
 There was an error with your request. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors)
 
-## Remove from Blacklist endpoint
+## Remove from blacklist endpoint
 
-Remove number from Blacklist.
+Remove numbers from Blacklist.
 
 #### Request
 
