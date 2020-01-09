@@ -67,4 +67,4 @@ in a region where your bot does not reside. The body is a JSON object described 
 
 There was an error with your request. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors)
 
-*Request could not be processed* means that the Request rate limit has been breached which is 20 requests sent per second.
+*Request could not be processed* means that the Request rate limit, which is 20 requests sent per second, has been exceeded.
