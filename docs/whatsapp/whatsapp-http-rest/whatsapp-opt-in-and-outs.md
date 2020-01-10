@@ -12,7 +12,7 @@ All Business initiated conversations via the Sinch WhatsApp Business API must st
 
 You can record a [opt-in](doc:whatsapp-opt-in-and-outs#section-opt-in-endpoint) by the API call described below and once the “Opt-In” is recorded you’ll be able to message that customer via the Sinch WhatsApp Business API.
 
-Businesses must provide a method by which customers may opt-out of receiving future messages from your organization. The [opt-out-endpoint](doc:whatsapp-opt-in-and-outs#section-opt-out-endpoint) should be handled using the API call below.
+Businesses must provide a method by which customers may opt-out of receiving future messages from your organization. The [opt-out-endpoint](doc:whatsapp-opt-in-and-outs#section-opt-out-endpoint-deprecated) should be handled using the API call below.
 
 > **Note**
 >
@@ -61,7 +61,7 @@ in a region where your bot does not reside. The body is a JSON object described 
 
 
 
-## Opt-Out endpoint (DEPRECATED)
+## Opt-Out endpoint DEPRECATED
 
 Opt-out number(s) to prevent them from receiving messages from the business. This endpoint is deprecated - use `DELETE whatsapp/v1/{bot-id}/provision/optin` instead
 
