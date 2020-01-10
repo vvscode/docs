@@ -21,11 +21,12 @@ Businesses must provide a method by which customers may opt-out of receiving fut
 ## Opt-In endpoint
 
 Opt-in numbers to enable the receiving of business messages via WhatsApp. Opting in already opted in numbers
-would be ignored but not rejected.
+would be ignored but not rejected. To remove previously opted in number use DELETE Request.
 
 #### Request
 
 `POST whatsapp/v1/{bot-id}/provision/optin`
+`DELETE whatsapp/v1/{bot-id}/provision/optin`
 
 JSON object parameters:
 
@@ -58,17 +59,14 @@ There was an error with your request. The body is a JSON object described [here]
 There was an authentication error with your request. Either you're using incorrect credentials or you're attempting to authenticate
 in a region where your bot does not reside. The body is a JSON object described [here](doc:whatsapp-introduction#section-http-errors)
 
-### Opt in sample
 
 
+## Opt-Out endpoint (DEPRECATED)
 
-## Opt-Out endpoint
-
-Opt-out numbers to prevent them from receiving messages from the business.
+Opt-out number(s) to prevent them from receiving messages from the business. This endpoint is deprecated - use `DELETE whatsapp/v1/{bot-id}/provision/optin` instead
 
 #### request
 
-`DELETE whatsapp/v1/{bot-id}/provision/optin`
 `POST whatsapp/v1/{bot-id}/provision/optout`
 
 JSON object parameters:
