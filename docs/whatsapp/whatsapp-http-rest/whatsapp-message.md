@@ -73,10 +73,10 @@ JSON object parameters:
 
 | Name          | Description                                                          | JSON Type    | Default    | Constraints           | Required |
 | ------------- | -------------------------------------------------------------------- | ------------ | ---------- | --------------------- | :------: |
-| type          | Constant value `template`                                            | String       | N/A        | N/A                   | Yes      |
-| template_name | Name of the template                                                 | String       | N/A        | N/A                   | Yes      |
-| language      | Language to send the template in                                     | String       | `en`       | Language codes and locales (e.g `en`, `en_us`) | No       |
-| params        | Parameters to inject into the template, if it is template message with only a body of text.                              | String array | N/A        | N/A                   | No      |
+| type          | Constant value `template`.                                            | String       | N/A        | N/A                   | Yes      |
+| template_name | Name of the template.                                                 | String       | N/A        | N/A                   | Yes      |
+| language      | Language to send the template in.                                     | String       | `en`       | Language codes and locales (e.g `en`, `en_us`) | No       |
+| params        | Parameters to inject into the template.                              | String array | N/A        | This parameter can only be used for template messages with only a body of text. | No      |
 | header_params | Parameters to inject into the header of the template.                | String array | N/A        | N/A                   | No      |
 | body_params | Parameters to inject into the body of the template.                    | String array | N/A        | N/A                   | No      |
 | media | An object describing the document or image to include in the header of the template. The objects are the same as described under Image message and Document message below, except that captions are not allowed.        | String array | N/A        | N/A                   | No      |
