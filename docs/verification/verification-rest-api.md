@@ -7,6 +7,7 @@ next:
     - verification-rest-verification-api
     - verification-rest-callback-api
 ---
+
 ## TL;DR
 
 Curl examples for verification API: 
