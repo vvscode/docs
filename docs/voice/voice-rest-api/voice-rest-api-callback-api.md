@@ -698,7 +698,7 @@ URLs for the callbacks described in the section that follows are configured in t
 
 When a call reaches the Sinch platform, the system makes a POST request to the specified calling callback URL.
 
-This event, called the “ICE” event, can be triggered by either an incoming data call or an incoming PSTN call. It supports the instruction [PlayFiles] to play a prompt and [Say] to play a text-to-speech message and the [connectPstn], [ConnectConf], and [Hangup] actions.
+This event, called the “ICE” event, can be triggered by either an incoming data call or an incoming PSTN call. Look here for allowed [instructions](doc:voice-rest-api-callback-api#section-instructions) and [actions](doc:voice-rest-api-callback-api#section-actions).
 
 If there is no response to the callback within the timeout period, an error message is played, and the call is disconnected.
 
@@ -804,7 +804,7 @@ _Example conference call response_
 
 ## Answered Call Event Callback (ACE)
 
-This callback is made when the call is picked up by the callee (person receiving the call). It is a POST request to the specified calling callback URL. This event does not support instructions and ignores any instructions passed. It only supports the actions [Continue] and [Hangup].
+This callback is made when the call is picked up by the callee (person receiving the call). It is a POST request to the specified calling callback URL. Look here for allowed [instructions](doc:voice-rest-api-callback-api#section-instructions) and [actions](doc:voice-rest-api-callback-api#section-actions).
 
 If there is no response to the callback within the timeout period, the call is connected.
 
