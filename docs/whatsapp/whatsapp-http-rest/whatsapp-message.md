@@ -73,11 +73,19 @@ JSON object parameters:
 
 | Name          | Description                                                          | JSON Type    | Default    | Constraints           | Required |
 | ------------- | -------------------------------------------------------------------- | ------------ | ---------- | --------------------- | :------: |
-| type          | Constant value `template`                                            | String       | N/A        | N/A                   | Yes      |
-| template_name | Name of the template                                                 | String       | N/A        | N/A                   | Yes      |
-| language      | Language to send the template in                                     | String       | `en`       | Language codes and locales (e.g `en`, `en_us`) | No       |
-| params        | Parameters to inject into the template.                              | String array | N/A        | N/A                   | Yes      |
-| ttl           | Time to live of the template message. If the receiver has not opened the template message before the time to live expires, the message will be deleted and a failed callback will be sent. The time to live can be specified in ISO-8601 Duration format or in seconds as a string. | String       | 30 Days    | Valid URL             | No      |
+| type          | Constant value `template`.                                            | String       | N/A        | N/A                   | Yes      |
+| template_name | Name of the template.                                                 | String       | N/A        | N/A                   | Yes      |
+| language      | Language to send the template in.                                     | String       | `en`       | Language codes and locales (e.g `en`, `en_us`) | No       |
+| params        | Parameters to inject into the template.                              | String array | N/A        | This parameter can only be used for template messages with only a body of text. | No      |
+| header_params | Parameters to inject into the header of the template.                | String array | N/A        | N/A                   | No      |
+| body_params | Parameters to inject into the body of the template.                    | String array | N/A        | N/A                   | No      |
+| media | An object describing the document or image to include in the header of the template. The objects are the same as described under Image message and Document message below, except that the `caption` and `filename` parameters are not allowed.        | String array | N/A        | N/A                   | No      |
+| ttl           | Time to live of the template message. If the receiver has not opened the template message before the time to live expires, the message will be deleted and a failed callback will be sent. The time to live can be specified in ISO-8601 Duration format or in seconds as a string. | String       | 30 Days    | See description | No      |
+
+> **Note**
+>
+> The `caption` and `filename` parameters are currently not supported for media in template messages.
+
 
 ```json
 {
@@ -92,6 +100,36 @@ JSON object parameters:
     "params": [
       "Nick"
     ],
+    "ttl": "P1D"
+  }
+}
+
+```
+
+```json
+{
+  "to": [
+    "46732001122",
+    "group:447506616260-1565342732"
+  ],
+  "message": {
+    "type": "template",
+    "template_name": "some_template_name",
+    "language": "en",
+    "header_params": [
+      "some_first_parameter",
+      "some_second_parameter",
+      "some_third_parameter"
+    ],
+    "body_params": [
+      "some_first_parameter",
+      "some_second_parameter"
+    ],
+    "media" : {
+      "type": "image",
+      "url": "https://www.example.com/some_image.jpg",
+      "provider": "some_provider_name"
+    },
     "ttl": "P1D"
   }
 }
@@ -192,6 +230,7 @@ JSON object parameters:
 | ----------- | ------------------------------------------------------------------------- | ------------ | ---------- | --------------------- | :------: |
 | type        | Constant value `document`                                                 | String       | N/A        | N/A                   | Yes      |
 | url         | Public url of the document file. Should be either HTTP or HTTPS link.     | String       | N/A        | `pdf`, `doc` or `docx`| Yes      |
+| filename    | Optional parameter that describes the filename of the document.           | String       | None       | N/A                   | No       |
 | caption     | Optional caption that will be displayed as the document title.            | String       | None       | N/A                   | No       |
 | provider    | Optional name of a provider to be used when trying to download the file.  | String       | None       | N/A                   | No       |
 
