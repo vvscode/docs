@@ -1,10 +1,15 @@
 ---
 title: Sinch Voice Android SDK
 excerpt: >-
-  See how the Sinch JavaScript SDK is evolving and find out about new features
-  and bug fixes.
+  See how our platform is evolving. Keep track of new features, API versions and bug fixes.
 ---
-See how our platform is evolving. Keep track of new features, API versions and bug fixes.
+<h3>2019-11-12 | SINCH SDK ANDROID 3.17.1</h3>
+  - WebRTC updated
+  - Updated Sample Applications (-push, -push-video) to show how to use Android 10 - time-sensitive notification for incoming calls.
+  - Cancel Call Push notification is deprecated for consistency with other platforms (namely iOS 13) due to new requirements.
+    If such a push notification is received, it'll have property `isValid` set to `false`
+
+  
 <h3>2019-11-12 | SINCH SDK ANDROID 3.17.0</h3>
   - WebRTC updated
   - Java source code requires JAVA 8 (1.8)
