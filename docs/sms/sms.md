@@ -16,7 +16,7 @@ The easiest and most feature-rich API we offer. It allows for single messages, s
 ### SMPP
 SMPP interfaces for full control and low latency.
 
-> **Note**    
+> **Note**
 >
 > If you are a local customer of Sinch Germany GmbH, using our domestic German platform, please contact our [German support team](mailto:support-de@sinch.com) for further assistance.
 
@@ -28,12 +28,12 @@ Getting started with the Sinch SMS API is simple.
 Get started in minutes following one of the user guides below.
 
 <div class="magic-block-html"> <div class="ug-links"> <div class="row">
-       <a href="./sms-rest" class="col-md-6 ug-link">
+       <a href="./docs/sms-rest" class="col-md-6 ug-link">
          <div class="ug-title">
            <span class="title">REST</span>
          </div>
        </a>
-       <a href="./sms-smpp" class="col-md-6 ug-link">
+       <a href="./docs/sms-smpp" class="col-md-6 ug-link">
          <div class="ug-title">
            <span class="title">SMPP</span>
          </div>
