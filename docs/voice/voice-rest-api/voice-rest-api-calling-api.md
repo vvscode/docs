@@ -11,14 +11,14 @@ The calling-related API is divided in two categories - **"traffic management"** 
 
 ### Regional Endpoints - Traffic Management
 
-    https://calling-euc1.api.sinch.com/[version]  - Europe
-    https://calling-use1.api.sinch.com/[version]  - United States
-    https://calling-sae1.api.sinch.com/[version]  - South America
-    https://calling-apse1.api.sinch.com/[version] - South East Asia 1
-    https://calling-apse2.api.sinch.com/[version] - South East Asia 2
+    https://calling-euc1.api.sinch.com/calling/[version]  - Europe
+    https://calling-use1.api.sinch.com/calling/[version]  - United States
+    https://calling-sae1.api.sinch.com/calling/[version]  - South America
+    https://calling-apse1.api.sinch.com/calling/[version] - South East Asia 1
+    https://calling-apse2.api.sinch.com/calling/[version] - South East Asia 2
 
     It is also possible to use the endpoint:
-    https://calling.api.sinch.com/[version] - redirected by Sinch to an appropriate region 
+    https://calling.api.sinch.com/calling/[version] - redirected by Sinch to an appropriate region 
 
     Current  version is "v1"
 
@@ -26,7 +26,7 @@ For cases where the call is the result of an incoming PSTN, SIP or data call, th
 
 ### Global Endpoint - Configuration Management
 
-    https://callingapi.sinch.com/[version]     
+    https://callingapi.sinch.com/calling/[version]     
 
     Current  version is "v1"
 
