@@ -28,12 +28,12 @@ Getting started with the Sinch SMS API is simple.
 Get started in minutes following one of the user guides below.
 
 <div class="magic-block-html"> <div class="ug-links"> <div class="row">
-       <a href="developers.sinch.com/docs/sms-rest" class="col-md-6 ug-link">
+       <a href="./sms-rest" class="col-md-6 ug-link">
          <div class="ug-title">
            <span class="title">REST</span>
          </div>
        </a>
-       <a href="developers.sinch.com/docs/sms-smpp" class="col-md-6 ug-link">
+       <a href="./sms-smpp" class="col-md-6 ug-link">
          <div class="ug-title">
            <span class="title">SMPP</span>
          </div>
