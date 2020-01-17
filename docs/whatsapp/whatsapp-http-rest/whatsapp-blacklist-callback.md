@@ -9,6 +9,12 @@ next:
 
 Blacklist numbers, preventing them from generating inbound message callbacks.
 
+
+> **Note**
+>
+> It can take up to five minutes for all caches to get up to date after blacklisting a number.
+
+
 #### Request
 
 `POST whatsapp/v1/{bot-id}/provision/blacklist`
@@ -51,6 +57,11 @@ There was an error with your request. The body is a JSON object described in the
 ## Remove from blacklist endpoint
 
 Remove numbers from blacklist.
+
+> **Note**
+>
+> It can take up to five minutes for all caches to get up to date after removing a number from the blacklist.
+
 
 #### Request
 
