@@ -17,8 +17,8 @@ This section describes the statuses and codes returned in those delivery reports
 
 The status field describes which state a particular message is in. Please note that statuses of type Intermediate will only be reported if you request a status per recipient ([Retrieve a recipient delivery report](doc:sms-rest-batches-endpoint#section-retrieve-a-recipient-delivery-report)), no callback will be made to report them. The following statuses are available when using the REST API:
 
-| Status     | Type         | Description                                                                                                                                   |
-|-- -        | ---          | ---                                                                                                                                         --|
+| Status     | Type         | Description       |
+|------------|--------------|-------------------|
 | Queued     | Intermediate | Message is queued within REST API system and will be dispatched according to the rate of the account.                                         |
 | Dispatched | Intermediate | Message has been dispatched and accepted for delivery by the SMSC.                                                                            |
 | Aborted    | Final        | Message was aborted before reaching the SMSC.                                                                                                 |
