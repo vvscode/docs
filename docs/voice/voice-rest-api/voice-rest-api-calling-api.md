@@ -635,7 +635,7 @@ If **enablePie** is set to true and the application has a callback URL specified
 _Example of conference callout_
 
 ```text
-[POST] https://calling.api.sinch.com/v1/callouts
+[POST] https://calling.api.sinch.com/calling/v1/callouts
 ```
 
 ```json
