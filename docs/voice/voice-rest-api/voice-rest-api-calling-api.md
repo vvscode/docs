@@ -759,7 +759,7 @@ If **enableDice** is set to true and the application has a callback URL specifie
 _Example of text-to-speech callout_
 
 ```text
-[POST] https://calling.api.sinch.com/v1/callouts
+[POST] https://calling.api.sinch.com/calling/v1/callouts
 ```
 
 ```json
@@ -779,7 +779,7 @@ _Example of text-to-speech callout_
 _Example of text-to-speech callout_
 
 ```text
-[POST] https://calling.api.sinch.com/v1/callouts
+[POST] https://calling.api.sinch.com/calling/v1/callouts
 ```
 
 ```json
