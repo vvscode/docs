@@ -1,13 +1,13 @@
 ---
 title: Getting Started
-excerpt: 'Get started using the RCS REST API and read about the features available in the RCS chatbot (A2P agent)'
+excerpt: 'Get started using the RCS REST API and read about the features available in the RCS chatbot (A2P Sender ID)'
 next:
   pages:
     - rcs-rest-formats
 ---
 RCS is the logical evolution of SMS enabling enterprises and individuals to exchange rich media, deep linking features and interactive content with the same ease as SMS.
 
-The RCS REST API requires the message originator to be an A2P agent (also known as chatbot). The agent specifies the "appearance" of the conversation on the handset, with brand logo, color, and contact information. Please contact Sinch to get your agent provisioned with your branding.
+The RCS REST API requires the message originator to be an A2P Sender ID (also known as chatbot). The Sender ID specifies the "appearance" of the conversation on the handset, with brand logo, color, and contact information. Please contact Sinch to get your Sender ID provisioned with your branding.
 
 The RCS REST API exposes a large portion of the chatbot enabled messaging formats described in the [GSMA Universal Profile 2.0 specification](https://www.gsma.com/futurenetworks/rcs/resources-rcs-events/universal-profile/).
 
