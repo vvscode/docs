@@ -116,9 +116,9 @@ Get the numbers that are on the blacklist.
 
 The endpoint takes an optional query parameter:
 
-| Name  | Description                                 | Default   | Constraints                        |
-| ------| --------------------------------------------| --------- | ---------------------------------- |
-| page  | The blacklist page to request               | 0         | Integer (0 denotes the first page) |
+| Name  | Description                                 | Default   | Constraints                        | Required |
+| ------| --------------------------------------------| --------- | ---------------------------------- | -------- |
+| page  | The blacklist page to request               | 0         | Integer (0 denotes the first page) | No       |
 
 **Sample request**
 
