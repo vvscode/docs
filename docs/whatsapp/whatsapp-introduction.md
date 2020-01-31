@@ -55,3 +55,18 @@ The following WhatsApp URLs can be used by the WhatsApp API. We have servers in 
 |---------------|----------------------------------------|
 | US Production | https://us1.whatsapp.api.sinch.com     |
 | EU Production | https://eu1.whatsapp.api.sinch.com     |
+
+## Accepted media types
+
+> **Note**
+>
+> Any media file sent through the Sinch WhatsApp API will be processed before it's sent to the recipient.
+> While the maximum file size for every uploaded media is 100 mb, be aware that the file can be compressed to meet the post-processing limits listed below.
+> 
+
+| Message type  |  Supported content types               |  Post-processing size limit       |
+|---------------|----------------------------------------|-----------------------------------|
+| document      | application/pdf, application/msword, text/plain, text/csv, application.x-tar, application/rtf.0, application/vnd.ms-powerpoint, application/vnd.openxmlformats-officedocument.presentationml.presentation, application/vnd.openxmlformats-officedocument.wordprocessingml.document, application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.oasis.opendocument.presentation, application/vnd.oasis.opendocument.spreadsheet, application/vnd.oasis.opendocument.text  | 100 mb |
+| image         | image/jpeg, image/png                                             | 5 mb   |
+| audio         | audio/aac, audio/mp4, audio/amr, audio/mpeg, audio/ogg, audio/opus| 16 mb  |
+| video         | video/mp4, video/3gpp                                            | 16 mb  |
