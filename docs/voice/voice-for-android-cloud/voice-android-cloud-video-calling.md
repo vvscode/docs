@@ -3,16 +3,18 @@ title: Video Calling
 excerpt: 'Set up video calls with the Sinch Android Voice with Video SDK. Get more information here.'
 next:
   pages:
-    - voice-android-push-notifications
+    - voice-android-cloud-push-notifications
 ---
+
 ## Setting up a video call
 
 Just like audio calls, video calls are placed through the `CallClient` and events are received using the `CallClientListener`. The call client is owned by the SinchClient and accessed using `sinchClient.getCallClient()`. Calling is not enabled by default.
-For a more general introduction to calling with the SinchClient, see [here](doc:voice-android-calling).
+For a more general introduction to calling with the SinchClient, see [here](doc:voice-android-cloud-calling).
 
 ## Showing the video streams
 
 Once you have created a `VideoCallListener` and added it to a call, the `onVideoTrackAdded()` method will be called.
+
 ```java
 @Override
 public void onVideoTrackAdded(Call call) {
@@ -26,8 +28,8 @@ public void onVideoTrackAdded(Call call) {
 }
 ```
 
-
 After the call has ended, don’t forget to remove the views from your view hierarchy again.
+
 ```java
 @Override
 public void onCallEnded(Call call) {
@@ -35,28 +37,28 @@ public void onCallEnded(Call call) {
 }
 ```
 
-
 ### Pausing video stream
 
 To pause the local video stream, use the `pauseVideo()` method on the call.
+
 ```java
 // User pause the video stream
 call.pauseVideo();
 ```
 
-
 ### Resuming video stream
 
 To resume the local video stream, use the `resumeVideo()` method on the call.
+
 ```java
 // User resumes the video stream
 call.resumeVideo();
 ```
 
-
 ### Pausing video stream delegates
 
 Once you have created a `VideoCallListener` and added it to a call, the `onVideoTrackPaused()` method will be called when the remote user pause the video stream.
+
 ```java
 @Override
 public void onVideoTrackPaused(Call call) {
@@ -64,17 +66,16 @@ public void onVideoTrackPaused(Call call) {
 }
 ```
 
-
 ### Resuming video stream delegates
 
 Once you have created a `VideoCallListener` and added it to a call, the `onVideoTrackResumed()` method will be called when the remote user resumes the video stream.
+
 ```java
 @Override
 public void onVideoTrackResumed(Call call) {
      // Implement what to be done when remote user resumes video stream.
 }
 ```
-
 
 ### Video content fitting and aspect ratio
 
@@ -91,6 +92,7 @@ The Sinch SDK can provide access to raw video frames via a callback function. Th
 Your video frame handler needs to implement `VideoFrameListener` interface by implementing the `onFrame()` callback. Note that it is important to explicitly release the video frame by calling `release()`.
 
 Example:
+
 ```java
 import com.sinch.android.rtc.video.VideoFrame;
 import com.sinch.android.rtc.video.VideoFrameListener;
@@ -103,22 +105,22 @@ public class YourVideoFrameHandler implements VideoFrameListener {
 }
 ```
 
-
 Use `setVideoFrameListener()` to register your video frame handler as the callback to receive video frames.
 
 Example:
+
 ```java
 YourVideoFrameHandler videoFrameHandler = new YourVideoFrameHandler();
 VideoController vc = getSinchServiceInterface().getVideoController();
 vc.setVideoFrameListener(videoFrameHandler);
 ```
 
-
 ### Converting video frame from I420 to NV21
 
-The Sinch SDK provides a helper function to convert the default I420 frame to NV21 Frame, which is handy to work with when you need to save it as an image on Android. Use `VideoUtils.I420toNV21Frame(VideoFrame)` for the conversion. Note that this helper does *NOT* release the original I420 video frame.
+The Sinch SDK provides a helper function to convert the default I420 frame to NV21 Frame, which is handy to work with when you need to save it as an image on Android. Use `VideoUtils.I420toNV21Frame(VideoFrame)` for the conversion. Note that this helper does _NOT_ release the original I420 video frame.
 
 Example:
+
 ```java
 import com.sinch.android.rtc.video.VideoUtils; // To use I420toNV21Frame
 

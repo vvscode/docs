@@ -3,8 +3,9 @@ title: Application authentication
 excerpt: 'Application authentication with the Sinch SDK. This can be done in several ways. Find out more.'
 next:
   pages:
-    - voice-android-miscellaneous
+    - voice-android-cloud-miscellaneous
 ---
+
 A user identity must be provided when initiating a Sinch client. The first time the application instance and the Sinch client are running on behalf of a particular user, they are required to register against the Sinch service. This is mostly handled transparently by the Sinch SDK, but it works slightly differently depending on which authentication scheme you choose to use.
 
 The step of registering a user identity against the Sinch service requires the application instance to be authenticated and authorized to perform the user registration. Once the application instance has successfully registered the user identity, it will also have obtained the necessary credentials to perform further authorized requests for that specific user, for example, calling.
@@ -17,7 +18,7 @@ This application authentication scheme is based on giving the application direct
 
 Using this authentication scheme is the quickest way to get started as the client application instances can directly perform authorized requests against the Sinch service.
 
-> **WARNING: Caution**    
+> **WARNING: Caution**
 >
 > It is not recommended to have the application secret in plain text in the source code in the release version of the application.
 
@@ -27,16 +28,16 @@ This application authentication scheme is based on the client application instan
 
 This scheme has the benefit of the application secret never being directly accessible by the client applications and provides a better level of security as well as flexibility.
 
-> **Note**    
+> **Note**
 >
 > The need for the Sinch client to request an authentication signature and registration sequence is only required once per user and device–not on every application launch.
-
 
 ![authentication_via_application_server.png](images/0711e55-authentication_via_application_server.png)
 
 ### Generating the signature
 
-The *Application Server* is responsible for generating a valid signature for each registration request that it accepts as a valid user registration. The *sequence* is a [cryptographic nonce](http://en.wikipedia.org/wiki/Cryptographic_nonce), and must be a monotonically increasing value. The signature is then generated as as follows (pseudogrammar):
+The _Application Server_ is responsible for generating a valid signature for each registration request that it accepts as a valid user registration. The _sequence_ is a [cryptographic nonce](http://en.wikipedia.org/wiki/Cryptographic_nonce), and must be a monotonically increasing value. The signature is then generated as as follows (pseudogrammar):
+
 ```objectivec
 string userId;
 string applicationKey; // E.g. "196087a1-e815-4bc4-8984-60d8d8a43f1d"
@@ -50,8 +51,8 @@ string stringToSign = userId + applicationKey + sequence + applicationSecret;
 string signature = Base64.encode(SHA1.digest(stringToSign));
 ```
 
-
 For example, in Java:
+
 ```java
 // Generating the Signature - Java
 // import java.security.MessageDigest;

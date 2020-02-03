@@ -3,7 +3,7 @@ title: First time setup
 excerpt: 'Set up the Sinch Voice with Video SDK for the first time. Find out more information.'
 next:
   pages:
-    - voice-android-sinch-client
+    - voice-android-cloud-sinch-client
 ---
 
 ## Register an Application

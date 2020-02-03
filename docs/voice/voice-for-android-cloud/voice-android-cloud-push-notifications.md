@@ -3,7 +3,7 @@ title: Push notifications
 excerpt: ''
 next:
   pages:
-    - voice-android-application-authentication
+    - voice-android-cloud-application-authentication
 ---
 
 When an application is not running, or the `Active Connection` feature is not enabled, the user must be notified of an incoming call by a push notification.
