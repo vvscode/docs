@@ -66,7 +66,7 @@ The following WhatsApp URLs can be used by the WhatsApp API. We have servers in 
 
 | Message type  |  Supported content types               |  Post-processing size limit       |
 |---------------|----------------------------------------|-----------------------------------|
-| document      | text/plain, text/csv, application/pdf, application/msword, application/x-tar, application/rtf.0, application/vnd.ms-powerpoint, <br>application/vnd.openxmlformats-officedocument.presentationml.presentation, <br>application/vnd.openxmlformats-officedocument.wordprocessingml.document, <br>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, <br>application/vnd.oasis.opendocument.presentation, <br>application/vnd.oasis.opendocument.spreadsheet, <br>application/vnd.ms-excel, <br>application/vnd.oasis.opendocument.text  | 100 mb |
-| image         | image/jpeg, image/png                                             | 5 mb   |
-| audio         | audio/aac, audio/mp4, audio/amr, audio/mpeg, audio/ogg, audio/opus| 16 mb  |
-| video         | video/mp4, video/3gpp                                            | 16 mb  |
+| document      | Any content type listed for other message types <br>`text/plain`, `text/csv`, `application/pdf`, `application/msword`, `application/x-tar`, `application/rtf.0`, `application/vnd.ms-powerpoint`, <br>`application/vnd.openxmlformats-officedocument.presentationml.presentation`, <br>`application/vnd.openxmlformats-officedocument.wordprocessingml.document`, <br>`application/vnd.openxmlformats-officedocument.spreadsheetml.sheet`, <br>`application/vnd.oasis.opendocument.presentation`, <br>`application/vnd.oasis.opendocument.spreadsheet`, <br>`application/vnd.ms-excel`, <br>`application/vnd.oasis.opendocument.text`  | 100 mb |
+| image         | `image/jpeg`, `image/png`                                             | 5 mb   |
+| audio         | `audio/aac`, `audio/mp4`, `audio/amr`, `audio/mpeg`, `audio/ogg`, `audio/opus`| 16 mb  |
+| video         | `video/mp4`, `video/3gpp`                                            | 16 mb  |
