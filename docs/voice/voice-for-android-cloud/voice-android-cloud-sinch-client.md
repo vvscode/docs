@@ -3,7 +3,7 @@ title: Sinch Client
 excerpt: ''
 next:
   pages:
-    - voice-android-calling
+    - voice-android-cloud-calling
 ---
 
 The _SinchClient_ is the Sinch SDK entry point. It is used to configure the user’s and device’s capabilities, as well as to provide access to feature classes such as the _CallClient_, _MessageClient_ and _AudioController_.
@@ -21,7 +21,7 @@ SinchClient sinchClient = Sinch.getSinchClientBuilder().context(context)
                                                   .build();
 ```
 
-The _Application Key_ and _Application Secret_ are obtained from the Sinch Developer Dashboard. See [Production Environments](doc:voice-android-miscellaneous#section-production-environments) for valid values for _environmentHost_. The User ID should uniquely identify the user on the particular device.
+The _Application Key_ and _Application Secret_ are obtained from the Sinch Developer Dashboard. See [Production Environments](doc:voice-android-cloud-miscellaneous#section-production-environments) for valid values for _environmentHost_. The User ID should uniquely identify the user on the particular device.
 
 _Note:_ All listener callbacks emitted from the Sinch SDK are invoked on the same thread that the call to `SinchClientBuilder.build` is made on. If the invoking thread is _not_ the main-thread, it needs to have an associated `Looper`.
 
