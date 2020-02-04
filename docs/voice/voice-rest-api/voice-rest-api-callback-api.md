@@ -342,16 +342,10 @@ Actions allow your Sinch application to control individual calls. The following 
 ### Continue
 
     {
-        "name" : "Continue",
-        "record": false,
-        "recordingOptions": [RecordingOptionsObject]
+        "name" : "Continue"
     }
 
 **continue** is the action of an answered call event callback to continue setting up the call.
-
-**record** is an optional parameter that instructs the system to record the call. Check the [recording](doc:voice-rest-api-recording) section for more information.
-
-**recordingOptions** is sent when record is set to true and specifies the details about the recording. See [RecordingOptions](doc:voice-rest-api-recording#section-recording-options) for more details.
 
 ### ConnectPstn
 
@@ -362,7 +356,6 @@ Actions allow your Sinch application to control individual calls. The following 
         "maxDuration" : 3000,
         "cli" : "private",
         "suppressCallbacks" : false,
-        "record": false,
         "indications": "se"
    }
 
@@ -377,10 +370,6 @@ Actions allow your Sinch application to control individual calls. The following 
 **cli** is used to override the CLI of the client - if “private”, the CLI will be hidden. If not specified, the CLI that the client has set is used. In case of a PSTN-originated call, the phone number of the person that initiated the call will be shown as the CLI. To use CLI, your Sinch account must have CLI capabilities enabled.
 
 **suppressCallbacks** if set to true, you are opting out of the callbacks for ACE and DiCE for this call.
-
-**record** is an optional parameter that instructs the system to record the call. Check the [recording](doc:voice-rest-api-recording) section for more information.
-
-**recordingOptions** is sent when record is set to true and specifies the details about the recording. See [RecordingOptions](doc:voice-rest-api-recording#section-recording-options) for more details.
 
 **dtmf** when the destination picks up, this DTMF tones will be played to the callee. Valid characters in the string are "0"-"9", "#" and "w". A "w" will render a 500 ms pause. Example: "ww1234#w#" will render a 1s pause, the DTMF tones "1", "2", "3", "4" and "#" followed by a 500 pause and finally the DTMF tone for "#". This can be used if the callout destination for instance require a conference PIN code or an extension to be entered. If there is a calling party, it will hear progress while the DTMF is sent.
 
@@ -564,8 +553,7 @@ Actions allow your Sinch application to control individual calls. The following 
     {
         "name" : "ConnectConf",
         "conferenceId" : "myConference",
-        "moh" : "ring",
-        "record": false
+        "moh" : "ring"
     }
 
 **connectConf** is the action of an incoming call event. It allows the incoming call to be connected to a conference.
@@ -581,9 +569,6 @@ Actions allow your Sinch application to control individual calls. The following 
 
 If no “music-on-hold” is specified, the user will only hear silence.
 
-**record** is an optional parameter that instructs the system to record the conference. Check the [recording](doc:voice-rest-api-recording) section for more information.
-
-**recordingOptions** is sent when record is set to true and specifies the details about the recording. See [RecordingOptions](doc:voice-rest-api-recording#section-recording-options) for more details.
 
 #### ConnectSIP
 
@@ -593,7 +578,7 @@ If no “music-on-hold” is specified, the user will only hear silence.
   "destination": { "endpoint": "46708000000@sip.foo.com" },
   "maxDuration": 3000,
   "cli": "private",
-  "record": false,
+  "transport": "tls", 
   "suppressCallbacks": false
 }
 ```
@@ -606,9 +591,7 @@ If no “music-on-hold” is specified, the user will only hear silence.
 
 **cli** is used to override the CLI of the client - if “private”, the CLI will be hidden. If not specified, the CLI that the client has set is used. In case of a PSTN-originated call, the phone number of the person that initiated the call will be shown as the CLI. To use CLI, your Sinch account must have CLI capabilities enabled.
 
-**record** is an optional parameter that instructs the system to record the conference. Check the [recording](doc:voice-rest-api-recording) section for more information.
-
-**recordingOptions** is sent when record is set to true and specifies the details about the recording. See [RecordingOptions](doc:voice-rest-api-recording#section-recording-options) for more details.
+**transport** is an optional paramter to provide SIP transport protocol. Valid options are UDP, TCP or TLS. If left out UDP will be used.
 
 **suppressCallbacks** if set to true, you are opting out of the callbacks for ACE and DiCE for this call
 
