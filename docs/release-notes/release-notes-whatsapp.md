@@ -5,15 +5,15 @@ excerpt: >-
   and bug fixes.
 ---
 <h3>2020-02-11</h3>
-  - fix issue with missing customer callbacks for messages delivered over 14 days after sent
-  - upgrade WhatsApp Business API client (dockers) to latest v2.27.8
-  - upgrade google libphonenumber library
+  - Fix issue with missing customer callbacks for messages delivered over 14 days after sent.
+  - Upgrade WhatsApp Business API client (dockers) to latest v2.27.8.
+  - Upgrade google libphonenumber library.
 
 <h3>2020-01-31</h3>
-  - fix bug with dot ('.') prefix in cookies domain
-  - add fail message when trying to add a number as admin if that number is not part of that group 
-  - use filename like caption for document template messages
-  - new API endpoint to list current state of blacklisted numbers for bot
-  - change validation of numbers when adding to and removing from blacklist
-  - remove phone number validation for incoming messages
-  - add additional MIME type support for media files 
+  - Fix bug with dot ('.') prefix in cookies domain.
+  - Add fail message when trying to add a number as admin if that number is not part of that group. 
+  - Add support for filename parameter for document template messages.
+  - New API endpoint for getting the content of the blacklist.
+  - Change validation of numbers when adding to and removing from blacklist.
+  - Remove phone number validation for incoming messages.
+  - Add additional MIME type support for media files.
