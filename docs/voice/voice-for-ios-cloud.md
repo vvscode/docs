@@ -3,6 +3,7 @@ title: Voice for iOS - CLOUD TBC
 excerpt: >-
   The Sinch SDK is a product that makes adding voice calling and/or instant
   messaging to mobile apps easy. Continue reading this step-by-step guide now.
+hidden: 'true'
 next:
   pages:
     - voice-ios-cloud-first-time-setup
