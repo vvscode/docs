@@ -10,7 +10,7 @@ excerpt: >-
   - upgrade google libphonenumber library
 
 <h3>2020-01-31</h3>
-  - upgrade SpringBoot version to 2.2.4
+  - fix bug with dot ('.') prefix in cookies domain
   - fix for making some number admin of chat group when that number is not part of that group
   - use filename like caption for document template messages
   - new API endpoint to list current state of blacklisted numbers for bot
