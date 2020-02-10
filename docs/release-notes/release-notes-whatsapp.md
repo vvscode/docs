@@ -15,5 +15,5 @@ excerpt: >-
   - Add support for filename parameter for document template messages.
   - New API endpoint for getting the content of the blacklist.
   - Change validation of numbers when adding to and removing from blacklist.
-  - Remove phone number validation for incoming messages.
+  - Fix issue with missing customer callbacks for messages from recently created phone numbers.
   - Add additional MIME type support for media files.
