@@ -6,7 +6,7 @@ next:
     - voice-ios-cloud-calling
 ---
 
-The _SINClient_ is the Sinch SDK entry point. It is used to configure the user’s and device’s capabilities, as well as providing access to feature classes such as the _SINCallClient_, _SINMessageClient_ and _SINAudioController_.
+The _SINClient_ is the Sinch SDK entry point. It is used to configure the user’s and device’s capabilities, as well as providing access to feature classes such as the _SINCallClient_, and _SINAudioController_.
 
 ## Creating the _SINClient_
 
