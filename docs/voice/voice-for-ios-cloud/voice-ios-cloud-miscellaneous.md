@@ -15,18 +15,6 @@ The _Sinch.framework_ file includes a FAT-binary containing the architectures _a
 
 **Example**: Assuming linking _armv7_ and _arm64_ into the final application, it would add approximately 12Mb to the application.
 
-## Production environments
-
-Sinch provides two environments:
-
-> - Production - Used for applications deployed in production.
-
-The environment is passed as the parameter _environmentHost_ when instantiating the Sinch client.
-
-| Environment | EnvironmentHost parameter |
-| ----------- | ------------------------- |
-| Production  | clientapi.sinch.com       |
-
 ## Restrictions on User IDs
 
 User IDs can only contain characters in the _printable ASCII character set_. That is:
@@ -117,7 +105,7 @@ Start by enabling support for push notifications when initiating the _SINClient_
 #import <Sinch/Sinch.h>
 
 id<SINClient> client = [Sinch clientWithApplicationKey:@"<application key>"
-                                           environmentHost:@"clientapi.sinch.com"
+                                           environmentHost:@"ocra.api.sinch.com"
                                                     userId:@"<user id>"];
 
 [client setSupportPushNotifications:YES];

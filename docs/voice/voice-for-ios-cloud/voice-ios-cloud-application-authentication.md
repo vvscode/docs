@@ -76,7 +76,7 @@ String signature = Base64.encodeBase64String(hash).trim();
 ```objectivec
 // Instantiate a client object using the client factory method.
 id<SINClient> client = [Sinch clientWithApplicationKey:@"<application key>"
-                                           environmentHost:@"clientapi.sinch.com"
+                                           environmentHost:@"ocra.api.sinch.com"
                                                     userId:@"<user id>"];
 
 client.delegate = ...;

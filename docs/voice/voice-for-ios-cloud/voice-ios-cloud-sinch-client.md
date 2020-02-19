@@ -17,11 +17,11 @@ Set up the client and its delegate (_SINClientDelegate_, see [Reference](referen
 
 // Instantiate a Sinch client
 id<SINClient> sinchClient = [Sinch clientWithApplicationKey:@"<application key>"
-                                            environmentHost:@"clientapi.sinch.com"
+                                            environmentHost:@"ocra.api.sinch.com"
                                                      userId:@"<user id>"];
 ```
 
-The _Application Key_ is obtained from the _Sinch Developer Dashboard_. See \[Production Environments\]\[\] for valid values for _environmentHost_. The User ID should uniquely identify the user on the particular device.
+The _Application Key_ is obtained from the _Sinch Developer Dashboard_. The User ID should uniquely identify the user on the particular device.
 
 ## Specifying capabilities
 
