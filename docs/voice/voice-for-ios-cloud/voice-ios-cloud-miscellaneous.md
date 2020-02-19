@@ -11,11 +11,9 @@ _Note:_ The Sinch SDK library uses Automatic Reference Counting (ARC). However, 
 
 ## Note on Sinch.framework file size vs. linked size
 
-The _Sinch.framework_ file includes a FAT-binary containing the architectures _armv7_, _armv7s_, _arm64_, _i386_ and _x86_64_. When linking an application target against the _Sinch.framework_ targeting an iOS device, it will add a approximately 6.1Mb per _armv7_ slice, and 6.3Mb for the _arm64_ slice.
+The _Sinch.framework_ file includes a FAT-binary containing the architectures _armv7_, _arm64_, _i386_ and _x86_64_. When linking an application target against the _Sinch.framework_ targeting an iOS device, it will add a approximately 6Mb per _arm_ slice.
 
-**Example**: Assuming linking _armv7_ and _arm64_ into the final application, it would add approximately 12.4Mb to the application.
-
-(Even though _armv7s_ is supported and included, we recommend to not build your application for armv7s to reduce the final application binary size)
+**Example**: Assuming linking _armv7_ and _arm64_ into the final application, it would add approximately 12Mb to the application.
 
 ## Production environments
 
