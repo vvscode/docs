@@ -119,7 +119,6 @@ Start by enabling support for push notifications when initiating the _SINClient_
 #import <Sinch/Sinch.h>
 
 id<SINClient> client = [Sinch clientWithApplicationKey:@"<application key>"
-                                         applicationSecret:@"<application secret>"
                                            environmentHost:@"clientapi.sinch.com"
                                                     userId:@"<user id>"];
 

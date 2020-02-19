@@ -52,7 +52,6 @@ When creating a Sinch client, managed push notifications must be enabled:
 
 ```objectivec
 id<SINClient> client = [Sinch clientWithApplicationKey:@"<application key>"
-                                     applicationSecret:@"<application secret>"
                                        environmentHost:@"clientapi.sinch.com"
                                                 userId:@"<user id>"];
 
