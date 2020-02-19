@@ -15,7 +15,7 @@ Set up the client and its delegate (_SINClientDelegate_, see [Reference](referen
 ```objectivec
 #import <Sinch/Sinch.h>
 
-// Instantiate a Sinch client object
+// Instantiate a Sinch client
 id<SINClient> sinchClient = [Sinch clientWithApplicationKey:@"<application key>"
                                           applicationSecret:@"<application secret>"
                                             environmentHost:@"clientapi.sinch.com"
