@@ -240,10 +240,4 @@ This glossary defines some of the domain specific terms used throughout this doc
 | Caller               | The user making a call.                                                                                                                                           |
 | User                 | A end user of the mobile application.                                                                                                                             |
 | User Identity        | Identity of a User in the application domain. Can be any string, for instance a user name, user ID, phone number or email address.                                |
-| Active Connection    | A socket connection for signaling purposes where incoming calls are received.                                                                                     |
 
-## Deprecated features and APIs
-
-### Active Connection in Background
-
-Apple has since iOS 10 discontinued support for maintaining a _VoIP_ control connection alive via `-[UIApplication setKeepAliveTimeout:handler:]`. Attempting to use this method on an iOS device running iOS 10 results in the following warning log: `Legacy VoIP background mode is deprecated and no longer supported`. The Sinch feature _Active connection in background_ was using the keep alive handler API and is as a consequence no longer supported on iOS. It is recommended to use [VoIP Push Notifications](doc:voice-ios-cloud-local-and-remote-push-notifications) to achieve the equivalent functionality.
