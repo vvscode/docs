@@ -38,7 +38,7 @@ Drag the _Sinch.framework_ bundle from the SDK distribution package folder into 
 
 The Sinch SDK depends on the following frameworks which must be linked with the application target:
 
-> _libc++.dylib_ (_libc++.tbd_), _libz.tbd_, _Security.framework_, _AVFoundation.framework_, _AudioToolbox.framework_, _VideoToolbox.framework_, _CoreMedia.framework_, _CoreVideo.framework_, _CoreImage.framework_, _GLKit.framework_, _OpenGLES.framework_, _QuartzCore.framework_
+> _libc++.dylib_ (_libc++.tbd_), _libz.tbd_, _Security.framework_, _AVFoundation.framework_, _AudioToolbox.framework_, _VideoToolbox.framework_, _CoreMedia.framework_, _CoreVideo.framework_, _CoreImage.framework_, _GLKit.framework_, _OpenGLES.framework_, _QuartzCore.framework_, _Metal.framework_
 
 ## Info.plist
 
