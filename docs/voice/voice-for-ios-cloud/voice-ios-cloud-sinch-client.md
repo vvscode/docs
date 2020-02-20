@@ -23,19 +23,15 @@ id<SINClient> sinchClient = [Sinch clientWithApplicationKey:@"<application key>"
 
 The _Application Key_ is obtained from the _Sinch Developer Dashboard_. The User ID should uniquely identify the user on the particular device.
 
-## Specifying capabilities
+## Specifying Capabilities
 
-The SINClient can be configured to enable / disable certain functionality. Please see the [Reference](reference/html/Protocols/SINClient.html) for details.
-The following example shows how to setup the client with voice calling enabled, and using [push notifications](doc:voice-ios-cloud-local-and-remote-push-notifications).
+The _SINClient_ can be configured to enable / disable certain functionality. To enable _push notifications_ the method `-[SINClient enableManagedPushNotifications]` should be called. See [push notifications](doc:voice-ios-cloud-local-and-remote-push-notifications) for details.
 
 ```objectivec
-// Specify the client capabilities.
-[sinchClient setSupportCalling:YES];
-
 [sinchClient enableManagedPushNotifications];
 ```
 
-## Starting the Sinch client
+## Starting the _SINClient_
 
 Before starting the client, make sure you assign a _SINClientDelegate_.
 
@@ -45,30 +41,27 @@ sinchClient.delegate = ... ;
 
 // Start the Sinch Client
 [sinchClient start];
-
-// Start listening for incoming calls and messages
-[sinchClient startListeningOnActiveConnection];
 ```
 
 > **Note**
 >
-> If the application is meant to only make outgoing calls but not receive incoming calls, don’t call the `startListeningOnActiveConnection`. Outgoing calls can be made after calling the start method, and after the delegate has received the callback `clientDidStart:`.
+> If the application is meant to only make outgoing calls but not receive incoming calls, the client will be ready to make calls after the delegate has received the callback `clientDidStart:`. 
 
-For applications that want to receive incoming calls while not running in the foreground, [push notifications](doc:voice-ios-cloud-local-and-remote-push-notifications) are required.
+> **Note**
+>
+> If the application is meant to receive incoming calls while not running in foreground, [push notifications](doc:voice-ios-cloud-local-and-remote-push-notifications) are required.
 
 ### Life cycle management of a _SINClient_-instance
 
-We recommend that you initiate the Sinch client, start it, but not terminate it, during the lifetime of the running application. That also implies that the _SINClient_-instance should be _retained_ by the application code.
-If incoming events are not needed, stop listening for incoming events by invoking `-[SINClient stopListeningOnActiveConnection]`), but **do not** invoke `-[SINClient terminateGracefully]` or `-[SINClient terminate]`. The reason is initializing and _starting_ the client is relatively resource-intensive in terms of CPU.
+We recommend that you initiate the _Sinch client_, start it, but not terminate it, during the lifetime of the running application. That also implies that the _SINClient_-instance should be _retained_ by the application code.
 
-It is best to keep the client instance alive and started unless there are reasons specific to your application. It should _not_ be necessary to dispose of the client instance if memory warnings are received from iOS, because once the client is started it does not use much memory in comparison to view layers, view controllers etc. For the same reasons, if support for push notifications is enabled, the preferred method of temporarily stopping incoming events is to \[Unregister a push device token\]\[\].
+It is best to keep the client instance alive and started unless there are reasons specific to your application. It should _not_ be necessary to dispose of the client instance if memory warnings are received from iOS, because once the client is started it does not use much memory in comparison to view layers, view controllers etc. For the same reasons, if support for push notifications is enabled, the preferred method of temporarily stopping incoming calls is to \[Unregister a push device token\]\[\].
 
-The Sinch client can of course be completely stopped and also disposed. To do so, call one of the terminate methods on the client before the application code releases its last reference to the client object.
+The Sinch client can of course be completely stopped and also disposed. To do so, call `-[SINClient terminateGracefully]` before the application code releases its last reference to the client object.
 
 The following example shows how to dispose the Sinch client:
 
 ```objectivec
-[sinchClient stopListeningOnActiveConnection];
-[sinchClient terminateGracefully]; // or invoke -[SINClient terminate]
+[sinchClient terminateGracefully];
 sinchClient = nil;
 ```
