@@ -33,7 +33,7 @@ The _SINClient_ can be configured to enable / disable certain functionality. To 
 
 ## Starting the _SINClient_
 
-Before starting the client, make sure to assign a _SINClientDelegate_. It is required to implement `-[SINClientDelegate requiresRegistrationCredentials:]` to authorize the client / _User_ (see following section for details on authorization).
+Before starting the client, make sure to assign a _SINClientDelegate_. It is required to implement `-[SINClientDelegate requiresRegistrationCredentials:]` to authenticate the client / _User_ (see following section for details on authorization).
 
 ```objectivec
 // Assign as SINClientDelegate
@@ -54,11 +54,11 @@ sinchClient.delegate = ... ;
 
 ### Authorizing the Client / User
 
-When the _SINClient_ is started with a given _User ID_, it will require authorization to register against the _Sinch backend_.
+When the _SINClient_ is started with a given _User ID_ it is required to provide an authorization token to register as towards the _Sinch backend_.
 
 To authorize a client, implement `-[SINClientDelegate requiresRegistrationCredentials:]` and provide a token (a [JSON Web Token](https://jwt.io/)) that is cryptographically signed with the _Application Secret_.
 
-The sample applications included in the SDK includes a class `SINJWT` that show how to create the _JWT_ and sign it with the _Application Secret_.
+The sample applications included in the Sinch SDK includes a class `SINJWT` that describes how to create the _JWT_ and sign it with the _Application Secret_.
 
 ```objectivec
 - (void) client:(id<SINClient>)client requiresRegistrationCredentials:(id<SINClientRegistration>)registrationCallback
