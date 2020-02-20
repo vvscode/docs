@@ -33,7 +33,7 @@ The _SINClient_ can be configured to enable / disable certain functionality. To 
 
 ## Starting the _SINClient_
 
-Before starting the client, make sure you assign a _SINClientDelegate_.
+Before starting the client, make sure to assign a _SINClientDelegate_. It is required to implement `-[SINClientDelegate requiresRegistrationCredentials:]` to authorize the client / _User_ (see following section for details on authorization).
 
 ```objectivec
 // Assign as SINClientDelegate
@@ -41,8 +41,8 @@ sinchClient.delegate = ... ;
 
 // Start the Sinch Client
 [sinchClient start];
-```
 
+```
 > **Note**
 >
 > If the application is meant to only make outgoing calls but not receive incoming calls, the client will be ready to make calls after the delegate has received the callback `clientDidStart:`. 
@@ -50,6 +50,30 @@ sinchClient.delegate = ... ;
 > **Note**
 >
 > If the application is meant to receive incoming calls while not running in foreground, [push notifications](doc:voice-ios-cloud-local-and-remote-push-notifications) are required.
+
+
+### Authorizing the Client / User
+
+When the _SINClient_ is started with a given _User ID_, it will require authorization to register against the _Sinch backend_.
+
+To authorize a client, implement `-[SINClientDelegate requiresRegistrationCredentials:]` and provide a token (a [JSON Web Token](https://jwt.io/)) that is cryptographically signed with the _Application Secret_.
+
+The sample applications included in the SDK includes a class `SINJWT` that show how to create the _JWT_ and sign it with the _Application Secret_.
+
+```objectivec
+- (void) client:(id<SINClient>)client requiresRegistrationCredentials:(id<SINClientRegistration>)registrationCallback
+{
+  NSString *jwt = [SINJWT jwtForUserRegistrationWithApplicationKey:@"<application key>"
+                                                 applicationSecret:@"<application secret>"
+                                                            userId:client.userId];
+
+  [registrationCallback registerWithJWT:jwt];
+}
+```
+
+> **warning**
+>
+> When deploying your application to production, do NOT embed the _Appliation Secret_ in the application. The example above is only meant to show how to provide a signed JWT to the SINClient.
 
 ### Life cycle management of a _SINClient_-instance
 
