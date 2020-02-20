@@ -75,7 +75,7 @@ The sample applications included in the SDK includes a class `SINJWT` that show 
 >
 > When deploying your application to production, do NOT embed the _Appliation Secret_ in the application. The example above is only meant to show how to provide a signed JWT to the SINClient.
 
-### Life cycle management of a _SINClient_-instance
+### Lifecycle Management of a _SINClient_-instance
 
 We recommend that you initiate the _Sinch client_, start it, but not terminate it, during the lifetime of the running application. That also implies that the _SINClient_-instance should be _retained_ by the application code.
 
