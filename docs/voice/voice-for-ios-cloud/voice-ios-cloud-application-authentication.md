@@ -10,9 +10,9 @@ A user identity must be provided when initiating a Sinch client. The first time 
 
 ## Token-based User Registration - Overview
 
-To authorize the registration of a user, the application must provide a registration token to the `SINClient`. This token should be in the form of a [JSON Web Token (JWT)](https://jwt.io/) signed with a signing key derived from the _Application Secret_. 
+To authorize the registration of a user, the application must provide a registration token to the `SINClient`. This token should be in the form of a [JSON Web Token (JWT)](https://jwt.io/) signed with a signing key derived from the _Application Secret_.
 
-The recommended way to implement this authentication scheme is that the _Application Secret_ should be kept securely on your server-side backend, and the signed token should be passed via a secure channel to the application instance and Sinch client running on a device. 
+The recommended way to implement this authentication scheme is that the _Application Secret_ should be kept securely on your server-side backend, and the signed token should be passed via a secure channel to the application instance and Sinch client running on a device.
 
 ![Providing an Access Token by Application Server](images/0711e55-authentication_via_application_server.png)
 
@@ -20,7 +20,57 @@ The following sections describes in detail how to create and sign the _JWT_, and
 
 ## Creating a Registration Token
 
-TODO
+### JWT Header
+
+A registration token is a _JWT_ with the following JWT header parameters:
+
+| Header Parameter | Value | Note |
+| -----------------|:---------------|:-------|
+| `alg` | `HS256` |
+| `kid` | `hkdfv1-{DATE}` | Where `{DATE}` is date in UTC on format `YYYYMMDD` |
+
+Example of JWT header:
+
+```
+{
+  "alg": "HS256",
+  "kid": "hkdfv1-20200102"
+}
+```
+
+### JWT Claims
+
+The JWT must contain the following _claims_:
+
+| Claim | Value / Description | Note |
+|:--- |:--- |
+| `iss` | `//rtc.sinch.com/applications/{APPLICATION_KEY}` |
+| `sub` | `//rtc.sinch.com/applications/{APPLICATION_KEY}/users/{USER_ID}` |
+| `iat` | See [JWT RFC 7519 section-4.1.1](https://tools.ietf.org/html/rfc7519#section-4.1.1) |
+| `exp` | See [JWT RFC 7519 section-4.1.4](https://tools.ietf.org/html/rfc7519#section-4.1.4) |
+| `nonce` | A unique cryptographic [nonce](https://en.wikipedia.org/wiki/Cryptographic_nonce) |
+
+__IMPORTANT__: The expiration time for the token itself (`exp`) should be set so that the _Time-to-Live_ of the token is not less than 1 minute.
+
+### Signing the JWT
+
+The _JWT_ should be signed using a _signing key_ derived from the _Sinch Application Secret_ as follows. Given:
+
+- A function `HMAC256(key, message)`.
+- A date-formatting function `FormatDate(date, format)`.
+- The current date as variable `now`.
+- _Sinch Application Secret_ as variable `applicationSecret`, holding the secret as a _base64_ encoded string.
+
+, derive the signing key as follows:
+
+```
+signingKey = HMAC256(BASE64-DECODE(applicationSecret), UTF8-ENCODE(FormatDate(now, "YYYYMMDD")))
+```
+
+For additional information about _JWT_, along with a list of available libraries for generating signed _JWTs_, see [https://jwt.io](https://jwt.io).
+
+For detailed information about the _JWT_ specification, see [https://tools.ietf.org/html/rfc7519](https://tools.ietf.org/html/rfc7519).
+
 
 
 !!! REMOVE SECTION BELOW !!
