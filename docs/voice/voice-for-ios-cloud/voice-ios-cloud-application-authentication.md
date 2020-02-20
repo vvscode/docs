@@ -1,6 +1,6 @@
 ---
-title: Application authentication
-excerpt: 'Application authentication with the Sinch SDK. This can be done in several ways. Find out more.'
+title: Application Authentication
+excerpt: 'Application Authentication with the Sinch SDK.'
 next:
   pages:
     - voice-ios-cloud-miscellaneous
