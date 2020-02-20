@@ -6,11 +6,24 @@ next:
     - voice-ios-cloud-miscellaneous
 ---
 
-A user identity must be provided when initiating a Sinch client. The first time the application instance and the Sinch client are running on behalf of a particular user, they are required to register against the Sinch service. This is mostly handled transparently by the Sinch SDK, but it works slightly differently depending on which authentication scheme you choose to use.
+A user identity must be provided when initiating a Sinch client. The first time the application instance and the Sinch client are running on behalf of a particular user, it is required to register against the Sinch service. This is mostly handled transparently by the Sinch SDK. The step of registering a user identity against the Sinch service requires the application instance to provide a token that authenticates the _Application_ and grants permission (authorizes) the given user to register. Once the application instance has successfully registered the user identity, the client will have obtained the necessary credentials to perform further authorized requests on behalf of the _Application_ and for that specific user to make and receive calls.
 
-The step of registering a user identity against the Sinch service requires the application instance to be authenticated and authorized to perform the user registration. Once the application instance has successfully registered the user identity, it will also have obtained the necessary credentials to perform further authorized requests for that specific user, for example, calling.
+## Token-based User Registration - Overview
 
-Two different authentication schemes are available: authentication by client access to application secret and authentication supported by application server.
+To authorize the registration of a user, the application must provide a registration token to the `SINClient`. This token should be in the form of a [JSON Web Token (JWT)](https://jwt.io/) signed with a signing key derived from the _Application Secret_. 
+
+The recommended way to implement this authentication scheme is that the _Application Secret_ should be kept securely on your server-side backend, and the signed token should be passed via a secure channel to the application instance and Sinch client running on a device. 
+
+![Providing an Access Token by Application Server](images/0711e55-authentication_via_application_server.png)
+
+The following sections describes in detail how to create and sign the _JWT_, and how to provide it to the `SINClient`.
+
+## Creating a Registration Token
+
+TODO
+
+
+!!! REMOVE SECTION BELOW !!
 
 ## Authentication by client access to Application Secret
 
