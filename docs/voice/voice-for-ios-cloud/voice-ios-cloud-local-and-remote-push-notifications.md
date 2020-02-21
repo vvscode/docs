@@ -74,7 +74,7 @@ Implement the protocol `SINManagedPushDelegate` and forward any incoming push no
 
 The purpose of `SINManagedPushDelegate` and the delegate method `managedPush:didReceiveIncomingPushWithPayload:type:` is that it provides a single unified code path for handling incoming push notifications, no matter whether it is a regular remote push notification or a VoIP push notification (which is received via _PushKit_ and _PKPushRegistry_). In the case of a regular remote push; independently of whether it is arriving via `-[UIApplicationDelegate didReceiveRemoteNotification:` or as a launch option via `-[UIApplication applicationDidFinishLaunching:didFinishLaunchingWithOptions:`.
 
-### Unregister a push device token
+### Unregister a Push Device Token
 
 If the user of the application logs out or performs a similar action, the push notification device token can be unregistered via `-[SINClient unregisterPushNotificationDeviceToken]` to prevent further notifications to be sent to the particular device.
 
