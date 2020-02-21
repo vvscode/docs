@@ -12,7 +12,7 @@ A user identity must be provided when initiating a Sinch client. The first time 
 
 To authorize the registration of a user, the application must provide a registration token to the `SINClient`. This token should be in the form of a [JSON Web Token (JWT)](https://jwt.io/) signed with a signing key derived from the _Application Secret_.
 
-The recommended way to implement this authentication scheme is that the _Application Secret_ should be kept securely on your server-side backend, and the signed token should be passed via a secure channel to the application instance and Sinch client running on a device.
+The recommended way to implement this authentication scheme is that the _Application Secret_ should be kept securely on your server-side backend, and the signed token should be created and signed on your server, then passed via a secure channel to the application instance and Sinch client running on a device.
 
 ![Providing an Access Token by Application Server](images/0711e55-authentication_via_application_server.png)
 
