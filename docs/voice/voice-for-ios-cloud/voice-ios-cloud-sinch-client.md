@@ -54,9 +54,10 @@ sinchClient.delegate = ... ;
 
 ### Authorizing the Client / User
 
-When the _SINClient_ is started with a given _User ID_ it is required to provide an authorization token to register as towards the _Sinch backend_.
+When the _SINClient_ is started with a given _User ID_ it is required to provide a registration token to register as towards the _Sinch backend_.
 
-To authorize a client, implement `-[SINClientDelegate requiresRegistrationCredentials:]` and provide a token (a [JSON Web Token](https://jwt.io/)) that is cryptographically signed with the _Application Secret_.
+To authorize a client, implement `-[SINClientDelegate requiresRegistrationCredentials:]` and provide a token (a [JSON Web Token](https://jwt.io/)) that is cryptographically signed with the _Application Secret_. 
+How to form and sign this token is described in detail in [Creating a Registration Token](doc:voice-ios-cloud-application-authentication)
 
 The sample applications included in the Sinch SDK includes a class `SINJWT` that describes how to create the _JWT_ and sign it with the _Application Secret_.
 
