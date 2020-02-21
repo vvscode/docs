@@ -33,6 +33,7 @@ If no authentication header is present or if the bearer token is invalid, the AP
 
 
 ## HTTP Errors
+
 Responses with status `400 Bad Request` and `401 Unauthorized` will present a JSON object in the body explaining the error.
 It has the following structure:
 
@@ -56,6 +57,7 @@ The following WhatsApp URLs can be used by the WhatsApp API. We have servers in 
 | US Production | https://us1.whatsapp.api.sinch.com     |
 | EU Production | https://eu1.whatsapp.api.sinch.com     |
 
+
 ## Accepted media types
 
 > **Note**
@@ -67,6 +69,7 @@ The following WhatsApp URLs can be used by the WhatsApp API. We have servers in 
 | Message type  |  Supported content types               |  Post-processing size limit       |
 |---------------|----------------------------------------|-----------------------------------|
 | document      | Any content type listed for other message types,<br>`text/plain`, `text/csv`, `application/pdf`, `application/msword`, `application/x-tar`, `application/rtf.0`, `application/vnd.ms-powerpoint`, <br>`application/vnd.openxmlformats-officedocument.presentationml.presentation`, <br>`application/vnd.openxmlformats-officedocument.wordprocessingml.document`, <br>`application/vnd.openxmlformats-officedocument.spreadsheetml.sheet`, <br>`application/vnd.oasis.opendocument.presentation`, <br>`application/vnd.oasis.opendocument.spreadsheet`, <br>`application/vnd.ms-excel`, <br>`application/vnd.oasis.opendocument.text`  | 100 mb |
-| image         | `image/jpeg`, `image/png`                                             | 5 mb   |
-| audio         | `audio/aac`, `audio/mp4`, `audio/amr`, `audio/mpeg`, `audio/ogg`, `audio/opus`| 16 mb  |
-| video         | `video/mp4`, `video/3gpp`                                            | 16 mb  |
+| image         | `image/jpeg`, `image/png`                                                     | 5 MB    |
+| audio         | `audio/aac`, `audio/mp4`, `audio/amr`, `audio/mpeg`, `audio/ogg`, `audio/opus`| 16 MB   |
+| video         | `video/mp4`, `video/3gpp`                                                     | 16 MB   |
+| sticker       | `image/webp`                                                                  | 100 KB  |
