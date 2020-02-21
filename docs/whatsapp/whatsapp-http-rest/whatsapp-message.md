@@ -412,11 +412,11 @@ Accepted content types can be found in the [introduction](doc:whatsapp-introduct
 
 JSON object parameters:
 
-| Name        | Description                                                               | JSON Type    | Default    | Constraints                   | Required |
-| ----------- | ------------------------------------------------------------------------- | ------------ | ---------- | ----------------------------- | :------: |
-| type        | Constant value `sticker`                                                  | String       | N/A        | N/A                           | Yes      |
-| url         | Public url of the audio file. Should be either HTTP or HTTPS link.        | String       | N/A        | Accepted Contenty-Type header | Yes      |
-| provider    | Optional name of a provider to be used when trying to download the file.  | String       | None       | N/A                           | No       |
+| Name        | Description                                                               | JSON Type    | Default    | Constraints                  | Required |
+| ----------- | ------------------------------------------------------------------------- | ------------ | ---------- | ---------------------------- | :------: |
+| type        | Constant value `sticker`                                                  | String       | N/A        | N/A                          | Yes      |
+| url         | Public url of the sticker file. Should be either HTTP or HTTPS link.      | String       | N/A        | Accepted Content-Type header | Yes      |
+| provider    | Optional name of a provider to be used when trying to download the file.  | String       | None       | N/A                          | No       |
 
 ```json
 {
