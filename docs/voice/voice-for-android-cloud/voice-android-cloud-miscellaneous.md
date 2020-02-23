@@ -17,7 +17,7 @@ The environment is passed as the parameter _environmentHost_ when instantiating 
 
 | Environment | EnvironmentHost parameter |
 | ----------- | ------------------------- |
-| Production  | clientapi.sinch.com       |
+| Production  | ocra.api.sinch.com       |
 
 ## Restrictions on User IDs
 

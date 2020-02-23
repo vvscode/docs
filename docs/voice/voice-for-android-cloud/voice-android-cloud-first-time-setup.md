@@ -1,6 +1,6 @@
 ---
 title: First time setup
-excerpt: 'Set up the Sinch Voice with Video SDK for the first time. Find out more information.'
+excerpt: 'Follow this step-by-step guide to set up the Sinch Voice and Video SDK for the first time.'
 next:
   pages:
     - voice-android-cloud-sinch-client
@@ -29,7 +29,7 @@ repositories {
 }
 
 dependencies {
-    compile(name:'sinch-android-rtc', version:'+', ext:'aar')
+    implementation(name:'sinch-android-rtc', version:'+', ext:'aar')
 }
 ```
 
@@ -57,6 +57,6 @@ A minimum set of permissions are needed for the app to use the Sinch SDK. These 
 
 ### Verify manifest in runtime during development
 
-To verify that the manifest has the necessary permissions the `sinchClient.checkManifest()` method can be used. This method should be called before starting the client and will throw an exception if the manifest isn’t setup correctly. `sinchClient.checkManifest()` should only be called during development. When the application is ready for release the method call can safely be removed.
+To verify that the manifest has the necessary permissions the `sinchClient.checkManifest()` method can be used. This method should be called before starting the client and will throw an `MissingPermissionException` exception if the manifest isn’t setup correctly. `sinchClient.checkManifest()` should only be called during development. When the application is ready for release the method call can safely be removed.
 
 _Note:_ This method takes into consideration which features the app supports (for example, calling, respecting native calls, and so on). Call `sinchClient.checkManifest()` after the setup but before the start of the SinchClient.

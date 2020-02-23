@@ -17,7 +17,7 @@ Set up the client and its delegate (_SINClientDelegate_, see [Reference](referen
 
 // Instantiate a Sinch client
 id<SINClient> sinchClient = [Sinch clientWithApplicationKey:@"<application key>"
-                                            environmentHost:@"ocra.api.sinch.com"
+                                            environmentHost:@"ocra-grab-r1.api.sinch.com"
                                                      userId:@"<user id>"];
 ```
 
@@ -43,20 +43,20 @@ sinchClient.delegate = ... ;
 [sinchClient start];
 
 ```
+
 > **Note**
 >
-> If the application is meant to only make outgoing calls but not receive incoming calls, the client will be ready to make calls after the delegate has received the callback `clientDidStart:`. 
+> If the application is meant to only make outgoing calls but not receive incoming calls, the client will be ready to make calls after the delegate has received the callback `clientDidStart:`.
 
 > **Note**
 >
 > If the application is meant to receive incoming calls while not running in foreground, [push notifications](doc:voice-ios-cloud-local-and-remote-push-notifications) are required.
 
-
 ### Authorizing the Client / User
 
 When the _SINClient_ is started with a given _User ID_ it is required to provide a registration token to register as towards the _Sinch backend_.
 
-To authorize a client, implement `-[SINClientDelegate requiresRegistrationCredentials:]` and provide a token (a [JSON Web Token](https://jwt.io/)) that is cryptographically signed with the _Application Secret_. 
+To authorize a client, implement `-[SINClientDelegate requiresRegistrationCredentials:]` and provide a token (a [JSON Web Token](https://jwt.io/)) that is cryptographically signed with the _Application Secret_.
 How to form and sign this token is described in detail in [Creating a Registration Token](doc:voice-ios-cloud-application-authentication)
 
 The sample applications included in the Sinch SDK includes a class `SINJWT` that describes how to create the _JWT_ and sign it with the _Application Secret_.

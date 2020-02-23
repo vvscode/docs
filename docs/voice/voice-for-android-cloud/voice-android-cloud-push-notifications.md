@@ -3,14 +3,21 @@ title: Push notifications
 excerpt: ''
 next:
   pages:
-    - voice-android-cloud-application-authentication
+    - voice-android-cloud-user-controller
 ---
+
+## Receiving incoming calls via push notifications
+
+The application may receive incoming calls only when:
+
+- the application is in the foreground AND listening on active connection;
+- the application is registered to receive incoming calls via the Push Notifications.
 
 When an application is not running, or the `Active Connection` feature is not enabled, the user must be notified of an incoming call by a push notification.
 
-By invoking `setSupportManagedPush(true)` the Sinch SDK will automatically register to _Firebase Cloud Messaging_ and the Sinch backend will initiate push messages to your application when needed. This feature requires Google Play Services on the device. If you distribute your application through other channels than Google Play, push notifications will not be available on devices that do not have Google Play Services.
+By invoking `setSupportManagedPush(true)` the Sinch SDK will automatically register to _Firebase Cloud Messaging_ and the Sinch backend will initiate push messages to your application when needed. This feature requires _Google Play Services_ on the device. If you distribute your application through other channels than Google Play, push notifications will not be available on devices that do not have _Google Play Services_.
 
-If using the Sinch backend and Google Cloud Messaging is not viable in the application, please see \[Push Notifications sent via your application server\]\[\] and \[Active connection\]\[\].
+If using the Sinch backend and _Firebase Cloud Messaging_ is not viable in the application, please see \[Push Notifications sent via your application server\]\[\] and \[Active connection\]\[\].
 
 As a developer, you will be responsible for implementing the code that receives the FCM push message. For an example implementation, please see the sample app “Sinch Push” which is bundled with the SDK.
 
@@ -22,7 +29,7 @@ The following sections cover how to support receiving calls and messages via pus
 
 You can add Firebase to your app either semi-automatically using Android Studio, or manually [following this step-by-step official guide](https://firebase.google.com/docs/android/setup). In brief, to perform manual setup you first need to register your application in [firebase console](https://console.firebase.google.com/). If you already have GCM project, the console will prompt you to import it as new Firebase Cloud Messaging project. Register your application using the console, and download relevant google-services.json into your project’s main folder. More information about adding Firebase to your Android app can be found [here](https://firebase.google.com/docs/android/setup)
 
-Sample SDK projects _sinch-rtc-sample-push_ and _sinch-rtc-sample-video-push_ will require you to supply your own _google-services.json_ in order to be built. In the absence of this file gradle will show relevant error with explanation and relevant links and stop the build. That _google-services.json_ file is the main mean of automatization of support of Firebase services to your app. Android Studio’s _‘com.google.gms.google-services’_ plugin parses and adds relevant resources and permissions to your applications manifest automatically.
+Sample SDK projects _sinch-rtc-sample-push_ and _sinch-rtc-sample-video-push_ will require you to supply your own _google-services.json_ in order to be built. In the absence of this file, gradle will show relevant error with explanation and relevant links and stop the build. That _google-services.json_ file is the main mean of automatization of support of Firebase services to your app. Android Studio’s _‘com.google.gms.google-services’_ plugin parses and adds relevant resources and permissions to your applications manifest automatically.
 
 ## Permissions required
 
@@ -57,68 +64,7 @@ public void onMessageReceived(RemoteMessage remoteMessage){
 
 ### Explicit push token registration
 
-There are certain situations where it is either desirable to explicitly register push token and/or get assurance that the push token is indeed registered, e.g.:
-
-- The application is designed to receive calls only, and thus must register push token with the Sinch backend on the very first start, while it's desireable to terminate SinchClient as soon as the registration concludes (e.g. to free resources). In this situation, the application should be notified by a specific callback on the registration result.
-- The application detects that FCM push token is invalidated abd should be refreshed and re-registered with Sinch backend. Here, if SinchClient is in the running state, it would take care of re-registering of the push token iteself, otherwise, the application is responsible for re-registering.
-
-Both situation should be handled with using new **ManagedPush API** available via _Beta_ interface:
-
-```java
-public ManagedPush getManagedPush(String username) {
-     // create client, but you don't need to start it
-     initClient(username);
-     // retrieve ManagedPush
-     return Beta.createManagedPush(mSinchClient);
-}
-```
-
-The former situation is showcased in _LoginActivity.java_ in _sinch-rtc-sample-push_ and _sinch-rtc-sample-video-push_ sample applications. The activity implements _PushTokenRegistrationCallback_ interface,
-
-```java
-public class LoginActivity extends BaseActivity implements SinchService.StartFailedListener, PushTokenRegistrationCallback {
-
-private void loginClicked() {
-       ...
-       if (!mPushTokenIsRegistered) {
-              getSinchServiceInterface().getManagedPush(userName).registerPushToken(this);
-       }
-       ...
-}
-
-@Override
-public void tokenRegistered() {
-       mPushTokenIsRegistered = true;
-       nextActivityIfReady();
-}
-
-@Override
-public void tokenRegistrationFailed(SinchError sinchError) {
-       mPushTokenIsRegistered = false;
-       Toast.makeText(this, "Push token registration failed - incoming calls can't be received!", Toast.LENGTH_LONG).show();
-}
-}
-```
-
-And the UI andvances to the next activity only when both conditions are met:
-
-- the SinchClient is started;
-- the push token is registered
-
-```java
-public class FcmListenerService extends FirebaseMessagingService {
-
-@Override
-public void onNewToken(String newToken) {
-// newToken supplied here is the token for `default` FCM project.
-// but the mere fact of receiving this callback informs the application
-// that ALL tokens should be re-acquired
-       instanceOfMyPushTokenRegistrationClass.registerPushToken();
-}
-}
-```
-
-Where `instanceOfMyPushTokenRegistrationClass.registerPushToken()` behavior is defined by the same pattern as in the previous situation - call the `ManagedPush.registerPushToken(final PushTokenRegistrationCallback callback)` and wait for callback to decide how to proceed depending on result.
+There are certain situations where it is either desirable to explicitly register push token and/or get assurance that the push token is indeed registered. These situations should be handled using new [UserController API](doc:voice-android-cloud-user-controller).
 
 ## Receive and forward push notifications to a Sinch client
 

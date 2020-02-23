@@ -1,14 +1,15 @@
 ---
-title: Data Cloud Calling Migration
+title: Sinch Data Calling Cloud Platform
 excerpt: >-
-  This document describes, what has changed and how to proceed with the initial integartion and tests to the new Data Cloud Calling Platform.
+  This document describes, what has changed and how to proceed with the initial integration and tests for the new Data Cloud Calling Platform.
 hidden: 'true'
 next:
   pages:
     - voice-for-ios-cloud
+    - voice-for-android-cloud
 ---
 
-## Sinch Data Calling Cloud Platform - Migration Instructions
+## Migration Instructions
 
 Our new data calling platform brings a lot of improvements, regarding performance, code efficiency, security and latency. Been a trully cloud based product, our services are deployed all over the globe, using the latest cloud technologies available to optimize our voice and video data flow.
 
@@ -26,9 +27,8 @@ In order to simplify the configuration and add an extra control layer for this i
 
 ![Grab's Test App](testapp-phase1.png)
 
-> | WARNING: Please use only this new app to test the new SDKs! |
-> | ----------------------------------------------------------- |
->
+> **warning**
+> Please use only this new app to test the new SDKs!
 
 ## Changes:
 
@@ -70,7 +70,11 @@ Other Downloads:
 
 ### Authentication Changes:
 
-- Get from IOS and Android new docs on GitHub
+- Check Changes on our [Application Authentication](doc:voice-ios-cloud-application-authentication) session
+
+- FOr full details, please check our [IOS](doc:voice-ios-cloud-first-time-setup) and [Android](doc:voice-android-cloud-first-time-setup) documentation.
+
+and Android new docs on GitHub
 
 ### REST API / Endpoint Changes
 
