@@ -8,13 +8,13 @@ next:
     - voice-for-ios-cloud
 ---
 
-# Sinch Data Calling Cloud Platform - Migration Instructions
+## Sinch Data Calling Cloud Platform - Migration Instructions
 
 Our new data calling platform brings a lot of improvements, regarding performance, code efficiency, security and latency. Been a trully cloud based product, our services are deployed all over the globe, using the latest cloud technologies available to optimize our voice and video data flow.
 
 Despite all the changes and improvements we have done, we tryed as much as possible to keep those changes as transparent as possible to our customers, however, few changes will be needed, as described bellow.
 
-## **New Platform Integration Phase**
+### **New Platform Integration Phase**
 
 During the initial integration and test phase (we are calling **_Phase 1_**) only new sinch users (users created with the new Cloud SDKs - Sinch Cloud Users) will be used, and only calls between this new users will work. _{Proposed period end February - Mid/end of March}_
 
@@ -30,9 +30,9 @@ In order to simplify the configuration and add an extra control layer for this i
 > | ----------------------------------------------------------- |
 >
 
-# Changes:
+## Changes:
 
-## APN:
+### APN:
 
 - Upload New APNs Key (.p8 file) instead of APN Certificates.
 
@@ -43,15 +43,15 @@ Before production release, the keys will be upladed via Sinch portal.
 Our new Sinch Push Service has changed the way we stablish a trusted connection to APNs.
 Instead of using APN [Certificates-based](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/establishing_a_certificate-based_connection_to_apns?language=objc) to connect Sinch's Push service to APNs, our new platform now uses APN [Token-based](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/establishing_a_token-based_connection_to_apns?language=objc) connections.
 
-### How to create a key
+#### How to create a key
 
 ![Create a New APNs Key](https://docs-assets.developer.apple.com/published/2e8ab05539/a6b2f82d-acac-462c-8659-274e8f62b41a.png)
 
-## FCM:
+### FCM:
 
 - No Changes required
 
-## SDK Changes:
+### SDK Changes:
 
 Release Candidate SDK versions
 
@@ -68,10 +68,10 @@ Other Downloads:
 [SDK Checksum](https://download.sinch.com/android/4.0.0/sinch-android-rtc-4.0.0_87.SHA256SUMS) |
 [Debug Symbols](https://download.sinch.com/android/4.0.0/sinch-android-rtc-4.0.0-87_debug-symbols.zip)
 
-## Authentication Changes:
+### Authentication Changes:
 
 - Get from IOS and Android new docs on GitHub
 
-## REST API / Endpoint Changes
+### REST API / Endpoint Changes
 
 - Need to Double Check, if the API's will change, due to onPrem and Cloud changes!!!
