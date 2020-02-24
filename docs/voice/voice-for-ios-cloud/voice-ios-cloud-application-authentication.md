@@ -78,7 +78,7 @@ When starting the client (`-[SINClient start]`) the client will ask for a token 
 
 ```objectivec
 id<SINClient> client = [Sinch clientWithApplicationKey:@"<application key>"
-                                       environmentHost:@"ocra-grab-r1.api.sinch.com"
+                                       environmentHost:@"ocra.api.sinch.com"
                                                 userId:@"<user id>"];
 
 client.delegate = ...;

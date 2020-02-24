@@ -26,7 +26,7 @@ public UserController getUserController(String userId) {
                 .context(getApplicationContext())
                 .applicationKey(applicationKey)
                 .userId(userId)
-                .environmentHost("ocra-grab-r1.api.sinch.com")
+                .environmentHost("ocra.api.sinch.com")
                 .build();
 }
 ```

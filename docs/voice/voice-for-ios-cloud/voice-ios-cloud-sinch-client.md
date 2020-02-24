@@ -18,7 +18,7 @@ Set up the client and its delegate (_SINClientDelegate_, see [Reference](referen
 
 // Instantiate a Sinch client
 id<SINClient> sinchClient = [Sinch clientWithApplicationKey:@"<application key>"
-                                            environmentHost:@"ocra-grab-r1.api.sinch.com"
+                                            environmentHost:@"ocra.api.sinch.com"
                                                      userId:@"<user id>"];
 ```
 
