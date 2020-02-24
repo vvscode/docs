@@ -1,6 +1,7 @@
 ---
 title: Sinch Client
 excerpt: 'The Sinch SDK is a product that makes adding voice and video calling to mobile apps easy. Continue reading this step-by-step guide now.'
+hidden: 'true'
 next:
   pages:
     - voice-android-cloud-calling

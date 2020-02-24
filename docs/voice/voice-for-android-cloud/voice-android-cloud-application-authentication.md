@@ -1,6 +1,7 @@
 ---
 title: Application authentication
 excerpt: 'Application authentication with the Sinch SDK.'
+hidden: 'true'
 next:
   pages:
     - voice-android-cloud-miscellaneous

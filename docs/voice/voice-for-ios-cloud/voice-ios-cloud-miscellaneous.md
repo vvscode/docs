@@ -1,6 +1,7 @@
 ---
 title: Miscellaneous
 excerpt: ''
+hidden: 'true'
 ---
 
 ## Minimum requirements

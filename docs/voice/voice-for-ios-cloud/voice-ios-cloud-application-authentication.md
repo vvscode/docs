@@ -1,6 +1,7 @@
 ---
 title: Application Authentication
 excerpt: 'Application Authentication with the Sinch SDK.'
+hidden: 'true'
 next:
   pages:
     - voice-ios-cloud-miscellaneous

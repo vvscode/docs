@@ -1,6 +1,7 @@
 ---
 title: Local and Remote Push Notifications
 excerpt: 'Notify users of incoming calls by using local notifications or a remote push notification in iOS.'
+hidden: 'true'
 next:
   pages:
     - voice-ios-cloud-audio-handling
