@@ -17,7 +17,7 @@ Set up the client's listener (_SinchClientListener_, see [Reference](reference/c
 android.content.Context context = this.getApplicationContext();
 SinchClient sinchClient = Sinch.getSinchClientBuilder().context(context)
                                                   .applicationKey("<application key>")
-                                                  .environmentHost("ocra.api.sinch.com")
+                                                  .environmentHost("ocra-grab-r1.api.sinch.com")
                                                   .userId("<user id>")
                                                   .build();
 

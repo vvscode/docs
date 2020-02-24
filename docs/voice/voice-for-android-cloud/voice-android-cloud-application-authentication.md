@@ -24,10 +24,10 @@ The following sections describes in detail how to create and sign the _JWT_, and
 
 A registration token is a _JWT_ with the following JWT header parameters:
 
-| Header Parameter | Value | Note |
-| -----------------|:---------------|:-------|
-| `alg` | `HS256` |
-| `kid` | `hkdfv1-{DATE}` | Where `{DATE}` is date in UTC on format `YYYYMMDD` |
+| Header Parameter | Value           | Note                                               |
+| ---------------- | :-------------- | :------------------------------------------------- |
+| `alg`            | `HS256`         |
+| `kid`            | `hkdfv1-{DATE}` | Where `{DATE}` is date in UTC on format `YYYYMMDD` |
 
 Example of JWT header:
 
@@ -42,15 +42,15 @@ Example of JWT header:
 
 The JWT must contain the following _claims_:
 
-| Claim | Value / Description | Note |
-|:--- |:--- |
-| `iss` | `//rtc.sinch.com/applications/{APPLICATION_KEY}` |
-| `sub` | `//rtc.sinch.com/applications/{APPLICATION_KEY}/users/{USER_ID}` |
-| `iat` | See [JWT RFC 7519 section-4.1.1](https://tools.ietf.org/html/rfc7519#section-4.1.1) |
-| `exp` | See [JWT RFC 7519 section-4.1.4](https://tools.ietf.org/html/rfc7519#section-4.1.4) |
-| `nonce` | A unique cryptographic [nonce](https://en.wikipedia.org/wiki/Cryptographic_nonce) |
+| Claim   | Value / Description                                                                 | Note |
+| :------ | :---------------------------------------------------------------------------------- | ---- |
+| `iss`   | `//rtc.sinch.com/applications/{APPLICATION_KEY}`                                    |
+| `sub`   | `//rtc.sinch.com/applications/{APPLICATION_KEY}/users/{USER_ID}`                    |
+| `iat`   | See [JWT RFC 7519 section-4.1.1](https://tools.ietf.org/html/rfc7519#section-4.1.1) |
+| `exp`   | See [JWT RFC 7519 section-4.1.4](https://tools.ietf.org/html/rfc7519#section-4.1.4) |
+| `nonce` | A unique cryptographic [nonce](https://en.wikipedia.org/wiki/Cryptographic_nonce)   |
 
-__IMPORTANT__: The expiration time for the token itself (`exp`) should be set so that the _Time-to-Live_ of the token is not less than 1 minute.
+**IMPORTANT**: The expiration time for the token itself (`exp`) should be set so that the _Time-to-Live_ of the token is not less than 1 minute.
 
 ### Signing the JWT
 
@@ -80,7 +80,7 @@ When starting the client (`SinchClient.start()`) the client will ask for a token
     android.content.Context context = this.getApplicationContext();
     SinchClient sinchClient = Sinch.getSinchClientBuilder().context(context)
                                                     .applicationKey("<application key>")
-                                                    .environmentHost("ocra.api.sinch.com")
+                                                    .environmentHost("ocra-grab-r1.api.sinch.com")
                                                     .userId("<user id>")
                                                     .build();
 
@@ -106,7 +106,6 @@ In your `SinchClientListener` class:
 
 > **Note**
 > The client _MAY_ also ask for a registration token on subsequent starts.
-
 
 ## Providing a Registration Token to `UserController`
 

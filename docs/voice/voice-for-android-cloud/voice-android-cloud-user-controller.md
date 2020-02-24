@@ -8,7 +8,7 @@ next:
 
 ### Push token registration via _UserController_ API
 
->**Note**
+> **Note**
 >
 > UserController provides a way to register and user for incoming calls via push notifications while providing the callback about success / failure of such registration. You can also use it to un-register push token if receiving of incoming calls is no longer desireable.
 
@@ -25,7 +25,7 @@ public UserController getUserController(String userId) {
                 .context(getApplicationContext())
                 .applicationKey(applicationKey)
                 .userId(userId)
-                .environmentHost("ocra.api.sinch.com")
+                .environmentHost("ocra-grab-r1.api.sinch.com")
                 .build();
 }
 ```
@@ -88,19 +88,19 @@ User registration is a two step process, where first the step is registering _us
 
 ![Token-based User Registration](images/20200221-user_and_push_registration.png)
 
->**Important**
+> **Important**
 >
->User Controller requires signed registration token the same way as it is required by the SinchClient for the first time. Provide it via [ClientRegistration.register()](reference/com/sinch/android/rtc/ClientRegistration.html) callback in response to _onCredetialsRequired()_.
-See more information about authentication [here](doc:voice-android-cloud-application-authentication).
+> User Controller requires signed registration token the same way as it is required by the SinchClient for the first time. Provide it via [ClientRegistration.register()](reference/com/sinch/android/rtc/ClientRegistration.html) callback in response to _onCredetialsRequired()_.
+> See more information about authentication [here](doc:voice-android-cloud-application-authentication).
 
 And the UI andvances to the next activity only when both conditions are met:
 
 - the SinchClient is started.
 - the push token is registered.
 
->**Note**
+> **Note**
 >
->It is safe to close application right after receiving _tokenRegistered()_ callback - you'll keep receving incomng calls unless you _force stop_ the application or unregister the push token using _UserController_.
+> It is safe to close application right after receiving _tokenRegistered()_ callback - you'll keep receving incomng calls unless you _force stop_ the application or unregister the push token using _UserController_.
 
 ### Push token un-registration via _UserController_ API
 

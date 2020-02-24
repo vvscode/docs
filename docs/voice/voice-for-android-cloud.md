@@ -1,5 +1,5 @@
 ---
-title: Voice for Android - CLOUD TBC
+title: Voice for Android - Data Cloud Calling
 excerpt: >-
   The Sinch SDK is a product that makes adding voice and video calling to mobile apps easy. Continue reading this step-by-step guide now.
 hidden: 'true'

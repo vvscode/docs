@@ -15,9 +15,10 @@ Sinch provides two environments:
 
 The environment is passed as the parameter _environmentHost_ when instantiating the Sinch client.
 
-| Environment | EnvironmentHost parameter |
-| ----------- | ------------------------- |
-| Production  | ocra.api.sinch.com       |
+| Environment      | EnvironmentHost parameter  | Status          |
+| ---------------- | -------------------------- | --------------- |
+| Grab Integration | ocra-grab-r1.api.sinch.com | Private release |
+| Production       | ocra.api.sinch.com         | Not released    |
 
 ## Restrictions on User IDs
 

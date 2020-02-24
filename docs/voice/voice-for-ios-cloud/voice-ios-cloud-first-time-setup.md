@@ -6,7 +6,7 @@ next:
   pages:
     - voice-ios-cloud-sinch-client
 ---
- 
+
 ## Register an Application
 
 > 1.  Register a Sinch Developer account [here](https://portal.sinch.com/#/signup).
@@ -31,6 +31,10 @@ end
 > **Tip**
 >
 > Using the pod allows you to skip the manual steps in the next section.
+
+> **Note**
+>
+> CocoaPods version will be available only for Production ready releases.
 
 ## Add the _Sinch.framework_
 

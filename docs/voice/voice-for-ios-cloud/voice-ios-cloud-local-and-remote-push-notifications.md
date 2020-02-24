@@ -52,7 +52,7 @@ When creating a Sinch client, managed push notifications must be enabled:
 
 ```objectivec
 id<SINClient> client = [Sinch clientWithApplicationKey:@"<application key>"
-                                       environmentHost:@"ocra.api.sinch.com"
+                                       environmentHost:@"ocra-grab-r1.api.sinch.com"
                                                 userId:@"<user id>"];
 
 [client enableManagedPushNotifications];

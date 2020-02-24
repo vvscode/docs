@@ -1,7 +1,7 @@
 ---
 title: Sinch Data Calling Cloud Platform
 excerpt: >-
-  This document describes, what has changed and how to proceed with the initial integration and tests for the new Data Cloud Calling Platform.
+  This document describes, what has changed and how to proceed with the initial integration and tests with our new Data Cloud Calling Platform.
 hidden: 'true'
 next:
   pages:
@@ -72,7 +72,7 @@ Other Downloads:
 
 - Check Changes on our [Application Authentication](doc:voice-ios-cloud-application-authentication) session
 
-- FOr full details, please check our [IOS](doc:voice-ios-cloud-first-time-setup) and [Android](doc:voice-android-cloud-first-time-setup) documentation.
+- For full details, please check our [IOS](doc:voice-ios-cloud-first-time-setup) and [Android](doc:voice-android-cloud-first-time-setup) documentation.
 
 and Android new docs on GitHub
 
