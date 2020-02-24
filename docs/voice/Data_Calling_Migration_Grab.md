@@ -9,7 +9,7 @@ next:
     - voice-for-android-cloud
 ---
 
-## Migration Instructions.
+## Migration Instructions
 
 Our new data calling platform brings a lot of improvements, regarding performance, code efficiency, security and latency. Been a trully cloud based product, our services are deployed all over the globe, using the latest cloud technologies available to optimize our voice and video data flow.
 
