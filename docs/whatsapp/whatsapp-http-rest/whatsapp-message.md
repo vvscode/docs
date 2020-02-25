@@ -69,6 +69,8 @@ The types of messages that can be sent are one of the following:
 
 #### Template message
 
+Accepted language codes can be found in the [introduction](doc:whatsapp-introduction#section-supported-language-codes).
+
 JSON object parameters:
 
 | Name          | Description                                                          | JSON Type    | Default    | Constraints           | Required |
@@ -398,6 +400,35 @@ JSON object parameters:
         ]
       }
     ]
+  }
+}
+```
+
+#### Sticker message
+
+> **Note**
+>
+> Stickers are required to have width 512 pixels and height 512 pixels. The maximum size allowed is 100 KB.
+
+Accepted content types can be found in the [introduction](doc:whatsapp-introduction#section-accepted-media-types).
+
+JSON object parameters:
+
+| Name        | Description                                                               | JSON Type    | Default    | Constraints                  | Required |
+| ----------- | ------------------------------------------------------------------------- | ------------ | ---------- | ---------------------------- | :------: |
+| type        | Constant value `sticker`                                                  | String       | N/A        | N/A                          | Yes      |
+| url         | Public url of the sticker file. Should be either HTTP or HTTPS link.      | String       | N/A        | Accepted Content-Type header | Yes      |
+| provider    | Optional name of a provider to be used when trying to download the file.  | String       | None       | N/A                          | No       |
+
+```json
+{
+  "to": [
+    "46732001122",
+    "group:447506616260-1565342732"
+  ],
+  "message": {
+    "type": "sticker",
+    "url": "https://example.com/sticker.webp"
   }
 }
 ```
