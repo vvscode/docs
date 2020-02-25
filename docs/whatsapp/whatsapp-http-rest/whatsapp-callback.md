@@ -18,13 +18,13 @@ A callback from the Sinch WhatsApp API will always have the following structure:
 
 > **Note**
 >
-> A callback from the Sinch WhatsApp API can contain both delivery reports and inbound messages
+> A callback from the Sinch WhatsApp API can contain both delivery reports and inbound messages.
 
 
 
 > **Note**
 >
-> Contacts might be placed only for text, contact and location inbound messages
+> Contacts might be placed only for text, contact and location inbound messages.
 
 ### Delivery report callback
 
