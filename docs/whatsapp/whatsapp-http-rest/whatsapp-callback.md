@@ -20,7 +20,7 @@ A callback from the Sinch WhatsApp API will always have the following structure:
 >
 > A callback from the Sinch WhatsApp API can contain both delivery reports and inbound messages
 
-<br/>
+
 
 > **Note**
 >
