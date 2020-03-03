@@ -1,5 +1,5 @@
 ---
-title: Capability Check Endpoint (beta)
+title: Capability Check Endpoint
 excerpt: 'Check whether a MSISDN is using an RCS-capable handset and network'
 ---
 
