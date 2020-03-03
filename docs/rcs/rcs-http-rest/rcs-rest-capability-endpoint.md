@@ -1,10 +1,15 @@
 ---
-title: Capability Check Endpoint `beta`
+title: Capability Check Endpoint (beta)
 excerpt: 'Check whether a MSISDN is using an RCS-capable handset and network'
 ---
+
+
 The capability check endpoint allows you to check the specific RCS capabilities for a given MSISDN.
 
-Please note: the RCS capability check is in beta and may return incorrect results under certain circumstances. For further information, please contact your Sinch account manager.
+> **Important**
+>
+> The RCS capability check is in beta and may return incorrect results under certain circumstances. For further information, please contact your Sinch account manager.
+
 
 ### Request
 
