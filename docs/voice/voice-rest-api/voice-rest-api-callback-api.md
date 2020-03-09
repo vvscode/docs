@@ -57,18 +57,22 @@ SVAML is a call control markup language developed by Sinch. When your backend re
           <td align="left">Plays a text-to-speech message</td>
         </tr>
         <tr class="odd">
+          <td align="left">SendDtmf</td>
+          <td align="left">Send DTMF tones</td>
+        </tr>
+        <tr class="even">
           <td align="left">SetCookie</td>
           <td align="left">Sets a key/value pair session cookie that can be access in events throughout the call</td>
         </tr>
-        <tr class="even">
+        <tr class="odd">
           <td align="left">Answer</td>
           <td align="left">Explicitly answers an incoming call (not normally required)</td>
         </tr>
-        <tr class="odd">
+        <tr class="even">
           <td align="left">StartRecording</td>
           <td align="left">Starts call recording</td>
         </tr>
-        <tr class="even">
+        <tr class="odd">
           <td align="left">StopRecording</td>
           <td align="left">Stops call recording</td>
         </tr>
@@ -277,6 +281,15 @@ Supported languages / locales:
     </table>
   </div>
 </div>
+
+### SendDtmf
+
+    {
+        "name" : "sendDtmf",
+        "value" : "1234#"
+    }
+
+**value** Specifies the DTMF to send to the caller. Valid characters in the string are "0"-"9", "#" and "w". A "w" will render a 500 ms pause. Example: "ww1234#w#" will render a 1s pause, the DTMF tones "1", "2", "3", "4" and "#" followed by a 0.5s pause and finally the DTMF tone for "#".
 
 ### SetCookie
 
@@ -604,7 +617,8 @@ With the _runMenu_ action, the user will start listening to an IVR menu. This me
 _Example of runMenu action_
 
     {
-        "name"   :"RunMenu",
+        "name"   : "RunMenu",
+        "barge"  : true
         "menus"  :
         [
             {
@@ -651,6 +665,8 @@ _Example of runMenu action_
 **repeats** is the number of times that the repeatPrompt will be played.
 
 **maxDigits** is the maximum number of digits that is expected from a user to press. Once these digits are collected, a [PIE] Event will be triggered containing these digits. The digits are collected when either the maximum number of digits are entered, the user presses “\#” or the user waits 5 seconds after the last entered digit.
+
+**barge** "Barging" means that the user can press DTMF while hearing the prompt asking for DTMF input. The DTMF will stop the message playing and accept the input. With barging disabled, the user will have to listen to the full message before being able to reply with DTMF. This behaviour is controlled by setting "barge" parameter to true or false. By default, barging is enabled.
 
 ### Park
 
