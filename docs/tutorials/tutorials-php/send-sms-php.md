@@ -1,6 +1,6 @@
 ---
 title: Send SMS in PHP
-hidden: 'true'
+hidden: 'false'
 excerpt: >-
   Sending SMS from applications is more popular than ever, and this small script will enable you to send SMS in PHP. Find out more and sign up with Sinch today.
 ---
