@@ -101,8 +101,8 @@ import clx.xms.client as sinchClient
 import clx.xms.api as api
 
 # Set up the credentials
-service_plan_id = '250a67fb34774641b1a516973057e874'
-api_token = '97498fcd377d4157977030437ecafbb7'
+service_plan_id = '{service_plan_id}'
+api_token = '{api_token}'
 endpoint = 'https://us.sms.api.sinch.com/xms'
 timeout = 30
 
@@ -110,11 +110,11 @@ client = sinchClient.Client(service_plan_id, api_token, endpoint, timeout)
 
 # Variables for the requestbody
 sender_phonenumber = '24321432'
-recipients_phonenumbers = ['+46722324894']
+recipients_phonenumbers = ['213353455','+4623454645']
 body = 'Hello, ${name}!'
 parameters = {
     'name': {
-        '+46722324894' : 'Amar',
+        '+46722324894' : 'John',
         'default' : 'valued customer'
     }
 }
