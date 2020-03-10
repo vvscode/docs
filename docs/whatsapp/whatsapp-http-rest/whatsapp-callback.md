@@ -337,7 +337,7 @@ The format is as follows:
 |filename   | Optional filename, only valid for audio and document                   | String    |
 |metadata   | Optional sticker metadata, only used for stickers                      | Object    |
 
-The stickerpack metadata object has the following parameters:
+The sticker metadata object has the following parameters:
 
 |Name                   | Description                                                                 | JSON Type     |
 |-----------------------|-----------------------------------------------------------------------------|---------------|
