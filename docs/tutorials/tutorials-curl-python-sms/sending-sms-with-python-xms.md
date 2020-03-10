@@ -11,17 +11,17 @@ In this tutorial we're going to utilize our HTTP REST Messaging API. Wow that's 
 
 ## Prerequisites
 
-1. You have created your Sinch account, create one [here](https://www.sinch.com/sign-up/) and get some free credits to try the API out :fire:
-2. You have `python` and `pip` installed. If you don't, you can read about how to do it on your system [here](https://www.python.org/downloads/) and for `pip` [here](https://pip.pypa.io/en/stable/installing/).
-3. Install the [Sinch Library](https://pypi.org/project/clx-sdk-xms/) (clx-sdk-sms, it's a legacy name :cocktail:).
-   `pip install clx-sdk-xms`
+> 1. You have created your Sinch account, if you don't have one, create one [here](https://www.sinch.com/sign-up/) and get some free credits to try the API out :fire:
+> 2. You have `python` and `pip` installed. If you don't, you can read about how to do it on your system [here](https://www.python.org/downloads/) and for `pip` [here](https://pip.pypa.io/en/stable/installing/).
+> 3. Install the [Sinch Library](https://pypi.org/project/clx-sdk-xms/) (clx-sdk-sms, it's a legacy name :cocktail:).
+      `pip install clx-sdk-xms`
 
 ### Credentials
 
 If you don't already have an API configured, go to your API Overview and click on the *Add new REST API* button. Your credentials will be generated and shown within seconds!
 
-1. [Login](https://dashboard.sinch.com/login) to the dashboard.
-2. Go to your [API Overview](https://dashboard.sinch.com/sms/api/rest) and find your *Service Plan ID* and *API Token*. Keep them close, we'll need them later.
+> 1. [Login](https://dashboard.sinch.com/login) to the dashboard.
+> 2. Go to your [API Overview](https://dashboard.sinch.com/sms/api/rest) and find your *Service Plan ID* and *API Token*. Keep them close, we'll need them later.
 
 ## Time to code!
 
@@ -51,7 +51,10 @@ client = sinchClient.Client(service_plan_id, api_token, endpoint, timeout)
 
 Now to the fun part, sending a message! For clarity we'll just set up the parameters for the requestbody in variables.
 
-If you're using a trial account your message will be sent from an *random* number with a *generic test message*. However, we *still* need to add a number in the `sender_phonenumber` variable.
+
+> **Note**
+>
+> If you're using a trial account your message will be sent from an *random* number with a *generic test message*. However, we *still* need to add a number in the `sender_phonenumber` variable.
 
 We'll also make use of the parameterization of the message body, so we can send a personalized message to our recipients. Read more about parameterization [here](doc:sms-rest#section-parameterization).
 
