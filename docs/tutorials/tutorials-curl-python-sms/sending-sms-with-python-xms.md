@@ -20,7 +20,7 @@ In this tutorial we're going to utilize our HTTP REST Messaging API. Wow that's 
 
 If you don't already have an API configured, go to your API Overview and click on the *Add new REST API* button. Your credentials will be generated and shown within seconds!
 
-1. [Login](https://dashboard.sinch.com/login) to the dashboard.
+1. [Login](https://dashboard.sinch.com/login) to the dashboard, or create an account [here](https://www.sinch.com/sign-up/) and get some free credits to try the API out :fire:.
 2. Go to your [API Overview](https://dashboard.sinch.com/sms/api/rest) and find your *Service Plan ID* and *API Token*. Keep them close, we'll need them later.
 
 ## Time to code!

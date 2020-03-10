@@ -16,7 +16,7 @@ All steps above are availible in detail on the [PHP Getting Started](doc:tutoria
 
 If you don't already have an API configured, go to your API Overview and click on the *Add new REST API* button. Your credentials will be generated and shown within seconds!
 
-1. [Login](https://dashboard.sinch.com/login) to the dashboard.
+1. [Login](https://dashboard.sinch.com/login) to the dashboard, or create an account [here](https://www.sinch.com/sign-up/) and get some free credits to try the API out :fire:.
 2. Go to your [API Overview](https://dashboard.sinch.com/sms/api/rest) and find your *Service Plan ID* and *API Token*. We'll need these in our script below.
 
 ## Plugin your credentials!
