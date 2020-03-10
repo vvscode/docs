@@ -95,7 +95,7 @@ except Exception as ex:
 
 We have an in-depth tutorial for our XMS Library [here](https://clxcommunications.github.io/sdk-xms-python/tutorial.html). It's great for getting to know what our XMS API can do!
 
-Also feel free to read more about the API i general at the [documentation site](https://developers.sinch.com/docs/sms) contains up-to-date information about, for example, status and error codes.
+Also feel free to read more about the API i general at the [documentation site](doc:sms-rest) contains up-to-date information about, for example, status and error codes.
 
 
 ## Code
