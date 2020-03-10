@@ -29,7 +29,7 @@ If you don't already have an API configured, go to your API Overview and click o
 
 ## Time to code!
 
-Let us first set up our imports, we'll need two modules from the `clx-sdk-xms` package. The finished code can be found [here](doc:seding-sms-with-python-xms#section-code)
+Let us first set up our imports, we'll need two modules from the `clx-sdk-xms` package. The finished code can be found [here](doc:seding-sms-with-python-xms#code)
 
 ```python
 import clx.xms.client as sinchClient
