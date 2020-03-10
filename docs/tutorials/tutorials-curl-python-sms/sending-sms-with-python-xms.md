@@ -9,27 +9,25 @@ excerpt: >-
 
 ## Introduction
 
-In this tutorial we're going to utilize our HTTP REST Messaging API. Wow that's a beautiful name, right? Let us just call it *XMS API*. And the XMS API service - *XMS*. That feels a lot better!
+In this tutorial we're going to utilize our HTTP REST Messaging API. Wow that's a beautiful name, right? Let us just call it *XMS API*, that feels a lot better!
 
 ## Prerequisites
 
 1. You have created your Sinch account
 2. You have `python` and `pip` installed. If you don't, you can read about how to do it on your system [here](https://www.python.org/downloads/) and for `pip` [here](https://pip.pypa.io/en/stable/installing/).
-3. Install the [Sinch Library](https://pypi.org/project/clx-sdk-xms/) (clx-sdk-sms).
-    ```bash
-    pip install clx-sdk-xms
-    ```
+3. Install the [Sinch Library](https://pypi.org/project/clx-sdk-xms/) (clx-sdk-sms, it's a legacy name :cocktail:).
+   `pip install clx-sdk-xms`
 
 ### Credentials
 
 If you don't already have an API configured, go to your API Overview and click on the *Add new REST API* button. Your credentials will be generated and shown within seconds!
 
 1. [Login](https://dashboard.sinch.com/login) to the dashboard.
-2. Go to your [API Overview](https://dashboard.sinch.com/sms/api/rest) and find your *Service Plan ID* and *API Token*. Keep them close, we'll need the later.
+2. Go to your [API Overview](https://dashboard.sinch.com/sms/api/rest) and find your *Service Plan ID* and *API Token*. Keep them close, we'll need them later.
 
 ## Time to code!
 
-Let us first set up our imports, we'll need two modules from the `clx-sdk-xms` package. The finished code can be found [here](doc:sending-sms-with-python-xms#section-code)
+Let us first set up our imports, we'll need two modules from the `clx-sdk-xms` package. The finished code can be found [here](doc:sending-sms-with-python-xms#section-code).
 
 ```python
 import clx.xms.client as sinchClient
@@ -95,7 +93,7 @@ except Exception as ex:
 
 We have an in-depth tutorial for our XMS Library [here](https://clxcommunications.github.io/sdk-xms-python/tutorial.html). It's great for getting to know what our XMS API can do!
 
-Also feel free to read more about the API i general at the [documentation site](doc:sms-rest) contains up-to-date information about, for example, status and error codes.
+Also feel free to read more about the XMS API in general at the [documentation site](doc:sms-rest), it contains up-to-date information about, for example, [status](doc:sms-rest#section-http-statuses) and [error](doc:sms-rest#section-error-codes) codes.
 
 
 ## Code
