@@ -339,15 +339,15 @@ The format is as follows:
 
 The stickerpack metadata object has the following parameters:
 
-|Name                   | Description                                                                 | JSON Type |
-|-----------------------|-----------------------------------------------------------------------------|-----------|
-|stickerpack-id         | The id of the stickerpack the sticker belongs to                            | String    |
-|stickerpack-name       | The name of the stickerpack the sticker belongs to                          | String    |
-|stickerpack-publisher  | The publisher of the stickerpack the sticker belongs to                     | String    |
-|emojis                 | The emojis included in the stickerpack the sticker belongs to               | String    |
-|ios-app-store-link     | A link to the stickerpack the sticker belongs to in the Apple iOS App Store | String    |
-|android-app-store-link | A link to the stickerpack the sticker belongs to in the Google Play store   | Object    |
-|is-first-party-sticker | 1 if the sticker is part of a first-party stickerpack, 0 otherwise          | Integer   |
+|Name                   | Description                                                                 | JSON Type     |
+|-----------------------|-----------------------------------------------------------------------------|---------------|
+|stickerpack-id         | The id of the stickerpack the sticker belongs to                            | String        |
+|stickerpack-name       | The name of the stickerpack the sticker belongs to                          | String        |
+|stickerpack-publisher  | The publisher of the stickerpack the sticker belongs to                     | String        |
+|emojis                 | The emojis included in the stickerpack the sticker belongs to               | Array[String] |
+|ios-app-store-link     | A link to the stickerpack the sticker belongs to in the Apple iOS App Store | String        |
+|android-app-store-link | A link to the stickerpack the sticker belongs to in the Google Play store   | String        |
+|is-first-party-sticker | 1 if the sticker is part of a first-party stickerpack, 0 otherwise          | Integer       |
 
 ##### Sample inbound image message
 
