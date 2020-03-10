@@ -330,11 +330,24 @@ The format is as follows:
 
 |Name       | Description                                                            | JSON Type |
 |-----------|------------------------------------------------------------------------|-----------|
-|type       | Fixed value `image`, `document`, `audio`, `video`, `voice`             | String    |
+|type       | Fixed value `image`, `document`, `audio`, `video`, `voice`, `sticker`  | String    |
 |url        | The public url of the media file                                       | String    |
 |mime_type  | Mime type of the media file                                            | String    |
 |caption    | Caption of the media file                                              | String    |
 |filename   | Optional filename, only valid for audio and document                   | String    |
+|metadata   | Optional sticker metadata, only used for stickers                      | Object    |
+
+The stickerpack metadata object has the following parameters:
+
+|Name                   | Description                                                                 | JSON Type     |
+|-----------------------|-----------------------------------------------------------------------------|---------------|
+|stickerpack-id         | The id of the stickerpack the sticker belongs to                            | String        |
+|stickerpack-name       | The name of the stickerpack the sticker belongs to                          | String        |
+|stickerpack-publisher  | The publisher of the stickerpack the sticker belongs to                     | String        |
+|emojis                 | The emojis included in the stickerpack the sticker belongs to               | Array[String] |
+|ios-app-store-link     | A link to the stickerpack the sticker belongs to in the Apple iOS App Store | String        |
+|android-app-store-link | A link to the stickerpack the sticker belongs to in the Google Play store   | String        |
+|is-first-party-sticker | 1 if the sticker is part of a first-party stickerpack, 0 otherwise          | Integer       |
 
 ##### Sample inbound image message
 
