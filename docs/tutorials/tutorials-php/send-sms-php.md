@@ -1,6 +1,5 @@
 ---
 title: Send SMS in PHP
-hidden: 'true'
 excerpt: >-
   Sending SMS from applications is more popular than ever, and this small script will enable you to send SMS in PHP. Find out more and sign up with Sinch today.
 ---
@@ -8,8 +7,8 @@ excerpt: >-
 
 ## Prerequisites
 
-1. You have created your Sinch account
-2. You have php installed. If you don't, you can read about how to do it on your system [here](https://www.php.net/manual/en/install.php).
+> 1. You have created your Sinch account, if you don't have one, create one [here](https://www.sinch.com/sign-up/) and get some free credits to try the API out :fire:
+> 2. You have php installed. If you don't, you can read about how to do it on your system [here](https://www.php.net/manual/en/install.php).
 
 All steps above are availible in detail on the [PHP Getting Started](doc:tutorials-php) page.
 
@@ -17,8 +16,8 @@ All steps above are availible in detail on the [PHP Getting Started](doc:tutoria
 
 If you don't already have an API configured, go to your API Overview and click on the *Add new REST API* button. Your credentials will be generated and shown within seconds!
 
-1. [Login](https://dashboard.sinch.com/login) to the dashboard.
-2. Go to your [API Overview](https://dashboard.sinch.com/sms/api/rest) and find your *Service Plan ID* and *API Token*. We'll need these in our script below.
+> 1. [Login](https://dashboard.sinch.com/login) to the dashboard.
+> 2. Go to your [API Overview](https://dashboard.sinch.com/sms/api/rest) and find your *Service Plan ID* and *API Token*. We'll need these in our script below.
 
 ## Plugin your credentials!
 
@@ -36,8 +35,9 @@ We might want to send a message to a number aswell! So we setup the content for 
 ```php
 $recipient_phone_numbers = "recipient_phone_numbers"; //May be several, separate with a comma `,`.
 ```
-
-If you're using a trial account your message will be sent from an *random* number with a *generic test message*. However, we *still* need to add a number in the JSON objects `from` field.
+> **Note**
+>
+> If you're using a trial account your message will be sent from an *random* number with a *generic test message*. However, we *still* need to add a number in the JSON objects `from` field.
 
 ```php
 $send_from = "your_assigned_number";
