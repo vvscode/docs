@@ -567,7 +567,7 @@ Actions allow your Sinch application to control individual calls. The following 
 
 **Notice**: You do not need to set _cli_ or _number_ if the values supplied by the client suffice.
 
-#### ConnectMXP
+### ConnectMXP
 
     {
         "name": "connectMXP",
