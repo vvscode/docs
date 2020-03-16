@@ -1,6 +1,6 @@
 ---
 title: Callback API
-excerpt: "Control calls from your application backend or by calling the REST API in the Sinch platform... Read more."
+excerpt: 'Control calls from your application backend or by calling the REST API in the Sinch platform... Read more.'
 next:
   pages:
     - voice-rest-api-reporting-api
@@ -110,11 +110,16 @@ SVAML is a call control markup language developed by Sinch. When your backend re
           <td align="left">ICE response</td>
         </tr>
         <tr class="even">
+          <td align="left">ConnectMXP</td>
+          <td align="left">Instructs whether the app-app call will be connected</td>
+          <td align="left">ICE response</td>
+        </tr>
+        <tr class="odd">
           <td align="left">ConnectConf</td>
           <td align="left">Instructs to connect the call to a conference</td>
           <td align="left">ICE response</td>
         </tr>
-        <tr class="odd">
+        <tr class="even">
           <td align="left">ConnectSIP</td>
           <td align="left">Instructs to connect the call to a SIP server</td>
           <td align="left">ICE response</td>
@@ -159,6 +164,7 @@ Instructions allow your application to play a message to participants given a pa
         "text" : "Hello, this is a text to speech message",
         "locale" : "en-US"
     }
+
 **say** instruction is used to play a text-to-speech message to the end user. The message is provided in the text field.
 
 **text** is a string that contains the message to be played. The default maximum length is 600 characters. To change this limit, please contact support.
@@ -284,6 +290,7 @@ Supported languages / locales:
 
 ### SendDtmf
 
+``````json
     {
         "name" : "sendDtmf",
         "value" : "1234#"
@@ -292,7 +299,7 @@ Supported languages / locales:
 **value** Specifies the DTMF to send to the caller. Valid characters in the string are "0"-"9", "#" and "w". A "w" will render a 500 ms pause. Example: "ww1234#w#" will render a 1s pause, the DTMF tones "1", "2", "3", "4" and "#" followed by a 0.5s pause and finally the DTMF tone for "#".
 
 ### SetCookie
-
+```json
     {
         "name" : "SetCookie",
         "key" : "cookiename",
@@ -308,7 +315,7 @@ If you set a cookie in the response to an event (like “ice” or “ace”), i
 Limitations: The total size of cookie data (keys and values) may not exceed 1024 bytes.
 
 ### Answer
-
+```json
     {
         "name" : "Answer"
     }
@@ -321,6 +328,7 @@ This is normally handled automatically, but by adding the “answer” instructi
 
 Starts recording the call.
 
+`````json
     {
         "name": "StartRecording",
         "options": {
@@ -335,7 +343,7 @@ Starts recording the call.
 ### StopRecording
 
 Stops an ogoing recording for the current call.
-
+```json
     {
         "name": "StopRecording"
     }
@@ -345,7 +353,7 @@ Stops an ogoing recording for the current call.
 Actions allow your Sinch application to control individual calls. The following actions are currently available:
 
 ### Hangup
-
+```json
     {
         "name" : "Hangup"
     }
@@ -362,6 +370,7 @@ Actions allow your Sinch application to control individual calls. The following 
 
 ### ConnectPstn
 
+````json
     {
         "name" : "ConnectPstn",
         "number" : "+461234567890",
@@ -370,7 +379,8 @@ Actions allow your Sinch application to control individual calls. The following 
         "cli" : "private",
         "suppressCallbacks" : false,
         "indications": "se"
-   }
+
+}
 
 **ConnectPstn** is the action of an incoming call event. It instructs how the PSTN call will be connected.
 
@@ -561,8 +571,29 @@ Actions allow your Sinch application to control individual calls. The following 
 
 **Notice**: You do not need to set _cli_ or _number_ if the values supplied by the client suffice.
 
+#### ConnectMXP
+
+```json
+{
+  "name": "connectMXP",
+  "destination": {
+    "type": "username",
+    "endpoint": "hello"
+  }
+}
+``````
+
+**connectMXP** is the action of an incoming call event. It allows an app-to-app call to connect.
+
+**destination** is an optional parameter that allows you to specify or override the final call destination.
+
+> **Note**
+>
+> If you don’t dial the final destination, e.g. if you call another client and want a PSTN number to be called, then you need to specify the ‘destination’ parameter.
+
 ### ConnectConf
 
+````json
     {
         "name" : "ConnectConf",
         "conferenceId" : "myConference",
@@ -582,7 +613,6 @@ Actions allow your Sinch application to control individual calls. The following 
 
 If no “music-on-hold” is specified, the user will only hear silence.
 
-
 #### ConnectSIP
 
 ```json
@@ -591,10 +621,10 @@ If no “music-on-hold” is specified, the user will only hear silence.
   "destination": { "endpoint": "46708000000@sip.foo.com" },
   "maxDuration": 3000,
   "cli": "private",
-  "transport": "tls", 
+  "transport": "tls",
   "suppressCallbacks": false
 }
-```
+````
 
 **connectSIP** is the action of an incoming call event. It instructs to route a call to your SIP server.
 
@@ -790,6 +820,23 @@ _Example app-phone call response_
             "suppressCallbacks" : false
         }
     }
+
+_Example app-app call response_
+
+```json
+
+{
+    "action":
+    {
+        "name" : "connectMXP",
+        "destination":
+            {
+                "type":"username",
+                "endpoint":"hello"
+            }
+    }
+}
+
 
 _Example conference call response_
 
@@ -1036,3 +1083,4 @@ You can find more information on callback request signing [here].
 
     40001 - Illegal SVAML
     50000 - Internal error
+```
