@@ -327,15 +327,14 @@ This is normally handled automatically, but by adding the “answer” instructi
 
 Starts recording the call.
 
-``
-{
-"name": "StartRecording",
-"options": {
-"destination": "s3://my-bucket/",
-"credentials": "AKIAIOSFODNN7EXAMPLE:wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY:eu-central-1",
-"notificationEvents": true
-}
-}
+    {
+        "name": "StartRecording",
+        "options": {
+        "destination": "s3://my-bucket/",
+        "credentials": "AKIAIOSFODNN7EXAMPLE:wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY:eu-central-1",
+        "notificationEvents": true
+      }
+    }
 
 **options** is a RecordingOptions object that specifies details about the recording. See [RecordingOptions](doc:voice-rest-api-recording#section-recording-options) for more details.
 
@@ -369,17 +368,15 @@ Actions allow your Sinch application to control individual calls. The following 
 
 ### ConnectPstn
 
-`
-{
-"name" : "ConnectPstn",
-"number" : "+461234567890",
-"locale" : "en-US",
-"maxDuration" : 3000,
-"cli" : "private",
-"suppressCallbacks" : false,
-"indications": "se"
-
-}
+    {
+        "name" : "ConnectPstn",
+        "number" : "+461234567890",
+        "locale" : "en-US",
+        "maxDuration" : 3000,
+        "cli" : "private",
+        "suppressCallbacks" : false,
+        "indications": "se"
+    }
 
 **ConnectPstn** is the action of an incoming call event. It instructs how the PSTN call will be connected.
 
@@ -572,13 +569,13 @@ Actions allow your Sinch application to control individual calls. The following 
 
 #### ConnectMXP
 
-{
-"name": "connectMXP",
-"destination": {
-"type": "username",
-"endpoint": "hello"
-}
-}
+    {
+        "name": "connectMXP",
+        "destination": {
+        "type": "username",
+        "endpoint": "hello"
+        }
+    }
 
 **connectMXP** is the action of an incoming call event. It allows an app-to-app call to connect.
 
@@ -590,12 +587,11 @@ Actions allow your Sinch application to control individual calls. The following 
 
 ### ConnectConf
 
-`
-{
-"name" : "ConnectConf",
-"conferenceId" : "myConference",
-"moh" : "ring"
-}
+    {
+        "name" : "ConnectConf",
+        "conferenceId" : "myConference",
+        "moh" : "ring"
+    }
 
 **connectConf** is the action of an incoming call event. It allows the incoming call to be connected to a conference.
 
@@ -612,15 +608,14 @@ If no “music-on-hold” is specified, the user will only hear silence.
 
 #### ConnectSIP
 
-{
-"name": "connectSIP",
-"destination": { "endpoint": "46708000000@sip.foo.com" },
-"maxDuration": 3000,
-"cli": "private",
-"transport": "tls",
-"suppressCallbacks": false
-}
-`
+    {
+        "name": "connectSIP",
+        "destination": { "endpoint": "46708000000@sip.foo.com" },
+        "maxDuration": 3000,
+        "cli": "private",
+        "transport": "tls",
+        "suppressCallbacks": false
+    }
 
 **connectSIP** is the action of an incoming call event. It instructs to route a call to your SIP server.
 
@@ -796,7 +791,7 @@ You can find more information on callback request signing [here].
 
 ### Response
 
-    [Svaml]
+[Svaml]
 
 _Example app-phone call response_
 
@@ -819,17 +814,16 @@ _Example app-phone call response_
 
 _Example app-app call response_
 
-{
-"action":
-{
-"name" : "connectMXP",
-"destination":
-{
-"type":"username",
-"endpoint":"hello"
-}
-}
-}
+    {
+        "action":
+        {
+            "name" : "connectMXP",
+            "destination":{
+              "type":"username",
+              "endpoint":"hello"
+            }
+        }
+    }
 
 _Example conference call response_
 
@@ -1017,7 +1011,7 @@ When the PIE event has been triggered from collecting DTMF digits, then the type
 
 ### Response
 
-    [Svaml]
+[Svaml]
 
 ## Notify Event Callback (Notify)
 
