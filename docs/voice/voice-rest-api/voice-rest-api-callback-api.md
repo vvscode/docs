@@ -290,7 +290,6 @@ Supported languages / locales:
 
 ### SendDtmf
 
-``````json
     {
         "name" : "sendDtmf",
         "value" : "1234#"
@@ -299,7 +298,7 @@ Supported languages / locales:
 **value** Specifies the DTMF to send to the caller. Valid characters in the string are "0"-"9", "#" and "w". A "w" will render a 500 ms pause. Example: "ww1234#w#" will render a 1s pause, the DTMF tones "1", "2", "3", "4" and "#" followed by a 0.5s pause and finally the DTMF tone for "#".
 
 ### SetCookie
-```json
+
     {
         "name" : "SetCookie",
         "key" : "cookiename",
@@ -315,7 +314,7 @@ If you set a cookie in the response to an event (like “ice” or “ace”), i
 Limitations: The total size of cookie data (keys and values) may not exceed 1024 bytes.
 
 ### Answer
-```json
+
     {
         "name" : "Answer"
     }
@@ -328,22 +327,22 @@ This is normally handled automatically, but by adding the “answer” instructi
 
 Starts recording the call.
 
-`````json
-    {
-        "name": "StartRecording",
-        "options": {
-            "destination": "s3://my-bucket/",
-            "credentials": "AKIAIOSFODNN7EXAMPLE:wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY:eu-central-1",
-            "notificationEvents": true
-        }
-    }
+``
+{
+"name": "StartRecording",
+"options": {
+"destination": "s3://my-bucket/",
+"credentials": "AKIAIOSFODNN7EXAMPLE:wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY:eu-central-1",
+"notificationEvents": true
+}
+}
 
 **options** is a RecordingOptions object that specifies details about the recording. See [RecordingOptions](doc:voice-rest-api-recording#section-recording-options) for more details.
 
 ### StopRecording
 
 Stops an ogoing recording for the current call.
-```json
+
     {
         "name": "StopRecording"
     }
@@ -353,7 +352,7 @@ Stops an ogoing recording for the current call.
 Actions allow your Sinch application to control individual calls. The following actions are currently available:
 
 ### Hangup
-```json
+
     {
         "name" : "Hangup"
     }
@@ -370,15 +369,15 @@ Actions allow your Sinch application to control individual calls. The following 
 
 ### ConnectPstn
 
-````json
-    {
-        "name" : "ConnectPstn",
-        "number" : "+461234567890",
-        "locale" : "en-US",
-        "maxDuration" : 3000,
-        "cli" : "private",
-        "suppressCallbacks" : false,
-        "indications": "se"
+`
+{
+"name" : "ConnectPstn",
+"number" : "+461234567890",
+"locale" : "en-US",
+"maxDuration" : 3000,
+"cli" : "private",
+"suppressCallbacks" : false,
+"indications": "se"
 
 }
 
@@ -573,15 +572,13 @@ Actions allow your Sinch application to control individual calls. The following 
 
 #### ConnectMXP
 
-```json
 {
-  "name": "connectMXP",
-  "destination": {
-    "type": "username",
-    "endpoint": "hello"
-  }
+"name": "connectMXP",
+"destination": {
+"type": "username",
+"endpoint": "hello"
 }
-``````
+}
 
 **connectMXP** is the action of an incoming call event. It allows an app-to-app call to connect.
 
@@ -593,12 +590,12 @@ Actions allow your Sinch application to control individual calls. The following 
 
 ### ConnectConf
 
-````json
-    {
-        "name" : "ConnectConf",
-        "conferenceId" : "myConference",
-        "moh" : "ring"
-    }
+`
+{
+"name" : "ConnectConf",
+"conferenceId" : "myConference",
+"moh" : "ring"
+}
 
 **connectConf** is the action of an incoming call event. It allows the incoming call to be connected to a conference.
 
@@ -615,16 +612,15 @@ If no “music-on-hold” is specified, the user will only hear silence.
 
 #### ConnectSIP
 
-```json
 {
-  "name": "connectSIP",
-  "destination": { "endpoint": "46708000000@sip.foo.com" },
-  "maxDuration": 3000,
-  "cli": "private",
-  "transport": "tls",
-  "suppressCallbacks": false
+"name": "connectSIP",
+"destination": { "endpoint": "46708000000@sip.foo.com" },
+"maxDuration": 3000,
+"cli": "private",
+"transport": "tls",
+"suppressCallbacks": false
 }
-````
+`
 
 **connectSIP** is the action of an incoming call event. It instructs to route a call to your SIP server.
 
@@ -823,20 +819,17 @@ _Example app-phone call response_
 
 _Example app-app call response_
 
-```json
-
 {
-    "action":
-    {
-        "name" : "connectMXP",
-        "destination":
-            {
-                "type":"username",
-                "endpoint":"hello"
-            }
-    }
+"action":
+{
+"name" : "connectMXP",
+"destination":
+{
+"type":"username",
+"endpoint":"hello"
 }
-
+}
+}
 
 _Example conference call response_
 
@@ -1083,4 +1076,3 @@ You can find more information on callback request signing [here].
 
     40001 - Illegal SVAML
     50000 - Internal error
-```
