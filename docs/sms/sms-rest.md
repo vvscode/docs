@@ -1,35 +1,28 @@
 ---
 title: REST API
 excerpt: >-
-  The most feature rich API that Sinch offers is the SMS REST API. Single messages,
-  scheduled batch send-outs, using message templates and more.
-next:
-  pages:
-  description: Get started with the REST API
+  The most feature rich API that Sinch offers is the SMS REST API. Single
+  messages, scheduled batch send-outs, using message templates and more.
 ---
-## Introduction
 
-The REST Messaging API is designed to be a simple and powerful tool for large scale messaging with features such as:
+### Introduction
 
- - Use a convenient HTTP interface.
- - Send a message to more than one recipient in the same request.
- - Send text messages with up to 1600 characters.
- - Organize your frequent recipients into groups.
- - Send messages at a later time with scheduling.
- - Customize your message for each recipient using parameterization.
- - Receive messages from end users with MO support.
- - Automatic default originator selection support for messages without originator.
- - Receive inbound messages and delivery notifications via HTTP or AWS SNS.
+The REST Messaging API is designed to be a simple and powerful tool for massive scale SMS messaging with features such as:
 
-> **Note**
->
-> We have updated the endpoints used by the SMS REST API. [Read more](doc:sms-rest-getting-started#section-base-url)
+- Send a message to more than one recipient in the same request.
+- Send text messages with up to 1600 characters.
+- Organize your frequent recipients into groups.
+- Send messages at a later time with scheduling.
+- Customize your message for each recipient using parameterization.
+- Receive messages from your customers.
+- Automatic default originator selection support for messages without originator.
+- Receive inbound messages and delivery notifications via HTTP.
 
-## Service plan
+To get started in minutes you can head over to [Quickstarts](doc:sms/)
 
-To use the REST API you first need to create an HTTP REST Service using the [web dashboard](https://dashboard.sinch.com/#/signup). You can have multiple service plans and each one will see their messages, groups or other resources isolated from each other.
+### Using the Rest api
 
-## Authentication
+#### Authentication
 
 You will be provided with an authentication token for each service plan.
 
@@ -42,16 +35,16 @@ curl -X POST \
      -H "Authorization: Bearer {token}" \
      -H "Content-Type: application/json"  -d '
       {
-          "from": "12345",
+          "from": "{Number you have on your account}",
           "to": [
               "123456789"
           ],
           "body": "Hi there! How are you?"
       }' \
-  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/batches"
+  "https://us.sms.api.sinch.com/xms/v1/{service_plan_id}/batches"
 ```
 
-## Base URL
+#### Base URL
 
 The following URLs can be used by the REST API. We have servers in the US and EU. By default your account will be created in the US environment. If you'd like access to the European environment, please contact our support team.  
 
@@ -63,32 +56,28 @@ The following URLs can be used by the REST API. We have servers in the US and EU
 | US Production | https://us.sms.api.sinch.com     |
 | EU Production | https://eu.sms.api.sinch.com     |
 
-## Rate Limits
+#### Rate Limits
 
 Each service plan comes with a rate limit which sets the maximum number of messages that can be sent per second. The rate limit is calculated from all messages sent via the API, so a batch with 10 recipients will count as 10 messages for rate limiting purposes.
 
 Each service plan gets it's own message queue served in First-In-First-Out order. This means that new batches will be accepted immediately but might be delayed if earlier batches are still on queue.
 
-## SMS REST formats
+### SMS REST formats and conventions
 
 This section will take a brief look at some of the formats used in the REST API.
 
-### JSON
+#### JSON
 
 JSON (`application/json`) is the content type of both requests and responses if not otherwise specified.
 
 Requests with invalid JSON will be rejected.
 
-Null values can be omitted in requests and will be omitted in responses. In some cases explicitly setting `null` will overwrite a previously set value with `null`. See [Update a group](doc:sms-rest-groups-endpoint#section-update-a-group) for an example.
+Null values can be omitted in requests and will be omitted in responses. In some cases explicitly setting `null` will overwrite a previously set value with `null`. See [Update a group](#section-update-a-group) for an example.
+New features might result in additional request and response
+parameters. New request parameters will either have a default value or
+considered optional to retain backwards compatibility. It is highly recommended to ignore any unexpected parameters when reading JSON in API responses and in callback handlers.
 
-> **Note**    
->
-> New features might result in additional request and response
-> parameters. New request parameters will either have a default value or
-> considered optional to retain backwards compatibility. It is highly
-> recommended to ignore any unexpected parameters when reading JSON in API responses and in callback handlers.
-
-### MSISDN
+#### Phone numbers (MSISDN)
 
 Only MSISDNs in international format are accepted by the API.
 
@@ -96,7 +85,7 @@ MSISDNs can be sent in with or without a leading `+` (i.e. `+123456789` or `1234
 
 All MSISDNs returned by the REST API will be without a `+` or `00` prefix, even if they were sent in with one.
 
-### Timestamp
+#### Timestamps
 
 Timestamps are used for expressing a moment in time. They are represented using the [ISO-8601 standard](https://en.wikipedia.org/wiki/ISO_8601). Examples of those are the fields `send_at` and `expire_at` in the [Send a batch message](doc:sms-rest-batches-endpoint#section-send-a-batch-message) operation.
 
@@ -104,11 +93,11 @@ A time offset can be specified in accordance with [ISO-8601 time offsets from UT
 
 All timestamps returned by the API will be represented in UTC time, with millisecond precision.
 
-## HTTP Status Codes
+### HTTP Status Codes
 
 The REST API returns an HTTP status and code each time a request is made.
 
-### HTTP Statuses
+##### HTTP Statuses
 
 The following HTTP status codes are used by the API. Additional codes might be added in the future and if you encounter a code not in this list please consult the [HTTP specification](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10/) for a definition.
 
@@ -127,7 +116,7 @@ The following HTTP status codes are used by the API. Additional codes might be a
 | 503&nbsp;Service&nbsp;Unavailable         | The service is unable to perform the request at this point. Most likely due to a required subsystem being unavailable.      |
 
 
-### HTTP Errors
+##### HTTP Errors
 
 Responses with status `400 Bad Request` and `403 Forbidden` will present a JSON object in the body explaining the error. It has the following structure:
 
@@ -136,7 +125,7 @@ Responses with status `400 Bad Request` and `403 Forbidden` will present a JSON 
 | `code` | A code that can be used to programmatically recognize the error. See [below](#section-error-codes) for possible values. | `String`  |
 | `text` | Human readable description of the error. Can be used for debugging.                                                     | `String`  |
 
-### Error codes
+##### Error codes
 
 The following error codes can be returned as values for the `code` field:
 
@@ -149,7 +138,621 @@ The following error codes can be returned as values for the `code` field:
 | 403         | `unknown_campaign`                | The campaign ID does not match the specified originator.                                                            |
 | 403         | `missing_callback_url`            | Callback has been requested but no URL is provided.                                                                 |
 
-## Callback
+## Send SMS Messages
+
+### Send a batch message
+
+The following operation will send a batch message.
+
+Depending on the length of the *body* one message might be [split into multiple parts](doc:sms-rest-message-body#section-long-messages) and charged accordingly.
+
+Any groups targeted in a scheduled batch will be evaluated at the time of sending. If a group is deleted between batch creation and scheduled date it will be considered empty.
+
+#### Request
+
+`POST /xms/v1/{service_plan_id}/batches`
+
+JSON body fields:
+
+|Name                               |Description                                                                                                        |JSON Type         |Default             |Constraints                                                                    |Required                                      |
+|-----------------------------------|-------------------------------------------------------------------------------------------------------------------|:----------------:|--------------------|:-----------------------------------------------------------------------------:|:--------------------------------------------:|
+|to                                 |List of MSISDNs and group IDs that will receive the batch                                                          |   String array   |N/A                 |                               1 to 1000 elements                               |                     Yes                      |
+|from                               |Sender number                                                                                                      |      String      |N/A                 |               Must be valid MSISDN, short code or alphanumeric.               |If Automatic Default Originator not configured|
+|type                               |Identifies the type of batch message                                                                               |      String      |mt_text             |                     Valid types are mt_text and mt_binary                     |                     Yes                      |
+|body                               |The message content. Normal text string for mt_text and Base64 encoded for mt_binary                               |      String      |N/A                 | Max 1600 chars for mt_text and max 140 bytes together with udh for mt_binary  |                     Yes                      |
+|udh                                |The UDH header of a binary message                                                                                 |HEX encoded string|N/A                 |                       Max 140 bytes together with body                        |             If type is mt_binary             |
+|campaign_id                        |The campaign/service ID this message belongs to. US only.                                                          |      String      |N/A                 |                                     None                                      |                      No                      |
+|delivery_report                    |Request delivery report callback. Note that delivery reports can be fetched from the API regardless of this setting|      String      |none                |             Valid types are none, summary, full and per_recipient             |                     Yes                      |
+|send_at                            |If set in the future the message will be delayed until send_at occurs                                              | ISO-8601 string  |Now                 |Must be before expire_at. If set in the past messages will be sent immediately.|                      No                      |
+|expire_at                          |If set the system will stop trying to deliver the message at this point                                            | ISO-8601 string  |3 days after send_at|                             Must be after send_at                             |                      No                      |
+|callback_url                       |Override the default callback URL for this batch                                                                   |    URL string    |N/A                 |                  Must be valid URL. Max 2048 characters long                  |                      No                      |
+|flash_message                      |Shows message on screen without user interaction while not saving the message to the inbox                         |     Boolean      |false               |                                 true or false                                 |                                              |
+|parameters                         |Contains the parameters that will be used for customizing the message for each recipient                           |      Object      |N/A                 |                    Not applicable to if type is mt_binary                     |                      No                      |
+|parameters.{parameter_key}         |The name of the parameter that will be replaced in the message body                                                |      String      |N/A                 |    Letters A-Z and a-z, digits 0-9 and .-_ allowed. Max 16 characters long    |                      No                      |
+|parameters.{parameter_key}.{msisdn}|The recipient that should get this value                                                                           |      String      |N/A                 |                            Max 160 characters long                            |                      No                      |
+|parameters.{parameter_key}.default |The fall back value for omitted recipient MSISDNs                                                                  |      String      |None                |                            Max 160 characters long                            |                      No                      |
+|client_reference                   |The client identifier of batch message. If set, it will be added in the delivery report/callback of this batch     |      String      |N/A                 |                            Max 128 characters long                            |                      No                      |
+|max_number_of_message_parts        |Message will be dispatched only if it is not split to more parts than Max Number of Message Parts                  |      String      |N/A                 |                           Must be higher or equal 1                           |                      No                      |
+
+**Send message to one recipient**
+```shell
+curl -X POST \
+     -H "Authorization: Bearer {token}" \
+     -H "Content-Type: application/json"  -d '
+      {
+          "from": "12345",
+          "to": [
+              "123456789"
+          ],
+          "body": "Hi there! How are you?"
+      }' \
+  "https://us.sms.api.sinch.com/xms/v1/{service_plan_id}/batches"
+```
+
+
+**Send message to two recipients**
+```shell
+curl -X POST \
+     -H "Authorization: Bearer {token}" \
+     -H "Content-Type: application/json"  -d '
+      {
+          "from": "12345",
+          "to": [
+              "123456789",
+              "987654321"
+          ],
+          "body": "Hi there! How are you?"
+      }' \
+  "https://us.sms.api.sinch.com/xms/v1/{service_plan_id}/batches"
+```
+
+
+#### Response
+
+`201 Created`
+
+The batch was successfully created. The JSON response object contains the request parameters as well as the following additional parameters:
+
+|Name       |Description                                     |JSON Type      |
+|-----------|------------------------------------------------|:-------------:|
+|id         |Unique identifier for batch                     |    String     |
+|created_at |Timestamp for when batch was created.           |ISO-8601 String|
+|modified_at|Timestamp for when batch was last updated.      |ISO-8601 String|
+|canceled   |Indicates if the batch has been canceled or not.|    Boolean    |
+
+`400 Bad Request`
+
+There was an error with your request. The body is a JSON object described in rest\_http\_errors. Possible error codes include `syntax_invalid_json`, `syntax_invalid_parameter_format` and `syntax_constraint_violation`.
+
+`403 Forbidden`
+
+The system was not able to fulfill your request. The body is a JSON object described in rest\_http\_errors. Possible error codes include `unknown_group`, `unknown_campaign` and `missing_callback_url`.
+
+Response for a successfully created batch message.
+
+**JSON**
+```json
+{
+    "from": "12345",
+    "to": [
+        "123456789",
+        "987654321"
+    ],
+    "body": "Hi there! How are you?",
+    "id": "{batch_id}",
+    "created_at": "2014-10-02T09:34:28.542Z",
+    "modified_at": "2014-10-02T09:34:28.542Z",
+    "canceled": "False"
+}
+```
+
+
+Send scheduled batch message with expiry.
+
+**Scheduled batch message**
+```shell
+curl -X POST \
+     -H "Authorization: Bearer {token}" \
+     -H "Content-Type: application/json"  -d '
+      {
+          "from": "12345",
+          "to": [
+              "123456789",
+              "987654321"
+          ],
+          "body": "Hi there! How are you?",
+          "send_at": "2014-10-02T09:30Z",
+          "expire_at": "2014-10-02T12:30Z"
+      }' \
+  "https://us.sms.api.sinch.com/xms/v1/{service_plan_id}/batches"
+```
+
+
+**Batch message with custom delivery report URL**
+```shell
+curl -X POST \
+     -H "Authorization: Bearer {token}" \
+     -H "Content-Type: application/json"  -d '
+      {
+          "from": "12345",
+          "to": [
+              "123456789",
+              "987654321"
+          ],
+          "body": "Hi there! How are you?",
+          "delivery_report": "summary",
+          "callback_url": "http://www.example.com"
+      }' \
+  "https://us.sms.api.sinch.com/xms/v1/{service_plan_id}/batches"
+```
+
+
+**Parameterized message**
+```shell
+curl -X POST \
+     -H "Authorization: Bearer {token}" \
+     -H "Content-Type: application/json"  -d '
+      {
+      "from": "12345",
+      "to": [
+          "123456789",
+          "987654321"
+       ],
+      "body": "Hi ${name}! How are you?",
+      "parameters": {
+          "name": {
+              "123456789": "Joe",
+              "default": "there"
+           }
+      }
+  }' \
+  "https://us.sms.api.sinch.com/xms/v1/{service_plan_id}/batches"
+```
+
+
+### Cancel batch message
+
+A batch can be canceled at any point. If a batch is canceled while it's currently being delivered some messages currently being processed might still be delivered. The delivery report will indicate which messages were canceled and which weren't.
+
+Canceling a batch scheduled in the future will result in an empty delivery report while canceling an already sent batch would result in no change to the completed delivery report.
+
+#### Request
+
+`DELETE /xms/v1/{service_plan_id}/batches/{batch_id}`
+
+#### Response
+
+`200 OK`
+
+The response is a JSON object described in send\_batch\_msg.
+
+**Cancel a batch message**
+```shell
+curl-X DELETE \
+   -H "Authorization: Bearer {token}" \
+  "https://us.sms.api.sinch.com/xms/v1/{service_plan_id}/batches/{batch_id}"
+```
+
+
+### List batch messages
+
+With the list operation you can list batch messages created in the last 14 days that you have created. This operation supports pagination.
+
+Batches are returned in reverse chronological order.
+
+#### Request
+
+`GET /xms/v1/{service_plan_id}/batches`
+
+Query parameters:
+
+|Name                |Description                                                                                                                 |Type                                                                   |Default|Constraints                  |Required|
+|--------------------|----------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------:|:-----:|-----------------------------|:------:|
+|page                |The page number starting from 0                                                                                             |                                Integer                                |   0   |0 or larger                  |   No   |
+|page_size           |Determines the size of a page                                                                                               |                                Integer                                |  30   |Max 100                      |   No   |
+|to                  |Only list messages set to this destination. Multiple destinations can be comma separated.                                   |                         MSISDN or short code                          |  No   |No                           |   No   |
+|start_date          |Only list messages received at or after this date time.                                                                     |                               ISO-8601                                |Now-24 |Must be valid ISO-8601 string|   No   |
+|end_date            |Only list messages received before this date time.                                                                          |                               ISO-8601                                |  No   |Must be valid ISO-8601 string|   No   |
+
+#### Response
+
+`200 OK`
+
+|Name                |Description                                                                                                                 |JSON Type                                                              |
+|--------------------|----------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------:|
+|page                |The requested page                                                                                                          |                                Integer                                |
+|page_size           |The number of batches returned in this request                                                                              |                                Integer                                |
+|count               |The total number of batches matching the given filters                                                                      |                                Integer                                |
+|batches             |The page of batches matching the given filters                                                                              |Array of objects described in [Send a batch message](#send-a-batch-mess|
+
+### Dry run a batch
+
+This operation will perform a dry run of a batch which calculates the bodies and number of parts for all messages in the batch without actually sending any messages.
+
+#### Request
+
+`POST /xms/v1/{service_plan_id}/batches/dry_run`
+
+The request body is a JSON object described in send\_batch\_msg request.
+
+Query parameters:
+
+| Name                   | Description                                                                   | Type    | Default | Constraints | Required |
+|-- -                    | ---                                                                           | ---     | ---     | ---         | ---    --|
+| per\_recipient         | Whether to include per recipient details in the response                      | Boolean | false   |             | No       |
+| number\_of\_recipients | Max number of recipients to include per recipient details for in the response | Integer | 100     | Max 1000    | No       |
+
+
+#### Response
+
+`200 OK`
+
+The number of recipients in the batch, the number of messages in the batch and an array containing detail for each recipient:
+
+|Name                |Description                                                                                                                 |JSON Type                                                              |
+|--------------------|----------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------:|
+|number_of_recipients|The number of recipents in the batch                                                                                        |                                integer                                |
+|number_of_messages  |The total number of SMS message parts to be sent in the batch                                                               |                                integer                                |
+|per_recipient       |The recipient, the number of message parts to this recipient, the body of the message, and the encoding type of each message|Array of message objects containing fields with the aforementioned data|
+
+`400 Bad request`
+
+There was an error with your request. The body is a JSON object described in rest\_http\_errors. Possible error codes include **syntax\_invalid\_json**, **syntax\_invalid\_parameter\_format** and **syntax\_constraint\_violation**.
+
+**Dry run a batch**
+```shell
+curl -X POST \
+     -H "Authorization: Bearer {token}" \
+     -H "Content-Type: application/json"  -d '
+      {
+      "from": "12345",
+      "to": [
+          "123456789",
+          "987654321"
+       ],
+      "body": "Hi ${name}! How are you?",
+      "parameters": {
+          "name": {
+              "123456789": "Joe",
+              "default": "there"
+           }
+      }
+  }' \
+  "https://us.sms.api.sinch.com/xms/v1/{service_plan_id}/batches/dry_run"
+```
+
+
+### Retrieve a batch message
+
+This operation retrieves a specific batch with the provided batch ID.
+
+#### Request
+
+`GET /xms/v1/{service_plan_id}/batches/{batch_id}`
+
+#### Response
+
+`200 OK`
+
+The response is a JSON object described in send\_batch\_msg response.
+
+`404 Not Found`
+
+If the batch ID is unknown to the system.
+
+
+
+**Retrieve a batch**
+```shell
+curl -H "Authorization: Bearer {token}" \
+  "https://us.sms.api.sinch.com/xms/v1/{service_plan_id}/batches/{batch_id}"
+```
+
+
+**Retrieve the first 30 batches from the last 24 hours**
+```shell
+curl -H "Authorization: Bearer {token}" \
+  "https://us.sms.api.sinch.com/xms/v1/{service_plan_id}/batches"
+```
+
+
+**Retrieve the third page of batches with a page size of 50 from the last 24 hours**
+```shell
+curl -H "Authorization: Bearer {token}" \
+  "https://us.sms.api.sinch.com/xms/v1/{service_plan_id}/batches?page=2&page_size=50"
+```
+
+
+**Retrieve batches created on June 23rd, 2014 UTC**
+```shell
+curl -H "Authorization: Bearer {token}" \
+  "https://us.sms.api.sinch.com/xms/v1/{service_plan_id}/batches?start_date=2014-06-23&end_date=2014-06-24"
+```
+
+
+**Retrieve the batches sent from 12345 or 54321**
+```shell
+curl -H "Authorization: Bearer {token}" \
+  "https://us.sms.api.sinch.com/xms/v1/{service_plan_id}/batches?from=12345,54321"
+```
+
+
+### Update a batch message
+
+This operation will update all provided parameters of a batch for the given batch ID.
+
+#### Request
+
+`POST /xms/v1/{service_plan_id}/batches/{id}`
+
+JSON body fields:
+
+|Name                |Description                                                                                                                 |Type                                                                   |Default             |Constraints                                                                    |Required|
+|--------------------|----------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------:|:------------------:|-------------------------------------------------------------------------------|:------:|
+|toAdd               |List of MSISDNs and group IDs to add to the batch.                                                                          |                             String array                              |                    |1 to 100 elements.                                                             |   No   |
+|toRemove            |List of MSISDNs and group IDs to remove from the batch.                                                                     |                             String array                              |                    |1 to 100 elements.                                                             |   No   |
+|from                |Sender number                                                                                                               |                                String                                 |                    |Must be valid MSISDN, short code or alphanumeric.                              |   No   |
+|body                |The message content. Normal text string for mt_text and Base64 encoded for mt_binary.                                       |                                String                                 |                    |Max 1600 chars for mt_text and max 140 bytes together with udh for mt_binary   |   No   |
+|campaign_id         |The campaign/service ID this message belongs to. US only.                                                                   |                                String                                 |                    |                                                                               |   No   |
+|delivery_report     |Request delivery report callback. Note that delivery reports can be fetched from the API regardless of this setting.        |                                String                                 |        none        |Valid types are none, summary, full and per_recipient                          |   No   |
+|send_at             |If set in the future the message will be delayed until send_at occurs.                                                      |                            ISO-8601 string                            |        Now         |Must be before expire_at. If set in the past messages will be sent immediately.|   No   |
+|expire_at           |If set the system will stop trying to deliver the message at this point                                                     |                            ISO-8601 string                            |3 days after send_at|Must be after send_at                                                          |   No   |
+|callback_url        |Override the default callback URL for this batch                                                                            |                              URL string                               |                    |Must be valid URL. Max 2048 characters long.                                   |   No   |
+
+#### Response
+
+`200 OK`
+
+The response is a JSON object described in send\_batch\_msg response.
+
+`400 Bad request`
+
+There was an error with your request. The body is a JSON object described in rest\_http\_errors. Possible error codes include **syntax\_invalid\_json**, **syntax\_invalid\_parameter\_format** and **syntax\_constraint\_violation**.
+
+`403 Forbidden`
+
++The system was not able to fulfill your request. The body is a JSON object described in rest\_http\_errors. +Possible error codes include **batch\_already\_dispatched**.
+
+**Update batch**
+```shell
+curl -X POST \
+     -H "Authorization: Bearer {token}" \
+     -H "Content-Type: application/json"  -d '
+      {
+      "from": "12345",
+      "toAdd": [
+          "123456789",
+          "987654321"
+       ],
+      "toRemove": [
+          "111111111",
+          "999999999"
+       ],
+      "body": "Hi ${name}! How are you?"
+
+  }' \
+  "https://us.sms.api.sinch.com/xms/v1/{service_plan_id}/batches/{id}"
+```
+
+
+### Replace a batch
+
+This operation will replace all the parameters of a batch with the provided values. Effectively the same as cancelling then batch and sending a new one instead.
+
+#### Request
+
+`PUT /xms/v1/{service_plan_id}/batches/{id}`
+
+The request body is a JSON object described in send\_batch\_msg request.
+
+#### Response
+
+`200 OK`
+
+The response is a JSON object described in send\_batch\_msg response.
+
+`400 Bad request`
+
+There was an error with your request. The body is a JSON object described in rest\_http\_errors. Possible error codes include **syntax\_invalid\_json**, **syntax\_invalid\_parameter\_format** and **syntax\_constraint\_violation**.
+
+**Replace batch**
+```shell
+curl -X PUT \
+     -H "Authorization: Bearer {token}" \
+     -H "Content-Type: application/json"  -d '
+      {
+      "from": "12345",
+      "to": [
+          "123456789",
+          "987654321"
+       ],
+      "body": "Hi ${name}! How are you?",
+      "parameters": {
+          "name": {
+              "123456789": "Joe",
+              "default": "there"
+           }
+      }
+  }' \
+  "https://us.sms.api.sinch.com/xms/v1/{service_plan_id}/batches/{id}"
+```
+
+
+### Retrieve a delivery report
+
+Delivery reports can be retrieved even if no callback was requested. The difference between a summary and a full report is only that the full report contains the actual MSISDNs for each status code.
+
+#### Request
+
+`GET /xms/v1/{service_plan_id}/batches/{batch_id}/delivery_report`
+
+Query parameters:
+
+| Name   | Description                                                        | Type   | Default | Constraints             | Required |
+|-- -    | ---                                                                | ---    | ---     | ---                     | ---    --|
+| type   | The type of delivery report                                        | String | summary | Must be summary or full | Yes      |
+| status | Comma separated list of delivery\_report\_statuses to include      | String | N/A     | N/A                     | No       |
+| code   | Comma separated list of delivery\_receipt\_error\_codes to include | String | N/A     | N/A                     | No       |
+
+#### Response
+
+`200 OK`
+
+The response is a JSON object with the following fields:
+
+|Name                |Description                                                                                                                 |JSON Type                                                              |
+|--------------------|----------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------:|
+|type                |The object type. Will always be delivery_report_sms                                                                         |                                String                                 |
+|batch_id            |The ID of the batch this delivery report belongs to                                                                         |                                String                                 |
+|total_message_count |The total number of messages for the batch                                                                                  |                                String                                 |
+|statuses            |Array with status objects. Only status codes with at least one recipient will be listed.                                    |                                Object                                 |
+|statuses.code       |The detailed status code. See Error Codes                                                                                   |                                Integer                                |
+|statuses.status     |The simplified status as described in Delivery Report Statuses                                                              |                                String                                 |
+|statuses.count      |The number of messages that currently has this code. Will always be at least 1                                              |                                Integer                                |
+|statuses.recipients |Only for full report. A list of the MSISDN recipients which messages has this status code.                                  |                             String array                              |
+|client_reference    |The client identifier of the batch this delivery report belongs to, if set when submitting batch.                           |                                String                                 |
+
+`404 Not Found`
+
+The batch ID is not known to the system or the delivery report type is not recognized.
+
+**Request summary report**
+```shell
+curl -H "Authorization: Bearer {token}" \
+  "https://us.sms.api.sinch.com/xms/v1/{service_plan_id}/batches/{batch_id}/delivery_report"
+```
+
+
+**Summary report response**
+```json
+{
+    "type": "delivery_report_sms",
+    "batch_id": "{batch_id}",
+    "total_message_count": 3,
+    "statuses": [
+        {
+            "code": 400,
+            "status": "Queued",
+            "count": 1
+        },
+        {
+            "code": 0,
+            "status": "Delivered",
+            "count": 2
+        }
+    ]
+}
+```
+
+
+
+
+**Request full report**
+```shell
+curl -H "Authorization: Bearer {token}" \
+  "https://us.sms.api.sinch.com/xms/v1/{service_plan_id}/batches/{batch_id}/delivery_report?type=full"
+```
+
+
+**Full report response**
+```json
+{
+    "type": "delivery_report_sms",
+    "batch_id": "{batch_id}",
+    "total_message_count": 3,
+    "statuses": [
+        {
+            "code": 400,
+            "status": "Queued",
+            "count": 1,
+            "recipients": [
+                "123456789"
+            ]
+        },
+        {
+            "code": 0,
+            "status": "Delivered",
+            "count": 2,
+            "recipients": [
+                "987654321",
+                "123459876"
+            ]
+        }
+    ]
+}
+```
+
+
+### Retrieve a recipient delivery report
+
+A recipient delivery report contains the message status for a single recipient MSISDN.
+
+#### Request
+
+`GET /xms/v1/{service_plan_id}/batches/{batch_id}/delivery_report/{recipient_msisdn}`
+
+**Request report for 123456789**
+```shell
+curl -H "Authorization: Bearer {token}" \
+  "https://us.sms.api.sinch.com/xms/v1/{service_plan_id}/batches/{batch_id}/delivery_report/123456789"
+```
+
+
+#### Response
+
+**Recipient delivery report for 123456789**
+```json
+{
+    "type": "recipient_delivery_report_sms",
+    "batch_id": "{batch_id}",
+    "recipient": "123456789",
+    "code": "0",
+    "status": "Delivered",
+    "at": "2016-10-02T09:34:18.542Z",
+    "operator_status_at": "2016-10-02T09:34:18.101Z"
+}
+```
+
+
+`200 OK`
+
+The response is a JSON object with the following fields:
+
+|Name                |Description                                                                                                                 |JSON Type                                                              |
+|--------------------|----------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------:|
+|type                |The object type. Will always be _recipient_delivery_report_sms                                                              |                                String                                 |
+|batch_id            |The ID of the batch this delivery report belongs to                                                                         |                                String                                 |
+|recipient           |The recipient MSISDN                                                                                                        |                                String                                 |
+|code                |The detailed status code. See Error Codes                                                                                   |                                Integer                                |
+|status              |The simplified status as described in Delivery Report Statuses                                                              |                                String                                 |
+|status_message      |A description of the status, if available.                                                                                  |                                String                                 |
+|at                  |A timestamp of when the Delivery Report was created in the Sinch service                                                    |                            ISO-8601 String                            |
+|operator_status_at  |A timestamp extracted from the Delivery Receipt from the originating SMSC                                                   |                            ISO-8601 String                            |
+|client_reference    |The client identifier of the batch this delivery report belongs to, if set when submitting batch.                           |                                String                                 |
+|applied_originator  |The default originator used for the recipient this delivery report belongs to, if default originator pool configured and no originator set when submitting batch.|                                String                                 |
+|number_of_message_parts|The number of parts the message was split into. Present only if `max_number_of_message_parts` parameter was set.              |                                Integer                                |
+
+`404 Not Found`
+
+The batch ID is not known to the system or the recipient is not a target of this batch.
+
+### Receiving delivery report callbacks
+
+Delivery report callbacks will be received for batches where *delivery\_report* parameter is set to *summary*, *full* or *per\_recipient*.
+
+If no *callback\_url* was specified for the batch then the default callback URL for the given service plan will be used.
+
+#### Summary and full
+
+If a batch was created with a request for *full* or *summary* *delivery report* then one callback will be made to the specified callback URL when all messages in the batch (which may be one message) are either delivered, failed or expired. If you want to know the delivery status for a message before all messages are completed then you can always use retrieve\_delivery\_report at any time.
+
+The format for summary and full reports is the same as the retrieve\_delivery\_report response. The difference being that when *full* is requested a list of phone numbers / recipients per delivery status is provided.
+
+#### Per recipient
+
+If a batch was created with a request for *per\_recipient* *delivery\_report* then a callback will be made for each status change of a message. This could result in a lot of callbacks and should be **used with caution for larger batches**. These delivery reports also include a timestamp of when the Delivery Report originated from the SMSC.
+
+### Callbacks
 
 A callback is a HTTP POST request with a notification made by the Sinch SMS REST API to a URI of your choosing. The REST API expects the receiving server to respond with a response code within the `2xx` Success range. If no successful response is received then the REST API will either schedule a retry if the error is expected to be temporary or discard the callback if the error seems permanent. The first initial retry will happen 5 seconds after the first try. The next attempt is after 10 seconds, then after 20 seconds, after 40 seconds, after 80 seconds and so on, doubling on every attempt. The last retry will be at 81920 seconds (or 22 hours 45 minutes) after the initial failed attempt.
 
@@ -160,27 +763,27 @@ The REST API offers the following callback options which can be configured for y
  * Callback with OAuth 2.0 by provisioning the callback URL with username, password and the URL to fetch OAuth access token.
  * Callback using AWS SNS by provisioning the callback URL with an Access Key ID, Secret Key and Region.
 
-### Delivery report callback
+#### Delivery report callback
 
 A delivery report contains the status and status code for each recipient of a batch. To get a delivery report callback for a message or batch of messages you need to set the `delivery_report` field accordingly when [creating a batch](doc:sms-rest-batches-endpoint#section-send-a-batch-message). The formats of the different types of delivery reports are described in [Retrieve a delivery report](doc:sms-rest-batches-endpoint#section-retrieve-a-delivery-report) and in [Retrieve a recipient delivery report](doc:sms-rest-batches-endpoint#section-retrieve-a-recipient-delivery-report).
 
 The callback URL can either be provided for each batch in the [Send a batch message](doc:sms-rest-batches-endpoint#section-send-a-batch-message) operation or provisioned globally for your account.
 
-### Inbound message callback
+#### Inbound message callback
 
 An inbound message or MO (*Mobile Originated*) is a message sent to one of your shortcodes or long numbers from a mobile phone. The format of an inbound callback is described in [Inbounds Endpoint](doc:sms-rest-inbounds-endpoint).
 
 To receive inbound message callbacks, a URL needs to be provisioned for your account. This URL can be specified in the Sinch Dashboard.
 
-## Message Body
+### Message Body
 
 When specifying the message body in the request, the characters used as well as the length of the message affect how many actual SMS messages are sent out. When using [parameterization](doc:sms-rest-parameterization), the length of each message may also vary depending on the recipient-specific data.
 
-### Supported Characters
+#### Supported Characters
 
 Individual characters used in the message determine the type of encoding that will ultimately be used to send the SMS message. The API automatically detects the encoding required from the characters used, which allows us to support the delivery of SMS in any language.
 
-#### Basic Character Set
+##### Basic Character Set
 
 You can send up to 160 characters in a single SMS message if all characters in your message are part of the GSM 7-bit character set:
 
@@ -206,13 +809,13 @@ You can send up to 160 characters in a single SMS message if all characters in y
 `LF` is the Line Feed character - for JSON format, provide it as `\n`
 `SP` is the Space character
 
-#### Extended Character Set
+##### Extended Character Set
 
 The following characters are also available, but they are counted as two characters in the SMS message rather than one:
 
-`|` , `^` , `€` , `{` , `}` , `[` , `]` , `~` , `\`
+`|` , `^` , `&euro;` , `{` , `}` , `[` , `]` , `~` , `\`
 
-#### Other Characters
+##### Other Characters
 
 If other characters are required for different languages, 16-bit Unicode (UCS-2) encoding will be used. When using UCS-2 encoding, each character will take 2 bytes, which means up to 70 characters can be sent per UCS-2 encoded SMS message.
 
@@ -333,619 +936,6 @@ In addition to these standard error codes, the REST API provides an additional s
 >
 > New error codes may be added over time.
 
-## Batches Endpoint
-
-### Send a batch message
-
-The following operation will send a batch message.
-
-Depending on the length of the *body* one message might be [split into multiple parts](doc:sms-rest-message-body#section-long-messages) and charged accordingly.
-
-Any groups targeted in a scheduled batch will be evaluated at the time of sending. If a group is deleted between batch creation and scheduled date it will be considered empty.
-
-#### Request
-
-`POST /xms/v1/{service_plan_id}/batches`
-
-JSON body fields:
-
-|Name                               |Description                                                                                                        |JSON Type         |Default             |Constraints                                                                    |Required                                      |
-|-----------------------------------|-------------------------------------------------------------------------------------------------------------------|:----------------:|--------------------|:-----------------------------------------------------------------------------:|:--------------------------------------------:|
-|to                                 |List of MSISDNs and group IDs that will receive the batch                                                          |   String array   |N/A                 |                               1 to 1000 elements                               |                     Yes                      |
-|from                               |Sender number                                                                                                      |      String      |N/A                 |               Must be valid MSISDN, short code or alphanumeric.               |If Automatic Default Originator not configured|
-|type                               |Identifies the type of batch message                                                                               |      String      |mt_text             |                     Valid types are mt_text and mt_binary                     |                     Yes                      |
-|body                               |The message content. Normal text string for mt_text and Base64 encoded for mt_binary                               |      String      |N/A                 | Max 1600 chars for mt_text and max 140 bytes together with udh for mt_binary  |                     Yes                      |
-|udh                                |The UDH header of a binary message                                                                                 |HEX encoded string|N/A                 |                       Max 140 bytes together with body                        |             If type is mt_binary             |
-|campaign_id                        |The campaign/service ID this message belongs to. US only.                                                          |      String      |N/A                 |                                     None                                      |                      No                      |
-|delivery_report                    |Request delivery report callback. Note that delivery reports can be fetched from the API regardless of this setting|      String      |none                |             Valid types are none, summary, full and per_recipient             |                     Yes                      |
-|send_at                            |If set in the future the message will be delayed until send_at occurs                                              | ISO-8601 string  |Now                 |Must be before expire_at. If set in the past messages will be sent immediately.|                      No                      |
-|expire_at                          |If set the system will stop trying to deliver the message at this point                                            | ISO-8601 string  |3 days after send_at|                             Must be after send_at                             |                      No                      |
-|callback_url                       |Override the default callback URL for this batch                                                                   |    URL string    |N/A                 |                  Must be valid URL. Max 2048 characters long                  |                      No                      |
-|flash_message                      |Shows message on screen without user interaction while not saving the message to the inbox                         |     Boolean      |false               |                                 true or false                                 |                                              |
-|parameters                         |Contains the parameters that will be used for customizing the message for each recipient                           |      Object      |N/A                 |                    Not applicable to if type is mt_binary                     |                      No                      |
-|parameters.{parameter_key}         |The name of the parameter that will be replaced in the message body                                                |      String      |N/A                 |    Letters A-Z and a-z, digits 0-9 and .-_ allowed. Max 16 characters long    |                      No                      |
-|parameters.{parameter_key}.{msisdn}|The recipient that should get this value                                                                           |      String      |N/A                 |                            Max 160 characters long                            |                      No                      |
-|parameters.{parameter_key}.default |The fall back value for omitted recipient MSISDNs                                                                  |      String      |None                |                            Max 160 characters long                            |                      No                      |
-|client_reference                   |The client identifier of batch message. If set, it will be added in the delivery report/callback of this batch     |      String      |N/A                 |                            Max 128 characters long                            |                      No                      |
-|max_number_of_message_parts        |Message will be dispatched only if it is not split to more parts than Max Number of Message Parts                  |      String      |N/A                 |                           Must be higher or equal 1                           |                      No                      |
-
-**Send message to one recipient**
-```shell
-curl -X POST \
-     -H "Authorization: Bearer {token}" \
-     -H "Content-Type: application/json"  -d '
-      {
-          "from": "12345",
-          "to": [
-              "123456789"
-          ],
-          "body": "Hi there! How are you?"
-      }' \
-  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/batches"
-```
-
-
-**Send message to two recipients**
-```shell
-curl -X POST \
-     -H "Authorization: Bearer {token}" \
-     -H "Content-Type: application/json"  -d '
-      {
-          "from": "12345",
-          "to": [
-              "123456789",
-              "987654321"
-          ],
-          "body": "Hi there! How are you?"
-      }' \
-  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/batches"
-```
-
-
-#### Response
-
-`201 Created`
-
-The batch was successfully created. The JSON response object contains the request parameters as well as the following additional parameters:
-
-|Name       |Description                                     |JSON Type      |
-|-----------|------------------------------------------------|:-------------:|
-|id         |Unique identifier for batch                     |    String     |
-|created_at |Timestamp for when batch was created.           |ISO-8601 String|
-|modified_at|Timestamp for when batch was last updated.      |ISO-8601 String|
-|canceled   |Indicates if the batch has been canceled or not.|    Boolean    |
-
-`400 Bad Request`
-
-There was an error with your request. The body is a JSON object described in rest\_http\_errors. Possible error codes include `syntax_invalid_json`, `syntax_invalid_parameter_format` and `syntax_constraint_violation`.
-
-`403 Forbidden`
-
-The system was not able to fulfill your request. The body is a JSON object described in rest\_http\_errors. Possible error codes include `unknown_group`, `unknown_campaign` and `missing_callback_url`.
-
-Response for a successfully created batch message.
-
-**JSON**
-```json
-{
-    "from": "12345",
-    "to": [
-        "123456789",
-        "987654321"
-    ],
-    "body": "Hi there! How are you?",
-    "id": "{batch_id}",
-    "created_at": "2014-10-02T09:34:28.542Z",
-    "modified_at": "2014-10-02T09:34:28.542Z",
-    "canceled": "False"
-}
-```
-
-
-Send scheduled batch message with expiry.
-
-**Scheduled batch message**
-```shell
-curl -X POST \
-     -H "Authorization: Bearer {token}" \
-     -H "Content-Type: application/json"  -d '
-      {
-          "from": "12345",
-          "to": [
-              "123456789",
-              "987654321"
-          ],
-          "body": "Hi there! How are you?",
-          "send_at": "2014-10-02T09:30Z",
-          "expire_at": "2014-10-02T12:30Z"
-      }' \
-  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/batches"
-```
-
-
-**Batch message with custom delivery report URL**
-```shell
-curl -X POST \
-     -H "Authorization: Bearer {token}" \
-     -H "Content-Type: application/json"  -d '
-      {
-          "from": "12345",
-          "to": [
-              "123456789",
-              "987654321"
-          ],
-          "body": "Hi there! How are you?",
-          "delivery_report": "summary",
-          "callback_url": "http://www.example.com"
-      }' \
-  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/batches"
-```
-
-
-**Parameterized message**
-```shell
-curl -X POST \
-     -H "Authorization: Bearer {token}" \
-     -H "Content-Type: application/json"  -d '
-      {
-      "from": "12345",
-      "to": [
-          "123456789",
-          "987654321"
-       ],
-      "body": "Hi ${name}! How are you?",
-      "parameters": {
-          "name": {
-              "123456789": "Joe",
-              "default": "there"
-           }
-      }
-  }' \
-  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/batches"
-```
-
-
-### Cancel batch message
-
-A batch can be canceled at any point. If a batch is canceled while it's currently being delivered some messages currently being processed might still be delivered. The delivery report will indicate which messages were canceled and which weren't.
-
-Canceling a batch scheduled in the future will result in an empty delivery report while canceling an already sent batch would result in no change to the completed delivery report.
-
-#### Request
-
-`DELETE /xms/v1/{service_plan_id}/batches/{batch_id}`
-
-#### Response
-
-`200 OK`
-
-The response is a JSON object described in send\_batch\_msg.
-
-**Cancel a batch message**
-```shell
-curl-X DELETE \
-   -H "Authorization: Bearer {token}" \
-  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/batches/{batch_id}"
-```
-
-
-### List batch messages
-
-With the list operation you can list batch messages created in the last 14 days that you have created. This operation supports pagination.
-
-Batches are returned in reverse chronological order.
-
-#### Request
-
-`GET /xms/v1/{service_plan_id}/batches`
-
-Query parameters:
-
-|Name                |Description                                                                                                                 |Type                                                                   |Default|Constraints                  |Required|
-|--------------------|----------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------:|:-----:|-----------------------------|:------:|
-|page                |The page number starting from 0                                                                                             |                                Integer                                |   0   |0 or larger                  |   No   |
-|page_size           |Determines the size of a page                                                                                               |                                Integer                                |  30   |Max 100                      |   No   |
-|to                  |Only list messages set to this destination. Multiple destinations can be comma separated.                                   |                         MSISDN or short code                          |  No   |No                           |   No   |
-|start_date          |Only list messages received at or after this date time.                                                                     |                               ISO-8601                                |Now-24 |Must be valid ISO-8601 string|   No   |
-|end_date            |Only list messages received before this date time.                                                                          |                               ISO-8601                                |  No   |Must be valid ISO-8601 string|   No   |
-
-#### Response
-
-`200 OK`
-
-|Name                |Description                                                                                                                 |JSON Type                                                              |
-|--------------------|----------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------:|
-|page                |The requested page                                                                                                          |                                Integer                                |
-|page_size           |The number of batches returned in this request                                                                              |                                Integer                                |
-|count               |The total number of batches matching the given filters                                                                      |                                Integer                                |
-|batches             |The page of batches matching the given filters                                                                              |Array of objects described in [Send a batch message](#send-a-batch-mess|
-
-### Dry run a batch
-
-This operation will perform a dry run of a batch which calculates the bodies and number of parts for all messages in the batch without actually sending any messages.
-
-#### Request
-
-`POST /xms/v1/{service_plan_id}/batches/dry_run`
-
-The request body is a JSON object described in send\_batch\_msg request.
-
-Query parameters:
-
-| Name                   | Description                                                                   | Type    | Default | Constraints | Required |
-|-- -                    | ---                                                                           | ---     | ---     | ---         | ---    --|
-| per\_recipient         | Whether to include per recipient details in the response                      | Boolean | false   |             | No       |
-| number\_of\_recipients | Max number of recipients to include per recipient details for in the response | Integer | 100     | Max 1000    | No       |
-
-
-#### Response
-
-`200 OK`
-
-The number of recipients in the batch, the number of messages in the batch and an array containing detail for each recipient:
-
-|Name                |Description                                                                                                                 |JSON Type                                                              |
-|--------------------|----------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------:|
-|number_of_recipients|The number of recipents in the batch                                                                                        |                                integer                                |
-|number_of_messages  |The total number of SMS message parts to be sent in the batch                                                               |                                integer                                |
-|per_recipient       |The recipient, the number of message parts to this recipient, the body of the message, and the encoding type of each message|Array of message objects containing fields with the aforementioned data|
-
-`400 Bad request`
-
-There was an error with your request. The body is a JSON object described in rest\_http\_errors. Possible error codes include **syntax\_invalid\_json**, **syntax\_invalid\_parameter\_format** and **syntax\_constraint\_violation**.
-
-**Dry run a batch**
-```shell
-curl -X POST \
-     -H "Authorization: Bearer {token}" \
-     -H "Content-Type: application/json"  -d '
-      {
-      "from": "12345",
-      "to": [
-          "123456789",
-          "987654321"
-       ],
-      "body": "Hi ${name}! How are you?",
-      "parameters": {
-          "name": {
-              "123456789": "Joe",
-              "default": "there"
-           }
-      }
-  }' \
-  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/batches/dry_run"
-```
-
-
-### Retrieve a batch message
-
-This operation retrieves a specific batch with the provided batch ID.
-
-#### Request
-
-`GET /xms/v1/{service_plan_id}/batches/{batch_id}`
-
-#### Response
-
-`200 OK`
-
-The response is a JSON object described in send\_batch\_msg response.
-
-`404 Not Found`
-
-If the batch ID is unknown to the system.
-
-
-
-**Retrieve a batch**
-```shell
-curl -H "Authorization: Bearer {token}" \
-  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/batches/{batch_id}"
-```
-
-
-**Retrieve the first 30 batches from the last 24 hours**
-```shell
-curl -H "Authorization: Bearer {token}" \
-  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/batches"
-```
-
-
-**Retrieve the third page of batches with a page size of 50 from the last 24 hours**
-```shell
-curl -H "Authorization: Bearer {token}" \
-  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/batches?page=2&page_size=50"
-```
-
-
-**Retrieve batches created on June 23rd, 2014 UTC**
-```shell
-curl -H "Authorization: Bearer {token}" \
-  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/batches?start_date=2014-06-23&end_date=2014-06-24"
-```
-
-
-**Retrieve the batches sent from 12345 or 54321**
-```shell
-curl -H "Authorization: Bearer {token}" \
-  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/batches?from=12345,54321"
-```
-
-
-### Update a batch message
-
-This operation will update all provided parameters of a batch for the given batch ID.
-
-#### Request
-
-`POST /xms/v1/{service_plan_id}/batches/{id}`
-
-JSON body fields:
-
-|Name                |Description                                                                                                                 |Type                                                                   |Default             |Constraints                                                                    |Required|
-|--------------------|----------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------:|:------------------:|-------------------------------------------------------------------------------|:------:|
-|toAdd               |List of MSISDNs and group IDs to add to the batch.                                                                          |                             String array                              |                    |1 to 100 elements.                                                             |   No   |
-|toRemove            |List of MSISDNs and group IDs to remove from the batch.                                                                     |                             String array                              |                    |1 to 100 elements.                                                             |   No   |
-|from                |Sender number                                                                                                               |                                String                                 |                    |Must be valid MSISDN, short code or alphanumeric.                              |   No   |
-|body                |The message content. Normal text string for mt_text and Base64 encoded for mt_binary.                                       |                                String                                 |                    |Max 1600 chars for mt_text and max 140 bytes together with udh for mt_binary   |   No   |
-|campaign_id         |The campaign/service ID this message belongs to. US only.                                                                   |                                String                                 |                    |                                                                               |   No   |
-|delivery_report     |Request delivery report callback. Note that delivery reports can be fetched from the API regardless of this setting.        |                                String                                 |        none        |Valid types are none, summary, full and per_recipient                          |   No   |
-|send_at             |If set in the future the message will be delayed until send_at occurs.                                                      |                            ISO-8601 string                            |        Now         |Must be before expire_at. If set in the past messages will be sent immediately.|   No   |
-|expire_at           |If set the system will stop trying to deliver the message at this point                                                     |                            ISO-8601 string                            |3 days after send_at|Must be after send_at                                                          |   No   |
-|callback_url        |Override the default callback URL for this batch                                                                            |                              URL string                               |                    |Must be valid URL. Max 2048 characters long.                                   |   No   |
-
-#### Response
-
-`200 OK`
-
-The response is a JSON object described in send\_batch\_msg response.
-
-`400 Bad request`
-
-There was an error with your request. The body is a JSON object described in rest\_http\_errors. Possible error codes include **syntax\_invalid\_json**, **syntax\_invalid\_parameter\_format** and **syntax\_constraint\_violation**.
-
-`403 Forbidden`
-
-+The system was not able to fulfill your request. The body is a JSON object described in rest\_http\_errors. +Possible error codes include **batch\_already\_dispatched**.
-
-**Update batch**
-```shell
-curl -X POST \
-     -H "Authorization: Bearer {token}" \
-     -H "Content-Type: application/json"  -d '
-      {
-      "from": "12345",
-      "toAdd": [
-          "123456789",
-          "987654321"
-       ],
-      "toRemove": [
-          "111111111",
-          "999999999"
-       ],
-      "body": "Hi ${name}! How are you?"
-
-  }' \
-  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/batches/{id}"
-```
-
-
-### Replace a batch
-
-This operation will replace all the parameters of a batch with the provided values. Effectively the same as cancelling then batch and sending a new one instead.
-
-#### Request
-
-`PUT /xms/v1/{service_plan_id}/batches/{id}`
-
-The request body is a JSON object described in send\_batch\_msg request.
-
-#### Response
-
-`200 OK`
-
-The response is a JSON object described in send\_batch\_msg response.
-
-`400 Bad request`
-
-There was an error with your request. The body is a JSON object described in rest\_http\_errors. Possible error codes include **syntax\_invalid\_json**, **syntax\_invalid\_parameter\_format** and **syntax\_constraint\_violation**.
-
-**Replace batch**
-```shell
-curl -X PUT \
-     -H "Authorization: Bearer {token}" \
-     -H "Content-Type: application/json"  -d '
-      {
-      "from": "12345",
-      "to": [
-          "123456789",
-          "987654321"
-       ],
-      "body": "Hi ${name}! How are you?",
-      "parameters": {
-          "name": {
-              "123456789": "Joe",
-              "default": "there"
-           }
-      }
-  }' \
-  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/batches/{id}"
-```
-
-
-### Retrieve a delivery report
-
-Delivery reports can be retrieved even if no callback was requested. The difference between a summary and a full report is only that the full report contains the actual MSISDNs for each status code.
-
-#### Request
-
-`GET /xms/v1/{service_plan_id}/batches/{batch_id}/delivery_report`
-
-Query parameters:
-
-| Name   | Description                                                        | Type   | Default | Constraints             | Required |
-|-- -    | ---                                                                | ---    | ---     | ---                     | ---    --|
-| type   | The type of delivery report                                        | String | summary | Must be summary or full | Yes      |
-| status | Comma separated list of delivery\_report\_statuses to include      | String | N/A     | N/A                     | No       |
-| code   | Comma separated list of delivery\_receipt\_error\_codes to include | String | N/A     | N/A                     | No       |
-
-#### Response
-
-`200 OK`
-
-The response is a JSON object with the following fields:
-
-|Name                |Description                                                                                                                 |JSON Type                                                              |
-|--------------------|----------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------:|
-|type                |The object type. Will always be delivery_report_sms                                                                         |                                String                                 |
-|batch_id            |The ID of the batch this delivery report belongs to                                                                         |                                String                                 |
-|total_message_count |The total number of messages for the batch                                                                                  |                                String                                 |
-|statuses            |Array with status objects. Only status codes with at least one recipient will be listed.                                    |                                Object                                 |
-|statuses.code       |The detailed status code. See Error Codes                                                                                   |                                Integer                                |
-|statuses.status     |The simplified status as described in Delivery Report Statuses                                                              |                                String                                 |
-|statuses.count      |The number of messages that currently has this code. Will always be at least 1                                              |                                Integer                                |
-|statuses.recipients |Only for full report. A list of the MSISDN recipients which messages has this status code.                                  |                             String array                              |
-|client_reference    |The client identifier of the batch this delivery report belongs to, if set when submitting batch.                           |                                String                                 |
-
-`404 Not Found`
-
-The batch ID is not known to the system or the delivery report type is not recognized.
-
-**Request summary report**
-```shell
-curl -H "Authorization: Bearer {token}" \
-  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/batches/{batch_id}/delivery_report"
-```
-
-
-**Summary report response**
-```json
-{
-    "type": "delivery_report_sms",
-    "batch_id": "{batch_id}",
-    "total_message_count": 3,
-    "statuses": [
-        {
-            "code": 400,
-            "status": "Queued",
-            "count": 1
-        },
-        {
-            "code": 0,
-            "status": "Delivered",
-            "count": 2
-        }
-    ]
-}
-```
-
-
-
-
-**Request full report**
-```shell
-curl -H "Authorization: Bearer {token}" \
-  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/batches/{batch_id}/delivery_report?type=full"
-```
-
-
-**Full report response**
-```json
-{
-    "type": "delivery_report_sms",
-    "batch_id": "{batch_id}",
-    "total_message_count": 3,
-    "statuses": [
-        {
-            "code": 400,
-            "status": "Queued",
-            "count": 1,
-            "recipients": [
-                "123456789"
-            ]
-        },
-        {
-            "code": 0,
-            "status": "Delivered",
-            "count": 2,
-            "recipients": [
-                "987654321",
-                "123459876"
-            ]
-        }
-    ]
-}
-```
-
-
-### Retrieve a recipient delivery report
-
-A recipient delivery report contains the message status for a single recipient MSISDN.
-
-#### Request
-
-`GET /xms/v1/{service_plan_id}/batches/{batch_id}/delivery_report/{recipient_msisdn}`
-
-**Request report for 123456789**
-```shell
-curl -H "Authorization: Bearer {token}" \
-  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/batches/{batch_id}/delivery_report/123456789"
-```
-
-
-#### Response
-
-**Recipient delivery report for 123456789**
-```json
-{
-    "type": "recipient_delivery_report_sms",
-    "batch_id": "{batch_id}",
-    "recipient": "123456789",
-    "code": "0",
-    "status": "Delivered",
-    "at": "2016-10-02T09:34:18.542Z",
-    "operator_status_at": "2016-10-02T09:34:18.101Z"
-}
-```
-
-
-`200 OK`
-
-The response is a JSON object with the following fields:
-
-|Name                |Description                                                                                                                 |JSON Type                                                              |
-|--------------------|----------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------:|
-|type                |The object type. Will always be _recipient_delivery_report_sms                                                              |                                String                                 |
-|batch_id            |The ID of the batch this delivery report belongs to                                                                         |                                String                                 |
-|recipient           |The recipient MSISDN                                                                                                        |                                String                                 |
-|code                |The detailed status code. See Error Codes                                                                                   |                                Integer                                |
-|status              |The simplified status as described in Delivery Report Statuses                                                              |                                String                                 |
-|status_message      |A description of the status, if available.                                                                                  |                                String                                 |
-|at                  |A timestamp of when the Delivery Report was created in the Sinch service                                                    |                            ISO-8601 String                            |
-|operator_status_at  |A timestamp extracted from the Delivery Receipt from the originating SMSC                                                   |                            ISO-8601 String                            |
-|client_reference    |The client identifier of the batch this delivery report belongs to, if set when submitting batch.                           |                                String                                 |
-|applied_originator  |The default originator used for the recipient this delivery report belongs to, if default originator pool configured and no originator set when submitting batch.|                                String                                 |
-|number_of_message_parts|The number of parts the message was split into. Present only if `max_number_of_message_parts` parameter was set.              |                                Integer                                |
-
-`404 Not Found`
-
-The batch ID is not known to the system or the recipient is not a target of this batch.
-
-### Receiving delivery report callbacks
-
-Delivery report callbacks will be received for batches where *delivery\_report* parameter is set to *summary*, *full* or *per\_recipient*.
-
-If no *callback\_url* was specified for the batch then the default callback URL for the given service plan will be used.
-
-#### Summary and full
-
-If a batch was created with a request for *full* or *summary* *delivery report* then one callback will be made to the specified callback URL when all messages in the batch (which may be one message) are either delivered, failed or expired. If you want to know the delivery status for a message before all messages are completed then you can always use retrieve\_delivery\_report at any time.
-
-The format for summary and full reports is the same as the retrieve\_delivery\_report response. The difference being that when *full* is requested a list of phone numbers / recipients per delivery status is provided.
-
-#### Per recipient
-
-If a batch was created with a request for *per\_recipient* *delivery\_report* then a callback will be made for each status change of a message. This could result in a lot of callbacks and should be **used with caution for larger batches**. These delivery reports also include a timestamp of when the Delivery Report originated from the SMSC.
 
 ## Inbounds Endpoint
 
@@ -969,7 +959,7 @@ NB: The operator is only available for MOs sent to short codes.
 **Retrieve the first 30 inbound messages from the last 24 hours.**
 ```shell
 curl -H "Authorization: Bearer {token}" \
-  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/inbounds"
+  "https://us.sms.api.sinch.com/xms/v1/{service_plan_id}/inbounds"
 ```
 
 
@@ -978,7 +968,7 @@ curl -H "Authorization: Bearer {token}" \
 **Retrieve the third page of inbound messages with a page size of 50 from the last 24 hours**
 ```shell
 curl -H "Authorization: Bearer {token}" \
-  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/inbounds?page=2&page_size=50"
+  "https://us.sms.api.sinch.com/xms/v1/{service_plan_id}/inbounds?page=2&page_size=50"
 ```
 
 
@@ -987,7 +977,7 @@ curl -H "Authorization: Bearer {token}" \
 **Retrieve inbound messages received on June 23rd, 2014 UTC**
 ```shell
 curl -H "Authorization: Bearer {token}" \
-  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/inbounds?start_date=20140623TZ&end_date=20140624TZ"
+  "https://us.sms.api.sinch.com/xms/v1/{service_plan_id}/inbounds?start_date=20140623TZ&end_date=20140624TZ"
 ```
 
 
@@ -996,7 +986,7 @@ curl -H "Authorization: Bearer {token}" \
 **Retrieve the batches sent to 12345 or 54321**
 ```shell
 curl -H "Authorization: Bearer {token}" \
-  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/inbounds?to=12345,54321"
+  "https://us.sms.api.sinch.com/xms/v1/{service_plan_id}/inbounds?to=12345,54321"
 ```
 
 
@@ -1050,7 +1040,7 @@ The response is a JSON object described in `inbounds_endpoint` response.
 **If the inbound ID is unknown to the system**
 ```shell
 curl -H "Authorization: Bearer {token}" \
-  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/inbounds/{inbound_id}"
+  "https://us.sms.api.sinch.com/xms/v1/{service_plan_id}/inbounds/{inbound_id}"
 ```
 
 ## Groups endpoint
@@ -1111,7 +1101,7 @@ curl -X POST \
           ],
           "name": "My group"
 }' \
-  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/groups"
+  "https://us.sms.api.sinch.com/xms/v1/{service_plan_id}/groups"
 ```
 
 
@@ -1134,7 +1124,7 @@ curl -X POST \
                     }
                 }
 }' \
-  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/groups"
+  "https://us.sms.api.sinch.com/xms/v1/{service_plan_id}/groups"
 ```
 
 
@@ -1159,7 +1149,7 @@ curl -X POST \
                     }
                 }
 }' \
-  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/groups"
+  "https://us.sms.api.sinch.com/xms/v1/{service_plan_id}/groups"
 ```
 
 
@@ -1177,7 +1167,7 @@ curl -X POST \
                 "yiinTKVNAEAu"
           ]
 }' \
-  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/groups"
+  "https://us.sms.api.sinch.com/xms/v1/{service_plan_id}/groups"
 ```
 
 
@@ -1212,7 +1202,7 @@ Query parameters:
 **Retrieve the first 30 groups**
 ```shell
 curl -H "Authorization: Bearer {token}" \
-  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/groups"
+  "https://us.sms.api.sinch.com/xms/v1/{service_plan_id}/groups"
 ```
 
 
@@ -1221,7 +1211,7 @@ curl -H "Authorization: Bearer {token}" \
 **Retrieve the third page of groups with a page size of 50**
 ```shell
 curl -H "Authorization: Bearer {token}" \
-  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/groups?page=3&page_size=50"
+  "https://us.sms.api.sinch.com/xms/v1/{service_plan_id}/groups?page=3&page_size=50"
 ```
 
 
@@ -1246,7 +1236,7 @@ If the group ID is unknown to the system.
 **Retrieve a group**
 ```shell
 curl -H "Authorization: Bearer {token}" \
-  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/groups/{group_id}"
+  "https://us.sms.api.sinch.com/xms/v1/{service_plan_id}/groups/{group_id}"
 ```
 
 
@@ -1271,7 +1261,7 @@ If the group ID is unknown to the system.
 **Retrieve group members**
 ```shell
 curl -H "Authorization: Bearer {token}" \
-  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/groups/{group_id}/members"
+  "https://us.sms.api.sinch.com/xms/v1/{service_plan_id}/groups/{group_id}/members"
 ```
 
 
@@ -1333,7 +1323,7 @@ curl -X POST \
               "432156789"
           ]
 }' \
-  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/groups/{group_id}"
+  "https://us.sms.api.sinch.com/xms/v1/{service_plan_id}/groups/{group_id}"
 ```
 
 
@@ -1347,7 +1337,7 @@ curl -X POST \
       {
           "name": "New group name"
 }' \
-  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/groups/{group_id}"
+  "https://us.sms.api.sinch.com/xms/v1/{service_plan_id}/groups/{group_id}"
 ```
 
 
@@ -1361,7 +1351,7 @@ curl -X POST \
       {
           "name": null
 }' \
-  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/groups/{group_id}"
+  "https://us.sms.api.sinch.com/xms/v1/{service_plan_id}/groups/{group_id}"
 ```
 
 
@@ -1413,7 +1403,7 @@ curl -X PUT \
           ],
       "name": "New name"
 }' \
-  "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/groups/{group_id}"
+  "https://us.sms.api.sinch.com/xms/v1/{service_plan_id}/groups/{group_id}"
 ```
 
 
@@ -1439,7 +1429,7 @@ If the group ID is unknown to the system.
 ```shell
 curl -X DELETE \
      -H "Authorization: Bearer {token}" \
-     "https://eu.sms.api.sinch.com/xms/v1/{service_plan_id}/groups/{group_id}"
+     "https://us.sms.api.sinch.com/xms/v1/{service_plan_id}/groups/{group_id}"
 ```
 
 ## Automatic Default Originator
