@@ -26,7 +26,7 @@ Create a new WebAPI project with no user authentication and if you have an Azure
 
 ## Install Sinch helper library
 
-When the project is created, we’ll want to add the `Sinch.SMS` nuget package with which we need to send out the one-time password (OTP) codes. Open up Package Manager Console:
+When the project is created, we'll want to add the `Sinch.SMS` nuget package with which we need to send out the one-time password (OTP) codes. Open up Package Manager Console:
 
 ```csharp
 pm>install-package Sinch.SMS
@@ -67,7 +67,7 @@ public class OTPController : ApiController
 
 ## Generating a random code
 
-In this scenario, since it doesn’t really matter that it’s totally random and I don’t care about threads, I am just going to use a static random. (If you are interested in using a safer thread-safe random in .NET, [here is an example](http://csharpindepth.com/Articles/Chapter12/Random.aspx).)
+In this scenario, since it doesn't really matter that it's totally random and I don't care about threads, I am just going to use a static random. (If you are interested in using a safer thread-safe random in .NET, [here is an example](http://csharpindepth.com/Articles/Chapter12/Random.aspx).)
 
 In **OTPController**, add the below declaration in the top of you class:
 
@@ -102,7 +102,7 @@ public async Task<HttpResponseMessage> RequestOTP(string phoneNumber)
     }
     catch (Exception ex)
     {
-        // handle error here, see :ref:[here](doc:sms-rest) for possible errors
+        // handle error here, see :ref:[here](doc:sms-guide) for possible errors
         return new HttpResponseMessage(HttpStatusCode.InternalServerError);
     }
 }
