@@ -56,7 +56,7 @@ Now to the fun part, sending a message! For clarity we'll just set up the parame
 >
 > If you're using a trial account your message will be sent from an *random* number with a *generic test message*. However, we *still* need to add a number in the `sender_phonenumber` variable.
 
-We'll also make use of the parameterization of the message body, so we can send a personalized message to our recipients. Read more about parameterization [here](doc:sms-rest#section-parameterization).
+We'll also make use of the parameterization of the message body, so we can send a personalized message to our recipients. Read more about parameterization [here](doc:sms-guide#section-parameterization).
 
 ```python
 # Variables for the requestbody
@@ -88,13 +88,13 @@ except Exception as ex:
     print('Error creating batch: %s' % str(ex))
 ```
 
-`MtBatchTextSmsCreate` is a class that describes the fields of the SMS batch and `client.create_batch` creates the batch and returns the *sent* batch, but also adds some [parameters](doc:sms-rest#section-response). In our case we're only interested in the `batch_id`. The ID can for example be used later to [update a batch](doc:sms-rest#section-update-a-batch-message) or to [replace a batch](doc:sms-rest#section-replace-a-batch).
+`MtBatchTextSmsCreate` is a class that describes the fields of the SMS batch and `client.create_batch` creates the batch and returns the *sent* batch, but also adds some [parameters](doc:sms-guide#section-response). In our case we're only interested in the `batch_id`. The ID can for example be used later to [update a batch](doc:sms-guide#section-update-a-batch-message) or to [replace a batch](doc:sms-guide#section-replace-a-batch).
 
 ## Further reading
 
 We have an in-depth tutorial for our XMS Library [here](https://clxcommunications.github.io/sdk-xms-python/tutorial.html). It's great for getting to know what our XMS API can do!
 
-Also feel free to read more about the XMS API in general at the [documentation site](doc:sms-rest), it contains up-to-date information about, for example, [status](doc:sms-rest#section-http-statuses) and [error](doc:sms-rest#section-error-codes) codes.
+Also feel free to read more about the XMS API in general at the [documentation site](doc:sms-guide), it contains up-to-date information about, for example, [status](doc:sms-guide#section-http-statuses) and [error](doc:sms-guide#section-error-codes) codes.
 
 
 ## Code
