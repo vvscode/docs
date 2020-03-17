@@ -4,7 +4,7 @@ excerpt: WhatsApp REST API. This documentation outlines how to use the WhatsApp 
 next:
   pages:
     - whatsapp-opt-in-and-outs
-    - sms-rest-callback
+    - sms-guide
     - whatsapp-capability
     - whatsapp-blacklist-callback
     - whatsapp-callback-store

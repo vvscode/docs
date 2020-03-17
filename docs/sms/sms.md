@@ -15,11 +15,13 @@ Learn how to send SMS messages with the Sinch API in a few minutes. In this guid
 Before you can send your first SMS, you need a [Sinch
 account](https://dashboard.sinch.com/signup). (If you are in the United States, you also need a [free test phone  number](https://dashboard.sinch.com/numbers/your-numbers/numbers).)
 
-And click on activate
-![Image of configure number](images/new-number/activateyournumber.png)
 
-To use the number with the rest API select REST and Get Free number.
+![Image of configure number](images/new-number/activateyournumber.png)
+Click on activate
+
+
 ![Image of configure number](images/new-number/select-rest.png)
+To use the number with the rest API select REST and click ***Get Free number***.
 
 ### Code
 

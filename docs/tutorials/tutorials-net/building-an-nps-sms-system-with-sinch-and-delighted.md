@@ -6,20 +6,20 @@ excerpt: >-
   using a system called Net Promoter Score (NPS), https://delighted.com helps
   you keep track of how likely your users are to recommend you.
 ---
-As you probably already know, every time we resolve a support request we ask you if you would share Sinch with a friend. Soon, we’ll even ask you about tutorials like the one you’re checking out now. Why?
+As you probably already know, every time we resolve a support request we ask you if you would share Sinch with a friend. Soon, we'll even ask you about tutorials like the one you're checking out now. Why?
 
 Well, we want to know we are doing the right thing for you dear developer. *And* my boss Daniel will give me the evil eye -
 ![Forsman.jpg](../images/f6a2a38-Forsman.jpg)
 
-\- if we don’t. By using a system called Net Promoter Score (NPS), [Delighted](https://delighted.com/) helps us keep track of how likely you guys are to recommend us. For you who haven’t heard of NPS, you might think I’m a little bit greedy, but here’s how it works:
+\- if we don't. By using a system called Net Promoter Score (NPS), [Delighted](https://delighted.com/) helps us keep track of how likely you guys are to recommend us. For you who haven't heard of NPS, you might think I'm a little bit greedy, but here's how it works:
 
 NPS is based on a proven single question, and 2 part answers.
 
 ![scsh.png](../images/63c91a9-scsh.png)
 
-First, you’ll answer with a 0-10 numerical rating which makes our data quantifiable over time. Then you’re asked to write an open-ended follow up which adds some really valuable context to the rating. Depending on the score, you’ll either fall into the Promoters’ category (9s and 10s), the Passives’ (7s and 8s), or the Detractors’ (6s and below). The NPS is calculated by *% of Promoters - % of Detractors*, which’ll generate a score between -100 to 100. The system essentially tells us whether we’re a slam dunk or [not](http://www.reactiongifs.com/r/slam-dunk.gif).
+First, you'll answer with a 0-10 numerical rating which makes our data quantifiable over time. Then you're asked to write an open-ended follow up which adds some really valuable context to the rating. Depending on the score, you'll either fall into the Promoters' category (9s and 10s), the Passives' (7s and 8s), or the Detractors' (6s and below). The NPS is calculated by *% of Promoters - % of Detractors*, which'll generate a score between -100 to 100. The system essentially tells us whether we're a slam dunk or [not](http://www.reactiongifs.com/r/slam-dunk.gif).
 
-*For more info, check out* [Delighted’s NPS page](https://delighted.com/net-promoter-score) *or try out their awesome* [API](https://delighted.com/docs/api\)) *yourself.*
+*For more info, check out* [Delighted's NPS page](https://delighted.com/net-promoter-score) *or try out their awesome* [API](https://delighted.com/docs/api\)) *yourself.*
 
 ## Hail or bail
 
@@ -38,15 +38,15 @@ https://azuredeploy.net/?repository=https://github.com/sinch/csharp-nps-sms-deli
 
 ### Set up your account
 
-[Login to your dashboard](https://portal.sinch.com/#/login), click on numbers and rent one (make sure it’s an SMS enabled number).
+[Login to your dashboard](https://portal.sinch.com/#/login), click on numbers and rent one (make sure it's an SMS enabled number).
 
 ![rentnumber.png](../images/47e3aa3-rentnumber.png)
 
-Choose your app - or create one and click on the little pen - add the number you just rented to the app, and configure the callback URL. The callback URL is where Sinch is going to post incoming messages, and you can read more about that in [the documentation](doc:sms-rest-callback).
+Choose your app - or create one and click on the little pen - add the number you just rented to the app, and configure the callback URL. The callback URL is where Sinch is going to post incoming messages, and you can read more about that in [the documentation](doc:sms-guide).
 
 ### CODE!
 
-Finally, some code. In your web API project, add a class in your Models folder and call it **SMSCallbackModel.cs**. SMS are pretty simple compared to Calling callbacks - the SMS is delivered and there’s no response required.
+Finally, some code. In your web API project, add a class in your Models folder and call it **SMSCallbackModel.cs**. SMS are pretty simple compared to Calling callbacks - the SMS is delivered and there's no response required.
 
 The request contains more info, but we only care about the sender and the actual message for this purpose. So lets add a couple of properties:
 
@@ -92,19 +92,19 @@ public async Task<HttpResponseMessage> Index(SMSCallbackModel model) {
 }
 ```
 
-*Wonder why we create an email from the phonenumber? Delighted’s driven by email, plus we want to check that the creation went smoothly, becuase we need the PersonID to create a survey response.*
+*Wonder why we create an email from the phonenumber? Delighted's driven by email, plus we want to check that the creation went smoothly, becuase we need the PersonID to create a survey response.*
 
 Cool, this shoud be good to go\! Deploy and send an SMS to the number you rented with a number from 0-10.
 
 YAY, I suppsed it worked?
 
-Now, one of the things I really value with the feedback system is of course getting comments from you guys, so I wanted to add that. Let’s change the code (here is where it becomes a little hacky since we are trying to get a number and the rest as a comment from an SMS)\!
+Now, one of the things I really value with the feedback system is of course getting comments from you guys, so I wanted to add that. Let's change the code (here is where it becomes a little hacky since we are trying to get a number and the rest as a comment from an SMS)\!
 
 ![filter_d.png](../images/0efda3b-filter_d.png)
 
 ### Recieving SMS
 
-I’ve decided to ask the audience to send an SMS with a score and a comment. I also want to track the event with a property on the person.
+I've decided to ask the audience to send an SMS with a score and a comment. I also want to track the event with a property on the person.
 
 ```csharp
 public async Task<HttpResponseMessage> Index(SMSCallbackModel model) {
@@ -140,6 +140,6 @@ public async Task<HttpResponseMessage> Index(SMSCallbackModel model) {
 }
 ```
 
-Deploy and send an SMS to the number with the text *10 awesome*. That should show up in your portal now? You’ll also be able to filter by events.
+Deploy and send an SMS to the number with the text *10 awesome*. That should show up in your portal now? You'll also be able to filter by events.
 
 Now dear developer, go dunk\!
