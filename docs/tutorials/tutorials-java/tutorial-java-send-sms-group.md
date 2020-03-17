@@ -29,7 +29,7 @@ Although we won't be covering them, Groups also have some more advanced features
  - Groups can be nested; a group can contain members of up to 10 other groups.
  - Groups can be automatically updated upon certain user-initiated interactions (ex: sending JOIN or STOP to your dedicated phone number or short code).
  
-Check out the [API reference documentation on Groups](doc:sms-rest-groups-endpoint) for more details. 
+Check out the [API reference documentation on Groups](doc:sms-guide#groups-endpoint) for more details. 
 
 ## Let's Get Started
 

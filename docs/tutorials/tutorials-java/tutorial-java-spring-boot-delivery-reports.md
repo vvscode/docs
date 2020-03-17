@@ -7,8 +7,8 @@ excerpt: >-
 ---
 The Sinch REST API keeps track of the delivery status of each message you send and makes that status available to your application in 2 ways:
 
- 1) Via [polling / pull](doc:sms-rest-batches-endpoint#section-retrieve-a-delivery-report): your application can fetch the delivery notifications at regular intervals with GET HTTP requests.
- 2) Via [callbacks / push](doc:sms-rest-callback#section-delivery-report-callback): the Sinch REST API will make an HTTP POST request to your application with details of the delivery report included in the request body.
+ 1) Via [polling / pull](doc:sms-guide#section-retrieve-a-delivery-report): your application can fetch the delivery notifications at regular intervals with GET HTTP requests.
+ 2) Via [callbacks / push](doc:sms-guide#section-delivery-report-callback): the Sinch REST API will make an HTTP POST request to your application with details of the delivery report included in the request body.
  
 This tutorial will show you how to setup an endpoint in your Spring Boot application to respond to the delivery reports callbacks.
 
@@ -44,9 +44,9 @@ In the `build.gradle` file, make sure your dependencies includes both `spring-bo
 
 ```groovy
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
 
-	compile 'com.clxcommunications:sdk-xms:1.0.2'
+    compile 'com.clxcommunications:sdk-xms:1.0.2'
 }
 ```
 
