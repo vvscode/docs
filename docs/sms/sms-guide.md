@@ -910,7 +910,7 @@ In addition to these standard error codes, the REST API provides an additional s
 | 402               | Message unroutable           | Aborted    | SMSC rejected message. Retrying is likely to cause the same error.                                                                  |
 | 403               | Internal error               | Aborted    | An unexpected error caused the message to fail.                                                                                     |
 | 404               | Temporary delivery failure   | Aborted    | Message failed because of temporary delivery failure. Message can be retried.                                                       |
-| 405               | Unmatched Parameter          | Aborted    | One or more parameters in the message body has no mapping for this recipient. See [Parameterization](doc:#section-parameterization) |
+| 405               | Unmatched Parameter          | Aborted    | One or more parameters in the message body has no mapping for this recipient. See [Parameterization](#section-parameterization) |
 | 406               | Internal Expiry              | Aborted    | Message was expired before reaching SMSC. This may happen if the expiry time for the message was very short.                        |
 | 407               | Canceled                     | Aborted    | Message was canceled by user before reaching SMSC.                                                                                  |
 | 408               | Internal Reject              | Aborted    | SMSC rejected the message. Retrying is likely to cause the same error.                                                              |
