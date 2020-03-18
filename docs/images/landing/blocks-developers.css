@@ -1,0 +1,357 @@
+  /*
+
+
+  72px padding top header (Sinch deve...)
+  Container grid 1140px 
+  Building blicks 736px (max width)
+  ner till sök 48px
+  sök 736px;
+  #hub-subheader-parent #hub-subheader - 0 16px
+  border samma som rubrik och i fokus 100% utan 20%
+  top 64px ner till arc
+  48px sök till icon 
+  ikon i feature ner till text 16px
+  feature title 20px / line height 28px 16px ner
+  feature edsc 24px line heoight
+  slopa border rubrik
+  titel 24px top
+  länkarna 14px i listan och 6px padding top och bottom line heigh 24px color 5C656D underline
+  från title toll listan 24px
+  länklista ner till view all 24px samma som till rubrik
+  #hub-landing-page .hub-landing-category-columns .row (Padding bottom 0 för rätt avstånd)
+  
+  
+  24px padding deras blockj
+  144px ner till footer
+  72px ner våra block till resten
+
+
+
+  */
+
+/* Navigation fix */
+  .hub-is-home header#hub-header #header-top .clearfix nav {
+    display: flex;
+  }
+  
+  .hub-is-home #header-nav-left {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+  }
+
+  .hub-is-home header#hub-header #header-top #header-nav-right {
+    float: none;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  /* Hero */
+  .hub-is-home header#hub-header {
+    background-color: #F6F6F7 !important;
+  }
+  .hub-is-home #header-top .hub-container {
+    background-color: #F6F6F7;
+    /* max-width: 100% !important; */
+  }
+
+  /* Hero container */
+  .hub-is-home #hub-landing-top {
+    padding-bottom: 0;
+    padding: 72px 0 0;
+  }
+
+  /* Header */
+  .hub-is-home #hub-landing-top h2 {
+    font-size: 16px !important;
+    line-height: 24px;
+    color: #3C4852 !important;
+    font-weight: 500 !important;
+    text-align: center;
+  }
+
+  /* Description container */
+  .hub-is-home #hub-landing-top .hub-landing-description {
+    margin: 0 auto !important;
+    max-width: 736px;
+  }
+
+  /* Description text */
+  .hub-is-home #hub-landing-top .hub-landing-description p {
+    color: #333F48 !important;
+    font-size: 40px;
+    line-height: 48px;
+    text-align: center;
+    font-weight: 800;
+    margin-top: 16px;
+    margin-bottom: 48px;
+  }
+
+  /* Landing page container */
+  .hub-is-home #hub-landing-page {
+    margin-top: 0 !important;
+    max-width: 1140px;
+    margin: 0 auto;
+    position: relative;
+    top: 23px;
+  }
+
+  .hub-is-home #hub-container, .hub-container {
+    max-width: 100% !important;
+    width: 100%;
+  }
+
+  /* "Native"  blocks */
+  .hub-is-home #hub-landing-page .hub-landing-category-columns .row {
+    padding-bottom: 0 !important;
+  }
+
+  /* Arc stuff */
+  .hub-is-home .arc-padding {
+    height: 42px;
+    width: 100%;
+    background-color: #F6F6F7;
+
+  }
+  /* Arc container */
+  .hub-is-home .arc {
+    width: 100%;
+    height: 100px;
+    position: relative;
+  }
+  .hub-is-home .arc img {
+    width: 100%;
+  }
+
+  /* Searchbar container */
+  .hub-is-home #hub-subheader-parent {
+    max-width: 736px !important;
+    margin: 0 auto;
+  }
+
+  /* Search input */
+  .hub-is-home #hub-subheader {
+    background-color: #FFFFFF !important;
+    height: 55px !important;
+    border: 1px solid rgba(51, 63, 72, 0.2) !important;
+    border-bottom: none;
+    border-radius: 4px;
+    padding: 0 16px !important;
+  }
+  /* Search input focus */
+  .hub-is-home #hub-subheader:focus-within {
+    border: 1px solid rgba(51, 63, 72, 1) !important;
+  }
+
+  .hub-is-home #hub-search .searchbox {
+    left: 0;
+    right: unset;
+    top: 5px;
+  }
+  .hub-is-home #hub-search input {
+    border-bottom: none !important;
+    padding-top: 5px !important;
+    background-color: #FFFFFF !important;
+  }
+
+  /* Search icon */
+  .hub-is-home .fa-search {
+    color: #333F48 !important;
+    padding-top: 3px;
+  }
+
+  /* Boxes in "top" */
+  .hub-is-home .feature-boxes {
+    position: relative;
+    top: -70px;
+    z-index: 90;  
+    max-width: 1140px;
+    margin: 0 auto;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* Box */
+  .hub-is-home .feature-box {
+    background-color : rgb(255, 255, 255);
+    border-radius : 10px;
+    box-shadow : rgba(149, 149, 149, 0.25) 0px 5px 15px 0px;
+    padding : 50px 24px 0;
+    height : 100%;
+    position: relative;
+    margin-top: 2rem;
+  }
+
+  .hub-is-home .feature-icon img {
+    height : 76px;
+    width : 76px;
+    border: 0;
+    position: absolute;
+    top: -2.5rem;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto;
+  }
+
+  .hub-is-home .feature-title {
+    color : rgb(56, 66, 72);
+    font-weight : 600;
+    font-size : 20px;
+    line-height: 28px;
+    width : 100%;
+    margin-bottom : 16px;
+    text-align: center;
+  }
+
+  .hub-is-home .feature-description {
+    color : rgb(102, 114, 131);
+    font-weight : 400;
+    font-size : 14px;
+    margin-bottom : 40px;
+    min-height : 80px;
+    text-align: center;
+    line-height: 24px;
+  }
+
+  .hub-is-home .cta-button {
+    color: #323e47;
+    padding: 15px 24px;
+    background: #fec656;
+    border: 2px solid #fec656;
+    display: block;
+    line-height: 1;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-size: 0.875rem;
+    font-weight: bold;
+    letter-spacing: 1.23px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: all .2s ease-in-out;
+    width: 250px;
+    margin: 0 auto;
+  }
+  
+
+  .hub-is-home .cta-button:hover  {
+    background: transparent;
+    color: #fec656;
+  }
+
+  /* View all */
+  .hub-is-home a.view-all {
+    text-decoration: underline;
+    color: #42515D;
+    font-size: 14px;
+    font-weight: 500
+  }
+  /* Icons */
+  .hub-is-home h3.main_color {
+    display: flex;
+    border-bottom: none !important;
+    margin-top: 24px !important;
+    padding-bottom: 0;
+  }
+
+  /* SMS Icon */
+  .hub-is-home .hub-landing-category-columns .row:first-child .col-sm-4:first-child h3::before {
+    content: url('https://sinchdev.wpengine.com/wp-content/uploads/2020/03/icon-s-mms.svg');
+    padding-right: 8px;
+  }
+  /* WhatsApp Icon */
+  .hub-is-home .hub-landing-category-columns .row:first-child .col-sm-4:nth-child(2) h3::before {
+    content: url('https://sinchdev.wpengine.com/wp-content/uploads/2020/03/icon-s-whatsapp.svg');
+    padding-right: 8px;
+  }
+  /* Verification Icon */
+  .hub-is-home .hub-landing-category-columns .row:first-child .col-sm-4:nth-child(3) h3::before {
+    content: url('https://sinchdev.wpengine.com/wp-content/uploads/2020/03/icon-s-verification.svg');
+    padding-right: 8px;
+  }
+
+
+  /* Voice Icon */
+  .hub-is-home .hub-landing-category-columns .row:nth-child(2) .col-sm-4:first-child h3::before {
+    content: url('https://sinchdev.wpengine.com/wp-content/uploads/2020/03/icon-s-voice.svg');
+    padding-right: 8px;
+  }
+  /* Video Icon */
+  .hub-is-home .hub-landing-category-columns .row:nth-child(2) .col-sm-4:nth-child(2) h3::before {
+    content: url('https://sinchdev.wpengine.com/wp-content/uploads/2020/03/icon-s-video.svg');
+    padding-right: 8px;
+  }
+  /* RCS Icon */
+  .hub-is-home .hub-landing-category-columns .row:nth-child(2) .col-sm-4:nth-child(3) h3::before {
+    content: url('https://sinchdev.wpengine.com/wp-content/uploads/2020/03/icon-s-rcs.svg');
+    padding-right: 8px;
+  }
+
+
+  /* MMS Icon */
+  .hub-is-home .hub-landing-category-columns .row:nth-child(3) .col-sm-4:first-child h3::before {
+    content: url('https://sinchdev.wpengine.com/wp-content/uploads/2020/03/icon-s-mms.svg');
+    padding-right: 8px;
+  }
+  /* Number Lookup Icon */
+  .hub-is-home .hub-landing-category-columns .row:nth-child(3) .col-sm-4:nth-child(2) h3::before {
+    content: url('https://sinchdev.wpengine.com/wp-content/uploads/2020/03/icon-s-number-lookup.svg');
+    padding-right: 8px;
+  }
+  /* Tutorials Icon */
+  .hub-is-home .hub-landing-category-columns .row:nth-child(3) .col-sm-4:nth-child(3) h3::before {
+    content: url('https://sinchdev.wpengine.com/wp-content/uploads/2020/03/icon-s-tutorials.svg');
+    padding-right: 8px;
+  }
+
+
+  /* Release Notes Icon */
+  .hub-is-home .hub-landing-category-columns .row:nth-child(4) .col-sm-4:first-child h3::before {
+    content: url('https://sinchdev.wpengine.com/wp-content/uploads/2020/03/icon-s-release-notes.svg');
+    padding-right: 8px;
+  }
+
+  /* Add border to categories */
+  .hub-is-home .hub-landing-category-columns .row .col-sm-4 {
+    border: 10px solid transparent;
+    box-shadow: inset 0px 0px 0px 3px #F2F2F3;
+    box-sizing: border-box;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+    padding-bottom: 24px;
+  }
+
+  /* Categories list */
+  .hub-is-home #hub-landing-page .hub-landing-category-columns .row .col-sm-4 ul {
+    padding: 18px 0px 24px 0px;
+  }
+
+  /* Links in ul (Categories) */
+  .hub-is-home #hub-landing-page .hub-landing-category-columns .row .col-sm-4 ul li a {
+    font-size: 14px !important;
+    padding: 6px 0 !important;
+    line-height: 24px;
+    color: #5C656D;
+    text-decoration: underline;
+  }
+
+  .hub-is-home footer {
+    margin-top: 150px;
+  }
+
+
+  @media only screen and (max-width: 1150px) {
+    .hub-is-home .feature-box {
+      margin-right : 0px;
+      margin-bottom : 50px;
+    }
+    .hub-is-home .feature-container {
+      margin-bottom: 4rem;
+    }
+    .hub-is-home #hub-content {
+      margin-top: 0 !important;
+    }
+    .hub-is-home #hub-subheader-parent {
+      display: none;
+    }
+  }
