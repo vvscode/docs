@@ -253,61 +253,61 @@
     margin-top: 24px !important;
     padding-bottom: 0;
   }
-
+  
   /* SMS Icon */
   .hub-is-home .hub-landing-category-columns .row:first-child .col-sm-4:first-child h3::before {
-    content: url('https://sinchdev.wpengine.com/wp-content/uploads/2020/03/icon-s-mms.svg');
+    content: url('https://sinch.github.io/docs/images/landing/icon-s-mms.svg');
     padding-right: 8px;
   }
   /* WhatsApp Icon */
   .hub-is-home .hub-landing-category-columns .row:first-child .col-sm-4:nth-child(2) h3::before {
-    content: url('https://sinchdev.wpengine.com/wp-content/uploads/2020/03/icon-s-whatsapp.svg');
+    content: url('https://sinch.github.io/docs/images/landing/icon-s-whatsapp.svg');
     padding-right: 8px;
   }
   /* Verification Icon */
   .hub-is-home .hub-landing-category-columns .row:first-child .col-sm-4:nth-child(3) h3::before {
-    content: url('https://sinchdev.wpengine.com/wp-content/uploads/2020/03/icon-s-verification.svg');
+    content: url('https://sinch.github.io/docs/images/landing/icon-s-verification.svg');
     padding-right: 8px;
   }
 
 
   /* Voice Icon */
   .hub-is-home .hub-landing-category-columns .row:nth-child(2) .col-sm-4:first-child h3::before {
-    content: url('https://sinchdev.wpengine.com/wp-content/uploads/2020/03/icon-s-voice.svg');
+    content: url('https://sinch.github.io/docs/images/landing/icon-s-voice.svg');
     padding-right: 8px;
   }
   /* Video Icon */
   .hub-is-home .hub-landing-category-columns .row:nth-child(2) .col-sm-4:nth-child(2) h3::before {
-    content: url('https://sinchdev.wpengine.com/wp-content/uploads/2020/03/icon-s-video.svg');
+    content: url('https://sinch.github.io/docs/images/landing/icon-s-video.svg');
     padding-right: 8px;
   }
   /* RCS Icon */
   .hub-is-home .hub-landing-category-columns .row:nth-child(2) .col-sm-4:nth-child(3) h3::before {
-    content: url('https://sinchdev.wpengine.com/wp-content/uploads/2020/03/icon-s-rcs.svg');
+    content: url('https://sinch.github.io/docs/images/landing/icon-s-rcs.svg');
     padding-right: 8px;
   }
 
 
   /* MMS Icon */
   .hub-is-home .hub-landing-category-columns .row:nth-child(3) .col-sm-4:first-child h3::before {
-    content: url('https://sinchdev.wpengine.com/wp-content/uploads/2020/03/icon-s-mms.svg');
+    content: url('https://sinch.github.io/docs/images/landing/icon-s-mms.svg');
     padding-right: 8px;
   }
   /* Number Lookup Icon */
   .hub-is-home .hub-landing-category-columns .row:nth-child(3) .col-sm-4:nth-child(2) h3::before {
-    content: url('https://sinchdev.wpengine.com/wp-content/uploads/2020/03/icon-s-number-lookup.svg');
+    content: url('https://sinch.github.io/docs/images/landing/icon-s-number-lookup.svg');
     padding-right: 8px;
   }
   /* Tutorials Icon */
   .hub-is-home .hub-landing-category-columns .row:nth-child(3) .col-sm-4:nth-child(3) h3::before {
-    content: url('https://sinchdev.wpengine.com/wp-content/uploads/2020/03/icon-s-tutorials.svg');
+    content: url('https://sinch.github.io/docs/images/landing/icon-s-tutorials.svg');
     padding-right: 8px;
   }
 
 
   /* Release Notes Icon */
   .hub-is-home .hub-landing-category-columns .row:nth-child(4) .col-sm-4:first-child h3::before {
-    content: url('https://sinchdev.wpengine.com/wp-content/uploads/2020/03/icon-s-release-notes.svg');
+    content: url('https://sinch.github.io/docs/images/landing/icon-s-release-notes.svg');
     padding-right: 8px;
   }
 
