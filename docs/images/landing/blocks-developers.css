@@ -113,7 +113,7 @@
     background-color: #F6F6F7;
     margin-left: calc(-100vw / 2 + 1140px / 2);
     margin-right: calc(-100vw / 2 + 1140px / 2);
-    margin-top: -30px;
+   
   }
   /* Arc container */
   .hub-is-home .arc {
@@ -125,6 +125,8 @@
   }
   .hub-is-home .arc img {
     width: 100%;
+    -webkit-filter: none;
+    filter: none;
   }
 
   /* Searchbar container */
