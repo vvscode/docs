@@ -108,13 +108,18 @@
   /* Arc stuff */
   .hub-is-home .arc-padding {
     height: 42px;
-    width: 100%;
+    
     background-color: #F6F6F7;
-
+    background-color: #F6F6F7;
+    margin-left: calc(-100vw / 2 + 1140px / 2);
+    margin-right: calc(-100vw / 2 + 1140px / 2);
+    margin-top: -30px;
   }
   /* Arc container */
   .hub-is-home .arc {
-    width: 100%;
+    margin-left: calc(-100vw / 2 + 1140px / 2);
+    margin-right: calc(-100vw / 2 + 1140px / 2);
+    margin-top: 50px;
     height: 100px;
     position: relative;
   }
