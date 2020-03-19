@@ -113,13 +113,13 @@
     background-color: #F6F6F7;
     margin-left: calc(-100vw / 2 + 1140px / 2);
     margin-right: calc(-100vw / 2 + 1140px / 2);
-   
+    margin-top: -23px;
   }
   /* Arc container */
   .hub-is-home .arc {
     margin-left: calc(-100vw / 2 + 1140px / 2);
     margin-right: calc(-100vw / 2 + 1140px / 2);
-    margin-top: 50px;
+
     height: 100px;
     position: relative;
   }
