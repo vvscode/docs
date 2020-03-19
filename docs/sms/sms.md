@@ -49,7 +49,7 @@ Before you can execute the code that sends an SMS message, you need to modify it
 
 Replace the values `{service_plan_id}`, `{your token}`, `{your free test number}` and `{To number}` with your values, you can find service plan and token in your dashboard. Go to https://dashboard.sinch.com/sms/api/rest and log in. Click on the "show" link to reveal your token.
 
-![Screen shot of dashboard](images/sms-quickstart-dash.png)
+![Screen shot of dashboard](images/sms-callback-url.png)
 
 To find the From-number, click on the service plan id link and scroll to the bottom of the page.
 
@@ -79,10 +79,9 @@ Copy bin URL to the callback URL info and click save.
 
 ![Screen shot of callback configured](images/callbackurlconfigured.png)
 
-That's it, send an SMS to your Sinch
-[number](https://dashboard.sinch.com/numbers/your-numbers/numbers)
+That's it, send an SMS to your Sinch [number](https://dashboard.sinch.com/numbers/your-numbers/numbers)
 
-Refresh your request bin page to see the request data we send on incoming sms.
+Refresh your request bin page to see the request data we send on incoming SMS.
 
 ![requestbin request](images/requestbin-request.png)
 
