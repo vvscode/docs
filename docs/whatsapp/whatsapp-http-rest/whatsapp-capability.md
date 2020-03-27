@@ -22,6 +22,12 @@ JSON object parameters:
 | ------- | -------------------------------- | ------------ | ---------- | --------------------- | :------: |
 | numbers | List of MSISDNs                  | String array | N/A        | 1 to 20 elements      | Yes      |
 
+
+> **Note**
+>
+> JSON object should be sent in Request Body although this is GET request
+
+
 #### Responses
 
 `200 OK`
