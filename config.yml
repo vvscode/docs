@@ -13,6 +13,7 @@ categories:
   - atlas-platform
   - sinch-classic-sms
   - voice-cloud
+  - conversation-api
 
 filters:
   hostedFiles:
