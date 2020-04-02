@@ -4,7 +4,7 @@ excerpt: High level presentation of Sinch Conversation API and overview of its k
 hidden: 'true'
 ---
 
-# Introduction
+## Introduction
 
 In its most basic use case the Sinch Conversation API offers one single API endpoint for sending and receiving messages across the most popular channels using one unified format. For more advanced messaging use cases, it offers the notion of a conversations, contacts, switching between Bot and Human chats and much more for the advanced chatbot and conversational messaging application developer.
 
@@ -18,15 +18,15 @@ Put simply, with the Sinch Conversation API, you are always in control of your c
 
 Currently Sinch Conversation API is in closed beta. If you are interested in the early access program please contact Sinch representative.
 
-## Key concepts
+### Key concepts
 
 ![ER Diagram](images/convapi-er-diagram.png)
 
-### Account
+#### Account
 
 Top level entity that is considered to be the root entity in the ER-diagram above. This represents a **Sinch** account that can be used for all of **Sinch's** different services. The **account** may or may not be a sub-account to accommodate for both direct and ASP clients. An **account** is tied to multiple **apps** and **contacts**.
 
-### App
+#### App
 
 The **app** entity corresponds to the API user, with a set of **channel credentials** for each underlying connected channel. The app has a list of **conversations** between itself and different **contacts** which share the same **account**.
 The app is tied to a set of webhooks which defines the destination for various events coming from the Conversation API.
@@ -37,7 +37,7 @@ Field | Description
 Display name | The name visible in Sinch Portal
 Conversation metadata report view | Specifies the amount of conversation metadata that will be returned as part of each callback.
 
-### Channel credential
+#### Channel credential
 
 A **channel credential** is the authentication means used to authenticate against an underlying connected channel. A **channel credential** is tied to one **app**.
 The order of the channel credentials registered for an app is significant. It defines the channel priority order on app level used when defining which channels to sent first.
@@ -51,7 +51,7 @@ Channel | Which channel these credentials are used with.
 Credential | Specifies the type and values for the credentials used for a channel
 Channel senders | A list of sender identities to use when sending a message. It is used for example with `SMS` channel
 
-### Webhook
+#### Webhook
 
 A **webhook** is a POST capable URL destination for receiving callbacks from the Conversation API.
 Beside URL, each **webhook** includes a set of triggers which dictates which events are to be sent to the **webhook**.
@@ -65,7 +65,7 @@ Target type | Type of the target url. Currently only DISMISS and HTTP are suppor
 Secret | Optional secret to be used to sign the content of Conversation API callbacks. Can be used to verify the integrity of the callbacks
 Triggers | A set of triggers that this webhook is listening to. Example triggers include MESSAGE_DELIVERY for message delivery receipts and MESSAGE_INBOUND for inbound contact messages
 
-### Contact
+#### Contact
 
 The **contact** entity is a collection entity that groups together underlying connected **channel recipient identities**. It is tied to a specific **account** and is therefore considered public to all **apps** sharing the same **account**.
 
@@ -80,7 +80,7 @@ Email | Optional email of the contact
 External id | Optional identifier of the contact in external systems
 Metadata | Optional metadata associated with the contact.
 
-### Channel recipient identity
+#### Channel recipient identity
 
 A **channel recipient identity** is an identifier for the contact for a specific channel. E.g. an international phone number is used as identifier for *SMS* and *RCS* while a PSID (Page-Scoped ID) is used as identifier for *Facebook Messenger*.
 Some channels use app-scoped channel identity. Currently, FB Messenger and Viber are using app-scoped channel identities
@@ -96,27 +96,27 @@ Channel | The channel that this identity is used on
 Channel recipient identity | The actual identity, e.g. an international phone number or email address.
 App id | The Conversation API's **app** ID if this is app-scoped channel identity.
 
-### Conversation
+#### Conversation
 
 A collection entity that groups several **conversation messages**. It is tied to one specific **app** and one specific **contact**.
 
-### Conversation message
+#### Conversation message
 
 An individual message, part of a specific **conversation**.
 
-### Metadata
+#### Metadata
 
 There are currently three entities which can hold metadata: message, conversation and contact.
 The metadata is an opaque field for the Conversation API and can be used by the API clients to
 retrieve a context when receiving a callback from the API.
 The metadata fields are currently restricted to 1024 characters.
 
-## Authentication
+### Authentication
 
 All API calls are authenticated using HTTP basic authentication using the **app** id as username
 and the **app** token as password.
 
-## Supported channels
+### Supported channels
 
 * <img src="https://files.readme.io/d0223ff-messages-chat-keynote-icon.svg" width="20" height="20" /> SMS
 * <img src="https://files.readme.io/7474132-whatsapp.svg" width="20" height="20" /> WhatsApp
@@ -125,7 +125,7 @@ and the **app** token as password.
 
 And more on the roadmap for 2020.
 
-## Regions
+### Regions
 
 Currently Sinch Conversation API is available in:
 
@@ -133,12 +133,12 @@ Region | Host
 -------|-------
 EU     | https://eu.conversation.api.sinch.com
 
-## Postman collection
+### Postman collection
 
 Sinch offers a Postman collection for easy setup and testing during development.
 https://www.getpostman.com/collections/9a53d3fd87509fa83896
 
-## Errors
+### Errors
 
 When requests are erroneous, the Sinch Conversation API will respond with standard HTTP status codes, such as `4xx` for client errors and `5xx` for server errors. All responses include a JSON body of the form:
 
@@ -165,7 +165,7 @@ message | A developer-facing error message | string
 status | Response status name | string
 Details | List of detailed error descriptions | array of objects
 
-### Common error responses
+#### Common error responses
 
 Status | Description
 -------|---------------
