@@ -1,6 +1,8 @@
 ---
 title: Calling API
-excerpt: "The calling API exposes calling-related functionality in the Sinch Platform. Read more."
+excerpt: >-
+  The calling API exposes calling-related functionality in the Sinch Platform.
+  Read more.
 next:
   pages:
     - voice-rest-api-callback-api

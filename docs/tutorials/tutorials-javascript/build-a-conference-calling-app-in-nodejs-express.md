@@ -20,13 +20,13 @@ To get started, you will need:
 ## Rent a number
 
 Go to your dashboard, and click on numbers. Then click on the “Rent Numbers” button.
-![rentnumber1.png](images/01d0dc4-rentnumber1.png)
+![rentnumber1.png](images\01d0dc4-rentnumber1.png)
 
 Then, pick a local number you will be calling in to.
-![rentnumber3.jpg](images/4034dc9-rentnumber3.jpg)
+![rentnumber3.jpg](images\4034dc9-rentnumber3.jpg)
 
 After your rented a number you need to configure your app. If you dont have one, just create a new one.
-![rentnumber_callback.png](images/219c19d-rentnumber_callback.png)
+![rentnumber_callback.png](images\219c19d-rentnumber_callback.png)
 
 For this tutorial the endpoint for callbacks will be `http://yourserver/sinch` so make sure you have a place to host and configure your callback to that address.
 
@@ -114,7 +114,7 @@ module.exports = router;
 ```
 
 The only thing this router does at the moment is to echo whatever you post in to Sinch. Try it out and make sure it works. I am using Postman to create my day to day testing.
-![postman_hello.png](images/422a82a-postman_hello.png)
+![postman_hello.png](images\422a82a-postman_hello.png)
 
 ## Add Sinch funcationality.
 

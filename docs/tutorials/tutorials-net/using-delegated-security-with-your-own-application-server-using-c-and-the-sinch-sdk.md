@@ -106,7 +106,7 @@ public string Signature(string userId) {
 ## Try it out
 
 To try it out, add the files from our [JS calling tutorial](doc:using-sinch-js-sdk-to-call-a-phone-number) to a folder named `SinchCalling`.
-![addsinchcalling.PNG](images/4d3fb41-addsinchcalling.PNG)
+![addsinchcalling.PNG](images\4d3fb41-addsinchcalling.PNG)
 
 Open up the index.html and find:
 

@@ -1,12 +1,13 @@
 ---
 title: Video Calling
-excerpt: 'Set up video calls with the Sinch Android Voice with Video SDK. Get more information here.'
+excerpt: >-
+  Set up video calls with the Sinch Android Voice with Video SDK. Get more
+  information here.
 hidden: 'true'
 next:
   pages:
     - voice-android-cloud-push-notifications
 ---
-
 ## Setting up a video call
 
 Just like audio calls, video calls are placed through the `CallClient` and events are received using the `CallClientListener`. The call client is owned by the SinchClient and accessed using `sinchClient.getCallClient()`. Calling is not enabled by default.

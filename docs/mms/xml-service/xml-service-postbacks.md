@@ -1,6 +1,6 @@
 ---
 title: Sinch Postbacks
-excerpt: 'Get delivery status reports for each message that is sent through the XML API.'
+excerpt: Get delivery status reports for each message that is sent through the XML API.
 next:
   pages:
     - xml-service-mms-mo-postbacks

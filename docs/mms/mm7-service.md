@@ -1,6 +1,8 @@
 ---
 title: MM7 Service
-excerpt: 'MM7 is the standard protocol used by the carriers to send and receive MMS messages. Send and receive rich multimedia content. Read more.'
+excerpt: >-
+  MM7 is the standard protocol used by the carriers to send and receive MMS
+  messages. Send and receive rich multimedia content. Read more.
 next:
   pages:
     - mm7-service-introduction

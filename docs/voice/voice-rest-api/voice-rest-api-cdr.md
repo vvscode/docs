@@ -1,6 +1,8 @@
 ---
 title: Call Detail Records
-excerpt: 'Call Detail Records (CDRs) can be downloaded from the Sinch portal. A CDR is a semicolon-delimited file that contains... Read more.'
+excerpt: >-
+  Call Detail Records (CDRs) can be downloaded from the Sinch portal. A CDR is a
+  semicolon-delimited file that contains... Read more.
 next:
   pages:
     - voice-rest-api-ivr

@@ -8,10 +8,10 @@ excerpt: >-
 Twitter is a great way for people to connect, but it’s a shame that they can’t connect with voice calling. Sure, you can tag each other or direct message (DM) back and forth, but that can get a bit impersonal at times. In this tutorial, we’ll be making an app that lets users call people who they follow on Twitter. We’ll do this using Sinch [app-to-app calling](https://www.sinch.com/products/voice/data-calling/) to privately place calls with the user’s Twitter handle.
 
 To get the most out of this tutorial, you’ll need to be familiar with the following areas:
-![Login.png](images/c558fa2-Login.png)
+![Login.png](images\c558fa2-Login.png)
 
 
-![Call-in.png](images/a1edafc-Call-in.png)
+![Call-in.png](images\a1edafc-Call-in.png)
 
 ## 1. Setup
 
@@ -199,7 +199,7 @@ cell.detailTextLabel.text = [NSString stringWithFormat:@"@%@", object.username];
 
 Bingo\!
 
-![Friends.png](images/c2aefcd-Friends.png)
+![Friends.png](images\c2aefcd-Friends.png)
 
 So far we’ve integrated Twitter into our app. Now let’s add calling.
 
@@ -425,7 +425,7 @@ Finally, let’s take advantage of some handy delegate methods to change some of
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 ```
-![Call-out.png](images/573ba24-Call-out.png)
+![Call-out.png](images\573ba24-Call-out.png)
 
 Congrats\! You’ve created a basic app that lets users call people they follow on Twitter. As you can see, it’s simple to integrate Sinch into your app.
 

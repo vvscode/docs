@@ -14,7 +14,7 @@ In this tutorial, we will be creating a contacts app for iOS that uses the Sinch
 You’ll also want a phone close by for testing later in the tutorial.
 
 At the end of the tutorial, you will have something that looks a bit like this:
-![App-Screen-small.png](images/0e9cd02-App-Screen-small.png)
+![App-Screen-small.png](images\0e9cd02-App-Screen-small.png)
 
 ## 1. Setup
 
@@ -246,16 +246,16 @@ Now go to **Main.storybaord**. First, change the title label in the Master view 
 
 Select the Table View by clicking on it. Then go to Editor\>Pin and select “Bottom Space to Superview.”
 
-![autolayout-pins.png](images/e267015-autolayout-pins.png)
+![autolayout-pins.png](images\e267015-autolayout-pins.png)
 
 Do this for “Top Space to Superview,” “Trailing Space to Superview,” and “Leading Space to Superview.” Remember to select the Table View before adding each pin. If done correctly, you’ll get a nice blue outline around your Table View, indicating that your Auto Layout pins were placed properly.
-![autolayout.png](images/f0cd1a2-autolayout.png)
+![autolayout.png](images\f0cd1a2-autolayout.png)
 
 Then, add a Table View Cell to the Table View:
-![Table-Cell.png](images/a0ecd8a-Table-Cell.png)
+![Table-Cell.png](images\a0ecd8a-Table-Cell.png)
 
 Now, switch to the Assistant Editor and have your right pane display **DetailViewController.h**. Go ahead and delete the detailDiscriptionLabel. Hold down control and click and drag from the Table View to your interface to add a UITableView property. We’re going to display the selected contact’s numbers here, so give the table an appropriate name, such as numberTable.
-![add-property.png](images/fd61f53-add-property.png)
+![add-property.png](images\fd61f53-add-property.png)
 
 Do the same with the Detail title, which will be a UINavigationItem. Call it something descriptive like contactTitle.
 

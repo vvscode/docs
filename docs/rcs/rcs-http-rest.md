@@ -1,9 +1,9 @@
 ---
 title: REST API
 excerpt: >-
-  The REST API provides Universal Profile 2.0 RCS messaging with granular controls
-  to allow fallback to SMS when a handset is not RCS enabled. Find out more
-  today.
+  The REST API provides Universal Profile 2.0 RCS messaging with granular
+  controls to allow fallback to SMS when a handset is not RCS enabled. Find out
+  more today.
 next:
   pages:
     - rcs-rest-getting-started

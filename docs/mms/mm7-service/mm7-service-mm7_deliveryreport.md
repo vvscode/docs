@@ -1,6 +1,8 @@
 ---
 title: MM7_DeliveryReport
-excerpt: 'Receive delivery reports for sent MT. Get delivery report for previously sent MMS messages. Read more.'
+excerpt: >-
+  Receive delivery reports for sent MT. Get delivery report for previously sent
+  MMS messages. Read more.
 next:
   pages:
     - mm7-service-sinch-operator-ids

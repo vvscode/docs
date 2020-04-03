@@ -1,6 +1,8 @@
 ---
 title: SMS Fallback
-excerpt: 'When a RCS message does not send properly a SMS fallback can be used instead. Read more.'
+excerpt: >-
+  When a RCS message does not send properly a SMS fallback can be used instead.
+  Read more.
 next:
   pages:
     - rcs-rest-receiving-updates-callbacks

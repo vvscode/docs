@@ -7,7 +7,6 @@ next:
   pages:
     - voice-ios-sinch-client
 ---
-
 ## Register an Application
 
 > 1.  Register a Sinch Developer account [here](https://portal.sinch.com/#/signup).

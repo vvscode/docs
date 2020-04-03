@@ -1,13 +1,13 @@
 ---
 title: First Time Setup
 excerpt: >-
-  Follow this step-by-step guide to set up the Sinch Voice and Video SDK for the first time.
+  Follow this step-by-step guide to set up the Sinch Voice and Video SDK for the
+  first time.
 hidden: 'true'
 next:
   pages:
     - voice-ios-cloud-sinch-client
 ---
-
 ## Register an Application
 
 > 1.  Register a Sinch Developer account [here](https://portal.sinch.com/#/signup).

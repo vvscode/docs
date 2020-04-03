@@ -1,6 +1,9 @@
 ---
 title: The verification process
-excerpt: 'The verification process in the Android Verification SDK. It is performed in two steps: requesting a verification code and verifying the received code. This can be done through SMS or flash calls. Read more.'
+excerpt: >-
+  The verification process in the Android Verification SDK. It is performed in
+  two steps: requesting a verification code and verifying the received code.
+  This can be done through SMS or flash calls. Read more.
 next:
   pages:
     - verification-android-phone-numbers

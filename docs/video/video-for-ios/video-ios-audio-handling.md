@@ -1,6 +1,8 @@
 ---
 title: Audio handling
-excerpt: 'The details on how the Sinch Voice /w Video SDK manages audio during calls. Read more.'
+excerpt: >-
+  The details on how the Sinch Voice /w Video SDK manages audio during calls.
+  Read more.
 next:
   pages:
     - video-ios-application-authentication
@@ -26,7 +28,7 @@ When the users are in the midst of a Sinch SDK call, someone might call users us
 
 ## Playing ringtones
 
-The `SINAudioController` object provides a convenience method `startPlayingSoundFile:loop:` for playing sounds that are related to a call, such as ringtones and busy tones. Details on how to use it can be found in the [Reference](reference/html/Protocols/SINAudioController.html) documentation.
+The `SINAudioController` object provides a convenience method `startPlayingSoundFile:loop:` for playing sounds that are related to a call, such as ringtones and busy tones. Details on how to use it can be found in the [Reference](reference\html\Protocols\SINAudioController.html) documentation.
 
 The sound file must be a mono (1 channel), 16-bit, uncompressed (PCM) `.wav` file with a sample rate of 8kHz, 16kHz, or 32kHz.
 ```objectivec

@@ -1,6 +1,6 @@
 ---
 title: Glossary
-excerpt: 'Sinch ENUM Interface glossary. Read more.'
+excerpt: Sinch ENUM Interface glossary. Read more.
 ---
 |           |                                                                          |
 | --------- | ------------------------------------------------------------------------ |

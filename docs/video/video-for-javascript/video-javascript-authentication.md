@@ -1,6 +1,8 @@
 ---
 title: Authentication
-excerpt: 'Authenticate users by your backend or by Sinch. This allows for full control of the user database and uses can be authenticated the way you see fit.'
+excerpt: >-
+  Authenticate users by your backend or by Sinch. This allows for full control
+  of the user database and uses can be authenticated the way you see fit.
 next:
   pages:
     - video-javascript-session-management
@@ -18,7 +20,7 @@ The authentication ticket is then sent to Sinch, using the `.start()` method in 
 > Included with the Sinch JS SDK are samples for getting you started with the integration of your authentication scheme with Sinch.
 
 
-![authentication_papi_partner.png](images/d4a29ad-authentication_papi_partner.png)
+![authentication_papi_partner.png](images\d4a29ad-authentication_papi_partner.png)
 Authentication Supported by Partner Backend
 
 This method, where you authenticate users with your backend, may look like this:
@@ -55,7 +57,7 @@ When `sinchClient.start()` has successfully started the client, the success call
 The Sinch JavaScript SDK allows for an easy authentication process requiring no backend, in order to get started quickly. Note however that we do not recommend to use this authentication model when launching your app live since you have no control over user creation. When going live, Sinch JS authentication can be disabled in the “App setting” section within the Dashboard.
 
 Sinch JS authentication involves authenticating end-users by passing a user identity and password to `sinchClient.start()` when starting Sinch. In this scenario only the application key is needed; the application secret is not used and the authentication of individual users will be managed by us based on supplied user identity and password.
-![authentication_papi_sinch.png](images/d8619f6-authentication_papi_sinch.png)
+![authentication_papi_sinch.png](images\d8619f6-authentication_papi_sinch.png)
 Authentication Supported by
 Sinch
 

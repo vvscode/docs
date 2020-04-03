@@ -1,11 +1,12 @@
 ---
 title: Local and Remote Push Notifications
-excerpt: 'Notify users of incoming calls by using local notifications or a remote push notification in iOS.'
+excerpt: >-
+  Notify users of incoming calls by using local notifications or a remote push
+  notification in iOS.
 next:
   pages:
     - video-ios-audio-handling
 ---
-
 When an application is no longer in the foreground, the user must be notified of an incoming call by means of either a local notification or a remote push notification.
 
 If the app is allowed to execute while in background then the Sinch SDK will primarily use local notifications to initially notify the user. Whether the app is allowed to execute while in background depends on whether you as a developer choose to enable [VoIP push notifications](doc:video-ios-local-and-remote-push-notifications#section-enabling-voip-push-notifications) and/or [Active Connection in Background](doc:video-ios-miscellaneous#section-active-connection-in-background). If only regular remote push notifications are used then those will also be used to notify the user (as a regular remote push notification will be displayed to the user by the iOS without handing over any control to the application).
@@ -200,7 +201,7 @@ The Sinch SDK will automatically use VoIP push if _PushKit.framework_ is linked 
 It is required to implement `-[SINCallClientDelegate localNotificationForIncomingCall:]` when using VoIP push.
 
 To enable VoIP push on devices that are capable of it and also fall back on regular remote notifications for iOS 6 and 7, we recommended to _weak link_ PushKit.framework. In the Xcode target settings, go to _Build Phases_ and the section _Link Binary With Libraries_ and in the _Status_ field on the right-hand side, select **Optional** (instead of _Required_):
-![weak_link_pushkit.png](images/e8e9dbd-weak_link_pushkit.png)
+![weak_link_pushkit.png](images\e8e9dbd-weak_link_pushkit.png)
 
 For more details on VoIP push notifications, see [here](https://developer.apple.com/library/prerelease/content/documentation/Performance/Conceptual/EnergyGuide-iOS/OptimizeVoIP.html)
 

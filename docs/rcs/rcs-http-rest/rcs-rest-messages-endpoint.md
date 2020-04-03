@@ -1,6 +1,8 @@
 ---
 title: Messages Endpoint
-excerpt: 'Send and revoke RCS messages with the messages endpoint in the RCS REST API. Read more.'
+excerpt: >-
+  Send and revoke RCS messages with the messages endpoint in the RCS REST API.
+  Read more.
 next:
   pages:
     - rcs-rest-agent-event-endpoint

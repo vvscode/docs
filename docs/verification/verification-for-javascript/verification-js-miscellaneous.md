@@ -1,6 +1,8 @@
 ---
 title: Miscellaneous
-excerpt: 'JavaScript Miscellaneous Verification SDK. Find minimum requirements, information about encryption export regulations. Read more.'
+excerpt: >-
+  JavaScript Miscellaneous Verification SDK. Find minimum requirements,
+  information about encryption export regulations. Read more.
 ---
 ## Phone numbers
 

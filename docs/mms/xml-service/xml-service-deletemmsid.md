@@ -1,6 +1,6 @@
 ---
 title: deleteMMSID
-excerpt: 'Delete an MMS template that has been defined in the XML.'
+excerpt: Delete an MMS template that has been defined in the XML.
 next:
   pages:
     - xml-service-getmmstemplates

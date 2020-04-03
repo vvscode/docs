@@ -1,6 +1,8 @@
 ---
 title: Pass data to your backend
-excerpt: 'How to pass data to the backend with the Sinch iOS Verification SDK. Read more.'
+excerpt: >-
+  How to pass data to the backend with the Sinch iOS Verification SDK. Read
+  more.
 next:
   pages:
     - verification-ios-phone-numbers

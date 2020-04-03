@@ -1,6 +1,8 @@
 ---
 title: Callout Verification
-excerpt: 'Verify a phone number with a (PSTN) call to the user. The user will get instructions that they need to press a digit. '
+excerpt: >-
+  Verify a phone number with a (PSTN) call to the user. The user will get
+  instructions that they need to press a digit.
 next:
   pages:
     - verification-ios-guidelines-for-acting-on-completion-handler-outcome

@@ -1,8 +1,9 @@
 ---
 title: Stickerpack management
-excerpt: These endpoints can be used to manage first-party (maintained by WhatsApp) and third-party (maintained by you) stickerpacks and stickers.
+excerpt: >-
+  These endpoints can be used to manage first-party (maintained by WhatsApp) and
+  third-party (maintained by you) stickerpacks and stickers.
 ---
-
 ## Retrieve stickerpacks
 
 Use this endpoint to retrieve a list of stickerpack IDs.

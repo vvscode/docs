@@ -1,6 +1,9 @@
 ---
 title: Guidelines for acting on completion handler outcome
-excerpt: 'Guidelines for acting on completion handler outcome. The completion handler blocks can indicate a successful or a failed outcome for both the initiate and the verify steps'
+excerpt: >-
+  Guidelines for acting on completion handler outcome. The completion handler
+  blocks can indicate a successful or a failed outcome for both the initiate and
+  the verify steps
 next:
   pages:
     - verification-ios-pass-data-to-your-backend

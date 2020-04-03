@@ -1,6 +1,8 @@
 ---
 title: Introduction
-excerpt: 'Get information about a phone number (MSISDN) using the Sinch Number Lookup Service. Read more'
+excerpt: >-
+  Get information about a phone number (MSISDN) using the Sinch Number Lookup
+  Service. Read more
 next:
   pages:
     - number-lookup-enum-interface

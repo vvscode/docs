@@ -1,6 +1,8 @@
 ---
 title: Video Calling
-excerpt: 'Set up video calls with the Sinch iOS Voice /w Video SDK. Get more information here.'
+excerpt: >-
+  Set up video calls with the Sinch iOS Voice /w Video SDK. Get more information
+  here.
 next:
   pages:
     - video-ios-local-and-remote-push-notifications

@@ -59,7 +59,7 @@ It only works on iOS 8. With our SDK (and probably any [WebRTC SDK](https://www.
 In the member center, create an App ID. I am going to call mine com.sinch.pushkit and enable push services.
 
 Head over to <https://developer.apple.com/account/ios/certificate/certificateCreate.action> and you will notice that there is a new kind of certificate here.
-![voipcert.png](images/c455855-voipcert.png)
+![voipcert.png](images\c455855-voipcert.png)
 
 Click Next and select your App ID.
 
@@ -73,7 +73,7 @@ In this tutorial, I will use a very simple push framework from nuget and a simpl
 
 We’ll need to implement one method to send the actual push messages, so launch your Visual Studio and create an empty MVC project with Web API enabled.
 
-![setupmvcproject.png](images/4a49489-setupmvcproject.png)
+![setupmvcproject.png](images\4a49489-setupmvcproject.png)
 
 I am going to host the site in Azure, but you can host wherever you want. Update all nuget packages and install PushSharp in package manager console.
 
@@ -146,14 +146,14 @@ That’s it. Publish it to a website that your iPhone can access.
 ## Changing the sample app to support push
 
 Open the Sinch calling app sample in the Sinch SDK (or copy it if you want to save the vanilla sample). Rename the project your App ID, in my case PushKit, then click the project. Select your target and change bundle identifier to your App ID.
-![changenamespace.png](images/42b9f72-changenamespace.png)
+![changenamespace.png](images\42b9f72-changenamespace.png)
 
 Make sure you download the provisioning profile for the app *(Xcode/preferences/accounts/viewdetails/ and click on the refresh button)* Phew\! It’s so much work to just set up the basics. Let the coding begin.
 
 ## Implement registration of PushKit
 
 First, add PushKit framework to your project in buildphases:
-![addpushkit.png](images/083d930-addpushkit.png)
+![addpushkit.png](images\083d930-addpushkit.png)
 
 Then, add import and protocol for PushKit to AppDelegate.h:
 

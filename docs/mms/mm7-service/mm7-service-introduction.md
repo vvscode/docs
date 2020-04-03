@@ -1,6 +1,8 @@
 ---
 title: Introduction
-excerpt: 'Get introduced to the features and capabilities that the Sinch MM7 API offers. Send and receive rich multimedia content. Read more.'
+excerpt: >-
+  Get introduced to the features and capabilities that the Sinch MM7 API offers.
+  Send and receive rich multimedia content. Read more.
 next:
   pages:
     - mm7-service-mm7_submit

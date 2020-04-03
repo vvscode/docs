@@ -1,15 +1,11 @@
 ---
 title: PHP
-excerpt: >-
-  Learn how to use Sinch APIs with PHP. Authentication and SMS tutorials.
+excerpt: Learn how to use Sinch APIs with PHP. Authentication and SMS tutorials.
 next:
   pages:
     - authenticate-to-the-sinch-javascript-sdk-from-your-php-backend
   description: Check out our PHP tutorials here
 ---
-
-
-
 ## Getting Started
 
 Before you go blasting through the tutorials, please make sure that you have:

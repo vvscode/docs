@@ -1,7 +1,7 @@
 ---
 title: Number Verification and Two-Factor Authentication in an Android App - Part 2
-hidden: 'true'
 excerpt: Learn how to build an Android Client App that uses verification API.
+hidden: 'true'
 ---
 > **Update**
 >
@@ -10,7 +10,7 @@ excerpt: Learn how to build an Android Client App that uses verification API.
 In this part of the tutorial, you will build an Android client app that uses the verification API you built in [part 1](doc:ruby-on-rails-two-factor-authentication-for-user-phone-numbers-part-1).
 
 Your finished app will look like this:
-![app-screen.png](images/3ca9504-app-screen.png)
+![app-screen.png](images\3ca9504-app-screen.png)
 
 Start by creating a new project in Android Studio. I’ll call the first activity **GetCodeActivity**. In this activity, the user will input his or her phone number and then you will make a request to your-website.com/generate (from part 1 of this tutorial) to generate a one-time code.
 

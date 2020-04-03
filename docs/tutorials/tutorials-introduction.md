@@ -11,6 +11,8 @@ next:
     - tutorials-net
     - tutorials-javascript
     - tutorials-php
-    
 ---
+[footer]: #
+<a class="gitbutton pill" target="_blank" href="https://github.com/sinch/docs/blob/master/docs/tutorials/tutorials-introduction.md"><span class="fab fa-github"></span>Edit on GitHub</a>
 
+[/footer]: #

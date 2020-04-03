@@ -1,6 +1,9 @@
 ---
 title: SMS Verification
-excerpt: 'Verify a user through SMS. Verification of a phone number is performed in two steps, a verification SMS is requested and a verification code for that particular verification session is sent to the recipient. Read more.'
+excerpt: >-
+  Verify a user through SMS. Verification of a phone number is performed in two
+  steps, a verification SMS is requested and a verification code for that
+  particular verification session is sent to the recipient. Read more.
 next:
   pages:
     - verification-ios-callout-verification

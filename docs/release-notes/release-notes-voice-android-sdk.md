@@ -1,7 +1,8 @@
 ---
 title: Sinch Voice Android SDK
 excerpt: >-
-  See how our platform is evolving. Keep track of new features, API versions and bug fixes.
+  See how our platform is evolving. Keep track of new features, API versions and
+  bug fixes.
 ---
 <h3>2019-11-12 | SINCH SDK ANDROID 3.17.1</h3>
   - WebRTC updated

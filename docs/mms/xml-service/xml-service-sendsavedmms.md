@@ -1,6 +1,8 @@
 ---
 title: sendSavedMMS
-excerpt: 'Send stored (MMS) content from a specified account to a mobile number. Read more.'
+excerpt: >-
+  Send stored (MMS) content from a specified account to a mobile number. Read
+  more.
 next:
   pages:
     - xml-service-sendmms

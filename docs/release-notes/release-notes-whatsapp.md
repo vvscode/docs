@@ -1,8 +1,8 @@
 ---
 title: Sinch WhatsApp API
 excerpt: >-
-  See how the Sinch WhatsApp API is evolving and find out about new features
-  and bug fixes.
+  See how the Sinch WhatsApp API is evolving and find out about new features and
+  bug fixes.
 ---
 <h3>2020-03-31</h3>
   - Improvements for processing of status update event timestamps returned in callbacks (sometimes later events had earlier timestamps e.g. SENT before DISPATCHED).

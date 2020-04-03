@@ -1,6 +1,8 @@
 ---
 title: Improving verification performance with a great UI
-excerpt: 'Improve verification performance with great UI. Here is a UI that will capture correct input from the user.'
+excerpt: >-
+  Improve verification performance with great UI. Here is a UI that will capture
+  correct input from the user.
 next:
   pages:
     - verification-ios-swift-sdk
@@ -26,7 +28,7 @@ formatter.onTextFieldTextDidChange = ^(UITextField *textField) {
 
 
 Example how *As-You-Type-Formatting* can look for the user:
-![aytf.gif](images/0f34ef0-aytf.gif)
+![aytf.gif](images\0f34ef0-aytf.gif)
 
 ## Listing regions and country dialing codes
 

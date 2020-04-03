@@ -1,6 +1,8 @@
 ---
 title: getMMSTemplates
-excerpt: 'List previously created MMS templates where the saveMMS API has been used. Read more.'
+excerpt: >-
+  List previously created MMS templates where the saveMMS API has been used.
+  Read more.
 next:
   pages:
     - xml-service-postbacks

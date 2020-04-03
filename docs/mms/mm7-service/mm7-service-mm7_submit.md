@@ -1,6 +1,6 @@
 ---
 title: MM7_Submit
-excerpt: 'Send a MMS message to end users trough the Sinch MM7 API. Read more.'
+excerpt: Send a MMS message to end users trough the Sinch MM7 API. Read more.
 next:
   pages:
     - mm7-service-mm7_deliver

@@ -5,7 +5,6 @@ excerpt: >-
   your Global Tennis Network profile. While keeping your phone number private,
   this feature will allow you to call up other tennis players.
 ---
-
 When I started studying at U.C. Davis, I often wanted to connect with tennis players at my skill level. I was used to playing for my high school team every day, so I needed to find a way to get my tennis fix. An app with this feature would have made things so much simpler for me—those awkward two-hour gaps between lectures could have been used to play tennis\!
 
 In this tutorial, you will learn how to create an app that calls friends from your [Global Tennis Network](https://www.globaltennisnetwork.com) profile. While keeping your phone number private, this feature will allow you to call up other tennis players whom you know through Global Tennis Network and schedule a time and place to play. There’s no need for users to exchange phone numbers as we’ll be using Sinch [app-to-app calling](https://www.sinch.com/products/voice/data-calling/).
@@ -15,9 +14,9 @@ To get the most out of this tutorial, you will need to be familiar with the foll
 > - XCode
 > - Objective-C
 > - CocoaPods
->   ![Login.png](images/d69f696-Login.png)
+>   ![Login.png](images\d69f696-Login.png)
 
-![Call-Out.png](images/60b716c-Call-Out.png)
+![Call-Out.png](images\60b716c-Call-Out.png)
 
 ## 1. Setup
 
@@ -89,7 +88,7 @@ Now we can call the method in `viewDidLoad`:
 }
 ```
 
-![Friends.png](images/6b85228-Friends.png)
+![Friends.png](images\6b85228-Friends.png)
 
 Let’s work on displaying a friend’s info once he or she is selected. First, go to **DetailViewController.m**. Add the following method that will display the contact’s picture:
 
@@ -127,7 +126,7 @@ Then, go to the method `configureView`. Add to the if-statement to fill in a fri
 ```
 
 Great\! Now the user will be able to choose from a list of friends to see a player’s info.
-![Friend-Info-2.png](images/b475d80-Friend-Info-2.png)
+![Friend-Info-2.png](images\b475d80-Friend-Info-2.png)
 
 ## 3. Making calls with SinchService
 
@@ -318,8 +317,8 @@ When using Sinch calling, you can immediately tell when a call has established o
 }
 ```
 
-![Friend-Info-1.png](images/c7eb8ba-Friend-Info-1.png)
+![Friend-Info-1.png](images\c7eb8ba-Friend-Info-1.png)
 
-![Call-Out.png](images/21285e0-Call-Out.png)
+![Call-Out.png](images\21285e0-Call-Out.png)
 
 That’s it! You’ve created a fully functional app that lets you call your tennis friends using Sinch calling. There are even more features that you can add to this project such as Managed Push to help receive calls when the app is not open. [Learn more about Managed Push with Sinch service here](doc:voice-ios-local-and-remote-push-notifications). To find more tutorials, be sure to check out the `Sinch Tutorial Site](doc:tutorials-introduction) or the [Sinch GitHub](https://github.com/sinch).

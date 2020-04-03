@@ -1,12 +1,14 @@
 ---
 title: Introduction
 excerpt: >-
-  This document provides a detailed user guide and reference documentation on the Sinch Voice REST API. For general information on how to use the Sinch APIs including methods, types, errors and authorization, please check the Using REST page.
+  This document provides a detailed user guide and reference documentation on
+  the Sinch Voice REST API. For general information on how to use the Sinch APIs
+  including methods, types, errors and authorization, please check the Using
+  REST page.
 next:
   pages:
     - voice-rest-api-calling-api
 ---
-
 ## Overview
 
 When using Sinch for voice calling, the Sinch dashboard can be seen as a big telephony switch. It receives incoming phone calls (also known as _incoming call “legs”_), sets up outgoing phone calls (also known as _outgoing call “legs”_), and bridges the two. The incoming call leg may come in over a data connection (from a smartphone or web application using the Sinch SDKs) or through a local phone number (from the PSTN network). Similarly, the outgoing call leg can be over data (to another smartphone or web application using the Sinch SDKs) or the PSTN network.

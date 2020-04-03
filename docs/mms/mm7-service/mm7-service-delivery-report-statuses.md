@@ -3,7 +3,6 @@ title: Delivery Report Statuses
 excerpt: ''
 hidden: 'true'
 ---
-
 ## Delivery Report Statuses
 
 The following table lists the responses returned with delivery reports.

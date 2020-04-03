@@ -1,14 +1,13 @@
 ---
 title: SMPP
 excerpt: >-
-  Low level control of SMS messaging and low latency can be achieved with the Sinch
-  Enhanced SMPP service. 
+  Low level control of SMS messaging and low latency can be achieved with the
+  Sinch Enhanced SMPP service.
 next:
   pages:
     - sms-smpp-outbound
     - sms-smpp-inbound
 ---
-
 Sinch offers a traditional telecoms protocol for submission of bulk sms. This protocol is called the SMPP Protocol. More information about the general use and availability of the protocol can be found around the web. However, to assist in understanding the Sinch specific implmentation of the SMPP Protocol, we have created the following few pages. 
 
 ### SMPP Outbound

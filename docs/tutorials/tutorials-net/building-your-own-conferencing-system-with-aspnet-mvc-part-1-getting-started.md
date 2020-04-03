@@ -18,12 +18,12 @@ This is part 1 of a new 2-part series, and when we are finished, we will have th
 > 6.  See the participants of a conference (next article)
 
 Sinch supports both regular phone calling and WebRTC calling for conferencing, as well as one-on-one conversations. When I built this system I started out from the [.NET Conference Calling template](https://github.com/sinch/net-ConferenceCalling) and went from there. The complete solution can be downloaded from GitHub [here](https://github.com/sinch/net-demo.sinch.com).
-![startpage.png](images/d48dc83-startpage.png)
+![startpage.png](images\d48dc83-startpage.png)
 
 ## Using The System
 
 You can just deploy it to Azure using the deploy button below, and Azure will set up a database and configure Sinch app keys and secrets for you. Or you can just fork it and deploy the code wherever you want.
-![deploybutton.png](images/9a633f6-deploybutton.png)
+![deploybutton.png](images\9a633f6-deploybutton.png)
 
 Now that this is out of the way, what we want to do is to enable both regular phones and web browsers to join a conference. The [ICE callback](doc:voice-rest-api-onprem-callback-api) information can help us in customizing the functionality for each use case.
 
@@ -125,7 +125,7 @@ public class ConferenceAtendee {
 ```
 
 **ConferenceController.cs** This is a pretty big controller as it hosts both the functionality to join a conference and to create a conference. Let’s take a look at **Create**. There are two actions where you create a conference.
-![createconference.png](images/c5ec8a3-createconference.png)
+![createconference.png](images\c5ec8a3-createconference.png)
 
 ```csharp
 [Authorize]
@@ -234,7 +234,7 @@ private IConference Getconference(string conferenceId) {
 ##Call Out To A Phone Number
 
 One other cool feature is that you can call out to a phone number to add them to the conference.
-![confdetails.png](images/4b8cd82-confdetails.png)
+![confdetails.png](images\4b8cd82-confdetails.png)
 
 ```csharp
 [Route("~/Conference/Callout")]

@@ -10,3 +10,4 @@ node_modules
 
 # VStudio codewq
 .DS_Store
+.vscode

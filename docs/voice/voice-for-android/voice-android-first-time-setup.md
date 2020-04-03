@@ -1,11 +1,12 @@
 ---
 title: First time setup
-excerpt: 'Set up the Sinch Voice with Video SDK for the first time. Find out more information.'
+excerpt: >-
+  Set up the Sinch Voice with Video SDK for the first time. Find out more
+  information.
 next:
   pages:
     - voice-android-sinch-client
 ---
-
 ## Register an Application
 
 1.  Register a Sinch Developer account [here](https://portal.sinch.com/#/signup).

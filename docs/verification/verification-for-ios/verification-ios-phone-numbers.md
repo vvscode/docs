@@ -1,6 +1,8 @@
 ---
 title: Phone numbers
-excerpt: 'How should a phone number (MSISDN) be formatted in E.164? Sinch provides utility tools that help with correct formatting. Read more.'
+excerpt: >-
+  How should a phone number (MSISDN) be formatted in E.164? Sinch provides
+  utility tools that help with correct formatting. Read more.
 next:
   pages:
     - verification-ios-improving-verification-performance-with-a-great-ui

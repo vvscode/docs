@@ -14,33 +14,33 @@ Before this, we had the luxury of needing only one dependency, which was not a b
 This should take about 30 minutes to complete and you will need some familiarity with Maven to get started.
 
 ## Setting up Artifactory
-![artifactory.png](images/6fc4bd1-artifactory.png)
+![artifactory.png](images\6fc4bd1-artifactory.png)
 
 First, download and install Artifactory from its [official site](http://www.jfrog.com/open-source/).
 
 We are using a Windows server virtual machine as a base for the Artifactory service to run. To install Artifactory, all you need to do is open the downloaded archive, go to `%ARTIFACTORY_HOME%\bin` and execute the file `artifactory.bat`.
 
 This script searches for the Java executable and runs Artifactory’s main class. After installing Artifactory, start the service either via Windows Services menu or using Command Prompt `(sc start|stop Artifactory)`.
-![services.png](images/09117c0-services.png)
+![services.png](images\09117c0-services.png)
 
 After that, Artifactory should be available at `http://SERVER_DOMAIN:8081/artifactory`. The dashboard looks something like this:
-![dashboard.png](images/4d4915f-dashboard.png)
+![dashboard.png](images\4d4915f-dashboard.png)
 
 Next, we need to get it integrated into the CI server, which, in this case, is Jenkins. There is a pretty simple and user-friendly plugin for this called [Artifactory plugin](https://wiki.jenkins-ci.org/display/JENKINS/Artifactory+Plugin). After installing it, you should find a new ‘Artifactory’ section in your Jenkins settings, where you need to specify a Artifactory URL and user credentials.
-![developer-rights.png](images/2f71604-developer-rights.png)
+![developer-rights.png](images\2f71604-developer-rights.png)
 
 Now we have a pipeline that can publish artifacts to the remote Artifactory server.
 
 The next step is configuring a job that will build our target project and push the compiled JAR to Artifactory.
 
 Create a new job and, in the settings page, find the Build section and a specify path to the POM file. You will also need to add Maven goals to get your project files built. In this case, we would also like to synchronize the Jenkins build version with the deployed artifact’s version. This is made via passing Jenkins `BUILD_NUMBER` variable to Maven.
-![build.png](images/4703352-build.png)
+![build.png](images\4703352-build.png)
 
 In the post-build actions section, add deploy artifacts to the Artifactory step, specify that you would like to add your artifacts, and check the ‘Deploy Maven Artifacts’ checkbox.
-![deploy.png](images/c5a229c-deploy.png)
+![deploy.png](images\c5a229c-deploy.png)
 
 You will also need to specify a project name and path to your repository.
-![source-settings.png](images/a8632d5-source-settings.png)
+![source-settings.png](images\a8632d5-source-settings.png)
 
 As a final step, modify the target project’s POM file. Make sure you have `Maven-compiler-plugin` and `Maven-jar-plugin` in the plugins section.
 
@@ -85,7 +85,7 @@ It is also important to add groupId, artifactId, version, and packaging to the t
 Bingo! Everything is set up to publish a compiled JAR file to a remote server. All you need to do is save all your changes, push it to your remote repository, and press the ‘Start building’ button in your Jenkins job that is connected to Artifactory.
 
 After the job has finalized all of its steps in the ‘Build history’ section, you should see a link to Artifactory where all the produced artifacts are stored.
-![build-history.png](images/9fb2b47-build-history.png)
+![build-history.png](images\9fb2b47-build-history.png)
 
 From now on, it is possible to use published artifacts in other projects as a Maven dependency.
 
@@ -120,10 +120,10 @@ And that’s it!
 
 The following scheme shows how the combination of Maven, Jenkins, and Artifactory works in a split team environment to maintain a shared test automation framework.
 
-![process1.png](images/17a04bb-process1.png)
+![process1.png](images\17a04bb-process1.png)
 
 
-![process2.png](images/0f098d3-process2.png)
+![process2.png](images\0f098d3-process2.png)
 
 A common workflow working with Artifactory is as follows:
 

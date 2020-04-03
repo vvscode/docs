@@ -1,6 +1,6 @@
 ---
 title: Unsupported MM7 SOAP Elements
-excerpt: 'Unsupported MM7 SOAP Elements for the Sinch MM7 Service. Read more.'
+excerpt: Unsupported MM7 SOAP Elements for the Sinch MM7 Service. Read more.
 next:
   pages:
     - mm7-service-mms-status-codes

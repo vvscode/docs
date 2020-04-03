@@ -1,17 +1,18 @@
 ---
 title: Sinch Client
-excerpt: 'The Sinch SDK is a product that makes adding voice and video calling to mobile apps easy. Continue reading this step-by-step guide now.'
+excerpt: >-
+  The Sinch SDK is a product that makes adding voice and video calling to mobile
+  apps easy. Continue reading this step-by-step guide now.
 hidden: 'true'
 next:
   pages:
     - voice-android-cloud-calling
 ---
-
 The _SinchClient_ is the Sinch SDK entry point. It is used to configure the user’s and device’s capabilities, as well as to provide access to feature classes such as the _CallClient_, _AudioController_ and _VideoController_.
 
 ## Create the _SinchClient_
 
-Set up the client's listener (_SinchClientListener_, see [Reference](reference/com/sinch/android/rtc/SinchClientListener.html) documentation).
+Set up the client's listener (_SinchClientListener_, see [Reference](reference\com\sinch\android\rtc\SinchClientListener.html) documentation).
 
 ```java
 // Instantiate a SinchClient using the SinchClientBuilder.
@@ -31,7 +32,7 @@ _Note:_ All listener callbacks emitted from the Sinch SDK are invoked on the sam
 
 ## Specify capabilities
 
-The SinchClient can be configured to enable or disable certain functionality. Please see the [Reference](reference/index.html?com/sinch/android/rtc/SinchClient.html) for a comprehensive description of each capability.
+The SinchClient can be configured to enable or disable certain functionality. Please see the [Reference](reference\index.html?com\sinch\android\rtc\SinchClient.html) for a comprehensive description of each capability.
 
 The following example shows how to set up the client with voice calling enabled.
 
@@ -55,7 +56,7 @@ Calling `startListeningOnActiveConnection` allows your application to receive in
 
 ## Start the Sinch client
 
-Before starting the client, add a client listener (see [Reference](reference/index.html?com/sinch/android/rtc/SinchClientListener.html) documentation):
+Before starting the client, add a client listener (see [Reference](reference\index.html?com\sinch\android\rtc\SinchClientListener.html) documentation):
 
 ```java
 sinchClient.addSinchClientListener(new SinchClientListener() {
@@ -107,7 +108,7 @@ Look for specifics in [Application Authentication](doc:voice-android-cloud-appli
 
 ### Registering the Client / User via UserController API
 
-You can also register a user towards the _Sinch backend_ via [UserController API](doc:voice-android-cloud-user-controller). This lightweight component provides a way to register the user without starting the _SincgClient_. You can also register push token for _Managed Push_ to receive incoming calls even when the application is closed/in background. The _UserController_ uses the very same authentication scheme as the _SinchClient_ based on the signed JWT registration token that you provide in response to _onRegistrationCredentialsRequired()_ method of [UserRegistrationCallback](reference/com/sinch/android/rtc/UserRegistrationCallback.html). The _UserController_ provides better control over the registration process then the _SinchClient_ by providing callbacks for each step of the registration.
+You can also register a user towards the _Sinch backend_ via [UserController API](doc:voice-android-cloud-user-controller). This lightweight component provides a way to register the user without starting the _SincgClient_. You can also register push token for _Managed Push_ to receive incoming calls even when the application is closed/in background. The _UserController_ uses the very same authentication scheme as the _SinchClient_ based on the signed JWT registration token that you provide in response to _onRegistrationCredentialsRequired()_ method of [UserRegistrationCallback](reference\com\sinch\android\rtc\UserRegistrationCallback.html). The _UserController_ provides better control over the registration process then the _SinchClient_ by providing callbacks for each step of the registration.
 
 ### Terminate the Sinch client
 

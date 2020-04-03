@@ -3,7 +3,6 @@ title: Miscellaneous
 excerpt: ''
 hidden: 'true'
 ---
-
 ## Minimum requirements
 
 We officially support the 3 latest major Android versions. You can try older versions but there are no guarantees it will work as expected.
@@ -56,7 +55,7 @@ For these two scenarios, push notifications must be implemented in the applicati
 The Sinch client relies on a push service to launch the application if it is not currently listening for incoming calls or messages due to the application being offline. Which push service to use is up to the developer, but for Android applications, the typical choice is to use Google Cloud Messaging (GCM). The examples that follow assume that Google Cloud Messaging is used to deliver push messages.
 
 When offline, the recipient of a call or message receives a push notification containing a Sinch-specific payload that enables the Sinch Client to connect the incoming call or message. Acting on the push notification brings the application to the foreground allowing the user to answer the call or view the message.
-![push-sequence-diagram_android.png](images/7600ed4-push-sequence-diagram_android.png)
+![push-sequence-diagram_android.png](images\7600ed4-push-sequence-diagram_android.png)
 
 The above figure describes the following sequence of events: Both users start their applications and Sinch clients. When A (the caller) calls B (the callee), B’s application is in a state where it is not considered online (that is reachable using an active socket connection). Sinch notices that B is not online, and tells A to send a push notification to B so that B can answer the call.
 

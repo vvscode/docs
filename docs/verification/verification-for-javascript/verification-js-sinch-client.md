@@ -1,6 +1,8 @@
 ---
 title: Sinch Client
-excerpt: 'Example on how to set up the Sinch Client for verification of a user. Read more.'
+excerpt: >-
+  Example on how to set up the Sinch Client for verification of a user. Read
+  more.
 next:
   pages:
     - verification-js-verification

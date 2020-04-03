@@ -1,6 +1,6 @@
 ---
 title: HTTP Interface
-excerpt: 'HTTP Interface for the Sinch Number Lookup service. Read more.'
+excerpt: HTTP Interface for the Sinch Number Lookup service. Read more.
 next:
   pages:
     - number-lookup-enum-interface

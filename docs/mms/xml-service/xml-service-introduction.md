@@ -1,6 +1,8 @@
 ---
 title: Introduction
-excerpt: 'Get introduced to the features and capabilities that the Sinch XML API offers. Send and receive rich multimedia content. Read more.'
+excerpt: >-
+  Get introduced to the features and capabilities that the Sinch XML API offers.
+  Send and receive rich multimedia content. Read more.
 next:
   pages:
     - xml-service-savemms

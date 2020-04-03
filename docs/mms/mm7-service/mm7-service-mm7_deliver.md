@@ -1,6 +1,9 @@
 ---
 title: MM7_Deliver
-excerpt: 'Recieve MMS MO submitted by end users to your platform. The message from an end user is delivered by supplying the MMS as payload of the request message. Read more.'
+excerpt: >-
+  Recieve MMS MO submitted by end users to your platform. The message from an
+  end user is delivered by supplying the MMS as payload of the request message.
+  Read more.
 next:
   pages:
     - mm7-service-mm7_deliveryreport

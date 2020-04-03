@@ -1,6 +1,6 @@
 ---
 title: Callback API
-excerpt: 'How to use the callbacks in the Sinch Verification REST SDK. Read more.'
+excerpt: How to use the callbacks in the Sinch Verification REST SDK. Read more.
 next:
   pages:
     - verification-rest-verification-api

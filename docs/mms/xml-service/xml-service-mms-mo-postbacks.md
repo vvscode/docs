@@ -1,6 +1,8 @@
 ---
 title: Sinch MMS MO Postbacks
-excerpt: 'An API that notifies when a customer have replied to an MMS message trough the XML API. Read more.'
+excerpt: >-
+  An API that notifies when a customer have replied to an MMS message trough the
+  XML API. Read more.
 next:
   pages:
     - xml-service-appendix

@@ -1,13 +1,13 @@
 ---
 title: REST API
 excerpt: >-
-  Verification REST API for verifying phone numbers and users. Support of FlashCall verification, PIN SMS verification and Callout verification.
+  Verification REST API for verifying phone numbers and users. Support of
+  FlashCall verification, PIN SMS verification and Callout verification.
 next:
   pages:
     - verification-rest-verification-api
     - verification-rest-callback-api
 ---
-
 ## TL;DR
 
 Curl examples for verification API: 
@@ -89,7 +89,7 @@ URI:  https://verificationapi-v1.sinch.com/verification/v1
 In combination with the Mobile or Web SDK (recommended)
 
 The following diagram shows how to use the Verification APIs when using the iOS, Android or Javascript SDKs to initiate a verification.
-![verification.png](images/1ad7295-verification.png)
+![verification.png](images\1ad7295-verification.png)
 
 
 
@@ -102,6 +102,6 @@ If you have configured a verification callback URL in the Sinch Portal (recommen
 ## Without the mobile or web SDK
 
 If you are not using the mobile or web Verification SDKs, then you need to implement all the client logic for intercepting calls (in case of flashcalls) and reporting the CLI or PIN (in case of SMS or callout verification) inside your app. The following diagram shows how to use Sinch Verification in this scenario.
-![verification_without_sdk.png](images/82d9a08-verification_without_sdk.png)
+![verification_without_sdk.png](images\82d9a08-verification_without_sdk.png)
 
 The verification requests will be triggered from your backend towards Sinch with the [Verification Request API](doc:verification-rest-verification-api#section-verification-request), by doing an [application signed request](doc:using-rest#section-application-signed-request). Sinch dashboard will respond with the CLI filter (for flashcalls) or the template (in case of an SMS), or the polling intervals (in case of a callout). As soon as the flashcall or SMS is received by your app, your backend will need to report back to Sinch the CLI or PIN that was reported through the [Report Verification API](doc:verification-rest-verification-api#section-report-verification). Sinch will respond with the result of the verification.

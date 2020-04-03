@@ -1,6 +1,8 @@
 ---
 title: First time setup
-excerpt: 'Setup phone number verification in Android for the first time with the Sinch Verification SDK. Verify through SMS and/or flash calls.'
+excerpt: >-
+  Setup phone number verification in Android for the first time with the Sinch
+  Verification SDK. Verify through SMS and/or flash calls.
 next:
   pages:
     - verification-android-the-verification-process

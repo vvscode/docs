@@ -20,7 +20,7 @@ Sending your first message to WhatsApp Business is like provisioning a US Short 
 If you reach out to your customer first, you’ll need to choose a defined message template from one of 10 categories. There is no limit to the number of templates you can submit, but approvals take up to 72 hours. In this tutorial you’ll be using a pre-made bot that’s had templates approved already, so you can start right way.
 
 **WhatsApp message flow**
-![whatsapp-msg-flow.png](../images/804d38f-whatsapp-msg-flow.png)
+![whatsapp-msg-flow.png](..\images\804d38f-whatsapp-msg-flow.png)
 
 > 1.  Customer opt-in is essential before sending any messages. In our sandbox environment you can only opt in on your phone, so in this tutorial just follow the instructions in the SMS messages you receive to enroll.
 > 2.  Businesses can only start a conversation with a defined message template.

@@ -1,11 +1,12 @@
 ---
 title: Recording calls
-excerpt: 'Control recording of calls with the Sinch platform, with callbacks or the Manage Call API.'
+excerpt: >-
+  Control recording of calls with the Sinch platform, with callbacks or the
+  Manage Call API.
 next:
   pages:
     - voice-rest-api-cdr
 ---
-
 ## Overview
 
 With the Sinch platform, you’re able to control the recording of the calls using either the callbacks or the Manage Call API.

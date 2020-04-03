@@ -1,9 +1,7 @@
 ---
 title: Capability Check Endpoint
-excerpt: 'Check whether a MSISDN is using an RCS-capable handset and network'
+excerpt: Check whether a MSISDN is using an RCS-capable handset and network
 ---
-
-
 The capability check endpoint allows you to check the specific RCS capabilities for a given MSISDN.
 
 > **Important**

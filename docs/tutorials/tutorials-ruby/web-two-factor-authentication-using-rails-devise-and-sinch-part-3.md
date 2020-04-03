@@ -1,10 +1,10 @@
 ---
 title: 'Web Two-Factor Authentication Using Rails, Devise and Sinch - Part 3'
-hidden: 'true'
 excerpt: >-
   Web Two-Factor Authentication Using Rails, Devise and Sinch. When users sign
   up for your app, they will be prompted to enter their phone number. Every time
   they sign in after that OTP will be texted to their phone.
+hidden: 'true'
 ---
 > **Update**
 >
@@ -13,7 +13,7 @@ excerpt: >-
 This tutorial builds on [part 1](doc:ruby-on-rails-two-factor-authentication-for-user-phone-numbers-part-1) of my two-factor authentication series. Please make sure you have completed part 1, as that takes care of setup and some of the database.
 
 When users sign up for your app, they will be prompted to enter their phone number. Every time they sign in after that, a one-time password (OTP) will be texted to their phone. They will type that OTP into the website as a second step of the login process.
-![web-app.png](images/b989e79-web-app.png)
+![web-app.png](images\b989e79-web-app.png)
 
 I set up a simple welcome controller to redirect to when the user is logged in.
 
@@ -154,7 +154,7 @@ Now you’re ready to try your two-factor authentication system. Spin up a local
 
 To keep things simple, I didn’t create a logout button. It’s very to simple to logout by deleting the session cookie. In Chrome, open the developer tools by right-clicking anywhere on the page and choosing ‘Inspect Element.’ (It’s similar in other browsers too.) Then, go to the ‘Resources’ tab and find the token that represents your app. See the screenshot below for a clear explanation of what to delete.
 
-![logout_delete_token.png](images/88380d3-logout_delete_token.png)
+![logout_delete_token.png](images\88380d3-logout_delete_token.png)
 
 Once deleted, refresh the page and you will be prompted to sign in.
 

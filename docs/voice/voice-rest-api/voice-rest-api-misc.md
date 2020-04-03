@@ -1,8 +1,7 @@
 ---
 title: Glossary
-excerpt: 'Voice REST API Glossary'
+excerpt: Voice REST API Glossary
 ---
-
 | Term       | Explanation                                             |
 | ---------- | ------------------------------------------------------- |
 | RTC        | Real Time Communication                                 |

@@ -1,12 +1,14 @@
 ---
 title: Voice Calling
-excerpt: 'Voice calling with Android Voice and Video SDK. Set up calling between applications, from application to phone, app to SIP and conference calls. Get more information here.'
+excerpt: >-
+  Voice calling with Android Voice and Video SDK. Set up calling between
+  applications, from application to phone, app to SIP and conference calls. Get
+  more information here.
 hidden: 'true'
 next:
   pages:
     - voice-android-cloud-video-calling
 ---
-
 The Sinch SDK supports four types of calls: _app-to-app (audio or video)_, _app-to-phone_, _app-to-sip_ and _conference_ calls. The CallClient is the entry point for the calling functionality of the Sinch SDK.
 
 Calls are placed through the `CallClient` and events are received using the `CallClientListener`. The call client is owned by the SinchClient and accessed using `sinchClient.getCallClient()`. Calling is not enabled by default.

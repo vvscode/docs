@@ -1,7 +1,7 @@
 ---
 title: Calling API
 excerpt: ''
-hidden: "true"
+hidden: 'true'
 next:
   pages:
     - voice-rest-api-onprem-reporting-api

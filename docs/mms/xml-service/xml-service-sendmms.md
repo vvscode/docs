@@ -1,6 +1,6 @@
 ---
 title: sendMMS
-excerpt: 'Send an MMS that has been defined in XML. Read more.'
+excerpt: Send an MMS that has been defined in XML. Read more.
 next:
   pages:
     - xml-service-deletemmsid

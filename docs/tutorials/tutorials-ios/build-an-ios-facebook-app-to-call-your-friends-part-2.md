@@ -7,10 +7,10 @@ excerpt: >-
 In this tutorial, we will be adding a feature to a previous project, the Facebook friend calling app. If you haven’t already, you can check that tutorial out [here](https://github.com/sinch/ios-call-your-facebookfriends).
 
 The feature we’ll be implementing is displaying user profile images. Once we’re done, the app will look something like this:
-![Login.png](images/6ddbdf8-Login.png)
+![Login.png](images\6ddbdf8-Login.png)
 
 
-![Call.png](images/be9dd38-Call.png)
+![Call.png](images\be9dd38-Call.png)
 
 ## 1. Setup
 

@@ -1,6 +1,6 @@
 ---
 title: RCS Formats
-excerpt: 'A look at the formats that is supported for RCS Messaging in the RCS REST API.'
+excerpt: A look at the formats that is supported for RCS Messaging in the RCS REST API.
 next:
   pages:
     - rcs-rest-sms-fallback

@@ -1,6 +1,11 @@
 ---
 title: Verification for JavaScript
-excerpt: 'Verify phone numbers and users with JavaScript. The Sinch SDK makes adding voice calling, instant messaging or phone verification to web apps easy. It handles the complexity of signaling and audio management while providing you the freedom to create a stunning user interface. The current release supports instant messaging, web/phone (PSTN) calling as well as verification.'
+excerpt: >-
+  Verify phone numbers and users with JavaScript. The Sinch SDK makes adding
+  voice calling, instant messaging or phone verification to web apps easy. It
+  handles the complexity of signaling and audio management while providing you
+  the freedom to create a stunning user interface. The current release supports
+  instant messaging, web/phone (PSTN) calling as well as verification.
 next:
   pages:
     - verification-js-first-time-setup

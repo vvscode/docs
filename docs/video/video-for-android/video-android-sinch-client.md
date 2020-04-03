@@ -5,7 +5,6 @@ next:
   pages:
     - video-android-calling
 ---
-
 The _SinchClient_ is the Sinch SDK entry point. It is used to configure the user’s and device’s capabilities, as well as to provide access to feature classes such as the _CallClient_, _MessageClient_ and _AudioController_.
 
 ## Create a _SinchClient_
@@ -27,7 +26,7 @@ _Note:_ All listener callbacks emitted from the Sinch SDK are invoked on the sam
 
 ## Specify capabilities
 
-The SinchClient can be configured to enable or disable certain functionality. Please see the [Reference](reference/index.html?com/sinch/android/rtc/SinchClient.html) for a comprehensive description of each capability.
+The SinchClient can be configured to enable or disable certain functionality. Please see the [Reference](reference\index.html?com\sinch\android\rtc\SinchClient.html) for a comprehensive description of each capability.
 
 The following example shows how to setup the client with voice calling.
 
@@ -49,7 +48,7 @@ Calling `startListeningOnActiveConnection` allows your application to receive in
 
 ## Start the Sinch client
 
-Before starting the client, add a client listener (see [Reference](reference/index.html?com/sinch/android/rtc/SinchClientListener.html) documentation):
+Before starting the client, add a client listener (see [Reference](reference\index.html?com\sinch\android\rtc\SinchClientListener.html) documentation):
 
 ```java
 sinchClient.addSinchClientListener(new SinchClientListener() {

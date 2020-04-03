@@ -1,6 +1,8 @@
 ---
 title: Application authentication
-excerpt: 'Application authentication with the Sinch SDK. This can be done in several ways. Find out more.'
+excerpt: >-
+  Application authentication with the Sinch SDK. This can be done in several
+  ways. Find out more.
 next:
   pages:
     - video-android-miscellaneous
@@ -32,7 +34,7 @@ This scheme has the benefit of the application secret never being directly acces
 > The need for the Sinch client to request an authentication signature and registration sequence is only required once per user and device–not on every application launch.
 
 
-![authentication_via_application_server.png](images/0711e55-authentication_via_application_server.png)
+![authentication_via_application_server.png](images\0711e55-authentication_via_application_server.png)
 
 ### Generating the signature
 

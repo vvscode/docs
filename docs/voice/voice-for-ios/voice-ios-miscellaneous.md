@@ -2,7 +2,6 @@
 title: Miscellaneous
 excerpt: ''
 ---
-
 ## Minimum requirements
 
 We officially support the 3 latest major iOS versions. You can try older versions but there are no guarantees it will work as expected.
@@ -96,7 +95,7 @@ An application is considered offline in the following scenarios:
 For these scenarios, push notifications can be used to be able to receive incoming calls. The following sections cover how to support receiving calls and messages using push notifications.
 
 When offline, the recipient of a call or message receives a push notification containing a Sinch-specific payload which enables the Sinch client to connect the incoming call or message. Acting on the push notification brings the application to the foreground which allows the user to answer the call or view the message.
-![push-sequence-diagram_apple.png](images/44701e4-push-sequence-diagram_apple.png)
+![push-sequence-diagram_apple.png](images\44701e4-push-sequence-diagram_apple.png)
 The figure above describes the following sequence of events: Both users start their applications and Sinch clients. When A (the caller) calls B (the callee), B’s application is in a state where it is not considered online (that is reachable using an active socket connection). Sinch notices that B is not online, and tells A to send a push notification to B so that B can answer the call.
 
 When the Sinch client on the caller’s (or sender’s) side observes that the destination client is offline, it notifies the application to trigger the sending of a push notification to the callee’s device.

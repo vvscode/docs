@@ -1,6 +1,8 @@
 ---
 title: Appendix
-excerpt: 'XML API error code reference and postback notification codes and descriptions can be found here.'
+excerpt: >-
+  XML API error code reference and postback notification codes and descriptions
+  can be found here.
 ---
 ## Error Code Reference
 

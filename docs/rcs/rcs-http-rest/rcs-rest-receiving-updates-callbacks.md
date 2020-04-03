@@ -1,6 +1,8 @@
 ---
 title: Receiving Updates & Callbacks
-excerpt: 'RCS message status updates, events and messages from the RCS REST API and user chatbots (agents) through webhook callbacks.'
+excerpt: >-
+  RCS message status updates, events and messages from the RCS REST API and user
+  chatbots (agents) through webhook callbacks.
 next:
   pages:
     - rcs-rest-messages-endpoint

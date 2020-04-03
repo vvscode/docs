@@ -4,7 +4,6 @@ excerpt: >-
   This tutorial shows how you can use the gem sinch_auth to generate a user
   ticket that authenticates users through the Sinch JavaScript SDK.
 ---
-
 You can use the gem `sinch_auth` to generate a user ticket that authenticates users through the Sinch JavaScript SDK. First, install the gem:
 
 ```ruby

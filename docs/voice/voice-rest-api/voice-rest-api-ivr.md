@@ -1,11 +1,10 @@
 ---
 title: Interactive Voice Response
-excerpt: 'The Sinch platform supports playing audio recordings during a call.'
+excerpt: The Sinch platform supports playing audio recordings during a call.
 next:
   pages:
     - voice-sip-trunking
 ---
-
 ## External media support
 
 Access to external media is supported by providing a valid URL in a SVAML action/instruction. Currently we support HTTP and HTTPS schemes. Please consider that when a media file is downloaded for the first time, some delays may be experienced by the users, which is directly affected by the file size and the upload speed of the file provider.

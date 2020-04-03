@@ -5,7 +5,7 @@ excerpt: >-
   tutorial you will learn how to use node.js to build a text to speech call that
   reads out pin-codes.
 ---
-![pincodes-texttospeech.png](images/a6712af-pincodes-texttospeech.png)
+![pincodes-texttospeech.png](images\a6712af-pincodes-texttospeech.png)
 
 In this tutorial I will show you how to use node.js to build a [text to speech](https://en.wikipedia.org/wiki/Speech_synthesis) call that reads out pin-codes. To read more about the Sinch callout API please see the [documentation](doc:voice-rest-api-onprem-calling-api#section-text-to-speech).
 

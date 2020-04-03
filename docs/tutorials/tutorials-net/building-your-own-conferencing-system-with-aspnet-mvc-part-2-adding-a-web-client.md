@@ -15,7 +15,7 @@ The process for connecting to a web browser is a bit different since you don’t
 ## Using The System
 
 You can either deploy this project straight to Azure using the button below. It will set up a database and configure Sinch app keys and secrets for you. Or you can just fork it and deploy wherever you want.
-![deploybutton.png](images/ee6982b-deploybutton.png)
+![deploybutton.png](images\ee6982b-deploybutton.png)
 
 ### Running on your own server
 
@@ -88,7 +88,7 @@ private async Task ConnectToConference(string  pinCode, string cli, IIceSvamletB
 ## Creating The UI
 
 For this website I found a wonderful bootstrap theme called **Material** that is based on Googles Material design. It has a nice colour scheme and some built in visual effects for inputs and buttons. Check it out at [here](http://fezvrasta.github.io/bootstrap-material-design/).
-![joinconference.png](images/faa35be-joinconference.png)
+![joinconference.png](images\faa35be-joinconference.png)
 
 **JoinConference.cshtml**
 

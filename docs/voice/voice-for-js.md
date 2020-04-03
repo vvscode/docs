@@ -1,14 +1,14 @@
 ---
 title: Voice for JavaScript
 excerpt: >-
-  The Sinch JavaScript Voice SDK is a product that makes adding voice calling or phone verification to web apps easy. It handles the
-  complexity of signaling and audio management while providing you the freedom
-  to create a stunning user interface.
+  The Sinch JavaScript Voice SDK is a product that makes adding voice calling or
+  phone verification to web apps easy. It handles the complexity of signaling
+  and audio management while providing you the freedom to create a stunning user
+  interface.
 next:
   pages:
     - voice-js-first-time-setup
 ---
-
 The Sinch SDK is a product that makes adding voice calling or phone verification to web apps easy. It handles the complexity of signaling and audio management while providing you the freedom to create a stunning user interface. The current release supports web/phone (PSTN) calling as well as verification.
 
 This document provides an overview for developers integrating with the Sinch SDK for the first time. It outlines the prerequisites and guides you through the process of verifying phone numbers in a Javascript environment, such as in a website.

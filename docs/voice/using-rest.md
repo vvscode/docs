@@ -1,6 +1,8 @@
 ---
 title: Using REST
-excerpt: 'This document outlines how to use the Sinch Voice REST API as well as the Sinch Verification REST API. Get more information here.'
+excerpt: >-
+  This document outlines how to use the Sinch Voice REST API as well as the
+  Sinch Verification REST API. Get more information here.
 ---
 ## Authorization
 

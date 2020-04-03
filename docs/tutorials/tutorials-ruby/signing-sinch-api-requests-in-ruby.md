@@ -1,10 +1,10 @@
 ---
 title: Signing Sinch API Requests in Ruby
-hidden: 'true'
 excerpt: >-
   Why sign your requests instead of using basic authentication? It’s much more
   secure and Sinch doesn’t support basic authentication for production
   applications.
+hidden: 'true'
 ---
 Why sign your requests instead of using basic authentication? It’s much more secure and Sinch doesn’t support basic authentication for production applications.
 

@@ -1,6 +1,9 @@
 ---
 title: Voice Calling
-excerpt: 'Voice calling with Android Voice and Video SDK. Set up calling between applications, from application to phone, app to SIP and conference calls. Get more information here.'
+excerpt: >-
+  Voice calling with Android Voice and Video SDK. Set up calling between
+  applications, from application to phone, app to SIP and conference calls. Get
+  more information here.
 next:
   pages:
     - video-android-video-calling

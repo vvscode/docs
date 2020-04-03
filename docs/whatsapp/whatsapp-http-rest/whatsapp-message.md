@@ -9,7 +9,7 @@ The message endpoint is used as the primary endpoint of the API and this is wher
 
 **WhatsApp message flow**
 
-![image](images/whatsapp-msg-flow.png)
+![image](images\whatsapp-msg-flow.png)
 
 1.  Customer opt-in is essential before sending any messages.
 2.  Businesses can only start a conversation with a defined message template.

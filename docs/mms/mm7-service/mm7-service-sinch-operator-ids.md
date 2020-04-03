@@ -1,6 +1,6 @@
 ---
 title: Sinch Operator IDs
-excerpt: 'A list of available operators IDs for the MM7 Service.'
+excerpt: A list of available operators IDs for the MM7 Service.
 next:
   pages:
     - unsupported-mm7-soap-elements

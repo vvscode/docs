@@ -5,7 +5,6 @@ next:
   pages:
     - voice-android-application-authentication
 ---
-
 When an application is not running, or the `Active Connection` feature is not enabled, the user must be notified of an incoming call by a push notification.
 
 By invoking `setSupportManagedPush(true)` the Sinch SDK will automatically register to _Firebase Cloud Messaging_ and the Sinch backend will initiate push messages to your application when needed. This feature requires Google Play Services on the device. If you distribute your application through other channels than Google Play, push notifications will not be available on devices that do not have Google Play Services.

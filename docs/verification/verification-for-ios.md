@@ -1,6 +1,9 @@
 ---
 title: Verification for iOS
-excerpt: 'Verify phone numbers and users in iOS. The Verification SDK supports the verification of phone numbers via SMS or flash calls. The SDK is also available for Android.'
+excerpt: >-
+  Verify phone numbers and users in iOS. The Verification SDK supports the
+  verification of phone numbers via SMS or flash calls. The SDK is also
+  available for Android.
 next:
   pages:
     - verification-ios-first-time-setup

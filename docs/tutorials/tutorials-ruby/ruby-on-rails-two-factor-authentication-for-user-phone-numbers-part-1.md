@@ -1,11 +1,11 @@
 ---
 title: Ruby on Rails Two-Factor Authentication for User Phone Numbers - Part 1
-hidden: 'true'
 excerpt: >-
   This tutorial shows you how to build your own Ruby on Rails two-factor
   authentication system. More and more websites and apps rely on knowing your
   phone number and, in many cases, using that number for two-factor
   authentication (2FA).
+hidden: 'true'
 ---
 > **Update**
 >
@@ -124,13 +124,13 @@ I like to use Postman to test out my REST APIs. You can get it [here](https://ww
 Use `$ rails s` to start a local Rails server and take note of the port. In my case it was 3000.
 
 In Postman, generate a code:
-![postman_generate.png](images/4eb818f-postman_generate.png)
+![postman_generate.png](images\4eb818f-postman_generate.png)
 
 See the code arrive in an SMS:
-![sms_code.jpg](images/29de93d-sms_code.jpg)
+![sms_code.jpg](images\29de93d-sms_code.jpg)
 
 Then verify the code:
-![postman_verify.png](images/4105d3b-postman_verify.png)
+![postman_verify.png](images\4105d3b-postman_verify.png)
 
 ## Hosting
 

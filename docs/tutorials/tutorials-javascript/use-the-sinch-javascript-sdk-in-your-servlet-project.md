@@ -128,7 +128,7 @@ To keep things simple, I put the script to start the Sinch client inside my **su
 ```
 
 When running this in your browser, after logging in, you will see the changes in client state as HTML like so:
-![app.png](images/a47b508-app.png)
+![app.png](images\a47b508-app.png)
 
 Congratulations, you did it\! You can now use the Sinch client to add calling or messaging to your web app.
 

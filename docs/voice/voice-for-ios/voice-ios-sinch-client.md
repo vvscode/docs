@@ -5,12 +5,11 @@ next:
   pages:
     - voice-ios-calling
 ---
-
 The _SINClient_ is the Sinch SDK entry point. It is used to configure the user’s and device’s capabilities, as well as providing access to feature classes such as the _SINCallClient_, _SINMessageClient_ and _SINAudioController_.
 
 ## Creating the _SINClient_
 
-Set up the client and its delegate (_SINClientDelegate_, see [Reference](reference/html/Protocols/SINClientDelegate.html) documentation).
+Set up the client and its delegate (_SINClientDelegate_, see [Reference](reference\html\Protocols\SINClientDelegate.html) documentation).
 
 ```objectivec
 #import <Sinch/Sinch.h>
@@ -26,7 +25,7 @@ The _Application Key_ and _Application Secret_ are obtained from the Sinch Devel
 
 ## Specifying capabilities
 
-The SINClient can be configured to enable / disable certain functionality. Please see the [Reference](reference/html/Protocols/SINClient.html) for details.
+The SINClient can be configured to enable / disable certain functionality. Please see the [Reference](reference\html\Protocols\SINClient.html) for details.
 The following example shows how to setup the client with voice calling enabled, and using [push notifications](doc:voice-ios-local-and-remote-push-notifications).
 
 ```objectivec

@@ -1,8 +1,8 @@
 ---
 title: Sinch Voice iOS SDK
 excerpt: >-
-  See how the Sinch IOS SDK is evolving and find out about new features
-  and bug fixes.
+  See how the Sinch IOS SDK is evolving and find out about new features and bug
+  fixes.
 ---
 See how our platform is evolving. Keep track of new features, API versions and bug fixes.
 

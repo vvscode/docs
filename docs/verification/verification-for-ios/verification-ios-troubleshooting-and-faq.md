@@ -1,6 +1,8 @@
 ---
 title: Troubleshooting and FAQ
-excerpt: 'Here you can find the iOS Verification SDK FAQ and common troubleshooting issues. Read more.'
+excerpt: >-
+  Here you can find the iOS Verification SDK FAQ and common troubleshooting
+  issues. Read more.
 next:
   pages:
     - verification-ios-miscellaneous

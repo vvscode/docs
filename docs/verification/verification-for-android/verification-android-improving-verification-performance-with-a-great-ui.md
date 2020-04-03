@@ -1,6 +1,8 @@
 ---
 title: Improving verification performance with a great UI
-excerpt: 'Improve verification performance with great UI. Here is a UI that will capture correct input from the user.'
+excerpt: >-
+  Improve verification performance with great UI. Here is a UI that will capture
+  correct input from the user.
 next:
   pages:
     - verification-android-miscellaneous

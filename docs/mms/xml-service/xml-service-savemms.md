@@ -1,6 +1,8 @@
 ---
 title: saveMMS
-excerpt: 'Store MMS template from XML. These templates can be saved for later use. The MMS may contain slides with different types. Read more.'
+excerpt: >-
+  Store MMS template from XML. These templates can be saved for later use. The
+  MMS may contain slides with different types. Read more.
 next:
   pages:
     - xml-service-sendsavedmms

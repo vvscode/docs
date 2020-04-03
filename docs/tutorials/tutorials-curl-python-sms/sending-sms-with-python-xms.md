@@ -1,10 +1,10 @@
 ---
 title: Sending SMS With Python
-hidden: 'true'
 excerpt: >-
-  In this tutorial, you will use the Sinch SMS Pyton module to send SMS messages and to template your messages. Learn more here...
+  In this tutorial, you will use the Sinch SMS Pyton module to send SMS messages
+  and to template your messages. Learn more here...
+hidden: 'true'
 ---
-
 ## Introduction
 
 In this tutorial we're going to utilize our HTTP REST Messaging API. Wow that's a beautiful name, right? Let us just call it *XMS API*, that feels a lot better!

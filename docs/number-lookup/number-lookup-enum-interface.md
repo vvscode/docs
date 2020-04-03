@@ -1,6 +1,8 @@
 ---
 title: ENUM Interface
-excerpt: 'Electronic Numbering Mapping - translate telephone numbers (E.164) into a format that can be used in Internet communications. '
+excerpt: >-
+  Electronic Numbering Mapping - translate telephone numbers (E.164) into a
+  format that can be used in Internet communications.
 next:
   pages:
     - number-lookup-http-interface

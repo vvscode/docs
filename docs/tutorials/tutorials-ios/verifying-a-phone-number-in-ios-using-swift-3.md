@@ -12,10 +12,10 @@ In this tutorial you’ll learn how to verify a user’s phone number using our 
 We also offer [Flash Call Verification](https://www.sinch.com/products/verification/flash-call/), but this is available for Android only.
 
 At the end of this tutorial we will have a basic app that looks like this:
-![screen1.png](images/1791cf5-screen1.png)
+![screen1.png](images\1791cf5-screen1.png)
 
 
-![screen2.png](images/3f17669-screen2.png)
+![screen2.png](images\3f17669-screen2.png)
 
 ## Getting Started
 
@@ -23,7 +23,7 @@ At the end of this tutorial we will have a basic app that looks like this:
 
 > 1.  [Create an account](https://portal.sinch.com/#/signup)
 > 2.  Create an app and change set authorization to public (for now) 
-![configureapp.png](images/c8676b2-configureapp.png)
+![configureapp.png](images\c8676b2-configureapp.png)
 
 > 3.  Take note of the application key
 
@@ -147,7 +147,7 @@ Open up **Main.Storyboard** and add a view controller to the board and set the f
 > 5.  Add a segue from **ViewController.swift** to **EnterCodeViewController.swift** and call it **enterPin**.
 
 Add your constraints and make it look how you want, but it should look something like this:
-![screen2.png](images/96c697e-screen2.png)
+![screen2.png](images\96c697e-screen2.png)
 
 ### Initiating an SMS verification
 

@@ -1,6 +1,8 @@
 ---
 title: Getting Started
-excerpt: 'Get started using the RCS REST API and read about the features available in the RCS chatbot (A2P Sender ID)'
+excerpt: >-
+  Get started using the RCS REST API and read about the features available in
+  the RCS chatbot (A2P Sender ID)
 next:
   pages:
     - rcs-rest-formats

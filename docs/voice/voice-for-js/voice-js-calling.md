@@ -1,6 +1,9 @@
 ---
 title: Voice Calling
-excerpt: 'Set up voice calling with the Sinch JavaScript SDK. The SDK supports four types of calls: web-to-web (or app) calls, web-to-phone calls, web-to-sip and conference calls.'
+excerpt: >-
+  Set up voice calling with the Sinch JavaScript SDK. The SDK supports four
+  types of calls: web-to-web (or app) calls, web-to-phone calls, web-to-sip and
+  conference calls.
 next:
   pages:
     - voice-js-push-notifications

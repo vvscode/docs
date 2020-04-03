@@ -5,7 +5,7 @@ excerpt: >-
   between browsers using JavaScript. Read more.
 ---
 The UI isn’t anything to write home about, but the finished web app will looking something like this:
-![overview.png](images/350da25-overview.png)
+![overview.png](images\350da25-overview.png)
 
 The finished code for this tutorial can be found on [our Github](https://github.com/sinch/js-web-calling).
 

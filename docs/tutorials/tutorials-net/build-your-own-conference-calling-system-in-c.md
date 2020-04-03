@@ -141,7 +141,7 @@ We want our home view to show a list of current conferences and the ability to s
 
 Now run it, create a conference, and your page should look like this:
 
-![homepage.png](images/543ce7d-homepage.png)
+![homepage.png](images\543ce7d-homepage.png)
 
 That’s it for admin page. Next step is to add the callbacks to enable people to connect to the conference.
 
@@ -203,7 +203,7 @@ First, you look at what type of event is coming in. Based on that, you 1) Play a
 
 Go to your dashboard and assign your rented number. Configure the Voice URL to be `http://your-site/callback/post`
 
-![dashboard.png](images/2efcc83-dashboard.png)
+![dashboard.png](images\2efcc83-dashboard.png)
 
 Deploy and take it for test spin\!
 
@@ -314,7 +314,7 @@ Last enable the list in the Home/Index.cshtml to to be clickable. Change the lis
 ```
 
 Deploy, make a call to the number, and enter your pin. Hit the details and you should see something like this:
-![confdetails.png](images/f520aed-confdetails.png)
+![confdetails.png](images\f520aed-confdetails.png)
 
 ## Mute and Kick participants
 

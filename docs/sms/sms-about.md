@@ -1,7 +1,6 @@
 ---
 title: About the SMS APIs
-excerpt: >-
-  Introduction to the SMS APIs that is offered by Sinch. 
+excerpt: Introduction to the SMS APIs that is offered by Sinch.
 ---
 '
 ## The different SMS APIs
