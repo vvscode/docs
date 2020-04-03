@@ -73,8 +73,8 @@ Click the blick + button in your zapier dashboard to create a new Zap. Now we ar
 Test and review, click on do this and find Sinch 1.0.0, choose New SMS as action and confirm your account.  
 ![Configure sinch](images/zapier/8SendSMS.png)
 
-Waht we are doing here is saying everytime you enter/update a reply in an existing row, send that reply to your the phonenumber we have in the first column.
-
+What we are doing here is saying everytime you enter/update a reply in an existing row, send that reply to your the phonenumber we have in the first column.
+Click test and review and you should have a sms to your phone sent to you.   
 
 This was just to show the power of incoming SMS and outgoing sms in Zapier and now you can explore all your favorite applications and see if they have a Zapier app that you can connect SMS messaging to using the Sinch Zap.
 
