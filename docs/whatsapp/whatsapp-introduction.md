@@ -82,6 +82,12 @@ The following WhatsApp URLs can be used by the WhatsApp API. We have servers in 
 | video         | `video/mp4`, `video/3gpp`                                                     | 16 MB   |
 | sticker       | `image/webp`                                                                  | 100 KB  |
 
+> **Note**
+>
+> For video files, only H.264 video codec and ACC audio codec are supported.
+>
+> 
+
 ## Supported language codes
 
 Following language codes are supported for template messages

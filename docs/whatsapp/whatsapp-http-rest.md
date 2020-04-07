@@ -13,6 +13,7 @@ next:
     - whatsapp-message
     - whatsapp-group-management
     - whatsapp-media-provider
+    - whatsapp-stickerpack-management
 ---
 The WhatsApp REST API is designed to be a simple and powerful tool with features as:
    - Batch sending
@@ -22,3 +23,4 @@ The WhatsApp REST API is designed to be a simple and powerful tool with features
    - Receiving all WhatsApp inbound message types
    - WhatsApp group creation and management
    - Checking the WhatsApp capability of numbers
+   - Managing packs of stickers

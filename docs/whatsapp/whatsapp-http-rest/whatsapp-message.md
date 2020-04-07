@@ -222,6 +222,11 @@ JSON object parameters:
 >
 > Any media file sent through the Sinch WhatsApp API can be at most 100.0 mb
 
+> **Note**
+>
+> For video files, only H.264 video codec and ACC audio codec are supported.
+>
+
 Accepted content types can be found in the [introduction](doc:whatsapp-introduction#section-accepted-media-types).
 
 JSON object parameters:
