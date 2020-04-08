@@ -15,7 +15,7 @@ hidden: 'true'
 1. Your [Sinch account](https://dashboard.sinch.com/signup). (If you are in the United States, you also need a [free test phone  number](https://dashboard.sinch.com/numbers/your-numbers/numbers).)
 2. If you don’t have one, you can create a Zapier account [here](https://zapier.com/sign-up/)
 
-If you already have them you can jumpt to [Using Sinch as a Zapier Trigger](#Using-Sinch-as-a-Zapier-Trigger)
+If you already have them you can jumpt to [Using Sinch as a Zapier Trigger](doc:sms-zapier#section-using-sinch-as-a-zapier-trigger)
 
 ### Sign up for a Sinch account
 
