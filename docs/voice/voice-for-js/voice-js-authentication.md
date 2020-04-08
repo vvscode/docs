@@ -62,7 +62,7 @@ The Sinch JavaScript SDK allows for an easy authentication process requiring no 
 
 > **Warning**
 >
-> We do not recommend to use this authentication model when launching your app live since you have no control over user creation. When going live, Sinch JS authentication can be disabled in the “App setting” section within the Dashboard.
+> We do not recommend to use this authentication model, when launching your app live since you have no control over user creation. When going live, Sinch JS authentication can be disabled in the “App setting” section within the Dashboard.
 
 Sinch JS authentication involves authenticating end-users by passing a user identity and password to `sinchClient.start()` when starting Sinch. In this scenario only the application key is needed; the application secret is not used and the authentication of individual users will be managed by us based on supplied user identity and password.
 ![authentication_papi_sinch.png](images\d8619f6-authentication_papi_sinch.png)
