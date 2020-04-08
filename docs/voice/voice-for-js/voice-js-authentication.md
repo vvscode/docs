@@ -60,7 +60,7 @@ When `sinchClient.start()` has successfully started the client, the success call
 
 The Sinch JavaScript SDK allows for an easy authentication process requiring no backend, in order to get started quickly.
 
-> **WARNING**
+> **Warning**
 >
 > We do not recommend to use this authentication model when launching your app live since you have no control over user creation. When going live, Sinch JS authentication can be disabled in the “App setting” section within the Dashboard.
 
