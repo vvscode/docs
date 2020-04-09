@@ -706,7 +706,7 @@ _Example of park action_
 
 **introPrompt** specifies the prompt that will be played as the first prompt. After that, the **holdPrompt** will be played repeatably until the call is unparked or until **maxDuration** seconds have passed. If the call is unparked, prompts will stop playing immediately. However, if the max duration is reached, the last prompt will be fully played until the call is hung up.
 
-Unparking a call is done by using the [ManageCall API](doc:voice-rest-api-calling-api#section-manage-call).
+Unparking a call is done by using the [ManageCall API](doc:voice-rest-api-calling-api#section-manage-callx).
 
 Limitation: The maxDuration value can be set to maximum 600 seconds (10 minutes).
 
