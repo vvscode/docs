@@ -71,7 +71,7 @@ Lets add a column to the Sheet above and call it reply.
 Click the blick + button in your zapier dashboard to create a new Zap. Now we are going to use the google sheets as an Trigger so search up google sheets, and select the trigger new or updated spreadsheet row. Find your sheet by walking thru the prompts and select reply as the trigger column. 
 ![Configure sinch](images/zapier/7googlesheettrigger.png)
 Test and review, click on do this and find Sinch 1.0.0, choose New SMS as action and confirm your account.  
-![Configure sinch](images/zapier/8SendSMS1.png)
+![Configure sinch](images/zapier/8SendSMS.png)
 
 What we are doing here is saying everytime you enter/update a reply in an existing row, send that reply to your the phonenumber we have in the first column.
 Click test and review and you should have a sms to your phone sent to you.   
