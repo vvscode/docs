@@ -14,7 +14,7 @@ This document provides a detailed user guide and reference documentation on the 
 
 The SMS Messaging API allows you to send SMS messages to mobile phones and check their status using the Sinch platform. You can also rent SMS-enabled numbers from Sinch to receive inbound SMS messages from your users that are sent to the backend of your app. For more information see [SMS-enabled numbers](doc:sms-classic#section-sms-enabled-numbers).
 
-![image0](images/sms1.png)
+![image0](images/sms.png)
 
 ## API Quick Reference
 
