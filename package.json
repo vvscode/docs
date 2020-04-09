@@ -8,7 +8,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@sinch/readme-sync": "1.1.0"
+    "@sinch/readme-sync": "git+https://github.com/sinch/readme-sync.git"
   },
   "scripts": {},
   "author": "Sinch",
