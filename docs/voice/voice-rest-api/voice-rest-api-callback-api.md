@@ -7,6 +7,7 @@ next:
   pages:
     - voice-rest-api-reporting-api
 ---
+
 ## Overview
 
 Controlling a call from your application backend is done by responding to callbacks from the Sinch platform and/or by calling REST APIs in the Sinch platform from your application’s backend. The figure that follows illustrates the lifecycle of a call and shows where both callbacks and REST API calls are located or can be made.
@@ -715,7 +716,7 @@ Not all Actions are supported by all events. Each event lists the supported acti
 
 URLs for the callbacks described in the section that follows are configured in the Sinch dashboard. If no URL is configured, the callback will not be invoked.
 
-## Incoming Call Event Callback (ICE)
+## Incoming Call Event Callback - ICE
 
 When a call reaches the Sinch platform, the system makes a POST request to the specified calling callback URL.
 
