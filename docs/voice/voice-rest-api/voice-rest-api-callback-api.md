@@ -716,7 +716,7 @@ Not all Actions are supported by all events. Each event lists the supported acti
 
 URLs for the callbacks described in the section that follows are configured in the Sinch dashboard. If no URL is configured, the callback will not be invoked.
 
-## Incoming Call Event Callback - ICE
+## Incoming Call Event Callback (ICE)
 
 When a call reaches the Sinch platform, the system makes a POST request to the specified calling callback URL.
 
