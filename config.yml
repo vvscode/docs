@@ -10,10 +10,11 @@ categories:
   - tutorials
   - contributing-guidelines
   - release-notes
-  - atlas-platform
   - sinch-classic-sms
   - voice-cloud
   - conversation-api
+
+  # - atlas-platform
 
 filters:
   hostedFiles:
