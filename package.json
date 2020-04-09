@@ -2,7 +2,7 @@
   "name": "sinch-docs",
   "version": "1.0.0",
   "description": "Source docs for Readme.io using Readme.js to sync local Markdown content files.",
-  "repository": "https://github.com/sinch/docs-readmeio",
+  "repository": "https://github.com/sinch/docs",
   "directories": {
     "doc": "docs"
   },
