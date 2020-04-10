@@ -305,13 +305,13 @@ in a region where your bot does not reside. The body is a JSON object described 
 Use this endpoint to create a sticker in a third-party stickerpack.
 
 Custom sticker must comply with WhatsApp requirements:
-1. Each sticker has a transparent background.
+1. Each sticker should have a transparent background.
 2. Stickers must be exactly 512x512 pixels.
 3. Each sticker must be less than 100 KB.
 
 > **Note**
 >
-> For more information on using a custom sticker, please visit: https://faq.whatsapp.com/en/general/26000345 
+> For more information on using a custom sticker, please visit [WhatsApp sticker page](https://faq.whatsapp.com/en/general/26000345) 
 >
 
 #### Request
