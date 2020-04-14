@@ -4,13 +4,22 @@ excerpt: >-
   See how our platform is evolving. Keep track of new features, API versions and
   bug fixes.
 ---
+
+<h3>2020-03-20 | SINCH SDK ANDROID 3.17.4</h3>
+  - Fix video-related crash on selected devices that do not expose required HW codecs.
+
+<h3>2020-03-15 | SINCH SDK ANDROID 3.17.3</h3>
+  - Fix multiple B-sides scenario (callee) not working.
+
+<h3>2020-02-10 | SINCH SDK ANDROID 3.17.2</h3>
+  - Cleaned up aar library to make compatible with Android Bundle build process.
+
 <h3>2019-11-12 | SINCH SDK ANDROID 3.17.1</h3>
   - WebRTC updated
   - Updated Sample Applications (-push, -push-video) to show how to use Android 10 - time-sensitive notification for incoming calls.
   - Cancel Call Push notification is deprecated for consistency with other platforms (namely iOS 13) due to new requirements.
     If such a push notification is received, it'll have property `isValid` set to `false`
 
-  
 <h3>2019-11-12 | SINCH SDK ANDROID 3.17.0</h3>
   - WebRTC updated
   - Java source code requires JAVA 8 (1.8)
@@ -234,18 +243,18 @@ excerpt: >-
 <h3>2014-05-20 | Sinch SDK Android 3.0.1</h3>
 Bug fix:
 
--   Removed internal call to AudioManager.setMode() when establishing/tearing down a call.
+- Removed internal call to AudioManager.setMode() when establishing/tearing down a call.
 
 <h3>2014-05-14 | Sinch SDK Android 3.0</h3>
 Public release of the Android SDK with:
 
--   Better sound quality
--   Improved sample applications and documentation
--   Refactored calling and messaging API
+- Better sound quality
+- Improved sample applications and documentation
+- Refactored calling and messaging API
 
 <h3>2014-04-23 | Sinch SDK Android 3.0 BETA</h3>
 First public beta version of the Sinch SDK for Android with support for:
 
--   App to app calling
--   App to phone calling
--   Instant messaging to single and multiple recipient
+- App to app calling
+- App to phone calling
+- Instant messaging to single and multiple recipient

@@ -4,61 +4,79 @@ excerpt: >-
   See how the Sinch IOS SDK is evolving and find out about new features and bug
   fixes.
 ---
+
 See how our platform is evolving. Keep track of new features, API versions and bug fixes.
+
+<h3>2020/03/15 | SINCH SDK IOS 4.2.3</h3>
+  - Fix crash on iOS 10 caused by method -[PKPushRegistryDelegate pushRegistry:
+  didReceiveIncomingPushWithPayload:forType:] not being implemented.
+
+<h3>2020/03/05 | SINCH SDK IOS 4.2.2</h3>
+  - Fix for multiple Callee scenarios that are dependent on media proxy relay.
+
+<h3>2020/02/15 | SINCH SDK IOS 4.2.1</h3>
+  - Rebuilt to resolve issues using Deployment Target iOS 10.0.
+
+<h3>2020/02/10 | SINCH SDK IOS 4.2.0</h3>
+  - Re-add support for legacy push data: -[SINCallDelegate call:shouldSendPushNotifications:] -[SINClient registerPushNotificationData:] -[SINClient unregisterPushNotificationData]
+
+**NOTE**
+These APIs will be removed in the next major version of the
+Sinch RTC SDK (5.x). Please migrate to use the "Sinch Managed Push
+Notifications" functionality.
 
 <h3>2019/11/12 | SINCH SDK IOS 4.1.0</h3>
 
-  - iOS 13 VoIP push and CallKit compatibility. When linking against
-    the iOS 13 SDK or later, your application must report VoIP push
-    notifications as an incoming call to
-    CallKit. -[SINManagedPushDelegate
-    managedPush:didReceiveIncomingPushWithPayload:forType:] will now
-    be invoked synchronously on Sinch-internal GCD queue as assigned
-    to PKPushRegistry so that an application can report to CallKit
-    within the same runloop as mandated by the iOS 13 changes.
+- iOS 13 VoIP push and CallKit compatibility. When linking against
+  the iOS 13 SDK or later, your application must report VoIP push
+  notifications as an incoming call to
+  CallKit. -[SINManagedPushDelegate
+  managedPush:didReceiveIncomingPushWithPayload:forType:] will now
+  be invoked synchronously on Sinch-internal GCD queue as assigned
+  to PKPushRegistry so that an application can report to CallKit
+  within the same runloop as mandated by the iOS 13 changes.
 
-  - Fix video functionality on iOS 13 (H.264 codec, video rotation)
+- Fix video functionality on iOS 13 (H.264 codec, video rotation)
 
-  - Removed support for local notifications
-    (UILocalNotification). Since CallKit is effectively mandatory to
-    use with PushKit, using local notifications in conjunction with
-    VoIP push is no longer applicable since iOS SDK 13. An application
-    using the Sinch SDK should use PushKit and CallKit going forward.
+- Removed support for local notifications
+  (UILocalNotification). Since CallKit is effectively mandatory to
+  use with PushKit, using local notifications in conjunction with
+  VoIP push is no longer applicable since iOS SDK 13. An application
+  using the Sinch SDK should use PushKit and CallKit going forward.
 
-  - Removed support for canceled call notifications (also known as
-    "missed call" notifications). iOS 13 requirements on how a (new)
-    call must be reported for each received VoIP push notification has
-    severe implications on the previous support for canceled call
-    notifications, so severe that it is no longer possible to support.
-    (-[SINCallNotificationResult isCallCanceled] is no longer available)
+- Removed support for canceled call notifications (also known as
+  "missed call" notifications). iOS 13 requirements on how a (new)
+  call must be reported for each received VoIP push notification has
+  severe implications on the previous support for canceled call
+  notifications, so severe that it is no longer possible to support.
+  (-[SINCallNotificationResult isCallCanceled] is no longer available)
 
-  - Removed support for -[SINCallDetails
-    applicationStateWhenReceived]. This is no longer supported due to
-    that a -[UIApplication applicationState] can only safely be used
-    on main UI thread (Main Thread Checker would catch this as
-    incorrect usage under certain circumstances).
+- Removed support for -[SINCallDetails
+  applicationStateWhenReceived]. This is no longer supported due to
+  that a -[UIApplication applicationState] can only safely be used
+  on main UI thread (Main Thread Checker would catch this as
+  incorrect usage under certain circumstances).
 
-  - IMPORTANT: A VoIP push payload MUST be relayed to -[SINManagedPush
-    didCompleteProcessingPushPayload:] unless it is relayed to an
-    instance of SINClient. Note that the sample app SinchCallKit
-    implements it so that it always invokes this method, which is also
-    OK.
+- IMPORTANT: A VoIP push payload MUST be relayed to -[SINManagedPush
+  didCompleteProcessingPushPayload:] unless it is relayed to an
+  instance of SINClient. Note that the sample app SinchCallKit
+  implements it so that it always invokes this method, which is also
+  OK.
 
-  - Remove logging callback from SINClientDelegate.
-    Logging callback should now be set via [Sinch setLogCallback:].
-    Logging callback will be invoked on a background GCD queue (assume
-    that it's invoked on a concurrent GCD queue).
+- Remove logging callback from SINClientDelegate.
+  Logging callback should now be set via [Sinch setLogCallback:].
+  Logging callback will be invoked on a background GCD queue (assume
+  that it's invoked on a concurrent GCD queue).
 
-  - Removed -[SINManagedPush registerUserNotificationSettings] and
-    -[SINManagedPush setUserNotificationTypes:] (these APIs were tied
-    to iOS APIs deprecated since iOS 10).
-    Managing authorization for remote (non-VoIP) or local
-    notifications is now outside the scope of the Sinch APIs and an
-    application should use UserNotifications.framework directly.
+- Removed -[SINManagedPush registerUserNotificationSettings] and -[SINManagedPush setUserNotificationTypes:] (these APIs were tied
+  to iOS APIs deprecated since iOS 10).
+  Managing authorization for remote (non-VoIP) or local
+  notifications is now outside the scope of the Sinch APIs and an
+  application should use UserNotifications.framework directly.
 
-  - iOS Deployment Target raised to iOS 10.0.
+- iOS Deployment Target raised to iOS 10.0.
 
-  - Removed support for Instant Messaging.
+- Removed support for Instant Messaging.
 
 <h3>2019/08/22 | SINCH SDK IOS 3.12.10</h3>
   - Assign non-main GCD queue for PKPushRegistry
@@ -160,13 +178,13 @@ See how our platform is evolving. Keep track of new features, API versions and b
 <h3>2015/04/10 | Sinch SDK iOS 3.5.0</h3>
 New fully integrated support for remote push notifications:
 
--   Push notifications sent by the Sinch cloud platform (provided that you upload Apple Push Certificates to the Sinch Dashboard).
--   Support for both regular remote push notifications and VoIP-push notifications (available since iOS 8).
--   New protocol SINManagedPush used as entry point for managing push notifications.
--   New push notification methods on SINClient: -[SINClient enableManagedPushNotifications:] -[SINClient relayRemotePushNotification:] -[SINClient registerPushNotificationDeviceToken:type:apsEnvironment:]
--   New sample apps that shows how to use the new push notification functionality.
--   New NSNotifications available (as a complement to SINClientDelegate): SINClientDidStartNotification SINClientDidFailNotification SINClientWillTerminateNotification
--   relayRemotePushNotification and relayRemotePushNotificationPayload will now correctly start the client when the payload is for an IM.
+- Push notifications sent by the Sinch cloud platform (provided that you upload Apple Push Certificates to the Sinch Dashboard).
+- Support for both regular remote push notifications and VoIP-push notifications (available since iOS 8).
+- New protocol SINManagedPush used as entry point for managing push notifications.
+- New push notification methods on SINClient: -[SINClient enableManagedPushNotifications:] -[SINClient relayRemotePushNotification:] -[SINClient registerPushNotificationDeviceToken:type:apsEnvironment:]
+- New sample apps that shows how to use the new push notification functionality.
+- New NSNotifications available (as a complement to SINClientDelegate): SINClientDidStartNotification SINClientDidFailNotification SINClientWillTerminateNotification
+- relayRemotePushNotification and relayRemotePushNotificationPayload will now correctly start the client when the payload is for an IM.
 
 <h3>2015/02/23 | Sinch SDK iOS 3.4.2</h3>
 -   Fix so that SINClient does not throw exception if -[UIApplication setKeepAliveTimeout:handler] returns NO. SINClient will now instead emit a log message with severity SINLogSeverityCritical.
@@ -234,12 +252,12 @@ New fully integrated support for remote push notifications:
 <h3>2014/05/14 | Sinch SDK iOS 3.0</h3>
 Public release of the iOS SDK with:
 
--   Improved sample applications and documentation
--   Refactored calling and messaging API
+- Improved sample applications and documentation
+- Refactored calling and messaging API
 
 <h3>2014/05/02 | Sinch SDK iOS 3.0 BETA</h3>
 First public beta version of the Sinch SDK for iOS with support for:
 
--   App to app calling
--   App to phone calling
--   Instant messaging to single and multiple recipient
+- App to app calling
+- App to phone calling
+- Instant messaging to single and multiple recipient
