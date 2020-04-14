@@ -5,8 +5,6 @@ excerpt: >-
   fixes.
 ---
 
-See how our platform is evolving. Keep track of new features, API versions and bug fixes.
-
 <h3>2020/03/15 | SINCH SDK IOS 4.2.3</h3>
   - Fix crash on iOS 10 caused by method -[PKPushRegistryDelegate pushRegistry:
   didReceiveIncomingPushWithPayload:forType:] not being implemented.
@@ -20,10 +18,11 @@ See how our platform is evolving. Keep track of new features, API versions and b
 <h3>2020/02/10 | SINCH SDK IOS 4.2.0</h3>
   - Re-add support for legacy push data: -[SINCallDelegate call:shouldSendPushNotifications:] -[SINClient registerPushNotificationData:] -[SINClient unregisterPushNotificationData]
 
-**NOTE**
-These APIs will be removed in the next major version of the
-Sinch RTC SDK (5.x). Please migrate to use the "Sinch Managed Push
-Notifications" functionality.
+> **NOTE**
+>
+> These APIs will be removed in the next major version of the
+> Sinch RTC SDK (5.x). Please migrate to use the "Sinch Managed Push
+> Notifications" functionality.
 
 <h3>2019/11/12 | SINCH SDK IOS 4.1.0</h3>
 
