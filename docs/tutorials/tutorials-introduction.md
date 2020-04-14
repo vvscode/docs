@@ -6,10 +6,10 @@ excerpt: >-
 next:
   pages:
     - tutorials-java
-    - tutorials-ios
-    - tutorials-android
     - tutorials-net
     - tutorials-javascript
+    - tutorials-ios
+    - tutorials-android
     - tutorials-php
 ---
 [footer]: #
