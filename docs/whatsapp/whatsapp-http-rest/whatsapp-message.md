@@ -406,9 +406,15 @@ JSON object parameters:
 
 #### Sticker message
 
+Custom sticker must comply with WhatsApp requirements:
+1. Each sticker should have a transparent background.
+2. Stickers must be exactly 512x512 pixels.
+3. Each sticker must be less than 100 KB.
+
 > **Note**
 >
-> Stickers are required to have width 512 pixels and height 512 pixels. The maximum size allowed is 100 KB.
+> For more information on using a custom sticker, please visit [WhatsApp sticker page](https://faq.whatsapp.com/en/general/26000345) 
+>
 
 Accepted content types can be found in the [introduction](doc:whatsapp-introduction#section-accepted-media-types).
 
