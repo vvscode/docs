@@ -5,24 +5,25 @@ excerpt: >-
   fixes.
 ---
 
+<h3>2020/04/15 | SINCH SDK IOS 4.2.4</h3>
+- Fix potential crash in -[SINVideoView initWithFrame:name:]
+
 <h3>2020/03/15 | SINCH SDK IOS 4.2.3</h3>
-  - Fix crash on iOS 10 caused by method -[PKPushRegistryDelegate pushRegistry:
+- Fix crash on iOS 10 caused by method -[PKPushRegistryDelegate pushRegistry:
   didReceiveIncomingPushWithPayload:forType:] not being implemented.
 
 <h3>2020/03/05 | SINCH SDK IOS 4.2.2</h3>
-  - Fix for multiple Callee scenarios that are dependent on media proxy relay.
+- Fix for multiple Callee scenarios that are dependent on media proxy relay.
 
 <h3>2020/02/15 | SINCH SDK IOS 4.2.1</h3>
-  - Rebuilt to resolve issues using Deployment Target iOS 10.0.
+- Rebuilt to resolve issues using Deployment Target iOS 10.0.
 
 <h3>2020/02/10 | SINCH SDK IOS 4.2.0</h3>
-  - Re-add support for legacy push data: -[SINCallDelegate call:shouldSendPushNotifications:] -[SINClient registerPushNotificationData:] -[SINClient unregisterPushNotificationData]
+- Re-add support for legacy push data: -[SINCallDelegate call:shouldSendPushNotifications:] -[SINClient registerPushNotificationData:] -[SINClient unregisterPushNotificationData]
 
-> **NOTE**
+> **Note**
 >
-> These APIs will be removed in the next major version of the
-> Sinch RTC SDK (5.x). Please migrate to use the "Sinch Managed Push
-> Notifications" functionality.
+> These APIs will be removed in the next major version of the Sinch RTC SDK (5.x). Please migrate to use the "Sinch Managed Push Notifications" functionality.
 
 <h3>2019/11/12 | SINCH SDK IOS 4.1.0</h3>
 
