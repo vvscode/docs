@@ -17,7 +17,7 @@ Further, it doesnt matter which conversation channel the customer engages over, 
 
 Put simply, with the Sinch Conversation API, you are always in control of your customer conversation whether it be over SMS, RCS, WhatsApp or Facebook Messenger. Of course, the API will support additional channels as they become popular.
 
-Currently Sinch Conversation API is in closed beta. If you are interested in the early access program please contact [Sinch representative](https://www.sinch.com/contact-us/).
+Currently Sinch Conversation API is in closed beta. If you are interested in the early access program please contact [Sinch representative](https://www.sinch.com/contact-us/). 
 
 ### Key concepts
 
