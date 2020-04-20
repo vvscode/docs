@@ -121,8 +121,9 @@ The format is as follows:
     {
       "profile":{
         "name":"John Smith"
-    },
-    "wa_id":"0732001122"
+      },
+      "wa_id":"0732001122"
+    }
   ],
   "notifications":[
     {
@@ -158,8 +159,9 @@ The format is as follows:
     {
       "profile":{
         "name":"John Smith"
-    },
-    "wa_id":"0732001122"
+      },
+      "wa_id":"0732001122"
+    }
   ],
   "notifications":[
     {
@@ -266,8 +268,9 @@ The format is as follows:
     {
       "profile":{
         "name":"John Smith"
-    },
-    "wa_id":"0732001122"
+      },
+      "wa_id":"0732001122"
+    }
   ],
   "notifications":[
     {
