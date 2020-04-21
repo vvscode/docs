@@ -10,10 +10,10 @@ hidden: 'true'
 > 
 > This is a preivew of the Sinch Zap app.
 
-### Before you can create your Zap
+### Before you can create your Zap, you need to have:
 
-1. Your [Sinch account](https://dashboard.sinch.com/signup). (If you are in the United States, you also need a [free test phone  number](https://dashboard.sinch.com/numbers/your-numbers/numbers).)
-2. If you don’t have one, you can create a Zapier account [here](https://zapier.com/sign-up/)
+1. A [Sinch account](https://dashboard.sinch.com/signup). (If you are in the United States, you also need a [free test phone  number](https://dashboard.sinch.com/numbers/your-numbers/numbers).)
+2. A Zapier Acccount,  If you don’t have one, you can create a Zapier account [here](https://zapier.com/sign-up/)
 
 If you already have them you can jumpt to [Using Sinch as a Zapier Trigger](doc:sms-zapier#section-using-sinch-as-a-zapier-trigger)
 
@@ -28,55 +28,55 @@ Click on activate
 
 
 ![Image of configure number](images/new-number/select-rest.png)
-To use the number with the rest API select REST and click ***Get Free number***.
+To use the number with the REST API select REST and click ***Get Free number***.
 
 ## Using Sinch as a Zapier Trigger
-To get started with the Sinch app, you click follow this [link](https://zapier.com/developer/public-invite/79749/049663e21af93167070920d64d26eaa9/).
-![Invite zapier](images/zapier/zaipierinvite.png)
-Klick "Accpet invite and build zap"  
+To get started with the Sinch app, install the Sinch App on Zapier [link](https://zapier.com/developer/public-invite/79749/049663e21af93167070920d64d26eaa9/).
+![Invite Zapier](images/zapier/zaipierinvite.png)
+Klick "Accept invite and build zap"  
 
-In this first example you will use the Sinch Trigger  to fill out a google sheet spread sheet everytime you recieve an SMS to your sinch number.
+In this first example you will use the Sinch Trigger  to fill out a Google Sheet everytime you receive an SMS to your Sinch number.
 
-## Choose App And Event
-When creating a Zap, you will have to find the Sinch app, it should be enough to just type in Sinch when choosing app and event. 
+## Choose App Event
+When creating a Zap, search for "Sinch" when choosing app and event. 
 ![create zzap](images/zapier/1createzap.png)
 
-Currently we’re offering a trigger event “New SMS”, it will trigger on any new messages that is sent to your Sinch number.
+Select “New SMS” as trigger, it will trigger on any new messages that is sent to your Sinch number.
 
 ## Choose account
-The next step is to “Sign in to Sinch” and you should see a prompt asking you to fill out some fields. Now your Service Plan ID and API token comes in handy! You will find all the information you need in the [dashboard](https://dashboard.sinch.com/sms/api/rest)
+The next step is to “Sign in to Sinch” where you will see a prompt asking you to fill out some fields. Find your ***Service Plan ID*** and ***API token*** in the [Sinch dashboard](https://dashboard.sinch.com/sms/api/rest).
 
 ![Configure sinch](images/zapier/2configureaccount.png)
-Copy and paste your Service Plan ID and API Token into the Zapier prompt and continue.
+Copy and paste your ***Service Plan ID*** and ***API Token*** into the Zapier prompt and continue.
 It should now look something like this:
 
 ## Find Data
-Now, if you do not have any messages in your service plan, there won’t be any data to collect for Zap but you should see some samples. 
-![Configure sinch](images/zapier/3data.png)
+If you do not have any messages in your service plan, there won’t be any data to collect for Zap but you should see some samples, otherwise you will some of your old messages as samples.  
+![Configure Sinch](images/zapier/3data.png)
 
 ## Populate data in sheets
-Frist creaate a google sheet adn add two headers rows Phonenumber and Message
-![Configure sinch](images/zapier/4sheet.png)
-Then in your zap, clieck continue and search for Google sheets
-![Configure sinch](images/zapier/5SearchGoogle.png)
-Connect your account and select create spreadsheet. Go thru all the steps and select Phonenumber column to have the From paramater from the Sinch Zap and the message 
-![Configure sinch](images/zapier/6configuresheet.png)
+Create a Google Sheet and add two headers columns: **Phonenumber** and **Message**
+![Configure Sinch](images/zapier/4sheet.png)
+Next in your Zap, click **continue** and search for **Google Sheets**
+![Configure Sinch](images/zapier/5SearchGoogle.png)
+Connect your account and select **Create spreadsheet**. Go thru all the steps and select the ***Phonenumber** column to have the From parameter from the Sinch Zap. Do the same for message. 
+![Configure Sinch](images/zapier/6configuresheet.png)
 
-Click test and review, go back your sheet and you should now see a new row in your sheet.
+Click test and review, In your **Google sheet** you will see a new row.
 
-Click done editing and name your zap. 
+Click done editing and name your Zap. 
 
 ## Send SMS using Zapier Actions
-Lets add a column to the Sheet above and call it reply. 
-Click the blick + button in your zapier dashboard to create a new Zap. Now we are going to use the google sheets as an Trigger so search up google sheets, and select the trigger new or updated spreadsheet row. Find your sheet by walking thru the prompts and select reply as the trigger column. 
+Add a column to your **Google Sheet**  and call it reply. 
+Click the **+** button in your Zapier dashboard to create a new Zap. In this Zap we are going to use the *Google sheets* as the Trigger. Search for **Google sheets**, Select the trigger **New or updated spreadsheet row**. Find your sheet by clicking thru the prompts and select reply as the trigger column. 
 ![Configure sinch](images/zapier/7googlesheettrigger.png)
-Test and review, click on do this and find Sinch 1.0.0, choose New SMS as action and confirm your account.  
+Test and review, click on **Do this** and find Sinch 1.0.0, select **New SMS** as action and confirm your account.  
 ![Configure sinch](images/zapier/8SendSMS.png)
 
 What we are doing here is saying everytime you enter/update a reply in an existing row, send that reply to your the phonenumber we have in the first column.
 Click test and review and you should have a sms to your phone sent to you.   
 
-This was just to show the power of incoming SMS and outgoing sms in Zapier and now you can explore all your favorite applications and see if they have a Zapier app that you can connect SMS messaging to using the Sinch Zap.
+This guide shows the power of recieving SMS and sending SMS in Zapier. Now you can explore all your favorite applications and see if they have a Zapier app that you can connect SMS SMS messaging Zap.
 
 
 
