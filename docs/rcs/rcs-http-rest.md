@@ -14,4 +14,4 @@ The Sinch RCS REST API provides [Universal Profile 2.0](https://www.gsma.com/fut
 
 It is possible to setup the RCS REST API to use an existing SMS account for all fallback SMS traffic. It is also possible to use the RCS REST API without SMS fallback, in this case an SMS account is not needed.
 
-When [SMS Fallback](doc:rcs-rest-sms-fallback) is desired, fine grained control is provided [by configuring fallback conditions](doc:rcs-rest-sms-fallback#section-fallback-conditions).
+When [SMS Fallback](doc:rcs-rest-sms-fallback) is desired, fine grained control is provided [by configuring fallback conditions](doc:rcs-rest-sms-fallback#fallback-conditions).

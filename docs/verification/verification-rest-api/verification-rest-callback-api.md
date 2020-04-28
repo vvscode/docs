@@ -12,7 +12,7 @@ This callback event is a POST request to the specified verification callback URL
 
 ### Authorization
 
-You can find more information on callback request signing [here](doc:using-rest#section-callback-request-signing).
+You can find more information on callback request signing [here](doc:using-rest#callback-request-signing).
 
 ### Request
 

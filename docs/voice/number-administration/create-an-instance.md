@@ -10,7 +10,7 @@ As a second step, you need to create an instance with the ‘authorization’ st
 
 ## Headers
 
-This is a protected resource and requires a [user signed request](doc:using-rest#section-user-signed-request).
+This is a protected resource and requires a [user signed request](doc:using-rest#user-signed-request).
 
     Authorization: User {authorization}
     X-Timestamp: {now}

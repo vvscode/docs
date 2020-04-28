@@ -111,7 +111,7 @@ call.addEventListener(callListeners);
 ```
 
 
-It is also possible to connect users to a conference call via the [Sinch REST API](doc:voice-rest-api-onprem-calling-api#section-text-to-speech).
+It is also possible to connect users to a conference call via the [Sinch REST API](doc:voice-rest-api-onprem-calling-api#text-to-speech).
 
 ## Play ringback tone
 

@@ -317,7 +317,7 @@ If the message body you wish to send is already GSM encoded then you must set th
 
 There are 9 special characters that are counted as 2 individual
 characters when GSM encoded. This could result in a message becoming
-longer and therefore being [concatenated](#section-concatenated-messages). 
+longer and therefore being [concatenated](#concatenated-messages). 
 
 | Symbol | Name         |
 | ------ | ------------ |

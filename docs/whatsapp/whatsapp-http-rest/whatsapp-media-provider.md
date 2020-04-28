@@ -38,12 +38,12 @@ Empty response body
 
 `400 Bad Request`
 
-There was an error with your request. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+There was an error with your request. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#http-errors).
 
 `401 Unauthorized`
 
 There was an authentication error with your request. Either you're using incorrect credentials or you're attempting to authenticate
-in a region where your bot does not reside. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+in a region where your bot does not reside. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#http-errors).
 
 ### Config object types
 
@@ -97,7 +97,7 @@ Empty response body
 `401 Unauthorized`
 
 There was an authentication error with your request. Either you're using incorrect credentials or you're attempting to authenticate
-in a region where your bot does not reside. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+in a region where your bot does not reside. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#http-errors).
 
 ### Retrieving the providers list
 `GET whatsapp/v1/{bot-id}/provision/provider`
@@ -162,4 +162,4 @@ The response body is a JSON object with the following parameters:
 `401 Unauthorized`
 
 There was an authentication error with your request. Either you're using incorrect credentials or you're attempting to authenticate
-in a region where your bot does not reside. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+in a region where your bot does not reside. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#http-errors).

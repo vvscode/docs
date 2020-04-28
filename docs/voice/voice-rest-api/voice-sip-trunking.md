@@ -72,9 +72,9 @@ Make sure that any phone number sent via SIP to Sinch are always E.164-formatted
 
 ## Receiving calls from Sinch platform to your SIP infrastructure
 
-You can route any type of call from the Sinch platform to your SIP server. You can automatically forward calls to your SIP server using the SIP forwarding option in the Sinch Portal (setting available under Apps >> Voice and Video >> Connect Calls). If you need more control, you can instruct a call to be connected to your SIP server by responding to the Incoming Call Event callback with the [ConnectSIP](doc:voice-rest-api-callback-api#section-connectsip) action.
+You can route any type of call from the Sinch platform to your SIP server. You can automatically forward calls to your SIP server using the SIP forwarding option in the Sinch Portal (setting available under Apps >> Voice and Video >> Connect Calls). If you need more control, you can instruct a call to be connected to your SIP server by responding to the Incoming Call Event callback with the [ConnectSIP](doc:voice-rest-api-callback-api#connectsip) action.
 
-If you want a private header in incoming calls to your SIP infrastructre use [SetCookie](doc:voice-rest-api-callback-api#section-setcookie) instruction in your callback response X-headers.
+If you want a private header in incoming calls to your SIP infrastructre use [SetCookie](doc:voice-rest-api-callback-api#setcookie) instruction in your callback response X-headers.
 
     {
         "name" : "SetCookie",

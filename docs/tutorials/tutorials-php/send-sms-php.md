@@ -21,7 +21,7 @@ If you don't already have an API configured, go to your API Overview and click o
 
 ## Plugin your credentials!
 
-Firstly, we need to create a file `send_sms.php` to save our code in. You can find the finished code [here](doc:send-sms-php#section-code).
+Firstly, we need to create a file `send_sms.php` to save our code in. You can find the finished code [here](doc:send-sms-php#code).
 
 Let's start with plugging in our credentials found in the [API Overview](https://dashboard.sinch.com/sms/api/rest).
 

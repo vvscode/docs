@@ -10,7 +10,7 @@ With the instance that you created you can now perform instance signed requests,
 
 ## Headers
 
-This is a protected resource and requires an [instance signed request](doc:using-rest#section-instance-signed-request).
+This is a protected resource and requires an [instance signed request](doc:using-rest#instance-signed-request).
 
     Authorization: Instance {instance ID}:{instance signature}
     X-Timestamp: {now}

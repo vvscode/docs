@@ -26,7 +26,7 @@ SinchClient sinchClient = Sinch.getSinchClientBuilder().context(context)
 sinchClient.addSinchClientListener(sinchClientListener);
 ```
 
-The _Application Key_ is obtained from the Sinch Developer Dashboard. See [Production Environments](doc:voice-android-cloud-miscellaneous#section-production-environments) for valid values for _environmentHost_. The User ID should uniquely identify the user on the particular device.
+The _Application Key_ is obtained from the Sinch Developer Dashboard. See [Production Environments](doc:voice-android-cloud-miscellaneous#production-environments) for valid values for _environmentHost_. The User ID should uniquely identify the user on the particular device.
 
 _Note:_ All listener callbacks emitted from the Sinch SDK are invoked on the same thread that the call to `SinchClientBuilder.build` is made on. If the invoking thread is _not_ the main-thread, it needs to have an associated `Looper`.
 

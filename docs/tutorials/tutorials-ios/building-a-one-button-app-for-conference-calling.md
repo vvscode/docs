@@ -13,7 +13,7 @@ As always the full source code is available on GitHub, [click to download](https
 
 ## Setup
 
-Login to your Sinch account or go to [sinch.com](https://www.sinch.com/signup) and sign up for free. Then, go to your apps at the dashboard and create a new clientapi app. Take note of your app’s unique key and secret.
+Login to your Sinch account or go to [sinch.com](https://www.sinch.com/sign-up) and sign up for free. Then, go to your apps at the dashboard and create a new clientapi app. Take note of your app’s unique key and secret.
 ![sandbox-apps.jpg](images\7c486ee-sandbox-apps.jpg)
 
 Open up XCode and create a new project using the Single-View Application template. Then set up CocoaPods to work with our app. In this tutorial, we’re going to use a small **UIFramework** I made.

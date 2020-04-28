@@ -65,7 +65,7 @@ id<SINCallClient> callClient = [sinchClient callClient];
 id<SINCall> call = [callClient callConferenceWithId:@"<conferenceId>"];
 ```
 
-It is also possible to connect users to a conference call via the [Sinch REST API](doc:voice-rest-api-onprem-calling-api#section-text-to-speech).
+It is also possible to connect users to a conference call via the [Sinch REST API](doc:voice-rest-api-onprem-calling-api#text-to-speech).
 
 ## Handling incoming calls
 
@@ -84,7 +84,7 @@ When the delegate method is executed, the call can either be connected automatic
 
 To get events related to the call, set the call delegate. The call object contains details about participants, start time, potential error codes, and error messages.
 
-If [VoIP push notifications](doc:voice-ios-cloud-local-and-remote-push-notifications#section-enabling-voip-push-notifications) is enabled, add logic for presenting a local notification if the app is in the background when receiving the call:
+If [VoIP push notifications](doc:voice-ios-cloud-local-and-remote-push-notifications#enabling-voip-push-notifications) is enabled, add logic for presenting a local notification if the app is in the background when receiving the call:
 
 ```objectivec
 - (SINLocalNotification *)client:(id<SINClient>)client

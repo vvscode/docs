@@ -7,8 +7,8 @@ excerpt: >-
 ---
 The Sinch REST API keeps track of the delivery status of each message you send and makes that status available to your application in 2 ways:
 
- 1) Via [polling / pull](doc:sms-guide#section-retrieve-a-delivery-report): your application can fetch the delivery notifications at regular intervals with GET HTTP requests.
- 2) Via [callbacks / push](doc:sms-guide#section-delivery-report-callback): the Sinch REST API will make an HTTP POST request to your application with details of the delivery report included in the request body.
+ 1) Via [polling / pull](doc:sms-guide#retrieve-a-delivery-report): your application can fetch the delivery notifications at regular intervals with GET HTTP requests.
+ 2) Via [callbacks / push](doc:sms-guide#delivery-report-callback): the Sinch REST API will make an HTTP POST request to your application with details of the delivery report included in the request body.
  
 This tutorial will show you how to setup an endpoint in your Spring Boot application to respond to the delivery reports callbacks.
 
@@ -16,7 +16,7 @@ This tutorial will show you how to setup an endpoint in your Spring Boot applica
 
 Before starting, please make sure that:
 
- - You have [created your Sinch account](doc:tutorials-java#section-create-your-free-sinch-account)
+ - You have [created your Sinch account](doc:tutorials-java#create-your-free-sinch-account)
  - The right version of the JDK is installed on your computer
  - You have added the Sinch Java SDK JAR to your project
 
@@ -26,7 +26,7 @@ All details of those steps are available on the [Java Getting Started page](doc:
 
 > **Note**
 > 
-> You can [skip these steps](#section-add-a-delivery-report-callback-controller) if you already have a functional Spring Boot project. This tutorial assumes the use of Spring Boot 2.1+, although it might work with earlier version.
+> You can [skip these steps](#add-a-delivery-report-callback-controller) if you already have a functional Spring Boot project. This tutorial assumes the use of Spring Boot 2.1+, although it might work with earlier version.
 
 ### Bootstrap An Empty Application Using Spring Initializr
 

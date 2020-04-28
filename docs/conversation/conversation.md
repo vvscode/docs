@@ -25,11 +25,11 @@ Currently Sinch Conversation API is in closed beta. If you are interested in the
 
 #### Account
 
-Top level entity that is considered to be the root entity in the ER-diagram above. This represents a **Sinch** account that can be used for all of **Sinch's** different services. The **account** may or may not be a sub-account to accommodate for both direct and ASP clients. An **account** is tied to multiple [**apps**](doc:conversation#section-app) and [**contacts**](doc:conversation#section-contact).
+Top level entity that is considered to be the root entity in the ER-diagram above. This represents a **Sinch** account that can be used for all of **Sinch's** different services. The **account** may or may not be a sub-account to accommodate for both direct and ASP clients. An **account** is tied to multiple [**apps**](doc:conversation#app) and [**contacts**](doc:conversation#contact).
 
 #### App
 
-The **app** entity corresponds to the API user, with a set of [**channel credentials**](doc:conversation#section-channel-credential) for each underlying connected channel. The app has a list of [**conversations**](doc:conversation#section-conversation) between itself and different [**contacts**](doc:conversation#section-contact) which share the same [**account**](doc:conversation#section-account).
+The **app** entity corresponds to the API user, with a set of [**channel credentials**](doc:conversation#channel-credential) for each underlying connected channel. The app has a list of [**conversations**](doc:conversation#conversation) between itself and different [**contacts**](doc:conversation#contact) which share the same [**account**](doc:conversation#account).
 The app is tied to a set of webhooks which defines the destination for various events coming from the Conversation API.
 The easiest way to create and configure a Conversation API app is through [Sinch Portal](https://dashboard.sinch.com/convapi/apps)
 An **app** has the following configurable properties:
@@ -37,11 +37,11 @@ An **app** has the following configurable properties:
 Field | Description
 ------|-------------
 Display name | The name visible in [Sinch Portal](https://dashboard.sinch.com/convapi/apps)
-Conversation metadata report view | Specifies the amount of [**conversation**](doc:conversation#section-conversation) metadata that will be returned as part of each callback.
+Conversation metadata report view | Specifies the amount of [**conversation**](doc:conversation#conversation) metadata that will be returned as part of each callback.
 
 #### Channel credential
 
-A **channel credential** is the authentication means used to authenticate against an underlying connected channel. A **channel credential** is tied to one [**app**](doc:conversation#section-app).
+A **channel credential** is the authentication means used to authenticate against an underlying connected channel. A **channel credential** is tied to one [**app**](doc:conversation#app).
 The order of the channel credentials registered for an app is significant. It defines the channel priority order on app level used when defining which channels to sent first.
 The app channel priority is overridden by contact channel priority order and by message specific channel priority order.
 
@@ -69,7 +69,7 @@ Triggers | A set of triggers that this webhook is listening to. Example triggers
 
 #### Contact
 
-The **contact** entity is a collection entity that groups together underlying connected **channel recipient identities**. It is tied to a specific [**account**](doc:conversation#section-account) and is therefore considered public to all [**apps**](doc:conversation#section-app) sharing the same [**account**](doc:conversation#section-account).
+The **contact** entity is a collection entity that groups together underlying connected **channel recipient identities**. It is tied to a specific [**account**](doc:conversation#account) and is therefore considered public to all [**apps**](doc:conversation#app) sharing the same [**account**](doc:conversation#account).
 
 A **contact** has the following configurable properties:
 
@@ -84,10 +84,10 @@ Metadata | Optional metadata associated with the contact.
 
 #### Channel recipient identity
 
-A **channel recipient identity** is an identifier for the [**contact**](doc:conversation#section-contact) for a specific channel. E.g. an international phone number is used as identifier for *SMS* and *RCS* while a PSID (Page-Scoped ID) is used as identifier for *Facebook Messenger*.
+A **channel recipient identity** is an identifier for the [**contact**](doc:conversation#contact) for a specific channel. E.g. an international phone number is used as identifier for *SMS* and *RCS* while a PSID (Page-Scoped ID) is used as identifier for *Facebook Messenger*.
 Some channels use app-scoped channel identity. Currently, FB Messenger and Viber are using app-scoped channel identities
-which means contacts will have different channel identities for different [**apps**](doc:conversation#section-app).
-For Facebook Messenger this means that the contact channel identity is associated with the [**app**](doc:conversation#section-app)
+which means contacts will have different channel identities for different [**apps**](doc:conversation#app).
+For Facebook Messenger this means that the contact channel identity is associated with the [**app**](doc:conversation#app)
 linked to the FB page for which this PSID is issued.
 
 A **channel recipient identity** has the following configurable properties:
@@ -100,22 +100,22 @@ App id | The Conversation API's **app** ID if this is app-scoped channel identit
 
 #### Conversation
 
-A collection entity that groups several **conversation messages**. It is tied to one specific [**app**](doc:conversation#section-app) and one specific [**contact**](doc:conversation#section-contact).
+A collection entity that groups several **conversation messages**. It is tied to one specific [**app**](doc:conversation#app) and one specific [**contact**](doc:conversation#contact).
 
 #### Conversation message
 
-An individual message, part of a specific [**conversation**](doc:conversation#section-conversation).
+An individual message, part of a specific [**conversation**](doc:conversation#conversation).
 
 #### Metadata
 
-There are currently three entities which can hold metadata: [**message**](doc:conversation#section-conversation-message), [**conversation**](doc:conversation#section-conversation) and [**contact**](doc:conversation#section-contact).
+There are currently three entities which can hold metadata: [**message**](doc:conversation#conversation-message), [**conversation**](doc:conversation#conversation) and [**contact**](doc:conversation#contact).
 The metadata is an opaque field for the Conversation API and can be used by the API clients to
 retrieve a context when receiving a callback from the API.
 The metadata fields are currently restricted to 1024 characters.
 
 ### Authentication
 
-All API calls are authenticated using HTTP basic authentication using the [**app**](doc:conversation#section-app) id as username
+All API calls are authenticated using HTTP basic authentication using the [**app**](doc:conversation#app) id as username
 and the **app** token as password.
 
 ### Supported channels

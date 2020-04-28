@@ -109,13 +109,13 @@ If you have specified a callback URL under your app settings for voice, an Incom
 
 For more information check the Incoming Call Event callback and the ConnectConf action.
 
-You can also allow users to dial in a conference by calling a fixed phone number. To do this, first follow the steps mentioned in [Phone to phone calls](#section-phone-to-phone-calls) to configure a number in your app and set a callback URL. Every time a user calls your configured number, an Incoming Call Event callback will be triggered towards your URL. By responding to this event with the ConnectConf action, you can connect the call to a conference.
+You can also allow users to dial in a conference by calling a fixed phone number. To do this, first follow the steps mentioned in [Phone to phone calls](#phone-to-phone-calls) to configure a number in your app and set a callback URL. Every time a user calls your configured number, an Incoming Call Event callback will be triggered towards your URL. By responding to this event with the ConnectConf action, you can connect the call to a conference.
 
 For more information check the Incoming Call Event callback and the ConnectConf action.
 
 By using the conference callout API, you can trigger calls to fixed or mobile phones and connect them all to the same conference room.
 
-For more information please check the [Callouts API](doc:voice-rest-api-calling-api#section-conference-and-text-to-speech-callouts) .
+For more information please check the [Callouts API](doc:voice-rest-api-calling-api#conference-and-text-to-speech-callouts) .
 
 The Sinch dashboard allows you to control an ongoing conference through REST APIs. There are several conference-control options available, such as muting/unmuting participants or kicking out a participant or all participants from the conference when the conference ends.
 
@@ -129,4 +129,4 @@ Conference recording is disabled by default. To enable conference recording for 
 
 With the text-to-speech REST API, you can trigger a call to be placed to a fixed or mobile phone number and play a synthesized text message.
 
-For more information please check the [Callouts API](doc:voice-rest-api-calling-api#section-conference-and-text-to-speech-callouts).
+For more information please check the [Callouts API](doc:voice-rest-api-calling-api#conference-and-text-to-speech-callouts).

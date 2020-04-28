@@ -31,7 +31,7 @@ First you need to login to retrieve a token that will be used to create an insta
 
 ### Headers
 
-This is a [public resource](doc:using-rest#section-public-resources).
+This is a [public resource](doc:using-rest#public-resources).
 
 When logging in, you should always pass in the header the “number administration” key. This is the key that you should pass:
 
@@ -111,7 +111,7 @@ As a second step, you need to create an instance with the ‘authorization’ st
 
 ### Headers
 
-This is a protected resource and requires a [user signed request](doc:using-rest#section-user-signed-request).
+This is a protected resource and requires a [user signed request](doc:using-rest#user-signed-request).
 
     Authorization: User {authorization}
     X-Timestamp: {now}
@@ -176,7 +176,7 @@ With the instance that you created you can now perform instance signed requests,
 
 ### Headers
 
-This is a protected resource and requires an [instance signed request](doc:using-rest#section-instance-signed-request).
+This is a protected resource and requires an [instance signed request](doc:using-rest#instance-signed-request).
 
     Authorization: Instance {instance ID}:{instance signature}
     X-Timestamp: {now}
@@ -228,7 +228,7 @@ This API returns all available numbers, so that you can pick which ones you want
 
 ### Headers
 
-This is a protected resource and requires an [instance signed request](doc:using-rest#section-instance-signed-request).
+This is a protected resource and requires an [instance signed request](doc:using-rest#instance-signed-request).
 
     Authorization: Instance {instance ID}:{instance signature}
     X-Timestamp: {now}
@@ -336,7 +336,7 @@ To rent numbers, you must first reserve them and then check out. This endpoint a
 
 ### Headers
 
-This is a protected resource and requires an [instance signed request](doc:using-rest#section-instance-signed-request).
+This is a protected resource and requires an [instance signed request](doc:using-rest#instance-signed-request).
 
     Authorization: Instance {instance ID}:{instance signature}
     X-Timestamp: {now}
@@ -399,7 +399,7 @@ This endpoints allows you to check out the numbers that you have reserved, so th
 
 ### Headers
 
-This is a protected resource and requires an [instance signed request](doc:using-rest#section-instance-signed-request).
+This is a protected resource and requires an [instance signed request](doc:using-rest#instance-signed-request).
 
     Authorization: Instance {instance ID}:{instance signature}
     X-Timestamp: {now}
@@ -449,7 +449,7 @@ This endpoint lists all the numbers that are assigned to your account.
 
 ### Headers
 
-This is a protected resource and requires an [instance signed request](doc:using-rest#section-instance-signed-request).
+This is a protected resource and requires an [instance signed request](doc:using-rest#instance-signed-request).
 
     Authorization: Instance {instance ID}:{instance signature}
     X-Timestamp: {now}
@@ -540,7 +540,7 @@ This endpoint lists all numbers that are assigned to a particular app.
 
 ### Headers
 
-This is a protected resource and requires an [instance signed request](doc:using-rest#section-instance-signed-request).
+This is a protected resource and requires an [instance signed request](doc:using-rest#instance-signed-request).
 
     Authorization: Instance {instance ID}:{instance signature}
     X-Timestamp: {now}
@@ -625,7 +625,7 @@ A new endpoint to only add a specific number to an application without overwriti
 
 ### Headers
 
-This is a protected resource and requires an [instance signed request](doc:using-rest#section-instance-signed-request).
+This is a protected resource and requires an [instance signed request](doc:using-rest#instance-signed-request).
 
     Authorization: Instance {instance ID}:{instance signature}
     X-Timestamp: {now}
@@ -724,7 +724,7 @@ With this API you can remove (unassign) a number from your application. They wil
 
 ### Headers
 
-This is a protected resource and requires an [instance signed request](doc:using-rest#section-instance-signed-request).
+This is a protected resource and requires an [instance signed request](doc:using-rest#instance-signed-request).
 
     Authorization: Instance {instance ID}:{instance signature}
     X-Timestamp: {now}

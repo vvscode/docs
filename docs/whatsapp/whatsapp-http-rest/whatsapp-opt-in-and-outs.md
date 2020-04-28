@@ -10,9 +10,9 @@ next:
 ---
 All Business initiated conversations via the Sinch WhatsApp Business API must start with an “Opt-In” by the user. This can be collected through any third party channel. For example in an SMS message, In-Line with a Web Form, in an Email, or even via a deep-link in print media.
 
-You can record a [opt-in](doc:whatsapp-opt-in-and-outs#section-opt-in-endpoint) by the API call described below and once the “Opt-In” is recorded you’ll be able to message that customer via the Sinch WhatsApp Business API.
+You can record a [opt-in](doc:whatsapp-opt-in-and-outs#opt-in-endpoint) by the API call described below and once the “Opt-In” is recorded you’ll be able to message that customer via the Sinch WhatsApp Business API.
 
-Businesses must provide a method by which customers may opt-out of receiving future messages from your organization. The [opt-out-endpoint](doc:whatsapp-opt-in-and-outs#section-opt-out-endpoint-deprecated) should be handled using the API call below.
+Businesses must provide a method by which customers may opt-out of receiving future messages from your organization. The [opt-out-endpoint](doc:whatsapp-opt-in-and-outs#opt-out-endpoint-deprecated) should be handled using the API call below.
 
 > **Note**
 >
@@ -52,12 +52,12 @@ Empty response body
 
 `400 Bad Request`
 
-There was an error with your request. The body is a JSON object described [here](doc:whatsapp-introduction#section-http-errors)
+There was an error with your request. The body is a JSON object described [here](doc:whatsapp-introduction#http-errors)
 
 `401 Unauthorized`
 
 There was an authentication error with your request. Either you're using incorrect credentials or you're attempting to authenticate
-in a region where your bot does not reside. The body is a JSON object described [here](doc:whatsapp-introduction#section-http-errors)
+in a region where your bot does not reside. The body is a JSON object described [here](doc:whatsapp-introduction#http-errors)
 
 
 
@@ -93,12 +93,12 @@ Empty response body
 
 `400 Bad Request`
 
-There was an error with your request. The body is a JSON object described [here](doc:whatsapp-introduction#section-http-errors)
+There was an error with your request. The body is a JSON object described [here](doc:whatsapp-introduction#http-errors)
 
 `401 Unauthorized`
 
 There was an authentication error with your request. Either you're using incorrect credentials or you're attempting to authenticate
-in a region where your bot does not reside. The body is a JSON object described [here](doc:whatsapp-introduction#section-http-errors)
+in a region where your bot does not reside. The body is a JSON object described [here](doc:whatsapp-introduction#http-errors)
 
 
 

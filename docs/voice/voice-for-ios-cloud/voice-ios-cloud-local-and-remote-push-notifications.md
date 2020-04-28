@@ -10,7 +10,7 @@ next:
 ---
 When an application is no longer in the foreground, the user must be notified of an incoming call by means of either a local notification or a remote push notification.
 
-If the app is allowed to execute while in background then the Sinch SDK will primarily use local notifications to initially notify the user. Whether the app is allowed to execute while in background depends on whether you as a developer choose to enable [VoIP push notifications](doc:voice-ios-cloud-local-and-remote-push-notifications#section-enabling-voip-push-notifications) and/or [Active Connection in Background](doc:voice-ios-cloud-miscellaneous#section-active-connection-in-background). If only regular remote push notifications are used then those will also be used to notify the user (as a regular remote push notification will be displayed to the user by the iOS without handing over any control to the application).
+If the app is allowed to execute while in background then the Sinch SDK will primarily use local notifications to initially notify the user. Whether the app is allowed to execute while in background depends on whether you as a developer choose to enable [VoIP push notifications](doc:voice-ios-cloud-local-and-remote-push-notifications#enabling-voip-push-notifications) and/or [Active Connection in Background](doc:voice-ios-cloud-miscellaneous#active-connection-in-background). If only regular remote push notifications are used then those will also be used to notify the user (as a regular remote push notification will be displayed to the user by the iOS without handing over any control to the application).
 
 ## Remote Push Notifications
 
@@ -46,7 +46,7 @@ _SINManagedPush_ should be created as early as possible in the application’s l
 
 > **undefined**
 >
-> When creating the managed push instance, the Apple Push Service Environment (also referred to as _APS Environment_) must be specified and it must match how your application is code signed and provisioned. Please see the section [Apple Push Service environments and provisioning](doc:voice-ios-cloud-local-and-remote-push-notifications#section-apple-push-service-environments-and-provisioning) for details.
+> When creating the managed push instance, the Apple Push Service Environment (also referred to as _APS Environment_) must be specified and it must match how your application is code signed and provisioned. Please see the section [Apple Push Service environments and provisioning](doc:voice-ios-cloud-local-and-remote-push-notifications#apple-push-service-environments-and-provisioning) for details.
 
 ### Enable push notifications on a Sinch client
 

@@ -48,12 +48,12 @@ The the stickerpack ID objects have the following structure:
 
 `400 Bad Request`
 
-There was an error with your request. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+There was an error with your request. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#http-errors).
 
 `401 Unauthorized`
 
 There was an authentication error with your request. Either you're using incorrect credentials or you're attempting to authenticate
-in a region where your bot does not reside. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+in a region where your bot does not reside. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#http-errors).
 
 ## Retrieve stickerpack information
 
@@ -90,12 +90,12 @@ The response body is a JSON object with the following contents:
 
 `400 Bad Request`
 
-There was an error with your request. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+There was an error with your request. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#http-errors).
 
 `401 Unauthorized`
 
 There was an authentication error with your request. Either you're using incorrect credentials or you're attempting to authenticate
-in a region where your bot does not reside. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+in a region where your bot does not reside. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#http-errors).
 
 ## Retrieve sticker indices
 
@@ -141,12 +141,12 @@ The sticker index objects have the following structure:
 
 `400 Bad Request`
 
-There was an error with your request. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+There was an error with your request. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#http-errors).
 
 `401 Unauthorized`
 
 There was an authentication error with your request. Either you're using incorrect credentials or you're attempting to authenticate
-in a region where your bot does not reside. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+in a region where your bot does not reside. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#http-errors).
 
 ## Retrieve sticker information
 
@@ -184,12 +184,12 @@ The response body is a JSON object with the following contents:
 
 `400 Bad Request`
 
-There was an error with your request. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+There was an error with your request. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#http-errors).
 
 `401 Unauthorized`
 
 There was an authentication error with your request. Either you're using incorrect credentials or you're attempting to authenticate
-in a region where your bot does not reside. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+in a region where your bot does not reside. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#http-errors).
 
 ## Create stickerpack
 
@@ -232,12 +232,12 @@ The response body is a JSON object with the following contents:
 
 `400 Bad Request`
 
-There was an error with your request. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+There was an error with your request. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#http-errors).
 
 `401 Unauthorized`
 
 There was an authentication error with your request. Either you're using incorrect credentials or you're attempting to authenticate
-in a region where your bot does not reside. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+in a region where your bot does not reside. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#http-errors).
 
 ## Update stickerpack
 
@@ -271,12 +271,12 @@ Empty response body.
 
 `400 Bad Request`
 
-There was an error with your request. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+There was an error with your request. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#http-errors).
 
 `401 Unauthorized`
 
 There was an authentication error with your request. Either you're using incorrect credentials or you're attempting to authenticate
-in a region where your bot does not reside. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+in a region where your bot does not reside. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#http-errors).
 
 ## Delete stickerpack
 
@@ -293,12 +293,12 @@ Empty response body.
 
 `400 Bad Request`
 
-There was an error with your request. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+There was an error with your request. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#http-errors).
 
 `401 Unauthorized`
 
 There was an authentication error with your request. Either you're using incorrect credentials or you're attempting to authenticate
-in a region where your bot does not reside. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+in a region where your bot does not reside. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#http-errors).
 
 ## Create sticker
 
@@ -317,7 +317,7 @@ Custom sticker must comply with WhatsApp requirements:
 #### Request
 `POST whatsapp/v1/{bot-id}/stickerpacks/{stickerpack-id}/stickers`
 
-Accepted content types can be found in the [introduction](doc:whatsapp-introduction#section-accepted-media-types).
+Accepted content types can be found in the [introduction](doc:whatsapp-introduction#accepted-media-types).
 
 The request body is a JSON object with the following contents:
 
@@ -354,12 +354,12 @@ The response body is a JSON object with the following contents:
 
 `400 Bad Request`
 
-There was an error with your request. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+There was an error with your request. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#http-errors).
 
 `401 Unauthorized`
 
 There was an authentication error with your request. Either you're using incorrect credentials or you're attempting to authenticate
-in a region where your bot does not reside. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+in a region where your bot does not reside. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#http-errors).
 
 ## Update sticker
 
@@ -368,7 +368,7 @@ Use this endpoint to create a sticker in a third-party stickerpack.
 #### Request
 `PATCH whatsapp/v1/{bot-id}/stickerpacks/{stickerpack-id}/stickers/{sticker-index}`
 
-Accepted content types can be found in the [introduction](doc:whatsapp-introduction#section-accepted-media-types).
+Accepted content types can be found in the [introduction](doc:whatsapp-introduction#accepted-media-types).
 
 The request body is a JSON object with the following contents:
 
@@ -397,12 +397,12 @@ Empty response body.
 
 `400 Bad Request`
 
-There was an error with your request. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+There was an error with your request. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#http-errors).
 
 `401 Unauthorized`
 
 There was an authentication error with your request. Either you're using incorrect credentials or you're attempting to authenticate
-in a region where your bot does not reside. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+in a region where your bot does not reside. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#http-errors).
 
 ## Delete sticker
 
@@ -419,9 +419,9 @@ Empty response body.
 
 `400 Bad Request`
 
-There was an error with your request. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+There was an error with your request. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#http-errors).
 
 `401 Unauthorized`
 
 There was an authentication error with your request. Either you're using incorrect credentials or you're attempting to authenticate
-in a region where your bot does not reside. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+in a region where your bot does not reside. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#http-errors).

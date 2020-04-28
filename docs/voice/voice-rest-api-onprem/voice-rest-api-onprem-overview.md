@@ -31,11 +31,11 @@ To use callback events you need to assign a callback URL in the Sinch portal und
 
 | Event  | HTTP Verb | Functionality                                                                                                         |
 |--------|-----------|-----------------------------------------------------------------------------------------------------------------------|
-| ICE    | POST      | [Incoming Call Event callback](doc:voice-rest-api-onprem-callback-api#section-incoming-call-event-callback-ice-)      |
-| ACE    | POST      | [Answered Call Event callback](doc:voice-rest-api-onprem-callback-api#section-answered-call-event-callback-ace-)      |
-| DiCE   | POST      | [Disconnect Call Event callback](doc:voice-rest-api-onprem-callback-api#section-disconnect-call-event-callback-dice-) |
-| PIE    | POST      | [Prompt Input Event callback](doc:voice-rest-api-onprem-callback-api#section-prompt-input-event-callback-pie-)        |
-| Notify | POST      | [Notify Event callback](doc:voice-rest-api-onprem-callback-api#section-notify-event-callback-notify-)                 |
+| ICE    | POST      | [Incoming Call Event callback](doc:voice-rest-api-onprem-callback-api#incoming-call-event-callback-ice-)      |
+| ACE    | POST      | [Answered Call Event callback](doc:voice-rest-api-onprem-callback-api#answered-call-event-callback-ace-)      |
+| DiCE   | POST      | [Disconnect Call Event callback](doc:voice-rest-api-onprem-callback-api#disconnect-call-event-callback-dice-) |
+| PIE    | POST      | [Prompt Input Event callback](doc:voice-rest-api-onprem-callback-api#prompt-input-event-callback-pie-)        |
+| Notify | POST      | [Notify Event callback](doc:voice-rest-api-onprem-callback-api#notify-event-callback-notify-)                 |
 
 ### Calling API
 
@@ -43,18 +43,18 @@ To use callback events you need to assign a callback URL in the Sinch portal und
 
 | URL                                                    | HTTP Verb | Functionality                                                                                                          |
 |--------------------------------------------------------|-----------|------------------------------------------------------------------------------------------------------------------------|
-| /configuration/numbers/                                | GET       | [Get a list of your numbers](doc:voice-rest-api-onprem-calling-api#section-get-numbers)                                |
-| /configuration/numbers/                                | POST      | [Assign numbers to an app](doc:voice-rest-api-onprem-calling-api#section-update-numbers)                               |
-| /configuration/callbacks/applications/{applicationkey} | GET       | [Get callback URLs of your app](doc:voice-rest-api-onprem-calling-api#section-get-callbacks)                           |
-| /configuration/callbacks/applications/{applicationkey} | POST      | [Update the callback URLs of your app](doc:voice-rest-api-onprem-calling-api#section-update-callbacks)                 |
-| /calling/query/number/{number}                         | GET       | [Query a number](doc:voice-rest-api-onprem-calling-api#section-query-number)                                           |
-| /calls/id/{callId}                                     | PATCH     | [Manage Call](doc:voice-rest-api-onprem-calling-api#section-manage-call)                                               |
-| /calls/id/{callId}                                     | GET       | [Get call result](doc:voice-rest-api-onprem-calling-api#section-get-call-result)                                       |
-| /conferences/id/{conferenceId}                         | GET       | [Get conference info](doc:voice-rest-api-onprem-calling-api#section-get-conference-info)                               |
-| /conferences/id/{conferenceId}/{callId}                | PATCH     | [Mute/Unmute conference participant](doc:voice-rest-api-onprem-calling-api#section-mute-unmute-conference-participant) |
-| /conferences/id/{conferenceId}/{callId}                | DELETE    | [Kick conference participant](doc:voice-rest-api-onprem-calling-api#section-kick-conference-participant)               |
-| /conferences/id/{conferenceId}                         | DELETE    | [Kick all conference participants](doc:voice-rest-api-onprem-calling-api#section-kick-all-conference-participants)     |
-| /callouts                                              | POST      | [Place text-to-speech or conference call](doc:voice-rest-api-onprem-calling-api#section-text-to-speech)                |
+| /configuration/numbers/                                | GET       | [Get a list of your numbers](doc:voice-rest-api-onprem-calling-api#get-numbers)                                |
+| /configuration/numbers/                                | POST      | [Assign numbers to an app](doc:voice-rest-api-onprem-calling-api#update-numbers)                               |
+| /configuration/callbacks/applications/{applicationkey} | GET       | [Get callback URLs of your app](doc:voice-rest-api-onprem-calling-api#get-callbacks)                           |
+| /configuration/callbacks/applications/{applicationkey} | POST      | [Update the callback URLs of your app](doc:voice-rest-api-onprem-calling-api#update-callbacks)                 |
+| /calling/query/number/{number}                         | GET       | [Query a number](doc:voice-rest-api-onprem-calling-api#query-number)                                           |
+| /calls/id/{callId}                                     | PATCH     | [Manage Call](doc:voice-rest-api-onprem-calling-api#manage-call)                                               |
+| /calls/id/{callId}                                     | GET       | [Get call result](doc:voice-rest-api-onprem-calling-api#get-call-result)                                       |
+| /conferences/id/{conferenceId}                         | GET       | [Get conference info](doc:voice-rest-api-onprem-calling-api#get-conference-info)                               |
+| /conferences/id/{conferenceId}/{callId}                | PATCH     | [Mute/Unmute conference participant](doc:voice-rest-api-onprem-calling-api#mute-unmute-conference-participant) |
+| /conferences/id/{conferenceId}/{callId}                | DELETE    | [Kick conference participant](doc:voice-rest-api-onprem-calling-api#kick-conference-participant)               |
+| /conferences/id/{conferenceId}                         | DELETE    | [Kick all conference participants](doc:voice-rest-api-onprem-calling-api#kick-all-conference-participants)     |
+| /callouts                                              | POST      | [Place text-to-speech or conference call](doc:voice-rest-api-onprem-calling-api#text-to-speech)                |
 
 ### Reporting API
 
@@ -62,9 +62,9 @@ To use callback events you need to assign a callback URL in the Sinch portal und
 
 | URL                                     | HTTP Verb | Functionality                                                                            |
 |-----------------------------------------|-----------|------------------------------------------------------------------------------------------|
-| /users/{type}/{endpoint}/calls/{domain} | GET       | [User call report](doc:voice-rest-api-onprem-reporting-api#section-user-call-report)     |
-| /counters/{id}                          | GET       | [Get counter](doc:voice-rest-api-onprem-reporting-api#section-counters)                  |
-| /services/{id}                          | GET       | [Get service status](doc:voice-rest-api-onprem-reporting-api#section-get-service-status) |
+| /users/{type}/{endpoint}/calls/{domain} | GET       | [User call report](doc:voice-rest-api-onprem-reporting-api#user-call-report)     |
+| /counters/{id}                          | GET       | [Get counter](doc:voice-rest-api-onprem-reporting-api#counters)                  |
+| /services/{id}                          | GET       | [Get service status](doc:voice-rest-api-onprem-reporting-api#get-service-status) |
 
 ## App to app calls
 
@@ -105,7 +105,7 @@ For more information check the Incoming Call Event callback and the ConnectConf 
 
 ### Calling in a conference from a phone number
 
-You can also allow users to dial in a conference by calling a fixed phone number. To do this, first follow the steps mentioned in [Phone to phone calls](#section-phone-to-phone-calls) to configure a number in your app and set a callback URL. Every time a user calls your configured number, an Incoming Call Event callback will be triggered towards your URL. By responding to this event with the ConnectConf action, you can connect the call to a conference.
+You can also allow users to dial in a conference by calling a fixed phone number. To do this, first follow the steps mentioned in [Phone to phone calls](#phone-to-phone-calls) to configure a number in your app and set a callback URL. Every time a user calls your configured number, an Incoming Call Event callback will be triggered towards your URL. By responding to this event with the ConnectConf action, you can connect the call to a conference.
 
 For more information check the Incoming Call Event callback and the ConnectConf action.
 
@@ -113,7 +113,7 @@ For more information check the Incoming Call Event callback and the ConnectConf 
 
 By using the conference callout API, you can trigger calls to fixed or mobile phones and connect them all to the same conference room.
 
-For more information please check the [Callouts](doc:voice-rest-api-onprem-calling-api#section-conference-and-text-to-speech-callouts) API.
+For more information please check the [Callouts](doc:voice-rest-api-onprem-calling-api#conference-and-text-to-speech-callouts) API.
 
 ### Conference management
 
@@ -131,7 +131,7 @@ Conference recording is disabled by default. To enable conference recording for 
 
 With the text-to-speech REST API, you can trigger a call to be placed to a fixed or mobile phone number and play a synthesized text message.
 
-For more information please check the [Callouts](doc:voice-rest-api-onprem-calling-api#section-conference-and-text-to-speech-callouts) API.
+For more information please check the [Callouts](doc:voice-rest-api-onprem-calling-api#conference-and-text-to-speech-callouts) API.
 
 ## SIP trunking
 
@@ -149,7 +149,7 @@ Once the call arrives in the Sinch dashboard, your backend will get an Incoming 
 
 ### SIP termination
 
-You can route any type of call from the Sinch dashboard to your SIP server. If your calls are originated from an Android, iOS or Javascript client, you can route calls to your SIP server simply by calling the respective method that initiates calls towards SIP. If your calls are originated towards a PSTN inbound number, you can automatically forward calls to your SIP server using the SIP forwarding option in the Sinch Portal (setting available under Apps \>\> Voice and Video \>\> Connect Calls). For any other origination method or if you need more control, you can instruct a call to be connected to your SIP server by responding to the Incoming Call Event callback with the [ConnectSIP](doc:voice-rest-api-onprem-callback-api#section-connectsip-beta) action.
+You can route any type of call from the Sinch dashboard to your SIP server. If your calls are originated from an Android, iOS or Javascript client, you can route calls to your SIP server simply by calling the respective method that initiates calls towards SIP. If your calls are originated towards a PSTN inbound number, you can automatically forward calls to your SIP server using the SIP forwarding option in the Sinch Portal (setting available under Apps \>\> Voice and Video \>\> Connect Calls). For any other origination method or if you need more control, you can instruct a call to be connected to your SIP server by responding to the Incoming Call Event callback with the [ConnectSIP](doc:voice-rest-api-onprem-callback-api#connectsip-beta) action.
 
 #### IP Whitelisting
 

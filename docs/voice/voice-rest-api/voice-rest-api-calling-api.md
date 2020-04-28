@@ -436,7 +436,7 @@ _Example_
 
 ### Authorization
 
-This is a protected resource and requires an [application signed request](doc:using-rest#section-application-signed-request) or [basic auth](doc:using-rest#section-basic-authorization).
+This is a protected resource and requires an [application signed request](doc:using-rest#application-signed-request) or [basic auth](doc:using-rest#basic-authorization).
 
 ### Response
 
@@ -521,7 +521,7 @@ _Example_
 
 ### Authorization
 
-This is a protected resource and requires an [application signed request](doc:using-rest#section-application-signed-request) or [basic auth](doc:using-rest#section-basic-authorization).
+This is a protected resource and requires an [application signed request](doc:using-rest#application-signed-request) or [basic auth](doc:using-rest#basic-authorization).
 
 ### Errors
 
@@ -535,7 +535,7 @@ Kicks a participant from an ongoing conference
 
 ### Authorization
 
-This is a protected resource and requires an [application signed request](doc:using-rest#section-application-signed-request) or [basic auth](doc:using-rest#section-basic-authorization).
+This is a protected resource and requires an [application signed request](doc:using-rest#application-signed-request) or [basic auth](doc:using-rest#basic-authorization).
 
 ## Kick All Conference Participants
 
@@ -543,7 +543,7 @@ This is a protected resource and requires an [application signed request](doc:us
 
 ### Authorization
 
-This is a protected resource and requires an [application signed request](doc:using-rest#section-application-signed-request) or [basic auth](doc:using-rest#section-basic-authorization).
+This is a protected resource and requires an [application signed request](doc:using-rest#application-signed-request) or [basic auth](doc:using-rest#basic-authorization).
 
 ## Conference and Text-To-Speech Callouts
 
@@ -566,7 +566,7 @@ Requests a call to be initiated from the server
 
 ### Authorization
 
-This is a protected resource and requires an [application signed request](doc:using-rest#section-application-signed-request) or [basic auth](doc:using-rest#section-basic-authorization).
+This is a protected resource and requires an [application signed request](doc:using-rest#application-signed-request) or [basic auth](doc:using-rest#basic-authorization).
 
 
 There are currently three types of callouts that are supported: conference callouts, text-to-speech callouts and custom callouts. The custom callout is the most flexible, but text-to-speech and conferece callouts whereas conference and text-to-speech callouts are more convinient.
@@ -862,7 +862,7 @@ This method can be used to manage ongoing, connected calls or to unpark parked c
 
 ### Authorization
 
-This is a protected resource and requires an [application signed request](doc:using-rest#section-application-signed-request) or [basic auth](doc:using-rest#section-basic-authorization).
+This is a protected resource and requires an [application signed request](doc:using-rest#application-signed-request) or [basic auth](doc:using-rest#basic-authorization).
 
 ### Managing Ongoing, Connected Calls
 

@@ -337,7 +337,7 @@ Starts recording the call.
       }
     }
 
-**options** is a RecordingOptions object that specifies details about the recording. See [RecordingOptions](doc:voice-rest-api-recording#section-recording-options) for more details.
+**options** is a RecordingOptions object that specifies details about the recording. See [RecordingOptions](doc:voice-rest-api-recording#recording-options) for more details.
 
 ### StopRecording
 
@@ -705,7 +705,7 @@ _Example of park action_
 
 **introPrompt** specifies the prompt that will be played as the first prompt. After that, the **holdPrompt** will be played repeatably until the call is unparked or until **maxDuration** seconds have passed. If the call is unparked, prompts will stop playing immediately. However, if the max duration is reached, the last prompt will be fully played until the call is hung up.
 
-Unparking a call is done by using the [ManageCall API](doc:voice-rest-api-calling-api#section-manage-call).
+Unparking a call is done by using the [ManageCall API](doc:voice-rest-api-calling-api#manage-call).
 
 Limitation: The maxDuration value can be set to maximum 600 seconds (10 minutes).
 
@@ -719,7 +719,7 @@ URLs for the callbacks described in the section that follows are configured in t
 
 When a call reaches the Sinch platform, the system makes a POST request to the specified calling callback URL.
 
-This event, called the “ICE” event, can be triggered by either an incoming data call or an incoming PSTN call. Look here for allowed [instructions](doc:voice-rest-api-callback-api#section-instructions) and [actions](doc:voice-rest-api-callback-api#section-actions).
+This event, called the “ICE” event, can be triggered by either an incoming data call or an incoming PSTN call. Look here for allowed [instructions](doc:voice-rest-api-callback-api#instructions) and [actions](doc:voice-rest-api-callback-api#actions).
 
 If there is no response to the callback within the timeout period, an error message is played, and the call is disconnected.
 
@@ -838,7 +838,7 @@ _Example conference call response_
 
 ## Answered Call Event Callback (ACE)
 
-This callback is made when the call is picked up by the callee (person receiving the call). It is a POST request to the specified calling callback URL. Look here for allowed [instructions](doc:voice-rest-api-callback-api#section-instructions) and [actions](doc:voice-rest-api-callback-api#section-actions).
+This callback is made when the call is picked up by the callee (person receiving the call). It is a POST request to the specified calling callback URL. Look here for allowed [instructions](doc:voice-rest-api-callback-api#instructions) and [actions](doc:voice-rest-api-callback-api#actions).
 
 If there is no response to the callback within the timeout period, the call is connected.
 

@@ -17,7 +17,7 @@ This is the recommended way of securing your verification. Using Sinch Verificat
 We chose this approach for a couple of reasons, the first was to enable developers to easy try it out with no backend, the second was that we did not want to have the key and secret in-app, and OAuth seemed over complicated for a process that will most likely only occur once.
 ![diagram.png](images\d51cc29-diagram.png)
 
-You can verify that the request is from us by signing the request you receive and comparing the hash with [authorization](doc:verification-rest-verification-api#section-authorization), or if you prefer, ship a custom variable like your Token for your own api requests and validate that in the custom variables.
+You can verify that the request is from us by signing the request you receive and comparing the hash with [authorization](doc:verification-rest-verification-api#authorization), or if you prefer, ship a custom variable like your Token for your own api requests and validate that in the custom variables.
 
 ## Using node to respond to your callbacks
 

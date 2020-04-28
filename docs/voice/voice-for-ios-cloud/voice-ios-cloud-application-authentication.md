@@ -46,8 +46,8 @@ The JWT must contain the following _claims_:
 | :------ | :---------------------------------------------------------------------------------- | ---- |
 | `iss`   | `//rtc.sinch.com/applications/{APPLICATION_KEY}`                                    |
 | `sub`   | `//rtc.sinch.com/applications/{APPLICATION_KEY}/users/{USER_ID}`                    |
-| `iat`   | See [JWT RFC 7519 section-4.1.1](https://tools.ietf.org/html/rfc7519#section-4.1.1) |
-| `exp`   | See [JWT RFC 7519 section-4.1.4](https://tools.ietf.org/html/rfc7519#section-4.1.4) |
+| `iat`   | See [JWT RFC 7519 section-4.1.1](https://tools.ietf.org/html/rfc7519#4.1.1) |
+| `exp`   | See [JWT RFC 7519 section-4.1.4](https://tools.ietf.org/html/rfc7519#4.1.4) |
 | `nonce` | A unique cryptographic [nonce](https://en.wikipedia.org/wiki/Cryptographic_nonce)   |
 
 **IMPORTANT**: The expiration time for the token itself (`exp`) should be set so that the _Time-to-Live_ of the token is not less than 1 minute.

@@ -47,7 +47,7 @@ OAS enables us to:
 - Auto-generate Helper libraries
 - You choose to either design first in OAS, or use tools for your language to generate dynamic swagger at build or runtime.
 
-You can find a list of tools [here](#section-tools).
+You can find a list of tools [here](#tools).
 
 ## Best practices and tone of voice
 

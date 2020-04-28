@@ -97,7 +97,7 @@ Please refer to Google’s [Google Cloud Messaging for Android](http://developer
 
 > **Note**
 >
-> As described in the [Push Data Notification](#section-push-notification-data) section, the data that you register with the `registerPushNotificationData` method is defined by you. If using GCM, it must at a minimum include the registrationId from Google (so a GCM server can push to a particular device).
+> As described in the [Push Data Notification](#push-notification-data) section, the data that you register with the `registerPushNotificationData` method is defined by you. If using GCM, it must at a minimum include the registrationId from Google (so a GCM server can push to a particular device).
 
 ### Send and receive push notifications
 
@@ -135,7 +135,7 @@ Please refer to Google’s [Google Cloud Messaging for Android](http://developer
 
 #### On the callee side
 
-As a prerequisite, offline calling and messaging must be enabled on the receiver’s side (see [Push Notifications sent via your application server](#section-push-notifications-sent-via-your-application-server)).
+As a prerequisite, offline calling and messaging must be enabled on the receiver’s side (see [Push Notifications sent via your application server](#push-notifications-sent-via-your-application-server)).
 
 When the application receives a push notification from the Google Cloud Messaging Service, the application should extract the Sinch-specific payload from the push notification, and forwarding it to the Sinch client using the method `relayRemotePushNotificationPayload`.
 

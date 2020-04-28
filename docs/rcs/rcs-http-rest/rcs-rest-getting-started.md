@@ -60,4 +60,4 @@ curl https://api.clxcommunications.com/rcs/v1/my-agent-id/messages \
 ```
 
 
-Sending messages is described in detail in [Messages Endpoint](doc:rcs-rest-messages-endpoint#section-send-a-message).
+Sending messages is described in detail in [Messages Endpoint](doc:rcs-rest-messages-endpoint#send-a-message).

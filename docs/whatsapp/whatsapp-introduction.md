@@ -72,7 +72,7 @@ The following Swagger UI URLs can be used to test our API.
 
 | Header name     |  Description                                                                     | Required           |
 | ----------------| -------------------------------------------------------------------------------- | ------------------ |
-| Authorization   | Bearer token described [above](doc:whatsapp-introduction#section-authentication) | Always             |
+| Authorization   | Bearer token described [above](doc:whatsapp-introduction#authentication) | Always             |
 | Content-Type    | Should be `application/json` when sending data through request body              | When body provided |
 
 ## Accepted media types

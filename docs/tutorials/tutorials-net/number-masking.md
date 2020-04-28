@@ -22,7 +22,7 @@ As usual, you can find the full source code on [GitHub](https://github.com/sinch
 [![net promoter score](https://raw.githubusercontent.com/sinch/net-redirect-call/master/images/deploybutton.png)](https://azuredeploy.net/?repository=https://github.com/sinch/csharp-nps-sms-delighted)
 
 ## Prerequisites 
-1. A [Sinch account](https://www.sinch.com/signup) and an app with keys 
+1. A [Sinch account](https://www.sinch.com/sign-up) and an app with keys 
 2. A phone number [rented from Sinch] (https://www.sinch.com/dashboard/#/numbers); make sure it’s a voice number
 
 ## Configure your app 

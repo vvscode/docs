@@ -269,7 +269,7 @@ public async Task<JsonResult> CallOut(string number, string conferenceId) {
 }
 ```
 
-As you might notice, I’ve created a brand new API endpoint on the **SinchServerSDK**. The backend team rolls out features so quickly so sometimes it’s hard to keep up with the SDK parts of it. Fortunately, it’s super easy to use the **Sinch.WebAPI** client to handle request signing etc. You can read more about [callouts](doc:voice-rest-api-onprem-calling-api#section-text-to-speech) in our documentation. The above method is posted by pressing the green button with a JavaScript snippet in **views/conference/details.cshtml**
+As you might notice, I’ve created a brand new API endpoint on the **SinchServerSDK**. The backend team rolls out features so quickly so sometimes it’s hard to keep up with the SDK parts of it. Fortunately, it’s super easy to use the **Sinch.WebAPI** client to handle request signing etc. You can read more about [callouts](doc:voice-rest-api-onprem-calling-api#text-to-speech) in our documentation. The above method is posted by pressing the green button with a JavaScript snippet in **views/conference/details.cshtml**
 
 ```javascript
 $('#callout').bind('click', function(event) {

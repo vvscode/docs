@@ -29,7 +29,7 @@ Gets the aggregated call data for a specific user for a duration of up to 30 day
 
 ### Authorization
 
-This is a protected resource and requires an [application signed request](doc:using-rest#section-application-signed-request).
+This is a protected resource and requires an [application signed request](doc:using-rest#application-signed-request).
 
 ### Request
 ```text
@@ -85,7 +85,7 @@ Gets current value of a predefined instrumentation counter
 
 ### Authorization
 
-This is a protected resource and requires an [application signed request](doc:using-rest#section-application-signed-request).
+This is a protected resource and requires an [application signed request](doc:using-rest#application-signed-request).
 
 ### Request
 ```text

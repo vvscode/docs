@@ -65,5 +65,5 @@ If successful, you will see the message ID printed and you will receive the text
 
 ## Debugging tips
 
- - Use the example [in the documentation](doc:using-rest#section-authorization) with the sample app key and secret to make sure that your signature matches the example at different points along the way.
+ - Use the example [in the documentation](doc:using-rest#authorization) with the sample app key and secret to make sure that your signature matches the example at different points along the way.
  - Capitalization matters\! The headers that you send with the request need to be exactly the same as the ones in your canonicalized\_headers. Same goes for content-type.

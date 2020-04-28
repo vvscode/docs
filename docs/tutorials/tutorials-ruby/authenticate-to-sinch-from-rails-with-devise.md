@@ -9,7 +9,7 @@ This tutorial will walk you through authenticating users to the [Sinch JavaScrip
 
 ## Sinch setup
 
-> 1.  Sign up for a [Sinch account](https://www.sinch.com/signup)
+> 1.  Sign up for a [Sinch account](https://www.sinch.com/sign-up)
 > 2.  In the developer dashboard, create a new app and take note of the app key and secret
 > 3.  Download the [Sinch JavaScript SDK](https://sinch.readme.io/page/downloads)
 

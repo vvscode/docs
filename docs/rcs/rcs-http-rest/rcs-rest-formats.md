@@ -73,7 +73,7 @@ JSON Representation
 | Field         | Type                  | Description                                                   | Default | Constraints | Required |
 | ------------- | --------------------- | ------------------------------------------------------------- | ------- | ----------- | -------- |
 | error         | string                | Descriptive message of the error                              | No      | N/A         | Yes      |
-| field\_errors | arrayOf([`FieldError`](#section-fielderror)) | List of field errors, each element describes a specific field | No      | N/A         | No       |
+| field\_errors | arrayOf([`FieldError`](#fielderror)) | List of field errors, each element describes a specific field | No      | N/A         | No       |
 
 #### FieldError
 

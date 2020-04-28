@@ -37,7 +37,7 @@ JSON object parameters:
 
 `201 Created`
 
-The response body is a JSON object with the same format as a [delivery report callback](doc:whatsapp-callback#section-delivery-report-callback).
+The response body is a JSON object with the same format as a [delivery report callback](doc:whatsapp-callback#delivery-report-callback).
 
 ```json
 {
@@ -55,12 +55,12 @@ The response body is a JSON object with the same format as a [delivery report ca
 
 `400 Bad Request`
 
-There was an error with your request. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+There was an error with your request. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#http-errors).
 
 `401 Unauthorized`
 
 There was an authentication error with your request. Either you're using incorrect credentials or you're attempting to authenticate
-in a region where your bot does not reside. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#section-http-errors).
+in a region where your bot does not reside. The body is a JSON object described in the [introduction](doc:whatsapp-introduction#http-errors).
 
 ### Message object types
 
@@ -69,7 +69,7 @@ The types of messages that can be sent are one of the following:
 
 #### Template message
 
-Accepted language codes can be found in the [introduction](doc:whatsapp-introduction#section-supported-language-codes).
+Accepted language codes can be found in the [introduction](doc:whatsapp-introduction#supported-language-codes).
 
 JSON object parameters:
 
@@ -191,7 +191,7 @@ JSON object parameters:
 >
 > Any media file sent through the Sinch WhatsApp API can be at most 100.0 mb
 
-Accepted content types can be found in the [introduction](doc:whatsapp-introduction#section-accepted-media-types).
+Accepted content types can be found in the [introduction](doc:whatsapp-introduction#accepted-media-types).
 
 JSON object parameters:
 
@@ -222,7 +222,7 @@ JSON object parameters:
 >
 > Any media file sent through the Sinch WhatsApp API can be at most 100.0 mb
 
-Accepted content types can be found in the [introduction](doc:whatsapp-introduction#section-accepted-media-types).
+Accepted content types can be found in the [introduction](doc:whatsapp-introduction#accepted-media-types).
 
 JSON object parameters:
 
@@ -254,7 +254,7 @@ JSON object parameters:
 >
 > Any media file sent through the Sinch WhatsApp API can be at most 100.0 mb
 
-Accepted content types can be found in the [introduction](doc:whatsapp-introduction#section-accepted-media-types).
+Accepted content types can be found in the [introduction](doc:whatsapp-introduction#accepted-media-types).
 
 JSON object parameters:
 
@@ -287,7 +287,7 @@ JSON object parameters:
 >
 > Any media file sent through the Sinch WhatsApp API can be at most 100.0 mb
 
-Accepted content types can be found in the [introduction](doc:whatsapp-introduction#section-accepted-media-types).
+Accepted content types can be found in the [introduction](doc:whatsapp-introduction#accepted-media-types).
 
 JSON object parameters:
 
@@ -416,7 +416,7 @@ Custom sticker must comply with WhatsApp requirements:
 > For more information on using a custom sticker, please visit [WhatsApp sticker page](https://faq.whatsapp.com/en/general/26000345) 
 >
 
-Accepted content types can be found in the [introduction](doc:whatsapp-introduction#section-accepted-media-types).
+Accepted content types can be found in the [introduction](doc:whatsapp-introduction#accepted-media-types).
 
 JSON object parameters:
 

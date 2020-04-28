@@ -58,7 +58,7 @@ JSON (`application/json`) is the content type of both requests and responses if 
 
 Requests with invalid JSON will be rejected.
 
-Null values can be omitted in requests and will be omitted in responses. In some cases explicitly setting `null` will overwrite a previously set value with `null`. See [Update a group](#section-update-a-group) for an example.
+Null values can be omitted in requests and will be omitted in responses. In some cases explicitly setting `null` will overwrite a previously set value with `null`. See [Update a group](#update-a-group) for an example.
 New features might result in additional request and response
 parameters. New request parameters will either have a default value or
 considered optional to retain backwards compatibility. It is highly recommended to ignore any unexpected parameters when reading JSON in API responses and in callback handlers.
@@ -73,7 +73,7 @@ All MSISDNs returned by the REST API will be without a `+` or `00` prefix, even 
 
 #### Timestamps
 
-Timestamps are used for expressing a moment in time. They are represented using the [ISO-8601 standard](https://en.wikipedia.org/wiki/ISO_8601). Examples of those are the fields `send_at` and `expire_at` in the [Send a batch message](#section-send-a-batch-message) operation.
+Timestamps are used for expressing a moment in time. They are represented using the [ISO-8601 standard](https://en.wikipedia.org/wiki/ISO_8601). Examples of those are the fields `send_at` and `expire_at` in the [Send a batch message](#send-a-batch-message) operation.
 
 A time offset can be specified in accordance with [ISO-8601 time offsets from UTC](http://en.wikipedia.org/wiki/ISO_8601#Time_offsets_from_UTC). If no time offset is specified (_local time_ in ISO-8601) then UTC will be used.
 
@@ -108,7 +108,7 @@ Responses with status `400 Bad Request` and `403 Forbidden` will present a JSON 
 
 | Name   | Description                                                                                                             | JSON Type |
 |-- -    | ---                                                                                                                     | ---     --|
-| `code` | A code that can be used to programmatically recognize the error. See [below](#section-error-codes) for possible values. | `String`  |
+| `code` | A code that can be used to programmatically recognize the error. See [below](#error-codes) for possible values. | `String`  |
 | `text` | Human readable description of the error. Can be used for debugging.                                                     | `String`  |
 
 ##### Error codes
@@ -130,7 +130,7 @@ The following error codes can be returned as values for the `code` field:
 
 The following operation will send a batch message.
 
-Depending on the length of the *body* one message might be [split into multiple parts](#section-long-messages) and charged accordingly.
+Depending on the length of the *body* one message might be [split into multiple parts](#long-messages) and charged accordingly.
 
 Any groups targeted in a scheduled batch will be evaluated at the time of sending. If a group is deleted between batch creation and scheduled date it will be considered empty.
 
@@ -751,19 +751,19 @@ The REST API offers the following callback options which can be configured for y
 
 #### Delivery report callback
 
-A delivery report contains the status and status code for each recipient of a batch. To get a delivery report callback for a message or batch of messages you need to set the `delivery_report` field accordingly when [creating a batch](#section-send-a-batch-message). The formats of the different types of delivery reports are described in [Retrieve a delivery report](#section-retrieve-a-delivery-report) and in [Retrieve a recipient delivery report](#section-retrieve-a-recipient-delivery-report).
+A delivery report contains the status and status code for each recipient of a batch. To get a delivery report callback for a message or batch of messages you need to set the `delivery_report` field accordingly when [creating a batch](#send-a-batch-message). The formats of the different types of delivery reports are described in [Retrieve a delivery report](#retrieve-a-delivery-report) and in [Retrieve a recipient delivery report](#retrieve-a-recipient-delivery-report).
 
-The callback URL can either be provided for each batch in the [Send a batch message](#section-send-a-batch-message) operation or provisioned globally for your account.
+The callback URL can either be provided for each batch in the [Send a batch message](#send-a-batch-message) operation or provisioned globally for your account.
 
 #### Inbound message callback
 
-An inbound message or MO (*Mobile Originated*) is a message sent to one of your shortcodes or long numbers from a mobile phone. The format of an inbound callback is described in [Inbounds Endpoint](#section-inbounds-endpoint).
+An inbound message or MO (*Mobile Originated*) is a message sent to one of your shortcodes or long numbers from a mobile phone. The format of an inbound callback is described in [Inbounds Endpoint](#inbounds-endpoint).
 
 To receive inbound message callbacks, a URL needs to be provisioned for your account. This URL can be specified in the Sinch Dashboard.
 
 ### Message Body
 
-When specifying the message body in the request, the characters used as well as the length of the message affect how many actual SMS messages are sent out. When using [parameterization](#section-parameterization), the length of each message may also vary depending on the recipient-specific data.
+When specifying the message body in the request, the characters used as well as the length of the message affect how many actual SMS messages are sent out. When using [parameterization](#parameterization), the length of each message may also vary depending on the recipient-specific data.
 
 #### Supported Characters
 
@@ -866,7 +866,7 @@ Parameterization enables you to customize parts of a message for each recipient.
 
 This is done by defining a *parameter key* and placing it in the message body. For each *parameter key*, a recipient and parameter value must be provided. The position of a parameter in a message is defined by specifying placeholders in the format `${parameter_key}` in the message body, where `parameter_key` is the name of the parameter to replace with its corresponding value.
 
-For example the message body `Hi ${name}! How are you?` contains the parameter `name` and will be replaced according to the rules specified in the `parameters` field in the [Send a batch message](#section-send-sms-messages) operation.
+For example the message body `Hi ${name}! How are you?` contains the parameter `name` and will be replaced according to the rules specified in the `parameters` field in the [Send a batch message](#send-sms-messages) operation.
 
 A default parameter value can be specified that will be used when an MSISDN is not listed for a particular parameter. To set this, identify a recipient as default for each *parameter key*.
 
@@ -876,13 +876,13 @@ Parameter keys are case sensitive.
 
 ## Delivery Reports
 
-The REST API uses message statuses and error codes in delivery reports, which refer to the state of the SMS batch and can be present in either [Retrieve a delivery report](#section-retrieve-a-delivery-report) or sent to a [callback](#section-callbacks).
+The REST API uses message statuses and error codes in delivery reports, which refer to the state of the SMS batch and can be present in either [Retrieve a delivery report](#retrieve-a-delivery-report) or sent to a [callback](#callbacks).
 
 This section describes the statuses and codes returned in those delivery reports.
 
 ### Delivery Report Statuses
 
-The status field describes which state a particular message is in. Please note that statuses of type Intermediate will only be reported if you request a status per recipient ([Retrieve a recipient delivery report](#section-retrieve-a-recipient-delivery-report)), no callback will be made to report them. The following statuses are available when using the REST API:
+The status field describes which state a particular message is in. Please note that statuses of type Intermediate will only be reported if you request a status per recipient ([Retrieve a recipient delivery report](#retrieve-a-recipient-delivery-report)), no callback will be made to report them. The following statuses are available when using the REST API:
 
 | Status     | Type         | Description                                                                                                                                   |
 |-- -        | ---          | ---                                                                                                                                         --|
@@ -899,7 +899,7 @@ The status field describes which state a particular message is in. Please note t
 
 The delivery report status code provides a more detailed view of what happened with a message. The REST API shares most of its error codes with other SMS services.
 
-These are defined [here](doc:sms-other-cloud-smpp#section-error-codes).
+These are defined [here](doc:sms-other-cloud-smpp#error-codes).
 
 In addition to these standard error codes, the REST API provides an additional set of error codes, all within the 4xx range (vendor specific errors in the range of 0x400 to 0x4FF as referenced in the SMPP specification). These are listed below:
 
@@ -910,7 +910,7 @@ In addition to these standard error codes, the REST API provides an additional s
 | 402               | Message unroutable           | Aborted    | SMSC rejected message. Retrying is likely to cause the same error.                                                                  |
 | 403               | Internal error               | Aborted    | An unexpected error caused the message to fail.                                                                                     |
 | 404               | Temporary delivery failure   | Aborted    | Message failed because of temporary delivery failure. Message can be retried.                                                       |
-| 405               | Unmatched Parameter          | Aborted    | One or more parameters in the message body has no mapping for this recipient. See [Parameterization](#section-parameterization) |
+| 405               | Unmatched Parameter          | Aborted    | One or more parameters in the message body has no mapping for this recipient. See [Parameterization](#parameterization) |
 | 406               | Internal Expiry              | Aborted    | Message was expired before reaching SMSC. This may happen if the expiry time for the message was very short.                        |
 | 407               | Canceled                     | Aborted    | Message was canceled by user before reaching SMSC.                                                                                  |
 | 408               | Internal Reject              | Aborted    | SMSC rejected the message. Retrying is likely to cause the same error.                                                              |
@@ -1003,7 +1003,7 @@ Query parameters:
 | page       | The requested page                                      | Integer                                                                           |
 | page\_size | The number of inbounds returned in this request         | Integer                                                                           |
 | count      | The total number of inbounds matching the given filters | Integer                                                                           |
-| inbounds   | The page of inbounds matching the given filters         | Array of objects described in [Inbounds endpoint](#section-inbounds-endpoint) |
+| inbounds   | The page of inbounds matching the given filters         | Array of objects described in [Inbounds endpoint](#inbounds-endpoint) |
 
 ### Retrieve inbound message
 
@@ -1183,7 +1183,7 @@ Query parameters:
 | page       | The requested page                            | Integer                                                                   |
 | page\_size | The number of groups returned in this request | Integer                                                                   |
 | count      | The total number of groups                    | Integer                                                                   |
-| groups     | The page of groups matching                   | Array of objects described in [Create a group](#section-create-a-group) |
+| groups     | The page of groups matching                   | Array of objects described in [Create a group](#create-a-group) |
 
 **Retrieve the first 30 groups**
 ```shell

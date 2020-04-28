@@ -9,13 +9,13 @@ next:
 ---
 The RCS REST API enables robust support for SMS fallback based on a range of configurable conditions.
 
-When fallback occurs, the message is handed over to [Sinch SMS API](doc:sms-guide) and further status updates are available in accordance with [Delivery Reports](doc:sms-guide#section-receiving-delivery-report-callbacks) and SMS REST API [Callbacks](doc:sms-guide#section-callbacks).
+When fallback occurs, the message is handed over to [Sinch SMS API](doc:sms-guide) and further status updates are available in accordance with [Delivery Reports](doc:sms-guide#receiving-delivery-report-callbacks) and SMS REST API [Callbacks](doc:sms-guide#callbacks).
 
-Fallback is indicated by receiving a `StatusReportFallbackDispatched` on the agent's webhook endpoint as described in [RCS Callback Request](doc:rcs-rest-receiving-updates-callbacks#section-callback-request). The status report includes the `external_ref` field referencing a `batch_id` provided by the SMS REST API [Batches Endpoint](doc:sms-guide#section-send-a-batch-message).
+Fallback is indicated by receiving a `StatusReportFallbackDispatched` on the agent's webhook endpoint as described in [RCS Callback Request](doc:rcs-rest-receiving-updates-callbacks#callback-request). The status report includes the `external_ref` field referencing a `batch_id` provided by the SMS REST API [Batches Endpoint](doc:sms-guide#send-a-batch-message).
 
 Fallback SMS service plan is configured during provisioning of the RCS REST API.
 
-Fallback and condition configuration is controlled in detail by providing [`FallbackInfo`](doc:rcs-rest-messages-endpoint#section-fallbackinfo) in [Send a message API Endpoint](doc:rcs-rest-messages-endpoint#section-send-a-message).
+Fallback and condition configuration is controlled in detail by providing [`FallbackInfo`](doc:rcs-rest-messages-endpoint#fallbackinfo) in [Send a message API Endpoint](doc:rcs-rest-messages-endpoint#send-a-message).
 
 ### Fallback conditions
 
