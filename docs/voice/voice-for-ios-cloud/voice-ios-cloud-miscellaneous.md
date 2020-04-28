@@ -27,7 +27,7 @@ User IDs **must not** be longer than **40** characters.
 
 ## Encryption export regulations
 
-Please check the Summary of U.S. Export Controls Applicable to Commercial Encryption Products and ensure that the application is registered for the Encryption Regulations, if applicable. It can be found under this [link](http://www.sinch.com/export).
+Please check the Summary of U.S. Export Controls Applicable to Commercial Encryption Products and ensure that the application is registered for the Encryption Regulations, if applicable. It can be found under this [link](http://www.sinch.com/).
 
 ## Statistics
 
