@@ -7,7 +7,7 @@ excerpt: >-
 ## 2020-04-28
 
   - Add POST method to the capability endpoint
-  - Add Swagger UI to the API. See [introduction](doc:whatsapp-introduction#swagger).
+  - Add Swagger UI to the API. See [introduction](doc:whatsapp-introduction#section-swagger).
   - Fix bug with delayed FAILED status when sent media file is not accessible because of SSL certificate error.
   - Improve error handling for video files with incorrect codecs.
   - Fix response code when calling the capability endpoint with empty body
