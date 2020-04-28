@@ -91,6 +91,13 @@ The following Swagger UI URLs can be used to test our API.
 | video         | `video/mp4`, `video/3gpp`                                                     | 16 MB   |
 | sticker       | `image/webp`                                                                  | 100 KB  |
 
+
+> **Note**
+>
+> Video files must have H.264 video codec and AAC audio codec.
+> 
+> 
+
 ## Supported language codes
 
 Following language codes are supported for template messages
