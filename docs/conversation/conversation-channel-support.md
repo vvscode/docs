@@ -133,7 +133,7 @@ VBM channel provides native support for single choice (URL, Call, or Location) *
 
 ---
 
-####### URL Choice
+__URL Choice__
 
 Conversation API POST `messages:send`
 
@@ -161,7 +161,9 @@ Rendered message:
 
 ![URL Choice Message](images/channel-support/viberbm/Viber_Choice_Message_1_url.jpg)
 
-####### Call Choice
+---
+
+__Call Choice__
 
 Call choice renders a button which opens Viber keypad with the phone
 number in the request.
@@ -190,7 +192,9 @@ Rendered message:
 
 ![Call Choice Message](images/channel-support/viberbm/Viber_Choice_Message_1_call_choice.jpg)
 
-####### Location Choice
+---
+
+__Location Choice__
 
 Location choice renders a button which opens Google Maps with the coordinates
 of the location.
@@ -223,7 +227,9 @@ Rendered message:
 
 ![Location Choice Message](images/channel-support/viberbm/Viber_Choice_Message_1_Location.jpg)
 
-####### Text Choice or Multiple Choices
+---
+
+__Text Choice or Multiple Choices__
 
 There is no native support for suggested replies or multiple choices in VBM.
 
