@@ -47,22 +47,17 @@ following snippet:
 ```
 
 You need to replace `{{VBM_SERVICE_ID}}` with your VBM service ID.
-Also make sure the IP addresses of the Conversation API VIBERBM adapters
-are whitelisted in your VBM account configuration.
-Contact Conversation API team for details of which IPs should be whitelisted.
 
 ##### Receiving Config
 
 To start receiving contact messages (replies) and delivery receipts for sent
-messages you need to configure the `CallBack URL` and `Message URL` of your
-VBM account to point to Conversation API VIBERBM adapter URL corresponding to
-your Conv API **app**.
-Contact Conversation API team if unsure which are the adapter URLs you need
-to use.
+messages your VBM service plan needs to be configured with the callback
+URL corresponding to your Conversation API **app**.
+Please contact Conversation API support team for help with that.
 
 You also need to configure at least one Conversation API webhook which
 will trigger POST callbacks to the given URL.
-The triggers which are relevant for VBM are:
+The triggers which are relevant for VBM channel are:
 
 * MESSAGE_DELIVERY - delivery receipts for business messages
 * MESSAGE_INBOUND - inbound messages e.g., contact replies 
@@ -75,6 +70,11 @@ natively supported by VBM channel and what transcoding is applied in
 other cases.
 
 ##### Sending Messages
+
+Here we give a mapping between Conversation API generic message format
+and the VBM rendering on mobile devices.
+Please note that for the sake of brevity the JSON snippets do not include
+the __recipient__ and __app_id__ which are both required when sending a message.
 
 ###### Text Messages
 
