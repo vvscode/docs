@@ -111,6 +111,7 @@ Button objects:
 | type          | The type of button.                                                  | String       | `quick_reply`         | Yes      |
 | payload       | A payload to return when the recipient presses the button.           | String       | N/A                   | No       |
 
+[Example use case for quick reply buttons](doc:whatsapp-examples).
 
 ```json
 {

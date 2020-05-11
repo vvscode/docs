@@ -469,3 +469,35 @@ The event types can be one of the following:
   ]
 }
 ```
+
+**Error notification**
+
+In case an error happens, an error notification can be sent.
+
+|Name       | Description                                                            | JSON Type |
+|-----------|----------------------------------------------------------------------- |-----------|
+|type       | Fixed value `error`.                                                   | String    |
+|details    | A description of the error.                                            | String    |
+
+##### Error notification
+
+```json
+{
+    "type": "whatsapp",
+    "notifications": [
+        {
+            "from": "46702291874",
+            "message_id": "01E7T5K8CREY9K0HGZW3ME1F26ABGGRnAiI1JfAhC5kP7rPIamw3JHBDfxEzvm",
+            "message": {
+                "type": "error",
+                "details": "Unexpected callback contents received. Remember to add quick reply buttons to the request payload when sending the message template, even if no quick reply button payload is added."
+            },
+            "timestamp": "2020-05-08T12:54:07Z",
+            "to": "bot_id",
+            "replying_to": {
+                "from": "447537918329"
+            }
+        }
+    ]
+}
+```
