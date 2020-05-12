@@ -6,7 +6,7 @@ next:
     - whatsapp-group-management
 ---
 
-> **Warning**
+> ⚠️Warning
 >
 > Facebook has announced the deprecation of their WhatsApp Group Management API:
 >
