@@ -413,7 +413,6 @@ An endpoint identity is sent as an object containing type and identity.
     Type:
         "number" - Phone Number - in international format starting with a '+'
         "email" - Email Address
-        "facebook" - Facebook Id
         "username" - Username/User ID
         "conference" - The id of the conference that a call will be connected to.
         "did" - a Phone number for inbound voice rented from Sinch (DID means "direct inward dialing")
