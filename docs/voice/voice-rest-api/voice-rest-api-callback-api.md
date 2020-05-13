@@ -743,7 +743,6 @@ You can find more information on callback request signing [here].
         string - domain
         string - applicationKey
         string - originationType
-        int - duration
     }
 
 **event** has the value “ice”
@@ -767,14 +766,15 @@ You can find more information on callback request signing [here].
 **domain** shows where the call is supposed to be terminated. It can have the following values:
 
 > - “pstn”: If the call should be terminated in the PSTN network
-> - “conference”: If the call should be connected to a conference\*\*.
+> - “conference”: If the call should be connected to a conference \*.
+> - “mxp”: If the call should be connected to a Sinch SDK client.
 
 **applicationKey** is the unique application key. You can find it in the Sinch dashboard, under your app credentials.
 
 **originationType** may have one of the following values:
 
-> - “pstn”: If the incoming call comes from the PSTN network (a local phone number mapped to your application
-> - “mxp”: If the incoming call comes from one of the Sinch SDKs (iOS, Android, Javascript) though the data connection.
+> - “pstn”: If the incoming call comes from the PSTN network (a local phone number mapped to your application)
+> - “mxp”: If the incoming call comes from one of the Sinch SDKs (iOS, Android, Javascript) through data connection.
 
 **duration** shows the duration of the current call.
 
