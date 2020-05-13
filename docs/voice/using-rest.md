@@ -241,6 +241,8 @@ The Sinch Platform can initiate callback requests to a URL you define on events 
 
 *Example*
 
+E.g. given that _Callback URL_ is configured as `"https://callbacks.yourdomain.com/sinch/callback"`
+
     PartnerApplicationKey = 669E367E-6BBA-48AB-AF15-266871C28135
     PartnerApplicationSecret = BeIukql3pTKJ8RGL5zo0DA==
 
@@ -255,7 +257,7 @@ The Sinch Platform can initiate callback requests to a URL you define on events 
         REWF+X220L4/Gw1spXOU7g==
         application/json
         x-timestamp:2014-09-24T10:59:41Z
-        /sinch/callback/ace
+        /sinch/callback
 
     Signature = Base64 ( HMAC-SHA256 ( PartnerApplicationSecret, UTF8 (StringToSign ) ) )
         Tg6fMyo8mj9pYfWQ9ssbx3Tc1BNC87IEygAfLbJqZb4=
