@@ -30,7 +30,7 @@ Protected resources require a **signed** request. The signature is used to valid
   - **User signed request** - Used to create instances. It is mainly used to login with your email account in order to perform administrative tasks such as rented numbers administration.
   - **Instance signed request** - Used to sign requests that are relevant only to your account and not specific to an application, such as administering rented numbers.
 
-#### Application Signed Request
+### Application Signed Request
 
 Use the following syntax to sign a request for the Sinch Platform. The result should be included in the HTTP *Authorization* header sent with the HTTP Request.
 
@@ -103,7 +103,7 @@ the signature should be formed like this:
 
 **CanonicalizedHeaders**: Currently the only header required is “X-Timestamp”.  
 
-##### User Signed Request
+### User Signed Request
 
 
     Authorization = “User” + " " + USER_AUTHORIZATION
@@ -117,7 +117,7 @@ the signature should be formed like this:
     Authorization: User eyJhcHBsaWNhdGlvbktleSI6IllPVVJfQVBQTElDQVRJT05fS0VZIiwiaWRlbnRpdHkiOnsidHlwZSI6ImVtYWlsIiwiZW5kcG9pbnQiOiJhZGRyZXNzQGV4YW1wbGUuY29tIn0sImNyZWF0ZWQiOiIyMDE1LTA2LTI0VDA4OjMyOjMyLjk0MTc2MDVaIn0=:Uc3UQ6tnextCCXiuieizBGNf16SDKFGFWMpu6LKbOwA=
 
 
-#### Callback Request Signing
+### Callback Request Signing
 
 The Sinch Platform can initiate callback requests to a URL you define (_Callback URL_) on events like call initiation, call answer, and call disconnect.
 All callback requests are signed using your Application key and Secret pair. The signature is included in the _Authorization_ header of the request.
@@ -165,11 +165,11 @@ E.g. given that _Callback URL_ is configured as `"https://callbacks.yourdomain.c
 >
 > The Application Secret value must be base64-decoded from before it is used for signing.
 
-#### Callback Request Validation
+### Callback Request Validation
 
 Your development platform that receives the callbacks can verify that the request originated from Sinch by re-signing the request and comparing the result with the value contained in the *Application* HTTP header.
 
-#### Basic Authorization
+### Basic Authorization
 
 
 To get started quickly, applications are enabled to use basic authorization instead of signing messages. To use basic authorization, set the application key as the username and the secret from the portal as the password.
@@ -184,7 +184,7 @@ By convention, the username and password need to be base64 encoded before being 
     Authorization = “basic” + " " + Base64 ( usernameAndPassword )
 
 
-#### Instance signed request
+### Instance signed request
 
 In order to increase security and minimize the risk of app secrets to be compromised requests can be signed. The signature is used to validate that the client and check if the client is authorized to perform the operation. Security is increased since the secret is not actually part on the message sent over the wire.
 
