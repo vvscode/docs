@@ -203,7 +203,7 @@ In order to increase security and minimize the risk of app secrets to be comprom
 
 *CanonicalizedHeaders* - Currently the only header required is “X-Timestamp”.
 
-*CanonicalizedResource* - The resource _path_. E.g. if your _Callback URL_ is configured as `"https://callbacks.yourdomain.com/sinch/callback"`, the `CanonicalizedResource` would be `/sinch/callback`.
+*CanonicalizedResource* - The resource _path_.
 
 #### Instance Signing Example 1: Reserve a number
 
