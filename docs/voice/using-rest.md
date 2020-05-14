@@ -118,8 +118,8 @@ the signature should be formed like this:
 
 #### Callback Request Signing
 
-The Sinch Platform can initiate callback requests to a URL you define (_Callback URL_) on events like call initiation, call answer, and call disconnect. All callback requests are signed using your Application key and Secret pair. The signature is included in the _Authorization_ header of the
-   request.
+The Sinch Platform can initiate callback requests to a URL you define (_Callback URL_) on events like call initiation, call answer, and call disconnect.
+All callback requests are signed using your Application key and Secret pair. The signature is included in the _Authorization_ header of the request.
 
     Authorization = “Application” + " " + ApplicationKey + “:” + Signature
 
