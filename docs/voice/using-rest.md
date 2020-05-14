@@ -49,6 +49,8 @@ Use the following syntax to sign a request for the Sinch Platform. The result sh
 
 *CanonicalizedHeaders*: Currently the only header required is “X-Timestamp”.
 
+*CanonicalizedResource* - The resource _path_.
+
 To get the *applicationKey* and *applicationSecret*, you should create an application in the Sinch dashboard. The dashboard will display your _Application Key_ and _Application Secret_ pair that can be used to sign requests.
 
 *Example*
