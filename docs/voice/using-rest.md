@@ -103,20 +103,6 @@ the signature should be formed like this:
 
 **CanonicalizedHeaders**: Currently the only header required is “X-Timestamp”.  
 
-### User Signed Request
-
-
-    Authorization = “User” + " " + USER_AUTHORIZATION
-
-> **Note**
->
-> The USER\_AUTHORIZATION is received in its entiry from ‘\[POST\] /authentication’. It can be added to the header as it is.
-
-*Example*
-
-    Authorization: User eyJhcHBsaWNhdGlvbktleSI6IllPVVJfQVBQTElDQVRJT05fS0VZIiwiaWRlbnRpdHkiOnsidHlwZSI6ImVtYWlsIiwiZW5kcG9pbnQiOiJhZGRyZXNzQGV4YW1wbGUuY29tIn0sImNyZWF0ZWQiOiIyMDE1LTA2LTI0VDA4OjMyOjMyLjk0MTc2MDVaIn0=:Uc3UQ6tnextCCXiuieizBGNf16SDKFGFWMpu6LKbOwA=
-
-
 ### Callback Request Signing
 
 The Sinch Platform can initiate callback requests to a URL you define (_Callback URL_) on events like call initiation, call answer, and call disconnect.
@@ -182,6 +168,19 @@ To get the *applicationKey* and *applicationSecret*, you should create an applic
 By convention, the username and password need to be base64 encoded before being added to the header:
 
     Authorization = “basic” + " " + Base64 ( usernameAndPassword )
+
+
+### User Signed Request
+
+    Authorization = “User” + " " + USER_AUTHORIZATION
+
+> **Note**
+>
+> The USER\_AUTHORIZATION is received in its entiry from ‘\[POST\] /authentication’. It can be added to the header as it is.
+
+*Example*
+
+    Authorization: User eyJhcHBsaWNhdGlvbktleSI6IllPVVJfQVBQTElDQVRJT05fS0VZIiwiaWRlbnRpdHkiOnsidHlwZSI6ImVtYWlsIiwiZW5kcG9pbnQiOiJhZGRyZXNzQGV4YW1wbGUuY29tIn0sImNyZWF0ZWQiOiIyMDE1LTA2LTI0VDA4OjMyOjMyLjk0MTc2MDVaIn0=:Uc3UQ6tnextCCXiuieizBGNf16SDKFGFWMpu6LKbOwA=
 
 
 ### Instance Signed Request
