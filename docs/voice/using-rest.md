@@ -51,16 +51,16 @@ Use the following syntax to sign a request for the Sinch Platform. The result sh
 
 *CanonicalizedHeaders*: Currently the only header required is “X-Timestamp”.
 
-To get the *applicationKey* and *applicationSecret*, you should create an application in the Sinch dashboard. The dashboard will display your application key and secret pair that can be used to sign requests.
+To get the *applicationKey* and *applicationSecret*, you should create an application in the Sinch dashboard. The dashboard will display your _Application Key_ and _Application Secret_ pair that can be used to sign requests.
 
 *Example*
 
-    applicationKey: 5F5C418A0F914BBC8234A9BF5EDDAD97 applicationSecret:
-    JViE5vDor0Sw3WllZka15Q==
+    applicationKey: 5F5C418A0F914BBC8234A9BF5EDDAD97
+    applicationSecret: JViE5vDor0Sw3WllZka15Q==
 
 > **Note**
 >
-> The application secret value must be decoded from Base64 before it is used for signing.
+> The Application Secret value must be base64-decoded from before it is used for signing.
 
 *Example of an application signed request to a protected resource*
 
