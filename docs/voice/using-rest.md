@@ -110,7 +110,7 @@ All callback requests are signed using your Application key and Secret pair. The
 
     Authorization = “Application” + " " + ApplicationKey + “:” + Signature
 
-    Signature = Base64 ( HMAC-SHA256 ( Base64-Decode( ApplicationSecret ), UTF8 (StringToSign ) ) );
+    Signature = Base64 ( HMAC-SHA256 ( Base64-Decode( ApplicationSecret ), UTF8 ( StringToSign ) ) );
 
     StringToSign = HTTP-Verb + “\n” +
         Content-MD5 + “\n” +
@@ -140,7 +140,7 @@ E.g. given that _Callback URL_ is configured as `"https://callbacks.yourdomain.c
         x-timestamp:2014-09-24T10:59:41Z
         /sinch/callback/ace
 
-    Signature = Base64 ( HMAC-SHA256 ( Base64-Decode( ApplicationSecret ), UTF8 (StringToSign ) ) )
+    Signature = Base64 ( HMAC-SHA256 ( Base64-Decode( ApplicationSecret ), UTF8 ( StringToSign ) ) )
         Tg6fMyo8mj9pYfWQ9ssbx3Tc1BNC87IEygAfLbJqZb4=
 
     HTTP Authorization Header
