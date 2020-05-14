@@ -30,9 +30,9 @@ Protected resources require a **signed** request. The signature is used to valid
   - **User signed request** - Used to create instances. It is mainly used to login with your email account in order to perform administrative tasks such as rented numbers administration.
   - **Instance signed request** - Used to sign requests that are relevant only to your account and not specific to an application, such as administering rented numbers.
 
-#### Application Signed Request
+### Application Signed Request
 
-Use the following syntax to sign a request for the Sinch Platform. The result should be included in the HTTP *Authorization* header sent with the HTTP Request.
+Use the following (pseudocode) to sign a request for the Sinch Platform. The result should be included in the HTTP *Authorization* header sent with the HTTP Request.
 
     Authorization = Scheme + " " + ApplicationKey + “:” + Signature
 
@@ -103,28 +103,14 @@ the signature should be formed like this:
 
 **CanonicalizedHeaders**: Currently the only header required is “X-Timestamp”.  
 
-##### User Signed Request
-
-
-    Authorization = “User” + " " + USER_AUTHORIZATION
-
-> **Note**
->
-> The USER\_AUTHORIZATION is received in its entiry from ‘\[POST\] /authentication’. It can be added to the header as it is.
-
-*Example*
-
-    Authorization: User eyJhcHBsaWNhdGlvbktleSI6IllPVVJfQVBQTElDQVRJT05fS0VZIiwiaWRlbnRpdHkiOnsidHlwZSI6ImVtYWlsIiwiZW5kcG9pbnQiOiJhZGRyZXNzQGV4YW1wbGUuY29tIn0sImNyZWF0ZWQiOiIyMDE1LTA2LTI0VDA4OjMyOjMyLjk0MTc2MDVaIn0=:Uc3UQ6tnextCCXiuieizBGNf16SDKFGFWMpu6LKbOwA=
-
-
-#### Callback Request Signing
+### Callback Request Signing
 
 The Sinch Platform can initiate callback requests to a URL you define (_Callback URL_) on events like call initiation, call answer, and call disconnect.
 All callback requests are signed using your Application key and Secret pair. The signature is included in the _Authorization_ header of the request.
 
     Authorization = “Application” + " " + ApplicationKey + “:” + Signature
 
-    Signature = Base64 ( HMAC-SHA256 ( Base64-Decode( ApplicationSecret ), UTF8 (StringToSign ) ) );
+    Signature = Base64 ( HMAC-SHA256 ( Base64-Decode( ApplicationSecret ), UTF8 ( StringToSign ) ) );
 
     StringToSign = HTTP-Verb + “\n” +
         Content-MD5 + “\n” +
@@ -154,7 +140,7 @@ E.g. given that _Callback URL_ is configured as `"https://callbacks.yourdomain.c
         x-timestamp:2014-09-24T10:59:41Z
         /sinch/callback/ace
 
-    Signature = Base64 ( HMAC-SHA256 ( Base64-Decode( ApplicationSecret ), UTF8 (StringToSign ) ) )
+    Signature = Base64 ( HMAC-SHA256 ( Base64-Decode( ApplicationSecret ), UTF8 ( StringToSign ) ) )
         Tg6fMyo8mj9pYfWQ9ssbx3Tc1BNC87IEygAfLbJqZb4=
 
     HTTP Authorization Header
@@ -165,11 +151,11 @@ E.g. given that _Callback URL_ is configured as `"https://callbacks.yourdomain.c
 >
 > The Application Secret value must be base64-decoded from before it is used for signing.
 
-#### Callback Request Validation
+### Callback Request Validation
 
-Your development platform that receives the callbacks can verify that the request originated from Sinch by re-signing the request and comparing the result with the value contained in the *Application* HTTP header.
+Your development platform that receives the callbacks can verify that the request originated from Sinch by calculating the signature as described above and compare the result with the value contained in the *Application* HTTP header.
 
-#### Basic Authorization
+### Basic Authorization
 
 
 To get started quickly, applications are enabled to use basic authorization instead of signing messages. To use basic authorization, set the application key as the username and the secret from the portal as the password.
@@ -184,7 +170,20 @@ By convention, the username and password need to be base64 encoded before being 
     Authorization = “basic” + " " + Base64 ( usernameAndPassword )
 
 
-#### Instance signed request
+### User Signed Request
+
+    Authorization = “User” + " " + USER_AUTHORIZATION
+
+> **Note**
+>
+> The USER\_AUTHORIZATION is received in its entiry from ‘\[POST\] /authentication’. It can be added to the header as it is.
+
+*Example*
+
+    Authorization: User eyJhcHBsaWNhdGlvbktleSI6IllPVVJfQVBQTElDQVRJT05fS0VZIiwiaWRlbnRpdHkiOnsidHlwZSI6ImVtYWlsIiwiZW5kcG9pbnQiOiJhZGRyZXNzQGV4YW1wbGUuY29tIn0sImNyZWF0ZWQiOiIyMDE1LTA2LTI0VDA4OjMyOjMyLjk0MTc2MDVaIn0=:Uc3UQ6tnextCCXiuieizBGNf16SDKFGFWMpu6LKbOwA=
+
+
+### Instance Signed Request
 
 In order to increase security and minimize the risk of app secrets to be compromised requests can be signed. The signature is used to validate that the client and check if the client is authorized to perform the operation. Security is increased since the secret is not actually part on the message sent over the wire.
 
@@ -204,7 +203,7 @@ In order to increase security and minimize the risk of app secrets to be comprom
 
 *CanonicalizedHeaders* - Currently the only header required is “X-Timestamp”.
 
-*CanonicalizedResource* - The resource _path_. E.g. if your _Callback URL_ is configured as `"https://callbacks.yourdomain.com/sinch/callback"`, the `CanonicalizedResource` would be `/sinch/callback`.
+*CanonicalizedResource* - The resource _path_.
 
 #### Instance Signing Example 1: Reserve a number
 
