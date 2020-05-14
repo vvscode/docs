@@ -153,7 +153,7 @@ E.g. given that _Callback URL_ is configured as `"https://callbacks.yourdomain.c
 
 ### Callback Request Validation
 
-Your development platform that receives the callbacks can verify that the request originated from Sinch by re-signing the request and comparing the result with the value contained in the *Application* HTTP header.
+Your development platform that receives the callbacks can verify that the request originated from Sinch by calculating the signature as described above and compare the result with the value contained in the *Application* HTTP header.
 
 ### Basic Authorization
 
