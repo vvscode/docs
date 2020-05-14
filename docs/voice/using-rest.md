@@ -32,7 +32,7 @@ Protected resources require a **signed** request. The signature is used to valid
 
 ### Application Signed Request
 
-Use the following syntax to sign a request for the Sinch Platform. The result should be included in the HTTP *Authorization* header sent with the HTTP Request.
+Use the following (pseudocode) to sign a request for the Sinch Platform. The result should be included in the HTTP *Authorization* header sent with the HTTP Request.
 
     Authorization = Scheme + " " + ApplicationKey + “:” + Signature
 
