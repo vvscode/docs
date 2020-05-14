@@ -37,8 +37,7 @@ Use the following syntax to sign a request for the Sinch Platform. The result sh
 
     Scheme = “Application”
 
-    Signature = Base64 ( HMAC-SHA256 ( applicationSecret, UTF8 (
-    StringToSign ) ) );
+    Signature = Base64 ( HMAC-SHA256 ( applicationSecret, UTF8 ( StringToSign ) ) );
 
     StringToSign = HTTP-Verb + “\n” +
     Content-MD5 + “\n” +
