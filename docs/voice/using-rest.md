@@ -120,9 +120,9 @@ the signature should be formed like this:
 The Sinch Platform can initiate callback requests to a URL you define (_Callback URL_) on events like call initiation, call answer, and call disconnect. All callback requests are signed using your Application key and Secret pair. The signature is included in the Authorization header of the
    request.
 
-    Authorization = “Application” + " " + PartnerApplicationKey + “:” + Signature
+    Authorization = “Application” + " " + ApplicationKey + “:” + Signature
 
-    Signature = Base64 ( HMAC-SHA256 ( PartnerApplicationSecret, UTF8 (StringToSign ) ) );
+    Signature = Base64 ( HMAC-SHA256 ( ApplicationSecret, UTF8 (StringToSign ) ) );
 
     StringToSign = HTTP-Verb + “\n” +
         Content-MD5 + “\n” +
@@ -136,8 +136,8 @@ The Sinch Platform can initiate callback requests to a URL you define (_Callback
 
 E.g. given that _Callback URL_ is configured as `"https://callbacks.yourdomain.com/sinch/callback/ace"`
 
-    PartnerApplicationKey = 669E367E-6BBA-48AB-AF15-266871C28135
-    PartnerApplicationSecret = BeIukql3pTKJ8RGL5zo0DA==
+    ApplicationKey = 669E367E-6BBA-48AB-AF15-266871C28135
+    ApplicationSecret = BeIukql3pTKJ8RGL5zo0DA==
 
     Body
         {“event”:“ace”,“callid”:“822aa4b7-05b4-4d83-87c7-1f835ee0b6f6_257”,“timestamp”:“2014-09-24T10:59:41Z”,“version”:1}
@@ -152,7 +152,7 @@ E.g. given that _Callback URL_ is configured as `"https://callbacks.yourdomain.c
         x-timestamp:2014-09-24T10:59:41Z
         /sinch/callback/ace
 
-    Signature = Base64 ( HMAC-SHA256 ( PartnerApplicationSecret, UTF8 (StringToSign ) ) )
+    Signature = Base64 ( HMAC-SHA256 ( ApplicationSecret, UTF8 (StringToSign ) ) )
         Tg6fMyo8mj9pYfWQ9ssbx3Tc1BNC87IEygAfLbJqZb4=
 
     HTTP Authorization Header
