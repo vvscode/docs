@@ -184,7 +184,7 @@ By convention, the username and password need to be base64 encoded before being 
     Authorization = “basic” + " " + Base64 ( usernameAndPassword )
 
 
-### Instance signed request
+### Instance Signed Request
 
 In order to increase security and minimize the risk of app secrets to be compromised requests can be signed. The signature is used to validate that the client and check if the client is authorized to perform the operation. Security is increased since the secret is not actually part on the message sent over the wire.
 
