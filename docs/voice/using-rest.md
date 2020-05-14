@@ -116,6 +116,74 @@ the signature should be formed like this:
 
     Authorization: User eyJhcHBsaWNhdGlvbktleSI6IllPVVJfQVBQTElDQVRJT05fS0VZIiwiaWRlbnRpdHkiOnsidHlwZSI6ImVtYWlsIiwiZW5kcG9pbnQiOiJhZGRyZXNzQGV4YW1wbGUuY29tIn0sImNyZWF0ZWQiOiIyMDE1LTA2LTI0VDA4OjMyOjMyLjk0MTc2MDVaIn0=:Uc3UQ6tnextCCXiuieizBGNf16SDKFGFWMpu6LKbOwA=
 
+
+#### Callback Request Signing
+
+The Sinch Platform can initiate callback requests to a URL you define (_Callback URL_) on events like call initiation, call answer, and call disconnect.
+All callback requests are signed using your Application key and Secret pair. The signature is included in the _Authorization_ header of the request.
+
+    Authorization = “Application” + " " + ApplicationKey + “:” + Signature
+
+    Signature = Base64 ( HMAC-SHA256 ( Base64-Decode( ApplicationSecret ), UTF8 (StringToSign ) ) );
+
+    StringToSign = HTTP-Verb + “\n” +
+        Content-MD5 + “\n” +
+        Content-Type + “\n” +
+        CanonicalizedHeaders + “\n” +
+        CanonicalizedResource;
+
+    Content-MD5 = Base64 ( MD5 ( [BODY] ) )
+
+*Example*
+
+E.g. given that _Callback URL_ is configured as `"https://callbacks.yourdomain.com/sinch/callback/ace"`
+
+    ApplicationKey = 669E367E-6BBA-48AB-AF15-266871C28135
+    ApplicationSecret = BeIukql3pTKJ8RGL5zo0DA==
+
+    Body
+        {“event”:“ace”,“callid”:“822aa4b7-05b4-4d83-87c7-1f835ee0b6f6_257”,“timestamp”:“2014-09-24T10:59:41Z”,“version”:1}
+
+    Content-MD5 = Base64 ( MD5 ( [BODY] ) )
+        REWF+X220L4/Gw1spXOU7g==
+
+    StringToSign
+        POST
+        REWF+X220L4/Gw1spXOU7g==
+        application/json
+        x-timestamp:2014-09-24T10:59:41Z
+        /sinch/callback/ace
+
+    Signature = Base64 ( HMAC-SHA256 ( Base64-Decode( ApplicationSecret ), UTF8 (StringToSign ) ) )
+        Tg6fMyo8mj9pYfWQ9ssbx3Tc1BNC87IEygAfLbJqZb4=
+
+    HTTP Authorization Header
+        Authorization: Application 669E367E-6BBA-48AB-AF15-266871C28135:Tg6fMyo8mj9pYfWQ9ssbx3Tc1BNC87IEygAfLbJqZb4=
+
+
+> **Important**
+>
+> The Application Secret value must be base64-decoded from before it is used for signing.
+
+#### Callback Request Validation
+
+Your development platform that receives the callbacks can verify that the request originated from Sinch by re-signing the request and comparing the result with the value contained in the *Application* HTTP header.
+
+#### Basic Authorization
+
+
+To get started quickly, applications are enabled to use basic authorization instead of signing messages. To use basic authorization, set the application key as the username and the secret from the portal as the password.
+
+    //application call
+    usernameAndPassword = “application" + ApplicationKey + ”:" + ApplicationSecret
+
+To get the *applicationKey* and *applicationSecret*, you should create an application in the Sinch dashboard. The dashboard will display your application key and secret pair that can be used to sign requests.
+
+By convention, the username and password need to be base64 encoded before being added to the header:
+
+    Authorization = “basic” + " " + Base64 ( usernameAndPassword )
+
+
 #### Instance signed request
 
 In order to increase security and minimize the risk of app secrets to be compromised requests can be signed. The signature is used to validate that the client and check if the client is authorized to perform the operation. Security is increased since the secret is not actually part on the message sent over the wire.
@@ -225,71 +293,6 @@ Base64 ( HMAC-SHA256 ( INSTANCE\_SECRET, UTF8( \[STRING\_TO\_SIGN\] ) )
 
     Authorization: Instance 00a3ffb1-0808-4dd4-9c7d-e4383d82e445:xz+CPft5te5h9bCFJAeCd1OKhSW2ZUFnmX4gcGuZqcY=
 
-#### Callback Request Signing
-
-The Sinch Platform can initiate callback requests to a URL you define (_Callback URL_) on events like call initiation, call answer, and call disconnect.
-All callback requests are signed using your Application key and Secret pair. The signature is included in the _Authorization_ header of the request.
-
-    Authorization = “Application” + " " + ApplicationKey + “:” + Signature
-
-    Signature = Base64 ( HMAC-SHA256 ( Base64-Decode( ApplicationSecret ), UTF8 (StringToSign ) ) );
-
-    StringToSign = HTTP-Verb + “\n” +
-        Content-MD5 + “\n” +
-        Content-Type + “\n” +
-        CanonicalizedHeaders + “\n” +
-        CanonicalizedResource;
-
-    Content-MD5 = Base64 ( MD5 ( [BODY] ) )
-
-*Example*
-
-E.g. given that _Callback URL_ is configured as `"https://callbacks.yourdomain.com/sinch/callback/ace"`
-
-    ApplicationKey = 669E367E-6BBA-48AB-AF15-266871C28135
-    ApplicationSecret = BeIukql3pTKJ8RGL5zo0DA==
-
-    Body
-        {“event”:“ace”,“callid”:“822aa4b7-05b4-4d83-87c7-1f835ee0b6f6_257”,“timestamp”:“2014-09-24T10:59:41Z”,“version”:1}
-
-    Content-MD5 = Base64 ( MD5 ( [BODY] ) )
-        REWF+X220L4/Gw1spXOU7g==
-
-    StringToSign
-        POST
-        REWF+X220L4/Gw1spXOU7g==
-        application/json
-        x-timestamp:2014-09-24T10:59:41Z
-        /sinch/callback/ace
-
-    Signature = Base64 ( HMAC-SHA256 ( Base64-Decode( ApplicationSecret ), UTF8 (StringToSign ) ) )
-        Tg6fMyo8mj9pYfWQ9ssbx3Tc1BNC87IEygAfLbJqZb4=
-
-    HTTP Authorization Header
-        Authorization: Application 669E367E-6BBA-48AB-AF15-266871C28135:Tg6fMyo8mj9pYfWQ9ssbx3Tc1BNC87IEygAfLbJqZb4=
-
-
-> **Important**
->
-> The Application Secret value must be base64-decoded from before it is used for signing.
-
-#### Callback Request Validation
-
-Your development platform that receives the callbacks can verify that the request originated from Sinch by re-signing the request and comparing the result with the value contained in the *Application* HTTP header.
-
-#### Basic Authorization
-
-
-To get started quickly, applications are enabled to use basic authorization instead of signing messages. To use basic authorization, set the application key as the username and the secret from the portal as the password.
-
-    //application call
-    usernameAndPassword = “application" + ApplicationKey + ”:" + ApplicationSecret
-
-To get the *applicationKey* and *applicationSecret*, you should create an application in the Sinch dashboard. The dashboard will display your application key and secret pair that can be used to sign requests.
-
-By convention, the username and password need to be base64 encoded before being added to the header:
-
-    Authorization = “basic” + " " + Base64 ( usernameAndPassword )
 
 ## Methods
 
