@@ -16,20 +16,20 @@ The client must send a custom header *x-timestamp* (time) with each request that
 
     X-Timestamp: 2014-06-02T15:39:31.2729234Z
 
-### Public resources
+### Public Resources
 
 Public resources do not require a *signature* in the **Authorization** header. However, the client must send an HTTP *Authorization* header with the *ApplicationKey*. A client can also perform a signed request to the public resource.
 
     Authorization = “Application” + " " + ApplicationKey
 
-### Protected resources
+### Protected Resources
 
 Protected resources require a **signed** request. The signature is used to validate the client and to check whether the client is authorized to perform the operation. The Api is using standard HTTP *Authorization* header to pass authorization information. The following schemes are supported:
 
   - **Application signed request** - Used to sign requests that are specific to a particular application. Most Sinch APIs require this type of authorization scheme.
   - **User signed request** - Used to create instances. It is mainly used to login with your email account in order to perform administrative tasks such as rented numbers administration.
 
-#### Application signed request
+#### Application Signed Request
 
 Use the following syntax to sign a request for the Sinch Platform. The result should be included in the HTTP *Authorization* header sent with the HTTP Request.
 
@@ -102,7 +102,7 @@ the signature should be formed like this:
 
 **CanonicalizedHeaders**: Currently the only header required is “X-Timestamp”.  
 
-##### User signed request
+##### User Signed Request
 
 
     Authorization = “User” + " " + USER_AUTHORIZATION
@@ -116,7 +116,7 @@ the signature should be formed like this:
     Authorization: User eyJhcHBsaWNhdGlvbktleSI6IllPVVJfQVBQTElDQVRJT05fS0VZIiwiaWRlbnRpdHkiOnsidHlwZSI6ImVtYWlsIiwiZW5kcG9pbnQiOiJhZGRyZXNzQGV4YW1wbGUuY29tIn0sImNyZWF0ZWQiOiIyMDE1LTA2LTI0VDA4OjMyOjMyLjk0MTc2MDVaIn0=:Uc3UQ6tnextCCXiuieizBGNf16SDKFGFWMpu6LKbOwA=
 
 
-#### Callback request signing
+#### Callback Request Signing
 
 The Sinch Platform can initiate callback requests to a URL you define (_Callback URL_) on events like call initiation, call answer, and call disconnect. All callback requests are signed using your Application key and Secret pair. The signature is included in the Authorization header of the
    request.
@@ -161,11 +161,11 @@ E.g. given that _Callback URL_ is configured as `"https://callbacks.yourdomain.c
 
 
 
-#### Callback request validation
+#### Callback Request Validation
 
 Your development platform that receives the callbacks can verify that the request originated from Sinch by re-signing the request and comparing the result with the value contained in the *Application* HTTP header.
 
-#### Basic authorization
+#### Basic Authorization
 
 
 To get started quickly, applications are enabled to use basic authorization instead of signing messages. To use basic authorization, set the application key as the username and the secret from the portal as the password.
