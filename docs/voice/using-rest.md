@@ -33,11 +33,11 @@ Protected resources require a **signed** request. The signature is used to valid
 
 Use the following syntax to sign a request for the Sinch Platform. The result should be included in the HTTP *Authorization* header sent with the HTTP Request.
 
-    Authorization = Scheme + " " + applicationKey + “:” + Signature
+    Authorization = Scheme + " " + ApplicationKey + “:” + Signature
 
     Scheme = “Application”
 
-    Signature = Base64 ( HMAC-SHA256 ( applicationSecret, UTF8 ( StringToSign ) ) );
+    Signature = Base64 ( HMAC-SHA256 ( Base64-Decode ( ApplicationSecret ), UTF8 ( StringToSign ) ) );
 
     StringToSign = HTTP-Verb + “\n” +
     Content-MD5 + “\n” +
@@ -55,8 +55,8 @@ To get the *applicationKey* and *applicationSecret*, you should create an applic
 
 *Example*
 
-    applicationKey: 5F5C418A0F914BBC8234A9BF5EDDAD97
-    applicationSecret: JViE5vDor0Sw3WllZka15Q==
+    ApplicationKey: 5F5C418A0F914BBC8234A9BF5EDDAD97
+    ApplicationSecret: JViE5vDor0Sw3WllZka15Q==
 
 > **Important**
 >
@@ -84,7 +84,7 @@ the signature should be formed like this:
     x-timestamp:2014-06-04T13:41:58Z
     /v1/sms/+46700000000
 
-    Signature = Base64 ( HMAC-SHA256 ( Secret, UTF8 ( StringToSign ) ) )
+    Signature = Base64 ( HMAC-SHA256 ( Base64-Decode ( ApplicationSecret ), UTF8 ( StringToSign ) ) )
         qDXMwzfaxCRS849c/2R0hg0nphgdHciTo7OdM6MsdnM=
 
     HTTP Authorization Header Authorization: Application
@@ -123,7 +123,7 @@ The Sinch Platform can initiate callback requests to a URL you define (_Callback
 
     Authorization = “Application” + " " + ApplicationKey + “:” + Signature
 
-    Signature = Base64 ( HMAC-SHA256 ( ApplicationSecret, UTF8 (StringToSign ) ) );
+    Signature = Base64 ( HMAC-SHA256 ( Base64-Decode( ApplicationSecret ), UTF8 (StringToSign ) ) );
 
     StringToSign = HTTP-Verb + “\n” +
         Content-MD5 + “\n” +
@@ -153,13 +153,16 @@ E.g. given that _Callback URL_ is configured as `"https://callbacks.yourdomain.c
         x-timestamp:2014-09-24T10:59:41Z
         /sinch/callback/ace
 
-    Signature = Base64 ( HMAC-SHA256 ( ApplicationSecret, UTF8 (StringToSign ) ) )
+    Signature = Base64 ( HMAC-SHA256 ( Base64-Decode( ApplicationSecret ), UTF8 (StringToSign ) ) )
         Tg6fMyo8mj9pYfWQ9ssbx3Tc1BNC87IEygAfLbJqZb4=
 
     HTTP Authorization Header
         Authorization: Application 669E367E-6BBA-48AB-AF15-266871C28135:Tg6fMyo8mj9pYfWQ9ssbx3Tc1BNC87IEygAfLbJqZb4=
 
 
+> **Important**
+>
+> The Application Secret value must be base64-decoded from before it is used for signing.
 
 #### Callback Request Validation
 
