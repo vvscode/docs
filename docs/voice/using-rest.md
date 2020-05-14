@@ -58,7 +58,7 @@ To get the *applicationKey* and *applicationSecret*, you should create an applic
     applicationKey: 5F5C418A0F914BBC8234A9BF5EDDAD97
     applicationSecret: JViE5vDor0Sw3WllZka15Q==
 
-> **Note**
+> **Important**
 >
 > The Application Secret value must be base64-decoded from before it is used for signing.
 
