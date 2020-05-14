@@ -138,7 +138,15 @@ EU     | https://eu.conversation.api.sinch.com
 ### Postman collection
 
 Sinch offers a Postman collection for easy setup and testing during development.
-https://www.getpostman.com/collections/9a53d3fd87509fa83896
+https://www.getpostman.com/collections/fcadc55c0240ca834173  
+After importing the collection, fill in the following variables: ACCOUNT with your account name, APP with app id and APP_TOKEN with app token.  
+To fill WEBHOOK_URL, simply visit  
+https://webhook.site/  
+and use the generated link - the one under the 'Your unique URL' label.
+Values for other variables can be obtained by calling corresponding requests:
+* CONTACT - id of contact created by calling 'Create contact' request
+* WEBHOOK_ID - id of webhook created by calling 'Create webhook' request
+* CONVERSATION - Conversation is created automatically when sending a new message (for example with 'Text Message' request). Send a message, then call 'List conversations of App/Contact' to get id of conversation for this variable
 
 ### Errors
 
