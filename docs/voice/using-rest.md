@@ -28,6 +28,7 @@ Protected resources require a **signed** request. The signature is used to valid
 
   - **Application signed request** - Used to sign requests that are specific to a particular application. Most Sinch APIs require this type of authorization scheme.
   - **User signed request** - Used to create instances. It is mainly used to login with your email account in order to perform administrative tasks such as rented numbers administration.
+  - **Instance signed request** - Used to sign requests that are relevant only to your account and not specific to an application, such as administering rented numbers.
 
 #### Application Signed Request
 
@@ -181,6 +182,117 @@ To get the *applicationKey* and *applicationSecret*, you should create an applic
 By convention, the username and password need to be base64 encoded before being added to the header:
 
     Authorization = “basic” + " " + Base64 ( usernameAndPassword )
+
+
+#### Instance signed request
+
+In order to increase security and minimize the risk of app secrets to be compromised requests can be signed. The signature is used to validate that the client and check if the client is authorized to perform the operation. Security is increased since the secret is not actually part on the message sent over the wire.
+
+    Authorization = “Instance” + " " + INSTANCE_ID + “:” + INSTANCE_SIGNATURE
+
+    INSTANCE_SIGNATURE = Base64 ( Hmac-Sha256 ( INSTANCE_SECRET, Utf8 (STRING_TO_SIGN ) ) )
+
+    STRING_TO_SIGN = HTTP-Verb + “\n” +
+        CONTENT_MD5 + “\n” +
+        Content-Type + “\n” +
+        CanonicalizedHeaders + “\n” +
+        CanonicalizedResource;
+
+    CONTENT_MD5 = Base64 ( Md5 ( [BODY] ) )
+
+*INSTANCE\_SECRET*: INSTANCE\_SECRET is received from ‘\[POST\] /instances’ as a Base64 encoded byte array. It **must** be decoded from Base64 before being used for signing.
+
+*CanonicalizedHeaders* - Currently the only header required is “X-Timestamp”.
+
+*CanonicalizedResource* - The resource _path_. E.g. if your _Callback URL_ is configured as `"https://callbacks.yourdomain.com/sinch/callback"`, the `CanonicalizedResource` would be `/sinch/callback`.
+
+#### Instance Signing Example 1: Reserve a number
+
+**Request**
+
+    INSTANCE_ID: 00a3ffb1-0808-4dd4-9c7d-e4383d82e445 ~
+    INSTANCE_SECRET: bRo76GRddEyetgJDTgkLHA==
+
+    PUT v1/organisations/id/8888123/numbers/shop HTTP/1.1
+    Host: api.sinch.com
+    X-Timestamp: 2015-06-20T11:43:10.944Z
+    Content-Type: application/json
+
+    {“groupId”:13,“quantity”:1}
+
+**Content-MD5**
+
+Base64 ( HMAC-MD5 ( \[Body\] ) )
+
+    BKCnAAx1KstTZCD0hQLbkw==
+
+**StringToSign**
+
+    PUT
+    BKCnAAx1KstTZCD0hQLbkw==
+    application/json
+    x-timestamp:2015-06-20T11:43:05.270Z
+    /v1/organisations/id/8888123/numbers/shop
+
+**Signature**
+
+Base64 ( HMAC-SHA256 ( INSTANCE\_SECRET, UTF8( \[STRING\_TO\_SIGN\] ) )
+);
+
+    a6p7RYw8bMr3JuZh1LArvWTLJjIgCeQj5nsRZaXW7VQ=
+
+**Authorization
+    Header**
+
+    Authorization: Instance 00a3ffb1-0808-4dd4-9c7d-e4383d82e445:rMc5t4BI62b3o7JhPWX6/CslXYdbkC7rs5dyqBj9MIA=
+
+#### Instance Signing Example 2: Get numbers assigned to an application
+
+**Request**
+
+    INSTANCE_ID: 00a3ffb1-0808-4dd4-9c7d-e4383d82e445
+    INSTANCE_SECRET: bRo76GRddEyetgJDTgkLHA==
+
+    PUT v1/applications/key/bb7b4e39-4227-4913-8c81-2db4abb54fb3/numbers HTTP/1.1
+    Host: api.sinch.com
+    X-Timestamp: 2015-06-20T11:43:10.944Z
+    Content-Type: application/json
+
+    {}
+
+**Content-MD5**
+
+Base64 ( HMAC-MD5 ( \[Body\] ) )
+
+    null
+
+> **Note**
+>
+> The Content-MD5 does not need to be calculated when the body is empty.
+
+**StringToSign**
+
+    GET
+
+    application/json
+    x-timestamp:2015-06-20T11:43:10.944Z
+    /v1/applications/key/bb7b4e39-4227-4913-8c81-2db4abb54fb3/numbers
+
+> **Note**
+>
+> The newline character must still be included even when the request body is empty.
+
+**Signature**
+
+Base64 ( HMAC-SHA256 ( INSTANCE\_SECRET, UTF8( \[STRING\_TO\_SIGN\] ) )
+);
+
+    VE1UwyOa8r9DscyBWGVZ43qEDn+SGJGoNe2aN8WrR+8=
+
+**Authorization Header**
+
+    Authorization: Instance 00a3ffb1-0808-4dd4-9c7d-e4383d82e445:xz+CPft5te5h9bCFJAeCd1OKhSW2ZUFnmX4gcGuZqcY=
+
 
 ## Methods
 
