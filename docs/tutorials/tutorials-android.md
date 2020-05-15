@@ -5,11 +5,8 @@ excerpt: >-
   tutorials.
 next:
   pages:
-    - build-a-pet-monitor
     - build-a-simple-android-voip-calling-app-with-sinch
     - verify-phone-numbers-flash-call-verification
-    - how-to-add-an-android-header-in-a-calling-app
-    - phone-calls-with-android-contact-picker
     - call-a-phone-number-from-your-android-app-with-sinch
     - user-presence-system-for-a-calling-app
   description: Check out our Android tutorials here

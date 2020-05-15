@@ -5,8 +5,6 @@ next:
   pages:
     - tutorial-java-send-sms
     - tutorial-java-send-sms-group
-    - tutorial-java-spring-boot-delivery-reports
-    - maven-jenkins-artifactory-integration
   description: Check out our Java tutorials here
 ---
 ## Sinch ❤ Java
