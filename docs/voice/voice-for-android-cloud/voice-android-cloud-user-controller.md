@@ -1,11 +1,12 @@
 ---
 title: Push notifications
 excerpt: ''
-hidden: 'true'
+hidden: 'false'
 next:
   pages:
     - voice-android-cloud-application-authentication
 ---
+
 ### Push token registration via _UserController_ API
 
 > **Note**

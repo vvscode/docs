@@ -3,11 +3,12 @@ title: Local and Remote Push Notifications
 excerpt: >-
   Notify users of incoming calls by using local notifications or a remote push
   notification in iOS.
-hidden: 'true'
+hidden: 'false'
 next:
   pages:
     - voice-ios-cloud-audio-handling
 ---
+
 When an application is no longer in the foreground, the user must be notified of an incoming call by means of either a local notification or a remote push notification.
 
 If the app is allowed to execute while in background then the Sinch SDK will primarily use local notifications to initially notify the user. Whether the app is allowed to execute while in background depends on whether you as a developer choose to enable [VoIP push notifications](doc:voice-ios-cloud-local-and-remote-push-notifications#enabling-voip-push-notifications) and/or [Active Connection in Background](doc:voice-ios-cloud-miscellaneous#active-connection-in-background). If only regular remote push notifications are used then those will also be used to notify the user (as a regular remote push notification will be displayed to the user by the iOS without handing over any control to the application).

@@ -1,8 +1,9 @@
 ---
 title: Miscellaneous
 excerpt: ''
-hidden: 'true'
+hidden: 'false'
 ---
+
 ## Minimum requirements
 
 We officially support the 3 latest major iOS versions. You can try older versions but there are no guarantees it will work as expected.

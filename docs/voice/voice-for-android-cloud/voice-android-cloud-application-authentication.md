@@ -1,11 +1,12 @@
 ---
 title: Application authentication
 excerpt: Application authentication with the Sinch SDK.
-hidden: 'true'
+hidden: 'false'
 next:
   pages:
     - voice-android-cloud-authentication-expiration
 ---
+
 When you initiate `SinchClient`, or register user via `UserController` you have to provide _user identity_. The first time the application instance and the Sinch client are running on behalf of a particular user, it is required to register against the Sinch service. The step of registering a user identity against the Sinch service requires the application instance to provide a token that authenticates the _Application_ and grants permission (authorizes) the user to register. Once the application instance has successfully registered the user identity, the client will have obtained the necessary credentials to perform further authorized requests on behalf of the _Application_ and for that specific user to make and receive calls.
 
 ## Token-based User Registration - Overview
@@ -42,13 +43,13 @@ Example of JWT header:
 
 The JWT must contain the following _claims_:
 
-| Claim   | Value / Description                                                                 | Note |
-| :------ | :---------------------------------------------------------------------------------- | ---- |
-| `iss`   | `//rtc.sinch.com/applications/{APPLICATION_KEY}`                                    |
-| `sub`   | `//rtc.sinch.com/applications/{APPLICATION_KEY}/users/{USER_ID}`                    |
-| `iat`   | See [JWT RFC 7519 section-4.1.1](https://tools.ietf.org/html/rfc7519#4.1.1) |
-| `exp`   | See [JWT RFC 7519 section-4.1.4](https://tools.ietf.org/html/rfc7519#4.1.4) |
-| `nonce` | A unique cryptographic [nonce](https://en.wikipedia.org/wiki/Cryptographic_nonce)   |
+| Claim   | Value / Description                                                               | Note |
+| :------ | :-------------------------------------------------------------------------------- | ---- |
+| `iss`   | `//rtc.sinch.com/applications/{APPLICATION_KEY}`                                  |
+| `sub`   | `//rtc.sinch.com/applications/{APPLICATION_KEY}/users/{USER_ID}`                  |
+| `iat`   | See [JWT RFC 7519 section-4.1.1](https://tools.ietf.org/html/rfc7519#4.1.1)       |
+| `exp`   | See [JWT RFC 7519 section-4.1.4](https://tools.ietf.org/html/rfc7519#4.1.4)       |
+| `nonce` | A unique cryptographic [nonce](https://en.wikipedia.org/wiki/Cryptographic_nonce) |
 
 **IMPORTANT**: The expiration time for the token itself (`exp`) should be set so that the _Time-to-Live_ of the token is not less than 1 minute.
 

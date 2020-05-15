@@ -3,11 +3,12 @@ title: Audio handling
 excerpt: >-
   The details on how the Sinch Voice /w Video SDK manages audio during calls.
   Read more.
-hidden: 'true'
+hidden: 'false'
 next:
   pages:
     - voice-ios-cloud-application-authentication
 ---
+
 If the application plays audio that does not originate from the Sinch SDK, certain guidelines should be followed. Additional information on audio session-related topics is available in the [Audio Session Programming Guide](http://developer.apple.com/library/ios/#documentation/Audio/Conceptual/AudioSessionProgrammingGuide/Introduction Introduction.html).
 
 ## Audio sessions

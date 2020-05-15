@@ -1,11 +1,12 @@
 ---
 title: Push notifications
 excerpt: ''
-hidden: 'true'
+hidden: 'false'
 next:
   pages:
     - voice-android-cloud-user-controller
 ---
+
 ## Receiving incoming calls via push notifications
 
 The application may receive incoming calls only when:

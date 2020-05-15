@@ -1,37 +1,40 @@
 ---
 title: Application authentication with expiration time
 excerpt: Application authentication with the Sinch SDK.
-hidden: 'true'
+hidden: 'false'
 next:
   pages:
     - voice-ios-cloud-application-authentication-expiration
 ---
+
 **User Instance (or Instance)**: is an _Application instance_ on a particular device registered with some _user identity_ against Sinch Service. A User might be registered on several devices, effectively having several registered _User Instances_.
 
-Sometimes it is desirable to limit the time-to-live (TTL) of the _User Instance_ by providing an expiration date and time while registering the _user identity_ against Sinch Service. When such _Instance_ is expired it is deleted from the Sinch backend, effectively making impossible to either make or receive calls from the particular device the _Instance_ was registered from. 
+Sometimes it is desirable to limit the time-to-live (TTL) of the _User Instance_ by providing an expiration date and time while registering the _user identity_ against Sinch Service. When such _Instance_ is expired it is deleted from the Sinch backend, effectively making impossible to either make or receive calls from the particular device the _Instance_ was registered from.
 
 **IMPORTANT**: since each registered _User Instance_ is tied to a particular device, the expiration of the one _User Instance_ does not automatically makes other _Instances_ tied to the same user identity to expire.
 
-**IMPORTANT**: It is also possible to extend the expiration date while the _User Instance_ is not yet expired, but it is prohibited to indefinitely extend the expiration date of the _User Instance_ that was initially registered with _non-infinite_ TTL. In other words:  if the _Instance_ was initially registered with limited TTL, it expiration update should also have limited TTL.
+**IMPORTANT**: It is also possible to extend the expiration date while the _User Instance_ is not yet expired, but it is prohibited to indefinitely extend the expiration date of the _User Instance_ that was initially registered with _non-infinite_ TTL. In other words: if the _Instance_ was initially registered with limited TTL, it expiration update should also have limited TTL.
 
 ## Authenticating With Expiration Time
 
-To set up the expiration data of the _User Instance_ one extra claim should be added to the _JWT_ registration token: 
+To set up the expiration data of the _User Instance_ one extra claim should be added to the _JWT_ registration token:
+
 ```
 sinch:rtc:instance:exp
 ```
+
 With it payload should have the following claims:
 
 The JWT must contain the following _claims_:
 
-| Claim   | Value / Description                                                                 | Note |
-| :------ | :---------------------------------------------------------------------------------- | ---- |
-| `iss`   | `//rtc.sinch.com/applications/{APPLICATION_KEY}`                                    |
-| `sub`   | `//rtc.sinch.com/applications/{APPLICATION_KEY}/users/{USER_ID}`                    |
-| `iat`   | See [JWT RFC 7519 section-4.1.1](https://tools.ietf.org/html/rfc7519#4.1.1) |
-| `exp`   | See [JWT RFC 7519 section-4.1.4](https://tools.ietf.org/html/rfc7519#4.1.4) |
-| `nonce` | A unique cryptographic [nonce](https://en.wikipedia.org/wiki/Cryptographic_nonce)   |
-| `sinch:rtc:instance:exp`| Instance Expiration Time in the same format as `iat` and `exp` |
+| Claim                    | Value / Description                                                               | Note |
+| :----------------------- | :-------------------------------------------------------------------------------- | ---- |
+| `iss`                    | `//rtc.sinch.com/applications/{APPLICATION_KEY}`                                  |
+| `sub`                    | `//rtc.sinch.com/applications/{APPLICATION_KEY}/users/{USER_ID}`                  |
+| `iat`                    | See [JWT RFC 7519 section-4.1.1](https://tools.ietf.org/html/rfc7519#4.1.1)       |
+| `exp`                    | See [JWT RFC 7519 section-4.1.4](https://tools.ietf.org/html/rfc7519#4.1.4)       |
+| `nonce`                  | A unique cryptographic [nonce](https://en.wikipedia.org/wiki/Cryptographic_nonce) |
+| `sinch:rtc:instance:exp` | Instance Expiration Time in the same format as `iat` and `exp`                    |
 
 ### An example of a possible JWT Header and Payload
 
@@ -54,7 +57,7 @@ The JWT must contain the following _claims_:
 }
 ```
 
-**IMPORTANT**: miminal TTL of the _Instance_ is 48 hours. In other words: `sinch:rtc:instance:exp` - `iat` >= 48 * 3600
+**IMPORTANT**: miminal TTL of the _Instance_ is 48 hours. In other words: `sinch:rtc:instance:exp` - `iat` >= 48 \* 3600
 
 ## Updating the _User Instance_ expiry time
 
@@ -67,7 +70,7 @@ The _automatic update_ is triggered on the `SinchClient` start if the proximity 
 
 **IMPORTANT**: `SinchClient` does not schedule automatic _Instance_ expiry updates. It checks the condition on each start, so if the client was not run between _automatic expiry update data_ and _expiration date_ - the _User Instance_ TTL will not be updated and it will expire.
 
-The `SinchClient` will fire a callback `onRegistrationCredentialsRequired()` the same way it does during the initial registration (see previous topic __Application authentication__). 
+The `SinchClient` will fire a callback `onRegistrationCredentialsRequired()` the same way it does during the initial registration (see previous topic **Application authentication**).
 
 If the update of the _User Instance_ expiration date is not desirable- meet the callback with `registerFailed()` - the _Instance_ will still be valid, but the old expiration date, and thus eventually expire.
 
@@ -75,7 +78,7 @@ If the update is desirable, provide a new JWT token with relevant `sinch:rtc:ins
 
 ### Manual Update
 
-There is no API to trigger of the _Instance Expiry_ manually, but one can achieve the same result by _unregistering_ and _re-registering_  again providing new expiration date in the JWT token.
+There is no API to trigger of the _Instance Expiry_ manually, but one can achieve the same result by _unregistering_ and _re-registering_ again providing new expiration date in the JWT token.
 
 ## When _Instance_ Expires
 

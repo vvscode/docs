@@ -3,11 +3,12 @@ title: Sinch Client
 excerpt: >-
   The Sinch SDK is a product that makes adding voice and video calling to mobile
   apps easy. Continue reading this step-by-step guide now.
-hidden: 'true'
+hidden: 'false'
 next:
   pages:
     - voice-android-cloud-calling
 ---
+
 The _SinchClient_ is the Sinch SDK entry point. It is used to configure the user’s and device’s capabilities, as well as to provide access to feature classes such as the _CallClient_, _AudioController_ and _VideoController_.
 
 ## Create the _SinchClient_
