@@ -5,6 +5,12 @@ excerpt: >-
   fixes.
 ---
 
+<h3>2020/05/15 | SINCH SDK IOS 4.2.5</h3>
+  - Fix ObjectiveC symbol clashes between internal and system
+    WebRTC libraries.
+  - Fix crash in iOS 13 caused by method 
+    endGeneratingDeviceOrientationNotifications in WebRTC.
+
 <h3>2020/04/15 | SINCH SDK IOS 4.2.4</h3>
  - Fix potential crash in -[SINVideoView initWithFrame:name:]
 
@@ -19,7 +25,6 @@ excerpt: >-
 
 <h3>2020/02/10 | SINCH SDK IOS 4.2.0</h3>
  - Re-add support for legacy push data: -[SINCallDelegate call:shouldSendPushNotifications:] -[SINClient registerPushNotificationData:] -[SINClient unregisterPushNotificationData]
-
 
 > **Note** These APIs will be removed in the next major version of the Sinch RTC SDK (5.x). Please migrate to use the "Sinch Managed Push Notifications" functionality.
 
