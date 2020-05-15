@@ -1,7 +1,7 @@
 ---
 title: Application authentication with expiration time
 excerpt: Application authentication with the Sinch SDK.
-hidden: 'false'
+hidden: false
 next:
   pages:
     - voice-android-cloud-miscellaneous

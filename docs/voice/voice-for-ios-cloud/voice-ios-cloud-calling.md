@@ -4,7 +4,7 @@ excerpt: >-
   Set up voice calling with the Sinch Voice and Video SDK. The SDK supports four
   types of calls: app-to-app (audio or video), app-to-phone, app-to-sip and
   conference calls.
-hidden: 'false'
+hidden: false
 next:
   pages:
     - voice-ios-cloud-video-calling

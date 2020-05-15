@@ -4,7 +4,7 @@ excerpt: >-
   Voice calling with Android Voice and Video SDK. Set up calling between
   applications, from application to phone, app to SIP and conference calls. Get
   more information here.
-hidden: 'false'
+hidden: false
 next:
   pages:
     - voice-android-cloud-video-calling

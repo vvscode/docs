@@ -1,7 +1,7 @@
 ---
 title: Active connection
 excerpt: ''
-hidden: 'false'
+hidden: false
 next:
   pages:
     - voice-android-cloud-application-authentication

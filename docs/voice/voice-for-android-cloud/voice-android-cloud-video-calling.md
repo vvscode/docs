@@ -3,7 +3,7 @@ title: Video Calling
 excerpt: >-
   Set up video calls with the Sinch Android Voice with Video SDK. Get more
   information here.
-hidden: 'false'
+hidden: false
 next:
   pages:
     - voice-android-cloud-push-notifications

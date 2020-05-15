@@ -3,7 +3,7 @@ title: Audio handling
 excerpt: >-
   The details on how the Sinch Voice /w Video SDK manages audio during calls.
   Read more.
-hidden: 'false'
+hidden: false
 next:
   pages:
     - voice-ios-cloud-application-authentication

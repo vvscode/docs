@@ -1,7 +1,7 @@
 ---
 title: Push notifications
 excerpt: ''
-hidden: 'false'
+hidden: false
 next:
   pages:
     - voice-android-cloud-user-controller

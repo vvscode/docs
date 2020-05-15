@@ -1,7 +1,7 @@
 ---
 title: Sinch Client
 excerpt: ''
-hidden: 'false'
+hidden: false
 next:
   pages:
     - voice-ios-cloud-calling
