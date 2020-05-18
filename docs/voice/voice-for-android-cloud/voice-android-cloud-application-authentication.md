@@ -115,9 +115,9 @@ To provide the registration token to `UserController` use the similar sheme:
 ```java
 UserController uc = Sinch.getUserControllerBuilder()
                 .context(getApplicationContext())
-                .applicationKey(mCurrentEnvironment.appKey)
-                .userId(mCurrentEnvironment.userId)
-                .environmentHost(mCurrentEnvironment.env)
+                .applicationKey("<application key>")
+                .userId("<user id>")
+                .environmentHost("ocra.api.sinch.com")
                 .build();
         uc.registerUser(userRegistrationCallback, pushTokenRegistrationCallback);
 ```
