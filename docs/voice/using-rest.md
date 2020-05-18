@@ -14,7 +14,7 @@ The client must send a custom header *x-timestamp* (time) with each request that
 
 *Example*
 
-    X-Timestamp: 2014-06-02T15:39:31.2729234Z
+    x-timestamp: 2014-06-02T15:39:31.2729234Z
 
 ### Public Resources
 
@@ -48,7 +48,7 @@ Use the following (pseudocode) to sign a request for the Sinch Platform. The res
 
     Content-MD5 = Base64 ( MD5 ( UTF8 ( [BODY] ) ) )
 
-*CanonicalizedHeaders*: Currently the only header required is “X-Timestamp”.
+*CanonicalizedHeaders*: Currently the only header required is “x-timestamp”.
 
 *CanonicalizedResource* - The resource _path_.
 
@@ -68,7 +68,7 @@ To get the *applicationKey* and *applicationSecret*, you should create an applic
 For the following POST request to the protected resource /v1/sms/+46700000000,
 
     POST /v1/sms/+46700000000
-    X-Timestamp: 2014-06-04T13:41:58Z
+    x-timestamp: 2014-06-04T13:41:58Z
     Content-Type: application/json
 
     {“message”:“Hello world”}
@@ -101,7 +101,7 @@ the signature should be formed like this:
         CanonicalizedHeaders + “\n” +
         CanonicalizedResource;
 
-**CanonicalizedHeaders**: Currently the only header required is “X-Timestamp”.  
+**CanonicalizedHeaders**: Currently the only header required is “x-timestamp”.  
 
 ### Callback Request Signing
 
@@ -201,7 +201,7 @@ In order to increase security and minimize the risk of app secrets to be comprom
 
 *INSTANCE\_SECRET*: INSTANCE\_SECRET is received from ‘\[POST\] /instances’ as a Base64 encoded byte array. It **must** be decoded from Base64 before being used for signing.
 
-*CanonicalizedHeaders* - Currently the only header required is “X-Timestamp”.
+*CanonicalizedHeaders* - Currently the only header required is “x-timestamp”.
 
 *CanonicalizedResource* - The resource _path_.
 
@@ -214,7 +214,7 @@ In order to increase security and minimize the risk of app secrets to be comprom
 
     PUT v1/organisations/id/8888123/numbers/shop HTTP/1.1
     Host: api.sinch.com
-    X-Timestamp: 2015-06-20T11:43:10.944Z
+    x-timestamp: 2015-06-20T11:43:10.944Z
     Content-Type: application/json
 
     {“groupId”:13,“quantity”:1}
@@ -254,7 +254,7 @@ Base64 ( HMAC-SHA256 ( INSTANCE\_SECRET, UTF8( \[STRING\_TO\_SIGN\] ) )
 
     PUT v1/applications/key/bb7b4e39-4227-4913-8c81-2db4abb54fb3/numbers HTTP/1.1
     Host: api.sinch.com
-    X-Timestamp: 2015-06-20T11:43:10.944Z
+    x-timestamp: 2015-06-20T11:43:10.944Z
     Content-Type: application/json
 
     {}

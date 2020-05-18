@@ -42,11 +42,11 @@ When logging in, you should always pass in the header the “number administrati
 > Always use this exact key in the log in step. Do not use any of your app keys.
 
     Authorization: Application 669762D5-2B10-44E0-8418-BC9EE4457555
-    X-Timestamp: {now}
+    x-timestamp: {now}
 
     eg:
     Authorization: Application 669762D5-2B10-44E0-8418-BC9EE4457555
-    X-Timestamp: 2015-06-20T11:43:10.944Z
+    x-timestamp: 2015-06-20T11:43:10.944Z
 
 ### Request
 
@@ -114,11 +114,11 @@ As a second step, you need to create an instance with the ‘authorization’ st
 This is a protected resource and requires a [user signed request](doc:using-rest#user-signed-request).
 
     Authorization: User {authorization}
-    X-Timestamp: {now}
+    x-timestamp: {now}
 
     eg:
     Authorization: User eyJhcHBsaWNhdGlvbktleSI6IllPVVJfQVBQTElDQVRJT05fS0VZIiwiaWRlbnRpdHkiOnsidHlwZSI6ImVtYWlsIiwiZW5kcG9pbnQiOiJhZGRyZXNzQGV4YW1wbGUuY29tIn0sImNyZWF0ZWQiOiIyMDE1LTA2LTI0VDA4OjMyOjMyLjk0MTc2MDVaIn0=:Uc3UQ6tnextCCXiuieizBGNf16SDKFGFWMpu6LKbOwA=
-    X-Timestamp: 2015-06-20T11:43:10.944Z
+    x-timestamp: 2015-06-20T11:43:10.944Z
 
 ### Request
 
@@ -179,11 +179,11 @@ With the instance that you created you can now perform instance signed requests,
 This is a protected resource and requires an [instance signed request](doc:using-rest#instance-signed-request).
 
     Authorization: Instance {instance ID}:{instance signature}
-    X-Timestamp: {now}
+    x-timestamp: {now}
 
     eg:
     Authorization: Instance 00a3ffb1-0808-4dd4-9c7d-e4383d82e445:bb9i9SGuw8mPspPF6WHzIZxw4yQxdOwGaDliMi+IhCU=
-    X-Timestamp: 2015-06-20T11:43:10.944Z
+    x-timestamp: 2015-06-20T11:43:10.944Z
 
 ### Request
 
@@ -231,11 +231,11 @@ This API returns all available numbers, so that you can pick which ones you want
 This is a protected resource and requires an [instance signed request](doc:using-rest#instance-signed-request).
 
     Authorization: Instance {instance ID}:{instance signature}
-    X-Timestamp: {now}
+    x-timestamp: {now}
 
     eg:
     Authorization: Instance 00a3ffb1-0808-4dd4-9c7d-e4383d82e445:jYJQFcgc1uh7DO2uQZyLu7rpxOc3jXjcuQNKWiHFJiI=
-    X-Timestamp: 2015-06-20T11:43:10.944Z
+    x-timestamp: 2015-06-20T11:43:10.944Z
 
 ### Request
 
@@ -339,11 +339,11 @@ To rent numbers, you must first reserve them and then check out. This endpoint a
 This is a protected resource and requires an [instance signed request](doc:using-rest#instance-signed-request).
 
     Authorization: Instance {instance ID}:{instance signature}
-    X-Timestamp: {now}
+    x-timestamp: {now}
 
     eg:
     Authorization: Instance 00a3ffb1-0808-4dd4-9c7d-e4383d82e445:a6p7RYw8bMr3JuZh1LArvWTLJjIgCeQj5nsRZaXW7VQ=
-    X-Timestamp: 2015-06-20T11:43:10.944Z
+    x-timestamp: 2015-06-20T11:43:10.944Z
 
 ### Request
 
@@ -402,11 +402,11 @@ This endpoints allows you to check out the numbers that you have reserved, so th
 This is a protected resource and requires an [instance signed request](doc:using-rest#instance-signed-request).
 
     Authorization: Instance {instance ID}:{instance signature}
-    X-Timestamp: {now}
+    x-timestamp: {now}
 
     eg:
     Authorization: Instance 00a3ffb1-0808-4dd4-9c7d-e4383d82e445:FN0oGGh6UAzdP8WVVwgbhXqUM2KJpHoWgjcgUKpS3bU=
-    X-Timestamp: 2015-06-20T11:43:10.944Z
+    x-timestamp: 2015-06-20T11:43:10.944Z
 
 ### Request
 
@@ -452,11 +452,11 @@ This endpoint lists all the numbers that are assigned to your account.
 This is a protected resource and requires an [instance signed request](doc:using-rest#instance-signed-request).
 
     Authorization: Instance {instance ID}:{instance signature}
-    X-Timestamp: {now}
+    x-timestamp: {now}
 
     eg:
     Authorization: Instance 00a3ffb1-0808-4dd4-9c7d-e4383d82e445:PToDaAs7AiJDqGKZHCl3mayEigGWodVfg4fSlkAYLHg=
-    X-Timestamp: 2015-06-20T11:43:10.944Z
+    x-timestamp: 2015-06-20T11:43:10.944Z
 
 ### Request
 
@@ -543,11 +543,11 @@ This endpoint lists all numbers that are assigned to a particular app.
 This is a protected resource and requires an [instance signed request](doc:using-rest#instance-signed-request).
 
     Authorization: Instance {instance ID}:{instance signature}
-    X-Timestamp: {now}
+    x-timestamp: {now}
 
     eg:
     Authorization: Instance 00a3ffb1-0808-4dd4-9c7d-e4383d82e445:VE1UwyOa8r9DscyBWGVZ43qEDn+SGJGoNe2aN8WrR+8=
-    X-Timestamp: 2015-06-20T11:43:10.944Z
+    x-timestamp: 2015-06-20T11:43:10.944Z
 
 ### Request
 
@@ -628,11 +628,11 @@ A new endpoint to only add a specific number to an application without overwriti
 This is a protected resource and requires an [instance signed request](doc:using-rest#instance-signed-request).
 
     Authorization: Instance {instance ID}:{instance signature}
-    X-Timestamp: {now}
+    x-timestamp: {now}
 
     eg:
     Authorization: Instance 00a3ffb1-0808-4dd4-9c7d-e4383d82e445:6mLYthlkatoYKkq15oI/RuwtC8sIwfJsPrSHkOLDmUM=
-    X-Timestamp: 2015-06-20T11:43:10.944Z
+    x-timestamp: 2015-06-20T11:43:10.944Z
 
 ### Request
 
@@ -727,11 +727,11 @@ With this API you can remove (unassign) a number from your application. They wil
 This is a protected resource and requires an [instance signed request](doc:using-rest#instance-signed-request).
 
     Authorization: Instance {instance ID}:{instance signature}
-    X-Timestamp: {now}
+    x-timestamp: {now}
 
     eg:
     Authorization: Instance 00a3ffb1-0808-4dd4-9c7d-e4383d82e445:EA85F4qGFB0+tYZUh68g22R8DgtzxpsCXttLq1NKPgM=
-    X-Timestamp: 2015-06-20T11:43:10.944Z
+    x-timestamp: 2015-06-20T11:43:10.944Z
 
 ### Request
 

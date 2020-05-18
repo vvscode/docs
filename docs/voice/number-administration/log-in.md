@@ -23,11 +23,11 @@ When logging in, you should always pass in the header the “number administrati
 > Always use this exact key in the log in step. Do not use any of your app keys.
 
     Authorization: Application 669762D5-2B10-44E0-8418-BC9EE4457555
-    X-Timestamp: {now}
+    x-timestamp: {now}
 
     eg:
     Authorization: Application 669762D5-2B10-44E0-8418-BC9EE4457555
-    X-Timestamp: 2015-06-20T11:43:10.944Z
+    x-timestamp: 2015-06-20T11:43:10.944Z
 
 ## Request
 
