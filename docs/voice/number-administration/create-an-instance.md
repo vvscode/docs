@@ -13,11 +13,11 @@ As a second step, you need to create an instance with the ‘authorization’ st
 This is a protected resource and requires a [user signed request](doc:using-rest#user-signed-request).
 
     Authorization: User {authorization}
-    X-Timestamp: {now}
+    x-timestamp: {now}
 
     eg:
     Authorization: User eyJhcHBsaWNhdGlvbktleSI6IllPVVJfQVBQTElDQVRJT05fS0VZIiwiaWRlbnRpdHkiOnsidHlwZSI6ImVtYWlsIiwiZW5kcG9pbnQiOiJhZGRyZXNzQGV4YW1wbGUuY29tIn0sImNyZWF0ZWQiOiIyMDE1LTA2LTI0VDA4OjMyOjMyLjk0MTc2MDVaIn0=:Uc3UQ6tnextCCXiuieizBGNf16SDKFGFWMpu6LKbOwA=
-    X-Timestamp: 2015-06-20T11:43:10.944Z
+    x-timestamp: 2015-06-20T11:43:10.944Z
 
 ## Request
 

@@ -13,11 +13,11 @@ To rent numbers, you must first reserve them and then check out. This endpoint a
 This is a protected resource and requires an [instance signed request](doc:using-rest#instance-signed-request).
 
     Authorization: Instance {instance ID}:{instance signature}
-    X-Timestamp: {now}
+    x-timestamp: {now}
 
     eg:
     Authorization: Instance 00a3ffb1-0808-4dd4-9c7d-e4383d82e445:a6p7RYw8bMr3JuZh1LArvWTLJjIgCeQj5nsRZaXW7VQ=
-    X-Timestamp: 2015-06-20T11:43:10.944Z
+    x-timestamp: 2015-06-20T11:43:10.944Z
 
 ## Request
 
