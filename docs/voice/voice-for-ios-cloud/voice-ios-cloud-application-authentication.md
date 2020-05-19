@@ -35,7 +35,7 @@ Example of JWT header:
 ```
 {
   "alg": "HS256",
-  "kid": "hkdfv1-20200102"
+  "kid": "hkdfv1-20180102"
 }
 ```
 
@@ -68,7 +68,55 @@ The _JWT_ should be signed using a _signing key_ derived from the _Sinch Applica
 signingKey = HMAC256(BASE64-DECODE(applicationSecret), UTF8-ENCODE(FormatDate(now, "YYYYMMDD")))
 ```
 
-For examples on how to implement this in various languages, see [https://github.com/sinch/sinch-rtc-api-auth-examples](https://github.com/sinch/sinch-rtc-api-auth-examples).
+### Examples
+
+Given the following input:
+
+- _Application Key_ = `a32e5a8d-f7d8-411c-9645-9038e8dd051d`
+- _Application Secret_ = `ax8hTTQJF0OPXL32r1LHMA==` (in _base64_ encoded format)
+- _User ID_ = `foo`
+- _nonce_ = `6b438bda-2d5c-4e8c-92b0-39f20a94b34e`
+- Current time: `2018-01-02 03:04:05 _UTC_`
+- JWT epxiry = 600 seconds (`exp` will be set to 600 seconds after `iat`)
+
+We can construct a JWT as follows:
+
+__JWT Header__:
+
+```
+{
+  "alg": "HS256",
+  "kid": "hkdfv1-20180102"
+}
+```
+
+__JWT Payload__:
+
+```
+{
+  "iss": "//rtc.sinch.com/applications/a32e5a8d-f7d8-411c-9645-9038e8dd051d",
+  "sub": "//rtc.sinch.com/applications/a32e5a8d-f7d8-411c-9645-9038e8dd051d/users/foo",
+  "iat": 1514862245,
+  "exp": 1514862845,
+  "nonce":"6b438bda-2d5c-4e8c-92b0-39f20a94b34e"
+}
+```
+
+__Derived Signing Key__:
+
+The derived signing key would in this case be `AZj5EsS8S7wb06xr5jERqPHsraQt3w/+Ih5EfrhisBQ=` (_base64_ encoded format)
+
+__Final Encoded JWT__:
+
+> **Note**
+>
+> JWT below is only one of many possible JWT encodings of the input above. The example below is with the JSON header and payload as shown above, but with compact/minified JSON serialization and with dictionary key ordering preserved.
+
+```
+eyJhbGciOiJIUzI1NiIsImtpZCI6ImhrZGZ2MS0yMDE4MDEwMiJ9.eyJpc3MiOiIvL3J0Yy5zaW5jaC5jb20vYXBwbGljYXRpb25zL2EzMmU1YThkLWY3ZDgtNDExYy05NjQ1LTkwMzhlOGRkMDUxZCIsInN1YiI6Ii8vcnRjLnNpbmNoLmNvbS9hcHBsaWNhdGlvbnMvYTMyZTVhOGQtZjdkOC00MTFjLTk2NDUtOTAzOGU4ZGQwNTFkL3VzZXJzL2ZvbyIsImlhdCI6MTUxNDg2MjI0NSwiZXhwIjoxNTE0ODYyODQ1LCJub25jZSI6IjZiNDM4YmRhLTJkNWMtNGU4Yy05MmIwLTM5ZjIwYTk0YjM0ZSJ9.EUltTTD4fxhkwCgLgj6qSQXKawpwQ952Ywm3OwQSARo
+```
+
+More detailed examples on how to implement this in various languages, including reference data for unit tests, is available at [https://github.com/sinch/sinch-rtc-api-auth-examples](https://github.com/sinch/sinch-rtc-api-auth-examples).
 
 For additional information about _JWT_, along with a list of available libraries for generating signed _JWTs_, see [https://jwt.io](https://jwt.io). For detailed information about the _JWT_ specification, see [https://tools.ietf.org/html/rfc7519](https://tools.ietf.org/html/rfc7519).
 
