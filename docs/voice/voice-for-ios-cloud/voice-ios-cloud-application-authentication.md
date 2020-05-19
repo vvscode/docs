@@ -43,10 +43,10 @@ Example of JWT header:
 
 The JWT must contain the following _claims_:
 
-| Claim   | Value / Description                                                               | Note |
-| :------ | :-------------------------------------------------------------------------------- | ---- |
-| `iss`   | `//rtc.sinch.com/applications/{APPLICATION_KEY}`                                  |
-| `sub`   | `//rtc.sinch.com/applications/{APPLICATION_KEY}/users/{USER_ID}`                  |
+| Claim   | Value / Description                                                               |
+| :------ | :-------------------------------------------------------------------------------- |
+| `iss`   | `//rtc.sinch.com/applications/{APPLICATION_KEY}`                        |
+| `sub`   | `//rtc.sinch.com/applications/{APPLICATION_KEY}/users/{USER_ID}`     |
 | `iat`   | See [JWT RFC 7519 section-4.1.1](https://tools.ietf.org/html/rfc7519#4.1.1)       |
 | `exp`   | See [JWT RFC 7519 section-4.1.4](https://tools.ietf.org/html/rfc7519#4.1.4)       |
 | `nonce` | A unique cryptographic [nonce](https://en.wikipedia.org/wiki/Cryptographic_nonce) |
