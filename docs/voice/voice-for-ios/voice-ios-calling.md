@@ -4,10 +4,12 @@ excerpt: >-
   Set up voice calling with the Sinch Voice and Video SDK. The SDK supports four
   types of calls: app-to-app (audio or video), app-to-phone, app-to-sip and
   conference calls.
+hidden: false
 next:
   pages:
     - voice-ios-video-calling
 ---
+
 The Sinch SDK supports four types of calls: *app-to-app (audio or video)*, *app-to-phone*, *app-to-sip* and *conference* calls. The SINCallClient is the entry point for the calling functionality of the Sinch SDK.
 
 Calls are placed through the `SINCallClient` and events are received using the `SINCallClientDelegate`. The call client is owned by the SinchClient and accessed using `[sinchClient callClient]`. Calling is not enabled by default.

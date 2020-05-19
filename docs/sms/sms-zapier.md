@@ -3,7 +3,7 @@ title: Getting started with Zapier and Sinch Preview
 excerpt: >-
   This guide will show you how to send and receive SMS with the Sinch API in
   minutes.
-hidden: 'true'
+hidden: false
 ---
 
 > **Note**
