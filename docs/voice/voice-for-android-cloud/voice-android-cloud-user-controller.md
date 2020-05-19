@@ -110,9 +110,9 @@ When you want to _logout_ and stop receiving incoming calls via push, unregister
 ```java
     UserController uc = Sinch.getUserControllerBuilder()
         .context(getApplicationContext())
-        .applicationKey(mCurrentEnvironment.appKey)
-        .userId(mCurrentEnvironment.userId)
-        .environmentHost(mCurrentEnvironment.env)
+        .applicationKey("<application key>")
+        .userId("<user id>")
+        .environmentHost("ocra.api.sinch.com")
         .build();
     uc.unregisterPushToken();
 ```
