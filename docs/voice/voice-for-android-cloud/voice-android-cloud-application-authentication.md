@@ -43,10 +43,10 @@ Example of JWT header:
 
 The JWT must contain the following _claims_:
 
-| Claim   | Value / Description                                                               | Note |
-| :------ | :-------------------------------------------------------------------------------- | ---- |
-| `iss`   | `//rtc.sinch.com/applications/{APPLICATION_KEY}`                                  |
-| `sub`   | `//rtc.sinch.com/applications/{APPLICATION_KEY}/users/{USER_ID}`                  |
+| Claim   | Value / Description                                                               |
+| :------ | :-------------------------------------------------------------------------------- |
+| `iss`   | `//rtc.sinch.com/applications/{APPLICATION_KEY}`                             |
+| `sub`   | `//rtc.sinch.com/applications/{APPLICATION_KEY}/users/{USER_ID}`           |
 | `iat`   | See [JWT RFC 7519 section-4.1.1](https://tools.ietf.org/html/rfc7519#4.1.1)       |
 | `exp`   | See [JWT RFC 7519 section-4.1.4](https://tools.ietf.org/html/rfc7519#4.1.4)       |
 | `nonce` | A unique cryptographic [nonce](https://en.wikipedia.org/wiki/Cryptographic_nonce) |
@@ -68,7 +68,7 @@ The _JWT_ should be signed using a _signing key_ derived from the _Sinch Applica
 signingKey = HMAC256(BASE64-DECODE(applicationSecret), UTF8-ENCODE(FormatDate(now, "YYYYMMDD")))
 ```
 
-Also see `JWT.java` in the Sinch SDK sample apps for a detailed example of constructing the token.
+For examples on how to implement this in various languages, see [https://github.com/sinch/sinch-rtc-api-auth-examples](https://github.com/sinch/sinch-rtc-api-auth-examples).
 
 For additional information about _JWT_, along with a list of available libraries for generating signed _JWTs_, see [https://jwt.io](https://jwt.io). For detailed information about the _JWT_ specification, see [https://tools.ietf.org/html/rfc7519](https://tools.ietf.org/html/rfc7519).
 
