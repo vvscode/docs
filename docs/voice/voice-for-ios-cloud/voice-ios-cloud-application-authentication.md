@@ -76,7 +76,7 @@ Given the following input:
 - _Application Secret_ = `ax8hTTQJF0OPXL32r1LHMA==` (in _base64_ encoded format)
 - _User ID_ = `foo`
 - _nonce_ = `6b438bda-2d5c-4e8c-92b0-39f20a94b34e`
-- Current time: `2018-01-02 03:04:05 _UTC_`
+- Current time: `2018-01-02 03:04:05 UTC`
 - JWT expiry = 600 seconds (`exp` will be set to 600 seconds after `iat`)
 
 We can construct a JWT as follows:
