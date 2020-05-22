@@ -1,6 +1,9 @@
 ---
 title: Capability Check Endpoint
 excerpt: Check whether a MSISDN is using an RCS-capable handset and network
+next:
+  pages:
+    - rcs-faq
 ---
 The capability check endpoint allows you to check the specific RCS capabilities for a given MSISDN.
 
@@ -44,7 +47,7 @@ Returns a capabilites object on success, or an error description on failure
 ```json
 {
     "at": "2020-03-03T10:55:10.624+0000",
-    "msisdn": "447391992064",
+    "msisdn": "447291965064",
     "capabilities": [
         "callComposer",
         "videoCall",
@@ -68,7 +71,7 @@ Returns a capabilites object on success, or an error description on failure
         {
             "field": "msisdn",
             "errors": [
-                "46702948803 could not be reached by any provisioned supplier"
+                "46702955555 could not be reached by any provisioned supplier"
             ]
         }
     ]
