@@ -7,6 +7,7 @@ next:
   pages:
     - voice-rest-api-cdr
 ---
+
 ## Overview
 
 With the Sinch platform, you’re able to control the recording of the calls using either the callbacks or the Manage Call API.
@@ -82,7 +83,7 @@ _example ACE response_
     {
         "action": {
             "name": "Continue",
-            "recording": true,
+            "record": true,
             "recordingOptions": {
                 "destinationUrl": "s3://my-s3-bucket",
                 "credentials": "xyz\_access\_key:wrt\_secret\_key:eu-central-1",
