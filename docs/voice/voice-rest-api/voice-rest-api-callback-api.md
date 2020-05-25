@@ -753,7 +753,7 @@ You can find more information on callback request signing [here].
 
 **version** shows the current API version
 
-**custom** is a string that can be used to pass custom information related to the call from the SDK clients.
+**custom** is a string that can be used to pass custom information related to the call from Sinch SDK clients. See details [here](doc:voice-rest-api-callback-api#passing-custom-data-from-sinch-sdk-clients-in-callback-events].
 
 **user** shows the user Id that initiated the call
 
@@ -866,7 +866,7 @@ You can find more information on callback request signing [here].
 
 **version** shows the current API version
 
-**custom** is a string that can be used to pass custom information related to the call from the SDK clients.
+**custom** is a string that can be used to pass custom information related to the call from Sinch SDK clients. See details [here](doc:voice-rest-api-callback-api#passing-custom-data-from-sinch-sdk-clients-in-callback-events].
 
 **user** shows the user Id that initiated the call
 
@@ -939,7 +939,7 @@ You can find more information on callback request signing [here].
 
 **version** shows the current API version.
 
-**custom** is a string that can be used to pass custom information related to the call from the SDK clients.
+**custom** is a string that can be used to pass custom information related to the call from Sinch SDK clients. See details [here](doc:voice-rest-api-callback-api#passing-custom-data-from-sinch-sdk-clients-in-callback-events].
 
 **user** shows the user Id that initiated the call.
 
@@ -1071,3 +1071,16 @@ You can find more information on callback request signing [here].
 
     40001 - Illegal SVAML
     50000 - Internal error
+
+
+## Passing Custom Data From Sinch SDK Clients in Callback Events
+
+The _ICE_ and _DICE_ events have a field named `custom` that can be used to pass custom information related to a call from the Sinch SDK clients and made accessible in the callback events. A call can on the client-side be initiated with _headers_ ([^1]) and `custom` will be populated with the JSON encoding of those headers. E.g. if a call is initiated with headers `{"foo": "x"}` then the value of `custom` will be `"{\"foo\":\"x\"}"`.
+
+> **Important**
+>
+> The value type of `custom` is always a _string_ and the JSON-encoded representation of _headers_ will be escaped when the string value is part of the larget ICE event structure. I.e. from the perspective of the structure of the ICE-event, the value of `custom` is just an opaque string.
+
+The maximum size for the value of `custom` is 1024 bytes.
+
+[^1]: E.g. `CallClient.call(String userId, Map<String,String> headers)` in the Sinch Android APIs, and e.g. `-[SINCallClient callUserWithId:headers:]` in the Sinch iOS APIs)
