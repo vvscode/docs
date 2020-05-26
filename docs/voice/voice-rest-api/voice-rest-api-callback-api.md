@@ -1079,7 +1079,7 @@ The _ICE_ and _DICE_ events have a field named `custom` that can be used to pass
 
 > **Important**
 >
-> The value type of `custom` is always a _string_ and the JSON-encoded representation of _headers_ will be escaped when the string value is part of the larget ICE event structure. I.e. from the perspective of the structure of the ICE-event, the value of `custom` is just an opaque string.
+> The value type of `custom` is always a _string_ and the JSON-encoded representation of _headers_ will be escaped when the string value is part of the larger ICE event structure. I.e. from the perspective of the structure of the ICE-event, the value of `custom` is just an opaque string.
 
 The maximum size for the value of `custom` is 1024 bytes.
 
