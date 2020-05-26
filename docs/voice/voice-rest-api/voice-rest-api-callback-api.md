@@ -753,7 +753,7 @@ You can find more information on callback request signing [here].
 
 **version** shows the current API version
 
-**custom** is a string that can be used to pass custom information related to the call from Sinch SDK clients. See details [here](doc:voice-rest-api-callback-api#passing-custom-data-from-sinch-sdk-clients-in-callback-events].
+**custom** is a string that can be used to pass custom information related to the call from Sinch SDK clients. See details [here](doc:voice-rest-api-callback-api#passing-custom-data-from-sinch-sdk-clients-in-callback-events).
 
 **user** shows the user Id that initiated the call
 
@@ -866,7 +866,7 @@ You can find more information on callback request signing [here].
 
 **version** shows the current API version
 
-**custom** is a string that can be used to pass custom information related to the call from Sinch SDK clients. See details [here](doc:voice-rest-api-callback-api#passing-custom-data-from-sinch-sdk-clients-in-callback-events].
+**custom** is a string that can be used to pass custom information related to the call from Sinch SDK clients. See details [here](doc:voice-rest-api-callback-api#passing-custom-data-from-sinch-sdk-clients-in-callback-events).
 
 **user** shows the user Id that initiated the call
 
@@ -939,7 +939,7 @@ You can find more information on callback request signing [here].
 
 **version** shows the current API version.
 
-**custom** is a string that can be used to pass custom information related to the call from Sinch SDK clients. See details [here](doc:voice-rest-api-callback-api#passing-custom-data-from-sinch-sdk-clients-in-callback-events].
+**custom** is a string that can be used to pass custom information related to the call from Sinch SDK clients. See details [here](doc:voice-rest-api-callback-api#passing-custom-data-from-sinch-sdk-clients-in-callback-events).
 
 **user** shows the user Id that initiated the call.
 
