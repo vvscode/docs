@@ -7,6 +7,7 @@ excerpt: >-
 
 ## 2020-05-26
 
+  - Root CA SSL certificate replacement. More information and instructions are available on following links for [EU](https://status.sinch.com/incidents/013jd1r183pn) and [US](https://status.sinch.com/incidents/041d39nsxb4k)
   - Video files are now supported in media template
   - A profile image can now be included in a contact message sent to the customer's callback URL
   - Improvements for inbound sticker messages - auto cleanup for old stickers file enabled
