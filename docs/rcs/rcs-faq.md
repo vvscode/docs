@@ -1,11 +1,9 @@
 ---
-
 title: RCS FAQ
-excerpt: >-
-A selection of frequently asked questions about RCS, devices and the Sinch RCS API
+excerpt: A selection of frequently asked questions about RCS, devices and the Sinch RCS API.
 ---
 
-# Frequently Asked Questions
+## Frequently Asked Questions
 
 -  [How do I know if my handset is RCS capable?](#how-do-i-know-if-my-handset-is-rcs-capable)
 -  [How do I enable RCS for Android Messages?](#how-do-i-enable-rcs-for-android-messages) 
