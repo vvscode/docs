@@ -7,6 +7,7 @@ next:
   pages:
     - voice-rest-api-reporting-api
 ---
+
 ## Overview
 
 Controlling a call from your application backend is done by responding to callbacks from the Sinch platform and/or by calling REST APIs in the Sinch platform from your application’s backend. The figure that follows illustrates the lifecycle of a call and shows where both callbacks and REST API calls are located or can be made.
@@ -842,6 +843,10 @@ This callback is made when the call is picked up by the callee (person receiving
 
 If there is no response to the callback within the timeout period, the call is connected.
 
+> **NOTE:**
+>
+> [ACE] Callbacks are not issued for DATA Calls, only PSTN and SIP calls.
+
 ### Authorization
 
 You can find more information on callback request signing [here].
@@ -963,6 +968,10 @@ This callback is triggered as a result of a [runMenu] action. It can be triggere
 
 It is a POST request to the specified calling callback URL. Your application can respond with SVAML logic.
 
+> **NOTE:**
+>
+> [PIE] Callbacks are not issued for DATA Calls, only PSTN and SIP calls.
+
 ### Authorization
 
 You can find more information on callback request signing [here].
@@ -1071,7 +1080,6 @@ You can find more information on callback request signing [here].
 
     40001 - Illegal SVAML
     50000 - Internal error
-
 
 ## Passing Custom Data From Sinch SDK Clients in Callback Events
 

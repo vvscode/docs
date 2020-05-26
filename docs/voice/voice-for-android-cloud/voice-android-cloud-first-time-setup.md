@@ -14,9 +14,14 @@ next:
 1.  Register a Sinch Developer account [here](https://portal.sinch.com/#/signup).
 2.  Setup a new Application using the Dashboard where you can then obtain an _Application Key_ and an _Application Secret_.
 
-## Download
+## Download - We are now in Closed Beta Phase!
 
-The Sinch SDK can be downloaded [here](https://sinch.readme.io/page/downloads). It contains: the library _aar_, this user guide, reference documentation, and sample apps for calling.
+The Sinch Closed BETA SDKs can only be obtained after direct contact with Sinch Voice & Video Team.  
+Contact [Sinch support](mailto:support@sinch.com). Please add the frase "CLOSED BETA REQUEST" on your email subject.
+
+<!-- ## Download
+
+The Sinch SDK can be downloaded [here](https://sinch.readme.io/page/downloads). It contains: the library _aar_, this user guide, reference documentation, and sample apps for calling. -->
 
 ## Add the Sinch library
 
