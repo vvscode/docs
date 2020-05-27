@@ -39,8 +39,8 @@ For voice calling functionality, add the following to your _Info.plist_:
 
 - Required _Background Modes_ (`UIBackgroundModes`):
 
-  - Application plays audio (`audio`)
-  - Application provides Voice over IP services (`voip`)
+  - App plays audio (or streams audio/video using AirPlay) (`audio`)
+  - App provides Voice over IP services (`voip`)
 
 - Privacy - Microphone Usage Description (`NSMicrophoneUsageDescription`):
 
