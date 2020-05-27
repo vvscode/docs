@@ -1083,7 +1083,7 @@ You can find more information on callback request signing [here](doc:using-rest#
 
 ## Passing Custom Data From Sinch SDK Clients in Callback Events
 
-The _ICE_ and _DICE_ events have a field named `custom` that can be used to pass custom information related to a call from the Sinch SDK clients and made accessible in the callback events. A call can on the client-side be initiated with _headers_ ([^1]) and `custom` will be populated with the JSON encoding of those headers. E.g. if a call is initiated with headers `{"foo": "x"}` then the value of `custom` will be `"{\"foo\":\"x\"}"`.
+The _ICE_ and _DICE_ events have a field named `custom` that can be used to pass custom information related to a call from the Sinch SDK clients and made accessible in the callback events. A call can on the client-side be initiated with _headers_ (__[1]__) and `custom` will be populated with the JSON encoding of those headers. E.g. if a call is initiated with headers `{"foo": "x"}` then the value of `custom` will be `"{\"foo\":\"x\"}"`.
 
 > **Important**
 >
@@ -1091,4 +1091,4 @@ The _ICE_ and _DICE_ events have a field named `custom` that can be used to pass
 
 The maximum size for the value of `custom` is 1024 bytes.
 
-[^1]: E.g. `CallClient.call(String userId, Map<String,String> headers)` in the Sinch Android APIs, and e.g. `-[SINCallClient callUserWithId:headers:]` in the Sinch iOS APIs)
+__[1]__: E.g. `CallClient.call(String userId, Map<String,String> headers)` in the Sinch Android APIs, and e.g. `-[SINCallClient callUserWithId:headers:]` in the Sinch iOS APIs)
