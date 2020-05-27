@@ -26,7 +26,7 @@ The _Application Key_ is obtained from the [Sinch Developer Dashboard - Apps](ht
 
 ## Specifying Capabilities
 
-The _SINClient_ can be configured to enable / disable certain functionality. To enable _push notifications_ the method `-[SINClient enableManagedPushNotifications]` should be called. See [push notifications](doc:voice-ios-cloud-local-and-remote-push-notifications) for details.
+The _SINClient_ can be configured to enable specific functionality depending on your use case. To enable support for _push notifications_, use the method `-[SINClient enableManagedPushNotifications]`. Also see [Push Notifications](doc:voice-ios-cloud-local-and-remote-push-notifications) for additional steps that are required to fully implement support for push notifications.
 
 ```objectivec
 [sinchClient enableManagedPushNotifications];
