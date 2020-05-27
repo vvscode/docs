@@ -45,11 +45,11 @@ sinchClient.delegate = ... ;
 
 ```
 
-> **Note**
+> ℹ
 >
 > If the application is meant to only make outgoing calls but not receive incoming calls, the client will be ready to make calls after the delegate has received the callback `clientDidStart:`.
 
-> **Note**
+> ℹ
 >
 > If the application is meant to receive incoming calls while not running in foreground, [Push Notifications](doc:voice-ios-cloud-local-and-remote-push-notifications) are required.
 
@@ -72,19 +72,19 @@ The sample applications included in the Sinch SDK includes a class `SINJWT` that
 }
 ```
 
-> **warning**
+> ⚠
 >
-> When deploying your application to production, do NOT embed the _Appliation Secret_ in the application. The example above is only meant to show how to provide a signed JWT to the SINClient.
+> When deploying your application to production, do __not__ embed the _Appliation Secret_ in the application. The example above is only meant to show how to provide a signed JWT to the `SINClient`.
 
 ### Lifecycle Management of a _SINClient_-instance
 
-We recommend that you initiate the _Sinch client_, start it, but not terminate it, during the lifetime of the running application. That also implies that the _SINClient_-instance should be _retained_ by the application code.
+We recommend that you initiate the `SINClient`, start it, but not terminate it, during the lifetime of the running application. That also implies that the _SINClient_-instance should be _retained_ by the application code.
 
 It is best to keep the client instance alive and started unless there are reasons specific to your application. It should _not_ be necessary to dispose of the client instance if memory warnings are received from iOS, because once the client is started it does not use much memory in comparison to view layers, view controllers etc. For the same reasons, if support for push notifications is enabled, the preferred method of temporarily stopping incoming calls is to [Unregister a Push Device Token](doc:voice-ios-cloud-local-and-remote-push-notifications).
 
-The Sinch client can of course be completely stopped and also disposed. To do so, call `-[SINClient terminateGracefully]` before the application code releases its last reference to the client object.
+The `SINClient` can of course be completely stopped and also disposed. To do so, call `-[SINClient terminateGracefully]` before the application code releases its last reference to the client object.
 
-The following example shows how to dispose the Sinch client:
+Example of how to completely dispose the `SINClient`:
 
 ```objectivec
 [sinchClient terminateGracefully];
