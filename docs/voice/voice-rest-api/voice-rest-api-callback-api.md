@@ -1091,4 +1091,4 @@ The _ICE_ and _DICE_ events have a field named `custom` that can be used to pass
 
 The maximum size for the value of `custom` is 1024 bytes.
 
-__[1]__: E.g. `CallClient.call(String userId, Map<String,String> headers)` in the Sinch Android APIs, and e.g. `-[SINCallClient callUserWithId:headers:]` in the Sinch iOS APIs)
+__[1]__: E.g. `CallClient.call(String userId, Map<String,String> headers)` in the Sinch Android APIs, and `-[SINCallClient callUserWithId:headers:]` in the Sinch iOS APIs.
