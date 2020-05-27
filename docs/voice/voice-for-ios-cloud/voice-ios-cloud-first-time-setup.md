@@ -35,9 +35,9 @@ The Sinch SDK depends on the following frameworks which must be linked with the 
 
 ## Info.plist
 
-If voice calling functionality will be enabled and used, add the following to your _Info.plist_:
+For voice calling functionality, add the following to your _Info.plist_:
 
-- Required background modes (`UIBackgroundModes`):
+- Required _Background Modes_ (`UIBackgroundModes`):
 
   - Application plays audio (`audio`)
   - Application provides Voice over IP services (`voip`)
