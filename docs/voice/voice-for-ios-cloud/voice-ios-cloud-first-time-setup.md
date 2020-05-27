@@ -19,25 +19,11 @@ next:
 The Sinch Closed BETA SDKs can only be obtained after direct contact with Sinch Voice & Video Team.  
 Contact [Sinch support](mailto:support@sinch.com). Please add the phrase _"CLOSED BETA REQUEST"_ on your email subject.
 
-### Sinch SDK will SOON be available as a CocoaPod.
-
-If you are using [CocoaPods](http://www.cocoapods.org), add the following to your Podfile:
-
-**Code**
-
-```ruby
-target '<your xcode project>' do
-	pod 'SinchRTC'
-end
-```
-
-> **Tip**
->
-> Using the pod allows you to skip the manual steps in the next section.
+### Sinch SDK as a CocoaPod
 
 > **Note**
 >
-> CocoaPods version will be available only for Production ready releases.
+> CocoaPods version will be available only for Production releases (i.e. not closed beta releases)
 
 ## Add the _Sinch.framework_
 
