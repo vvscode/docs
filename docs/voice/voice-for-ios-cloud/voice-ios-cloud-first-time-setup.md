@@ -48,7 +48,6 @@ If voice calling functionality will be enabled and used, add the following to yo
 
 In addition to the keys above, if video calling functionality will be enabled and used, add the following to your _Info.plist_:
 
-- Privacy - Camera Usage Description
-  (`NSCameraUsageDescription`):
+- Privacy - Camera Usage Description (`NSCameraUsageDescription`):
 
   [NSCameraUsageDescription](https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW24) describes the reason that your app accesses the camera. When the system prompts the user to allow access, this string is displayed as part of the alert, and it _cannot_ be left empty.
