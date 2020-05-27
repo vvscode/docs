@@ -726,7 +726,7 @@ If there is no response to the callback within the timeout period, an error mess
 
 ### Authorization
 
-You can find more information on callback request signing [here].
+You can find more information on callback request signing [here](doc:using-rest#callback-request-signing).
 
 ### Request
 
@@ -849,7 +849,7 @@ If there is no response to the callback within the timeout period, the call is c
 
 ### Authorization
 
-You can find more information on callback request signing [here].
+You can find more information on callback request signing [here](doc:using-rest#callback-request-signing).
 
 ### Request
 
@@ -896,7 +896,7 @@ This callback is a notification. No response is needed.
 
 ### Authorization
 
-You can find more information on callback request signing [here].
+You can find more information on callback request signing [here](doc:using-rest#callback-request-signing).
 
 ### Request
 
@@ -974,7 +974,7 @@ It is a POST request to the specified calling callback URL. Your application can
 
 ### Authorization
 
-You can find more information on callback request signing [here].
+You can find more information on callback request signing [here](doc:using-rest#callback-request-signing).
 
 ### Request
 
@@ -1031,7 +1031,7 @@ If there is no response to the callback within the timeout period, the notificat
 
 ### Authorization
 
-You can find more information on callback request signing [here].
+You can find more information on callback request signing [here](doc:using-rest#callback-request-signing).
 
 ### Request
 
