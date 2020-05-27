@@ -17,7 +17,7 @@ next:
 ## Download - We are now in Closed Beta Phase!
 
 The Sinch Closed BETA SDKs can only be obtained after direct contact with Sinch Voice & Video Team.  
-Contact [Sinch support](mailto:support@sinch.com). Please add the frase "CLOSED BETA REQUEST" on your email subject.
+Contact [Sinch support](mailto:support@sinch.com). Please add the phrase "CLOSED BETA REQUEST" on your email subject.
 
 <!-- ## Download
 
