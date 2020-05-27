@@ -51,7 +51,7 @@ sinchClient.delegate = ... ;
 
 > **Note**
 >
-> If the application is meant to receive incoming calls while not running in foreground, [push notifications](doc:voice-ios-cloud-local-and-remote-push-notifications) are required.
+> If the application is meant to receive incoming calls while not running in foreground, [Push Notifications](doc:voice-ios-cloud-local-and-remote-push-notifications) are required.
 
 ### Authorizing the Client / User
 
