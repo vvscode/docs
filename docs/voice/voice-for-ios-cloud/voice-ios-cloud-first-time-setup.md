@@ -17,27 +17,13 @@ next:
 ## Download - We are now in Closed Beta Phase!
 
 The Sinch Closed BETA SDKs can only be obtained after direct contact with Sinch Voice & Video Team.  
-Contact [Sinch support](mailto:support@sinch.com). Please add the frase "CLOSED BETA REQUEST" on your email subject.
+Contact [Sinch support](mailto:support@sinch.com). Please add the phrase _"CLOSED BETA REQUEST"_ on your email subject.
 
-### Sinch SDK will SOON be available as a CocoaPod.
-
-If you are using [CocoaPods](http://www.cocoapods.org), add the following to your Podfile:
-
-**Code**
-
-```ruby
-target '<your xcode project>' do
-	pod 'SinchRTC'
-end
-```
-
-> **Tip**
->
-> Using the pod allows you to skip the manual steps in the next section.
+### Sinch SDK as a CocoaPod
 
 > **Note**
 >
-> CocoaPods version will be available only for Production ready releases.
+> CocoaPods version will be available only for Production releases (i.e. not closed beta releases)
 
 ## Add the _Sinch.framework_
 
@@ -49,20 +35,19 @@ The Sinch SDK depends on the following frameworks which must be linked with the 
 
 ## Info.plist
 
-If voice calling functionality will be enabled and used, add the following to your _Info.plist_:
+For voice calling functionality, add the following to your _Info.plist_:
 
-- Required background modes (`UIBackgroundModes`):
+- _Required background modes_ (`UIBackgroundModes`):
 
-  - Application plays audio (`audio`)
-  - Application provides Voice over IP services (`voip`)
+  - App plays audio (or streams audio/video using AirPlay) (`audio`)
+  - App provides Voice over IP services (`voip`)
 
-- Privacy - Microphone Usage Description (`NSMicrophoneUsageDescription`):
+- _Privacy - Microphone Usage Description_ (`NSMicrophoneUsageDescription`):
 
-  [NSMicrophoneUsageDescription](https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW25) describes the reason your app accesses the microphone. When the system prompts the user to allow access, this string is displayed as part of the alert, and it _cannot_ be left empty.
+  [NSMicrophoneUsageDescription](https://developer.apple.com/documentation/bundleresources/information_property_list/nsmicrophoneusagedescription) describes the reason your app accesses the microphone. When the system prompts the user to allow access, this string is displayed as part of the alert, and it _cannot_ be left empty.
 
 In addition to the keys above, if video calling functionality will be enabled and used, add the following to your _Info.plist_:
 
-- Privacy - Camera Usage Description
-  (`NSCameraUsageDescription`):
+- _Privacy - Camera Usage Description_ (`NSCameraUsageDescription`):
 
-  [NSCameraUsageDescription](https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW24) describes the reason that your app accesses the camera. When the system prompts the user to allow access, this string is displayed as part of the alert, and it _cannot_ be left empty.
+  [NSCameraUsageDescription](https://developer.apple.com/documentation/bundleresources/information_property_list/nscamerausagedescription) describes the reason that your app accesses the camera. When the system prompts the user to allow access, this string is displayed as part of the alert, and it _cannot_ be left empty.

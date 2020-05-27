@@ -16,7 +16,7 @@ next:
 
 The Sinch SDK can be downloaded [here](https://sinch.readme.io/page/downloads). It contains: the library binary, this user guide, reference documentation, and sample apps for calling.
 
-### Sinch is availible as a CocoaPod
+### Sinch is available as a CocoaPod
 
 If you are using [CocoaPods](http://www.cocoapods.org), add the following to your Podfile:
 
