@@ -9,6 +9,7 @@ next:
   pages:
     - voice-rest-api-calling-api
 ---
+
 ## Overview
 
 When using Sinch for voice calling, the Sinch dashboard can be seen as a big telephony switch. It receives incoming phone calls (also known as _incoming call “legs”_), sets up outgoing phone calls (also known as _outgoing call “legs”_), and bridges the two. The incoming call leg may come in over a data connection (from a smartphone or web application using the Sinch SDKs) or through a local phone number (from the PSTN network). Similarly, the outgoing call leg can be over data (to another smartphone or web application using the Sinch SDKs) or the PSTN network.
@@ -34,13 +35,13 @@ These are the typical call scenarios that you can control with the Sinch Callbac
 
 To use callback events you need to assign a callback URL in the Sinch portal under your app settings.
 
-| Event  | HTTP Verb | Functionality                      |
-| ------ | --------- | ---------------------------------- |
-| ICE    | POST      | [Incoming Call Event callback]()   |
-| ACE    | POST      | [Answered Call Event callback]()   |
-| DiCE   | POST      | [Disconnect Call Event callback]() |
-| PIE    | POST      | [Prompt Input Event callback]()    |
-| Notify | POST      | [Notify Event callback]()          |
+| Event  | HTTP Verb | Functionality                                                                                    |
+| ------ | --------- | ------------------------------------------------------------------------------------------------ |
+| ICE    | POST      | [Incoming Call Event callback](doc:voice-rest-api-callback-api#incoming-call-event-callback-ice) |
+| ACE    | POST      | [Answered Call Event callback]()                                                                 |
+| DiCE   | POST      | [Disconnect Call Event callback]()                                                               |
+| PIE    | POST      | [Prompt Input Event callback]()                                                                  |
+| Notify | POST      | [Notify Event callback]()                                                                        |
 
 ### Calling API
 
