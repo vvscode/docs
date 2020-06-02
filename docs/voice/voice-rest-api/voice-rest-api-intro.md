@@ -37,7 +37,7 @@ To use callback events you need to assign a callback URL in the Sinch portal und
 
 | Event  | HTTP Verb | Functionality                                                                                    |
 | ------ | --------- | ------------------------------------------------------------------------------------------------ |
-| ICE    | POST      | [Incoming Call Event callback](doc:voice-rest-api-callback-api#incoming-call-event-callback-ice) |
+| ICE    | POST      | [Incoming Call Event callback](doc:voice-rest-api-callback-api) |
 | ACE    | POST      | [Answered Call Event callback](doc:voice-rest-api-callback-api)                                  |
 | DiCE   | POST      | [Disconnect Call Event callback](doc:voice-rest-api-callback-api)                                |
 | PIE    | POST      | [Prompt Input Event callback](doc:voice-rest-api-callback-api)                                   |
