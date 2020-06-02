@@ -4,8 +4,7 @@ excerpt: >-
     Learn and see how different kind of messages render on Facebook Messenger.
 hidden: true
 ---
-
-# Advance Facebook Messages
+## Advance Facebook Messages
 
 In this blog, we will show you how you can send advance messages such as media, choice, card, carousel, and location messages using Conversation API. 
 

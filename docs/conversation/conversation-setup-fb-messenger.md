@@ -4,8 +4,7 @@ excerpt: >-
     Learn how to set up, send and receive messages using Conversation API.
 hidden: true
 ---
-
-# Setup an FB App with Messenger Chat
+## Setup an FB App with Messenger Chat
 In this quick start guide we will show you how to create and configure a basic FB Business Page with Messenger chat feature.  Once you complete the steps below you will have an FB App, FB Business Page with Messenger Chat button, a Messenger Token, and a configured Messenger Webhook to use with the Sinch Conversations API.
 
 
@@ -276,7 +275,7 @@ public static void main(String[] args) {
 >
 >
 >1. Learn how to receive messages 
->2. Want more? [Advance messages for facebook messenger](./advance_messages_fb.md).
+>2. Want more? [Advance messages for facebook messenger](./conversation-fb-advance-messages.md).
 >
 >
 
