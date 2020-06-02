@@ -30,7 +30,6 @@ curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1be
     ]
 }'
 ```
-
 ```javascript Java
 public static void main(String[] args) {
     // Init the Sinch Api Client to hold the auth
@@ -106,7 +105,6 @@ curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1be
     ]
 }'
 ```
-
 ```javascript Java
 public static void main(String[] args) {
     // Init the Sinch Api Client to hold the auth
@@ -138,7 +136,7 @@ public static void main(String[] args) {
 
 ## Sending Card Message
 
-```javascript
+```javascript Curl
 curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1beta/accounts/{{YOUR_ACCOUNT_ID}}/messages:send' \
 -H 'Content-Type: application/json' \
 -H 'Authorization: Basic {{YOUR_TOKEN}}' \
@@ -191,7 +189,6 @@ curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1be
     ]
 }'
 ```
-
 ```javascript Java
 public static void main(String[] args) {
     // Init the Sinch Api Client to hold the auth
@@ -221,7 +218,7 @@ public static void main(String[] args) {
 
 ## Sending Carousel Message
 
-```javascript
+```javascript Curl
 curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1beta/accounts/{{YOUR_ACCOUNT_ID}}/messages:send' \
 -H 'Content-Type: application/json' \
 -H 'Authorization: Basic {{YOUR_TOKEN}}' \
@@ -314,7 +311,6 @@ curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1be
     ]
 }'
 ```
-
 ```javascript Java
   public static void main(String[] args) {
 
@@ -358,7 +354,7 @@ curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1be
 
 ## Sending Location Message
 
-```javascript
+```javascript Curl
 curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1beta/accounts/{{YOUR_ACCOUNT_ID}}/messages:send' \
 -H 'Content-Type: application/json' \
 -H 'Authorization: Basic {{YOUR_TOKEN}}' \
@@ -382,7 +378,6 @@ curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1be
     ]
 }'
 ```
-
 ```javascript Java
 public static void main(String[] args) {
 
