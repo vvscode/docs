@@ -129,7 +129,7 @@ Enter a message into the **Messenger** chat window and **Send**.
 
 Use **Sinch Conversations API** to **List Contacts**, you should now see a new contact entry generated when the **Messenger Message** was posted from your FB Page.
 
-```
+```javascript Curl
 {
     "contacts": [
         {
@@ -174,7 +174,6 @@ curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1be
     ]
 }'
 ```
-
 ```javascript Raw Java
 RequestBody body =
     RequestBody.create(
@@ -206,8 +205,6 @@ Request request =
         .build();
 Response response = client.newCall(request).execute();
 ```
-
-````
 ```javascript Java
 public static void main(String[] args) {
 
@@ -224,7 +221,7 @@ public static void main(String[] args) {
     // Print out the Message id for the record
     System.out.println(messageResponse.getMessageId());
 }
-````
+```
 
 ![Facebook Message Text](images/channel-support/messenger/fb_message_text.jpg)
 
