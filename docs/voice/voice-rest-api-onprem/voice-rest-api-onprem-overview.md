@@ -1,12 +1,13 @@
 ---
 title: Overview
-excerpt: ''
-hidden: 'true'
+excerpt: ""
+hidden: "true"
 next:
   pages:
     - voice-rest-api-onprem-callback-api
 ---
-When using Sinch for voice calling, the Sinch dashboard can be seen as a big telephony switch. It receives incoming phone calls (also known as *incoming call “legs”*), sets up outgoing phone calls (also known as *outgoing call “legs”*), and bridges the two. The incoming call leg may come in over a data connection (from a smartphone or web application using the Sinch SDKs) or through a local phone number (from the PSTN network). Similarly, the outgoing call leg can be over data (to another smartphone or web application using the Sinch SDKs) or the PSTN network.
+
+When using Sinch for voice calling, the Sinch dashboard can be seen as a big telephony switch. It receives incoming phone calls (also known as _incoming call “legs”_), sets up outgoing phone calls (also known as _outgoing call “legs”_), and bridges the two. The incoming call leg may come in over a data connection (from a smartphone or web application using the Sinch SDKs) or through a local phone number (from the PSTN network). Similarly, the outgoing call leg can be over data (to another smartphone or web application using the Sinch SDKs) or the PSTN network.
 
 For most call scenarios, you can use the Sinch SDKs on a smartphone or on web client to establish calls without the need of backend integration. For additional control or flexibility of the calls, you can use the Sinch REST APIs to manage the calls.
 
@@ -16,12 +17,12 @@ For more details on the REST APIs to that can be used to manage calls see the [C
 
 These are the typical call scenarios that you can control with the Sinch Callback and Calling APIs:
 
-  - App to app calls
-  - App to phone calls
-  - Phone to phone calls
-  - Text to speech calls
-  - Conference calls
-  - SIP trunking calls
+- App to app calls
+- App to phone calls
+- Phone to phone calls
+- Text to speech calls
+- Conference calls
+- SIP trunking calls
 
 ## API Quick Reference
 
@@ -29,20 +30,20 @@ These are the typical call scenarios that you can control with the Sinch Callbac
 
 To use callback events you need to assign a callback URL in the Sinch portal under your app settings.
 
-| Event  | HTTP Verb | Functionality                                                                                                         |
-|--------|-----------|-----------------------------------------------------------------------------------------------------------------------|
-| ICE    | POST      | [Incoming Call Event callback](doc:voice-rest-api-onprem-callback-api#incoming-call-event-callback-ice-)      |
-| ACE    | POST      | [Answered Call Event callback](doc:voice-rest-api-onprem-callback-api#answered-call-event-callback-ace-)      |
-| DiCE   | POST      | [Disconnect Call Event callback](doc:voice-rest-api-onprem-callback-api#disconnect-call-event-callback-dice-) |
-| PIE    | POST      | [Prompt Input Event callback](doc:voice-rest-api-onprem-callback-api#prompt-input-event-callback-pie-)        |
-| Notify | POST      | [Notify Event callback](doc:voice-rest-api-onprem-callback-api#notify-event-callback-notify-)                 |
+| Event  | HTTP Verb | Functionality                                                                                                |
+| ------ | --------- | ------------------------------------------------------------------------------------------------------------ |
+| ICE    | POST      | [Incoming Call Event callback](doc:voice-rest-api-onprem-callback-api#incoming-call-event-callback-ice)      |
+| ACE    | POST      | [Answered Call Event callback](doc:voice-rest-api-onprem-callback-api#answered-call-event-callback-ace)      |
+| DiCE   | POST      | [Disconnect Call Event callback](doc:voice-rest-api-onprem-callback-api#disconnect-call-event-callback-dice) |
+| PIE    | POST      | [Prompt Input Event callback](doc:voice-rest-api-onprem-callback-api#prompt-input-event-callback-pie)        |
+| Notify | POST      | [Notify Event callback](doc:voice-rest-api-onprem-callback-api#notify-event-callback-notify)                 |
 
 ### Calling API
 
     https://callingapi.sinch.com/v1
 
-| URL                                                    | HTTP Verb | Functionality                                                                                                          |
-|--------------------------------------------------------|-----------|------------------------------------------------------------------------------------------------------------------------|
+| URL                                                    | HTTP Verb | Functionality                                                                                                  |
+| ------------------------------------------------------ | --------- | -------------------------------------------------------------------------------------------------------------- |
 | /configuration/numbers/                                | GET       | [Get a list of your numbers](doc:voice-rest-api-onprem-calling-api#get-numbers)                                |
 | /configuration/numbers/                                | POST      | [Assign numbers to an app](doc:voice-rest-api-onprem-calling-api#update-numbers)                               |
 | /configuration/callbacks/applications/{applicationkey} | GET       | [Get callback URLs of your app](doc:voice-rest-api-onprem-calling-api#get-callbacks)                           |
@@ -60,8 +61,8 @@ To use callback events you need to assign a callback URL in the Sinch portal und
 
     https://reportingapi.sinch.com/v1
 
-| URL                                     | HTTP Verb | Functionality                                                                            |
-|-----------------------------------------|-----------|------------------------------------------------------------------------------------------|
+| URL                                     | HTTP Verb | Functionality                                                                    |
+| --------------------------------------- | --------- | -------------------------------------------------------------------------------- |
 | /users/{type}/{endpoint}/calls/{domain} | GET       | [User call report](doc:voice-rest-api-onprem-reporting-api#user-call-report)     |
 | /counters/{id}                          | GET       | [Get counter](doc:voice-rest-api-onprem-reporting-api#counters)                  |
 | /services/{id}                          | GET       | [Get service status](doc:voice-rest-api-onprem-reporting-api#get-service-status) |
@@ -81,6 +82,7 @@ For more information please check the [Callback API](doc:voice-rest-api-onprem-c
 ## Phone to phone calls
 
 In this scenario, calls are originated from a voice number and are terminated to the fixed or mobile phone network. You can rent and configure voice numbers from the Sinch [dashboard](https://www.sinch.com/dashboard/) by following these steps:
+
 > 1.  Rent a Voice number from the Sinch [dashboard](https://portal.sinch.com/#/login), under the tab “Numbers”.
 > 2.  Assign the number to your application. Under the “Apps” tab, select your app and assign the number under the app Voice settings. Alternatively, you can rent and configure numbers with REST APIs. For more information please check the [Number Administration documentation](doc:number-administration).
 > 3.  Configure a callback URL under your app’s Voice settings, where Sinch will send call-related events.
@@ -155,7 +157,7 @@ You can route any type of call from the Sinch dashboard to your SIP server. If y
 
 You need to allow your SIP server to receive traffic from this IP:
 
->    213.242.88.200
+> 213.242.88.200
 
 #### Ports
 
@@ -164,5 +166,3 @@ RTP ports used: 10000 - 20000
 #### Codecs
 
 Sinch currently supports G.711u, G.711a, iLBC and G.729
-
-

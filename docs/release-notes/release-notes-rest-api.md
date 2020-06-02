@@ -4,6 +4,7 @@ excerpt: >-
   See how the Sinch JavaScript SDK is evolving and find out about new features
   and bug fixes.
 ---
+
 <h3>Specify language for SMS verification</h3>
 Multiple languages are supported for SMS verification.
 
@@ -63,14 +64,11 @@ Added documentation on how to administer voice and SMS numbers through REST APIs
 
 /number-administration-documentation/ \<numberadministration\>
 
- 
-
 <h3>Sinch REST API documentation update 20150618</h3>
 Improved explanations on restrictions for the SMS API. Also fixed a problem with a character that was ommited in the Authorization signature creation during the last documentation update.
 
 <h3>Sinch REST API documentation update 20150521</h3>
 The Sinch documentation has been restructured and is now split into products.
-
 
 **Verification:**
 
@@ -124,7 +122,7 @@ This release introduces the support of sending SMS in a wide range of countries
 <h3>Sinch REST API Documentation update 20141112</h3>
 This release introduces these new features and changes:
 
-> 1. [Incoming Call Event (ICE)](doc:voice-rest-api-onprem-callback-api#incoming-call-event-callback-ice-) - The Incoming Call Event is now also supported to connect App-App calls. A new action is supported for connecting app-app calls, called ConnectMXP.
+> 1. [Incoming Call Event (ICE)](doc:voice-rest-api-onprem-callback-api#incoming-call-event-callback-ice) - The Incoming Call Event is now also supported to connect App-App calls. A new action is supported for connecting app-app calls, called ConnectMXP.
 >
 > 2. [authorization](doc:verification-rest-callback-api#authorization) - Signing requests with “Session” scheme is no longer supported.
 >
@@ -136,5 +134,5 @@ A new parameter is provided in the Incoming Call Event, Answered Call Event and 
 <h3>Sinch REST API Documentation update 20141024</h3>
 Calling API documentation update:
 
-> -   Included the CANCEL reason code in the response of the DiCE event, the getCallResult API and in the CDRs. The CANCEL reason is returned when the caller initiated the call and cancelled it.
-> -   Added a custom field in Answered Call event and Disconnect Call event. It is used to pass custom headers in these events.
+> - Included the CANCEL reason code in the response of the DiCE event, the getCallResult API and in the CDRs. The CANCEL reason is returned when the caller initiated the call and cancelled it.
+> - Added a custom field in Answered Call event and Disconnect Call event. It is used to pass custom headers in these events.
