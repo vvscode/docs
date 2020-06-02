@@ -1,12 +1,13 @@
 ---
 title: Advance Facebook Messenger
 excerpt: >-
-    Learn and see how different kind of messages render on Facebook Messenger.
+  Learn and see how different kind of messages render on Facebook Messenger.
 hidden: true
 ---
+
 ## Advance Facebook Messages
 
-In this blog, we will show you how you can send advance messages such as media, choice, card, carousel, and location messages using Conversation API. 
+In this blog, we will show you how you can send advance messages such as media, choice, card, carousel, and location messages using Conversation API.
 
 ## Sending Media Message
 
@@ -29,6 +30,7 @@ curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1be
     ]
 }'
 ```
+
 ```javascript Java
 public static void main(String[] args) {
     // Init the Sinch Api Client to hold the auth
@@ -48,9 +50,7 @@ public static void main(String[] args) {
   }
 ```
 
-<p align="center">
-<img src="./images/channel-support/messenger/fb_message_media.jpg" width="50%" height="50%">
-</p>
+![Facebook Media Message](images/channel-support/messenger/fb_message_media.jpg)
 
 ## Sending Choice Message
 
@@ -106,6 +106,7 @@ curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1be
     ]
 }'
 ```
+
 ```javascript Java
 public static void main(String[] args) {
     // Init the Sinch Api Client to hold the auth
@@ -132,10 +133,8 @@ public static void main(String[] args) {
   }
 
 ```
-<p align="center">
-<img src="./images/channel-support/messenger/fb_message_choice.jpg" width="50%" height="50%">
-</p>
 
+![Facebook Message Choice](images/channel-support/messenger/fb_message_choice.jpg)
 
 ## Sending Card Message
 
@@ -192,6 +191,7 @@ curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1be
     ]
 }'
 ```
+
 ```javascript Java
 public static void main(String[] args) {
     // Init the Sinch Api Client to hold the auth
@@ -217,9 +217,7 @@ public static void main(String[] args) {
   }
 ```
 
-<p align="center">
-<img src="./images/channel-support/messenger/fb_message_card.jpg" width="50%" height="50%">
-</p>
+![Facebook Card Message](images/channel-support/messenger/fb_message_card.jpg)
 
 ## Sending Carousel Message
 
@@ -316,6 +314,7 @@ curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1be
     ]
 }'
 ```
+
 ```javascript Java
   public static void main(String[] args) {
 
@@ -354,9 +353,8 @@ curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1be
     System.out.println(messageResponse.getMessageId());
   }
 ```
-<p align="center">
-<img src="./images/channel-support/messenger/fb_message_carousel.jpg" width="50%" height="50%">
-</p>
+
+![Facebook Carousel Message](images/channel-support/messenger/fb_message_carousel.jpg)
 
 ## Sending Location Message
 
@@ -384,6 +382,7 @@ curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1be
     ]
 }'
 ```
+
 ```javascript Java
 public static void main(String[] args) {
 
@@ -403,6 +402,4 @@ public static void main(String[] args) {
   }
 ```
 
-<p align="center">
-<img src="./images/channel-support/messenger/fb_message_location.jpg" width="50%" height="50%">
-</p>
+![Facebook Location Message](images/channel-support/messenger/fb_message_location.jpg)

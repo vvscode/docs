@@ -1,88 +1,66 @@
 ---
 title: Conversation Facebook Getting Started
 excerpt: >-
-    Learn how to set up, send and receive messages using Conversation API.
+  Learn how to set up, send and receive messages using Conversation API.
 hidden: true
 ---
-## Setup an FB App with Messenger Chat
-In this quick start guide we will show you how to create and configure a basic FB Business Page with Messenger chat feature.  Once you complete the steps below you will have an FB App, FB Business Page with Messenger Chat button, a Messenger Token, and a configured Messenger Webhook to use with the Sinch Conversations API.
 
+## Setup an FB App with Messenger Chat
+
+In this quick start guide we will show you how to create and configure a basic FB Business Page with Messenger chat feature. Once you complete the steps below you will have an FB App, FB Business Page with Messenger Chat button, a Messenger Token, and a configured Messenger Webhook to use with the Sinch Conversations API.
 
 ### Sign up for an FB Developer Account or Sign In and Create your Messenger App
+
 To register for an FB Developer account go to **[Facebook Developer Account](https://developers.facebook.com)** and click **"Get Started"** on the upper right menu.
 
 <p align="center">
 <img src="images/channel-support/messenger/fb_for_developers.png" width="75%" border="2px" />
 </p>
 
-> 
 > If you have an existing FB Developer Account and an FB App, log in and skip to adding and configuring Messenger.
->
 
 Once you have created your Facebook developer account you can choose to **"Create First App"**
+![Create App Form](images/channel-support/messenger/fb_create_first_app.png)
 
-<p align="center">
-<img src="images/channel-support/messenger/fb_create_first_app.png" width="35%" border="1" /><img src="./images/channel-support/messenger/fb_create_app_form.png" width="35%" border="1" />
-</p>
-
-> 
->Your new *APP ID* will be displayed at the top left of your FB App Dashboard.
->
-
+> Your new _APP ID_ will be displayed at the top left of your FB App Dashboard.
 
 ### Add Messenger Product to your FB App
-From your FB Developer Dashboard, under *Add Product*, click on Messenger **"Setup"** button.
 
-<p align="center">
-<img src="./images/channel-support/messenger/fb_app_dashboard.png" width="75%" border="1">
-</p>
+From your FB Developer Dashboard, under _Add Product_, click on Messenger **"Setup"** button.
 
+![Facebook App Dashboard](images/channel-support/messenger/fb_app_dashboard.png)
 
 ### Create an FB Business Page
-Now that you have added Messenger Product to your FB App we can build your first FB Business Page.  Within your Dasboard under Products > Messenger > Settings page scroll down to **Access Tokens** and click **"Create New Page"** on the upper right.
 
-<p align="center">
-<img src="./images/channel-support/messenger/fb_create_new_page.png" width="75%" border="1">
-</p>
+Now that you have added Messenger Product to your FB App we can build your first FB Business Page. Within your Dasboard under Products > Messenger > Settings page scroll down to **Access Tokens** and click **"Create New Page"** on the upper right.
+
+![Create New Page](images/channel-support/messenger/fb_create_new_page.png)
 
 Next choose to create a **"Business or Brand"** and fill out the ensuing page name and contact form.
-<p align="center">
-<img src="./images/channel-support/messenger/fb_create_business_page.png" width="35%">
-<p>
-  
-You can choose to **"Skip"** adding 'Profile' and 'Background' pictures as well as **"Not Now"** for the option to 'Add online booking'.  You have now completed creating your Facebook Business Page.  Remember while your FB App is 'In development' the FB Business Page is not visible to anyone except you and other developers you invite to your FB developer account.
 
->
->Make sure to bookmark your FB Business Page , we will return to it later to add a Messenger chat button.
->
+![Create Business Page](images/channel-support/messenger/fb_create_business_page.png)
 
-<p align="center">
-<img src="./images/channel-support/messenger/fb_business_page.png" width="75%">
-</p>
+You can choose to **"Skip"** adding 'Profile' and 'Background' pictures as well as **"Not Now"** for the option to 'Add online booking'. You have now completed creating your Facebook Business Page. Remember while your FB App is 'In development' the FB Business Page is not visible to anyone except you and other developers you invite to your FB developer account.
 
+> Make sure to bookmark your FB Business Page , we will return to it later to add a Messenger chat button.
+
+![Business Page](images/channel-support/messenger/fb_business_page.png)
 
 ### Generate your Messenger API Token
-To generate your Messenger API Token we'll need to add the new FB Page you created to the Messenger product settings.  Under Within your Dashboard under Products > Messenger > Settings page scroll down to **Access Tokens** and this type choose to **"Add or Remove Pages"**.
 
-<p align="center">
-<img src="./images/channel-support/messenger/fb_add_remove_page.png" width="40%">
-</p>
+To generate your Messenger API Token we'll need to add the new FB Page you created to the Messenger product settings. Under Within your Dashboard under Products > Messenger > Settings page scroll down to **Access Tokens** and this type choose to **"Add or Remove Pages"**.
 
-Now follow the prompts and choose the new FB Page you just created.  Make sure that you leave default setting **Manage and access Page conversations in Messenger** set to YES.
+![Add Remove Page](images/channel-support/messenger/fb_add_remove_page.png)
 
-<p align="center">
-<img src="./images/channel-support/messenger/fb_manage_and_access_conversations.png" width="40%">
-</p>
+Now follow the prompts and choose the new FB Page you just created. Make sure that you leave default setting **Manage and access Page conversations in Messenger** set to YES.
+
+![Manage and Access Conversations](images/channel-support/messenger/fb_manage_and_access_conversations.png)
 
 You will should see your FB Page listed under **Access Tokens**, click on the **"Generate Token"** button.
 
->
->Copy and store your Messenger Token somewhere safe, we will need it to add the Messenger Channel to your **Sinch Conversations App**.
->
+> Copy and store your Messenger Token somewhere safe, we will need it to add the Messenger Channel to your **Sinch Conversations App**.
 
-<p align="center">
-<img src="./images/channel-support/messenger/fb_generate_messenger_token.png" width="75%">
-</p>
+![Generate Messenger Token](images/channel-support/messenger/fb_generate_messenger_token.png)
 
 ### Configure your FB Messenger Channel on Sinch Conversations API
 
@@ -109,65 +87,45 @@ curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1be
 
 Lets return to your FB Page and add a Messenger button. Click on **"+ Add Button"**.
 
-<p align="center">
-<img src="./images/channel-support/messenger/fb_page_add_button.png" width="50%">
-</p>
-  
+![Facebook Page Add Button](images/channel-support/messenger/fb_page_add_button.png)
+
 Choose **Send Message** and click **"Next"**.
-  
-  <p align="center">
-  <img src="./images/channel-support/messenger/fb_add_send_message_button.png" width="50%">
-  </p>
- 
- Click on **"Messenger"** and then click **"Finish"**.
- 
- <p align="center">
- <img src="./images/channel-support/messenger/fb_add_button_messenger.png" width="50%">
- </p>
- 
+
+![Fb Add Send Message Button](images/channel-support/messenger/fb_add_send_message_button.png)
+
+Click on **"Messenger"** and then click **"Finish"**.
+
+![Fb Add Button Messenger](images/channel-support/messenger/fb_add_button_messenger.png)
 
 ### Configure the Messenger Webhook
 
-The Messenger Webhook Settings configuration forwards message events posted on your **FB Page** to your **Sinch Conversations App**.  To set the configuration click on **"Add Callback URL"** in FB App Dashboard > Products > Messenger > Settings **Webhooks**.
+The Messenger Webhook Settings configuration forwards message events posted on your **FB Page** to your **Sinch Conversations App**. To set the configuration click on **"Add Callback URL"** in FB App Dashboard > Products > Messenger > Settings **Webhooks**.
 
-<p align="center">
-<img src="./images/channel-support/messenger/fb_messenger_webhooks.png" width="75%">
-</p>
+![Facebook Messenger Webhooks](images/channel-support/messenger/fb_messenger_webhooks.png)
 
 Then add the following **Callback URL** and **Verify Token**:
 
->
 > Callback URL: https://messenger-adapter.conversation-api.staging.sinch.com/adapter/v1/{{YOUR_SINCH_CONVERSATION_APP_ID}}/callback
 >
 > Verify Token: 5651d9fd-5c33-4d7a-aa37-5e3e151c2a92
->
 
-<p align="center">
-<img src="./images/channel-support/messenger/fb_messenger_edit_webhook.png" width="50%">
-</p>
+![Facebook Messenger Edit Webhook](images/channel-support/messenger/fb_messenger_edit_webhook.png)
 
-To complete your **Webhooks** configuration click on **"Add Subscriptions"**.  Select **"messages"** and **"message_deliveries"** fields and click on **"Save"**.
+To complete your **Webhooks** configuration click on **"Add Subscriptions"**. Select **"messages"** and **"message_deliveries"** fields and click on **"Save"**.
 
-<p align="center">
-<img src="./images/channel-support/messenger/fp_messenger_webhook_subscriptions.png" width="60%">
-</p>
+![Facebook Webhook Subscription](images/channel-support/messenger/fp_messenger_webhook_subscriptions.png)
 
-Great!  We are almost there.  Just a couple of more steps.
-
+Great! We are almost there. Just a couple of more steps.
 
 ### Initiate an FB Messenger Chat and Respond with Sinch Conversations API
 
-OK, we are ready for some action!  Visit your FB Page, click on **"Send Message"** and choose **"Test Button"**.
+OK, we are ready for some action! Visit your FB Page, click on **"Send Message"** and choose **"Test Button"**.
 
-<p align="center">
-<img src="./images/channel-support/messenger/fb_page_test_send_message_button.png" width="75%">
-</p>
+![Facebook test send message button](images/channel-support/messenger/fb_page_test_send_message_button.png)
 
 Enter a message into the **Messenger** chat window and **Send**.
 
-<p align="center">
-<img src="./images/channel-support/messenger/fb_page_messenger_pop_up.png" width="35%">
-</p>
+![Facebook Messenger Pop up](images/channel-support/messenger/fb_page_messenger_pop_up.png)
 
 Use **Sinch Conversations API** to **List Contacts**, you should now see a new contact entry generated when the **Messenger Message** was posted from your FB Page.
 
@@ -193,7 +151,7 @@ Use **Sinch Conversations API** to **List Contacts**, you should now see a new c
         }
     ],
     "next_page_token": ""
-    
+
 ```
 
 Use your newly created Sinch **Contact** to send a **Text Message** response using the **message:send** function.
@@ -216,6 +174,7 @@ curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1be
     ]
 }'
 ```
+
 ```javascript Raw Java
 RequestBody body =
     RequestBody.create(
@@ -247,7 +206,8 @@ Request request =
         .build();
 Response response = client.newCall(request).execute();
 ```
-```
+
+````
 ```javascript Java
 public static void main(String[] args) {
 
@@ -264,18 +224,11 @@ public static void main(String[] args) {
     // Print out the Message id for the record
     System.out.println(messageResponse.getMessageId());
 }
-```
+````
 
-<p align="center">
-<img src="./images/channel-support/messenger/fb_message_text.jpg" width="50%" height="50%">
-</p>
+![Facebook Message Text](images/channel-support/messenger/fb_message_text.jpg)
 
-**ALRIGHT!!  CONGRATULATIONS**, you have just sent your first Sinch Conversations Messenger Message!
+**ALRIGHT!! CONGRATULATIONS**, you have just sent your first Sinch Conversations Messenger Message!
 
->
->
->1. Learn how to receive messages 
->2. Want more? [Advance messages for facebook messenger](./conversation-fb-advance-messages.md).
->
->
-
+> 1.  Learn how to receive messages
+> 2.  Want more? [Advance messages for facebook messenger](./conversation-fb-advance-messages.md).
