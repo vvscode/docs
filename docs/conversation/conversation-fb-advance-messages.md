@@ -1,13 +1,15 @@
 ---
-title: Advance Facebook Messenger
+title: Sending rich messages with Facebook Messenger
 excerpt: >-
   Learn and see how different kind of messages render on Facebook Messenger.
 hidden: true
 ---
 
-## Advance Facebook Messages
+## Advanced Facebook Messages
 
-In this blog, we will show you how you can send advance messages such as media, choice, card, carousel, and location messages using Conversation API.
+outline what needs to happen first, ping back to setting up facebook messenger
+Talk about the different messages a little bit,
+Add screenshots on every message. (If we are to keep this, I am a bit ambvialent since you have it in the reference guide. ).
 
 ## Sending Media Message
 
