@@ -44,7 +44,7 @@ Click on **"Messenger"** and then click **"Finish"**.
 If you have an existing FB Developer Account and an FB App, you cant skip to [Add Messenger Product to your FB App](#add-messenger-to-your-app).
 To register for an FB Developer account go to **[Facebook Developer Account](https://developers.facebook.com)** and click **"Get Started"** on the upper right menu.
 
-(images/channel-support/messenger/fb_for_developers.png)
+[](images/channel-support/messenger/fb_for_developers.png)
 
 Once you have created your Facebook developer account you can choose to **"Create First App"**
 

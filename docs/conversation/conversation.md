@@ -3,7 +3,7 @@ title: Introduction
 excerpt: >-
   High level presentation of Sinch Conversation API and overview of its key
   concepts.
-hidden: false
+hidden: true
 ---
 
 ## Introduction
