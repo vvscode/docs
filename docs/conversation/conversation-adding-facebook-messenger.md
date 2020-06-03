@@ -2,7 +2,7 @@
 title: Adding Facebook Messenger to the Conversation API
 excerpt: >-
   Learn how to set up and send a message with Facebook messenger and Conversation API.
-hidden: false
+hidden: true
 ---
 
 ## Setup your FB App with Messenger Chat

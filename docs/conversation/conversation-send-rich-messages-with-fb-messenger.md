@@ -2,7 +2,7 @@
 title: Send rich messages with Facebook Messenger
 excerpt: >-
   Learn and see how different kind of messages render on Facebook Messenger.
-hidden: false
+hidden: true
 ---
 
 outline what needs to happen first, ping back to setting up facebook messenger
