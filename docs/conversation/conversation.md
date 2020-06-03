@@ -3,8 +3,9 @@ title: Introduction
 excerpt: >-
   High level presentation of Sinch Conversation API and overview of its key
   concepts.
-hidden: true
+hidden: false
 ---
+
 ## Introduction
 
 In its most basic use case the Sinch Conversation API offers one single API endpoint for sending and receiving messages across the most popular channels using one unified format. For more advanced messaging use cases, it offers the notion of a conversations, contacts, switching between Bot and Human chats and much more for the advanced chatbot and conversational messaging application developer.
@@ -34,10 +35,10 @@ The app is tied to a set of webhooks which defines the destination for various e
 The easiest way to create and configure a Conversation API app is through [Sinch Portal](https://dashboard.sinch.com/convapi/apps)
 An **app** has the following configurable properties:
 
-Field | Description
-------|-------------
-Display name | The name visible in [Sinch Portal](https://dashboard.sinch.com/convapi/apps)
-Conversation metadata report view | Specifies the amount of [**conversation**](doc:conversation#conversation) metadata that will be returned as part of each callback.
+| Field                             | Description                                                                                                                        |
+| --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| Display name                      | The name visible in [Sinch Portal](https://dashboard.sinch.com/convapi/apps)                                                       |
+| Conversation metadata report view | Specifies the amount of [**conversation**](doc:conversation#conversation) metadata that will be returned as part of each callback. |
 
 #### Channel credential
 
@@ -47,11 +48,11 @@ The app channel priority is overridden by contact channel priority order and by 
 
 A **channel credential** has the following configurable properties:
 
-Field | Description
-------|-------------
-Channel | Which channel these credentials are used with.
-Credential | Specifies the type and values for the credentials used for a channel
-Channel senders | A list of sender identities to use when sending a message. It is used for example with `SMS` channel
+| Field           | Description                                                                                          |
+| --------------- | ---------------------------------------------------------------------------------------------------- |
+| Channel         | Which channel these credentials are used with.                                                       |
+| Credential      | Specifies the type and values for the credentials used for a channel                                 |
+| Channel senders | A list of sender identities to use when sending a message. It is used for example with `SMS` channel |
 
 #### Webhook
 
@@ -60,12 +61,12 @@ Beside URL, each **webhook** includes a set of triggers which dictates which eve
 
 A **webhook** has the following configurable properties:
 
-Field | Description
-------|-------------
-Target | The target url where events should be sent to
-Target type | Type of the target url. Currently only DISMISS and HTTP are supported values. DISMISS indicates the events will not be sent
-Secret | Optional secret to be used to sign the content of Conversation API callbacks. Can be used to verify the integrity of the callbacks
-Triggers | A set of triggers that this webhook is listening to. Example triggers include MESSAGE_DELIVERY for message delivery receipts and MESSAGE_INBOUND for inbound contact messages
+| Field       | Description                                                                                                                                                                   |
+| ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Target      | The target url where events should be sent to                                                                                                                                 |
+| Target type | Type of the target url. Currently only DISMISS and HTTP are supported values. DISMISS indicates the events will not be sent                                                   |
+| Secret      | Optional secret to be used to sign the content of Conversation API callbacks. Can be used to verify the integrity of the callbacks                                            |
+| Triggers    | A set of triggers that this webhook is listening to. Example triggers include MESSAGE_DELIVERY for message delivery receipts and MESSAGE_INBOUND for inbound contact messages |
 
 #### Contact
 
@@ -73,18 +74,18 @@ The **contact** entity is a collection entity that groups together underlying co
 
 A **contact** has the following configurable properties:
 
-Field | Description
-------|-------------
-Channel identities | List of channel identities. Specifies how the contact is identified on underlying channels
-Channel priority | Specifies the channel priority order used when sending messages to this contact. This can be overridden by message specific channel priority order.
-Display name | Optional display name used in chat windows and other UIs
-Email | Optional email of the contact
-External id | Optional identifier of the contact in external systems
-Metadata | Optional metadata associated with the contact.
+| Field              | Description                                                                                                                                         |
+| ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Channel identities | List of channel identities. Specifies how the contact is identified on underlying channels                                                          |
+| Channel priority   | Specifies the channel priority order used when sending messages to this contact. This can be overridden by message specific channel priority order. |
+| Display name       | Optional display name used in chat windows and other UIs                                                                                            |
+| Email              | Optional email of the contact                                                                                                                       |
+| External id        | Optional identifier of the contact in external systems                                                                                              |
+| Metadata           | Optional metadata associated with the contact.                                                                                                      |
 
 #### Channel recipient identity
 
-A **channel recipient identity** is an identifier for the [**contact**](doc:conversation#contact) for a specific channel. E.g. an international phone number is used as identifier for *SMS* and *RCS* while a PSID (Page-Scoped ID) is used as identifier for *Facebook Messenger*.
+A **channel recipient identity** is an identifier for the [**contact**](doc:conversation#contact) for a specific channel. E.g. an international phone number is used as identifier for _SMS_ and _RCS_ while a PSID (Page-Scoped ID) is used as identifier for _Facebook Messenger_.
 Some channels use app-scoped channel identity. Currently, FB Messenger and Viber are using app-scoped channel identities
 which means contacts will have different channel identities for different [**apps**](doc:conversation#app).
 For Facebook Messenger this means that the contact channel identity is associated with the [**app**](doc:conversation#app)
@@ -92,11 +93,11 @@ linked to the FB page for which this PSID is issued.
 
 A **channel recipient identity** has the following configurable properties:
 
-Field | Description
-------|-------------
-Channel | The channel that this identity is used on
-Channel recipient identity | The actual identity, e.g. an international phone number or email address.
-App id | The Conversation API's **app** ID if this is app-scoped channel identity.
+| Field                      | Description                                                               |
+| -------------------------- | ------------------------------------------------------------------------- |
+| Channel                    | The channel that this identity is used on                                 |
+| Channel recipient identity | The actual identity, e.g. an international phone number or email address. |
+| App id                     | The Conversation API's **app** ID if this is app-scoped channel identity. |
 
 #### Conversation
 
@@ -120,10 +121,10 @@ and the **app** token as password.
 
 ### Supported channels
 
-* <img src="https://files.readme.io/d0223ff-messages-chat-keynote-icon.svg" width="20" height="20" /> SMS
-* <img src="https://files.readme.io/7474132-whatsapp.svg" width="20" height="20" /> WhatsApp
-* <img src="https://files.readme.io/d0223ff-messages-chat-keynote-icon.svg" width="20" height="20" /> RCS
-* <img src="https://files.readme.io/41a20d1-messenger.svg" width="20" height="20" /> Facebook messenger
+- <img src="https://files.readme.io/d0223ff-messages-chat-keynote-icon.svg" width="20" height="20" /> SMS
+- <img src="https://files.readme.io/7474132-whatsapp.svg" width="20" height="20" /> WhatsApp
+- <img src="https://files.readme.io/d0223ff-messages-chat-keynote-icon.svg" width="20" height="20" /> RCS
+- <img src="https://files.readme.io/41a20d1-messenger.svg" width="20" height="20" /> Facebook messenger
 
 And more on the roadmap for 2020.
 
@@ -131,9 +132,9 @@ And more on the roadmap for 2020.
 
 Currently Sinch Conversation API is available in:
 
-Region | Host
--------|-------
-EU     | https://eu.conversation.api.sinch.com
+| Region | Host                                  |
+| ------ | ------------------------------------- |
+| EU     | https://eu.conversation.api.sinch.com |
 
 ### Postman collection
 
@@ -144,9 +145,10 @@ To fill WEBHOOK_URL, simply visit
 https://webhook.site/  
 and use the generated link - the one under the 'Your unique URL' label.
 Values for other variables can be obtained by calling corresponding requests:
-* CONTACT - id of contact created by calling 'Create contact' request
-* WEBHOOK_ID - id of webhook created by calling 'Create webhook' request
-* CONVERSATION - Conversation is created automatically when sending a new message (for example with 'Text Message' request). Send a message, then call 'List conversations of App/Contact' to get id of conversation for this variable
+
+- CONTACT - id of contact created by calling 'Create contact' request
+- WEBHOOK_ID - id of webhook created by calling 'Create webhook' request
+- CONVERSATION - Conversation is created automatically when sending a new message (for example with 'Text Message' request). Send a message, then call 'List conversations of App/Contact' to get id of conversation for this variable
 
 ### Errors
 
@@ -168,19 +170,19 @@ When requests are erroneous, the Sinch Conversation API will respond with standa
 
 The table below describes the fields of the error object:
 
-Name | Description | JSON Type
------|-------------|------------
-code | HTTP status code | number
-message | A developer-facing error message | string
-status | Response status name | string
-Details | List of detailed error descriptions | array of objects
+| Name    | Description                         | JSON Type        |
+| ------- | ----------------------------------- | ---------------- |
+| code    | HTTP status code                    | number           |
+| message | A developer-facing error message    | string           |
+| status  | Response status name                | string           |
+| Details | List of detailed error descriptions | array of objects |
 
 #### Common error responses
 
-Status | Description
--------|---------------
-400    | Malformed request
-401    | Incorrect credentials
-403    | Correct credentials but you dont have access to the requested resource
-500    | Something went wrong on our end, try again with exponential back-off
-503    | Something went wrong on our end, try again with exponential back-off
+| Status | Description                                                            |
+| ------ | ---------------------------------------------------------------------- |
+| 400    | Malformed request                                                      |
+| 401    | Incorrect credentials                                                  |
+| 403    | Correct credentials but you dont have access to the requested resource |
+| 500    | Something went wrong on our end, try again with exponential back-off   |
+| 503    | Something went wrong on our end, try again with exponential back-off   |

@@ -11,7 +11,7 @@ In this blog, we will show you how you can send advance messages such as media, 
 
 ## Sending Media Message
 
-```javascript Curl
+```shell Curl
 curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1beta/accounts/{{YOUR_ACCOUNT_ID}}/messages:send' \
 -H 'Content-Type: application/json' \
 -H 'Authorization: Basic {{YOUR_TOKEN}}' \
@@ -31,7 +31,7 @@ curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1be
 }'
 ```
 
-```javascript Java
+```java Java
 public static void main(String[] args) {
     // Init the Sinch Api Client to hold the auth
     SinchApiClient sinchApiClient = SinchApiClient.getDefaultConfig();
@@ -54,7 +54,7 @@ public static void main(String[] args) {
 
 ## Sending Choice Message
 
-```javascript Curl
+```shell Curl
 
 curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1beta/accounts/{{YOUR_ACCOUNT_ID}}/messages:send' \
 
@@ -107,7 +107,7 @@ curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1be
 }'
 ```
 
-```javascript Java
+```java Java
 public static void main(String[] args) {
     // Init the Sinch Api Client to hold the auth
     SinchApiClient sinchApiClient = SinchApiClient.getDefaultConfig();
@@ -138,7 +138,7 @@ public static void main(String[] args) {
 
 ## Sending Card Message
 
-```javascript
+```shell Curl
 curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1beta/accounts/{{YOUR_ACCOUNT_ID}}/messages:send' \
 -H 'Content-Type: application/json' \
 -H 'Authorization: Basic {{YOUR_TOKEN}}' \
@@ -192,7 +192,7 @@ curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1be
 }'
 ```
 
-```javascript Java
+```java Java
 public static void main(String[] args) {
     // Init the Sinch Api Client to hold the auth
     SinchApiClient sinchApiClient = SinchApiClient.getDefaultConfig();
@@ -221,7 +221,7 @@ public static void main(String[] args) {
 
 ## Sending Carousel Message
 
-```javascript
+```shell Curl
 curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1beta/accounts/{{YOUR_ACCOUNT_ID}}/messages:send' \
 -H 'Content-Type: application/json' \
 -H 'Authorization: Basic {{YOUR_TOKEN}}' \
@@ -315,7 +315,7 @@ curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1be
 }'
 ```
 
-```javascript Java
+```java Java
   public static void main(String[] args) {
 
     // Init the Sinch Api Client to hold the auth
@@ -358,7 +358,7 @@ curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1be
 
 ## Sending Location Message
 
-```javascript
+```shell Curl
 curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1beta/accounts/{{YOUR_ACCOUNT_ID}}/messages:send' \
 -H 'Content-Type: application/json' \
 -H 'Authorization: Basic {{YOUR_TOKEN}}' \
@@ -383,7 +383,7 @@ curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1be
 }'
 ```
 
-```javascript Java
+```java Java
 public static void main(String[] args) {
 
     // Init the Sinch Api Client to hold the auth
