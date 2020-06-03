@@ -22,30 +22,25 @@ Tips on how to write useful and easy to read [documentation](CONTRIBUTING.md)
 
 To use callouts and to benefit from having them styled with CSS they should be written as follows:
 
+Emoji Themes
+Default themes are specified using one of the following emojis. (If you don't like the one we've chosen, you can always switch to the alternate!)
+
+| Emoji |     Class      | Alternate |
+| :---- | :------------: | --------: |
+| 📘    | .callout_info  |        ℹ️ |
+| 👍    | .callout_okay  |        ✅ |
+| 🚧    | .callout_warn  |        ⚠️ |
+| ❗️   | .callout_error |        🛑 |
+
 ```markdown
-> **Note**
+> 🎅 Old Saint Nick
 >
-> Here's some very informational text.
+> 'Twas the night before Christmas, when all through the house not a creature was stirring, not even a mouse. The stockings were hung by the chimney with care, in hopes that St. Nicholas soon would be there. The children were nestled all snug in their beds, while visions of sugar plums danced in their heads.
 ```
-
-You can use any of the following keywords in the note title (the first line marked in bold):
-
-| Keyword       | Callout type | Color  |
-| ---           | --           | --     |
-| `note`        | info         | Blue   |
-| `info`        | info         | Blue   |
-| `information` | info         | Blue   |
-| `update`      | info         | Blue   |
-| `success`     | success      | Green  |
-| `important`   | important    | Yellow |
-| `warning`     | warning      | Red    |
-| `danger`      | warning      | Red    |
-
-![Callout examples](images/callouts.png)
 
 ### Directory structure and file names
 
-The directory structure is important and so are the filenames. 
+The directory structure is important and so are the filenames.
 
 Underneath the `docs` folder in this repository, each sub-directory represents a top-level category on the documentation site.
 
@@ -53,7 +48,7 @@ Each `.md` file under these directories represents a content page. The filename 
 
 ![Project structure](images/structure.png)
 
-A folder directly underneath the `docs/...` folder will be the *category name*. In the example above, `docs/whatsapp`, where *Whatsapp* will be the category name on the hosted site. 
+A folder directly underneath the `docs/...` folder will be the _category name_. In the example above, `docs/whatsapp`, where _Whatsapp_ will be the category name on the hosted site.
 
 Page slugs must be unique across the site since the navigation structure isn't represented in the URL published by ReadMe. Thus, it's good practice to prefix each page slug with the category slug to prevent name clashes. See the above screenshot for the `whatsapp-` prefixed file names.
 
@@ -76,7 +71,7 @@ If you wish for a page to have children, create a folder with the same name as t
         + whatsapp-http-rest
            whatsapp-callback.md
            whatsapp-message.md
-        whatsapp-http-rest.md 
+        whatsapp-http-rest.md
 
 In the above example, the `whatsapp-http-rest.md` page will have two children pages, `whatsapp-callback.md` and `whatsapp-message.md` because they sit in a folder named the same as their parent page (`whatsapp-http-rest`).
 
@@ -92,9 +87,9 @@ Use the following Markdown syntax to link to any page within the site (notice th
 [readable text](doc:PAGE-SLUG)
 ```
 
-Where PAGE-SLUG is the page slug (it's file name) you want to link to. 
+Where PAGE-SLUG is the page slug (it's file name) you want to link to.
 
-For example, to link to the *WhatsApp Introduction* page, use this:
+For example, to link to the _WhatsApp Introduction_ page, use this:
 
 ```markdown
 [WhatsApp Intro](doc:whatsapp-introduction)
@@ -102,7 +97,7 @@ For example, to link to the *WhatsApp Introduction* page, use this:
 
 #### To a section within a page
 
-ReadMe creates HTML elements with specific IDs for all headings within pages. They can be used as anchors in URLs to link to specific sections within a content page. 
+ReadMe creates HTML elements with specific IDs for all headings within pages. They can be used as anchors in URLs to link to specific sections within a content page.
 The IDs are derived from each heading's content, slugified and prefixed with `section-`.
 
 To create a link to a specific section on a page, you can use the following Markdown syntax:
