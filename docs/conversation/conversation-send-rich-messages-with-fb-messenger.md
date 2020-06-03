@@ -2,10 +2,8 @@
 title: Send rich messages with Facebook Messenger
 excerpt: >-
   Learn and see how different kind of messages render on Facebook Messenger.
-hidden: true
+hidden: false
 ---
-
-## Advanced Facebook Messages
 
 outline what needs to happen first, ping back to setting up facebook messenger
 Talk about the different messages a little bit,
@@ -32,7 +30,6 @@ curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1be
     ]
 }'
 ```
-
 ```java Java
 public static void main(String[] args) {
     // Init the Sinch Api Client to hold the auth
@@ -108,7 +105,6 @@ curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1be
     ]
 }'
 ```
-
 ```java Java
 public static void main(String[] args) {
     // Init the Sinch Api Client to hold the auth
@@ -193,7 +189,6 @@ curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1be
     ]
 }'
 ```
-
 ```java Java
 public static void main(String[] args) {
     // Init the Sinch Api Client to hold the auth
@@ -316,7 +311,6 @@ curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1be
     ]
 }'
 ```
-
 ```java Java
   public static void main(String[] args) {
 
@@ -384,7 +378,6 @@ curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1be
     ]
 }'
 ```
-
 ```java Java
 public static void main(String[] args) {
 

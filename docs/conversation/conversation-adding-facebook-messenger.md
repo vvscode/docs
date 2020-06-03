@@ -2,7 +2,7 @@
 title: Adding Facebook Messenger to the Conversation API
 excerpt: >-
   Learn how to set up and send a message with Facebook messenger and Conversation API.
-hidden: true
+hidden: false
 ---
 
 ## Setup your FB App with Messenger Chat
@@ -231,4 +231,4 @@ public static void main(String[] args) {
 **ALRIGHT!! CONGRATULATIONS**, you have just sent your first Sinch Conversations Messenger Message!
 
 1.  Learn how to receive messages
-2.  Learn how to [send rich messages with Facebook messenger](conversation-send-rich-messages-with-fb-messenger.md).
+2.  Learn how to [send rich messages with Facebook messenger](doc:conversation-send-rich-messages-with-fb-messenger).

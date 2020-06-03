@@ -2,7 +2,7 @@
 title: Channel Support
 excerpt: >-
   Sinch Conversation API channel specific configurations and message transcoding.
-hidden: true
+hidden: false
 ---
 
 ## Conversation API Channel Support
