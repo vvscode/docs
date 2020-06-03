@@ -41,7 +41,7 @@ Click on **"Messenger"** and then click **"Finish"**.
 
 ### Create your Facebook App
 
-If you have an existing FB Developer Account and an FB App, you cant skip to [Add Messenger Product to your FB App](#add-messenger-your-app).
+If you have an existing FB Developer Account and an FB App, you cant skip to [Add Messenger Product to your FB App](#add-messenger-to-your-app).
 To register for an FB Developer account go to **[Facebook Developer Account](https://developers.facebook.com)** and click **"Get Started"** on the upper right menu.
 
 (images/channel-support/messenger/fb_for_developers.png)
@@ -54,7 +54,7 @@ Your new _APP ID_ will be displayed at the top left of your FB App Dashboard.
 
 ![Facebook App Dashboard](images/channel-support/messenger/fb_app_dashboard.png)
 
-### Add Messenger to your app
+#### Add Messenger to your app
 
 From your FB Developer Dashboard, under _Add Product_, click on Messenger **"Setup"** button.
 
@@ -115,11 +115,11 @@ To complete your **Webhooks** configuration click on **"Add Subscriptions"**. Se
 
 ![Facebook Webhook Subscription](images/channel-support/messenger/fp_messenger_webhook_subscriptions.png)
 
-Great! We are almost there. Just a couple of more steps.
+Great! You are almost there. Just a couple of more steps.
 
-### Initiate an FB Messenger Chat and Respond with Sinch Conversations API
+### Start a conversation in Messenger and Respond with Sinch Conversations API
 
-OK, we are ready for some action! Visit your FB Page, click on **"Send Message"** and choose **"Test Button"**.
+OK, you are ready for some action! Visit your FB Page, click on **"Send Message"** and choose **"Test Button"**.
 
 ![Facebook test send message button](images/channel-support/messenger/fb_page_test_send_message_button.png)
 
@@ -230,5 +230,5 @@ public static void main(String[] args) {
 
 **ALRIGHT!! CONGRATULATIONS**, you have just sent your first Sinch Conversations Messenger Message!
 
-> 1.  Learn how to receive messages
-> 2.  Want more? [Advance messages for facebook messenger](./conversation-fb-advance-messages.md).
+1.  Learn how to receive messages
+2.  Learn how to [send rich messages with Facebook messenger](conversation-send-rich-messages-with-fb-messenger.md).
