@@ -5,7 +5,7 @@ excerpt: >-
 hidden: false
 next:
   pages:
-    - voice-ios-cloud-local-and-remote-push-notifications
+    - voice-ios-cloud-push-notifications-callkit
 ---
 
 ## Setting Up a Video Call
