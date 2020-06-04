@@ -892,8 +892,6 @@ _Example_
 
 This callback is made when the call is disconnected. It is a POST request to the specified calling callback URL. This event does not support instructions and only supports the [hangup] action.
 
-This callback is a notification. No response is needed.
-
 ### Authorization
 
 You can find more information on callback request signing [here](doc:using-rest#callback-request-signing).
