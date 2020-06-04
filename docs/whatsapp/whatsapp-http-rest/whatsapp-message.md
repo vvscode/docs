@@ -95,7 +95,7 @@ JSON object parameters:
 | template_name | Name of the template.                                                 | String       | N/A        | N/A                   | Yes      |
 | language      | Language to send the template in.                                     | String       | `en`       | Language codes and locales (e.g `en`, `en_us`) | No       |
 | params        | Parameters to inject into the template.                               | String array | N/A        | This parameter can only be used for template messages with only a body of text. | No      |
-| header_params | Parameter to inject into the header of the template.                   | String array | N/A        | N/A                   | No      |
+| header_params | Parameter to inject into the header of the template.                   | String array | N/A        | Can only used when there is a header of type text in the template. | No      |
 | body_params   | Parameters to inject into the body of the template.                    | String array | N/A        | N/A                   | No      |
 | media | An object describing the document, image or video to include in the header of the template. The objects are the same as described under Document message, Image message and Video message below, except that the `caption` parameter is not allowed. Also see the note below. For a message without media, set the media type to `text`.       | String array | N/A        | N/A                   | No      |
 | buttons | A list of buttons to include in the template message. | List of button objects | N/A        | N/A                   | Yes, if the template definition includes either at least one quick reply button or a dynamic URL button. |
