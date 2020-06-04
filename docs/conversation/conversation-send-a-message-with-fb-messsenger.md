@@ -156,7 +156,7 @@ Use **Sinch Conversations API** to **List Contacts**, you should now see a new c
 
 Use your newly created Sinch **Contact** to send a **Text Message** response using the **message:send** function.
 
-```javascript Curl
+```shell Curl
 curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1beta/accounts/{{YOUR_SINCH_ACCOUNT_ID}}/messages:send' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -174,8 +174,7 @@ curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1be
     ]
 }'
 ```
-
-```javascript Raw Java
+```java Raw Java
 RequestBody body =
     RequestBody.create(
         mediaType,
@@ -206,9 +205,7 @@ Request request =
         .build();
 Response response = client.newCall(request).execute();
 ```
-
-````
-```javascript Java
+```java Java
 public static void main(String[] args) {
 
     // Init the Sinch Api Client to hold the auth
@@ -224,7 +221,7 @@ public static void main(String[] args) {
     // Print out the Message id for the record
     System.out.println(messageResponse.getMessageId());
 }
-````
+```
 
 ![Facebook Message Text](images/channel-support/messenger/fb_message_text.jpg)
 
