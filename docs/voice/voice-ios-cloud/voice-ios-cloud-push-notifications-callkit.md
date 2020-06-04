@@ -25,9 +25,7 @@ To fully enable VoIP push notifications in your application, the following steps
 
 ## Configure iOS App with Push Notifications Capability
 
-Apps must have the proper entitlements to use push notifications. To add these entitlements to your app, enable the _Push Notifications_ capability in your Xcode project. 
-
-See Apple documentation [here](https://developer.apple.com/documentation/usernotifications/registering_your_app_with_apns?language=objc#overview) for details on this particular step.
+Apps must have the proper entitlements to use push notifications. To add these entitlements to your app, enable the _Push Notifications_ capability in your Xcode project. See Apple documentation [here](https://developer.apple.com/documentation/usernotifications/registering_your_app_with_apns?language=objc#overview) for details on this particular step.
 
 
 ## Acquiring a Push Device Token
