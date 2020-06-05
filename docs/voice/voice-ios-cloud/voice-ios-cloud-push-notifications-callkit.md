@@ -55,6 +55,32 @@ Apps must have the proper entitlements to use push notifications. To add these e
 > `SINManagedPush` is a very lightweight component and its lifecycle can be independent of the life-cycle of a `SINClient`. It should be created once, and should not be disposed (that would prevent receiving push notifications via _PushKit_).
 
 
+## Enabling Push Notifications for `SINClient`
+
+To enable that Sinch manage push notifications for you end-to-end, i.e. both client-side and server-side in terms acting [APNs Provider](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/sending_notification_requests_to_apns?language=objc), it is necessary to enable that when configuring a `SINClient`.
+
+```objectivec
+id<SINClient> client = [Sinch clientWithApplicationKey:@"<application key>"
+                                       environmentHost:@"ocra.api.sinch.com"
+                                                userId:@"<user id>"];
+
+[client enableManagedPushNotifications];
+```
+
+# Configuring an APNs Authentication Signing Key
+
+To enable Sinch to act as _APNs Provider_ on your behalf, you must provide Sinch with an _APNs Authentication Token Signing Key_. You create this signing key in in your [_Apple Developer Account_](https://developer.apple.com/) and upload the key file to your [Sinch Developer Account](https://portal.sinch.com/#/apps).
+
+1. Create an APNs Key in your [_Apple Developer Account_](https://developer.apple.com/). See the Apple developer documentation on creating the key [here](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/establishing_a_token-based_connection_to_apns).
+2. Take the key file (`.p8`) from _step 1)_ and upload it for your _Sinch Application_ in your [Sinch Developer Account](https://portal.sinch.com/#/apps).
+
+>🔒 Your Signing Key is Stored Securely
+>
+> Sinch will store your signing key in encrypted form using `AES256-GCM` (AES in GCM mode, using 256-bit keys).
+
+
+__NOTE__: We only support _APNs Token-based authentication_, i.e. we no longer support APNs certificate-based functionality.
+
 ## Apple Push Service Environments and Provisioning
 
 When an iOS application is code signed, the embedded _Provisioning Profile_ will have to match the _Apple Push Notification service Environment_ (also refered to as _APS Environment_) specified in the app [_Entitlements_](https://developer.apple.com/documentation/bundleresources/entitlements/aps-environment?language=objc).
