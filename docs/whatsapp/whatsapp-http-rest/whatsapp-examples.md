@@ -2,6 +2,13 @@
 title: Examples
 excerpt: Use cases for the Sinch WhatsApp API
 ---
+**Interactive message templates**
+
+Interactive message templates have buttons that can be pressed by the recipent of the message, triggering some action. This is what they can look like on the recipient's phone.
+
+![image](images\interactive-message-template-cta-buttons.png)
+
+![image](images\interactive-message-template-quick-reply-buttons.png)
 
 **Message template with quick reply button**
 
@@ -57,3 +64,4 @@ The template can be used to send a message like this:
 ```
 
 The quick reply button payload, which is returned in a callback notification when the recipient presses that button, could be used to easily collect statistics about the most popular delivery choices for books, for instance.
+
