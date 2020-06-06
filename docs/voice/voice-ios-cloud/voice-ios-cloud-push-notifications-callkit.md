@@ -25,7 +25,7 @@ To fully enable VoIP push notifications in your application, the following steps
 
 ## Configure iOS App with Push Notifications Capability
 
-Apps must have the proper entitlements to use push notifications. To add these entitlements to your app, enable the _Push Notifications_ capability in your Xcode project. See Apple documentation [here](https://developer.apple.com/documentation/usernotifications/registering_your_app_with_apns?language=objc#overview) for details on this particular step.
+iOS apps must have the proper entitlements to use push notifications. To add these entitlements to your app, enable the _Push Notifications_ capability in your Xcode project. See Apple documentation [here](https://developer.apple.com/documentation/usernotifications/registering_your_app_with_apns?language=objc#overview) for details on this particular step.
 
 
 ## Acquiring a Push Device Token
@@ -67,7 +67,7 @@ id<SINClient> client = [Sinch clientWithApplicationKey:@"<application key>"
 [client enableManagedPushNotifications];
 ```
 
-# Configuring an APNs Authentication Signing Key
+## Configuring an APNs Authentication Signing Key
 
 To enable Sinch to act as _APNs Provider_ on your behalf, you must provide Sinch with an _APNs Authentication Token Signing Key_. You create this signing key in in your [_Apple Developer Account_](https://developer.apple.com/) and upload the key file to your [Sinch Developer Account](https://portal.sinch.com/#/apps).
 
@@ -80,6 +80,78 @@ To enable Sinch to act as _APNs Provider_ on your behalf, you must provide Sinch
 
 
 __NOTE__: We only support _APNs Token-based authentication_, i.e. we no longer support APNs certificate-based functionality.
+
+## CallKit
+
+### Apple Requirements on Use of VoIP Push Notifications and _CallKit_
+
+Apple introduced stricter requirements for using VoIP push notifications since iOS 13. iOS apps built using the iOS 13 SDK and make use of VoIP push notifications must report each received push notification as an incoming call to CallKit.
+
+When linking against the iOS 13 SDK or later, your implementation **must** report notifications to the CallKit framework by calling the method [`-[CXProvider reportNewIncomingCallWithUUID:update:completion:]`](https://developer.apple.com/documentation/callkit/cxprovider/1930694-reportnewincomingcallwithuuid). Further, it must report this __within the same run-loop__, i.e. before the delegate method invocation scope `-[PKPushRegistryDelegate pushRegistry:didReceiveIncomingPushWithPayload:forType:withCompletionHandler:]` ends. In terms of the Sinch SDK, this means your implementation must report to CallKit in your implementation of  `-[SINManagedPushDelegate managedPush:didReceiveIncomingPushWithPayload:forType:]`.
+
+```objectivec
+
+// (Assuming CallKit CXProvider accessible as self.provider)
+
+- (void)managedPush:(id<SINManagedPush>)managedPush
+    didReceiveIncomingPushWithPayload:(NSDictionary *)payload
+                              forType:(NSString *)pushType {
+
+  id<SINNotificationResult> notification = [SINManagedPush queryPushNotificationPayload:payload];
+
+  if ([notification isValid] && [notification isCall]) {
+    NSUUID *callId = [[NSUUID alloc] initWithUUIDString:notification.callResult.callId];
+
+    CXCallUpdate *callUpdate = [[CXCallUpdate alloc] init];
+    callUpdate.remoteHandle = [[CXHandle alloc] initWithType:CXHandleTypeGeneric value:notification.callResult.remoteUserId];
+
+    [self.provider reportNewIncomingCallWithUUID: callId
+                                          update: callUpdate
+                                          completion:^(NSError *_Nullable error) {
+                                            if (error) {
+                                              // Hangup call
+                                            }
+                                          }];
+  }
+
+  [_provider reportNewIncomingCallWithUUID:callId
+}
+
+// (For a more complete example, see the Sinch sample app SinchCallKit.xcodeproj)
+```
+
+
+When you relay the push notification to a `SINClient`. If you for some reason do not relay the push payload to a Sinch client instance using `-[SINClient relayRemotePushNotification:]`, you __must__ instead invoke `-[SINManagedPush didCompleteProcessingPushPayload:]` so that the Sinch SDK can invoke the _PKPushKit_ completion handler (which is managed by `SINManagedPush`).
+
+> ❗️Report Push Notifications to CallKit
+> If a VoIP push notification is not reported to CallKit then iOS will __terminate__ the application. Repeatedly failing to report calls to CallKit may cause the system to stop delivering any more VoIP push notifications to your app. The exact limit before this throttling behaviour kicks in is subject to Apple iOS implementation details and outside the control of the Sinch SDK.
+>
+> Please also see [Apples Developer documentation on this topic](https://developer.apple.com/documentation/pushkit/pkpushregistrydelegate/2875784-pushregistry).
+
+### Extracting Call Information From a Push Payload
+
+At the time when your application receives a push notification you will need to extract some key information about the call based on only the push notification payload. You will need to do this to conform with with Apple requirements on reporting a VoIP push notification as an incoming call to _CallKit_, but you may also want to extract application-specific headers for the call. Use the method `-[SINManagedPush queryPushNotificationPayload:]` to extract call details from the raw push payload. Note that you can do this immediately and before you have created and started a `SINClient` instance.
+
+__Example__
+
+```objectivec
+
+- (void)managedPush:(id<SINManagedPush>)managedPush
+    didReceiveIncomingPushWithPayload:(NSDictionary *)payload
+                              forType:(NSString *)pushType {
+
+  id<SINNotificationResult> notification = [SINManagedPush queryPushNotificationPayload:payload];
+
+  if ([notification isValid]) {
+    id<SINCallNotificationResult> callNotification = [notification callResult];
+
+    // Use SINCallNotificationResult to extract remote User ID, call headers, etc.
+  }
+
+```
+
+Also see reference documentation for [SINManagedPush](reference\html\Protocols\SINManagedPush.html) and [SINCallNotificationResult](reference\html\Protocols\SINCallNotificationResult.html).
+
 
 ## Apple Push Service Environments and Provisioning
 
