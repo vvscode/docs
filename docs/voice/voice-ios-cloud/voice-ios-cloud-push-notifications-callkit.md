@@ -97,7 +97,7 @@ When linking against the iOS 13 SDK or later, your implementation **must** repor
     didReceiveIncomingPushWithPayload:(NSDictionary *)payload
                               forType:(NSString *)pushType {
 
-  id<SINNotificationResult> notification = [SINManagedPush queryPushNotificationPayload:payload];
+  id<SINNotificationResult> notification = [SINPushHelper queryPushNotificationPayload:payload];
 
   if ([notification isValid] && [notification isCall]) {
     NSUUID *callId = [[NSUUID alloc] initWithUUIDString:notification.callResult.callId];
@@ -130,7 +130,7 @@ When you relay the push notification to a `SINClient`. If you for some reason do
 
 ### Extracting Call Information From a Push Payload
 
-At the time when your application receives a push notification you will need to extract some key information about the call based on only the push notification payload. You will need to do this to conform with with Apple requirements on reporting a VoIP push notification as an incoming call to _CallKit_, but you may also want to extract application-specific headers for the call. Use the method `-[SINManagedPush queryPushNotificationPayload:]` to extract call details from the raw push payload. Note that you can do this immediately and before you have created and started a `SINClient` instance.
+At the time when your application receives a push notification you will need to extract some key information about the call based on only the push notification payload. You will need to do this to conform with with Apple requirements on reporting a VoIP push notification as an incoming call to _CallKit_, but you may also want to extract application-specific headers for the call. Use the method `+[SINPushHelper queryPushNotificationPayload:]` to extract call details from the raw push payload. Note that you can do this immediately and before you have created and started a `SINClient` instance.
 
 __Example__
 
@@ -140,7 +140,7 @@ __Example__
     didReceiveIncomingPushWithPayload:(NSDictionary *)payload
                               forType:(NSString *)pushType {
 
-  id<SINNotificationResult> notification = [SINManagedPush queryPushNotificationPayload:payload];
+  id<SINNotificationResult> notification = [SINPushHelper queryPushNotificationPayload:payload];
 
   if ([notification isValid]) {
     id<SINCallNotificationResult> callNotification = [notification callResult];
@@ -150,7 +150,7 @@ __Example__
 
 ```
 
-Also see reference documentation for [SINManagedPush](reference\html\Protocols\SINManagedPush.html) and [SINCallNotificationResult](reference\html\Protocols\SINCallNotificationResult.html).
+Also see reference documentation for [SINPushHelper](reference\html\Protocols\SINPushHelper.html) and [SINCallNotificationResult](reference\html\Protocols\SINCallNotificationResult.html).
 
 
 ## Apple Push Service Environments and Provisioning
