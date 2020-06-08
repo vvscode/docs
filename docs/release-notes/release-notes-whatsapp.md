@@ -5,6 +5,11 @@ excerpt: >-
   bug fixes.
 ---
 
+## 2020-06-09
+
+  - Improvements in error handling for not supported animated stickers - better error message is returned now.
+  - Improvements in phone number verification when sending message.
+
 ## 2020-05-26
 
   - Root CA SSL certificate replacement. More information and instructions are available on following links for [EU](https://status.sinch.com/incidents/013jd1r183pn) and [US](https://status.sinch.com/incidents/041d39nsxb4k)
