@@ -7,7 +7,7 @@ excerpt: >-
 
 ## 2020-06-09
 
-  - Improvements in error handling for not supported animated stickers - better error message is returned now.
+  - Improvements in error handling for unsupported animated stickers - better error message is returned now.
   - Improvements in phone number verification when sending message.
 
 ## 2020-05-26
