@@ -13,6 +13,6 @@ hidden: false
 | Application Secret   | A secret used to for authentication and authorization. A secret looks like `oYdgGRXoxEuJhGDY2KQ/HQ==` (Base64-encoded string representation). |
 | Callee               | The user receiving a call. |
 | Caller               | The user making a call. |
-| User                 | An end user |
+| User                 | An end user. |
 | User ID              | Identity of a User in the application domain. |
 
