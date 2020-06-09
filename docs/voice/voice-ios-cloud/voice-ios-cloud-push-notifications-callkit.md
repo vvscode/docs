@@ -105,15 +105,14 @@ When linking against the iOS 13 SDK or later, your implementation **must** repor
     CXCallUpdate *callUpdate = [[CXCallUpdate alloc] init];
     callUpdate.remoteHandle = [[CXHandle alloc] initWithType:CXHandleTypeGeneric value:notification.callResult.remoteUserId];
 
-    [self.provider reportNewIncomingCallWithUUID: callId
-                                          update: callUpdate
+    [self.provider reportNewIncomingCallWithUUID:callId
+                                          update:callUpdate
                                           completion:^(NSError *_Nullable error) {
                                             if (error) {
                                               // Hangup call
                                             }
                                           }];
   }
-  [_provider reportNewIncomingCallWithUUID:callId
 }
 
 // (For a more complete example, see the Sinch sample app SinchCallKit.xcodeproj)
