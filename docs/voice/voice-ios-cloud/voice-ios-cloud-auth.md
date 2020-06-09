@@ -138,16 +138,16 @@ client.delegate = ...;
 - (void)client:(id<SINClient>)client
     requiresRegistrationCredentials:(id<SINClientRegistration>) registrationCallback {
 
-  [yourAuthServer getRegistrationToken: [client userId]
+  [yourAuthServer getRegistrationToken:[client userId]
     onSuccess:(NSString* token)^{
       [registrationCallback registerWithJWT:token];
-  }
-  onFailure:^(NSError* error) {
-    // Notify Sinch client of failure (e.g. if your backend auth server rejects the
-    // user, but also if the request to the auth server fails due to temporary
-    // network connectivity issues.
-    [registrationCallback registerDidFail:error];
-  }];
+    }
+    onFailure:^(NSError* error) {
+      // Notify Sinch client of failure (e.g. if your backend auth server rejects the
+      // user, but also if the request to the auth server fails due to temporary
+      // network connectivity issues.
+      [registrationCallback registerDidFail:error];
+    }];
 }
 ```
 
