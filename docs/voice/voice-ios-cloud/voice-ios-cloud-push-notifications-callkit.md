@@ -150,6 +150,36 @@ __Example__
 
 Also see reference documentation for [SINManagedPush](reference\html\Classes\SINManagedPush.html) and [SINCallNotificationResult](reference\html\Protocols\SINCallNotificationResult.html).
 
+## Push Notification _"Display Name"_
+
+To support showing a user display name in a non-VoIP push notification (i.e. in a regular _Remote Push Notification_), you can configure a display name using [`-[SINManagedPush setDisplayName:]`]. The display name will be available to in the push notification in `aps.alert.loc-args` (when key `aps.alert.loc-key` is `SIN_INCOMING_CALL_DISPLAY_NAME`).
+
+Example of Sinch push notification payload when display name is specified:
+
+```
+{
+   "aps" : {
+      "alert" : {
+         "loc-key" : "SIN_INCOMING_CALL_DISPLAY_NAME",
+         "loc-args" : [ "John Doe"]
+      }
+   },
+   "sin": "<opaque push payload>"
+}
+```
+
+Example of Sinch push notification payload when display name is __not__ specified:
+
+```
+{
+   "aps" : {
+      "alert" : {
+         "loc-key" : "SIN_INCOMING_CALL"
+      }
+   },
+   "sin": "<opaque push payload>"
+}
+```
 
 ## Apple Push Service Environments and Provisioning
 
