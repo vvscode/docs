@@ -13,9 +13,9 @@ Use the Sinch SDK toghether with Apple _VoIP_ push notifications and [CallKit](h
 To fully enable VoIP push notifications in your application, the following steps are required, and this document will guide you through these in more detail:
 
 - Configure your iOS app to use VoIP push notifications and _CallKit_.
-- Upload an _APNs Signing Key_.
-- Configure Sinch client to let Sinch manage push notifications (both client-side and server-side).
-- Integrate use of Sinch APIs with _CallKit_.
+- Create and upload an _APNs Signing Key_ for your _Sinch Application_ in the _Sinch Developer Portal_.
+- Configure `SINClient` to let Sinch manage push notifications (both client-side and server-side).
+- Integrate use of Sinch push APIs with _CallKit_.
 - Ensure [APNs environment](https://developer.apple.com/documentation/bundleresources/entitlements/aps-environment) is matching the app entitlements and codesigning.
 
 
