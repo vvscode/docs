@@ -150,6 +150,10 @@ __Example__
 
 Also see reference documentation for [SINManagedPush](reference\html\Classes\SINManagedPush.html) and [SINCallNotificationResult](reference\html\Protocols\SINCallNotificationResult.html).
 
+## Unregister a Push Device Token
+
+If the user of the application logs out or performs a similar action, the push notification device token can be unregistered using the method `-[SINClient unregisterPushNotificationDeviceToken]` to prevent further notifications to be sent to the particular device.
+
 ## Push Notification _"Display Name"_
 
 To support showing a user display name in a non-VoIP push notification (i.e. in a regular _Remote Push Notification_), you can configure a display name using [`-[SINManagedPush setDisplayName:]`]. The display name will be available to in the push notification in `aps.alert.loc-args` (when key `aps.alert.loc-key` is `SIN_INCOMING_CALL_DISPLAY_NAME`).
