@@ -150,7 +150,7 @@ __Example__
 
 ```
 
-Also see reference documentation for [SINPushHelper](reference\html\Protocols\SINPushHelper.html) and [SINCallNotificationResult](reference\html\Protocols\SINCallNotificationResult.html).
+Also see reference documentation for [SINPushHelper](reference\html\Classes\SINPushHelper.html) and [SINCallNotificationResult](reference\html\Protocols\SINCallNotificationResult.html).
 
 
 ## Apple Push Service Environments and Provisioning
