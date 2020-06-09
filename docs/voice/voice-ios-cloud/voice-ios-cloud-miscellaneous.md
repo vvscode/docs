@@ -4,13 +4,13 @@ excerpt: ''
 hidden: false
 ---
 
-## Minimum requirements
+## Minimum Requirements
 
 We officially support the two latest major iOS versions. You can try older versions but there are no guarantees it will work as expected.
 
 _Note:_ The Sinch SDK library uses Automatic Reference Counting (ARC). However, it can still be used in non-ARC projects.
 
-## Note on Sinch.framework file size vs. linked size
+## Note on Sinch.framework File Size vs. Linked Size
 
 The _Sinch.framework_ file includes a FAT-binary containing the architectures _armv7_, _arm64_, _x86_64_. When linking an application target against the _Sinch.framework_ targeting an iOS device, it will add a approximately 6Mb per _arm_ slice.
 
@@ -26,7 +26,7 @@ User IDs can only contain characters in the _printable ASCII character set_. Tha
 
 User IDs **must not** be longer than **40** characters.
 
-## Encryption export regulations
+## Encryption Export Regulations
 
 Please check the Summary of U.S. Export Controls Applicable to Commercial Encryption Products and ensure that the application is registered for the Encryption Regulations, if applicable. It can be found under this [link](http://www.sinch.com/).
 
@@ -38,13 +38,13 @@ Some of the information is not anonymous and may be associated with the User ID 
 
 The statistics upload is done by the client in the background.
 
-## Linking against the C++ standard library
+## Linking Against the C++ Standard Library
 
 Since Sinch SDK version 3.4.0, it is required to link against _libc++_. Though if your application is also dependent on _libstdc++_ (which is now considered deprecated by Apple for use on iOS), you can actually link against both _libc++_ and _libstdc++_ by passing the following linker flags:
 
 - Other Linker Flags -\> `-ObjC -Xlinker -lc++ -Xlinker -lstdc++`
 
-## Request user permission for using the microphone
+## Request User Permission for Using the Microphone
 
 Since iOS 7, additional user privacy constraints are enforced which requires the application to be granted permission to use the device microphone. Unless the application has explicitly requested permission to use the microphone, the user is shown a dialog the first time the microphone is activated.
 
@@ -56,7 +56,7 @@ Starting with iOS 10.0, apps that access any of the device’s microphones must 
 
 Please see the [Apple iOS SDK documentation on the class AVAudioSession](http://developer.apple.com/library/ios/#documentation/AVFoundation/Reference/AVAudioSession_ClassReference/Reference Reference.html) for details on how to request permission to use the microphone.
 
-## Request user permission for using the camera
+## Request User Permission for Using the Camera
 
 The same rule applies to request user permission for using the camera. In iOS, the user must explicitly grant your app permission to access device cameras or microphones for photo, video, or audio capture. Your app must provide an explanation for its use of capture devices using the NSCameraUsageDescription and NSMicrophoneUsageDescription Info.plist keys; iOS displays this explanation when initially asking the user for permission, and thereafter in the Settings app.
 
@@ -66,11 +66,11 @@ Please see the [Apple iOS SDK documentation on the class AVCaptureDevice](https:
 
 _App Extensions_ is a feature introduced in iOS 8. App extensions are compiled into executables that are separate from the main application executable. The Sinch SDK are using parts of the iOS SDK APIs that are unavailable to app extensions, thus it’s not supported to use the Sinch SDK in an app extension.
 
-## Xcode and Bitcode intermediate representation
+## Xcode and Bitcode Intermediate Representation
 
 The Sinch SDK supports Bitcode intermediate representation.
 
-## Deprecated features and APIs
+## Deprecated Features and APIs
 
 ### Active Connection in Background
 
