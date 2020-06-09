@@ -10,7 +10,9 @@ next:
 
 ## Setting Up a Video Call
 
-Just like audio calls, video calls are placed through the `SINCallClient` and events are received using the `SINCallClientDelegate` and `SINCallDelegate`. For a more general introduction to calling and `SINCallClient`, see [Calling](doc:voice-ios-cloud-calling).
+Just like audio calls, video calls are placed through the `SINCallClient` and events are received using the `SINCallClientDelegate` and `SINCallDelegate`. For a more general introduction to calling and `SINCallClient`, see [Calling](doc:voice-ios-cloud-calling). 
+
+Before you start, ensure your application is [requesting user permission for using the video camera](doc:voice-ios-cloud-video-calling#request-user-permission-for-using-the-camera).
 
 ## Showing the Video Streams
 
@@ -161,3 +163,10 @@ UIImage *image = SINUIImageFromVideoFrame(videoFrame);
 ```
 
 __IMPORTANT__: The helper function will __not__ release the frame buffer (i.e. you must still call `CVPixelBufferRelease` after using this helper function.)
+
+
+## Request User Permission for Using the Camera
+
+Recording video always requires explicit permission from the user. Your app must provide a description for its use of video camera in terms of the _Info.plist_ key [NSCameraUsageDescription](https://developer.apple.com/documentation/bundleresources/information_property_list/nscamerausagedescription).
+
+See the Apple documentation on [`+[AVCaptureDevice requestAccessForMediaType:completionHandler:]`](https://developer.apple.com/documentation/avfoundation/avcapturedevice/1624584-requestaccessformediatype) for details on how to request user permission.

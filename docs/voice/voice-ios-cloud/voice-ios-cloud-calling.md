@@ -172,3 +172,12 @@ Handling a call that ends:
 - (void)callDidEnd:(id<SINCall>) call {
   // Update user interface, e.g. hide the call screen.
 ```
+
+## Request User Permission for Using the Microphone
+
+Recording audio always requires explicit permission from the user. Your app must provide a description for its use of the microphone in terms of the _Info.plist_ key [NSMicrophoneUsageDescription](https://developer.apple.com/documentation/bundleresources/information_property_list/nsmicrophoneusagedescription).
+
+See Apple documentation on [`+[AVCaptureDevice requestAccessForMediaType:completionHandler:]`](https://developer.apple.com/documentation/avfoundation/avcapturedevice/1624584-requestaccessformediatype) for details on how to request user permission.
+
+> 📘
+> Unless the application has explicitly requested permission to use the microphone, the user is shown a dialog the first time the microphone is activated. This may not provide the best user experience, so we advice to consider explicitly requesting microphone permission in advance.

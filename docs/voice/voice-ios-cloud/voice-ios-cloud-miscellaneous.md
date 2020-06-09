@@ -44,24 +44,6 @@ Since Sinch SDK version 3.4.0, it is required to link against _libc++_. Though i
 
 - Other Linker Flags -\> `-ObjC -Xlinker -lc++ -Xlinker -lstdc++`
 
-## Request User Permission for Using the Microphone
-
-Since iOS 7, additional user privacy constraints are enforced which requires the application to be granted permission to use the device microphone. Unless the application has explicitly requested permission to use the microphone, the user is shown a dialog the first time the microphone is activated.
-
-In the context of the Sinch SDK, this occurs once the first call is established _unless_ the application has been granted permission earlier. We **strongly recommend** you explicitly request permission to use the microphone in your application at an appropriate time such as when the user first sets up Sinch. You should not rely on the permission dialog shown when the first Sinch call is established as this will create an awkward user experience.
-
-By explicitly requesting permission using the methods available in the iOS SDK, the application has more control over when the dialog is shown to the user. This results in a better user experience.
-
-Starting with iOS 10.0, apps that access any of the device’s microphones must declare their intent to do so. This is done by including the NSMicrophoneUsageDescription key and a corresponding purpose string in your app’s Info.plist. When the system prompts the user to allow access, the purpose string is displayed as part of the alert. If an application attempts to access any of the device’s microphones without a corresponding purpose string, the app will exit.
-
-Please see the [Apple iOS SDK documentation on the class AVAudioSession](http://developer.apple.com/library/ios/#documentation/AVFoundation/Reference/AVAudioSession_ClassReference/Reference Reference.html) for details on how to request permission to use the microphone.
-
-## Request User Permission for Using the Camera
-
-The same rule applies to request user permission for using the camera. In iOS, the user must explicitly grant your app permission to access device cameras or microphones for photo, video, or audio capture. Your app must provide an explanation for its use of capture devices using the NSCameraUsageDescription and NSMicrophoneUsageDescription Info.plist keys; iOS displays this explanation when initially asking the user for permission, and thereafter in the Settings app.
-
-Please see the [Apple iOS SDK documentation on the class AVCaptureDevice](https://developer.apple.com/documentation/avfoundation/avcapturedevice?language=objc) for details on how to request permission to use the camera.
-
 ## App Extensions
 
 _App Extensions_ is a feature introduced in iOS 8. App extensions are compiled into executables that are separate from the main application executable. The Sinch SDK are using parts of the iOS SDK APIs that are unavailable to app extensions, thus it’s not supported to use the Sinch SDK in an app extension.
