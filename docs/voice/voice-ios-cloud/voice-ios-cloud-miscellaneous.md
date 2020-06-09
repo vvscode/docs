@@ -6,9 +6,7 @@ hidden: false
 
 ## Minimum Requirements
 
-We officially support the two latest major iOS versions. You can try older versions but there are no guarantees it will work as expected.
-
-_Note:_ The Sinch SDK library uses Automatic Reference Counting (ARC). However, it can still be used in non-ARC projects.
+We officially support iOS _10.0_ as iOS _Deployment Target_. You can try older versions but there are no guarantees it will work as expected.
 
 ## Note on Sinch.framework File Size vs. Linked Size
 
@@ -26,10 +24,6 @@ User IDs can only contain characters in the _printable ASCII character set_. Tha
 
 User IDs **must not** be longer than **40** characters.
 
-## Encryption Export Regulations
-
-Please check the Summary of U.S. Export Controls Applicable to Commercial Encryption Products and ensure that the application is registered for the Encryption Regulations, if applicable. It can be found under this [link](http://www.sinch.com/).
-
 ## Statistics
 
 The Sinch SDK client uploads statistics to the Sinch servers at the end of a call, a call failure, or similar event. The statistics are used for monitoring of network status, call quality, and other aspects regarding the general quality of the service.
@@ -38,19 +32,23 @@ Some of the information is not anonymous and may be associated with the User ID 
 
 The statistics upload is done by the client in the background.
 
+## Xcode and Bitcode Intermediate Representation
+
+The Sinch SDK supports Bitcode intermediate representation.
+
+## App Extensions
+
+_App Extensions_ is a feature introduced in iOS 8. App extensions are compiled into executables that are separate from the main application executable. The Sinch SDK are using parts of the iOS SDK APIs that are unavailable to app extensions, thus it’s not supported to use the Sinch SDK in an app extension.
+
 ## Linking Against the C++ Standard Library
 
 Since Sinch SDK version 3.4.0, it is required to link against _libc++_. Though if your application is also dependent on _libstdc++_ (which is now considered deprecated by Apple for use on iOS), you can actually link against both _libc++_ and _libstdc++_ by passing the following linker flags:
 
 - Other Linker Flags -\> `-ObjC -Xlinker -lc++ -Xlinker -lstdc++`
 
-## App Extensions
+## Encryption Export Regulations
 
-_App Extensions_ is a feature introduced in iOS 8. App extensions are compiled into executables that are separate from the main application executable. The Sinch SDK are using parts of the iOS SDK APIs that are unavailable to app extensions, thus it’s not supported to use the Sinch SDK in an app extension.
-
-## Xcode and Bitcode Intermediate Representation
-
-The Sinch SDK supports Bitcode intermediate representation.
+Please check the Summary of U.S. Export Controls Applicable to Commercial Encryption Products and ensure that the application is registered for the Encryption Regulations, if applicable. It can be found under this [link](http://www.sinch.com/).
 
 ## Deprecated Features and APIs
 
