@@ -48,7 +48,7 @@ Since Sinch SDK version 3.4.0, it is required to link against _libc++_. Though i
 
 ## Encryption Export Regulations
 
-Please check the Summary of U.S. Export Controls Applicable to Commercial Encryption Products and ensure that the application is registered for the Encryption Regulations, if applicable. It can be found under this [link](http://www.sinch.com/).
+Please see [Encryption and Export Administration Regulations (EAR)](https://www.bis.doc.gov/index.php/policy-guidance/encryption) and ensure that, if applicable, your application is registered for encryption regulations.
 
 ## Deprecated Features and APIs
 
