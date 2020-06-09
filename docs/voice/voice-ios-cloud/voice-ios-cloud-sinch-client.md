@@ -28,7 +28,7 @@ id<SINClient> sinchClient = [Sinch clientWithApplicationKey:@"<application key>"
 
 ## Specifying Capabilities
 
-The _SINClient_ can be configured to enable specific functionality depending on your use case. To enable support for _push notifications_, use the method `-[SINClient enableManagedPushNotifications]`. Also see [Push Notifications](doc:voice-ios-cloud-local-and-remote-push-notifications) for additional steps that are required to fully implement support for push notifications.
+The _SINClient_ can be configured to enable specific functionality depending on your use case. To enable support for _push notifications_, use the method `-[SINClient enableManagedPushNotifications]`. Also see [Push Notifications](doc:voice-ios-cloud-push-notifications-callkit) for additional steps that are required to fully implement support for push notifications.
 
 ```objectivec
 [sinchClient enableManagedPushNotifications];
