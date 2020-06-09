@@ -4,7 +4,7 @@ excerpt: >-
   Learn how to receive messages from Facebook Messenger
 hidden: true
 ---
-# Receive Message via webhook
+## Receive Message via webhook
 This guide will show you how to receive a messages from Facebook Messenger. Make sure to have your Facebook account and Conversation App setup before preceding to the next steps.
 
 
