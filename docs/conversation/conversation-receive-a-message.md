@@ -5,11 +5,19 @@ excerpt: >-
 hidden: true
 ---
 ## Receive Message via webhook
-This guide will show you how to receive a messages from Facebook Messenger. Make sure to have your Facebook account and Conversation App setup before preceding to the next steps.
+This guide will show you how to receive messages from your channel. For this how-to, we will look into how to receive a message from Facebook Messenger. 
+Make sure to have your Facebook account and Conversation App setup before preceding to the next steps.
 
 
 ## Create a simple webhook using Node.js
-After creating a new node app, paste this into index.js
+First create a new node app and then run the following on the command line to create the needed dependency.
+
+`npm install express body-parser --save `
+
+This will install the [Express](https://www.npmjs.com/package/express) http server framework module. 
+
+Now add the following code to your index.js
+
 ```javascript
 const express = require("express"),
       bodyParser = require("body-parser"),
@@ -17,13 +25,13 @@ const express = require("express"),
       port = 3000;
 
 app.post("/webhook", (req, res) => {
-  let body = req.body;
-  let {
-    message: {
-      contact_message: {
-        text_message: { text },
-      },
-    },
+     let body = req.body;
+     let {
+     message: {
+       contact_message: {
+         text_message: { text },
+       },
+     },
   } = body;
   console.log(text);
   res.sendStatus(200);
