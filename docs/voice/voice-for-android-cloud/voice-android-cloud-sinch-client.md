@@ -57,7 +57,7 @@ Calling `startListeningOnActiveConnection` allows your application to receive in
 
 ## Start the Sinch client
 
-Before starting the client, add a client listener (see [Reference](reference\index.html?com\sinch\android\rtc\SinchClientListener.html) documentation):
+Before starting the client, add a client listener (see [Reference](reference\com\sinch\android\rtc\SinchClientListener.html) documentation):
 
 ```java
 sinchClient.addSinchClientListener(new SinchClientListener() {
