@@ -1,9 +1,10 @@
 ---
 title: Install Sinch SMS Java Library 
 excerpt: >-
-The Sinch SMS Java SDK help you interact with the SMS API from your Java Application. This guide helps you set up SMS SDK in your application.
+  The Sinch SMS Java SDK help you interact with the SMS API from your Java Application. This guide helps you set up SMS SDK in your application.
 hidden: true
 ---
+
 ## Installing with Maven/Gradle
 
 Using Maven/Gradle is the recommended way to install the SDK. You can add this sdk to your existing project.

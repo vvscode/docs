@@ -1,7 +1,7 @@
 ---
 title: Callback API
-excerpt: ""
-hidden: "true"
+excerpt: ''
+hidden: 'true'
 next:
   pages:
     - voice-rest-api-onprem-calling-api
