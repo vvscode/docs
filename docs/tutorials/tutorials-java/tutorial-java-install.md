@@ -12,19 +12,20 @@ In **Maven**, please put the lines below in your **pom.xml**
 
 ```javascript
 <dependency>
-  <groupId>com.sinch</groupId>
-  <artifactId>sdk-xms</artifactId>
-  <version>1.0.2</version>
-</dependency>
+  <dependency>
+      <groupId>com.sinch</groupId>
+      <artifactId>sdk-sms</artifactId>
+      <version>1.0.3</version>
+  </dependency>
 ```
 
 In **Gradle**, please put the lines below in your **build.gradle**
 
 ```javascript
-compile group: 'com.sinch', name: 'sdk-xms', version: '1.0.2'
+implementation 'com.sinch:sdk-sms:1.0.3'
 ```
 
-Because Sinch SDK Library is hosted on Maven Central Repository, please make sure you have **mavenCentral()** in your **build.gradle** like so
+Because Sinch SDK Library is hosted on Maven Central Repository, please make sure you have **mavenCentral()** in your **build.gradle**.
 
 ```javascript
 repositories {
@@ -34,9 +35,11 @@ repositories {
 
 ## Installing the SDK locally
 
+It is possible to download and use the Java SDK manually by [downloading a pre-built jar file](https://repo1.maven.org/maven2/com/sinch/sdk-sms/1.0.3/). 
+
 Please have [Maven](http://maven.apache.org/download.html) install in your environment in advance.
 
-[Clone the source code](https://github.com/sinch/sinch-java-sms), and install the library like so. 
+[Clone the source code](https://github.com/sinch/sinch-java-sms), and install the library. 
 
 ```javascript
 git clone https://github.com/sinch/sinch-java-sms.git
