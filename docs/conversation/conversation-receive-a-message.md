@@ -4,12 +4,15 @@ excerpt: >-
   Learn how to receive messages from Facebook Messenger
 hidden: true
 ---
+
 ## Receive Message via webhook
+
 This guide will show you how to receive messages from your channel. For this setup, we will look into how to receive a message from Facebook Messenger channel. 
 Make sure to have your Facebook account and Conversation App setup before preceding to the next steps.
 
 
 ## Create a simple webhook using Node.js
+
 First create a new node app and then run the following on the command line to create the needed dependency.
 
 `npm install express body-parser --save ` This will install the [Express](https://www.npmjs.com/package/express) http server framework module. 
@@ -85,7 +88,7 @@ Now your webhook is setup with Conversation App.
 Now that your webhook is setup with Conversation App and ngrok along with your node app are running and listening to port 3000- it's time to test the webhook.
 
 
-Open up Facebook Messenger and send a message to your test account. If you do not have an account, please look into [Send a message with Facebook Messenger](doc:conversation-send-a-message-with-fb-messenger) before proceeding 
+Open up Facebook Messenger and send a message to your test account. If you do not have an account, please look into [Send a message with Facebook Messenger](doc:conversation-send-a-message-with-fb-messsenger) before proceeding.
 
 ![SendingMessage](images/channel-support/messenger/fb_message_firstmsg.png)
 
