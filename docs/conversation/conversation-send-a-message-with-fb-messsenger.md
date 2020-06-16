@@ -1,13 +1,9 @@
 ---
 title: Send a FB Messenger message
 excerpt: >-
-  Learn how to set up and send a message with Facebook messenger and Conversation API.
+  In this section you will learn how to create and configure a basic FB Business Page with Messenger chat feature. Once you complete the steps below you will have an FB App, FB Business Page with Messenger Chat button, a Messenger Token, and a configured Messenger Webhook to use with the Sinch Conversations API.
 hidden: true
 ---
-
-## Setup your FB App with Messenger Chat
-
-In this quick start guide we will show you how to create and configure a basic FB Business Page with Messenger chat feature. Once you complete the steps below you will have an FB App, FB Business Page with Messenger Chat button, a Messenger Token, and a configured Messenger Webhook to use with the Sinch Conversations API.
 
 ### Set up a facebook Page
 

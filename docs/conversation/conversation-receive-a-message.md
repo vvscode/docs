@@ -1,8 +1,7 @@
 ---
 title: Receive Messages via Webhook
 excerpt: >-
-  This guide will show you how to receive messages from your channel. For this setup, we will look into how to receive a message from Facebook Messenger channel. 
-  Make sure to have your Facebook account and Conversation App setup before preceding to the next steps.
+  This guide you will learn how to handle incoming  messages. In this guide we use the [Facebook Messenger](doc:conversation-send-a-message-with-fb-messsenger) but if you like you can use the [SMS channel](doc:conversation-send-sms) instead. 
 hidden: false 
 ---
 
