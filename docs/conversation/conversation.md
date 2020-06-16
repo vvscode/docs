@@ -1,8 +1,7 @@
 ---
 title: Introduction
 excerpt: >-
-  High level presentation of Sinch Conversation API and overview of its key
-  concepts.
+  High level presentation of Sinch Conversation API and overview of its key concepts.
 hidden: true
 ---
 
