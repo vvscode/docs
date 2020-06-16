@@ -1,9 +1,13 @@
 ---
-title: Receive Messages via Webhook
-excerpt: >-
-  This guide you will learn how to handle incoming  messages. In this guide we use the [Facebook Messenger](doc:conversation-send-a-message-with-fb-messsenger) but if you like you can use the [SMS channel](doc:conversation-send-sms) instead. 
-hidden: false 
+title: Handle incoming messages 
+excerpt: |
+  This guide you will learn how to handle incoming messages. 
+next:
+  pages:
+    - conversation-send-rich-messages-with-fb-messenger
+hidden: true 
 ---
+In this guide we use the [Facebook Messenger](doc:conversation-send-a-message-with-fb-messsenger), if you like you can use the [SMS channel](doc:conversation-send-sms) or any [other channel](doc:conversation-channel-support)
 
 ## Create a simple webhook using Node.js
 
