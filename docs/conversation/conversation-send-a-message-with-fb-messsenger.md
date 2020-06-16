@@ -78,7 +78,7 @@ Copy and store your Messenger Token somewhere safe, we will need it to add the M
 
 Create and send a POST to **Patch** your Sinch Conversations App with the newly created **Messenger Token**, this will allow Sinch Conversations App to respond to inbound messages posted by visitors of your FB Page.
 
-```javascript Curl
+```shell Curl
 curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1beta/accounts/{{YOUR_SINCH_ACCOUNT_ID}}/apps' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -158,11 +158,12 @@ Use your newly created Sinch **Contact** to send a **Text Message** response usi
 
 ```shell Curl
 curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1beta/accounts/{{YOUR_SINCH_ACCOUNT_ID}}/messages:send' \
+-u '<app_id:secret>' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-	"app_id": "{{YOUR_SINCH_APP_ID}}",
+    "app_id": "{{YOUR_SINCH_APP_ID}}",
     "recipient": {
-    	"contact_id": "{{YOUR_SINCH_CONTACT_ID}}"
+        "contact_id": "{{YOUR_SINCH_CONTACT_ID}}"
     },
     "message": {
         "text_message": {
