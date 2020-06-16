@@ -25,7 +25,7 @@ Click on activate
 To use the number with the rest API select REST and click ***Get Free number***.
 
 ### Installing Java helper library
-If you want to use java, [install our helper library](docs:sms-java-library)
+If you want to use java, [install our helper library](doc:sms-java-library)
 
 ### Send SMS
 

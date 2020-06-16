@@ -35,7 +35,7 @@ That's it, you have created a Sinch Conversations API App!
 
 In your Sinch Dashboard navigate to Conversations > Apps.  Click on the *"App Name"* you wish to add the SMS Channel to.
 
-![app added](/images/channel-support/sms/sinch_conversations_apps_added.png)
+![app added](images/channel-support/sms/sinch_conversations_apps_added.png)
 
 Under *Channels* click on *"Add Channel"*.  Use the drop down to select *"SMS"*, add your SMS *Service Plan ID* to the *"Sender ID"* field, and your SMS Service Plan *API Token* to the channel and click *"Save"*.
 
