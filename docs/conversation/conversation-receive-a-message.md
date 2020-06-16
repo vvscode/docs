@@ -1,15 +1,10 @@
 ---
-title: Receive Messages From Facebook Messenger
+title: Receive Messages via Webhook
 excerpt: >-
-  Learn how to receive messages from Facebook Messenger
-hidden: true
+  This guide will show you how to receive messages from your channel. For this setup, we will look into how to receive a message from Facebook Messenger channel. 
+  Make sure to have your Facebook account and Conversation App setup before preceding to the next steps.
+hidden: false 
 ---
-
-## Receive Message via webhook
-
-This guide will show you how to receive messages from your channel. For this setup, we will look into how to receive a message from Facebook Messenger channel. 
-Make sure to have your Facebook account and Conversation App setup before preceding to the next steps.
-
 
 ## Create a simple webhook using Node.js
 
@@ -53,7 +48,7 @@ The Node app and Ngrok should be running at the same time at port 3000.
 ---
 
 
-## Configure webhook in Conversation App
+## Configure a webhook
 Go to your Conversation App dashboard and select
 `Conversations` on the left side menu.
 
@@ -69,26 +64,25 @@ Go to your Conversation App dashboard and select
 
 Fill in the following:
 
-Set **Target Type** to HTTP
+Select **Target Type** to HTTP
 
-Set **Target URL** as your ngrok url
+Select **Target URL** as your ngrok url
 
-Set **Triggers** with only `MESSAGE_INBOUND`
+Select `MESSAGE_INBOUND` as **Trigger** 
 
-Since we are only dealing with messages coming in, `MESSAGE_INBOUND` will be the only trigger used.
 
 ![WebhookPopup](images/dashboard/dashboard_webhookPopup.png)
 
-Now your webhook is setup with Conversation App.
+Now your webhook is setup with the Conversation App.
 
 ---
 
 ## Start a Conversation
 
-Now that your webhook is setup with Conversation App and ngrok along with your node app are running and listening to port 3000- it's time to test the webhook.
+Now that your webhook is setup with the Conversation App and ngrok along with your node app are running and listening to port 3000- it's time to test the webhook.
 
 
-Open up Facebook Messenger and send a message to your test account. If you do not have an account, please look into [Send a message with Facebook Messenger](doc:conversation-send-a-message-with-fb-messsenger) before proceeding.
+For this demo, we will be using Facebook Messenger channel as our example. Open up Facebook Messenger and send a message to your test account. If you do not have an account, please look into [Send a message with Facebook Messenger](doc:conversation-send-a-message-with-fb-messsenger) before proceeding.
 
 ![SendingMessage](images/channel-support/messenger/fb_message_firstmsg.png)
 
@@ -103,18 +97,16 @@ if you did everything correctly, you will receive a `status 200 OK` on ngrok and
 Copy the following code on top of your current webhook and then re-run your node application. 
 
 ```javascript 
-
+const fetch = require('node-fetch');
 const express = require('express');
       bodyParser = require('body-parser');
       app = express().use(bodyParser.json());
       port = 3000;
 
 // Conversation api credentials
-const fetch = require('node-fetch'),
-      SINCH_ACCOUNT_ID = 'SINCH_ACCOUNT_ID',
+const SINCH_ACCOUNT_ID = 'SINCH_ACCOUNT_ID',
       SINCH_ACCOUNT_TOKEN='SINCH_ACCOUNT_TOKEN',
       SINCH_APP_ID = 'SINCH_APP_ID',
-
 
   getAuthToken = () => {
     return Buffer.from(`${SINCH_APP_ID}:${SINCH_ACCOUNT_TOKEN}`).toString(
@@ -147,7 +139,6 @@ const fetch = require('node-fetch'),
      return fetch(URL, options);
   };
 
-
 app.post('/webhook', (req, res) => {
     let body = req.body;
     let {
@@ -157,9 +148,10 @@ app.post('/webhook', (req, res) => {
             },
         },
     } = body;
+
 // Adding a simple if statement when you receive a text message
   if (text) {
-        sendMessage('<Contact_ID>', 'Replying to that first message!').then(r => r.json()).then(res => console.log(res));
+        sendMessage('Contact_ID', 'Replying to that first message!').then(r => r.json()).then(res => console.log(res));
     }
     console.log(`MESSAGE RECEIVED:  ${text}`);
     res.sendStatus(200);
