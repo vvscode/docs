@@ -45,9 +45,17 @@ To use callback events you need to assign a callback URL in the Sinch portal und
 
 ### Calling API
 
-    https://calling.api.sinch.com/v1
+Use the closest regional URL as your base to access Sinch voice services.
 
-URL to access a region-specific API is provided by the ICE callback, in the `callResourceUrl` property. Use that as a base URL to access the following region-specific resources:
+```
+https://calling-euc1.api.sinch.com/calling/[version]  - Europe
+https://calling-use1.api.sinch.com/calling/[version]  - United States
+https://calling-sae1.api.sinch.com/calling/[version]  - South America
+https://calling-apse1.api.sinch.com/calling/[version] - South East Asia 1
+https://calling-apse2.api.sinch.com/calling/[version] - South East Asia 2
+```
+
+ICE callbacks will also provide region-specific URLs in the `callResourceUrl` property. Use the nearest base URL to access the following voice service resources:
 
 | URL                                                    | HTTP Verb | Functionality                               |
 | ------------------------------------------------------ | --------- | ------------------------------------------- |
