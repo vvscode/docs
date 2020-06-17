@@ -205,6 +205,11 @@ Two notification events are sent to the partner’s backend if **notificationEve
 - recording_finished - indicating that the recording for the specified call has been stopped either by a Manage Call request or because the call has ended
 - recording_available - indicating that the recording file is available in the specified **destinationUrl** and can be picked up
 
+- transcription_available - indicating that the transcription file is available in the specified **destinationUrl** and can be picked up
+
+> 📘
+> Transcription processes require data transfer and aditional processing power, it will usually demand more time to be concluded. Transcription_available notifications will normally take few minutes to arrive at the customer's backend.
+
 _Example_
 
     {
@@ -220,4 +225,12 @@ _Example_
         "version": 1,
         "type": "recording_available",
         "destination":"https://www.sinch.com/calling/v1/recording/201801010000_01234567-89ab-cdef-fedc-ba9876543210_01234567-89ab-cdef-fedc-ba9876543210.mp3"
+    }
+
+    {
+        "event": "notify",
+        "callid": "01234567-89ab-cdef-fedc-ba9876543210",
+        "version": 1,
+        "type": "transcription_available",
+        "destination":"https://www.sinch.com/calling/v1/recording/201801010000_01234567-89ab-cdef-fedc-ba9876543210_01234567-89ab-cdef-fedc-ba9876543210-transcript.json"
     }
