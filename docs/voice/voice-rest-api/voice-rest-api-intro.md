@@ -61,7 +61,7 @@ ICE callbacks will also provide region-specific URLs in the `callResourceUrl` pr
 | ------------------------------------------------------ | --------- | ---------------------------------------------------------------------------------------------------------------- |
 | /configuration/numbers/                                | GET       | [Get a list of your numbers](doc:voice-rest-api-calling-api#get-numbers)                                         |
 | /configuration/numbers/                                | POST      | [Assign numbers to an app](doc:voice-rest-api-calling-api#update-numbers)                                        |
-| /configuration/numbers/                                | DELETE    | [Un-assign numbers to an app](doc:voice-rest-api-calling-api#un-assign-numbers)                                  |
+| /configuration/numbers/                                | DELETE    | [Un-assign numbers to an app](doc:voice-rest-api-calling-api#un-assign-number)                                   |
 | /configuration/callbacks/applications/{applicationkey} | GET       | [Get callback URLs of your app](                                                                                 | /configuration/numbers/ | POST | [Assign numbers to an app](doc:voice-rest-api-calling-api#get-callbacks) |
 | )                                                      |
 | /configuration/callbacks/applications/{applicationkey} | POST      | [Update the callback URLs of your app](doc:voice-rest-api-calling-api#update-callbacks)                          |
