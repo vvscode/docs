@@ -8,14 +8,13 @@ next:
     - voice-rest-api-callback-api
 ---
 
-## Calling API
-
 ### Methods
 
 #### Configuration Management Methods
 
     [GET]       /configuration/numbers/
     [POST]      /configuration/numbers/
+    [DELETE]    /configuration/numbers/
     [GET]       /configuration/callbacks/applications/{applicationkey}
     [POST]      /configuration/callbacks/applications/{applicationkey}
     [GET]       /calling/query/number/{number}
@@ -54,7 +53,7 @@ Get information about your numbers. It returns a list of numbers that you own, a
 
 _Example_
 
-    [GET] https://calling.api.sinch.com/v1/configuration/numbers/
+    [GET] https://callingapi.sinch.com/v1/configuration/numbers/
 
 ### Authorization
 
@@ -120,7 +119,7 @@ Assign a number or a list of numbers to an application.
 
 _Example_
 
-    [POST] https://calling.api.sinch.com/v1/configuration/numbers/
+    [POST] https://callingapi.sinch.com/v1/configuration/numbers/
 
     {
         "numbers":["+14151112223333"],
@@ -163,7 +162,7 @@ Un-assign a number from an application.
 
 _Example_
 
-    [DELETE] https://calling.api.sinch.com/v1/configuration/numbers/
+    [DELETE] https://callingapi.sinch.com/v1/configuration/numbers/
 
     {
         "number":"+14151112223333",
@@ -196,7 +195,7 @@ Get callback URLs.
 
 _Example_
 
-    [GET] https://calling.api.sinch.com/v1/configuration/callbacks/applications/94983f76-1161-6655-9515-4785c7b67ca8
+    [GET] https://callingapi.sinch.com/v1/configuration/callbacks/applications/94983f76-1161-6655-9515-4785c7b67dd8
 
 ### Authorization
 
@@ -252,7 +251,7 @@ Update callback URLs.
 
 _Example_
 
-    [POST] https://calling.api.sinch.com/v1/configuration/callbacks/applications/94983f76-1161-6655-9515-4785c7b67ca8
+    [POST] https://callingapi.sinch.com/v1/configuration/callbacks/applications/94983f76-1161-6655-9515-4785c7b67ca8
 
     {
         "url" : {
@@ -285,7 +284,7 @@ Get information about the requested number.
 
 _Example_
 
-    [GET] https://calling.api.sinch.com/v1/calling/query/number/+46(0)73-017-0101
+    [GET] https://callingapi.sinch.com/v1/calling/query/number/+46(0)73-017-0101
 
 ### Authorization
 
