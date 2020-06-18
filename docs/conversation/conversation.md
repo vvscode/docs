@@ -23,13 +23,13 @@ Currently Sinch Conversation API is in closed beta. If you are interested in the
 
 ![ER Diagram](images/convapi-er-diagram.png)
 
-#### Account
+#### Project
 
-Top level entity that is considered to be the root entity in the ER-diagram above. This represents a **Sinch** account that can be used for all of **Sinch's** different services. The **account** may or may not be a sub-account to accommodate for both direct and ASP clients. An **account** is tied to multiple [**apps**](doc:conversation#app) and [**contacts**](doc:conversation#contact).
+The **project** entity, in the ER-diagram above, is considered to be the root entity from the Conversation API's point-of-view. All the Conversation API resources are grouped under a **project**, which can be said to act as a container. Each **project** is, under the hood, belonging to a Sinch **account** which is created when creating an account in the [Sinch Portal](https://dashboard.sinch.com). It is, currently, only possible to have one **project** per **account**.
 
 #### App
 
-The **app** entity corresponds to the API user, with a set of [**channel credentials**](doc:conversation#channel-credential) for each underlying connected channel. The app has a list of [**conversations**](doc:conversation#conversation) between itself and different [**contacts**](doc:conversation#contact) which share the same [**account**](doc:conversation#account).
+The **app** entity corresponds to the API user, with a set of [**channel credentials**](doc:conversation#channel-credential) for each underlying connected channel. The app has a list of [**conversations**](doc:conversation#conversation) between itself and different [**contacts**](doc:conversation#contact) which share the same [**project**](doc:conversation#project).
 The app is tied to a set of webhooks which defines the destination for various events coming from the Conversation API.
 The easiest way to create and configure a Conversation API app is through [Sinch Portal](https://dashboard.sinch.com/convapi/apps)
 An **app** has the following configurable properties:
@@ -69,7 +69,7 @@ A **webhook** has the following configurable properties:
 
 #### Contact
 
-The **contact** entity is a collection entity that groups together underlying connected **channel recipient identities**. It is tied to a specific [**account**](doc:conversation#account) and is therefore considered public to all [**apps**](doc:conversation#app) sharing the same [**account**](doc:conversation#account).
+The **contact** entity is a collection entity that groups together underlying connected **channel recipient identities**. It is tied to a specific [**project**](doc:conversation#project) and is therefore considered public to all [**apps**](doc:conversation#app) sharing the same [**project**](doc:conversation#project).
 
 A **contact** has the following configurable properties:
 
@@ -115,8 +115,17 @@ The metadata fields are currently restricted to 1024 characters.
 
 ### Authentication
 
-All API calls are authenticated using HTTP basic authentication using the [**app**](doc:conversation#app) id as username
-and the **app** token as password.
+The Conversation API uses OAuth2 **access tokens** to authenticate API calls. The first step to obtaining an **access token** is to create an **Access Key** in the [Sinch portal](https://dashboard.sinch.com/convapi/keys). A **client_id** and **client_secret** will be provided when creating an **Access Key** in the portal. The **project** ID will also be visible on the **Access Key** page in the portal. The credential pair can then be used to obtain an **access token**, given in the response, in the following way:
+
+```console
+curl https://auth.sinch.com/oauth2/token -d grant_type=client_credentials --user <client_id>:<client_secret>
+```
+
+A call to the Conversation API can then be done by including the obtained **access_token** in the request header. See below for an example:
+
+```console
+curl -H "Authorization: Bearer <access token>" https://eu.conversation.api.sinch.com/v1beta/projects/<Project ID>/apps
+```
 
 ### Supported channels
 
@@ -138,8 +147,8 @@ Currently Sinch Conversation API is available in:
 ### Postman collection
 
 Sinch offers a Postman collection for easy setup and testing during development.
-https://www.getpostman.com/collections/fcadc55c0240ca834173  
-After importing the collection, fill in the following variables: ACCOUNT with your account name, APP with app id and APP_TOKEN with app token.  
+https://www.getpostman.com/collections/ec98cd8a811476359d2b
+After importing the collection, fill in the following variables: PROJECT with your PROJECT ID, APP with app id, CLIENT_ID with your CLIENT_ID, and CLIENT_SECRET with your client secret.  
 To fill WEBHOOK_URL, simply visit  
 https://webhook.site/  
 and use the generated link - the one under the 'Your unique URL' label.
