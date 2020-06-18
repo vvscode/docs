@@ -35,13 +35,13 @@ These are the typical call scenarios that you can control with the Sinch Callbac
 
 To use callback events you need to assign a callback URL in the Sinch portal under your app settings.
 
-| Event  | HTTP Verb | Functionality                                                                                    |
-| ------ | --------- | ------------------------------------------------------------------------------------------------ |
-| ICE    | POST      | [Incoming Call Event callback](doc:voice-rest-api-callback-api) |
-| ACE    | POST      | [Answered Call Event callback](doc:voice-rest-api-callback-api)                                  |
-| DiCE   | POST      | [Disconnect Call Event callback](doc:voice-rest-api-callback-api)                                |
-| PIE    | POST      | [Prompt Input Event callback](doc:voice-rest-api-callback-api)                                   |
-| Notify | POST      | [Notify Event callback](doc:voice-rest-api-callback-api#svaml-quick-reference)                   |
+| Event  | HTTP Verb | Functionality                                                                  |
+| ------ | --------- | ------------------------------------------------------------------------------ |
+| ICE    | POST      | [Incoming Call Event callback](doc:voice-rest-api-callback-api)                |
+| ACE    | POST      | [Answered Call Event callback](doc:voice-rest-api-callback-api)                |
+| DiCE   | POST      | [Disconnect Call Event callback](doc:voice-rest-api-callback-api)              |
+| PIE    | POST      | [Prompt Input Event callback](doc:voice-rest-api-callback-api)                 |
+| Notify | POST      | [Notify Event callback](doc:voice-rest-api-callback-api#svaml-quick-reference) |
 
 ### Calling API
 
@@ -57,20 +57,20 @@ https://calling-apse2.api.sinch.com/calling/[version] - South East Asia 2
 
 ICE callbacks will also provide region-specific URLs in the `callResourceUrl` property. Use the nearest base URL to access the following voice service resources:
 
-| URL                                                    | HTTP Verb | Functionality                               |
-| ------------------------------------------------------ | --------- | ------------------------------------------- |
-| /configuration/numbers/                                | GET       | [Get a list of your numbers]()              |
-| /configuration/numbers/                                | POST      | [Assign numbers to an app]()                |
-| /configuration/callbacks/applications/{applicationkey} | GET       | [Get callback URLs of your app]()           |
-| /configuration/callbacks/applications/{applicationkey} | POST      | [Update the callback URLs of your app]()    |
-| /calling/query/number/{number}                         | GET       | [Query a number]()                          |
-| /calls/id/{callId}                                     | PATCH     | [Manage Call]()                             |
-| /calls/id/{callId}                                     | GET       | [Get call result]()                         |
-| /conferences/id/{conferenceId}                         | GET       | [Get conference info]()                     |
-| /conferences/id/{conferenceId}/{callId}                | PATCH     | [Mute/Unmute conference participant]()      |
-| /conferences/id/{conferenceId}/{callId}                | DELETE    | [Kick conference participant]()             |
-| /conferences/id/{conferenceId}                         | DELETE    | [Kick all conference participants]()        |
-| /callouts                                              | POST      | [Place text-to-speech or conference call]() |
+| URL                                                    | HTTP Verb | Functionality                                                            |
+| ------------------------------------------------------ | --------- | ------------------------------------------------------------------------ |
+| /configuration/numbers/                                | GET       | [Get a list of your numbers](doc:voice-rest-api-calling-api#get_numbers) |
+| /configuration/numbers/                                | POST      | [Assign numbers to an app]()                                             |
+| /configuration/callbacks/applications/{applicationkey} | GET       | [Get callback URLs of your app]()                                        |
+| /configuration/callbacks/applications/{applicationkey} | POST      | [Update the callback URLs of your app]()                                 |
+| /calling/query/number/{number}                         | GET       | [Query a number]()                                                       |
+| /calls/id/{callId}                                     | PATCH     | [Manage Call]()                                                          |
+| /calls/id/{callId}                                     | GET       | [Get call result]()                                                      |
+| /conferences/id/{conferenceId}                         | GET       | [Get conference info]()                                                  |
+| /conferences/id/{conferenceId}/{callId}                | PATCH     | [Mute/Unmute conference participant]()                                   |
+| /conferences/id/{conferenceId}/{callId}                | DELETE    | [Kick conference participant]()                                          |
+| /conferences/id/{conferenceId}                         | DELETE    | [Kick all conference participants]()                                     |
+| /callouts                                              | POST      | [Place text-to-speech or conference call]()                              |
 
 ### Reporting API
 
