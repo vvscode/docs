@@ -48,9 +48,9 @@ You have added an SMS Channel to your App.  Just a few more steps to go.
 To send an SMS message to a Contact via the Sinch Conversations API App send an HTTP POST with the following JSON:
 
 ```shell Curl
-curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1beta/accounts/{{YOUR_ACCOUNT_ID}}/messages:send' \
+curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1beta/projects/{project_id}/messages:send' \
 -H 'Content-Type: application/json' \
--u '<app_id:secret>' \
+-u '<client_id:client_secret>' \
 -d '{
     "app_id": "{{YOUR_APP_ID}}",
     "recipient": {

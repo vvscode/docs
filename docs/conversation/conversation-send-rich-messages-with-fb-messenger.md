@@ -12,9 +12,9 @@ Add screenshots on every message. (If we are to keep this, I am a bit ambvialent
 ## Sending Media Message
 
 ```shell Curl
-curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1beta/accounts/{{YOUR_ACCOUNT_ID}}/messages:send' \
+curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1beta/projects/{project_id}/messages:send' \
 -H 'Content-Type: application/json' \
--u '<app_id:secret>' \
+-u '<client_id:client_secret>' \
  -d '{
     "app_id": "{{YOUR_APP_ID}}",
     "recipient": {
@@ -55,10 +55,10 @@ public static void main(String[] args) {
 
 ```shell Curl
 
-curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1beta/accounts/{{YOUR_ACCOUNT_ID}}/messages:send' \
+curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1beta/projects/{project_id}/messages:send' \
 
 -H 'Content-Type: application/json' \
--u '<app_id:secret>' \
+-u '<client_id:client_secret>' \
 -d '{
     "app_id": "{{YOUR_APP_ID}}",
     "recipient": {
@@ -137,9 +137,9 @@ public static void main(String[] args) {
 ## Sending Card Message
 
 ```shell Curl
-curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1beta/accounts/{{YOUR_ACCOUNT_ID}}/messages:send' \
+curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1beta/projects/{project_id}/messages:send' \
 -H 'Content-Type: application/json' \
--u '<app_id:secret>' \
+-u '<client_id:client_secret>' \
  -d '{
     "app_id": "{{YOUR_APP_ID}}",
     "recipient": {
@@ -219,9 +219,9 @@ public static void main(String[] args) {
 ## Sending Carousel Message
 
 ```shell Curl
-curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1beta/accounts/{{YOUR_ACCOUNT_ID}}/messages:send' \
+curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1beta/projects/{project_id}/messages:send' \
 -H 'Content-Type: application/json' \
--u '<app_id:secret>' \
+-u '<client_id:client_secret>' \
  -d '{
     "app_id": "{{YOUR_APP_ID}}",
     "recipient": {
@@ -355,9 +355,9 @@ curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1be
 ## Sending Location Message
 
 ```shell Curl
-curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1beta/accounts/{{YOUR_ACCOUNT_ID}}/messages:send' \
+curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1beta/projects/{project_id}/messages:send' \
 -H 'Content-Type: application/json' \
--u '<app_id:secret>' \
+-u '<client_id:client_secret>' \
  -d '{
     "app_id": "{{YOUR_APP_ID}}",
     "recipient": {

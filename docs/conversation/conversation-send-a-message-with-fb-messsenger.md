@@ -75,8 +75,9 @@ Copy and store your Messenger Token somewhere safe, we will need it to add the M
 Create and send a POST to **Patch** your Sinch Conversations App with the newly created **Messenger Token**, this will allow Sinch Conversations App to respond to inbound messages posted by visitors of your FB Page.
 
 ```shell Curl
-curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1beta/accounts/{{YOUR_SINCH_ACCOUNT_ID}}/apps' \
+curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1beta/projects/{project_id}/apps' \
 --header 'Content-Type: application/json' \
+-u '<client_id:client_secret>'
 --data-raw '{
     "channel_credentials": [
         {
@@ -153,8 +154,8 @@ Use **Sinch Conversations API** to **List Contacts**, you should now see a new c
 Use your newly created Sinch **Contact** to send a **Text Message** response using the **message:send** function.
 
 ```shell Curl
-curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1beta/accounts/{{YOUR_SINCH_ACCOUNT_ID}}/messages:send' \
--u '<app_id:secret>' \
+curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1beta/projects/{project_id}/messages:send' \
+-u '<client_id:client_secret>' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "app_id": "{{YOUR_SINCH_APP_ID}}",
@@ -193,18 +194,18 @@ RequestBody body =
 Request request =
     new Request.Builder()
         .url(
-            "https://api.conversation-api.prod.sinch.com/v1beta/accounts/your_account_id/messages:send")
+            "https://api.conversation-api.prod.sinch.com/v1beta/projects/{project_id}/messages:send")
         .method("POST", body)
         .addHeader("Content-Type", "application/json")
         .addHeader(
             "Authorization",
-            "Basic your_token")
+            "Basic " + Base64.getEncoder().encodeToString("{client_id}:{client_secret}".getBytes()))
         .build();
 Response response = client.newCall(request).execute();
 ```
 ```java Java
 public static void main(String[] args) {
-
+    //client id secret here @thong?
     // Init the Sinch Api Client to hold the auth
     SinchApiClient sinchApiClient = SinchApiClient.getDefaultConfig();
 
@@ -224,5 +225,5 @@ public static void main(String[] args) {
 
 **ALRIGHT!! CONGRATULATIONS**, you have just sent your first Sinch Conversations Messenger Message!
 
-1.  Learn how to receive messages
-2.  Learn how to [send rich messages with Facebook messenger](doc:conversation-send-rich-messages-with-fb-messenger).
+1. Learn how to receive messages
+2. Learn how to [send rich messages with Facebook messenger](doc:conversation-send-rich-messages-with-fb-messenger).
