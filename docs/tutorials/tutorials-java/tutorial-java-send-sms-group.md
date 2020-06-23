@@ -14,7 +14,7 @@ Before starting, please make sure that:
  - The right version of the JDK is installed on your computer
  - You have added the Sinch Java SDK JAR to your project
 
-All details of those steps are available on the [Java Getting Started page](doc:tutorials-java).
+All details of those steps are available on the [Java Getting Started page](doc:sms-java-library).
 
 ## What Are Groups?
 
