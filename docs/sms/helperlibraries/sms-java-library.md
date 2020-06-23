@@ -10,7 +10,6 @@ hidden: false
 ## Installing with Maven/Gradle
 
 Using Maven/Gradle is the recommended way to install the SDK. You can add this sdk to your existing project.
-
 In **Maven**, please put the lines below in your **pom.xml**
 
 ```javascript
