@@ -177,7 +177,7 @@ Conversation API POST `messages:send`
 }
 ```
 
-Rendered message:
+The rendered message:
 
 ![Text Message](images/channel-support/messenger/messenger_text.jpg)
 
@@ -197,7 +197,7 @@ Conversation API POST `messages:send`
 }
 ```
 
-Rendered message:
+The rendered message:
 
 ![Media Message](images/channel-support/messenger/messenger_media.jpg)
 
@@ -248,7 +248,7 @@ Conversation API POST `messages:send`
 }
 ```
 
-Rendered message:
+The rendered message:
 
 ![Choice Message](images/channel-support/messenger/messenger_choice.jpg)
 
@@ -301,7 +301,7 @@ Conversation API POST `messages:send`
 }
 ```
 
-Rendered message:
+The rendered message:
 
 ![Card Message](images/channel-support/messenger/messenger_card.jpg)
 
@@ -395,7 +395,7 @@ Conversation API POST `messages:send`
 }
 ```
 
-Rendered message:
+The rendered message:
 
 ![Carousel Message](images/channel-support/messenger/messenger_carousel.jpg)
 
@@ -420,7 +420,7 @@ Conversation API POST `messages:send`
 }
 ```
 
-Rendered message:
+The rendered message:
 
 ![Location Message](images/channel-support/messenger/messenger_location.jpg)
 
@@ -510,7 +510,7 @@ Conversation API POST `messages:send`
 }
 ```
 
-Rendered message:
+The rendered message:
 
 ![Text Message](images/channel-support/viberbm/Viber_Text_Message.jpg)
 
@@ -532,7 +532,7 @@ Conversation API POST `messages:send`
 }
 ```
 
-Rendered message:
+The rendered message:
 
 ![Media Message](images/channel-support/viberbm/Viber_Media_Message_Image.jpg)
 
@@ -572,7 +572,7 @@ Conversation API POST `messages:send`
 }
 ```
 
-Rendered message:
+The rendered message:
 
 ![URL Choice Message](images/channel-support/viberbm/Viber_Choice_Message_1_url.jpg)
 
@@ -603,7 +603,7 @@ number in the request.
 }
 ```
 
-Rendered message:
+The rendered message:
 
 ![Call Choice Message](images/channel-support/viberbm/Viber_Choice_Message_1_call_choice.jpg)
 
@@ -638,7 +638,7 @@ of the location.
 }
 ```
 
-Rendered message:
+The rendered message:
 
 ![Location Choice Message](images/channel-support/viberbm/Viber_Choice_Message_1_Location.jpg)
 
@@ -689,7 +689,7 @@ There is no native support for suggested replies or multiple choices in VBM.
 }
 ```
 
-Rendered message:
+The rendered message:
 
 ![Multiple Choices Message](images/channel-support/viberbm/Viber_Choice_Message_Many_Choices.jpg)
 
@@ -724,7 +724,7 @@ Conversation API POST `messages:send`
 }
 ```
 
-Rendered message:
+The rendered message:
 
 ![Card Message With URL Choice](images/channel-support/viberbm/Viber_Card_Message_1_URL_choice.jpg)
 
@@ -799,7 +799,7 @@ Conversation API POST `messages:send`
 }
 ```
 
-Rendered message:
+The rendered message:
 
 ![Carousel Message](images/channel-support/viberbm/Viber_carousel_message.jpg)
 
@@ -827,7 +827,7 @@ Conversation API POST `messages:send`
 }
 ```
 
-Rendered message:
+The rendered message:
 
 ![Location Message](images/channel-support/viberbm/Viber_Location_Message.jpg)
 
