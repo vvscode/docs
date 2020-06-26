@@ -3,6 +3,7 @@ title: Recording calls
 excerpt: >-
   Control recording of calls with the Sinch platform, with callbacks or the
   Manage Call API.
+hidden: 'true'
 next:
   pages:
     - voice-rest-api-cdr
@@ -76,7 +77,11 @@ The recording options are sent as part of the callback response when you want to
     string - destinationUrl
     string - credentials
     string - format
-    bool - notificationEvents
+    bool   - notificationEvents
+    object - [transcriptionOptions]: {
+                bool    - enabled,
+                string  - locale
+                }
 
 _example ACE response_
 
@@ -88,7 +93,11 @@ _example ACE response_
                 "destinationUrl": "s3://my-s3-bucket",
                 "credentials": "xyz\_access\_key:wrt\_secret\_key:eu-central-1",
                 "format": "mp3",
-                "notificationEvents": true
+                "notificationEvents": true,
+                "transcriptionOptions": {
+                    "enabled": true,
+                    "locale": "en-US"
+                }
             }
         }
     }
@@ -151,12 +160,55 @@ _Example_
         }
     }
 
+## TranscriptionOptions
+
+When active this option will trigger a transcription process using the audio call recording as input and generating as output a JSON file with the Speech to Text representation of the recorded call.
+
+The generated file will be saved on the same location as defined on the call recording destinationURL parameter.
+
+_Example_
+
+    {
+        "recordingOptions": {
+            "destinationUrl": "sdrive://my-recording.mp3",
+            "notificationEvents": true
+            ...
+            "transcriptionOptions": {
+                    "enabled": true,
+                    "locale": "en-US",
+              },
+        }
+    }
+
+_Transcribed output file example_
+
+    {
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "lines": [
+        {
+            "timestamp": 4.97,
+            "speakerLabel": "Speaker 1",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        },
+        {
+            "timestamp": 5.6,
+            "speakerLabel": "Speaker 2",
+            "text": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        }
+    ]
+    }
+
 ## Notification events
 
 Two notification events are sent to the partner’s backend if **notificationEvents** are enabled:
 
 - recording_finished - indicating that the recording for the specified call has been stopped either by a Manage Call request or because the call has ended
 - recording_available - indicating that the recording file is available in the specified **destinationUrl** and can be picked up
+
+- transcription_available - indicating that the transcription file is available in the specified **destinationUrl** and can be picked up
+
+> 📘
+> Transcription processes require data transfer and aditional processing power, it will usually demand more time to be concluded. Transcription_available notifications will normally take few minutes to arrive at the customer's backend.
 
 _Example_
 
@@ -173,4 +225,12 @@ _Example_
         "version": 1,
         "type": "recording_available",
         "destination":"https://www.sinch.com/calling/v1/recording/201801010000_01234567-89ab-cdef-fedc-ba9876543210_01234567-89ab-cdef-fedc-ba9876543210.mp3"
+    }
+
+    {
+        "event": "notify",
+        "callid": "01234567-89ab-cdef-fedc-ba9876543210",
+        "version": 1,
+        "type": "transcription_available",
+        "destination":"https://www.sinch.com/calling/v1/recording/201801010000_01234567-89ab-cdef-fedc-ba9876543210_01234567-89ab-cdef-fedc-ba9876543210-transcript.json"
     }

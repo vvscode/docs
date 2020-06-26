@@ -9,6 +9,7 @@ excerpt: Introduction to the SMS APIs that is offered by Sinch.
 The easiest and most feature-rich API we offer. It allows for single messages, scheduled batch sending, message templates and more. You can also use our server-side libraries if you like to work natively in your programming language of choice.
 
 ### SMPP
+
 SMPP interfaces for full control and low latency.
 
 > **Note**
@@ -18,10 +19,10 @@ SMPP interfaces for full control and low latency.
 ## Need help?
 If you have any questions, feel free to check out our help section or contact us.
 
-_I have an old integration, where do I find the documentation?_
+***I have an old integration, where do I find the documentation?***
 The guides above are our standard and recommended integration options. However, we do manage platforms where clients have integrated in the past, and we have collected those API guides here if you need them.
 
-##Other
+## Other
 
 You can find our other APIs below:
 

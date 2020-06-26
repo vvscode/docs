@@ -1,21 +1,19 @@
 ---
-title: Receive Messages From Facebook Messenger
-excerpt: >-
-  Learn how to receive messages from Facebook Messenger
-hidden: true
+title: Handle incoming messages 
+excerpt: |
+  This guide you will learn how to handle incoming messages. 
+next:
+  pages:
+    - conversation-send-rich-messages-with-fb-messenger
+hidden: true 
 ---
-
-## Receive Message via webhook
-
-This guide will show you how to receive messages from your channel. For this setup, we will look into how to receive a message from Facebook Messenger channel. 
-Make sure to have your Facebook account and Conversation App setup before preceding to the next steps.
-
+In this guide we use the [Facebook Messenger](doc:conversation-send-a-message-with-fb-messsenger), if you like you can use the [SMS channel](doc:conversation-send-sms) or any [other channel](doc:conversation-channel-support)
 
 ## Create a simple webhook using Node.js
 
 First create a new node app and then run the following on the command line to create the needed dependency.
 
-`npm install express body-parser --save ` This will install the [Express](https://www.npmjs.com/package/express) http server framework module. 
+`npm install express body-parser --save` This will install the [Express](https://www.npmjs.com/package/express) http server framework module. 
 
 Now add the following code to your index.js
 
@@ -47,13 +45,11 @@ Before you can handle incoming traffic to your local server, you need to open up
 
 The Node app and Ngrok should be running at the same time at port 3000.
 
-![](https://i.imgur.com/HHpIHIp.png)
+![ngrok screenshot](https://i.imgur.com/HHpIHIp.png)
 
 
----
+## Configure a webhook
 
-
-## Configure webhook in Conversation App
 Go to your Conversation App dashboard and select
 `Conversations` on the left side menu.
 
@@ -69,26 +65,23 @@ Go to your Conversation App dashboard and select
 
 Fill in the following:
 
-Set **Target Type** to HTTP
+Select **Target Type** to HTTP
 
-Set **Target URL** as your ngrok url
+Select **Target URL** as your ngrok url
 
-Set **Triggers** with only `MESSAGE_INBOUND`
+Select `MESSAGE_INBOUND` as **Trigger**
 
-Since we are only dealing with messages coming in, `MESSAGE_INBOUND` will be the only trigger used.
 
 ![WebhookPopup](images/dashboard/dashboard_webhookPopup.png)
 
-Now your webhook is setup with Conversation App.
+Now your webhook is setup with the Conversation App.
 
 ---
 
 ## Start a Conversation
 
-Now that your webhook is setup with Conversation App and ngrok along with your node app are running and listening to port 3000- it's time to test the webhook.
-
-
-Open up Facebook Messenger and send a message to your test account. If you do not have an account, please look into [Send a message with Facebook Messenger](doc:conversation-send-a-message-with-fb-messsenger) before proceeding.
+Now that your webhook is setup with the Conversation App and ngrok along with your node app are running and listening to port 3000- it's time to test the webhook.
+For this demo, we will be using Facebook Messenger channel as our example. Open up Facebook Messenger and send a message to your test account. If you do not have an account, please look into [Send a message with Facebook Messenger](doc:conversation-send-a-message-with-fb-messsenger) before proceeding.
 
 ![SendingMessage](images/channel-support/messenger/fb_message_firstmsg.png)
 
@@ -100,39 +93,25 @@ if you did everything correctly, you will receive a `status 200 OK` on ngrok and
 
 ## Sending a reply via Webhook
 
-Copy the following code on top of your current webhook and then re-run your node application. 
+Copy the following code on top of your current webhook and then re-run your node application.
 
 ```javascript 
-
+const fetch = require('node-fetch');
 const express = require('express');
       bodyParser = require('body-parser');
       app = express().use(bodyParser.json());
       port = 3000;
-
-// Conversation api credentials
-const fetch = require('node-fetch'),
-      SINCH_ACCOUNT_ID = 'SINCH_ACCOUNT_ID',
-      SINCH_ACCOUNT_TOKEN='SINCH_ACCOUNT_TOKEN',
-      SINCH_APP_ID = 'SINCH_APP_ID',
-
-
-  getAuthToken = () => {
-    return Buffer.from(`${SINCH_APP_ID}:${SINCH_ACCOUNT_TOKEN}`).toString(
-      'base64',
-    );
-  },
-
-// Sending a text message body
+  Sending a text message body
   sendMessage = (contact_id, text) => {
-    const URL = `https://api.conversation-api.prod.sinch.com/v1beta/accounts/${SINCH_ACCOUNT_ID}/messages:send`;
+    const URL = `https://api.conversation-api.prod.sinch.com/v1beta/projects/{project_id}/messages:send`;
     const options = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Basic ${getAuthToken()}`,
+        Authorization: `Basic ${btoa(`${client_id}:${client_secret}`)}`,
       },
       body: JSON.stringify({
-        app_id: SINCH_APP_ID,
+        app_id: {SINCH_APP_ID},
         recipient: {
           contact_id,
         },
@@ -147,7 +126,6 @@ const fetch = require('node-fetch'),
      return fetch(URL, options);
   };
 
-
 app.post('/webhook', (req, res) => {
     let body = req.body;
     let {
@@ -157,9 +135,10 @@ app.post('/webhook', (req, res) => {
             },
         },
     } = body;
+
 // Adding a simple if statement when you receive a text message
   if (text) {
-        sendMessage('<Contact_ID>', 'Replying to that first message!').then(r => r.json()).then(res => console.log(res));
+        sendMessage('Contact_ID', 'Replying to that first message!').then(r => r.json()).then(res => console.log(res));
     }
     console.log(`MESSAGE RECEIVED:  ${text}`);
     res.sendStatus(200);

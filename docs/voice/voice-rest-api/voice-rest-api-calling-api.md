@@ -7,42 +7,20 @@ next:
   pages:
     - voice-rest-api-callback-api
 ---
-## Overview
-
-The calling-related API is divided in two categories - **"traffic management"** and **"configuration management"**. "Traffic management" encompasses management of individual calls. Since a call always belongs to a region, the corresponding regional endpoints must be used. Configuration management is agnostic to individual calls and hence a global endpoint is used.
-
-### Regional Endpoints - Traffic Management
-
-    https://calling-euc1.api.sinch.com/calling/[version]  - Europe
-    https://calling-use1.api.sinch.com/calling/[version]  - United States
-    https://calling-sae1.api.sinch.com/calling/[version]  - South America
-    https://calling-apse1.api.sinch.com/calling/[version] - South East Asia 1
-    https://calling-apse2.api.sinch.com/calling/[version] - South East Asia 2
-
-    It is also possible to use the endpoint:
-    https://calling.api.sinch.com/calling/[version] - redirected by Sinch to an appropriate region 
-
-    Current  version is "v1"
-
-For cases where the call is the result of an incoming PSTN, SIP or data call, the endpoint to use for managing that call is supplied in the ICE event.
-
-### Global Endpoint - Configuration Management
-
-    https://callingapi.sinch.com/calling/[version]     
-
-    Current  version is "v1"
 
 ### Methods
 
-
 #### Configuration Management Methods
+
     [GET]       /configuration/numbers/
     [POST]      /configuration/numbers/
+    [DELETE]    /configuration/numbers/
     [GET]       /configuration/callbacks/applications/{applicationkey}
     [POST]      /configuration/callbacks/applications/{applicationkey}
     [GET]       /calling/query/number/{number}
 
 #### Traffic Management Methods
+
     [PATCH]     /calls/id/{callId}
     [GET]       /calls/id/{callId}
     [GET]       /conferences/id/{conferenceId}
@@ -75,7 +53,7 @@ Get information about your numbers. It returns a list of numbers that you own, a
 
 _Example_
 
-    [GET] https://calling.api.sinch.com/v1/configuration/numbers/
+    [GET] https://callingapi.sinch.com/v1/configuration/numbers/
 
 ### Authorization
 
@@ -141,7 +119,7 @@ Assign a number or a list of numbers to an application.
 
 _Example_
 
-    [POST] https://calling.api.sinch.com/v1/configuration/numbers/
+    [POST] https://callingapi.sinch.com/v1/configuration/numbers/
 
     {
         "numbers":["+14151112223333"],
@@ -184,7 +162,7 @@ Un-assign a number from an application.
 
 _Example_
 
-    [DELETE] https://calling.api.sinch.com/v1/configuration/numbers/
+    [DELETE] https://callingapi.sinch.com/v1/configuration/numbers/
 
     {
         "number":"+14151112223333",
@@ -217,7 +195,7 @@ Get callback URLs.
 
 _Example_
 
-    [GET] https://calling.api.sinch.com/v1/configuration/callbacks/applications/94983f76-1161-6655-9515-4785c7b67ca8
+    [GET] https://callingapi.sinch.com/v1/configuration/callbacks/applications/94983f76-1161-6655-9515-4785c7b67dd8
 
 ### Authorization
 
@@ -273,7 +251,7 @@ Update callback URLs.
 
 _Example_
 
-    [POST] https://calling.api.sinch.com/v1/configuration/callbacks/applications/94983f76-1161-6655-9515-4785c7b67ca8
+    [POST] https://callingapi.sinch.com/v1/configuration/callbacks/applications/94983f76-1161-6655-9515-4785c7b67ca8
 
     {
         "url" : {
@@ -306,7 +284,7 @@ Get information about the requested number.
 
 _Example_
 
-    [GET] https://calling.api.sinch.com/v1/calling/query/number/+46(0)73-017-0101
+    [GET] https://callingapi.sinch.com/v1/calling/query/number/+46(0)73-017-0101
 
 ### Authorization
 
@@ -568,7 +546,6 @@ Requests a call to be initiated from the server
 
 This is a protected resource and requires an [application signed request](doc:using-rest#application-signed-request) or [basic auth](doc:using-rest#basic-authorization).
 
-
 There are currently three types of callouts that are supported: conference callouts, text-to-speech callouts and custom callouts. The custom callout is the most flexible, but text-to-speech and conferece callouts whereas conference and text-to-speech callouts are more convinient.
 
 ### Conference callout
@@ -729,7 +706,6 @@ Supported languages / locales:
   </div>
 </div>
 
-
 **greeting** is the text that will be spoken as a greeting.
 
 **conferenceId** shows the Id of the conference to which the participant will be connected.
@@ -843,34 +819,34 @@ If **enableDice** is set to true and the application has a callback URL specifie
 
 **locale** specifies the language for the Text-to-speech message. Supported languages:
 
->\*cmn-CN:		Chinese, Mandarin  
->\* da-DK:		Danish  
->\* nl-NL:		Dutch  
->\* en-AU:		English, Australian  
->\* en-GB:		English, British  
->\* en-IN:		English, Indian  
->\* en-US:		English, US  
->\* en-GB-WLS:	English, Welsh  
->\* fr-FR:		French  
->\* fr-CA:		French, Canadian  
->\* hi-IN:		Hindi  
->\* de-DE:		German  
->\* is-IS:		Icelandic  
->\* it-IT:		Italian  
->\* ja-JP:		Japanese  
->\* ko-KR:		Korean  
->\* nb-NO:		Norwegian  
->\* pl-PL:		Polish  
->\* pt-BR:		Portuguese, Brazilian  
->\* pt-PT:		Portuguese, European  
->\* ro-RO:		Romanian  
->\* ru-RU:		Russian  
->\* es-ES:		Spanish, European  
->\* es-MX:		Spanish, Mexican  
->\* es-US:		Spanish, US  
->\* sv-SE:		Swedish  
->\* tr-TR:		Turkish  
->\* cy-GB:		Welsh  
+> \*cmn-CN: Chinese, Mandarin  
+> \* da-DK: Danish  
+> \* nl-NL: Dutch  
+> \* en-AU: English, Australian  
+> \* en-GB: English, British  
+> \* en-IN: English, Indian  
+> \* en-US: English, US  
+> \* en-GB-WLS: English, Welsh  
+> \* fr-FR: French  
+> \* fr-CA: French, Canadian  
+> \* hi-IN: Hindi  
+> \* de-DE: German  
+> \* is-IS: Icelandic  
+> \* it-IT: Italian  
+> \* ja-JP: Japanese  
+> \* ko-KR: Korean  
+> \* nb-NO: Norwegian  
+> \* pl-PL: Polish  
+> \* pt-BR: Portuguese, Brazilian  
+> \* pt-PT: Portuguese, European  
+> \* ro-RO: Romanian  
+> \* ru-RU: Russian  
+> \* es-ES: Spanish, European  
+> \* es-MX: Spanish, Mexican  
+> \* es-US: Spanish, US  
+> \* sv-SE: Swedish  
+> \* tr-TR: Turkish  
+> \* cy-GB: Welsh
 
 **text** is the text that will be spoken in the text-to-speech message. Every applications default maximum characters allowed in text-to-speech is 600 characters. Contact support if you wish this limit to be changed.
 
@@ -934,31 +910,34 @@ With the custom callout, the server initiates a call from the servers that can b
     string - pie
     string - dice
 ```
-A server callout generates a number of events. It all starts with the server placing the call which generates an "Incoming Call Event" - **"ICE"**. As a response to the ICE event, the server expects SVML to instruct it to a connect PSTN destination. When (if) the destination picks up, the "Answered Call Event", **ACE**,  is generated. As a response to this, the server expects SVML to instruct it how to service the answered callout - this can be reading a message, connecting to a conference or running an IVR menu.
+
+A server callout generates a number of events. It all starts with the server placing the call which generates an "Incoming Call Event" - **"ICE"**. As a response to the ICE event, the server expects SVML to instruct it to a connect PSTN destination. When (if) the destination picks up, the "Answered Call Event", **ACE**, is generated. As a response to this, the server expects SVML to instruct it how to service the answered callout - this can be reading a message, connecting to a conference or running an IVR menu.
 
 If a menu is played as a response to the ACE event, the result of the menu input generates a "Prompt Input Event", **PIE**. The reponse to this event can be the same as to an ACE event.
 
-When the call is finally disconnected, the server generates a "Disconnected Call Event", **DiCE**. 
+When the call is finally disconnected, the server generates a "Disconnected Call Event", **DiCE**.
 
-*****ICE*****
+**\***ICE**\***
 
 Here, you have a few alternatives
-* If you use the parameters like in text-to-speech and conference callouts (see below), you do not need to populate the "ice" field
- ```json
-    string - cli
-    Identity - destination
-    string - dtmf
-    int - maxDuration
-```
-* Specify a URL in the "ice" field. Sinch will generate a callback event an expects SVML that instructs on how to connect the call. As of now, only the action "connectPstn" is allowed in the reply
-* Leave the "ice" field empty (and do not specify destination). If you have a callback URL configured for your application, you will generate a callback event to that URL
-* The final option is to specify your SVML inline as a (JSON escaped) string.
 
-*****ACE, PIE, DiCE*****
+- If you use the parameters like in text-to-speech and conference callouts (see below), you do not need to populate the "ice" field
+
+```json
+   string - cli
+   Identity - destination
+   string - dtmf
+   int - maxDuration
+```
+
+- Specify a URL in the "ice" field. Sinch will generate a callback event an expects SVML that instructs on how to connect the call. As of now, only the action "connectPstn" is allowed in the reply
+- Leave the "ice" field empty (and do not specify destination). If you have a callback URL configured for your application, you will generate a callback event to that URL
+- The final option is to specify your SVML inline as a (JSON escaped) string.
+
+**\***ACE, PIE, DiCE**\***
 
 For each of these parameters, if you populate them with a URL. The server will generate the corresponding event and send it to that URL. If you leave them blank, the service will instead use the callback URL configured for your application.
 Again, the final option is to specify your SVML inline as a (JSON escaped) string.
-
 
 ## Manage Call
 

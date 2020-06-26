@@ -161,18 +161,18 @@ Your development platform that receives the callbacks can verify that the reques
 To get started quickly, applications are enabled to use basic authorization instead of signing messages. To use basic authorization, set the application key as the username and the secret from the portal as the password.
 
     //application call
-    usernameAndPassword = “application" + ApplicationKey + ”:" + ApplicationSecret
+    usernameAndPassword = "ApplicationKey + ":" + "ApplicationSecret"
 
 To get the *applicationKey* and *applicationSecret*, you should create an application in the Sinch dashboard. The dashboard will display your application key and secret pair that can be used to sign requests.
 
 By convention, the username and password need to be base64 encoded before being added to the header:
 
-    Authorization = “basic” + " " + Base64 ( usernameAndPassword )
+    Authorization = "Basic: " + Base64 ( usernameAndPassword )
 
 
 ### User Signed Request
 
-    Authorization = “User” + " " + USER_AUTHORIZATION
+    Authorization = "User" + " " + USER_AUTHORIZATION
 
 > **Note**
 >

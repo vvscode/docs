@@ -55,7 +55,7 @@ Your available host options will be visible in the Customer Account Details docu
 ### DLR-URL Escape Codes
 
 |Escape codes|Description|
-|------------|-----------|
+|-------------|------------|
 |%t          |The time the message was sent, formatted as “YYYY-MM-DD HH:MM” , e.g., “1999-09-21+14:18:00”|
 |%T          |The time the message was sent, in UNIX epoch timestamp format.|
 |%p          |The phone number of the sender of the SMS message.|
@@ -71,6 +71,7 @@ Your available host options will be visible in the Customer Account Details docu
 |%u          |the done date, formatted as as “YYYY-MM-DD HH:MM”, e.g., “1999- 09-21 14:18”|
 |%U          |the done date, in UNIX epoch timestamp format|
 |%m          |the MCC + MNC of the receiver for the SMS message|
+
 
 ### Time zone
 
@@ -205,12 +206,14 @@ Basic Configuration
 #### Example 1 - Submit text message
 
 **Submit Text Message**
+
 ```shell
 http://sms1.clxnetworks.net:3800/sendsms?username=userX&password=passX&from=test&to=123456&text=Hello+world
 ```
 
 
 **(Content of the message must be URL encoded)**
+
 
 |                                                                                  |                                                                                                                                        |
 | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
@@ -227,6 +230,7 @@ http://sms1.clxnetworks.net:3800/sendsms?username=userX&password=passX&from=test
 #### Example 2 - Submit text message with delivery report
 
 **Submit text message with delivery report**
+
 ```shell
 http://sms1.clxnetworks.net:3800/sendsms?username=userX&password=passX&from=test&to=123456&text=Hello+world&dlr-mask=7&dlr-url=http%3a%2f%2fyour.host.com%2fdlr.php%3ftype%3d%25d%26dr-%c2%admsg%3d%25A
 
@@ -382,9 +386,8 @@ To receive the MO message Sinch needs a URL that specify where the messages shou
 
 ### URL escape codes
 
-|                                                                       |
-| --------------------------------------------------------------------- |
-| **Escape codes**                                                      |
+| **Escape codes**|Description|
+|----|----|
 | %t | The time the message was sent, formatted as "YYYY-MM-DD HH:MM".  |
 | %T | The time the message was sent, in UNIX epoch timestamp format.   |
 | %p | The MO number.                                                   |

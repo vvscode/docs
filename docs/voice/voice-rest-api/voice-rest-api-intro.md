@@ -35,34 +35,56 @@ These are the typical call scenarios that you can control with the Sinch Callbac
 
 To use callback events you need to assign a callback URL in the Sinch portal under your app settings.
 
-| Event  | HTTP Verb | Functionality                                                                                    |
-| ------ | --------- | ------------------------------------------------------------------------------------------------ |
-| ICE    | POST      | [Incoming Call Event callback](doc:voice-rest-api-callback-api) |
-| ACE    | POST      | [Answered Call Event callback](doc:voice-rest-api-callback-api)                                  |
-| DiCE   | POST      | [Disconnect Call Event callback](doc:voice-rest-api-callback-api)                                |
-| PIE    | POST      | [Prompt Input Event callback](doc:voice-rest-api-callback-api)                                   |
-| Notify | POST      | [Notify Event callback](doc:voice-rest-api-callback-api#svaml-quick-reference)                   |
+| Event  | HTTP Verb | Functionality                                                                                         |
+| ------ | --------- | ----------------------------------------------------------------------------------------------------- |
+| ICE    | POST      | [Incoming Call Event callback](doc:voice-rest-api-callback-api#incoming-call-event-callback-ice)      |
+| ACE    | POST      | [Answered Call Event callback](doc:voice-rest-api-callback-api#answered-call-event-callback-ace)      |
+| DiCE   | POST      | [Disconnect Call Event callback](doc:voice-rest-api-callback-api#disconnect-call-event-callback-dice) |
+| PIE    | POST      | [Prompt Input Event callback](doc:voice-rest-api-callback-api#prompt-input-event-callback-pie)        |
+| Notify | POST      | [Notify Event callback](doc:voice-rest-api-callback-api#notify-event-callback-notify)                 |
 
 ### Calling API
 
-    https://calling.api.sinch.com/v1
+The calling-related APIs are divided in two categories - **"traffic management"** and **"configuration management"**. "Traffic management" encompasses management of individual calls. Since a call always belongs to a region, the corresponding regional endpoints must be used. Configuration management is agnostic to individual calls and hence a global endpoint is used.
 
-URL to access a region-specific API is provided by the ICE callback, in the `callResourceUrl` property. Use that as a base URL to access the following region-specific resources:
+### Regional Endpoints - Traffic Management (TM)
 
-| URL                                                    | HTTP Verb | Functionality                               |
-| ------------------------------------------------------ | --------- | ------------------------------------------- |
-| /configuration/numbers/                                | GET       | [Get a list of your numbers]()              |
-| /configuration/numbers/                                | POST      | [Assign numbers to an app]()                |
-| /configuration/callbacks/applications/{applicationkey} | GET       | [Get callback URLs of your app]()           |
-| /configuration/callbacks/applications/{applicationkey} | POST      | [Update the callback URLs of your app]()    |
-| /calling/query/number/{number}                         | GET       | [Query a number]()                          |
-| /calls/id/{callId}                                     | PATCH     | [Manage Call]()                             |
-| /calls/id/{callId}                                     | GET       | [Get call result]()                         |
-| /conferences/id/{conferenceId}                         | GET       | [Get conference info]()                     |
-| /conferences/id/{conferenceId}/{callId}                | PATCH     | [Mute/Unmute conference participant]()      |
-| /conferences/id/{conferenceId}/{callId}                | DELETE    | [Kick conference participant]()             |
-| /conferences/id/{conferenceId}                         | DELETE    | [Kick all conference participants]()        |
-| /callouts                                              | POST      | [Place text-to-speech or conference call]() |
+    https://calling-euc1.api.sinch.com/calling/[version]  - Europe
+    https://calling-use1.api.sinch.com/calling/[version]  - United States
+    https://calling-sae1.api.sinch.com/calling/[version]  - South America
+    https://calling-apse1.api.sinch.com/calling/[version] - South East Asia 1
+    https://calling-apse2.api.sinch.com/calling/[version] - South East Asia 2
+
+    It is also possible to use the endpoint:
+    https://calling.api.sinch.com/calling/[version] - redirected by Sinch to an appropriate region
+
+    Current  version is "v1"
+
+For cases where the call is the result of an incoming PSTN, SIP or data call, the endpoint to use for managing that call is supplied in the ICE event.
+
+### Global Endpoint - Configuration Management (CM)
+
+    https://callingapi.sinch.com/calling/[version]
+
+    Current  version is "v1"
+
+ICE callbacks will also provide region-specific URLs in the `callResourceUrl` property. Use the nearest base URL to access the following voice service resources:
+
+| Type | URL                                                    | HTTP Verb | Functionality                                                                                                    |
+| ---- | ------------------------------------------------------ | --------- | ---------------------------------------------------------------------------------------------------------------- |
+| CM   | /configuration/numbers/                                | GET       | [Get a list of your numbers](doc:voice-rest-api-calling-api#get-numbers)                                         |
+| CM   | /configuration/numbers/                                | POST      | [Assign numbers to an app](doc:voice-rest-api-calling-api#update-numbers)                                        |
+| CM   | /configuration/numbers/                                | DELETE    | [Un-assign numbers to an app](doc:voice-rest-api-calling-api#un-assign-number)                                   |
+| CM   | /configuration/callbacks/applications/{applicationkey} | GET       | [Get callback URLs of your app](doc:voice-rest-api-calling-api#get-callbacks)                                    |
+| CM   | /configuration/callbacks/applications/{applicationkey} | POST      | [Update the callback URLs of your app](doc:voice-rest-api-calling-api#update-callbacks)                          |
+| CM   | /calling/query/number/{number}                         | GET       | [Query a number](doc:voice-rest-api-calling-api#query-number)                                                    |
+| TM   | /calls/id/{callId}                                     | PATCH     | [Manage Call](doc:voice-rest-api-calling-api#manage-call)                                                        |
+| TM   | /calls/id/{callId}                                     | GET       | [Get call result](doc:voice-rest-api-calling-api#get-call-result)                                                |
+| TM   | /conferences/id/{conferenceId}                         | GET       | [Get conference info](doc:voice-rest-api-calling-api#get-conference-info)                                        |
+| TM   | /conferences/id/{conferenceId}/{callId}                | PATCH     | [Mute/Unmute conference participant](doc:voice-rest-api-calling-api#mute-unmute-conference-participant)          |
+| TM   | /conferences/id/{conferenceId}/{callId}                | DELETE    | [Kick conference participant](doc:voice-rest-api-calling-api#kick-conference-participant)                        |
+| TM   | /conferences/id/{conferenceId}                         | DELETE    | [Kick all conference participants](doc:voice-rest-api-calling-api#kick-all-conference-participants)              |
+| TM   | /callouts                                              | POST      | [Place text-to-speech or conference call](doc:voice-rest-api-calling-api#conference-and-text-to-speech-callouts) |
 
 ### Reporting API
 

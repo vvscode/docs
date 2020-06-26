@@ -1,13 +1,9 @@
 ---
 title: Send a FB Messenger message
 excerpt: >-
-  Learn how to set up and send a message with Facebook messenger and Conversation API.
+  In this section you will learn how to create and configure a basic FB Business Page with Messenger chat feature. Once you complete the steps below you will have an FB App, FB Business Page with Messenger Chat button, a Messenger Token, and a configured Messenger Webhook to use with the Sinch Conversations API.
 hidden: true
 ---
-
-## Setup your FB App with Messenger Chat
-
-In this quick start guide we will show you how to create and configure a basic FB Business Page with Messenger chat feature. Once you complete the steps below you will have an FB App, FB Business Page with Messenger Chat button, a Messenger Token, and a configured Messenger Webhook to use with the Sinch Conversations API.
 
 ### Set up a facebook Page
 
@@ -78,9 +74,10 @@ Copy and store your Messenger Token somewhere safe, we will need it to add the M
 
 Create and send a POST to **Patch** your Sinch Conversations App with the newly created **Messenger Token**, this will allow Sinch Conversations App to respond to inbound messages posted by visitors of your FB Page.
 
-```javascript Curl
-curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1beta/accounts/{{YOUR_SINCH_ACCOUNT_ID}}/apps' \
+```shell Curl
+curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1beta/projects/{project_id}/apps' \
 --header 'Content-Type: application/json' \
+-u '<client_id:client_secret>'
 --data-raw '{
     "channel_credentials": [
         {
@@ -157,12 +154,13 @@ Use **Sinch Conversations API** to **List Contacts**, you should now see a new c
 Use your newly created Sinch **Contact** to send a **Text Message** response using the **message:send** function.
 
 ```shell Curl
-curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1beta/accounts/{{YOUR_SINCH_ACCOUNT_ID}}/messages:send' \
+curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1beta/projects/{project_id}/messages:send' \
+-u '<client_id:client_secret>' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-	"app_id": "{{YOUR_SINCH_APP_ID}}",
+    "app_id": "{{YOUR_SINCH_APP_ID}}",
     "recipient": {
-    	"contact_id": "{{YOUR_SINCH_CONTACT_ID}}"
+        "contact_id": "{{YOUR_SINCH_CONTACT_ID}}"
     },
     "message": {
         "text_message": {
@@ -196,12 +194,12 @@ RequestBody body =
 Request request =
     new Request.Builder()
         .url(
-            "https://api.conversation-api.prod.sinch.com/v1beta/accounts/your_account_id/messages:send")
+            "https://api.conversation-api.prod.sinch.com/v1beta/projects/{project_id}/messages:send")
         .method("POST", body)
         .addHeader("Content-Type", "application/json")
         .addHeader(
             "Authorization",
-            "Basic your_token")
+            "Basic " + Base64.getEncoder().encodeToString("{client_id}:{client_secret}".getBytes()))
         .build();
 Response response = client.newCall(request).execute();
 ```
@@ -210,5 +208,5 @@ Response response = client.newCall(request).execute();
 
 **ALRIGHT!! CONGRATULATIONS**, you have just sent your first Sinch Conversations Messenger Message!
 
-1.  Learn how to receive messages
-2.  Learn how to [send rich messages with Facebook messenger](doc:conversation-send-rich-messages-with-fb-messenger).
+1. Learn how to receive messages
+2. Learn how to [send rich messages with Facebook messenger](doc:conversation-send-rich-messages-with-fb-messenger).

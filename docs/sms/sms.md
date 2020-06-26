@@ -24,24 +24,42 @@ Click on activate
 ![Image of configure number](images\new-number\select-rest.png)
 To use the number with the rest API select REST and click ***Get Free number***.
 
-### Code
+### Installing Java helper library
+If you want to use java, [install our helper library](doc:sms-java-library)
 
-Create a new node app and copy this into app.js
+### Send SMS
 
-```nodejs
+```nodejs NodeJS
+//Create a new node app and copy this into app.js
 var request = require("request");
 var options = {
   method: 'POST',
   url: 'https://us.sms.api.sinch.com/xms/v1/{service_plan_id}/batches',
-  headers: {accept: 'application/json', 'content-type': 'application/json', 
+  headers: {accept: 'application/json', 'content-type': 'application/json',
       "Authentication: Bearer {your token}"},
-  body: '{"to":"{To Number}","from":"{your free test number}","body":"This is a test message"}'
+  body: '{"to":"[{To Number}]","from":"{your free test number}","body":"This is a test message"}'
 };
 
 request(options, function (error, response, body) {
   if (error) throw new Error(error);
   console.log(body);
 });
+```
+```java Java
+ApiConnection conn =
+        ApiConnection.builder()
+            .servicePlanId({service_plan_id})
+            .token({your token})
+            .start()
+String [] RECIPIENTS = {"{To Number}"};
+MtBatchTextSmsResult batch =
+          conn.createBatch(
+              SinchSMSApi.batchTextSms()
+                  .sender("{your free test number}")
+                  .addRecipient(RECIPIENTS)
+                  .body("This is a test message")
+                  .build()
+
 ```
 
 Before you can execute the code that sends an SMS message, you need to modify it in a few places.
