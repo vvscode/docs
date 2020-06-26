@@ -30,24 +30,6 @@ curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1be
     ]
 }'
 ```
-```java Java
-public static void main(String[] args) {
-    // Init the Sinch Api Client to hold the auth
-    SinchApiClient sinchApiClient = SinchApiClient.getDefaultConfig();
-
-    // Build the Message APi which holds all messages capabilities
-    MessageApi messageApi = new MessageApi(sinchApiClient);
-
-    // Send Image Message
-    MessageResponse messageResponse =
-        messageApi.sendMediaMessage(
-            "01E9GXGK5Y4CKK1VTNJYAN0BAT",
-            "https://1vxc0v12qhrm1e72gq1mmxkf-wpengine.netdna-ssl.com/wp-content/uploads/2018/12/favicon.png");
-
-    // Print out the Message id for the record
-    System.out.println(messageResponse.getMessageId());
-  }
-```
 
 ![Facebook Media Message](images/channel-support/messenger/fb_message_media.jpg)
 
@@ -104,32 +86,6 @@ curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1be
         "MESSENGER"
     ]
 }'
-```
-```java Java
-public static void main(String[] args) {
-    // Init the Sinch Api Client to hold the auth
-    SinchApiClient sinchApiClient = SinchApiClient.getDefaultConfig();
-
-    // Build the Message APi which holds all messages capabilities
-    MessageApi messageApi = new MessageApi(sinchApiClient);
-
-    // Set up Choice Message
-    ChoiceMessage choiceMessage =
-        ChoiceMessage.newBuilder()
-            .text("Sinch can offer these following channels")
-            .addTextChoice("RCS")
-            .addUrlChoice("Visit us", "https://www.sinch.com/")
-            .addCallChoice("Call us", "155544422")
-            .addLocationChoice(44.3, 66.4, "Location Choice Message", "Enriching Message")
-            .build();
-
-    MessageResponse messageResponse =
-        messageApi.sendChoiceMessage("01E9GXGK5Y4CKK1VTNJYAN0BAT", choiceMessage);
-
-    // Print out the Message id for the record
-    System.out.println(messageResponse.getMessageId());
-  }
-
 ```
 
 ![Facebook Message Choice](images/channel-support/messenger/fb_message_choice.jpg)
@@ -188,30 +144,6 @@ curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1be
         "MESSENGER"
     ]
 }'
-```
-```java Java
-public static void main(String[] args) {
-    // Init the Sinch Api Client to hold the auth
-    SinchApiClient sinchApiClient = SinchApiClient.getDefaultConfig();
-
-    // Build the Message APi which holds all messages capabilities
-    MessageApi messageApi = new MessageApi(sinchApiClient);
-
-    // Set up Card Message
-    CardMessage cardMessage =
-        CardMessage.newBuilder()
-            .title("Hello World")
-            .description("This is a rich card")
-            .media(
-                "https://1vxc0v12qhrm1e72gq1mmxkf-wpengine.netdna-ssl.com/wp-content/uploads/2019/05/Sinch-logo-Events.png")
-            .build();
-
-    MessageResponse messageResponse =
-        messageApi.sendCardMessage("01E9GXGK5Y4CKK1VTNJYAN0BAT", cardMessage);
-
-    // Print out the Message id for the record
-    System.out.println(messageResponse.getMessageId());
-  }
 ```
 
 ![Facebook Card Message](images/channel-support/messenger/fb_message_card.jpg)
@@ -311,44 +243,6 @@ curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1be
     ]
 }'
 ```
-```java Java
-  public static void main(String[] args) {
-
-    // Init the Sinch Api Client to hold the auth
-    SinchApiClient sinchApiClient = SinchApiClient.getDefaultConfig();
-
-    // Build the Message APi which holds all messages capabilities
-    MessageApi messageApi = new MessageApi(sinchApiClient);
-
-    // Set up Card Message
-    CardMessage cardMessage =
-        CardMessage.newBuilder()
-            .title("Hello World")
-            .description("This is a rich card")
-            .media("https://1vxc0v12qhrm1e72gq1mmxkf-wpengine.netdna-ssl.com/wp-content/uploads/2019/05/Sinch-logo-Events.png")
-            .addTextChoice("First Button")
-            .addCallChoice("Call us", "233123123")
-            .addUrlChoice("Visit us", "https://www.sinch.com")
-            .build();
-
-    // Number of Cards in the carousel. Ideally from 2 to 10
-    int MAX_CARDS = 5;
-
-    CarouselMessage carouselMessage = new CarouselMessage();
-    for (int i = 0; i < MAX_CARDS; ++i) {
-      carouselMessage.addCard(cardMessage);
-    }
-
-    // Optional - Choice buttons
-    carouselMessage.addTextChoice("Hello").addTextChoice("Something good");
-
-    MessageResponse messageResponse =
-        messageApi.sendCarouselMessage("01E9GXGK5Y4CKK1VTNJYAN0BAT", carouselMessage);
-
-    // Print out the Message id for the record
-    System.out.println(messageResponse.getMessageId());
-  }
-```
 
 ![Facebook Carousel Message](images/channel-support/messenger/fb_message_carousel.jpg)
 
@@ -377,24 +271,6 @@ curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1be
         "MESSENGER"
     ]
 }'
-```
-```java Java
-public static void main(String[] args) {
-
-    // Init the Sinch Api Client to hold the auth
-    SinchApiClient sinchApiClient = SinchApiClient.getDefaultConfig();
-
-    // Build the Message APi which holds all messages capabilities
-    MessageApi messageApi = new MessageApi(sinchApiClient);
-
-    // Send Text Message
-    MessageResponse messageResponse =
-        messageApi.sendLocationMessage(
-            "01E9GXGK5Y4CKK1VTNJYAN0BAT", 55.610479, 13.002873, "Location Message");
-
-    // Print out the Message id for the record
-    System.out.println(messageResponse.getMessageId());
-  }
 ```
 
 ![Facebook Location Message](images/channel-support/messenger/fb_message_location.jpg)

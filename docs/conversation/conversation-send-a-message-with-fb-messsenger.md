@@ -205,23 +205,6 @@ Request request =
         .build();
 Response response = client.newCall(request).execute();
 ```
-```java Java
-public static void main(String[] args) {
-
-    // Init the Sinch Api Client to hold the auth
-    SinchApiClient sinchApiClient = SinchApiClient.getDefaultConfig();
-
-    // Build the Message APi which holds all messages capabilities
-    MessageApi messageApi = new MessageApi(sinchApiClient);
-
-    // Send Text Message
-    MessageResponse messageResponse =
-        messageApi.sendTextMessage("your_contact_id", "Greetings from Sinch Conversation API!");
-
-    // Print out the Message id for the record
-    System.out.println(messageResponse.getMessageId());
-}
-```
 
 ![Facebook Message Text](images/channel-support/messenger/fb_message_text.jpg)
 
