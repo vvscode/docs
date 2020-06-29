@@ -5,7 +5,7 @@ excerpt: |
 next:
   pages:
     - conversation-send-rich-messages-with-fb-messenger
-hidden: true 
+hidden: false 
 ---
 In this guide we use the [Facebook Messenger](doc:conversation-send-a-message-with-fb-messsenger), if you like you can use the [SMS channel](doc:conversation-send-sms) or any [other channel](doc:conversation-channel-support)
 

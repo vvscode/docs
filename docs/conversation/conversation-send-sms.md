@@ -1,7 +1,7 @@
 ---
 title: Send SMS  
 excerpt: Learn how to set up and send a message with SMS and Conversation API.
-hidden: true
+hidden: false
 next:
  pages:
   - conversation-receive-a-message
