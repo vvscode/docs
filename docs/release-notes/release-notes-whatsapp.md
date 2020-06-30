@@ -6,6 +6,7 @@ excerpt: >-
 ---
 
 ## 2020-06-30
+
   - improvements in phone number validation - less restrictive rules are now used - number does not have to be approved by e.g. ITU, IR 21…
   - UNKNOWN type of inbound message also opens Customer Care Session now - this type of messages are related with Live Location messages that are not supported by WhatsApp Business API -  these messages can be send from mobile phone app
 
