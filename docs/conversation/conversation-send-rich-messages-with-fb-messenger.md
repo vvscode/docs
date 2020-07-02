@@ -5,10 +5,6 @@ excerpt: >-
 hidden: false
 ---
 
-outline what needs to happen first, ping back to setting up facebook messenger
-Talk about the different messages a little bit,
-Add screenshots on every message. (If we are to keep this, I am a bit ambvialent since you have it in the reference guide. ).
-
 ## Sending Media Message
 
 ```shell Curl
