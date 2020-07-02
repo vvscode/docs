@@ -9,7 +9,7 @@ next:
 ---
 
 
-## Add an SMS Channel to your Conversations API App
+## Add an SMS Channel to your Conversations API App <span class="betabadge">Beta</span>
 
 In this section you will learn how to add an SMS channel to your Sinch Conversations APi Application.  You can an your SMS channel one of two ways, either programatically via Sinch Conversations API or through the [Sinch online portal](https://dashboard.sinch.com).  Before we begin here are a few items you should already have:
 

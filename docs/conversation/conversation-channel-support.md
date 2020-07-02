@@ -5,7 +5,7 @@ excerpt: >-
 hidden: false
 ---
 
-## Conversation API Channel Support
+## Conversation API Channel Support <span class="betabadge">Beta</span>
 
 This document gives detailed description of Conversation API channel support.
 

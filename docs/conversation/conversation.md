@@ -1,11 +1,11 @@
 ---
-title: Introduction
+title: Introduction 
 excerpt: >-
   High level presentation of Sinch Conversation API and overview of its key concepts.
 hidden: false
 ---
 
-## Introduction <img class="dwnl-badge-git" src="/images/beta2.png">
+## Introduction <span class="betabadge">Beta</span>
 
 In its most basic use case the Sinch Conversation API offers one single API endpoint for sending and receiving messages across the most popular channels using one unified format. For more advanced messaging use cases, it offers the notion of a conversations, contacts, switching between Bot and Human chats and much more for the advanced chatbot and conversational messaging application developer.
 

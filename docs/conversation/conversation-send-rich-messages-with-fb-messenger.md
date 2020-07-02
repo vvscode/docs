@@ -5,7 +5,7 @@ excerpt: >-
 hidden: false
 ---
 
-## Sending Media Message
+## Sending Media Message <span class="betabadge">Beta</span>
 
 ```shell Curl
 curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1beta/projects/{project_id}/messages:send' \

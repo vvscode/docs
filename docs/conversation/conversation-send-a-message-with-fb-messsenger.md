@@ -5,7 +5,7 @@ excerpt: >-
 hidden: false
 ---
 
-### Set up a facebook Page
+### Set up a facebook Page <span class="betabadge">Beta</span>
 
 A Facebook Page is required to use the Facebook Messenger API, it is used as the identity of your Messenger experience. When people chat with your app, they will see the Page name and the Page profile picture. To create a new Page, visit https://www.facebook.com/pages/create. If you already have one, you can skip to (#create-your-facebook-app).
 
