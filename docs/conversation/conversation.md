@@ -69,7 +69,7 @@ A **webhook** has the following configurable properties:
 
 ##### Validating callbacks
 
-Callbacks triggered by a registered webhook, with a secret set, will contain the following headers:
+Callbacks triggered by a registered **webhook**, with a secret set, will contain the following headers:
 
 | Field       | Description                                                                                                                                                                   |
 | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
