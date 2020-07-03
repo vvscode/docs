@@ -28,7 +28,7 @@ There will be updated requirements:
 * Businesses must clearly state the name of the business that the user is opting in to receive messages from
 * Businesses must comply with applicable law
 
-The policy will no longer dicate the following requirements that are in the current opt-in policy:
+The policy will no longer dictate the following requirements that are in the current opt-in policy:
 
 * That opt-ins must be obtained in a third-party channel
 * That opt-in permission is obtained in-line and contextually during the relevant user flows
