@@ -18,6 +18,30 @@ Businesses must provide a method by which customers may opt-out of receiving fut
 >
 > If a customer initiates contact with a WhatsApp Business, this will constitute as a temporary opt-in meaning that the business is allowed to send messages to that customer for 24 hours since the last received message. After that period has expired, a active opt-in is required before the business is allowed to send messages to that customer again.
 
+#### Opt-in policy change 9th July 2020
+
+As WhatsApp will be updating their opt-in policy on 9th July 2020, the opt-in requirements for the Sinch WhatsApp Business API will also be updated.
+
+There will be updated requirements:
+
+* Businesses must clearly state that a user is opting in to receive messages from the business over WhatApp
+* Businesses must clearly state the name of the business that the user is opting in to receive messages from
+* Businesses must comply with applicable law
+
+The policy will no longer dictate the following requirements that are in the current opt-in policy:
+
+* That opt-ins must be obtained in a third-party channel
+* That opt-in permission is obtained in-line and contextually during the relevant user flows
+* That there is a visual element (e.g. a check box) next to the WhatsApp name and logo, with adjacent language stating type of information that will be messaged
+* That businesses provide an ability to edit which WhatsApp number is used for the opt-in
+
+Additionally, businesses should:
+
+* Explicitly call out the types of messages that the user is opting in to (e.g. delivery updates)
+* Avoid messaging people too frequently
+* Provide instructions for how customers can opt out and honor these requests
+* Monitor their quality rating, especially when rolling out new opt-in methods
+
 ## Opt-In endpoint
 
 Opt-in numbers to enable the receiving of business messages via WhatsApp. Opting in already opted in numbers
