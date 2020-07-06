@@ -7,17 +7,17 @@ hidden: false
 
 ## Introduction <span class="betabadge">Beta</span>
 
-In its most basic use case the Sinch Conversation API offers one single API endpoint for sending and receiving messages across the most popular channels using one unified format. For more advanced messaging use cases, it offers the notion of a conversations, contacts, switching between Bot and Human chats and much more for the advanced chatbot and conversational messaging application developer.
+In its most basic use case, the Sinch Conversation API offers one single API endpoint for sending and receiving messages across the most popular channels using one unified format. For more advanced messaging use cases, it offers conversations, contacts, switching between Bot and Human chats and much more for the advanced chatbot and conversational messaging application developer.
 
-Different message channel (bearer) features and functions are supported through built-in transcoding. As a developer you have the option to use either a global message template and for it to be automatically transcoded to each message channel format, or simply ignore transcoding and specify an exact layout for the channel you are interested in.
+Different message channel (bearer) features and functions are supported through built-in transcoding. As a developer, you have the option to use either a global message template and for it to be automatically transcoded to each message channel format, or simply ignore transcoding and specify an exact layout for the channel you are interested in.
 
-The benefits of this approach are that a developer need only become familiar with one Messaging API and yet have the power of conversation across all supported channels, still offering full control over channel specific features if required.
+The benefits of this approach are that a developer needs to only become familiar with one Messaging API and yet have the power of conversations across all supported channels, still offering full control over channel specific features if required.
 
-Further, it doesnt matter which conversation channel the customer engages over, or switch between, a single callback contains all aspects of the conversation for easy integration into the Sinch’s portfolio of services, or any third party platform.
+Further, it doesn't matter which conversation channel the customer engages over, or switch between: a single callback contains all aspects of the conversation for easy integration into the Sinch portfolio of services, or any third-party platform.
 
 Put simply, with the Sinch Conversation API, you are always in control of your customer conversation whether it be over SMS, RCS, WhatsApp or Facebook Messenger. Of course, the API will support additional channels as they become popular.
 
-Currently Sinch Conversation API is in closed beta. If you are interested in the early access program please contact [Sinch representative](https://www.sinch.com/contact-us/).
+Currently, Sinch Conversation API is in closed beta. If you are interested in the early access program please contact a [Sinch representative](https://www.sinch.com/contact-us/).
 
 ### Key concepts
 
@@ -25,13 +25,13 @@ Currently Sinch Conversation API is in closed beta. If you are interested in the
 
 #### Project
 
-The **project** entity, in the ER-diagram above, is considered to be the root entity from the Conversation API's point-of-view. All the Conversation API resources are grouped under a **project**, which can be said to act as a container. Each **project** is, under the hood, belonging to a Sinch **account** which is created when creating an account in the [Sinch Portal](https://dashboard.sinch.com). It is, currently, only possible to have one **project** per **account**.
+The **project** entity, in the ER-diagram above, is the root entity from the Conversation API's point-of-view. All the Conversation API resources are grouped under a **project**, which acts as a container. Each **project**, under the hood, belongs to a Sinch **account** created when creating an account in the [Sinch Portal](https://dashboard.sinch.com). It is, currently, only possible to have one **project** per **account**.
 
 #### App
 
 The **app** entity corresponds to the API user, with a set of [**channel credentials**](doc:conversation#channel-credential) for each underlying connected channel. The app has a list of [**conversations**](doc:conversation#conversation) between itself and different [**contacts**](doc:conversation#contact) which share the same [**project**](doc:conversation#project).
 The app is tied to a set of webhooks which defines the destination for various events coming from the Conversation API.
-The easiest way to create and configure a Conversation API app is through [Sinch Portal](https://dashboard.sinch.com/convapi/apps)
+The easiest way to create and configure a Conversation API app is through the [Sinch Portal](https://dashboard.sinch.com/convapi/apps)
 An **app** has the following configurable properties:
 
 | Field                             | Description                                                                                                                        |
@@ -42,7 +42,7 @@ An **app** has the following configurable properties:
 #### Channel credential
 
 A **channel credential** is the authentication means used to authenticate against an underlying connected channel. A **channel credential** is tied to one [**app**](doc:conversation#app).
-The order of the channel credentials registered for an app is significant. It defines the channel priority order on app level used when defining which channels to sent first.
+The order of the channel credentials registered for an app is significant. It defines the channel priority order on app level used when defining which channels to send first.
 The app channel priority is overridden by contact channel priority order and by message specific channel priority order.
 
 A **channel credential** has the following configurable properties:
@@ -50,8 +50,8 @@ A **channel credential** has the following configurable properties:
 | Field           | Description                                                                                          |
 | --------------- | ---------------------------------------------------------------------------------------------------- |
 | Channel         | Which channel these credentials are used with.                                                       |
-| Credential      | Specifies the type and values for the credentials used for a channel                                 |
-| Channel senders | A list of sender identities to use when sending a message. It is used for example with `SMS` channel |
+| Credential      | Specifies the type and values for the credentials used for a channel.                                |
+| Channel senders | A list of sender identities to use when sending a message. It is used for example with `SMS` channel.|
 
 #### Webhook
 
@@ -62,8 +62,8 @@ A **webhook** has the following configurable properties:
 
 | Field       | Description                                                                                                                                                                   |
 | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Target      | The target url where events should be sent to                                                                                                                                 |
-| Target type | Type of the target url. Currently only DISMISS and HTTP are supported values. DISMISS indicates the events will not be sent                                                   |
+| Target      | The target URL where events should be sent to                                                                                                                                 |
+| Target type | Type of the target URL. Currently only DISMISS and HTTP are supported values. DISMISS indicates the events will not be sent                                                   |
 | Secret      | Optional secret to be used to sign the content of Conversation API callbacks. Can be used to verify the integrity of the callbacks                                            |
 | Triggers    | A set of triggers that this webhook is listening to. Example triggers include MESSAGE_DELIVERY for message delivery receipts and MESSAGE_INBOUND for inbound contact messages |
 
@@ -92,20 +92,20 @@ A **contact** has the following configurable properties:
 
 | Field              | Description                                                                                                                                         |
 | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Channel identities | List of channel identities. Specifies how the contact is identified on underlying channels                                                          |
+| Channel identities | List of channel identities specifying how the contact is identified on underlying channels                                                          |
 | Channel priority   | Specifies the channel priority order used when sending messages to this contact. This can be overridden by message specific channel priority order. |
 | Display name       | Optional display name used in chat windows and other UIs                                                                                            |
-| Email              | Optional email of the contact                                                                                                                       |
+| Email              | Optional Email of the contact                                                                                                                       |
 | External id        | Optional identifier of the contact in external systems                                                                                              |
 | Metadata           | Optional metadata associated with the contact.                                                                                                      |
 
 #### Channel recipient identity
 
-A **channel recipient identity** is an identifier for the [**contact**](doc:conversation#contact) for a specific channel. E.g. an international phone number is used as identifier for _SMS_ and _RCS_ while a PSID (Page-Scoped ID) is used as identifier for _Facebook Messenger_.
-Some channels use app-scoped channel identity. Currently, FB Messenger and Viber are using app-scoped channel identities
+A **channel recipient identity** is an identifier for the [**contact**](doc:conversation#contact) for a specific channel. E.g. an international phone number is used as identifier for _SMS_ and _RCS_ while a PSID (Page-Scoped ID) is used as the identifier for _Facebook Messenger_.
+Some channels use app-scoped channel identity. Currently, FaceBook Messenger and Viber are using app-scoped channel identities
 which means contacts will have different channel identities for different [**apps**](doc:conversation#app).
 For Facebook Messenger this means that the contact channel identity is associated with the [**app**](doc:conversation#app)
-linked to the FB page for which this PSID is issued.
+linked to the FaceBook page for which this PSID is issued.
 
 A **channel recipient identity** has the following configurable properties:
 
@@ -171,9 +171,9 @@ https://webhook.site/
 and use the generated link - the one under the 'Your unique URL' label.
 Values for other variables can be obtained by calling corresponding requests:
 
-- CONTACT - id of contact created by calling 'Create contact' request
-- WEBHOOK_ID - id of webhook created by calling 'Create webhook' request
-- CONVERSATION - Conversation is created automatically when sending a new message (for example with 'Text Message' request). Send a message, then call 'List conversations of App/Contact' to get id of conversation for this variable
+- CONTACT - ID of contact created by calling 'Create contact' request
+- WEBHOOK_ID - ID of webhook created by calling 'Create webhook' request
+- CONVERSATION - a Conversation is created automatically when sending a new message (for example with 'Text Message' request). Send a message, then call 'List conversations of App/Contact' to get the ID of conversation for this variable
 
 ### Errors
 
@@ -197,10 +197,10 @@ The table below describes the fields of the error object:
 
 | Name    | Description                         | JSON Type        |
 | ------- | ----------------------------------- | ---------------- |
-| code    | HTTP status code                    | number           |
-| message | A developer-facing error message    | string           |
-| status  | Response status name                | string           |
-| Details | List of detailed error descriptions | array of objects |
+| Code    | HTTP status code                    | Number           |
+| Message | A developer-facing error message    | String           |
+| Status  | Response status name                | String           |
+| Details | List of detailed error descriptions | Array of objects |
 
 #### Common error responses
 
