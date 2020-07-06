@@ -103,7 +103,7 @@ const express = require('express');
       port = 3000;
   Sending a text message body
   sendMessage = (contact_id, text) => {
-    const URL = `https://api.conversation-api.prod.sinch.com/v1beta/projects/{project_id}/messages:send`;
+    const URL = `https://eu.conversation.api.sinch.com/v1beta/projects/{project_id}/messages:send`;
     const options = {
       method: 'POST',
       headers: {

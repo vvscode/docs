@@ -8,7 +8,7 @@ hidden: false
 ## Sending Media Message <span class="betabadge">Beta</span>
 
 ```shell Curl
-curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1beta/projects/{project_id}/messages:send' \
+curl --location --request POST 'https://eu.conversation.api.sinch.com/v1beta/projects/{project_id}/messages:send' \
 -H 'Content-Type: application/json' \
 -u '<client_id:client_secret>' \
  -d '{
@@ -33,7 +33,7 @@ curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1be
 
 ```shell Curl
 
-curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1beta/projects/{project_id}/messages:send' \
+curl --location --request POST 'https://eu.conversation.api.sinch.com/v1beta/projects/{project_id}/messages:send' \
 
 -H 'Content-Type: application/json' \
 -u '<client_id:client_secret>' \
@@ -89,7 +89,7 @@ curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1be
 ## Sending Card Message
 
 ```shell Curl
-curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1beta/projects/{project_id}/messages:send' \
+curl --location --request POST 'https://eu.conversation.api.sinch.com/v1beta/projects/{project_id}/messages:send' \
 -H 'Content-Type: application/json' \
 -u '<client_id:client_secret>' \
  -d '{
@@ -147,7 +147,7 @@ curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1be
 ## Sending Carousel Message
 
 ```shell Curl
-curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1beta/projects/{project_id}/messages:send' \
+curl --location --request POST 'https://eu.conversation.api.sinch.com/v1beta/projects/{project_id}/messages:send' \
 -H 'Content-Type: application/json' \
 -u '<client_id:client_secret>' \
  -d '{
@@ -245,7 +245,7 @@ curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1be
 ## Sending Location Message
 
 ```shell Curl
-curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1beta/projects/{project_id}/messages:send' \
+curl --location --request POST 'https://eu.conversation.api.sinch.com/v1beta/projects/{project_id}/messages:send' \
 -H 'Content-Type: application/json' \
 -u '<client_id:client_secret>' \
  -d '{

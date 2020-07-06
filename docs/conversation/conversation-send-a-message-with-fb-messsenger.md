@@ -75,7 +75,7 @@ Copy and store your Messenger Token somewhere safe, we will need it to add the M
 Create and send a POST to **Patch** your Sinch Conversations App with the newly created **Messenger Token**, this will allow the Sinch Conversations App to respond to inbound messages posted by visitors of your FaceBook Page.
 
 ```shell Curl
-curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1beta/projects/{project_id}/apps' \
+curl --location --request POST 'https://eu.conversation.api.sinch.com/v1beta/projects/{project_id}/apps' \
 --header 'Content-Type: application/json' \
 -u '<client_id:client_secret>'
 --data-raw '{
@@ -134,7 +134,7 @@ Use **Sinch Conversation API** to **List Contacts**, you should now see a new co
             "channel_identities": [
                 {
                     "channel": "MESSENGER",
-                    "channel_recipient_identity": "7746490198930851",
+                    "identity": "7746490198930851",
                     "app_id": "3FDS0PWWERGN1QX101E75WGS3Y"
                 }
             ],
@@ -154,7 +154,7 @@ Use **Sinch Conversation API** to **List Contacts**, you should now see a new co
 Use your newly created Sinch **Contact** to send a **Text Message** response using the **message:send** function.
 
 ```shell Curl
-curl --location --request POST 'https://api.conversation-api.prod.sinch.com/v1beta/projects/{project_id}/messages:send' \
+curl --location --request POST 'https://eu.conversation.api.sinch.com/v1beta/projects/{project_id}/messages:send' \
 -u '<client_id:client_secret>' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -194,7 +194,7 @@ RequestBody body =
 Request request =
     new Request.Builder()
         .url(
-            "https://api.conversation-api.prod.sinch.com/v1beta/projects/{project_id}/messages:send")
+            "https://eu.conversation.api.sinch.com/v1beta/projects/{project_id}/messages:send")
         .method("POST", body)
         .addHeader("Content-Type", "application/json")
         .addHeader(
