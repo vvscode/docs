@@ -12,23 +12,23 @@ This document gives detailed description of Conversation API channel support.
 ### Facebook Messenger
 
 Conversation API supports Facebook Messenger and allows sending messages from Facebook Pages.
-Page cannot initiate the conversation, it must be started by a contact. To create and configure
-Facebook Page and connect it to Conversation Api App follow the instructions below
+The page cannot initiate the conversation; it must be started by a contact. To create and configure a 
+Facebook Page and connect it to Conversation API App, follow the instructions below:
 
-- Go to https://developers.facebook.com/ and login with your personal/developer account
-- Click on **My Apps** on the top right corner and select **Create App**
-- Fill in the display name for your app and contact email, then click **Create App ID** button
+- Go to https://developers.facebook.com/ and log in with your personal/developer account.
+- Click on **My Apps** on the top right corner and select **Create App**.
+- Fill in the display name for your app and contact Email, then click the **Create App ID** button.
 - Once the app is created, you will see a dashboard with various products that you may add to your app.
-  Click **Set Up** button inside a box with **Messenger** title
-- Scroll down to **Access Tokens** section, and click **Create New Page** button
-- Provide page name and category, then click **Create Page** button
-- Go back to the **Messenger Set Up** page. Now click **Add or Remove pages** in the **Access Tokens** section.
-  Select previously created page and link it to your app (just **Next**, **Done**, **Ok**)
+  Click **Set Up** button inside a box with **Messenger** title.
+- Scroll down to the **Access Tokens** section, and click the **Create New Page** button.
+- Provide a page name and category, then click the **Create Page** button.
+- Go back to the **Messenger Setup** page. Now click **Add or Remove pages** in the **Access Tokens** section.
+  Select the previously created page and link it to your app (just **Next**, **Done**, **Ok**).
 - You should now see a table row in a table in the **Access Tokens** modal. Click on **Generate Token** for that row.
   Copy this token (from now on referred as **FACEBOOK_PAGE_TOKEN**) and save it somewhere safe.
-  This is the access token that you need to specify when setting up a Conversation API App
-- Now you need to create an Conversation Api App with `channel_credentials` for Facebook Messenger,
-  example snippet below
+  This is the access token that you need to specify when setting up a Conversation API App.
+- Now you need to create a Conversation API App with `channel_credentials` for Facebook Messenger.
+  example snippet below:
 
 ```json
 {
@@ -45,15 +45,15 @@ Facebook Page and connect it to Conversation Api App follow the instructions bel
 }
 ```
 
-- Once you have created Conversation Api App, go back to Facebook **Messenger Set Up** page, find
+- Once you have created Conversation API App, go back to Facebook **Messenger Setup** page, find
   **Webhooks** section (just below **Access Tokens**), click **Add Callback URL** button and fill in with
   the following data (**remember to put your Conversation App ID in the callback url**):  
   Callback URL: `https://messenger-adapter.conversation-api.prod.sinch.com/adapter/v1/{{CONVERSATION_APP_ID}}/callback`  
   Verify Token: `5651d9fd-5c33-4d7a-aa37-5e3e151c2a92`
 - After clicking **Verify and Save**, if no errors occurred, a table in **Webhooks** section will appear,
-  with your **Facebook Page** listed within. Click **Add Subscriptions** button, check all boxes and click **save**
+  with your **Facebook Page** listed within. Click **Add Subscriptions** button, check all boxes and click **save**.
 - Now you need to enable **pages_messaging** for your App. Scroll down to the **App review for Messenger**
-  section and click **Add to submission** on the **pages_messaging** row
+  section and click **Add to submission** on the **pages_messaging** row.
 - Scroll down further and you should see a **Current Submissions** section. You will most likely see
   a little **Additional Information Required** alert notifying you that you need to complete some details before submitting
 - Follow the instructions and go to the settings to add the required pieces, which should be:
@@ -62,9 +62,9 @@ Facebook Page and connect it to Conversation Api App follow the instructions bel
   - Category
   - Business Use
 - This is enough for test and development purposes, you don't have to fill **Details** section nor
-  submit it for review. Now you are able to send messages anyone that has been granted either the Administrator,
-  Developer or Tester role for your app
-- Add webhook to your Conversation App using Conversation Api, example snippet below
+  submit it for review. Now you can send messages anyone that has been granted either the Administrator,
+  Developer or Tester role for your app.
+- Add webhook to your Conversation App using Conversation API. Example snippet below:
 
 ```json
 {
@@ -83,8 +83,8 @@ Facebook Page and connect it to Conversation Api App follow the instructions bel
 }
 ```
 
-- And finally, visit your Facebook Page as user with proper role granted (preferably the one who created page)
-  and try sending a message to it - remember that user has to start the conversation. If everything works
+- And finally, visit your Facebook Page as a user with proper role granted (preferably the one who created the page)
+  and try sending a message to it - remember that a user has to start the conversation. If everything works
   fine, you should receive two callbacks, one with `conversation_start_notification`
 
 ```json
@@ -105,7 +105,7 @@ Facebook Page and connect it to Conversation Api App follow the instructions bel
 }
 ```
 
-- and one with message you've just sent
+- and one with the message you've just sent
 
 ```json
 {
@@ -128,7 +128,7 @@ Facebook Page and connect it to Conversation Api App follow the instructions bel
 }
 ```
 
-- Now, with conversation created automatically, you can use received **contact_id** to send a response
+- Now, with a conversation created automatically, you can use received **contact_id** to send a response
   for this user:
 
 ```json
@@ -146,7 +146,7 @@ Facebook Page and connect it to Conversation Api App follow the instructions bel
 }
 ```
 
-- You should receive callbacks with information that message has been delivered and read. Channel is now configured
+- You should receive callbacks with information that message has been delivered and read. The channel is now configured.
 
 #### Rich Message Support
 
